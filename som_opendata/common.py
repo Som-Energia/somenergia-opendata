@@ -8,9 +8,11 @@ import os
 def dateSequence(first, last):
     first = Date(first or Date.today())
     last = Date(last or first)
+    interval = delta(last,first)
+    months = interval.months + interval.years*12 + 1
     return [
         first + delta(months=n)
-        for n in xrange(0, delta(last,first).months+1)
+        for n in xrange(0, months)
         ]
 
 def relative(path):

@@ -86,6 +86,26 @@ class BaseApi_Test(unittest.TestCase):
             Date('2015-04-30'),
             ])
 
+    def test_dateSequence_moreThanAYear(self):
+        self.assertEqual(
+            dateSequence('2014-12-01', '2016-02-01'), [
+            Date('2014-12-01'),
+            Date('2015-01-01'),
+            Date('2015-02-01'),
+            Date('2015-03-01'),
+            Date('2015-04-01'),
+            Date('2015-05-01'),
+            Date('2015-06-01'),
+            Date('2015-07-01'),
+            Date('2015-08-01'),
+            Date('2015-09-01'),
+            Date('2015-10-01'),
+            Date('2015-11-01'),
+            Date('2015-12-01'),
+            Date('2016-01-01'),
+            Date('2016-02-01'),
+            ])
+
     def test_contractsSparse_single(self):
         dates = ['2015-01-01']
         result = contractsSparse(dates)
