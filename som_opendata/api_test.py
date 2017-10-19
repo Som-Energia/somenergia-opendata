@@ -9,7 +9,10 @@ from som_opendata.api import (
     dateSequence,
     contractsSparse,
     contractsSeries,
+    membersSparse,
     )
+from dbutils import csvTable
+
 
 class BaseApi_Test(unittest.TestCase):
 
@@ -33,12 +36,6 @@ class BaseApi_Test(unittest.TestCase):
 
     def assertTsvResponse(self, response):
         self.assertB2BEqual(response.data)
-
-    def test_version(self):
-        r = self.get('/version')
-        self.assertYamlResponse(r, """\
-            version: '1.0'
-            """)
 
     # dateSequence
 
@@ -110,6 +107,24 @@ class BaseApi_Test(unittest.TestCase):
         self.assertB2BEqual(result)
 
 
+    def test_membersSparse_single(self):
+        dates = ['2015-01-01']
+        result = membersSparse(dates, csvTable)
+        self.assertB2BEqual(result)
+
+    def test_membersSparse_many(self):
+        # TODO: Not implemented (b2b expects same as single)
+        dates = ['2015-01-01','2015-02-01']
+        result = membersSparse(dates, csvTable)
+        self.assertB2BEqual(result)
+
+
+
+    def test_version(self):
+        r = self.get('/version')
+        self.assertYamlResponse(r, """\
+            version: '1.0'
+            """)
 
     def test_contracts_single(self):
         r = self.get('/contracts/2015-01-01')
