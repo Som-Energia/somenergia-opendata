@@ -154,9 +154,15 @@ class BaseApi_Test(unittest.TestCase):
         r = self.get('/contracts/2015-01-01/monthlyto/2015-04-01')
         self.assertTsvResponse(r)
 
-    def _test_members(self):
+    def test_members_single(self):
         r = self.get('/members/2015-01-01')
         self.assertTsvResponse(r)
+
+    # TODO: Not implemented yet
+    def _test_members_series(self):
+        r = self.get('/members/2015-01-01/monthlyto/2015-04-01')
+        self.assertTsvResponse(r)
+
 
 """
 /version
