@@ -263,4 +263,23 @@ def members(fromdate=None, todate=None):
     return membersSparse([fromdate], csvTable)
 
 
-# vim: et ts=4 sw=4
+@app.route('/socis')
+@yaml_response
+def socis_totals():
+    db = psycopg2.connect(**config.psycopg)
+    with db.cursor() as cursor :
+        cursor.execute("SELECT count(*) FROM res_partner_address;")
+        result = cursor.fetchone()
+        return dict(socis=result[0])
+
+
+@app.route('/socis/<pais>')
+@yaml_response
+def socis_pais(pais):
+    db = psycopg2.connect(**config.psycopg)
+    with db.cursor() as cursor :    # TODO: passant tuples és més snezill pero no estableizes especificament el format, amb diccionaris si es pot
+        cursor.execute("select count(*) from res_partner_address where country_id=(select id from res_country where code like %s)", (pais,))
+        result = cursor.fetchone()
+        return dict(pais=pais, socis=result[0])
+
+
