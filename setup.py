@@ -16,15 +16,24 @@ setup(
 	packages=find_packages(exclude=['*[tT]est*']),
 	scripts=[
 		'run_api.py',
-		],
+	],
 	install_requires=[
 		'Flask-Cors',
 		'decorator',
 		'yamlns>=0.3', # earlier are not Py2 compatible
 		'Flask',
+                'psycopg2',
+                'dbutils',
+                'python-dateutil'
 		# TODO: integrate dependencies in requirements.txt
-        'rednose',
-        'nose',
+                'rednose',
+                'nose',
+                'b2btest',
+                'consolemsg',
+                'wavefile',
+                'numpy',
+                'lxml',
+                'python-dateutil',
 	],
 	include_package_data = True,
 	test_suite = 'som_opendata',
