@@ -14,9 +14,15 @@ import os
 import psycopg2
 import dbconfig as config
 from dbutils import csvTable
+from common import yaml_response
+from socis.socis import modul_socis
+
+
+VERSION = 4
 
 app = Flask(__name__)
 
+app.register_blueprint(modul_socis, url_prefix='/socis')
 
 sentry = None
 
@@ -39,19 +45,6 @@ def handle(e, status_code):
     response.status_code = status_code
     return response
 
-
-def yaml_response(f):
-    @wraps(f)
-    def wrapper(*args, **kwd):
-        result = f(*args, **kwd)
-
-        if type(result) is Response:
-            return result
-
-        response = make_response(ns(result).dump())
-        response.mimetype='application/yaml'
-        return response
-    return wrapper
 
 def utf8(thing):
     if type(thing) is unicode: return thing
@@ -263,23 +256,73 @@ def members(fromdate=None, todate=None):
     return membersSparse([fromdate], csvTable)
 
 
-@app.route('/socis')
-@yaml_response
-def socis_totals():
-    db = psycopg2.connect(**config.psycopg)
-    with db.cursor() as cursor :
-        cursor.execute("SELECT count(*) FROM res_partner_address;")
-        result = cursor.fetchone()
-        return dict(socis=result[0])
+# def query_select_partner():
+#     return 'SELECT count(*) FROM res_partner_address'
 
 
-@app.route('/socis/<pais>')
-@yaml_response
-def socis_pais(pais):
-    db = psycopg2.connect(**config.psycopg)
-    with db.cursor() as cursor :    # TODO: passant tuples és més snezill pero no estableizes especificament el format, amb diccionaris si es pot
-        cursor.execute("select count(*) from res_partner_address where country_id=(select id from res_country where code like %s)", (pais,))
-        result = cursor.fetchone()
-        return dict(pais=pais, socis=result[0])
+# def query_add_countryId_code(county_code):
+#     return 'country_id=(select id from res_country where code like \''+county_code+'\')'
 
 
+# def query_add_ccaaId_code(ccaa_code):
+#     return 'state_id in ((select id from res_country_state where comunitat_autonoma=\''+ccaa_code+'\'))'
+
+# def query_add_provinciaId_code(provincia_code):
+#     return 'state_id = (select id from res_country_state where code like \''+provincia_code+'\')'
+
+# def query_add_municipiId_ine(ine):
+#     return 'id_municipi = (select id from res_municipi where ine like \''+ine+'\')'
+
+
+# @app.route('/socis')
+# @yaml_response
+# def socis_totals():
+#     db = psycopg2.connect(**config.psycopg)
+#     with db.cursor() as cursor :
+#         cursor.execute(query_select_partner())
+#         result = cursor.fetchone()
+#         return dict(socis=result[0])
+
+
+# @app.route('/socis/<pais>')
+# @yaml_response
+# def socis_pais(pais):
+#     db = psycopg2.connect(**config.psycopg)
+#     with db.cursor() as cursor :
+#         cursor.execute(query_select_partner()+' WHERE '+query_add_countryId_code(pais))
+#         result = cursor.fetchone()
+#         return dict(pais=pais, socis=result[0])
+
+
+# @app.route('/socis/<pais>/<ccaa>')
+# @yaml_response
+# def socis_CCAA(pais, ccaa):
+#     db = psycopg2.connect(**config.psycopg)
+#     with db.cursor() as cursor :
+#         cursor.execute(query_select_partner()+' WHERE '+query_add_countryId_code(pais) + 
+#             ' AND '+query_add_ccaaId_code(ccaa))
+#         result = cursor.fetchone()
+#         return dict(pais=pais, socis=result[0])
+
+
+# @app.route('/socis/<pais>/<ccaa>/<provincia>')
+# @yaml_response
+# def socis_provincia(pais, ccaa, provincia):
+#     db = psycopg2.connect(**config.psycopg)
+#     with db.cursor() as cursor :
+#         cursor.execute(query_select_partner()+' WHERE '+query_add_countryId_code(pais) + 
+#             ' AND '+query_add_ccaaId_code(ccaa)+' AND '+query_add_provinciaId_code(provincia))
+#         result = cursor.fetchone()
+#         return dict(pais=pais, socis=result[0])
+
+
+# @app.route('/socis/<pais>/<ccaa>/<provincia>/<ine>')
+# @yaml_response
+# def socis_municipi(pais, ccaa, provincia, ine):
+#     db = psycopg2.connect(**config.psycopg)
+#     with db.cursor() as cursor :
+#         cursor.execute(query_select_partner()+' WHERE '+query_add_countryId_code(pais) + 
+#             ' AND '+query_add_ccaaId_code(ccaa)+' AND '+query_add_provinciaId_code(provincia) +
+#             ' AND '+query_add_municipiId_ine(ine))
+#         result = cursor.fetchone()
+#         return dict(pais=pais, socis=result[0])
