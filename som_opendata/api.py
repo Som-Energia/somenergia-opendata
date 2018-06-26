@@ -1,7 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 from flask import (
+    Blueprint,
     Flask,
     make_response,
     Response,
@@ -20,16 +19,11 @@ from socis.socis import modul_socis
 
 VERSION = 4
 
-app = Flask(__name__)
 
-app.register_blueprint(modul_socis, url_prefix='/socis')
+
+old_modul = Blueprint(name='old_modul', import_name=__name__)
 
 sentry = None
-
-if app.config.get('SENTRY_DSN', False):
-    from raven.contrib.flask import Sentry
-    sentry = Sentry(app)
-    sentry.client.tags_context({'version': VERSION})
 
 def sentry_exception():
     if not sentry: return
@@ -79,19 +73,7 @@ def tsv_response(f):
     return wrapper
 
 
-# isodate converter
-from werkzeug.routing import BaseConverter
 from yamlns.dateutils import Date
-class IsoDateConverter(BaseConverter):
-
-    def to_python(self, value):
-        return Date(value)
-
-    def to_url(self, value):
-        return str(value)
-
-
-app.url_map.converters['isodate'] = IsoDateConverter
 
 from .common import (
     dateSequence,
@@ -234,95 +216,24 @@ ORDER BY
 
 
 
-@app.route('/version')
+@old_modul.route('/version')
 @yaml_response
 def version():
     return ns(
         version = '1.0',
         )
 
-@app.route('/contracts/<isodate:fromdate>')
-@app.route('/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>')
+@old_modul.route('/contracts/<isodate:fromdate>')
+@old_modul.route('/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>')
 @tsv_response
 def contracts(fromdate=None, todate=None):
     dates=dateSequence(fromdate, todate)
     return contractsSeries(dates)
 
-@app.route('/members/<isodate:fromdate>')
-@app.route('/members/<isodate:fromdate>/monthlyto/<isodate:todate>')
+@old_modul.route('/members/<isodate:fromdate>')
+@old_modul.route('/members/<isodate:fromdate>/monthlyto/<isodate:todate>')
 @tsv_response
 def members(fromdate=None, todate=None):
     dates=dateSequence(fromdate, todate)
     return membersSparse([fromdate], csvTable)
 
-
-# def query_select_partner():
-#     return 'SELECT count(*) FROM res_partner_address'
-
-
-# def query_add_countryId_code(county_code):
-#     return 'country_id=(select id from res_country where code like \''+county_code+'\')'
-
-
-# def query_add_ccaaId_code(ccaa_code):
-#     return 'state_id in ((select id from res_country_state where comunitat_autonoma=\''+ccaa_code+'\'))'
-
-# def query_add_provinciaId_code(provincia_code):
-#     return 'state_id = (select id from res_country_state where code like \''+provincia_code+'\')'
-
-# def query_add_municipiId_ine(ine):
-#     return 'id_municipi = (select id from res_municipi where ine like \''+ine+'\')'
-
-
-# @app.route('/socis')
-# @yaml_response
-# def socis_totals():
-#     db = psycopg2.connect(**config.psycopg)
-#     with db.cursor() as cursor :
-#         cursor.execute(query_select_partner())
-#         result = cursor.fetchone()
-#         return dict(socis=result[0])
-
-
-# @app.route('/socis/<pais>')
-# @yaml_response
-# def socis_pais(pais):
-#     db = psycopg2.connect(**config.psycopg)
-#     with db.cursor() as cursor :
-#         cursor.execute(query_select_partner()+' WHERE '+query_add_countryId_code(pais))
-#         result = cursor.fetchone()
-#         return dict(pais=pais, socis=result[0])
-
-
-# @app.route('/socis/<pais>/<ccaa>')
-# @yaml_response
-# def socis_CCAA(pais, ccaa):
-#     db = psycopg2.connect(**config.psycopg)
-#     with db.cursor() as cursor :
-#         cursor.execute(query_select_partner()+' WHERE '+query_add_countryId_code(pais) + 
-#             ' AND '+query_add_ccaaId_code(ccaa))
-#         result = cursor.fetchone()
-#         return dict(pais=pais, socis=result[0])
-
-
-# @app.route('/socis/<pais>/<ccaa>/<provincia>')
-# @yaml_response
-# def socis_provincia(pais, ccaa, provincia):
-#     db = psycopg2.connect(**config.psycopg)
-#     with db.cursor() as cursor :
-#         cursor.execute(query_select_partner()+' WHERE '+query_add_countryId_code(pais) + 
-#             ' AND '+query_add_ccaaId_code(ccaa)+' AND '+query_add_provinciaId_code(provincia))
-#         result = cursor.fetchone()
-#         return dict(pais=pais, socis=result[0])
-
-
-# @app.route('/socis/<pais>/<ccaa>/<provincia>/<ine>')
-# @yaml_response
-# def socis_municipi(pais, ccaa, provincia, ine):
-#     db = psycopg2.connect(**config.psycopg)
-#     with db.cursor() as cursor :
-#         cursor.execute(query_select_partner()+' WHERE '+query_add_countryId_code(pais) + 
-#             ' AND '+query_add_ccaaId_code(ccaa)+' AND '+query_add_provinciaId_code(provincia) +
-#             ' AND '+query_add_municipiId_ine(ine))
-#         result = cursor.fetchone()
-#         return dict(pais=pais, socis=result[0])

@@ -1,83 +1,122 @@
 from functools import wraps
 
-import psycopg2
-from flask import Blueprint
+from flask import Blueprint, request, current_app
 from yamlns import namespace as ns
 
-import dbconfig as config
 from ..common import yaml_response
 
 
 modul_socis = Blueprint(name='modul_socis', import_name=__name__)
 
+
 def query_select_partner():
     return 'SELECT count(*) FROM res_partner_address'
 
 
-def query_add_countryId_code(county_code):
-    return 'country_id=(select id from res_country where code like \''+county_code+'\')'
+def query_add_countryId_code():
+    return 'SELECT count(*) FROM ' \
+           'res_partner_address address, res_country country ' \
+           'WHERE address.country_id = country.id ' \
+           'AND country.code LIKE :country_code'
 
 
-def query_add_ccaaId_code(ccaa_code):
-    return 'state_id in ((select id from res_country_state where comunitat_autonoma=\''+ccaa_code+'\'))'
+def query_add_ccaaId_code():
+    return 'SELECT count(*) FROM ' \
+           'res_partner_address address, res_country country, res_country_state state ' \
+           'WHERE address.country_id = country.id ' \
+           'AND address.state_id = state.id ' \
+           'AND country.code LIKE :country_code ' \
+           'AND state.comunitat_autonoma=:ccaa_code'
 
-def query_add_provinciaId_code(provincia_code):
-    return 'state_id = (select id from res_country_state where code like \''+provincia_code+'\')'
 
-def query_add_municipiId_ine(ine):
-    return 'id_municipi = (select id from res_municipi where ine like \''+ine+'\')'
+def query_add_provinciaId_code():
+    return 'SELECT count(*) FROM ' \
+           'res_partner_address address, res_country country ' \
+           'WHERE address.country_id = country.id ' \
+           'AND country.code LIKE :country_code ' \
+           'AND state_id in ((select id from res_country_state ' \
+           'WHERE comunitat_autonoma=:ccaa_code)) ' \
+           'AND state_id = (select id from res_country_state ' \
+           'WHERE code like :provincia_code)'
 
 
-@modul_socis.route('/')
+def query_add_municipiId_ine():
+    return 'SELECT count(*) FROM ' \
+           'res_partner_address address, res_country country ' \
+           'WHERE address.country_id = country.id ' \
+           'AND country.code LIKE :country_code ' \
+           'AND state_id in ((select id from res_country_state ' \
+           'WHERE comunitat_autonoma=:ccaa_code)) ' \
+           'AND state_id = (select id from res_country_state ' \
+           'WHERE code like :provincia_code) ' \
+           'AND id_municipi = (select id from res_municipi ' \
+           'WHERE ine like :ine)'
+
+
+def valida_pais(pais):
+    return len(pais) == 2
+
+
+def valida_ccaa(ccaa):
+    return ccaa < 20 and ccaa > 0
+
+
+def valida_provincia(provincia):
+    return provincia < 53 and provincia > 0
+
+
+def valida_ine(ine):
+    return len(str(ine)) == 5 and ine > 0
+
+
+@modul_socis.route('')
 @yaml_response
 def socis_totals():
-    #print(request.args.get('clau',''))
-    db = psycopg2.connect(**config.psycopg)
-    with db.cursor() as cursor :
-        cursor.execute(query_select_partner())
-        result = cursor.fetchone()
-        return dict(socis=result[0])
+    query = current_app.db.query(query_select_partner()).first()
+
+    return dict(socis=query.count)
 
 
-@modul_socis.route('/<pais>')
+@modul_socis.route('/<country:pais>')
 @yaml_response
 def socis_pais(pais):
-    db = psycopg2.connect(**config.psycopg)
-    with db.cursor() as cursor :
-        cursor.execute(query_select_partner()+' WHERE '+query_add_countryId_code(pais))
-        result = cursor.fetchone()
-        return dict(pais=pais, socis=result[0])
+    query = current_app.db.query(
+        query_add_countryId_code(), country_code=pais
+    ).first()
+    return dict(socis=query.count)
 
 
-@modul_socis.route('/<pais>/<ccaa>')
+@modul_socis.route('/<country:pais>/<int:ccaa>')
 @yaml_response
 def socis_CCAA(pais, ccaa):
-    db = psycopg2.connect(**config.psycopg)
-    with db.cursor() as cursor :
-        cursor.execute(query_select_partner()+' WHERE '+query_add_countryId_code(pais) + 
-            ' AND '+query_add_ccaaId_code(ccaa))
-        result = cursor.fetchone()
-        return dict(pais=pais, socis=result[0])
+    query = current_app.db.query(
+        query_add_ccaaId_code(),
+        country_code=pais,
+        ccaa_code=ccaa
+    ).first()
+    return dict(socis=query.count)
 
 
-@modul_socis.route('/<pais>/<ccaa>/<provincia>')
+@modul_socis.route('/<country:pais>/<int:ccaa>/<int:provincia>')
 @yaml_response
 def socis_provincia(pais, ccaa, provincia):
-    db = psycopg2.connect(**config.psycopg)
-    with db.cursor() as cursor :
-        cursor.execute(query_select_partner()+' WHERE '+query_add_countryId_code(pais) + 
-            ' AND '+query_add_ccaaId_code(ccaa)+' AND '+query_add_provinciaId_code(provincia))
-        result = cursor.fetchone()
-        return dict(pais=pais, socis=result[0])
+    query = current_app.db.query(
+        query_add_provinciaId_code(),
+        country_code=pais,
+        ccaa_code=ccaa,
+        provincia_code='{:>02}'.format(str(provincia))
+    ).first()
+    return dict(socis=query.count)
 
 
-@modul_socis.route('/<pais>/<ccaa>/<provincia>/<ine>')
+@modul_socis.route('/<country:pais>/<int:ccaa>/<int:provincia>/<int:ine>')
 @yaml_response
 def socis_municipi(pais, ccaa, provincia, ine):
-    db = psycopg2.connect(**config.psycopg)
-    with db.cursor() as cursor :
-        cursor.execute(query_select_partner()+' WHERE '+query_add_countryId_code(pais) + 
-            ' AND '+query_add_ccaaId_code(ccaa)+' AND '+query_add_provinciaId_code(provincia) +
-            ' AND '+query_add_municipiId_ine(ine))
-        result = cursor.fetchone()
-        return dict(pais=pais, socis=result[0])
+    query = current_app.db.query(
+        query_add_municipiId_ine(),
+        country_code=pais,
+        ccaa_code=ccaa,
+        provincia_code='{:>02}'.format(str(provincia)),
+        ine=str(ine)
+    ).first()
+    return dict(socis=query.count)

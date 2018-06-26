@@ -1,10 +1,10 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 import os
 from dateutil.relativedelta import relativedelta as delta
 from functools import wraps
+from yamlns import namespace as ns
 
-from flask import Response, make_response
+from flask import Response, make_response, current_app
+from werkzeug.routing import BaseConverter, ValidationError
 from yamlns.dateutils import Date
 
 
@@ -20,11 +20,11 @@ def dateSequence(first, last):
 
 
 def relative(path):
-    return os.path.abspath(os.path.join(os.path.dirname(__file__),path))
+    return os.path.abspath(os.path.join(os.path.dirname(__file__), path))
 
 
 def readQuery(query):
-    with open(relative(query+".sql"), 'r') as queryfile:
+    with open(relative(query + '.sql'), 'r') as queryfile:
         return queryfile.read().rstrip()
 
 
@@ -37,8 +37,37 @@ def yaml_response(f):
             return result
 
         response = make_response(ns(result).dump())
-        response.mimetype='application/yaml'
+        response.mimetype = 'application/yaml'
         return response
     return wrapper
 
-# vim: et ts=4 sw=4
+
+class IsoDateConverter(BaseConverter):
+
+    def to_python(self, value):
+        return Date(value)
+
+    def to_url(self, value):
+        return str(value)
+
+
+class IsoCountryA2Converter(BaseConverter):
+
+    def to_python(self, value):
+        if (len(value) == 2):
+            return str(value)
+
+        raise ValidationError()
+
+    def to_url(self, value):
+        if (len(value) == 2):
+            return str(value)
+
+        raise ValidationError()
+
+
+@yaml_response
+def handle_request_not_found(e):
+    response = make_response('Request not found!', 404)
+    response.mimetype = 'application/yaml'
+    return response
