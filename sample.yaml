@@ -1,0 +1,78 @@
+dates:
+  - 2018-01-01
+  - 2018-02-01
+  - 2018-03-01
+  - 2018-04-01
+  - 2018-05-01
+level: countries
+- code: FR
+  name: Republique du France
+  data: 10 11 12 13 14
+  ccaas:
+  - name: Indefinido
+    code: None
+    data: 10 11 12 13 14
+    states:
+    - name: Indefinido
+      code: None
+      data: 10 11 12 13 14
+      cities:
+      - name: Indefinido
+        code: None
+        data: 10 11 12 13 14
+- name: España
+  code: ES
+  data: 10 11 12 13 14
+  ccaas:
+  - name: Catalunya
+    code: 09
+    data: 10 11 12 13 14
+    states:
+    - name: Girona
+      code: 09
+      data: 10 11 12 13 14
+      cities:
+      - name: Castelló d'Empúries
+        code: 09
+        data: 10 11 12 13 14
+      - name: Castelló d'Empúries
+        code: 09
+        data: 10 11 12 13 14
+      - name: Castelló d'Empúries
+        code: 09
+        data: 10 11 12 13 14
+      - name: Castelló d'Empúries
+        code: 09
+        data: 10 11 12 13 14
+      - name: Castelló d'Empúries
+        code: 09
+        data: 10 11 12 13 14
+      - name: Castelló d'Empúries
+        code: 09
+        data: 10 11 12 13 14
+    - name: Girona
+      code: 09
+      data: 10 11 12 13 14
+      cities:
+      - name: Castelló d'Empúries
+        code: 09
+        data: 10 11 12 13 14
+      - name: Castelló d'Empúries
+        code: 09
+        data: 10 11 12 13 14
+      - name: Castelló d'Empúries
+        code: 09
+        data: 10 11 12 13 14
+      - name: Castelló d'Empúries
+        code: 09
+        data: 10 11 12 13 14
+      - name: Castelló d'Empúries
+        code: 09
+        data: 10 11 12 13 14
+      - name: Castelló d'Empúries
+        code: 09
+        data: 10 11 12 13 14
+
+
+
+# vim: noet sw=2 ts=2

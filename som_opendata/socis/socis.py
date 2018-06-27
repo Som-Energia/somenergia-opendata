@@ -1,12 +1,43 @@
 from functools import wraps
-
-from flask import Blueprint, request, current_app
+from flask import Blueprint, request, current_app, abort
 from yamlns import namespace as ns
 
 from ..common import yaml_response
 
 
 modul_socis = Blueprint(name='modul_socis', import_name=__name__)
+
+
+def existeix_pais(pais):
+    query = current_app.db.query(
+        'SELECT count(*) FROM res_country WHERE code LIKE :country_code',
+        country_code=pais
+    ).first()
+    return query.count == 1
+
+
+def existeix_ccaa(ccaa):
+    query = current_app.db.query(
+        'SELECT count(*) FROM res_country_state WHERE comunitat_autonoma=:ccaa',
+        ccaa=ccaa
+    ).first()
+    return query.count >= 1
+
+
+def existeix_provincia(provincia):
+    query = current_app.db.query(
+        'SELECT count(*) FROM res_country_state WHERE code LIKE :prov',
+        prov='{:>02}'.format(str(provincia))
+    ).first()
+    return query.count == 1
+
+
+def existeix_municipi(ine):
+    query = current_app.db.query(
+        'SELECT count(*) FROM res_municipi WHERE ine LIKE :ine',
+        ine=str(ine)
+    ).first()
+    return query.count == 1
 
 
 def query_select_partner():
@@ -80,43 +111,83 @@ def socis_totals():
 @modul_socis.route('/<country:pais>')
 @yaml_response
 def socis_pais(pais):
-    query = current_app.db.query(
-        query_add_countryId_code(), country_code=pais
-    ).first()
-    return dict(socis=query.count)
+
+    if existeix_pais(pais):
+        query = current_app.db.query(
+            query_add_countryId_code(), country_code=pais
+        ).first()
+        return dict(socis=query.count)
+    else:
+        #raise werkzeug.exceptions.BadRequest([pais])
+        current_app.e = [pais]
+        abort(400)
 
 
 @modul_socis.route('/<country:pais>/<int:ccaa>')
 @yaml_response
 def socis_CCAA(pais, ccaa):
-    query = current_app.db.query(
-        query_add_ccaaId_code(),
-        country_code=pais,
-        ccaa_code=ccaa
-    ).first()
-    return dict(socis=query.count)
+
+    errors = make_errors(pais, ccaa)
+
+    if len(errors) == 0:
+        query = current_app.db.query(
+            query_add_ccaaId_code(),
+            country_code=pais,
+            ccaa_code=ccaa
+        ).first()
+        return dict(socis=query.count)
+    else:
+        current_app.errors = errors
+        abort(400)
 
 
 @modul_socis.route('/<country:pais>/<int:ccaa>/<int:provincia>')
 @yaml_response
 def socis_provincia(pais, ccaa, provincia):
-    query = current_app.db.query(
-        query_add_provinciaId_code(),
-        country_code=pais,
-        ccaa_code=ccaa,
-        provincia_code='{:>02}'.format(str(provincia))
-    ).first()
-    return dict(socis=query.count)
+
+    errors = make_errors(pais, ccaa, provincia)
+
+    if len(errors) == 0:
+        query = current_app.db.query(
+            query_add_provinciaId_code(),
+            country_code=pais,
+            ccaa_code=ccaa,
+            provincia_code='{:>02}'.format(str(provincia))
+        ).first()
+        return dict(socis=query.count)
+    else:
+        current_app.errors = errors
+        abort(400)
 
 
 @modul_socis.route('/<country:pais>/<int:ccaa>/<int:provincia>/<int:ine>')
 @yaml_response
 def socis_municipi(pais, ccaa, provincia, ine):
-    query = current_app.db.query(
-        query_add_municipiId_ine(),
-        country_code=pais,
-        ccaa_code=ccaa,
-        provincia_code='{:>02}'.format(str(provincia)),
-        ine=str(ine)
-    ).first()
-    return dict(socis=query.count)
+
+    errors = make_errors(pais, ccaa, provincia, ine)
+
+    if len(errors) == 0:
+        query = current_app.db.query(
+            query_add_municipiId_ine(),
+            country_code=pais,
+            ccaa_code=ccaa,
+            provincia_code='{:>02}'.format(str(provincia)),
+            ine=str(ine)
+        ).first()
+        return dict(socis=query.count)
+    else:
+        current_app.errors = errors
+        abort(400)
+
+
+def make_errors(pais=None, ccaa=None, provincia=None, ine=None):
+    errors = []
+    if pais != None and not existeix_pais(pais):
+        errors.append(pais)
+    if ccaa != None and not existeix_ccaa(ccaa):
+        errors.append(ccaa)
+    if provincia != None and not existeix_provincia(provincia):
+        errors.append(provincia)
+    if ine != None and not existeix_municipi(ine):
+        errors.append(ine)
+    return errors

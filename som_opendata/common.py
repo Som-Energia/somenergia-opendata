@@ -71,3 +71,16 @@ def handle_request_not_found(e):
     response = make_response('Request not found!', 404)
     response.mimetype = 'application/yaml'
     return response
+
+
+@yaml_response
+def handle_bad_request(self):
+    if current_app.errors == None:
+        response =  make_response('Bad Request', 400)
+    else:
+        response = make_response(
+            '\'{}\' no existeix/en'.format(', '.join([str(x) for x in current_app.errors])), 400
+        )
+        current_app.errors = None
+    response.mimetype = 'application/yaml'
+    return response

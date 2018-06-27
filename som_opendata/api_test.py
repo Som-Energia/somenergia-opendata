@@ -5,12 +5,12 @@ import b2btest
 from yamlns import namespace as ns
 from yamlns.dateutils import Date
 from som_opendata.api import (
-    app,
     dateSequence,
     contractsSparse,
     contractsSeries,
     membersSparse,
     )
+from app import app
 from dbutils import csvTable
 
 
@@ -28,11 +28,10 @@ class BaseApi_Test(unittest.TestCase):
     def get(self, *args, **kwds):
         return self.client.get(*args,**kwds)
 
+    from .testutils import assertNsEqual
+
     def assertYamlResponse(self, response, expected):
-        self.assertMultiLineEqual(
-            ns.loads(response.data).dump(),
-            ns.loads(expected).dump(),
-        )
+        self.assertNsEqual(response.data, expected)
 
     def assertTsvResponse(self, response):
         self.assertB2BEqual(response.data)
@@ -141,26 +140,26 @@ class BaseApi_Test(unittest.TestCase):
 
 
     def test_version(self):
-        r = self.get('/version')
+        r = self.get('/old/version')
         self.assertYamlResponse(r, """\
             version: '1.0'
             """)
 
     def test_contracts_single(self):
-        r = self.get('/contracts/2015-01-01')
+        r = self.get('/old/contracts/2015-01-01')
         self.assertTsvResponse(r)
 
     def test_contracts_series(self):
-        r = self.get('/contracts/2015-01-01/monthlyto/2015-04-01')
+        r = self.get('/old/contracts/2015-01-01/monthlyto/2015-04-01')
         self.assertTsvResponse(r)
 
     def test_members_single(self):
-        r = self.get('/members/2015-01-01')
+        r = self.get('/old/members/2015-01-01')
         self.assertTsvResponse(r)
 
     # TODO: Not implemented yet
     def _test_members_series(self):
-        r = self.get('/members/2015-01-01/monthlyto/2015-04-01')
+        r = self.get('/old/members/2015-01-01/monthlyto/2015-04-01')
         self.assertTsvResponse(r)
 
 
