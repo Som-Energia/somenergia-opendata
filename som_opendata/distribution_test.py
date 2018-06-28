@@ -45,13 +45,18 @@ class Distribution_Test(unittest.TestCase):
 
 
     from testutils import assertNsEqual 
-    
+
     def test__tuple2object__1value_1attribute(self):
         fixture = parse_tsv(
             'name\n'
             'value\n'
             )
-        self.assertNsEqual(tuples2objects(fixture), ns(name='value'))
+        self.assertNsEqual(ns(data=tuples2objects(fixture)), """\
+            data:
+            - name: value
+            """)
+
+
 
 
 # vim: et sw=4 ts=4

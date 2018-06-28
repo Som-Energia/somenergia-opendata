@@ -10,7 +10,7 @@ def parse_tsv(tsv_data):
 
 
 def tuples2objects(tuples):
-    return ns({tuples[0][0]: tuples[1][0]})
+    return [ns({tuples[0][0]: tuples[1][0]})]
 
 
 # @old_modul.route('/members/aux')
