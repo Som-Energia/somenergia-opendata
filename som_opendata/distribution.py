@@ -10,7 +10,13 @@ def parse_tsv(tsv_data):
 
 
 def tuples2objects(tuples):
-    return [ns({tuples[0][0]: tuples[1][0]})]
+    headers = tuples[0]
+    data = tuples[1:]
+    return [ns([
+        (headers[0], item[0])
+        ])
+        for item in data
+        ]
 
 
 # @old_modul.route('/members/aux')

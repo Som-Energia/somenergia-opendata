@@ -46,16 +46,47 @@ class Distribution_Test(unittest.TestCase):
 
     from testutils import assertNsEqual 
 
+    def assertTupleToObjectEquals(self, csv_input, yaml_output):
+        fixture = parse_tsv(csv_input)
+        self.assertNsEqual(ns(data=tuples2objects(fixture)), yaml_output)
+
+
     def test__tuple2object__1value_1attribute(self):
-        fixture = parse_tsv(
+        self.assertTupleToObjectEquals(
             'name\n'
             'value\n'
-            )
-        self.assertNsEqual(ns(data=tuples2objects(fixture)), """\
+            ,
+            """\
             data:
             - name: value
-            """)
+            """
+            )
 
+
+    def test__tuple2object__2value_1attribute(self):
+        self.assertTupleToObjectEquals(
+            'name\n'
+            'value1\n'
+            'value2\n'
+            ,
+            """\
+            data:
+            - name: value1
+            - name: value2
+            """
+            )
+
+    def _test__tuple2object__1value_2attribute(self):
+        self.assertTupleToObjectEquals(
+            'name1\tname2\n'
+            'value1\tvalue2\n'
+            ,
+            """\
+            data:
+            - name1: value1
+              name2: value2
+            """
+            )
 
 
 
