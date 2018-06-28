@@ -14,4 +14,8 @@ class Distribution_Test(unittest.TestCase):
         self.assertEqual(parse_tsv(fixture), [['item1', 'item2']])
 
 
+    def test__parse_tsv__1col_2row(self):
+        fixture = 'item1\nitem2'
+        self.assertEqual(parse_tsv(fixture), [['item1'],['item2']])
+
 # vim: et sw=4 ts=4

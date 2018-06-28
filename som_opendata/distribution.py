@@ -2,7 +2,7 @@
 
 
 def parse_tsv(tsv_data):
-    return [tsv_data.split('\t')]
+    return [line.split('\t') for line in tsv_data.split('\n')]
 
 
 
