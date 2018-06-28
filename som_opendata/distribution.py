@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
-
+from yamlns import namespace as ns
 
 def parse_tsv(tsv_data):
     return [
-        line.split('\t')
+        [item.strip() for item in line.split('\t')]
         for line in tsv_data.split('\n')
+        if line.strip()
         ]
 
 
+def tuples2objects(tuples):
+    return ns(name='value')
 
 
 # @old_modul.route('/members/aux')
