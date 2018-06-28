@@ -12,9 +12,11 @@ def parse_tsv(tsv_data):
 def tuples2objects(tuples):
     headers = tuples[0]
     data = tuples[1:]
-    return [ns([
-        (headers[0], item[0])
-        ])
+    return [
+        ns([
+            (header, value)
+            for header, value in zip(headers, item)
+            ])
         for item in data
         ]
 

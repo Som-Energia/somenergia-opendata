@@ -76,7 +76,7 @@ class Distribution_Test(unittest.TestCase):
             """
             )
 
-    def _test__tuple2object__1value_2attribute(self):
+    def test__tuple2object__1value_2attribute(self):
         self.assertTupleToObjectEquals(
             'name1\tname2\n'
             'value1\tvalue2\n'
