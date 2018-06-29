@@ -23,6 +23,9 @@ Recopilar usos que ens podem imaginar que ens facin de l'api
 
 ## Testos unitaris
 
+- Previ:
+  - TDD to convert table column names into atribute friendly names f:str -> str
+  - TDD: convert tables (tsv) with headers into lists of ns (0,1,2 columnes, 0,1,2 files)
 - Objectiu a llarg, construir el yaml sample.yaml
 - Primer cas: una taula amb header i "un sol poble", i una sola data
   - el mateix numero a tots nivells

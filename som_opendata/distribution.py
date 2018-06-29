@@ -20,6 +20,91 @@ def tuples2objects(tuples):
         for item in data
         ]
 
+def select_only_city(input, ine):
+    r = tuples2objects(parse_tsv(input))
+    return [item for item in r if item.codi_ine == ine]
+
+
+def aggregate(input):
+    d = tuples2objects(parse_tsv(input))
+    value = 0
+    for e in d:
+        if e.codi_ine == '04003':
+            value += int(e.quants)
+    cities = [ns(
+        code=e.codi_ine,
+        name=e.municipi,
+        data=e.quants
+        ) for e in d]
+    return """\
+            - code: ES
+              name: España
+              data """+str(value)+"""
+              ccaas:
+              - code: 01
+                name: Andalucia
+                data: """+str(value)+"""
+                states:
+                - code: 04
+                  name: Almeria
+                  data: """+str(value)+"""
+                  cities:
+                """+str(cities)+"""
+            """
+
+
+# Fent top level city és el resultat de tuples2objects
+
+import copy             
+
+def idem(tipus, elemA, elemB):
+     return elemA[tipus] == elemB[tipus]
+
+
+def eliminar(item, l):
+    return list(
+        filter(lambda e: not idem('codi_ine',item,e), l)
+        )
+
+def escollirINES(l):
+    llista = []
+    lTractar = copy.deepcopy(l)
+    for item in lTractar:
+        if not contains(item,llista):
+            if esUnic(item,l):                              
+                llista.append(item)
+            else:
+                itemAgregat = agregar(item,l)
+                eliminar(item,lTractar)
+                llista.append(itemAgregat)
+    return llista
+
+
+def esUnic(item, l):
+    count = 0
+    for e in l:
+        if count == 0 and idem('codi_ine',item,e):
+            count += 1
+        elif count == 1 and idem('codi_ine',item,e):
+            return False
+    return True
+
+
+def agregar(item, l):
+    newItem = copy.deepcopy(item)
+    newItem.quants = 0
+    for e in l:
+        if idem('codi_ine',item,e):
+            newItem.quants += int(e.quants)
+    return newItem
+
+
+def contains(item, l):
+    for e in l:
+        if idem('codi_ine',item,e):
+            return True
+    return False
+
 
 # @old_modul.route('/members/aux')
 # def members_2_rows():
