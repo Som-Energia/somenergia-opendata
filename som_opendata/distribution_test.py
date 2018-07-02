@@ -162,16 +162,17 @@ class Distribution_Test(unittest.TestCase):
 
     def test_state_dates_1date(self):
 
-        data = u'\n'.join([                                                           
-            headers,                                                                  
-            data_Adra],
-        )
+        data = u'\n'.join([
+            headers+'\tquants_20180201',
+            data_Adra+'\t3',
+        ])
         data = tuples2objects(parse_tsv(data))
         r = state_dates(data[0])
         self.assertEqual(
                 r,
                 [
                     isoDate("20180101"),
+                    isoDate("20180201"),
                 ]
             )
 

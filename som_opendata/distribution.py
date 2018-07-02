@@ -102,8 +102,12 @@ def aggregate(input):
 
 
 def state_dates(input):
+
+
     return [
-                isoDate("20180101"),
+            isoDate(k[len('quants_'):])
+            for k in input.keys()
+            if k.startswith('quants_')
            ]
 
 
