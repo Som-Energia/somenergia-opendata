@@ -7,22 +7,11 @@ from distribution import (
     escollirINES,
     )
 from yamlns import namespace as ns
-from app import app
-
 
 class Distribution_Test(unittest.TestCase):
     
-    @staticmethod
-    def setUpClass():
-        #BaseApi_Test.maxDiff=None
-        app.config['TESTING']=True
-
     def setUp(self):
-        self.client = app.test_client()
-
-    def get(self, *args, **kwds):
-        return self.client.get(*args,**kwds)
-
+        self.maxDiff=None
 
     def test__parse_tsv__1col_1row(self):
         fixture = 'item'
@@ -108,7 +97,6 @@ class Distribution_Test(unittest.TestCase):
         with open('./util_test/1row') as f:
             data = f.read()
         li = tuples2objects(parse_tsv(data))
-        #r = escollirINES(li)
         r = aggregate(data)
         self.assertNsEqual(r,"""\
             - code: ES
@@ -203,21 +191,6 @@ class Distribution_Test(unittest.TestCase):
                     name: Albox
                     data: 1
             """)
-
-
-    @unittest.skip("És massa complex per fer-ho a la primera, cal partir-ho")
-    def test__set_top__city_1date_1city(self):
-        response = self.get('/old/members/2015-01-01')
-        r = tuples2objects(parse_tsv(response))
-        self.assertNsEqual(
-            ns(dates=['2015-01-01'],
-               level='city',
-               data=
-                    [ns(codi='17155',
-                        name='Salt',
-                        data=[176])
-                    ]
-                ), r)
 
 
 
