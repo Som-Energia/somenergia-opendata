@@ -190,7 +190,7 @@ class Distribution_Test(unittest.TestCase):
                           '04003':
                             name: Adra
                             data: [2]
-                FR:
+              FR:
                 name: France
                 data: [10]
                 ccaas:
