@@ -9,9 +9,10 @@ from distribution import (
     )
 from yamlns import namespace as ns
 from yamlns.dateutils import Date as isoDate
+import io
+import b2btest
 
-
-headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tquants_20180101"
+headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
 data_Perignan = u"FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
 data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
@@ -24,6 +25,7 @@ class Distribution_Test(unittest.TestCase):
 
     def setUp(self):
         self.maxDiff=None
+        self.b2bdatapath = 'b2bdata'
 
     def test__parse_tsv__1col_1row(self):
         fixture = 'item'
@@ -136,7 +138,7 @@ class Distribution_Test(unittest.TestCase):
 
     def test__aggregate__with_1line_2dates(self):
         data = u'\n'.join([
-            headers+'\tquants_20180201',
+            headers+'\tcount_2018_02_01',
             data_Adra+'\t3',
         ])
         objectList = tuples2objects(parse_tsv(data))
@@ -330,7 +332,7 @@ class Distribution_Test(unittest.TestCase):
     def test_state_dates_1date(self):
 
         data = u'\n'.join([
-            headers+'\tquants_20180201',
+            headers+'\tcount_2018_02_01',
             data_Adra+'\t3',
         ])
         data = tuples2objects(parse_tsv(data))
@@ -343,6 +345,14 @@ class Distribution_Test(unittest.TestCase):
                 ]
             )
 
+
+    def test__aggregate__backToBack(self):
+        with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
+            data = f.read()
+
+        objectList = tuples2objects(parse_tsv(data))
+        r = aggregate(objectList)
+        self.assertB2BEqual(r.dump())
 
 
 

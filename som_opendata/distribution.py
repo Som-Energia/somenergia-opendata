@@ -27,9 +27,9 @@ def tuples2objects(tuples):
 def state_dates(input):
 
     return [
-            isoDate(k[len('quants_'):])
+            isoDate(k[len('count_'):].replace('_', ''))
             for k in input.keys()
-            if k.startswith('quants_')
+            if k.startswith('count_')
            ]
 
 
@@ -48,7 +48,7 @@ def aggregate(input):
 
     for linia in input:
 
-        linia.quants = [ int(linia['quants_'+date.compact])
+        linia.quants = [ int(linia['count_'+date.isoDate.replace('-','_')])
                     for date in dates
                ]
         
