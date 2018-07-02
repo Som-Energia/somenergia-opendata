@@ -54,8 +54,8 @@ def aggregate(entries):
 
     result = ns (
         dates = dates,
-         level = 'countries',
-         countries = ns()
+        level = 'countries',
+        countries = ns()
     )
 
     for entry in entries:
