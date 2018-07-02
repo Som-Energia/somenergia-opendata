@@ -106,6 +106,37 @@ def contains(item, l):
     return False
 
 
+def packageCountries(l):
+    d = ns()
+    for e in l:
+        if not e.codi_pais in d:
+            d[e.codi_pais] = ns()
+    return d
+
+
+def packageCCAA(l, d):
+    for e in l:
+        if not e.codi_ccaa in d[e.codi_pais]:
+            d[e.codi_pais][e.codi_ccaa] = ns()
+    return d
+
+
+def packageStates(l, d):
+    for e in l:
+        if not e.codi_provincia in d[e.codi_pais][e.codi_ccaa]:
+            d[e.codi_pais][e.codi_ccaa][e.codi_provincia] = ns()
+    return d
+
+
+def packageCities(l, d):
+    for e in l:
+        if not e.codi_ine in d[e.codi_pais][e.codi_ccaa][e.codi_provincia]:
+            d[e.codi_pais][e.codi_ccaa][e.codi_provincia][e.codi_ine] = e
+    return d
+
+
+
+
 # @old_modul.route('/members/aux')
 # def members_2_rows():
 #     with open('../random/csv_allColums_2Rows') as f:
