@@ -130,7 +130,7 @@ class Distribution_Test(unittest.TestCase):
             """)
 
 
-    def _test__aggregate__with_1line_2dates(self):
+    def test__aggregate__with_1line_2dates(self):
         data = u'\n'.join([
             headers+'\tquants_20180201',
             data_Adra+'\t3',
@@ -140,6 +140,7 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
+            - 2018-02-01
             level: countries
             countries:
               ES:

@@ -31,8 +31,11 @@ def select_only_city(input, ine):
 def aggregate(input):
 
     linia = input[0]
-    linia.quants = [ int(linia['quants_'+'20180101']) ]
     dates = state_dates(linia)
+    linia.quants = [ int(linia['quants_'+date.compact])
+                        for date in dates
+                   ]
+    
 
 
     return ns (
