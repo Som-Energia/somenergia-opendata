@@ -33,7 +33,22 @@ Recopilar usos que ens podem imaginar que ens facin de l'api
   - Refactor 1: Anar-ho passat a un ns real amb literals
   - Refactor 2: Agafar els literals de la taula
 - Segon cas: dos dates
+	- ens obliga a interpretar les dates dels headers (refactor previ)
+	- ens obliga a tractar els 'quants' com a un array i convertir-ho
+- Tercer cas: Dos pobles de paissos diferents
+	- ens obliga a introduir la iteracio per linia
+	- hi ha la part comuna que la construirem fora del bucle
+	- Afegirem cegament cada linia com a un pais nou (que arriben dos de ES? per aixo tenim el seguent test)
+- Quart cas: Mateix pais, diferent comunitat autonoma
+	- ens obliga a identificar si el pais ja hi es i si ho es, agregar per pais, sumant els numeros
+- Cinquè cas: Mateixa CCAA, diferent state
+	- igual que l'anterior pero amb CCAA's
+- Sisè cas: Mateix state, diferent city
+	- igual que l'anterior, pero amb state
+- Seté cas: Refactor extreure codi repetit (searchOrCreate)
+
 - Tercer cas: Dos pobles, una data (de diferents paisos? o de la mateixa provincia?)
+	
 - Quart cas: Anar pujant o baixant el punt de diferencia ente els dos pobles
 - Plantejem el test: dos pobles dos dates, si passa, l'esborrem
 
