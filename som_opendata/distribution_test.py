@@ -5,8 +5,10 @@ from distribution import (
     tuples2objects,
     aggregate,
     escollirINES,
+    state_dates,
     )
 from yamlns import namespace as ns
+from yamlns.dateutils import Date as isoDate
 
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tquants_20180101"
@@ -101,10 +103,10 @@ class Distribution_Test(unittest.TestCase):
     def test__aggregate__with_1line(self):
         data = u'\n'.join([
             headers,
-            data_Adra],
-        )
-        li = tuples2objects(parse_tsv(data))
-        r = aggregate(li)
+            data_Adra,
+        ])
+        objectList = tuples2objects(parse_tsv(data))
+        r = aggregate(objectList)
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
@@ -126,6 +128,54 @@ class Distribution_Test(unittest.TestCase):
                             name: Adra
                             data: 2
             """)
+
+
+    def _test__aggregate__with_1line_2dates(self):
+        data = u'\n'.join([
+            headers+'\tquants_20180201',
+            data_Adra+'\t3',
+        ])
+        objectList = tuples2objects(parse_tsv(data))
+        r = aggregate(objectList)
+        self.assertNsEqual(r,"""\
+            dates: 
+            - 2018-01-01
+            level: countries
+            countries:
+              ES:
+                name: España
+                data: 2 3
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    data: 2 3
+                    states:
+                      '04':
+                        name: Almería
+                        data: 2 3
+                        cities:
+                          '04003':
+                            name: Adra
+                            data: 2 3
+            """)
+
+
+    def test_state_dates_1date(self):
+
+        data = u'\n'.join([                                                           
+            headers,                                                                  
+            data_Adra],
+        )
+        data = tuples2objects(parse_tsv(data))
+        r = state_dates(data[0])
+        self.assertEqual(
+                r,
+                [
+                    isoDate("20180101"),
+                ]
+            )
+
+
 
 
     # def test__aggregate__same_city(self):

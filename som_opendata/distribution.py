@@ -69,6 +69,7 @@ def aggregate(input):
 
 
 
+
     d = tuples2objects(parse_tsv(input))
     value = 0
     for e in d:
@@ -97,6 +98,16 @@ def aggregate(input):
 
 
 # Fent top level city és el resultat de tuples2objects
+
+
+
+def state_dates(input):
+    return [
+                isoDate("20180101"),
+           ]
+
+
+
 
 import copy             
 
