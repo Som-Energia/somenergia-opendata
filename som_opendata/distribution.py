@@ -73,14 +73,8 @@ def aggregate(entries):
         )
         country.data = [a+b for a,b in zip(country.data, count)]
 
-        ccaa = country.ccaas.setdefault(
-            entry.codi_ccaa, ns(
-                name=entry.comunitat_autonoma,
-                data=[0]*len(dates),
-                states=ns(),
-            )
-        )
-        ccaa.data = [a+b for a,b in zip(ccaa.data, count)]
+        ccaa = aggregate_level(
+            entry, country, 'ccaas', 'codi_ccaa', 'comunitat_autonoma', 'states', count, dates)
 
         provincia = aggregate_level(
             entry, ccaa, 'states', 'codi_provincia', 'provincia', 'cities', count, dates)
