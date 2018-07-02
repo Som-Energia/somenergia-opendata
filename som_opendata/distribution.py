@@ -40,21 +40,27 @@ def aggregate(input):
                 ES=ns(
                     name='España',
                     data=2,
-                    ccaas=ns(
-                        {'01':ns(
+                    ccaas=ns({
+                        '01':ns(
                             name='Andalucia',
                             data=2,
-                            states=ns.loads("""
-                                '04':
-                                  name: Almeria
-                                  data: 2
-                                  cities:
-                                    04003:
-                                      name: Adra
-                                      data: 2
-                            """)
-                            )}
-                        ))))
+                            states=ns({
+                                    '04':ns(
+                                        name='Almeria',
+                                        data=2,
+                                        cities=ns({
+                                        '04003': ns(
+                                            name='Adra',
+                                            data=2
+                                            )
+                                        })
+                                    )
+                                })
+                            )
+                            })
+                        )
+                )
+         )
 
 
 

@@ -122,7 +122,7 @@ class Distribution_Test(unittest.TestCase):
                         name: Almeria
                         data: 2
                         cities:
-                          04003:
+                          '04003':
                             name: Adra
                             data: 2
             """)
