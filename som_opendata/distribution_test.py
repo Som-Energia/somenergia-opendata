@@ -276,7 +276,7 @@ class Distribution_Test(unittest.TestCase):
                     states:
                       '17':
                         name: Girona
-                        data: [2020]
+                        data: [20]
                         cities:
                           '17079':
                             name: Girona
