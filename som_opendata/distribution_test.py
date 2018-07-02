@@ -114,19 +114,19 @@ class Distribution_Test(unittest.TestCase):
             countries:
               ES:
                 name: España
-                data: 2
+                data: [2]
                 ccaas:
                   '01':
                     name: Andalucía
-                    data: 2
+                    data: [2]
                     states:
                       '04':
                         name: Almería
-                        data: 2
+                        data: [2]
                         cities:
                           '04003':
                             name: Adra
-                            data: 2
+                            data: [2]
             """)
 
 
@@ -144,19 +144,19 @@ class Distribution_Test(unittest.TestCase):
             countries:
               ES:
                 name: España
-                data: 2 3
+                data: [2, 3]
                 ccaas:
                   '01':
                     name: Andalucía
-                    data: 2 3
+                    data: [2, 3]
                     states:
                       '04':
                         name: Almería
-                        data: 2 3
+                        data: [2, 3]
                         cities:
                           '04003':
                             name: Adra
-                            data: 2 3
+                            data: [2, 3]
             """)
 
 
@@ -175,6 +175,9 @@ class Distribution_Test(unittest.TestCase):
                     isoDate("20180201"),
                 ]
             )
+
+
+
 
 
 
