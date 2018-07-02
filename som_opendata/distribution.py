@@ -73,13 +73,8 @@ def aggregate(entries):
         provincia = aggregate_level(
             entry, ccaa, 'states', 'codi_provincia', 'provincia', count, dates)
 
-        cities = provincia.setdefault('cities', ns())
-        city = cities.setdefault(
-            entry.codi_ine, ns(
-                name=entry.municipi,
-                data=count,
-            )
-        )
+        city = aggregate_level(
+            entry, provincia, 'cities', 'codi_ine', 'municipi', count, dates)
 
     return result
 
