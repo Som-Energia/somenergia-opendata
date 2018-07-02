@@ -60,13 +60,7 @@ def aggregate(input):
                             linia.codi_ccaa:ns(
                                 name=linia.comunitat_autonoma,
                                 data=linia.quants[:],
-                                states=ns({
-                                        linia.codi_provincia:ns(
-                                            name=linia.provincia,
-                                            data=linia.quants[:],
-                                            cities=ns()
-                                        )
-                                    })
+                                states=ns()
                                 )
                                 })
                             )}
@@ -74,8 +68,6 @@ def aggregate(input):
 
         country = result.countries[linia.codi_pais]
         ccaa = country.ccaas[linia.codi_ccaa]
-        provincia = ccaa.states[linia.codi_provincia]
-        #city = provincia.cities[linia.codi_ine]
 
         '''
         country = linia.codi_pais:ns(
@@ -89,15 +81,16 @@ def aggregate(input):
             data=linia.quants[:],
             states=ns()
         )
+        '''
 
-        provincia = ccaa.states.setdefault(linia.codi_provincia, ns(
-            linia.codi_provincia:ns(
+        provincia = ccaa.states.setdefault(linia.codi_provincia,
+            ns(
                 name=linia.provincia,
                 data=linia.quants[:],
                 cities=ns()
             )
-        ))
-        '''
+        )
+        
 
         city = provincia.cities.setdefault(linia.codi_ine, ns(
             name=linia.municipi,
