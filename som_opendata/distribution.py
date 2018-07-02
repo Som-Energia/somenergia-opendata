@@ -32,11 +32,11 @@ def aggregate(input):
 
     linia = input[0]
     linia.quants = int(linia.quants_20180101)
+    dates = state_dates(linia)
+
 
     return ns (
-        dates = [
-             isoDate('2018-01-01'),
-           ],
+        dates = dates,
          level = 'countries',
          countries = ns({
                 linia.codi_pais:ns(
@@ -102,7 +102,6 @@ def aggregate(input):
 
 
 def state_dates(input):
-
 
     return [
             isoDate(k[len('quants_'):])
