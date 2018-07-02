@@ -14,7 +14,7 @@ from yamlns.dateutils import Date as isoDate
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tquants_20180101"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
 data_Perignan = u"FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
-
+data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
 
 class Distribution_Test(unittest.TestCase):
     
@@ -190,6 +190,64 @@ class Distribution_Test(unittest.TestCase):
                           '04003':
                             name: Adra
                             data: [2]
+              FR:
+                name: France
+                data: [10]
+                ccaas:
+                  '76':
+                    name: Occità
+                    data: [10]
+                    states:
+                      '66':
+                        name: Pyrénées-Orientales
+                        data: [10]
+                        cities:
+                          '66136':
+                            name: Perpignan
+                            data: [10]
+            """)
+
+
+    def _test__aggregate__with_3line(self):
+        data = u'\n'.join([
+            headers,
+            data_Adra,
+            data_Perignan,
+            data_Girona,
+        ])
+        objectList = tuples2objects(parse_tsv(data))
+        r = aggregate(objectList)
+        self.assertNsEqual(r,"""\
+            dates: 
+            - 2018-01-01
+            level: countries
+            countries:
+              ES:
+                name: España
+                data: [22]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    data: [2]
+                    states:
+                      '04':
+                        name: Almería
+                        data: [2]
+                        cities:
+                          '04003':
+                            name: Adra
+                            data: [2]
+                  '09':
+                    name: Catalunya
+                    data: [20]
+                    states:
+                      '17':
+                        name: Girona
+                        data: [20]
+                        cities:
+                          '17079':
+                            name: Girona
+                            data: [20]
               FR:
                 name: France
                 data: [10]

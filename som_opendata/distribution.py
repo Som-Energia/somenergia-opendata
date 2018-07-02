@@ -51,6 +51,9 @@ def aggregate(input):
         linia.quants = [ int(linia['quants_'+date.compact])
                     for date in dates
                ]
+        
+
+
         result.countries.update({
                     linia.codi_pais:ns(
                         name=linia.pais,
@@ -75,6 +78,11 @@ def aggregate(input):
                                 })
                             )}
                         )
+
+        country = result.countries[linia.codi_pais]
+        ccaa = country.ccaas[linia.codi_ccaa]
+        provincia = ccaa.states[linia.codi_provincia]
+        city = provincia.cities[linia.codi_ine]
 
     return result
 
