@@ -55,17 +55,20 @@ def aggregate(input):
 
         country = result.countries.setdefault(linia.codi_pais, ns(
                 name=linia.pais,
-                data=linia.quants[:],
+                data=[0]*len(dates),
                 ccaas=ns()
             )
         )
+        country.data = [a+b for a,b in zip(country.data, linia.quants)]
 
         ccaa = country.ccaas.setdefault(linia.codi_ccaa, ns(
                 name=linia.comunitat_autonoma,
-                data=linia.quants[:],
+                data=[0]*len(dates),
                 states=ns()
             )
         )
+
+        ccaa.data = [a+b for a,b in zip(ccaa.data, linia.quants)]
 
         provincia = ccaa.states.setdefault(linia.codi_provincia, ns(
                 name=linia.provincia,
@@ -79,8 +82,6 @@ def aggregate(input):
                 data=linia.quants[:]
             )
         )
-
-        
 
     return result
 

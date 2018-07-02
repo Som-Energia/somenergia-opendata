@@ -15,6 +15,8 @@ headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprov
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
 data_Perignan = u"FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
 data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
+data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t09090\tSantJoan\t1000"
+
 
 class Distribution_Test(unittest.TestCase):
     
@@ -208,7 +210,7 @@ class Distribution_Test(unittest.TestCase):
             """)
 
 
-    def _test__aggregate__with_2line_sameCountry(self):
+    def test__aggregate__with_2line_sameCountry(self):
         data = u'\n'.join([
             headers,
             data_Adra,
@@ -248,6 +250,47 @@ class Distribution_Test(unittest.TestCase):
                             name: Girona
                             data: [20]
             """)
+
+
+    def test__aggregate__with_2line_sameCCAA(self):
+        data = u'\n'.join([
+            headers,
+            data_Girona,
+            data_SantJoan,
+        ])
+        objectList = tuples2objects(parse_tsv(data))
+        r = aggregate(objectList)
+        self.assertNsEqual(r,"""\
+            dates: 
+            - 2018-01-01
+            level: countries
+            countries:
+              ES:
+                name: España
+                data: [1020]
+                ccaas:
+                  '09':
+                    name: Catalunya
+                    data: [1020]
+                    states:
+                      '17':
+                        name: Girona
+                        data: [20]
+                        cities:
+                          '17079':
+                            name: Girona
+                            data: [20]
+                      '08':
+                        name: Barcelona
+                        data: [1000]
+                        cities:
+                          '09090':
+                            name: SantJoan
+                            data: [1000]
+            """)
+
+
+
 
 
     def test_state_dates_1date(self):
