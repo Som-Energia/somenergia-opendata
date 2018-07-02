@@ -84,12 +84,12 @@ def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
     code = entry[code_attr]
     if code in sibblings:
         result = sibblings[code]
+        result.data = [a+b for a,b in zip(result.data, entry.count)]
     else:
         result = sibblings[code] = ns()
         result.name = name
-        result.data = [0]*len(entry.count)
+        result.data = entry.count[:]
 
-    result.data = [a+b for a,b in zip(result.data, entry.count)]
     return result
 
 
