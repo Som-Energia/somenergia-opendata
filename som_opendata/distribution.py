@@ -38,19 +38,19 @@ def aggregate(input):
            ],
          level = 'countries',
          countries = ns({
-                'ES':ns(
+                linia.codi_pais:ns(
                     name=linia.pais,
                     data=2,
                     ccaas=ns({
-                        '01':ns(
+                        linia.codi_ccaa:ns(
                             name=linia.comunitat_autonoma,
                             data=2,
                             states=ns({
-                                    '04':ns(
+                                    linia.codi_provincia:ns(
                                         name=linia.provincia,
                                         data=2,
                                         cities=ns({
-                                        '04003': ns(
+                                        linia.codi_ine: ns(
                                             name=linia.municipi,
                                             data=2
                                             )
