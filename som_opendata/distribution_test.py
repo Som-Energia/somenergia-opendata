@@ -106,7 +106,7 @@ class Distribution_Test(unittest.TestCase):
             """
             )
 
-    def test__aggregate__with_1line(self):
+    def test__aggregate__1line(self):
         data = u'\n'.join([
             headers,
             data_Adra,
@@ -136,7 +136,7 @@ class Distribution_Test(unittest.TestCase):
             """)
 
 
-    def test__aggregate__with_1line_2dates(self):
+    def test__aggregate__1line_2dates(self):
         data = u'\n'.join([
             headers+'\tcount_2018_02_01',
             data_Adra+'\t3',
@@ -167,7 +167,7 @@ class Distribution_Test(unittest.TestCase):
             """)
 
 
-    def test__aggregate__with_2line(self):
+    def test__aggregate__2lines_differentCountry(self):
         data = u'\n'.join([
             headers,
             data_Adra,
@@ -213,7 +213,7 @@ class Distribution_Test(unittest.TestCase):
             """)
 
 
-    def test__aggregate__with_2line_sameCountry(self):
+    def test__aggregate__2lines_differentCcaa(self):
         data = u'\n'.join([
             headers,
             data_Adra,
@@ -255,7 +255,7 @@ class Distribution_Test(unittest.TestCase):
             """)
 
 
-    def test__aggregate__with_2line_sameCCAA(self):
+    def test__aggregate__2lines_differentState(self):
         data = u'\n'.join([
             headers,
             data_Girona,
@@ -292,7 +292,7 @@ class Distribution_Test(unittest.TestCase):
                             data: [1000]
             """)
 
-    def test__aggregate__with_2line_sameState(self):
+    def test__aggregate__2lines_differentCities(self):
         data = u'\n'.join([
             headers,
             data_Girona,
