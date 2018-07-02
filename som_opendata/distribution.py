@@ -83,7 +83,8 @@ def aggregate(entries):
     return result
 
 def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr, children_attr, count, dates):
-    result = parent[sibbling_attr].setdefault(
+    sibblings = parent.setdefault(sibbling_attr, ns())
+    result = sibblings.setdefault(
         entry[code_attr], ns(
             name=entry[name_attr],
             data=[0]*len(dates),
