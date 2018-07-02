@@ -30,27 +30,28 @@ def select_only_city(input, ine):
 
 def aggregate(input):
 
+    linia = input[0]
 
     return ns (
         dates = [
              isoDate('2018-01-01'),
            ],
          level = 'countries',
-         countries = ns(
-                ES=ns(
-                    name='España',
+         countries = ns({
+                'ES':ns(
+                    name=linia.pais,
                     data=2,
                     ccaas=ns({
                         '01':ns(
-                            name='Andalucia',
+                            name=linia.comunitat_autonoma,
                             data=2,
                             states=ns({
                                     '04':ns(
-                                        name='Almeria',
+                                        name=linia.provincia,
                                         data=2,
                                         cities=ns({
                                         '04003': ns(
-                                            name='Adra',
+                                            name=linia.municipi,
                                             data=2
                                             )
                                         })
@@ -58,7 +59,7 @@ def aggregate(input):
                                 })
                             )
                             })
-                        )
+                        )}
                 )
          )
 

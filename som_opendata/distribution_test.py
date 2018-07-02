@@ -9,8 +9,8 @@ from distribution import (
 from yamlns import namespace as ns
 
 
-headers = u"codi_pais   pais    codi_ccaa   comunitat_autonoma  codi_provincia  provincia   codi_ine    municipi    quants_20180101"
-data_Adra = u"ES    España  01  Andalucía   04  Almería 04003   Adra    2"
+headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tquants_20180101"
+data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
 
 
 class Distribution_Test(unittest.TestCase):
@@ -115,11 +115,11 @@ class Distribution_Test(unittest.TestCase):
                 data: 2
                 ccaas:
                   '01':
-                    name: Andalucia
+                    name: Andalucía
                     data: 2
                     states:
                       '04':
-                        name: Almeria
+                        name: Almería
                         data: 2
                         cities:
                           '04003':
