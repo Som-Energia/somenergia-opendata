@@ -113,7 +113,7 @@ class Distribution_Test(unittest.TestCase):
               ES:
                 name: España
                 data: 2
-                cccaa:
+                ccaas:
                   01:
                     name: Andalucia
                     data: 2

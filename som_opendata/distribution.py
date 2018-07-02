@@ -36,46 +36,25 @@ def aggregate(input):
              isoDate('2018-01-01'),
            ],
          level = 'countries',
-         countries = ns.loads("""
-              ES:
-                name: España
-                data: 2
-                cccaa:
-                  01:
-                    name: Andalucia
-                    data: 2
-                    states:
-                      04:
-                        name: Almeria
+         countries = ns(
+                ES=ns(
+                    name='España',
+                    data=2,
+                    ccaas=ns.loads("""
+                      01:
+                        name: Andalucia
                         data: 2
-                        cities:
-                          04003:
-                            name: Adra
+                        states:
+                          04:
+                            name: Almeria
                             data: 2
-      """))
+                            cities:
+                              04003:
+                                name: Adra
+                                data: 2
+                        """))))
 
 
-
-    return ns.loads("""\
-            dates: 2018-01-01
-            level: countries
-            countries:
-              ES:
-                name: España
-                data: 2
-                cccaa:
-                  01:
-                    name: Andalucia
-                    data: 2
-                    states:
-                      04:
-                        name: Almeria
-                        data: 2
-                        cities:
-                          04003:
-                            name: Adra
-                            data: 2
-            """)
 
     d = tuples2objects(parse_tsv(input))
     value = 0
