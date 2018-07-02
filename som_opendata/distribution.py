@@ -23,9 +23,14 @@ def tuples2objects(tuples):
         for item in data
         ]
 
-def select_only_city(input, ine):
-    r = tuples2objects(parse_tsv(input))
-    return [item for item in r if item.codi_ine == ine]
+
+def state_dates(input):
+
+    return [
+            isoDate(k[len('quants_'):])
+            for k in input.keys()
+            if k.startswith('quants_')
+           ]
 
 
 def aggregate(input):
@@ -37,6 +42,38 @@ def aggregate(input):
                    ]
     
 
+    result = ns (
+        dates = dates,
+         level = 'countries',
+         countries = ns()
+    )
+
+    result.countries.update({
+                linia.codi_pais:ns(
+                    name=linia.pais,
+                    data=linia.quants[:],
+                    ccaas=ns({
+                        linia.codi_ccaa:ns(
+                            name=linia.comunitat_autonoma,
+                            data=linia.quants[:],
+                            states=ns({
+                                    linia.codi_provincia:ns(
+                                        name=linia.provincia,
+                                        data=linia.quants[:],
+                                        cities=ns({
+                                        linia.codi_ine: ns(
+                                            name=linia.municipi,
+                                            data=linia.quants[:]
+                                            )
+                                        })
+                                    )
+                                })
+                            )
+                            })
+                        )}
+                    )
+
+    return result
 
     return ns (
         dates = dates,
@@ -67,50 +104,6 @@ def aggregate(input):
                 )
          )
 
-
-
-
-
-
-
-    d = tuples2objects(parse_tsv(input))
-    value = 0
-    for e in d:
-        if e.codi_ine == '04003':
-            value += int(e.quants)
-    cities = [ns(
-        code=e.codi_ine,
-        name=e.municipi,
-        data=e.quants
-        ) for e in d]
-    return """\
-            - code: ES
-              name: España
-              data """+str(value)+"""
-              ccaas:
-              - code: 01
-                name: Andalucia
-                data: """+str(value)+"""
-                states:
-                - code: 04
-                  name: Almeria
-                  data: """+str(value)+"""
-                  cities:
-                """+str(cities)+"""
-            """
-
-
-# Fent top level city és el resultat de tuples2objects
-
-
-
-def state_dates(input):
-
-    return [
-            isoDate(k[len('quants_'):])
-            for k in input.keys()
-            if k.startswith('quants_')
-           ]
 
 
 
@@ -196,6 +189,10 @@ def packageCities(l, d):
             d[e.codi_pais][e.codi_ccaa][e.codi_provincia][e.codi_ine] = e
     return d
 
+
+def select_only_city(input, ine):
+    r = tuples2objects(parse_tsv(input))
+    return [item for item in r if item.codi_ine == ine]
 
 
 
