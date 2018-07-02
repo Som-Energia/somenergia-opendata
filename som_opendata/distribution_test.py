@@ -10,6 +10,9 @@ from yamlns import namespace as ns
 
 class Distribution_Test(unittest.TestCase):
     
+    headers = u"codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	codi_ine	municipi	quants"
+    data_Adra = u"ES	España	01	Andalucía	04	Almería	04003	Adra	2"
+
     def setUp(self):
         self.maxDiff=None
 
@@ -91,7 +94,6 @@ class Distribution_Test(unittest.TestCase):
               name2: value2
             """
             )
-
 
     def test__aggregate__with_1line(self):
         with open('./util_test/1row') as f:
