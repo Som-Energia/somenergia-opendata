@@ -52,8 +52,6 @@ def aggregate(input):
                     for date in dates
                ]
         
-
-
         result.countries.update({
                     linia.codi_pais:ns(
                         name=linia.pais,
@@ -66,12 +64,7 @@ def aggregate(input):
                                         linia.codi_provincia:ns(
                                             name=linia.provincia,
                                             data=linia.quants[:],
-                                            cities=ns({
-                                            linia.codi_ine: ns(
-                                                name=linia.municipi,
-                                                data=linia.quants[:]
-                                                )
-                                            })
+                                            cities=ns()
                                         )
                                     })
                                 )
@@ -82,7 +75,36 @@ def aggregate(input):
         country = result.countries[linia.codi_pais]
         ccaa = country.ccaas[linia.codi_ccaa]
         provincia = ccaa.states[linia.codi_provincia]
-        city = provincia.cities[linia.codi_ine]
+        #city = provincia.cities[linia.codi_ine]
+
+        '''
+        country = linia.codi_pais:ns(
+            name=linia.pais,
+            data=linia.quants[:],
+            ccaas=ns()
+        )
+        
+        ccaa = linia.codi_ccaa:ns(
+            name=linia.comunitat_autonoma,
+            data=linia.quants[:],
+            states=ns()
+        )
+
+        provincia = ccaa.states.setdefault(linia.codi_provincia, ns(
+            linia.codi_provincia:ns(
+                name=linia.provincia,
+                data=linia.quants[:],
+                cities=ns()
+            )
+        ))
+        '''
+
+        city = provincia.cities.setdefault(linia.codi_ine, ns(
+            name=linia.municipi,
+            data=linia.quants[:]
+        ))
+
+        
 
     return result
 

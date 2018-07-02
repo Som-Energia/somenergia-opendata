@@ -208,11 +208,10 @@ class Distribution_Test(unittest.TestCase):
             """)
 
 
-    def _test__aggregate__with_3line(self):
+    def _test__aggregate__with_2line_sameCountry(self):
         data = u'\n'.join([
             headers,
             data_Adra,
-            data_Perignan,
             data_Girona,
         ])
         objectList = tuples2objects(parse_tsv(data))
@@ -248,21 +247,6 @@ class Distribution_Test(unittest.TestCase):
                           '17079':
                             name: Girona
                             data: [20]
-              FR:
-                name: France
-                data: [10]
-                ccaas:
-                  '76':
-                    name: Occità
-                    data: [10]
-                    states:
-                      '66':
-                        name: Pyrénées-Orientales
-                        data: [10]
-                        cities:
-                          '66136':
-                            name: Perpignan
-                            data: [10]
             """)
 
 
