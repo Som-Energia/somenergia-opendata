@@ -72,10 +72,12 @@ def aggregate(input):
 
         provincia = ccaa.states.setdefault(linia.codi_provincia, ns(
                 name=linia.provincia,
-                data=linia.quants[:],
+                data=[0]*len(dates),
                 cities=ns()
             )
         )
+
+        provincia.data = [a+b for a,b in zip(provincia.data, linia.quants)]
 
         city = provincia.cities.setdefault(linia.codi_ine, ns(
                 name=linia.municipi,

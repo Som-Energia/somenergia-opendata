@@ -16,6 +16,7 @@ data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
 data_Perignan = u"FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
 data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
 data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t09090\tSantJoan\t1000"
+data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
 
 class Distribution_Test(unittest.TestCase):
@@ -275,7 +276,7 @@ class Distribution_Test(unittest.TestCase):
                     states:
                       '17':
                         name: Girona
-                        data: [20]
+                        data: [2020]
                         cities:
                           '17079':
                             name: Girona
@@ -289,6 +290,39 @@ class Distribution_Test(unittest.TestCase):
                             data: [1000]
             """)
 
+
+    def test__aggregate__with_2line_sameState(self):
+        data = u'\n'.join([
+            headers,
+            data_Girona,
+            data_Amer,
+        ])
+        objectList = tuples2objects(parse_tsv(data))
+        r = aggregate(objectList)
+        self.assertNsEqual(r,"""\
+            dates: 
+            - 2018-01-01
+            level: countries
+            countries:
+              ES:
+                name: España
+                data: [2020]
+                ccaas:
+                  '09':
+                    name: Catalunya
+                    data: [2020]
+                    states:
+                      '17':
+                        name: Girona
+                        data: [2020]
+                        cities:
+                          '17079':
+                            name: Girona
+                            data: [20]
+                          '17007':
+                            name: Amer
+                            data: [2000]
+            """)
 
 
 
