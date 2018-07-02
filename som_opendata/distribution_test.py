@@ -108,8 +108,8 @@ class Distribution_Test(unittest.TestCase):
         with open('./util_test/1row') as f:
             data = f.read()
         li = tuples2objects(parse_tsv(data))
-        r = escollirINES(li)
-        #r = aggregate(data)
+        #r = escollirINES(li)
+        r = aggregate(data)
         self.assertNsEqual(r,"""\
             - code: ES
               name: España
@@ -133,8 +133,7 @@ class Distribution_Test(unittest.TestCase):
         with open('./util_test/2rowSameCity') as f:
             data = f.read()
         li = tuples2objects(parse_tsv(data))
-        r = escollirINES(li)
-        #r = aggregate(data)
+        r = aggregate(data)
         self.assertNsEqual(r,"""\
             - code: ES
               name: España
@@ -158,8 +157,7 @@ class Distribution_Test(unittest.TestCase):
         with open('./util_test/2rowSameState') as f:
             data = f.read()
         li = tuples2objects(parse_tsv(data))
-        r = escollirINES(li)
-        #r = aggregate(data)
+        r = aggregate(data)
         self.assertNsEqual(r,"""\
             - code: ES
               name: España
