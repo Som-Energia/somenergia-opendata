@@ -31,6 +31,7 @@ def select_only_city(input, ine):
 def aggregate(input):
 
     linia = input[0]
+    linia.quants = int(linia.quants_20180101)
 
     return ns (
         dates = [
@@ -40,19 +41,19 @@ def aggregate(input):
          countries = ns({
                 linia.codi_pais:ns(
                     name=linia.pais,
-                    data=2,
+                    data=linia.quants,
                     ccaas=ns({
                         linia.codi_ccaa:ns(
                             name=linia.comunitat_autonoma,
-                            data=2,
+                            data=linia.quants,
                             states=ns({
                                     linia.codi_provincia:ns(
                                         name=linia.provincia,
-                                        data=2,
+                                        data=linia.quants,
                                         cities=ns({
                                         linia.codi_ine: ns(
                                             name=linia.municipi,
-                                            data=2
+                                            data=linia.quants
                                             )
                                         })
                                     )
@@ -62,6 +63,9 @@ def aggregate(input):
                         )}
                 )
          )
+
+
+
 
 
 
