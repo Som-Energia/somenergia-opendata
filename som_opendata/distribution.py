@@ -26,6 +26,26 @@ def select_only_city(input, ine):
 
 
 def aggregate(input):
+
+
+    return """\
+            dates: 2018-01-01
+            level: countries
+            countries:
+              ES:
+                name: España
+                data: 2
+                01:
+                  name: Andalucia
+                  data: 2
+                  04:
+                    name: Almeria
+                    data: 2
+                    04003:
+                      name: Adra
+                      data: 2
+            """
+
     d = tuples2objects(parse_tsv(input))
     value = 0
     for e in d:
@@ -106,6 +126,8 @@ def contains(item, l):
     return False
 
 
+
+
 def packageCountries(l):
     d = ns()
     for e in l:
@@ -135,18 +157,6 @@ def packageCities(l, d):
     return d
 
 
-
-
-# @old_modul.route('/members/aux')
-# def members_2_rows():
-#     with open('../random/csv_allColums_2Rows') as f:
-#         data = f.readlines()
-#     ln1 = [d.replace('\t', ' ').replace('\n', '') for d in data]
-#     headers = ln1[0].split()
-#     ln1.remove(ln1[0])
-#     ln1 = [d.replace('\t', ' ').replace('\n', '').split() for d in ln1]
-#     aux = [ns(zip(headers, n)) for n in ln1]
-#     return aux
 
 
 

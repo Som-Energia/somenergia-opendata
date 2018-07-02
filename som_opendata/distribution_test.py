@@ -8,10 +8,13 @@ from distribution import (
     )
 from yamlns import namespace as ns
 
+
+headers = u"codi_pais   pais    codi_ccaa   comunitat_autonoma  codi_provincia  provincia   codi_ine    municipi    quants_20180101"
+data_Adra = u"ES    España  01  Andalucía   04  Almería 04003   Adra    2"
+
+
 class Distribution_Test(unittest.TestCase):
     
-    headers = u"codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	codi_ine	municipi	quants"
-    data_Adra = u"ES	España	01	Andalucía	04	Almería	04003	Adra	2"
 
     def setUp(self):
         self.maxDiff=None
@@ -96,103 +99,105 @@ class Distribution_Test(unittest.TestCase):
             )
 
     def test__aggregate__with_1line(self):
-        with open('./util_test/1row') as f:
-            data = f.read()
+        data = u'\n'.join([
+            headers,
+            data_Adra],
+        )
         li = tuples2objects(parse_tsv(data))
-        r = aggregate(data)
+        r = aggregate(li)
         self.assertNsEqual(r,"""\
-            - code: ES
-              name: España
-              data 2
-              ccaas:
-              - code: 01
-                name: Andalucia
+            dates: 2018-01-01
+            level: countries
+            countries:
+              ES:
+                name: España
                 data: 2
-                states:
-                - code: 04
-                  name: Almeria
+                01:
+                  name: Andalucia
                   data: 2
-                  cities:
-                  - code: 04003
-                    name: Adra
+                  04:
+                    name: Almeria
                     data: 2
+                    04003:
+                      name: Adra
+                      data: 2
             """)
 
 
-    def test__aggregate__same_city(self):
-        with open('./util_test/2rowSameCity') as f:
-            data = f.read()
-        li = tuples2objects(parse_tsv(data))
-        r = aggregate(data)
-        self.assertNsEqual(r,"""\
-            - code: ES
-              name: España
-              data 3
-              ccaas:
-              - code: 01
-                name: Andalucia
-                data: 3
-                states:
-                - code: 04
-                  name: Almeria
-                  data: 3
-                  cities:
-                  - code: 04003
-                    name: Adra
-                    data: 3
-            """)
+    # def test__aggregate__same_city(self):
+    #     with open('./som_opendata/util_test/2rowSameCity') as f:
+    #         data = f.read()
+    #     li = tuples2objects(parse_tsv(data))
+    #     r = aggregate(data)
+    #     self.assertNsEqual(r,"""\
+    #         - code: ES
+    #           name: España
+    #           data 3
+    #           ccaas:
+    #           - code: 01
+    #             name: Andalucia
+    #             data: 3
+    #             states:
+    #             - code: 04
+    #               name: Almeria
+    #               data: 3
+    #               cities:
+    #               - code: 04003
+    #                 name: Adra
+    #                 data: 3
+    #         """)
 
 
-    def test__aggregate__same_state(self):
-        with open('./util_test/2rowSameState') as f:
-            data = f.read()
-        li = tuples2objects(parse_tsv(data))
-        r = aggregate(data)
-        self.assertNsEqual(r,"""\
-            - code: ES
-              name: España
-              data 3
-              ccaas:
-              - code: 01
-                name: Andalucia
-                data: 3
-                states:
-                - code: 04
-                  name: Almeria
-                  data: 3
-                  cities:
-                  - code: 04003
-                    name: Adra
-                    data: 2
-                  - code: 04006
-                    name: Albox
-                    data: 1
-            """)
+    # def test__aggregate__same_state(self):
+    #     with open('./som_opendata/util_test/2rowSameState') as f:
+    #         data = f.read()
+    #     li = tuples2objects(parse_tsv(data))
+    #     r = aggregate(data)
+    #     self.assertNsEqual(r,"""\
+    #         - code: ES
+    #           name: España
+    #           data 3
+    #           ccaas:
+    #           - code: 01
+    #             name: Andalucia
+    #             data: 3
+    #             states:
+    #             - code: 04
+    #               name: Almeria
+    #               data: 3
+    #               cities:
+    #               - code: 04003
+    #                 name: Adra
+    #                 data: 2
+    #               - code: 04006
+    #                 name: Albox
+    #                 data: 1
+    #         """)
 
-    def _test__aggregate__same_state(self):
-        with open('./util_test/2rowDifCountry') as f:
-            data = f.read()
-        r = aggregate(data)
-        self.assertEqual(r,"""\
-            - code: ES
-              name: España
-              data 3
-              ccaas:
-              - code: 01
-                name: Andalucia
-                data: 3
-                states:
-                - code: 04
-                  name: Almeria
-                  data: 3
-                  cities:
-                  - code: 04003
-                    name: Adra
-                    data: 2
-                  - code: 04006
-                    name: Albox
-                    data: 1
-            """)
+    # def _test__aggregate__same_state(self):
+    #     with open('./som_opendata/util_test/2rowDifCountry') as f:
+    #         data = f.read()
+    #     r = aggregate(data)
+    #     self.assertEqual(r,"""\
+    #         - code: ES
+    #           name: España
+    #           data 3
+    #           ccaas:
+    #           - code: 01
+    #             name: Andalucia
+    #             data: 3
+    #             states:
+    #             - code: 04
+    #               name: Almeria
+    #               data: 3
+    #               cities:
+    #               - code: 04003
+    #                 name: Adra
+    #                 data: 2
+    #               - code: 04006
+    #                 name: Albox
+    #                 data: 1
+    #         """)
 
 
 
