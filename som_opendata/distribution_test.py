@@ -162,7 +162,7 @@ class Distribution_Test(unittest.TestCase):
             """)
 
 
-    def _test__aggregate__with_2line(self):
+    def test__aggregate__with_2line(self):
         data = u'\n'.join([
             headers,
             data_Adra,

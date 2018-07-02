@@ -37,9 +37,7 @@ def aggregate(input):
 
     linia = input[0]
     dates = state_dates(linia)
-    linia.quants = [ int(linia['quants_'+date.compact])
-                        for date in dates
-                   ]
+
     
 
     result = ns (
@@ -48,61 +46,38 @@ def aggregate(input):
          countries = ns()
     )
 
-    result.countries.update({
-                linia.codi_pais:ns(
-                    name=linia.pais,
-                    data=linia.quants[:],
-                    ccaas=ns({
-                        linia.codi_ccaa:ns(
-                            name=linia.comunitat_autonoma,
-                            data=linia.quants[:],
-                            states=ns({
-                                    linia.codi_provincia:ns(
-                                        name=linia.provincia,
-                                        data=linia.quants[:],
-                                        cities=ns({
-                                        linia.codi_ine: ns(
-                                            name=linia.municipi,
-                                            data=linia.quants[:]
-                                            )
-                                        })
-                                    )
+    for linia in input:
+
+        linia.quants = [ int(linia['quants_'+date.compact])
+                    for date in dates
+               ]
+        result.countries.update({
+                    linia.codi_pais:ns(
+                        name=linia.pais,
+                        data=linia.quants[:],
+                        ccaas=ns({
+                            linia.codi_ccaa:ns(
+                                name=linia.comunitat_autonoma,
+                                data=linia.quants[:],
+                                states=ns({
+                                        linia.codi_provincia:ns(
+                                            name=linia.provincia,
+                                            data=linia.quants[:],
+                                            cities=ns({
+                                            linia.codi_ine: ns(
+                                                name=linia.municipi,
+                                                data=linia.quants[:]
+                                                )
+                                            })
+                                        )
+                                    })
+                                )
                                 })
-                            )
-                            })
-                        )}
-                    )
+                            )}
+                        )
 
     return result
 
-    return ns (
-        dates = dates,
-         level = 'countries',
-         countries = ns({
-                linia.codi_pais:ns(
-                    name=linia.pais,
-                    data=linia.quants[:],
-                    ccaas=ns({
-                        linia.codi_ccaa:ns(
-                            name=linia.comunitat_autonoma,
-                            data=linia.quants[:],
-                            states=ns({
-                                    linia.codi_provincia:ns(
-                                        name=linia.provincia,
-                                        data=linia.quants[:],
-                                        cities=ns({
-                                        linia.codi_ine: ns(
-                                            name=linia.municipi,
-                                            data=linia.quants[:]
-                                            )
-                                        })
-                                    )
-                                })
-                            )
-                            })
-                        )}
-                )
-         )
 
 
 
