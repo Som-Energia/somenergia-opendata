@@ -65,13 +65,13 @@ def aggregate(entries):
             for date in dates ]
 
         country = aggregate_level(
-            entry, result, 'countries', 'codi_pais', 'pais', 'ccaas', count, dates)
+            entry, result, 'countries', 'codi_pais', 'pais', count, dates)
 
         ccaa = aggregate_level(
-            entry, country, 'ccaas', 'codi_ccaa', 'comunitat_autonoma', 'states', count, dates)
+            entry, country, 'ccaas', 'codi_ccaa', 'comunitat_autonoma', count, dates)
 
         provincia = aggregate_level(
-            entry, ccaa, 'states', 'codi_provincia', 'provincia', 'cities', count, dates)
+            entry, ccaa, 'states', 'codi_provincia', 'provincia', count, dates)
 
         cities = provincia.setdefault('cities', ns())
         city = cities.setdefault(
@@ -83,7 +83,7 @@ def aggregate(entries):
 
     return result
 
-def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr, children_attr, count, dates):
+def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr, count, dates):
     sibblings = parent.setdefault(sibbling_attr, ns())
     result = sibblings.setdefault(
         entry[code_attr], ns(
