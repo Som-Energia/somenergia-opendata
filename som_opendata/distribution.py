@@ -64,14 +64,8 @@ def aggregate(entries):
             int(entry['count_'+date.isoDate.replace('-','_')])
             for date in dates ]
 
-        country = result.countries.setdefault(
-            entry.codi_pais, ns(
-                name=entry.pais,
-                data=[0]*len(dates),
-                ccaas=ns(),
-            )
-        )
-        country.data = [a+b for a,b in zip(country.data, count)]
+        country = aggregate_level(
+            entry, result, 'countries', 'codi_pais', 'pais', 'ccaas', count, dates)
 
         ccaa = aggregate_level(
             entry, country, 'ccaas', 'codi_ccaa', 'comunitat_autonoma', 'states', count, dates)
