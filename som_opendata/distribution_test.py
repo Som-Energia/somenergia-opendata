@@ -16,7 +16,7 @@ headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprov
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
 data_Perignan = u"FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
 data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
-data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t09090\tSantJoan\t1000"
+data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
 data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
 
@@ -287,11 +287,10 @@ class Distribution_Test(unittest.TestCase):
                         name: Barcelona
                         data: [1000]
                         cities:
-                          '09090':
-                            name: SantJoan
+                          '08217':
+                            name: Sant Joan Despí
                             data: [1000]
             """)
-
 
     def test__aggregate__with_2line_sameState(self):
         data = u'\n'.join([
@@ -326,24 +325,17 @@ class Distribution_Test(unittest.TestCase):
                             data: [2000]
             """)
 
-
-
-
     def test_state_dates_1date(self):
-
         data = u'\n'.join([
             headers+'\tcount_2018_02_01',
             data_Adra+'\t3',
         ])
         data = tuples2objects(parse_tsv(data))
         r = state_dates(data[0])
-        self.assertEqual(
-                r,
-                [
-                    isoDate("20180101"),
-                    isoDate("20180201"),
-                ]
-            )
+        self.assertEqual(r, [
+            isoDate("20180101"),
+            isoDate("20180201"),
+        ])
 
 
     def test__aggregate__backToBack(self):
@@ -354,85 +346,7 @@ class Distribution_Test(unittest.TestCase):
         r = aggregate(objectList)
         self.assertB2BEqual(r.dump())
 
-
-
-
-
-
-    # def test__aggregate__same_city(self):
-    #     with open('./som_opendata/util_test/2rowSameCity') as f:
-    #         data = f.read()
-    #     li = tuples2objects(parse_tsv(data))
-    #     r = aggregate(data)
-    #     self.assertNsEqual(r,"""\
-    #         - code: ES
-    #           name: España
-    #           data 3
-    #           ccaas:
-    #           - code: 01
-    #             name: Andalucia
-    #             data: 3
-    #             states:
-    #             - code: 04
-    #               name: Almeria
-    #               data: 3
-    #               cities:
-    #               - code: 04003
-    #                 name: Adra
-    #                 data: 3
-    #         """)
-
-
-    # def test__aggregate__same_state(self):
-    #     with open('./som_opendata/util_test/2rowSameState') as f:
-    #         data = f.read()
-    #     li = tuples2objects(parse_tsv(data))
-    #     r = aggregate(data)
-    #     self.assertNsEqual(r,"""\
-    #         - code: ES
-    #           name: España
-    #           data 3
-    #           ccaas:
-    #           - code: 01
-    #             name: Andalucia
-    #             data: 3
-    #             states:
-    #             - code: 04
-    #               name: Almeria
-    #               data: 3
-    #               cities:
-    #               - code: 04003
-    #                 name: Adra
-    #                 data: 2
-    #               - code: 04006
-    #                 name: Albox
-    #                 data: 1
-    #         """)
-
-    # def _test__aggregate__same_state(self):
-    #     with open('./som_opendata/util_test/2rowDifCountry') as f:
-    #         data = f.read()
-    #     r = aggregate(data)
-    #     self.assertEqual(r,"""\
-    #         - code: ES
-    #           name: España
-    #           data 3
-    #           ccaas:
-    #           - code: 01
-    #             name: Andalucia
-    #             data: 3
-    #             states:
-    #             - code: 04
-    #               name: Almeria
-    #               data: 3
-    #               cities:
-    #               - code: 04003
-    #                 name: Adra
-    #                 data: 2
-    #               - code: 04006
-    #                 name: Albox
-    #                 data: 1
-    #         """)
+    # TODO: test__aggregate__withNoRows
 
 
 

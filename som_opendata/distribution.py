@@ -5,14 +5,22 @@ from yamlns.dateutils import Date as isoDate
 
 
 def parse_tsv(tsv_data):
+    """
+        Parses a TSV file content into a header and a list of tuples.
+        Ignores empty lines.
+    """
     return [
         [item.strip() for item in line.split('\t')]
         for line in tsv_data.split('\n')
         if line.strip()
         ]
 
-
 def tuples2objects(tuples):
+    """
+        Turns a list of tuples including the first one with the column names,
+        into a list of entries (ns objects) having the colunm names as
+        attribute names.
+    """
     headers = tuples[0]
     data = tuples[1:]
     return [
@@ -24,21 +32,25 @@ def tuples2objects(tuples):
         ]
 
 
-def state_dates(input):
-
+def state_dates(entry):
+    """
+        Returns the dates included in the entry
+    """
     return [
-            isoDate(k[len('count_'):].replace('_', ''))
-            for k in input.keys()
-            if k.startswith('count_')
-           ]
+        isoDate(k[len('count_'):].replace('_', ''))
+        for k in entry.keys()
+        if k.startswith('count_')
+        ]
 
 
-def aggregate(input):
+def aggregate(entries):
+    """
+        Aggregates a list of entries by geographical scopes:
+        Country, CCAA, state, city.
+    """
 
-    linia = input[0]
+    linia = entries[0]
     dates = state_dates(linia)
-
-    
 
     result = ns (
         dates = dates,
@@ -46,42 +58,43 @@ def aggregate(input):
          countries = ns()
     )
 
-    for linia in input:
+    for linia in entries:
 
-        linia.quants = [ int(linia['count_'+date.isoDate.replace('-','_')])
-                    for date in dates
-               ]
-        
+        count = [
+            int(linia['count_'+date.isoDate.replace('-','_')])
+            for date in dates ]
 
-        country = result.countries.setdefault(linia.codi_pais, ns(
+        country = result.countries.setdefault(
+            linia.codi_pais, ns(
                 name=linia.pais,
                 data=[0]*len(dates),
-                ccaas=ns()
+                ccaas=ns(),
             )
         )
-        country.data = [a+b for a,b in zip(country.data, linia.quants)]
+        country.data = [a+b for a,b in zip(country.data, count)]
 
-        ccaa = country.ccaas.setdefault(linia.codi_ccaa, ns(
+        ccaa = country.ccaas.setdefault(
+            linia.codi_ccaa, ns(
                 name=linia.comunitat_autonoma,
                 data=[0]*len(dates),
-                states=ns()
+                states=ns(),
             )
         )
+        ccaa.data = [a+b for a,b in zip(ccaa.data, count)]
 
-        ccaa.data = [a+b for a,b in zip(ccaa.data, linia.quants)]
-
-        provincia = ccaa.states.setdefault(linia.codi_provincia, ns(
+        provincia = ccaa.states.setdefault(
+            linia.codi_provincia, ns(
                 name=linia.provincia,
                 data=[0]*len(dates),
-                cities=ns()
+                cities=ns(),
             )
         )
+        provincia.data = [a+b for a,b in zip(provincia.data, count)]
 
-        provincia.data = [a+b for a,b in zip(provincia.data, linia.quants)]
-
-        city = provincia.cities.setdefault(linia.codi_ine, ns(
+        city = provincia.cities.setdefault(
+            linia.codi_ine, ns(
                 name=linia.municipi,
-                data=linia.quants[:]
+                data=count,
             )
         )
 
