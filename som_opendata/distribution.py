@@ -49,8 +49,8 @@ def aggregate(entries):
         Country, CCAA, state, city.
     """
 
-    linia = entries[0]
-    dates = state_dates(linia)
+    entry = entries[0]
+    dates = state_dates(entry)
 
     result = ns (
         dates = dates,
@@ -58,15 +58,15 @@ def aggregate(entries):
          countries = ns()
     )
 
-    for linia in entries:
+    for entry in entries:
 
         count = [
-            int(linia['count_'+date.isoDate.replace('-','_')])
+            int(entry['count_'+date.isoDate.replace('-','_')])
             for date in dates ]
 
         country = result.countries.setdefault(
-            linia.codi_pais, ns(
-                name=linia.pais,
+            entry.codi_pais, ns(
+                name=entry.pais,
                 data=[0]*len(dates),
                 ccaas=ns(),
             )
@@ -74,8 +74,8 @@ def aggregate(entries):
         country.data = [a+b for a,b in zip(country.data, count)]
 
         ccaa = country.ccaas.setdefault(
-            linia.codi_ccaa, ns(
-                name=linia.comunitat_autonoma,
+            entry.codi_ccaa, ns(
+                name=entry.comunitat_autonoma,
                 data=[0]*len(dates),
                 states=ns(),
             )
@@ -83,8 +83,8 @@ def aggregate(entries):
         ccaa.data = [a+b for a,b in zip(ccaa.data, count)]
 
         provincia = ccaa.states.setdefault(
-            linia.codi_provincia, ns(
-                name=linia.provincia,
+            entry.codi_provincia, ns(
+                name=entry.provincia,
                 data=[0]*len(dates),
                 cities=ns(),
             )
@@ -92,8 +92,8 @@ def aggregate(entries):
         provincia.data = [a+b for a,b in zip(provincia.data, count)]
 
         city = provincia.cities.setdefault(
-            linia.codi_ine, ns(
-                name=linia.municipi,
+            entry.codi_ine, ns(
+                name=entry.municipi,
                 data=count,
             )
         )
