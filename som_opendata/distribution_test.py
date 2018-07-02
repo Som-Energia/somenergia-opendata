@@ -106,7 +106,8 @@ class Distribution_Test(unittest.TestCase):
         li = tuples2objects(parse_tsv(data))
         r = aggregate(li)
         self.assertNsEqual(r,"""\
-            dates: 2018-01-01
+            dates: 
+            - 2018-01-01
             level: countries
             countries:
               ES:

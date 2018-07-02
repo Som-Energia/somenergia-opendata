@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from yamlns import namespace as ns
+from yamlns.dateutils import Date as isoDate
+
+
 
 def parse_tsv(tsv_data):
     return [
@@ -28,7 +31,28 @@ def select_only_city(input, ine):
 def aggregate(input):
 
 
-
+    return ns (
+        dates = [
+             isoDate('2018-01-01'),
+           ],
+         level = 'countries',
+         countries = ns.loads("""
+              ES:
+                name: España
+                data: 2
+                cccaa:
+                  01:
+                    name: Andalucia
+                    data: 2
+                    states:
+                      04:
+                        name: Almeria
+                        data: 2
+                        cities:
+                          04003:
+                            name: Adra
+                            data: 2
+      """))
 
 
 
