@@ -82,14 +82,8 @@ def aggregate(entries):
         )
         ccaa.data = [a+b for a,b in zip(ccaa.data, count)]
 
-        provincia = ccaa.states.setdefault(
-            entry.codi_provincia, ns(
-                name=entry.provincia,
-                data=[0]*len(dates),
-                cities=ns(),
-            )
-        )
-        provincia.data = [a+b for a,b in zip(provincia.data, count)]
+        provincia = aggregate_level(
+            entry, ccaa, 'states', 'codi_provincia', 'provincia', 'cities', count, dates)
 
         city = provincia.cities.setdefault(
             entry.codi_ine, ns(
@@ -100,6 +94,16 @@ def aggregate(entries):
 
     return result
 
+def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr, children_attr, count, dates):
+    result = parent[sibbling_attr].setdefault(
+        entry[code_attr], ns(
+            name=entry[name_attr],
+            data=[0]*len(dates),
+        )
+    )
+    result.setdefault(children_attr, ns())
+    result.data = [a+b for a,b in zip(result.data, count)]
+    return result
 
 
 
