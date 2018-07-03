@@ -481,6 +481,50 @@ class Distribution_Test(unittest.TestCase):
         self.assertB2BEqual(r.dump())
 
 
+    def test__aggregateWithDetailCountry__2lines_differentCities(self):
+        data = u'\n'.join([
+            headers,
+            data_Girona,
+            data_Amer,
+        ])
+        objectList = tuples2objects(parse_tsv(data))
+        r = aggregate(objectList,'country')
+        self.assertNsEqual(r,"""\
+            dates: 
+            - 2018-01-01
+            level: countries
+            countries:
+              ES:
+                name: España
+                data: [2020]
+            """)
+
+
+    def test__aggregateWithDetailState__2lines_differentCities(self):
+        data = u'\n'.join([
+            headers,
+            data_Girona,
+            data_Amer,
+        ])
+        objectList = tuples2objects(parse_tsv(data))
+        r = aggregate(objectList,'state')
+        self.assertNsEqual(r,"""\
+            dates: 
+            - 2018-01-01
+            level: countries
+            countries:
+              ES:
+                name: España
+                data: [2020]
+                ccaas:
+                  '09':
+                    name: Catalunya
+                    data: [2020]
+                    states:
+                      '17':
+                        name: Girona
+                        data: [2020]
+            """)
 
 
 # vim: et sw=4 ts=4
