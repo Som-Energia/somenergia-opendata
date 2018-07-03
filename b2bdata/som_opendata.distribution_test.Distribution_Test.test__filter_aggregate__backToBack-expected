@@ -1,0 +1,6145 @@
+dates:
+- 2015-01-01
+- 2015-02-01
+countries:
+  ES:
+    name: España
+    data:
+    - 11851
+    - 12373
+    ccaas:
+      '01':
+        name: Andalucia
+        data:
+        - 700
+        - 746
+        states:
+          '04':
+            name: Almería
+            data:
+            - 66
+            - 67
+            cities:
+              '04003':
+                name: Adra
+                data:
+                - 4
+                - 4
+              '04006':
+                name: Albox
+                data:
+                - 1
+                - 1
+              '04013':
+                name: Almería
+                data:
+                - 30
+                - 31
+              '04017':
+                name: Arboleas
+                data:
+                - 0
+                - 0
+              '04032':
+                name: Carboneras
+                data:
+                - 0
+                - 0
+              '04036':
+                name: Chercos
+                data:
+                - 0
+                - 0
+              '04037':
+                name: Chirivel
+                data:
+                - 1
+                - 1
+              '04035':
+                name: Cuevas del Almanzora
+                data:
+                - 0
+                - 0
+              04902:
+                name: Ejido, El
+                data:
+                - 6
+                - 6
+              '04047':
+                name: Gádor
+                data:
+                - 1
+                - 1
+              04048:
+                name: Gallardos, Los
+                data:
+                - 1
+                - 1
+              04049:
+                name: Garrucha
+                data:
+                - 2
+                - 2
+              '04050':
+                name: Gérgal
+                data:
+                - 0
+                - 0
+              '04052':
+                name: Huércal de Almería
+                data:
+                - 0
+                - 0
+              '04053':
+                name: Huércal-Overa
+                data:
+                - 1
+                - 1
+              '04055':
+                name: Instinción
+                data:
+                - 0
+                - 0
+              '04056':
+                name: Laroya
+                data:
+                - 0
+                - 0
+              '04057':
+                name: Láujar de Andarax
+                data:
+                - 0
+                - 0
+              '04064':
+                name: Mojácar
+                data:
+                - 0
+                - 0
+              '04066':
+                name: Níjar
+                data:
+                - 4
+                - 4
+              04069:
+                name: Olula del Río
+                data:
+                - 0
+                - 0
+              '04075':
+                name: Pulpí
+                data:
+                - 0
+                - 0
+              04079:
+                name: Roquetas de Mar
+                data:
+                - 5
+                - 5
+              04083:
+                name: Serón
+                data:
+                - 0
+                - 0
+              04092:
+                name: Tíjola
+                data:
+                - 1
+                - 1
+              04093:
+                name: Turre
+                data:
+                - 0
+                - 0
+              04098:
+                name: Vélez-Blanco
+                data:
+                - 0
+                - 0
+              '04100':
+                name: Vera
+                data:
+                - 7
+                - 7
+              '04101':
+                name: Viator
+                data:
+                - 1
+                - 1
+              '04102':
+                name: Vícar
+                data:
+                - 1
+                - 1
+          '11':
+            name: Cádiz
+            data:
+            - 75
+            - 83
+            cities:
+              '11001':
+                name: Alcalá de los Gazules
+                data:
+                - 0
+                - 0
+              '11004':
+                name: Algeciras
+                data:
+                - 3
+                - 3
+              '11005':
+                name: Algodonales
+                data:
+                - 0
+                - 0
+              '11006':
+                name: Arcos de la Frontera
+                data:
+                - 0
+                - 0
+              '11007':
+                name: Barbate
+                data:
+                - 0
+                - 0
+              '11008':
+                name: Barrios, Los
+                data:
+                - 0
+                - 0
+              '11009':
+                name: Benaocaz
+                data:
+                - 2
+                - 2
+              '11012':
+                name: Cádiz
+                data:
+                - 9
+                - 11
+              '11015':
+                name: Chiclana de la Frontera
+                data:
+                - 1
+                - 1
+              '11016':
+                name: Chipiona
+                data:
+                - 2
+                - 2
+              '11014':
+                name: Conil de la Frontera
+                data:
+                - 4
+                - 4
+              '11019':
+                name: Grazalema
+                data:
+                - 2
+                - 2
+              '11020':
+                name: Jerez de la Frontera
+                data:
+                - 13
+                - 13
+              '11022':
+                name: Línea de la Concepción, La
+                data:
+                - 0
+                - 0
+              '11023':
+                name: Medina-Sidonia
+                data:
+                - 0
+                - 0
+              '11024':
+                name: Olvera
+                data:
+                - 1
+                - 1
+              '11025':
+                name: Paterna de Rivera
+                data:
+                - 0
+                - 0
+              '11026':
+                name: Prado del Rey
+                data:
+                - 0
+                - 0
+              '11027':
+                name: Puerto de Santa María, El
+                data:
+                - 13
+                - 14
+              '11028':
+                name: Puerto Real
+                data:
+                - 9
+                - 9
+              '11030':
+                name: Rota
+                data:
+                - 1
+                - 1
+              '11031':
+                name: San Fernando
+                data:
+                - 1
+                - 2
+              '11902':
+                name: San José del Valle
+                data:
+                - 0
+                - 0
+              '11032':
+                name: Sanlúcar de Barrameda
+                data:
+                - 5
+                - 8
+              '11033':
+                name: San Roque
+                data:
+                - 1
+                - 1
+              '11035':
+                name: Tarifa
+                data:
+                - 4
+                - 4
+              '11037':
+                name: Trebujena
+                data:
+                - 3
+                - 4
+              '11038':
+                name: Ubrique
+                data:
+                - 0
+                - 0
+              '11039':
+                name: Vejer de la Frontera
+                data:
+                - 1
+                - 1
+          '14':
+            name: Córdoba
+            data:
+            - 144
+            - 156
+            cities:
+              '14001':
+                name: Adamuz
+                data:
+                - 1
+                - 1
+              '14005':
+                name: Almodóvar del Río
+                data:
+                - 0
+                - 0
+              '14006':
+                name: Añora
+                data:
+                - 0
+                - 0
+              '14007':
+                name: Baena
+                data:
+                - 0
+                - 0
+              '14009':
+                name: Belmez
+                data:
+                - 0
+                - 0
+              '14013':
+                name: Cabra
+                data:
+                - 3
+                - 3
+              '14015':
+                name: Carcabuey
+                data:
+                - 0
+                - 0
+              '14017':
+                name: Carlota, La
+                data:
+                - 3
+                - 3
+              '14018':
+                name: Carpio, El
+                data:
+                - 2
+                - 2
+              '14019':
+                name: Castro del Río
+                data:
+                - 0
+                - 0
+              '14021':
+                name: Córdoba
+                data:
+                - 117
+                - 128
+              '14027':
+                name: Fernán-Núñez
+                data:
+                - 0
+                - 0
+              '14029':
+                name: Fuente Obejuna
+                data:
+                - 0
+                - 1
+              '14030':
+                name: Fuente Palmera
+                data:
+                - 0
+                - 0
+              '14032':
+                name: Granjuela, La
+                data:
+                - 0
+                - 0
+              '14033':
+                name: Guadalcázar
+                data:
+                - 0
+                - 0
+              '14035':
+                name: Hinojosa del Duque
+                data:
+                - 1
+                - 1
+              '14038':
+                name: Lucena
+                data:
+                - 2
+                - 2
+              '14039':
+                name: Luque
+                data:
+                - 0
+                - 0
+              '14042':
+                name: Montilla
+                data:
+                - 5
+                - 5
+              '14043':
+                name: Montoro
+                data:
+                - 0
+                - 0
+              '14047':
+                name: Obejo
+                data:
+                - 0
+                - 0
+              '14049':
+                name: Palma del Río
+                data:
+                - 0
+                - 0
+              '14053':
+                name: Posadas
+                data:
+                - 0
+                - 0
+              '14055':
+                name: Priego de Córdoba
+                data:
+                - 3
+                - 3
+              '14056':
+                name: Puente Genil
+                data:
+                - 0
+                - 0
+              '14057':
+                name: Rambla, La
+                data:
+                - 0
+                - 0
+              '14058':
+                name: Rute
+                data:
+                - 4
+                - 4
+              '14065':
+                name: Victoria, La
+                data:
+                - 0
+                - 0
+              '14067':
+                name: Villafranca de Córdoba
+                data:
+                - 1
+                - 1
+              '14068':
+                name: Villaharta
+                data:
+                - 1
+                - 1
+              '14075':
+                name: Zuheros
+                data:
+                - 1
+                - 1
+          '18':
+            name: Granada
+            data:
+            - 135
+            - 139
+            cities:
+              '18003':
+                name: Albolote
+                data:
+                - 1
+                - 1
+              '18011':
+                name: Alfacar
+                data:
+                - 0
+                - 0
+              '18014':
+                name: Alhendín
+                data:
+                - 0
+                - 0
+              '18015':
+                name: Alicún de Ortega
+                data:
+                - 0
+                - 0
+              '18017':
+                name: Almuñécar
+                data:
+                - 11
+                - 11
+              '18904':
+                name: Alpujarra de la Sierra
+                data:
+                - 0
+                - 0
+              '18018':
+                name: Alquife
+                data:
+                - 0
+                - 0
+              '18021':
+                name: Armilla
+                data:
+                - 1
+                - 1
+              '18022':
+                name: Atarfe
+                data:
+                - 1
+                - 1
+              '18023':
+                name: Baza
+                data:
+                - 0
+                - 0
+              '18027':
+                name: Benalúa
+                data:
+                - 0
+                - 0
+              '18030':
+                name: Bérchules
+                data:
+                - 0
+                - 0
+              '18032':
+                name: Bubión
+                data:
+                - 0
+                - 0
+              '18034':
+                name: Cacín
+                data:
+                - 1
+                - 1
+              '18036':
+                name: Cájar
+                data:
+                - 0
+                - 0
+              '18039':
+                name: Caniles
+                data:
+                - 0
+                - 0
+              '18042':
+                name: Capileira
+                data:
+                - 0
+                - 0
+              '18046':
+                name: Castril
+                data:
+                - 0
+                - 0
+              '18047':
+                name: Cenes de la Vega
+                data:
+                - 0
+                - 0
+              '18059':
+                name: Chauchina
+                data:
+                - 0
+                - 0
+              '18062':
+                name: Churriana de la Vega
+                data:
+                - 2
+                - 2
+              '18912':
+                name: Cuevas del Campo
+                data:
+                - 0
+                - 0
+              '18056':
+                name: Cúllar
+                data:
+                - 0
+                - 0
+              '18057':
+                name: Cúllar Vega
+                data:
+                - 1
+                - 1
+              '18065':
+                name: Dehesas Viejas
+                data:
+                - 0
+                - 0
+              '18068':
+                name: Dílar
+                data:
+                - 0
+                - 0
+              '18070':
+                name: Dúdar
+                data:
+                - 0
+                - 0
+              '18071':
+                name: Dúrcal
+                data:
+                - 0
+                - 0
+              '18079':
+                name: Fuente Vaqueros
+                data:
+                - 0
+                - 0
+              '18905':
+                name: Gabias, Las
+                data:
+                - 0
+                - 0
+              '18084':
+                name: Gójar
+                data:
+                - 0
+                - 0
+              '18086':
+                name: Gorafe
+                data:
+                - 0
+                - 0
+              '18087':
+                name: Granada
+                data:
+                - 74
+                - 77
+              '18089':
+                name: Guadix
+                data:
+                - 0
+                - 0
+              '18906':
+                name: Guajares, Los
+                data:
+                - 0
+                - 0
+              '18093':
+                name: Gualchos
+                data:
+                - 1
+                - 1
+              '18094':
+                name: Güejar Sierra
+                data:
+                - 1
+                - 1
+              '18095':
+                name: Güevéjar
+                data:
+                - 1
+                - 1
+              '18098':
+                name: Huéscar
+                data:
+                - 0
+                - 0
+              '18099':
+                name: Huétor de Santillán
+                data:
+                - 2
+                - 2
+              '18101':
+                name: Huétor Vega
+                data:
+                - 4
+                - 5
+              '18105':
+                name: Iznalloz
+                data:
+                - 0
+                - 0
+              '18111':
+                name: Jun
+                data:
+                - 1
+                - 1
+              '18115':
+                name: Láchar
+                data:
+                - 0
+                - 0
+              '18116':
+                name: Lanjarón
+                data:
+                - 0
+                - 0
+              '18117':
+                name: Lanteira
+                data:
+                - 1
+                - 1
+              '18124':
+                name: Lújar
+                data:
+                - 0
+                - 0
+              '18127':
+                name: Maracena
+                data:
+                - 1
+                - 1
+              '18132':
+                name: Moclín
+                data:
+                - 1
+                - 1
+              '18134':
+                name: Monachil
+                data:
+                - 5
+                - 5
+              '18138':
+                name: Moraleda de Zafayona
+                data:
+                - 0
+                - 0
+              '18140':
+                name: Motril
+                data:
+                - 8
+                - 8
+              '18903':
+                name: Nevada
+                data:
+                - 1
+                - 1
+              '18143':
+                name: Nigüelas
+                data:
+                - 0
+                - 0
+              '18144':
+                name: Nívar
+                data:
+                - 0
+                - 0
+              '18145':
+                name: Ogíjares
+                data:
+                - 0
+                - 0
+              '18149':
+                name: Otura
+                data:
+                - 0
+                - 0
+              '18150':
+                name: Padul
+                data:
+                - 5
+                - 5
+              '18153':
+                name: Peligros
+                data:
+                - 1
+                - 1
+              '18157':
+                name: Pinos Genil
+                data:
+                - 0
+                - 0
+              '18159':
+                name: Píñar
+                data:
+                - 0
+                - 0
+              '18162':
+                name: Polopos
+                data:
+                - 0
+                - 0
+              '18165':
+                name: Pulianas
+                data:
+                - 0
+                - 0
+              '18168':
+                name: Quéntar
+                data:
+                - 0
+                - 0
+              '18173':
+                name: Salobreña
+                data:
+                - 6
+                - 6
+              '18175':
+                name: Santa Fe
+                data:
+                - 2
+                - 2
+              '18177':
+                name: Sorvilán
+                data:
+                - 0
+                - 0
+              '18902':
+                name: Valle, El
+                data:
+                - 0
+                - 0
+              '18911':
+                name: Vegas del Genil
+                data:
+                - 1
+                - 1
+              '18913':
+                name: Zagra
+                data:
+                - 0
+                - 0
+              '18193':
+                name: Zubia, La
+                data:
+                - 1
+                - 1
+              '18194':
+                name: Zújar
+                data:
+                - 0
+                - 0
+          '21':
+            name: Huelva
+            data:
+            - 22
+            - 26
+            cities:
+              '21001':
+                name: Alájar
+                data:
+                - 1
+                - 1
+              '21002':
+                name: Aljaraque
+                data:
+                - 1
+                - 1
+              '21004':
+                name: Almonaster la Real
+                data:
+                - 0
+                - 0
+              '21005':
+                name: Almonte
+                data:
+                - 1
+                - 1
+              '21006':
+                name: Alosno
+                data:
+                - 0
+                - 0
+              '21007':
+                name: Aracena
+                data:
+                - 4
+                - 4
+              '21009':
+                name: Arroyomolinos de León
+                data:
+                - 0
+                - 0
+              '21010':
+                name: Ayamonte
+                data:
+                - 2
+                - 3
+              '21011':
+                name: Beas
+                data:
+                - 0
+                - 0
+              '21012':
+                name: Berrocal
+                data:
+                - 0
+                - 0
+              '21013':
+                name: Bollullos Par del Condado
+                data:
+                - 0
+                - 0
+              '21016':
+                name: Cala
+                data:
+                - 0
+                - 0
+              '21021':
+                name: Cartaya
+                data:
+                - 0
+                - 0
+              '21030':
+                name: Chucena
+                data:
+                - 1
+                - 1
+              '21024':
+                name: Corteconcepción
+                data:
+                - 0
+                - 0
+              '21025':
+                name: Cortegana
+                data:
+                - 2
+                - 2
+              '21026':
+                name: Cortelazor
+                data:
+                - 0
+                - 0
+              '21033':
+                name: Fuenteheridos
+                data:
+                - 0
+                - 0
+              '21034':
+                name: Galaroza
+                data:
+                - 0
+                - 0
+              '21035':
+                name: Gibraleón
+                data:
+                - 0
+                - 0
+              '21038':
+                name: Higuera de la Sierra
+                data:
+                - 0
+                - 0
+              '21040':
+                name: Hinojos
+                data:
+                - 0
+                - 0
+              '21041':
+                name: Huelva
+                data:
+                - 6
+                - 7
+              '21042':
+                name: Isla Cristina
+                data:
+                - 0
+                - 1
+              '21044':
+                name: Lepe
+                data:
+                - 3
+                - 4
+              '21050':
+                name: Moguer
+                data:
+                - 0
+                - 0
+              '21052':
+                name: Nerva
+                data:
+                - 0
+                - 0
+              '21054':
+                name: Palma del Condado, La
+                data:
+                - 0
+                - 0
+              '21055':
+                name: Palos de la Frontera
+                data:
+                - 0
+                - 0
+              '21060':
+                name: Punta Umbría
+                data:
+                - 1
+                - 1
+              '21064':
+                name: San Juan del Puerto
+                data:
+                - 0
+                - 0
+              '21069':
+                name: Santa Olalla del Cala
+                data:
+                - 0
+                - 0
+              '21070':
+                name: Trigueros
+                data:
+                - 0
+                - 0
+              '21071':
+                name: Valdelarco
+                data:
+                - 0
+                - 0
+              '21072':
+                name: Valverde del Camino
+                data:
+                - 0
+                - 0
+              '21074':
+                name: Villalba del Alcor
+                data:
+                - 0
+                - 0
+              '21076':
+                name: Villanueva de los Castillejos
+                data:
+                - 0
+                - 0
+          '23':
+            name: Jaen
+            data:
+            - 20
+            - 20
+            cities:
+              '23002':
+                name: Alcalá la Real
+                data:
+                - 0
+                - 0
+              '23005':
+                name: Andújar
+                data:
+                - 0
+                - 0
+              '23007':
+                name: Arjonilla
+                data:
+                - 0
+                - 0
+              '23009':
+                name: Baeza
+                data:
+                - 0
+                - 0
+              '23010':
+                name: Bailén
+                data:
+                - 0
+                - 0
+              '23902':
+                name: Bedmar y Garcíez
+                data:
+                - 0
+                - 0
+              '23024':
+                name: Carolina, La
+                data:
+                - 0
+                - 0
+              '23028':
+                name: Cazorla
+                data:
+                - 0
+                - 0
+              '23044':
+                name: Huelma
+                data:
+                - 1
+                - 1
+              '23050':
+                name: Jaén
+                data:
+                - 9
+                - 9
+              '23055':
+                name: Linares
+                data:
+                - 3
+                - 3
+              '23058':
+                name: Mancha Real
+                data:
+                - 0
+                - 0
+              '23060':
+                name: Martos
+                data:
+                - 1
+                - 1
+              '23067':
+                name: Pegalajar
+                data:
+                - 4
+                - 4
+              '23069':
+                name: Porcuna
+                data:
+                - 1
+                - 1
+              '23076':
+                name: Santa Elena
+                data:
+                - 0
+                - 0
+              '23904':
+                name: Santiago-Pontones
+                data:
+                - 1
+                - 1
+              '23081':
+                name: Segura de la Sierra
+                data:
+                - 0
+                - 0
+              '23088':
+                name: Torreperogil
+                data:
+                - 0
+                - 0
+              '23090':
+                name: Torres
+                data:
+                - 0
+                - 0
+              '23092':
+                name: Úbeda
+                data:
+                - 0
+                - 0
+              '23093':
+                name: Valdepeñas de Jaén
+                data:
+                - 0
+                - 0
+              '23094':
+                name: Vilches
+                data:
+                - 0
+                - 0
+              '23095':
+                name: Villacarrillo
+                data:
+                - 0
+                - 0
+              '23099':
+                name: Villares, Los
+                data:
+                - 0
+                - 0
+              '23101':
+                name: Villarrodrigo
+                data:
+                - 0
+                - 0
+          '29':
+            name: Málaga
+            data:
+            - 81
+            - 83
+            cities:
+              '29001':
+                name: Alameda
+                data:
+                - 0
+                - 0
+              '29002':
+                name: Alcaucín
+                data:
+                - 0
+                - 0
+              '29007':
+                name: Alhaurín de la Torre
+                data:
+                - 0
+                - 0
+              '29009':
+                name: Almáchar
+                data:
+                - 0
+                - 0
+              '29011':
+                name: Almogía
+                data:
+                - 0
+                - 0
+              '29012':
+                name: Álora
+                data:
+                - 0
+                - 0
+              '29015':
+                name: Antequera
+                data:
+                - 1
+                - 1
+              '29019':
+                name: Arenas
+                data:
+                - 0
+                - 0
+              '29023':
+                name: Benahavís
+                data:
+                - 1
+                - 1
+              '29025':
+                name: Benalmádena
+                data:
+                - 6
+                - 7
+              '29033':
+                name: Canillas de Aceituno
+                data:
+                - 0
+                - 0
+              '29037':
+                name: Cartajima
+                data:
+                - 0
+                - 0
+              '29038':
+                name: Cártama
+                data:
+                - 2
+                - 2
+              '29039':
+                name: Casabermeja
+                data:
+                - 2
+                - 2
+              '29041':
+                name: Casares
+                data:
+                - 0
+                - 0
+              '29043':
+                name: Colmenar
+                data:
+                - 0
+                - 0
+              '29045':
+                name: Cómpeta
+                data:
+                - 0
+                - 0
+              '29046':
+                name: Cortes de la Frontera
+                data:
+                - 2
+                - 2
+              '29048':
+                name: Cuevas del Becerro
+                data:
+                - 0
+                - 0
+              '29051':
+                name: Estepona
+                data:
+                - 6
+                - 6
+              '29054':
+                name: Fuengirola
+                data:
+                - 11
+                - 11
+              '29055':
+                name: Fuente de Piedra
+                data:
+                - 0
+                - 0
+              '29059':
+                name: Humilladero
+                data:
+                - 0
+                - 0
+              '29067':
+                name: Málaga
+                data:
+                - 30
+                - 31
+              '29068':
+                name: Manilva
+                data:
+                - 1
+                - 1
+              '29069':
+                name: Marbella
+                data:
+                - 0
+                - 0
+              '29070':
+                name: Mijas
+                data:
+                - 0
+                - 0
+              '29074':
+                name: Montejaque
+                data:
+                - 0
+                - 0
+              '29075':
+                name: Nerja
+                data:
+                - 2
+                - 2
+              '29079':
+                name: Periana
+                data:
+                - 0
+                - 0
+              '29080':
+                name: Pizarra
+                data:
+                - 0
+                - 0
+              '29082':
+                name: Rincón de la Victoria
+                data:
+                - 3
+                - 2
+              '29084':
+                name: Ronda
+                data:
+                - 1
+                - 1
+              '29087':
+                name: Sedella
+                data:
+                - 0
+                - 0
+              '29090':
+                name: Tolox
+                data:
+                - 0
+                - 0
+              '29901':
+                name: Torremolinos
+                data:
+                - 4
+                - 4
+              '29091':
+                name: Torrox
+                data:
+                - 0
+                - 0
+              '29092':
+                name: Totalán
+                data:
+                - 1
+                - 1
+              '29094':
+                name: Vélez-Málaga
+                data:
+                - 7
+                - 8
+              '29097':
+                name: Villanueva del Trabuco
+                data:
+                - 0
+                - 0
+              '29100':
+                name: Yunquera
+                data:
+                - 1
+                - 1
+          '41':
+            name: Sevilla
+            data:
+            - 157
+            - 172
+            cities:
+              '41001':
+                name: Aguadulce
+                data:
+                - 0
+                - 0
+              '41003':
+                name: Albaida del Aljarafe
+                data:
+                - 0
+                - 0
+              '41004':
+                name: Alcalá de Guadaíra
+                data:
+                - 10
+                - 11
+              '41005':
+                name: Alcalá del Río
+                data:
+                - 0
+                - 0
+              '41006':
+                name: Alcolea del Río
+                data:
+                - 0
+                - 0
+              '41007':
+                name: Algaba, La
+                data:
+                - 1
+                - 1
+              '41010':
+                name: Almensilla
+                data:
+                - 1
+                - 1
+              '41015':
+                name: Benacazón
+                data:
+                - 0
+                - 0
+              '41016':
+                name: Bollullos de la Mitación
+                data:
+                - 2
+                - 2
+              '41017':
+                name: Bormujos
+                data:
+                - 1
+                - 1
+              '41018':
+                name: Brenes
+                data:
+                - 0
+                - 0
+              '41021':
+                name: Camas
+                data:
+                - 0
+                - 0
+              '41023':
+                name: Cantillana
+                data:
+                - 0
+                - 0
+              '41901':
+                name: Cañada Rosal
+                data:
+                - 0
+                - 0
+              '41024':
+                name: Carmona
+                data:
+                - 0
+                - 0
+              '41025':
+                name: Carrión de los Céspedes
+                data:
+                - 0
+                - 0
+              '41028':
+                name: Castilleja de Guzmán
+                data:
+                - 0
+                - 1
+              '41029':
+                name: Castilleja de la Cuesta
+                data:
+                - 2
+                - 2
+              '41031':
+                name: Castillo de las Guardas, El
+                data:
+                - 1
+                - 1
+              '41034':
+                name: Coria del Río
+                data:
+                - 0
+                - 0
+              '41035':
+                name: Coripe
+                data:
+                - 0
+                - 0
+              '41903':
+                name: Cuervo de Sevilla, El
+                data:
+                - 0
+                - 0
+              '41038':
+                name: Dos Hermanas
+                data:
+                - 13
+                - 13
+              '41039':
+                name: Écija
+                data:
+                - 2
+                - 2
+              '41040':
+                name: Espartinas
+                data:
+                - 2
+                - 2
+              '41041':
+                name: Estepa
+                data:
+                - 0
+                - 0
+              '41044':
+                name: Gelves
+                data:
+                - 0
+                - 0
+              '41045':
+                name: Gerena
+                data:
+                - 2
+                - 2
+              '41046':
+                name: Gilena
+                data:
+                - 0
+                - 0
+              '41047':
+                name: Gines
+                data:
+                - 1
+                - 1
+              '41049':
+                name: Guillena
+                data:
+                - 0
+                - 0
+              '41050':
+                name: Herrera
+                data:
+                - 0
+                - 0
+              '41053':
+                name: Lebrija
+                data:
+                - 1
+                - 1
+              '41055':
+                name: Lora del Río
+                data:
+                - 0
+                - 0
+              '41056':
+                name: Luisiana, La
+                data:
+                - 0
+                - 0
+              '41058':
+                name: Mairena del Alcor
+                data:
+                - 1
+                - 1
+              '41059':
+                name: Mairena del Aljarafe
+                data:
+                - 6
+                - 7
+              '41060':
+                name: Marchena
+                data:
+                - 5
+                - 5
+              '41064':
+                name: Montellano
+                data:
+                - 0
+                - 0
+              '41065':
+                name: Morón de la Frontera
+                data:
+                - 0
+                - 0
+              '41067':
+                name: Olivares
+                data:
+                - 0
+                - 1
+              '41068':
+                name: Osuna
+                data:
+                - 0
+                - 0
+              '41069':
+                name: Palacios y Villafranca, Los
+                data:
+                - 1
+                - 2
+              '41070':
+                name: Palomares del Río
+                data:
+                - 6
+                - 6
+              '41073':
+                name: Pedroso, El
+                data:
+                - 0
+                - 0
+              '41078':
+                name: Puebla de los Infantes, La
+                data:
+                - 0
+                - 0
+              '41079':
+                name: Puebla del Río, La
+                data:
+                - 0
+                - 0
+              '41081':
+                name: Rinconada, La
+                data:
+                - 3
+                - 3
+              '41083':
+                name: Ronquillo, El
+                data:
+                - 0
+                - 0
+              '41085':
+                name: Salteras
+                data:
+                - 2
+                - 2
+              '41086':
+                name: San Juan de Aznalfarache
+                data:
+                - 0
+                - 0
+              '41087':
+                name: Sanlúcar la Mayor
+                data:
+                - 0
+                - 0
+              '41089':
+                name: Santiponce
+                data:
+                - 0
+                - 0
+              '41091':
+                name: Sevilla
+                data:
+                - 86
+                - 96
+              '41093':
+                name: Tomares
+                data:
+                - 2
+                - 2
+              '41094':
+                name: Umbrete
+                data:
+                - 1
+                - 1
+              '41095':
+                name: Utrera
+                data:
+                - 1
+                - 1
+              '41096':
+                name: Valencina de la Concepción
+                data:
+                - 2
+                - 2
+              '41097':
+                name: Villamanrique de la Condesa
+                data:
+                - 0
+                - 0
+              '41098':
+                name: Villanueva del Ariscal
+                data:
+                - 0
+                - 0
+              '41102':
+                name: Viso del Alcor, El
+                data:
+                - 2
+                - 2
+      09:
+        name: Cataluña
+        data:
+        - 11151
+        - 11627
+        states:
+          08:
+            name: Barcelona
+            data:
+            - 8486
+            - 8820
+            cities:
+              08001:
+                name: Abrera
+                data:
+                - 16
+                - 16
+              08002:
+                name: Aguilar de Segarra
+                data:
+                - 0
+                - 0
+              08014:
+                name: Aiguafreda
+                data:
+                - 3
+                - 3
+              08003:
+                name: Alella
+                data:
+                - 17
+                - 17
+              08004:
+                name: Alpens
+                data:
+                - 3
+                - 3
+              08005:
+                name: Ametlla del Vallès, L'
+                data:
+                - 12
+                - 14
+              08006:
+                name: Arenys de Mar
+                data:
+                - 27
+                - 31
+              08007:
+                name: Arenys de Munt
+                data:
+                - 21
+                - 23
+              08008:
+                name: Argençola
+                data:
+                - 2
+                - 2
+              08009:
+                name: Argentona
+                data:
+                - 40
+                - 38
+              08010:
+                name: Artés
+                data:
+                - 21
+                - 22
+              08011:
+                name: Avià
+                data:
+                - 10
+                - 10
+              08012:
+                name: Avinyó
+                data:
+                - 6
+                - 6
+              08013:
+                name: Avinyonet del Penedès
+                data:
+                - 2
+                - 2
+              08015:
+                name: Badalona
+                data:
+                - 164
+                - 166
+              08904:
+                name: Badia del Vallès
+                data:
+                - 14
+                - 15
+              08016:
+                name: Bagà
+                data:
+                - 1
+                - 1
+              08017:
+                name: Balenyà
+                data:
+                - 3
+                - 3
+              08018:
+                name: Balsareny
+                data:
+                - 5
+                - 5
+              08252:
+                name: Barberà del Vallès
+                data:
+                - 34
+                - 34
+              08019:
+                name: Barcelona
+                data:
+                - 3295
+                - 3431
+              08020:
+                name: Begues
+                data:
+                - 19
+                - 19
+              08021:
+                name: Bellprat
+                data:
+                - 1
+                - 1
+              08022:
+                name: Berga
+                data:
+                - 40
+                - 40
+              08023:
+                name: Bigues i Riells
+                data:
+                - 8
+                - 8
+              08024:
+                name: Borredà
+                data:
+                - 3
+                - 3
+              08025:
+                name: Bruc, El
+                data:
+                - 3
+                - 3
+              08027:
+                name: Cabanyes, Les
+                data:
+                - 3
+                - 3
+              08028:
+                name: Cabrera d'Anoia
+                data:
+                - 1
+                - 1
+              08029:
+                name: Cabrera de Mar
+                data:
+                - 8
+                - 7
+              08030:
+                name: Cabrils
+                data:
+                - 7
+                - 7
+              08031:
+                name: Calaf
+                data:
+                - 3
+                - 3
+              08034:
+                name: Calders
+                data:
+                - 3
+                - 3
+              08033:
+                name: Caldes de Montbui
+                data:
+                - 19
+                - 19
+              08032:
+                name: Caldes d'Estrac
+                data:
+                - 7
+                - 7
+              08035:
+                name: Calella
+                data:
+                - 11
+                - 12
+              08037:
+                name: Calldetenes
+                data:
+                - 5
+                - 5
+              08038:
+                name: Callús
+                data:
+                - 3
+                - 3
+              08036:
+                name: Calonge de Segarra
+                data:
+                - 1
+                - 1
+              08039:
+                name: Campins
+                data:
+                - 6
+                - 6
+              08040:
+                name: Canet de Mar
+                data:
+                - 17
+                - 17
+              08041:
+                name: Canovelles
+                data:
+                - 6
+                - 6
+              08042:
+                name: Cànoves i Samalús
+                data:
+                - 7
+                - 7
+              08043:
+                name: Canyelles
+                data:
+                - 4
+                - 4
+              08044:
+                name: Capellades
+                data:
+                - 5
+                - 5
+              08045:
+                name: Capolat
+                data:
+                - 1
+                - 1
+              08046:
+                name: Cardedeu
+                data:
+                - 85
+                - 102
+              08047:
+                name: Cardona
+                data:
+                - 3
+                - 3
+              08048:
+                name: Carme
+                data:
+                - 2
+                - 2
+              08049:
+                name: Casserres
+                data:
+                - 2
+                - 2
+              08050:
+                name: Castellar del Riu
+                data:
+                - 0
+                - 0
+              08051:
+                name: Castellar del Vallès
+                data:
+                - 47
+                - 47
+              08052:
+                name: Castellar de n'Hug
+                data:
+                - 2
+                - 2
+              08053:
+                name: Castellbell i el Vilar
+                data:
+                - 3
+                - 3
+              08054:
+                name: Castellbisbal
+                data:
+                - 15
+                - 16
+              08055:
+                name: Castellcir
+                data:
+                - 1
+                - 1
+              08056:
+                name: Castelldefels
+                data:
+                - 59
+                - 63
+              08058:
+                name: Castellet i la Gornal
+                data:
+                - 8
+                - 8
+              08059:
+                name: Castellfollit del Boix
+                data:
+                - 0
+                - 0
+              08060:
+                name: Castellfollit de Riubregós
+                data:
+                - 0
+                - 0
+              08061:
+                name: Castellgalí
+                data:
+                - 1
+                - 1
+              08062:
+                name: Castellnou de Bages
+                data:
+                - 4
+                - 4
+              08063:
+                name: Castellolí
+                data:
+                - 0
+                - 0
+              08064:
+                name: Castellterçol
+                data:
+                - 6
+                - 7
+              08065:
+                name: Castellví de la Marca
+                data:
+                - 9
+                - 9
+              08066:
+                name: Castellví de Rosanes
+                data:
+                - 1
+                - 1
+              08067:
+                name: Centelles
+                data:
+                - 1
+                - 1
+              08268:
+                name: Cercs
+                data:
+                - 0
+                - 0
+              08266:
+                name: Cerdanyola del Vallès
+                data:
+                - 100
+                - 101
+              08068:
+                name: Cervelló
+                data:
+                - 6
+                - 7
+              08069:
+                name: Collbató
+                data:
+                - 14
+                - 14
+              08070:
+                name: Collsuspina
+                data:
+                - 5
+                - 5
+              08071:
+                name: Copons
+                data:
+                - 0
+                - 1
+              08072:
+                name: Corbera de Llobregat
+                data:
+                - 11
+                - 12
+              08073:
+                name: Cornellà de Llobregat
+                data:
+                - 58
+                - 60
+              08074:
+                name: Cubelles
+                data:
+                - 16
+                - 16
+              08075:
+                name: Dosrius
+                data:
+                - 5
+                - 5
+              08076:
+                name: Esparreguera
+                data:
+                - 18
+                - 18
+              08077:
+                name: Esplugues de Llobregat
+                data:
+                - 31
+                - 31
+              08078:
+                name: Espunyola, L'
+                data:
+                - 0
+                - 0
+              08254:
+                name: Esquirol, L'
+                data:
+                - 7
+                - 7
+              08079:
+                name: Estany, L'
+                data:
+                - 1
+                - 1
+              08134:
+                name: Figaró-Montmany
+                data:
+                - 0
+                - 0
+              08082:
+                name: Fogars de la Selva
+                data:
+                - 0
+                - 0
+              08081:
+                name: Fogars de Montclús
+                data:
+                - 0
+                - 0
+              08083:
+                name: Folgueroles
+                data:
+                - 1
+                - 1
+              08084:
+                name: Fonollosa
+                data:
+                - 3
+                - 4
+              08085:
+                name: Font-rubí
+                data:
+                - 2
+                - 2
+              08086:
+                name: Franqueses del Vallès, Les
+                data:
+                - 21
+                - 21
+              08090:
+                name: Gaià
+                data:
+                - 0
+                - 0
+              08088:
+                name: Garriga, La
+                data:
+                - 24
+                - 24
+              08089:
+                name: Gavà
+                data:
+                - 26
+                - 28
+              08091:
+                name: Gelida
+                data:
+                - 15
+                - 18
+              08092:
+                name: Gironella
+                data:
+                - 10
+                - 10
+              08093:
+                name: Gisclareny
+                data:
+                - 0
+                - 0
+              08094:
+                name: Granada, La
+                data:
+                - 1
+                - 1
+              08095:
+                name: Granera
+                data:
+                - 1
+                - 1
+              08096:
+                name: Granollers
+                data:
+                - 66
+                - 67
+              08097:
+                name: Gualba
+                data:
+                - 8
+                - 8
+              08099:
+                name: Guardiola de Berguedà
+                data:
+                - 3
+                - 3
+              08100:
+                name: Gurb
+                data:
+                - 4
+                - 5
+              08101:
+                name: Hospitalet de Llobregat, L'
+                data:
+                - 132
+                - 139
+              08162:
+                name: Hostalets de Pierola, Els
+                data:
+                - 5
+                - 5
+              08102:
+                name: Igualada
+                data:
+                - 55
+                - 57
+              08103:
+                name: Jorba
+                data:
+                - 1
+                - 1
+              08104:
+                name: Llacuna, La
+                data:
+                - 10
+                - 10
+              08105:
+                name: Llagosta, La
+                data:
+                - 3
+                - 3
+              08107:
+                name: Lliçà d'Amunt
+                data:
+                - 12
+                - 12
+              08108:
+                name: Lliçà de Vall
+                data:
+                - 1
+                - 1
+              08106:
+                name: Llinars del Vallès
+                data:
+                - 13
+                - 14
+              08109:
+                name: Lluçà
+                data:
+                - 1
+                - 1
+              08110:
+                name: Malgrat de Mar
+                data:
+                - 20
+                - 23
+              08111:
+                name: Malla
+                data:
+                - 0
+                - 0
+              08112:
+                name: Manlleu
+                data:
+                - 30
+                - 31
+              08113:
+                name: Manresa
+                data:
+                - 149
+                - 154
+              08242:
+                name: Marganell
+                data:
+                - 0
+                - 0
+              08114:
+                name: Martorell
+                data:
+                - 14
+                - 15
+              08115:
+                name: Martorelles
+                data:
+                - 7
+                - 7
+              08116:
+                name: Masies de Roda, Les
+                data:
+                - 2
+                - 2
+              08117:
+                name: Masies de Voltregà, Les
+                data:
+                - 1
+                - 1
+              08118:
+                name: Masnou, El
+                data:
+                - 36
+                - 39
+              08119:
+                name: Masquefa
+                data:
+                - 3
+                - 3
+              08120:
+                name: Matadepera
+                data:
+                - 11
+                - 11
+              08121:
+                name: Mataró
+                data:
+                - 269
+                - 278
+              08122:
+                name: Mediona
+                data:
+                - 10
+                - 11
+              08138:
+                name: Moià
+                data:
+                - 25
+                - 26
+              08123:
+                name: Molins de Rei
+                data:
+                - 56
+                - 65
+              08124:
+                name: Mollet del Vallès
+                data:
+                - 68
+                - 68
+              08128:
+                name: Monistrol de Calders
+                data:
+                - 4
+                - 4
+              08127:
+                name: Monistrol de Montserrat
+                data:
+                - 4
+                - 4
+              08125:
+                name: Montcada i Reixac
+                data:
+                - 22
+                - 24
+              08130:
+                name: Montclar
+                data:
+                - 1
+                - 1
+              08131:
+                name: Montesquiu
+                data:
+                - 1
+                - 1
+              08126:
+                name: Montgat
+                data:
+                - 19
+                - 20
+              08132:
+                name: Montmajor
+                data:
+                - 0
+                - 0
+              08135:
+                name: Montmeló
+                data:
+                - 12
+                - 13
+              08136:
+                name: Montornès del Vallès
+                data:
+                - 11
+                - 11
+              08137:
+                name: Montseny
+                data:
+                - 1
+                - 1
+              08129:
+                name: Muntanyola
+                data:
+                - 3
+                - 3
+              08139:
+                name: Mura
+                data:
+                - 4
+                - 4
+              08140:
+                name: Navarcles
+                data:
+                - 7
+                - 8
+              08141:
+                name: Navàs
+                data:
+                - 10
+                - 10
+              08142:
+                name: Nou de Berguedà, La
+                data:
+                - 4
+                - 4
+              08143:
+                name: Òdena
+                data:
+                - 4
+                - 4
+              08145:
+                name: Olèrdola
+                data:
+                - 4
+                - 4
+              08147:
+                name: Olesa de Montserrat
+                data:
+                - 23
+                - 25
+              08148:
+                name: Olivella
+                data:
+                - 4
+                - 4
+              08149:
+                name: Olost
+                data:
+                - 9
+                - 11
+              08144:
+                name: Olvan
+                data:
+                - 0
+                - 0
+              08150:
+                name: Orís
+                data:
+                - 0
+                - 0
+              08151:
+                name: Oristà
+                data:
+                - 5
+                - 5
+              08152:
+                name: Orpí
+                data:
+                - 1
+                - 1
+              08153:
+                name: Òrrius
+                data:
+                - 9
+                - 9
+              08154:
+                name: Pacs del Penedès
+                data:
+                - 1
+                - 1
+              08155:
+                name: Palafolls
+                data:
+                - 14
+                - 14
+              08156:
+                name: Palau-solità i Plegamans
+                data:
+                - 8
+                - 9
+              08157:
+                name: Pallejà
+                data:
+                - 10
+                - 13
+              08905:
+                name: Palma de Cervelló, La
+                data:
+                - 2
+                - 1
+              08158:
+                name: Papiol, El
+                data:
+                - 3
+                - 4
+              08159:
+                name: Parets del Vallès
+                data:
+                - 14
+                - 14
+              08160:
+                name: Perafita
+                data:
+                - 2
+                - 2
+              08161:
+                name: Piera
+                data:
+                - 10
+                - 10
+              08163:
+                name: Pineda de Mar
+                data:
+                - 21
+                - 21
+              08164:
+                name: Pla del Penedès, El
+                data:
+                - 4
+                - 4
+              08165:
+                name: Pobla de Claramunt, La
+                data:
+                - 2
+                - 3
+              08166:
+                name: Pobla de Lillet, La
+                data:
+                - 2
+                - 2
+              08167:
+                name: Polinyà
+                data:
+                - 3
+                - 3
+              08182:
+                name: Pont de Vilomara i Rocafort, El
+                data:
+                - 3
+                - 3
+              08168:
+                name: Pontons
+                data:
+                - 1
+                - 1
+              08169:
+                name: Prat de Llobregat, El
+                data:
+                - 41
+                - 44
+              08171:
+                name: Prats de Lluçanès
+                data:
+                - 8
+                - 8
+              08170:
+                name: Prats de Rei, Els
+                data:
+                - 1
+                - 1
+              08230:
+                name: Premià de Dalt
+                data:
+                - 15
+                - 16
+              08172:
+                name: Premià de Mar
+                data:
+                - 44
+                - 43
+              08174:
+                name: Puigdàlber
+                data:
+                - 1
+                - 1
+              08175:
+                name: Puig-reig
+                data:
+                - 5
+                - 5
+              08176:
+                name: Pujalt
+                data:
+                - 2
+                - 2
+              08178:
+                name: Rajadell
+                data:
+                - 2
+                - 2
+              08179:
+                name: Rellinars
+                data:
+                - 2
+                - 2
+              08180:
+                name: Ripollet
+                data:
+                - 31
+                - 32
+              08181:
+                name: Roca del Vallès, La
+                data:
+                - 13
+                - 13
+              08183:
+                name: Roda de Ter
+                data:
+                - 5
+                - 5
+              08184:
+                name: Rubí
+                data:
+                - 93
+                - 95
+              08185:
+                name: Rubió
+                data:
+                - 0
+                - 1
+              08901:
+                name: Rupit i Pruit
+                data:
+                - 0
+                - 0
+              08187:
+                name: Sabadell
+                data:
+                - 391
+                - 405
+              08188:
+                name: Sagàs
+                data:
+                - 0
+                - 0
+              08190:
+                name: Saldes
+                data:
+                - 6
+                - 6
+              08191:
+                name: Sallent
+                data:
+                - 8
+                - 8
+              08244:
+                name: Santa Coloma de Cervelló
+                data:
+                - 7
+                - 7
+              08245:
+                name: Santa Coloma de Gramenet
+                data:
+                - 65
+                - 65
+              08194:
+                name: Sant Adrià de Besòs
+                data:
+                - 20
+                - 21
+              08246:
+                name: Santa Eugènia de Berga
+                data:
+                - 4
+                - 4
+              08247:
+                name: Santa Eulàlia de Riuprimer
+                data:
+                - 3
+                - 3
+              08248:
+                name: Santa Eulàlia de Ronçana
+                data:
+                - 7
+                - 8
+              08249:
+                name: Santa Fe del Penedès
+                data:
+                - 1
+                - 1
+              08195:
+                name: Sant Agustí de Lluçanès
+                data:
+                - 0
+                - 0
+              08250:
+                name: Santa Margarida de Montbui
+                data:
+                - 2
+                - 2
+              08251:
+                name: Santa Margarida i els Monjos
+                data:
+                - 9
+                - 9
+              08253:
+                name: Santa Maria de Besora
+                data:
+                - 1
+                - 1
+              08256:
+                name: Santa Maria de Martorelles
+                data:
+                - 3
+                - 4
+              08257:
+                name: Santa Maria de Miralles
+                data:
+                - 0
+                - 0
+              08259:
+                name: Santa Maria de Palautordera
+                data:
+                - 39
+                - 42
+              08258:
+                name: Santa Maria d'Oló
+                data:
+                - 1
+                - 1
+              08196:
+                name: Sant Andreu de la Barca
+                data:
+                - 10
+                - 10
+              08197:
+                name: Sant Andreu de Llavaneres
+                data:
+                - 7
+                - 8
+              08198:
+                name: Sant Antoni de Vilamajor
+                data:
+                - 14
+                - 15
+              08260:
+                name: Santa Perpètua de Mogoda
+                data:
+                - 18
+                - 18
+              08261:
+                name: Santa Susanna
+                data:
+                - 8
+                - 9
+              08199:
+                name: Sant Bartomeu del Grau
+                data:
+                - 3
+                - 4
+              08200:
+                name: Sant Boi de Llobregat
+                data:
+                - 49
+                - 49
+              08201:
+                name: Sant Boi de Lluçanès
+                data:
+                - 0
+                - 0
+              08203:
+                name: Sant Cebrià de Vallalta
+                data:
+                - 3
+                - 3
+              08202:
+                name: Sant Celoni
+                data:
+                - 83
+                - 83
+              08204:
+                name: Sant Climent de Llobregat
+                data:
+                - 5
+                - 5
+              08205:
+                name: Sant Cugat del Vallès
+                data:
+                - 220
+                - 229
+              08206:
+                name: Sant Cugat Sesgarrigues
+                data:
+                - 1
+                - 1
+              08207:
+                name: Sant Esteve de Palautordera
+                data:
+                - 18
+                - 17
+              08208:
+                name: Sant Esteve Sesrovires
+                data:
+                - 13
+                - 12
+              08210:
+                name: Sant Feliu de Codines
+                data:
+                - 7
+                - 6
+              08211:
+                name: Sant Feliu de Llobregat
+                data:
+                - 48
+                - 52
+              08212:
+                name: Sant Feliu Sasserra
+                data:
+                - 0
+                - 0
+              08209:
+                name: Sant Fost de Campsentelles
+                data:
+                - 9
+                - 9
+              08213:
+                name: Sant Fruitós de Bages
+                data:
+                - 9
+                - 10
+              08215:
+                name: Sant Hipòlit de Voltregà
+                data:
+                - 3
+                - 3
+              08193:
+                name: Sant Iscle de Vallalta
+                data:
+                - 3
+                - 3
+              08216:
+                name: Sant Jaume de Frontanyà
+                data:
+                - 0
+                - 0
+              08217:
+                name: Sant Joan Despí
+                data:
+                - 52
+                - 53
+              08218:
+                name: Sant Joan de Vilatorrada
+                data:
+                - 10
+                - 10
+              08903:
+                name: Sant Julià de Cerdanyola
+                data:
+                - 1
+                - 1
+              08220:
+                name: Sant Julià de Vilatorta
+                data:
+                - 7
+                - 6
+              08221:
+                name: Sant Just Desvern
+                data:
+                - 30
+                - 29
+              08222:
+                name: Sant Llorenç d'Hortons
+                data:
+                - 3
+                - 3
+              08223:
+                name: Sant Llorenç Savall
+                data:
+                - 11
+                - 11
+              08225:
+                name: Sant Martí d'Albars
+                data:
+                - 0
+                - 0
+              08224:
+                name: Sant Martí de Centelles
+                data:
+                - 2
+                - 2
+              08226:
+                name: Sant Martí de Tous
+                data:
+                - 1
+                - 1
+              08227:
+                name: Sant Martí Sarroca
+                data:
+                - 4
+                - 4
+              08228:
+                name: Sant Martí Sesgueioles
+                data:
+                - 0
+                - 0
+              08229:
+                name: Sant Mateu de Bages
+                data:
+                - 0
+                - 0
+              08192:
+                name: Santpedor
+                data:
+                - 18
+                - 18
+              08231:
+                name: Sant Pere de Ribes
+                data:
+                - 47
+                - 49
+              08232:
+                name: Sant Pere de Riudebitlles
+                data:
+                - 5
+                - 5
+              08233:
+                name: Sant Pere de Torelló
+                data:
+                - 1
+                - 2
+              08234:
+                name: Sant Pere de Vilamajor
+                data:
+                - 5
+                - 5
+              08189:
+                name: Sant Pere Sallavinera
+                data:
+                - 2
+                - 2
+              08235:
+                name: Sant Pol de Mar
+                data:
+                - 9
+                - 10
+              08236:
+                name: Sant Quintí de Mediona
+                data:
+                - 1
+                - 1
+              08237:
+                name: Sant Quirze de Besora
+                data:
+                - 1
+                - 1
+              08238:
+                name: Sant Quirze del Vallès
+                data:
+                - 22
+                - 28
+              08239:
+                name: Sant Quirze Safaja
+                data:
+                - 1
+                - 1
+              08240:
+                name: Sant Sadurní d'Anoia
+                data:
+                - 19
+                - 20
+              08241:
+                name: Sant Sadurní d'Osormort
+                data:
+                - 1
+                - 1
+              08098:
+                name: Sant Salvador de Guardiola
+                data:
+                - 5
+                - 6
+              08262:
+                name: Sant Vicenç de Castellet
+                data:
+                - 12
+                - 13
+              08263:
+                name: Sant Vicenç dels Horts
+                data:
+                - 17
+                - 17
+              08264:
+                name: Sant Vicenç de Montalt
+                data:
+                - 4
+                - 4
+              08265:
+                name: Sant Vicenç de Torelló
+                data:
+                - 3
+                - 3
+              08267:
+                name: Sentmenat
+                data:
+                - 7
+                - 7
+              08269:
+                name: Seva
+                data:
+                - 1
+                - 1
+              08270:
+                name: Sitges
+                data:
+                - 44
+                - 46
+              08271:
+                name: Sobremunt
+                data:
+                - 2
+                - 2
+              08272:
+                name: Sora
+                data:
+                - 0
+                - 0
+              08273:
+                name: Subirats
+                data:
+                - 7
+                - 7
+              08274:
+                name: Súria
+                data:
+                - 3
+                - 3
+              08276:
+                name: Tagamanent
+                data:
+                - 1
+                - 1
+              08277:
+                name: Talamanca
+                data:
+                - 1
+                - 1
+              08278:
+                name: Taradell
+                data:
+                - 10
+                - 11
+              08275:
+                name: Tavèrnoles
+                data:
+                - 3
+                - 3
+              08280:
+                name: Tavertet
+                data:
+                - 0
+                - 0
+              08281:
+                name: Teià
+                data:
+                - 13
+                - 13
+              08279:
+                name: Terrassa
+                data:
+                - 310
+                - 326
+              08282:
+                name: Tiana
+                data:
+                - 20
+                - 20
+              08283:
+                name: Tona
+                data:
+                - 6
+                - 6
+              08284:
+                name: Tordera
+                data:
+                - 9
+                - 10
+              08285:
+                name: Torelló
+                data:
+                - 20
+                - 21
+              08286:
+                name: Torre de Claramunt, La
+                data:
+                - 1
+                - 1
+              08287:
+                name: Torrelavit
+                data:
+                - 2
+                - 2
+              08288:
+                name: Torrelles de Foix
+                data:
+                - 1
+                - 1
+              08289:
+                name: Torrelles de Llobregat
+                data:
+                - 21
+                - 21
+              08290:
+                name: Ullastrell
+                data:
+                - 2
+                - 2
+              08291:
+                name: Vacarisses
+                data:
+                - 9
+                - 9
+              08292:
+                name: Vallbona d'Anoia
+                data:
+                - 0
+                - 1
+              08293:
+                name: Vallcebre
+                data:
+                - 2
+                - 2
+              08294:
+                name: Vallgorguina
+                data:
+                - 4
+                - 5
+              08295:
+                name: Vallirana
+                data:
+                - 6
+                - 6
+              08296:
+                name: Vallromanes
+                data:
+                - 6
+                - 6
+              08298:
+                name: Vic
+                data:
+                - 116
+                - 118
+              08299:
+                name: Vilada
+                data:
+                - 1
+                - 1
+              08301:
+                name: Viladecans
+                data:
+                - 32
+                - 35
+              08300:
+                name: Viladecavalls
+                data:
+                - 6
+                - 6
+              08305:
+                name: Vilafranca del Penedès
+                data:
+                - 98
+                - 104
+              08306:
+                name: Vilalba Sasserra
+                data:
+                - 1
+                - 1
+              08302:
+                name: Vilanova del Camí
+                data:
+                - 4
+                - 4
+              08902:
+                name: Vilanova del Vallès
+                data:
+                - 4
+                - 5
+              08303:
+                name: Vilanova de Sau
+                data:
+                - 1
+                - 1
+              08307:
+                name: Vilanova i la Geltrú
+                data:
+                - 226
+                - 229
+              08214:
+                name: Vilassar de Dalt
+                data:
+                - 14
+                - 15
+              08219:
+                name: Vilassar de Mar
+                data:
+                - 26
+                - 27
+              08304:
+                name: Vilobí del Penedès
+                data:
+                - 2
+                - 2
+              08308:
+                name: Viver i Serrateix
+                data:
+                - 0
+                - 0
+          '17':
+            name: Girona
+            data:
+            - 1342
+            - 1399
+            cities:
+              '17001':
+                name: Agullana
+                data:
+                - 1
+                - 2
+              '17002':
+                name: Aiguaviva
+                data:
+                - 0
+                - 0
+              '17003':
+                name: Albanyà
+                data:
+                - 0
+                - 0
+              '17004':
+                name: Albons
+                data:
+                - 3
+                - 3
+              '17006':
+                name: Alp
+                data:
+                - 7
+                - 7
+              '17007':
+                name: Amer
+                data:
+                - 0
+                - 0
+              '17008':
+                name: Anglès
+                data:
+                - 8
+                - 8
+              '17009':
+                name: Arbúcies
+                data:
+                - 24
+                - 24
+              '17010':
+                name: Argelaguer
+                data:
+                - 10
+                - 11
+              '17011':
+                name: Armentera, L'
+                data:
+                - 4
+                - 4
+              '17012':
+                name: Avinyonet de Puigventós
+                data:
+                - 0
+                - 1
+              '17015':
+                name: Banyoles
+                data:
+                - 35
+                - 38
+              '17016':
+                name: Bàscara
+                data:
+                - 1
+                - 1
+              '17013':
+                name: Begur
+                data:
+                - 10
+                - 11
+              '17018':
+                name: Bellcaire d'Empordà
+                data:
+                - 3
+                - 3
+              '17019':
+                name: Besalú
+                data:
+                - 6
+                - 6
+              '17020':
+                name: Bescanó
+                data:
+                - 9
+                - 10
+              '17021':
+                name: Beuda
+                data:
+                - 2
+                - 2
+              '17022':
+                name: Bisbal d'Empordà, La
+                data:
+                - 12
+                - 13
+              '17234':
+                name: Biure
+                data:
+                - 0
+                - 0
+              '17023':
+                name: Blanes
+                data:
+                - 34
+                - 35
+              '17029':
+                name: Boadella i les Escaules
+                data:
+                - 0
+                - 0
+              '17024':
+                name: Bolvir
+                data:
+                - 0
+                - 0
+              '17025':
+                name: Bordils
+                data:
+                - 7
+                - 7
+              '17026':
+                name: Borrassà
+                data:
+                - 0
+                - 0
+              '17027':
+                name: Breda
+                data:
+                - 19
+                - 19
+              '17028':
+                name: Brunyola
+                data:
+                - 0
+                - 0
+              '17031':
+                name: Cabanelles
+                data:
+                - 2
+                - 2
+              '17030':
+                name: Cabanes
+                data:
+                - 1
+                - 1
+              '17032':
+                name: Cadaqués
+                data:
+                - 5
+                - 5
+              '17033':
+                name: Caldes de Malavella
+                data:
+                - 13
+                - 13
+              '17034':
+                name: Calonge
+                data:
+                - 16
+                - 16
+              '17035':
+                name: Camós
+                data:
+                - 2
+                - 2
+              '17036':
+                name: Campdevànol
+                data:
+                - 2
+                - 3
+              '17037':
+                name: Campelles
+                data:
+                - 2
+                - 2
+              '17038':
+                name: Campllong
+                data:
+                - 1
+                - 1
+              '17039':
+                name: Camprodon
+                data:
+                - 4
+                - 4
+              '17040':
+                name: Canet d'Adri
+                data:
+                - 1
+                - 1
+              '17041':
+                name: Cantallops
+                data:
+                - 0
+                - 0
+              '17042':
+                name: Capmany
+                data:
+                - 0
+                - 0
+              '17044':
+                name: Cassà de la Selva
+                data:
+                - 16
+                - 19
+              '17047':
+                name: Castelló d'Empúries
+                data:
+                - 16
+                - 16
+              '17048':
+                name: Castell-Platja d'Aro
+                data:
+                - 9
+                - 10
+              '17189':
+                name: Cellera de Ter, La
+                data:
+                - 3
+                - 3
+              '17049':
+                name: Celrà
+                data:
+                - 17
+                - 18
+              '17050':
+                name: Cervià de Ter
+                data:
+                - 0
+                - 0
+              '17051':
+                name: Cistella
+                data:
+                - 1
+                - 1
+              '17054':
+                name: Colera
+                data:
+                - 4
+                - 4
+              '17055':
+                name: Colomers
+                data:
+                - 2
+                - 2
+              '17057':
+                name: Corçà
+                data:
+                - 1
+                - 1
+              '17056':
+                name: Cornellà del Terri
+                data:
+                - 4
+                - 4
+              '17058':
+                name: Crespià
+                data:
+                - 1
+                - 1
+              '17901':
+                name: Cruïlles,  Monells i Sant Sadurní de l'Heura
+                data:
+                - 3
+                - 3
+              '17060':
+                name: Darnius
+                data:
+                - 0
+                - 0
+              '17061':
+                name: Das
+                data:
+                - 1
+                - 1
+              '17062':
+                name: Escala, L'
+                data:
+                - 21
+                - 21
+              '17063':
+                name: Espinelves
+                data:
+                - 0
+                - 0
+              '17064':
+                name: Espolla
+                data:
+                - 5
+                - 5
+              '17065':
+                name: Esponellà
+                data:
+                - 3
+                - 3
+              '17066':
+                name: Figueres
+                data:
+                - 31
+                - 30
+              '17067':
+                name: Flaçà
+                data:
+                - 0
+                - 0
+              '17068':
+                name: Foixà
+                data:
+                - 1
+                - 1
+              '17069':
+                name: Fontanals de Cerdanya
+                data:
+                - 1
+                - 1
+              '17070':
+                name: Fontanilles
+                data:
+                - 0
+                - 0
+              '17071':
+                name: Fontcoberta
+                data:
+                - 1
+                - 1
+              '17902':
+                name: Forallac
+                data:
+                - 7
+                - 7
+              '17073':
+                name: Fornells de la Selva
+                data:
+                - 3
+                - 3
+              '17074':
+                name: Fortià
+                data:
+                - 0
+                - 0
+              '17075':
+                name: Garrigàs
+                data:
+                - 0
+                - 0
+              '17076':
+                name: Garrigoles
+                data:
+                - 1
+                - 1
+              '17077':
+                name: Garriguella
+                data:
+                - 6
+                - 6
+              '17078':
+                name: Ger
+                data:
+                - 0
+                - 0
+              '17079':
+                name: Girona
+                data:
+                - 342
+                - 361
+              '17080':
+                name: Gombrèn
+                data:
+                - 0
+                - 0
+              '17081':
+                name: Gualta
+                data:
+                - 1
+                - 2
+              '17082':
+                name: Guils de Cerdanya
+                data:
+                - 0
+                - 0
+              '17083':
+                name: Hostalric
+                data:
+                - 2
+                - 2
+              '17084':
+                name: Isòvol
+                data:
+                - 1
+                - 1
+              '17085':
+                name: Jafre
+                data:
+                - 1
+                - 1
+              '17086':
+                name: Jonquera, La
+                data:
+                - 2
+                - 2
+              '17087':
+                name: Juià
+                data:
+                - 0
+                - 0
+              '17088':
+                name: Lladó
+                data:
+                - 1
+                - 1
+              '17089':
+                name: Llagostera
+                data:
+                - 15
+                - 15
+              '17090':
+                name: Llambilles
+                data:
+                - 1
+                - 1
+              '17091':
+                name: Llanars
+                data:
+                - 2
+                - 2
+              '17092':
+                name: Llançà
+                data:
+                - 6
+                - 6
+              '17093':
+                name: Llers
+                data:
+                - 2
+                - 2
+              '17094':
+                name: Llívia
+                data:
+                - 1
+                - 1
+              '17095':
+                name: Lloret de Mar
+                data:
+                - 16
+                - 16
+              '17096':
+                name: Llosses, Les
+                data:
+                - 0
+                - 1
+              '17102':
+                name: Maçanet de Cabrenys
+                data:
+                - 0
+                - 1
+              '17103':
+                name: Maçanet de la Selva
+                data:
+                - 10
+                - 12
+              '17097':
+                name: Madremanya
+                data:
+                - 3
+                - 3
+              '17098':
+                name: Maià de Montcal
+                data:
+                - 1
+                - 1
+              '17100':
+                name: Masarac
+                data:
+                - 0
+                - 0
+              '17101':
+                name: Massanes
+                data:
+                - 3
+                - 3
+              '17099':
+                name: Meranges
+                data:
+                - 0
+                - 0
+              '17105':
+                name: Mieres
+                data:
+                - 7
+                - 7
+              '17106':
+                name: Mollet de Peralada
+                data:
+                - 0
+                - 0
+              '17107':
+                name: Molló
+                data:
+                - 0
+                - 0
+              '17109':
+                name: Montagut i Oix
+                data:
+                - 1
+                - 1
+              '17110':
+                name: Mont-ras
+                data:
+                - 2
+                - 2
+              '17111':
+                name: Navata
+                data:
+                - 3
+                - 3
+              '17112':
+                name: Ogassa
+                data:
+                - 1
+                - 1
+              '17114':
+                name: Olot
+                data:
+                - 34
+                - 34
+              '17115':
+                name: Ordis
+                data:
+                - 2
+                - 2
+              '17116':
+                name: Osor
+                data:
+                - 0
+                - 0
+              '17117':
+                name: Palafrugell
+                data:
+                - 20
+                - 20
+              '17118':
+                name: Palamós
+                data:
+                - 38
+                - 38
+              '17119':
+                name: Palau de Santa Eulàlia
+                data:
+                - 3
+                - 3
+              '17121':
+                name: Palau-sator
+                data:
+                - 1
+                - 1
+              '17120':
+                name: Palau-saverdera
+                data:
+                - 2
+                - 2
+              '17123':
+                name: Palol de Revardit
+                data:
+                - 1
+                - 1
+              '17124':
+                name: Pals
+                data:
+                - 10
+                - 12
+              '17125':
+                name: Pardines
+                data:
+                - 1
+                - 2
+              '17126':
+                name: Parlavà
+                data:
+                - 2
+                - 2
+              '17128':
+                name: Pau
+                data:
+                - 1
+                - 1
+              '17129':
+                name: Pedret i Marzà
+                data:
+                - 0
+                - 0
+              '17130':
+                name: Pera, La
+                data:
+                - 3
+                - 3
+              '17132':
+                name: Peralada
+                data:
+                - 0
+                - 0
+              '17133':
+                name: Planes d'Hostoles, Les
+                data:
+                - 5
+                - 5
+              '17134':
+                name: Planoles
+                data:
+                - 0
+                - 0
+              '17135':
+                name: Pont de Molins
+                data:
+                - 1
+                - 1
+              '17136':
+                name: Pontós
+                data:
+                - 1
+                - 2
+              '17137':
+                name: Porqueres
+                data:
+                - 3
+                - 3
+              '17138':
+                name: Portbou
+                data:
+                - 0
+                - 0
+              '17140':
+                name: Port de la Selva, El
+                data:
+                - 2
+                - 2
+              '17139':
+                name: Preses, Les
+                data:
+                - 2
+                - 2
+              '17141':
+                name: Puigcerdà
+                data:
+                - 9
+                - 9
+              '17142':
+                name: Quart
+                data:
+                - 2
+                - 2
+              '17043':
+                name: Queralbs
+                data:
+                - 0
+                - 0
+              '17143':
+                name: Rabós
+                data:
+                - 1
+                - 1
+              '17144':
+                name: Regencós
+                data:
+                - 1
+                - 1
+              '17145':
+                name: Ribes de Freser
+                data:
+                - 9
+                - 10
+              '17146':
+                name: Riells i Viabrea
+                data:
+                - 7
+                - 8
+              '17147':
+                name: Ripoll
+                data:
+                - 5
+                - 5
+              '17148':
+                name: Riudarenes
+                data:
+                - 10
+                - 10
+              '17149':
+                name: Riudaura
+                data:
+                - 2
+                - 2
+              '17150':
+                name: Riudellots de la Selva
+                data:
+                - 5
+                - 5
+              '17151':
+                name: Riumors
+                data:
+                - 0
+                - 0
+              '17152':
+                name: Roses
+                data:
+                - 15
+                - 16
+              '17153':
+                name: Rupià
+                data:
+                - 1
+                - 1
+              '17154':
+                name: Sales de Llierca
+                data:
+                - 1
+                - 1
+              '17155':
+                name: Salt
+                data:
+                - 38
+                - 40
+              '17180':
+                name: Santa Coloma de Farners
+                data:
+                - 41
+                - 43
+              '17181':
+                name: Santa Cristina d'Aro
+                data:
+                - 9
+                - 9
+              '17157':
+                name: Sant Andreu Salou
+                data:
+                - 0
+                - 0
+              '17183':
+                name: Sant Aniol de Finestres
+                data:
+                - 5
+                - 5
+              '17184':
+                name: Santa Pau
+                data:
+                - 0
+                - 0
+              '17158':
+                name: Sant Climent Sescebes
+                data:
+                - 0
+                - 0
+              '17159':
+                name: Sant Feliu de Buixalleu
+                data:
+                - 1
+                - 2
+              '17160':
+                name: Sant Feliu de Guíxols
+                data:
+                - 30
+                - 30
+              '17161':
+                name: Sant Feliu de Pallerols
+                data:
+                - 3
+                - 3
+              '17162':
+                name: Sant Ferriol
+                data:
+                - 0
+                - 0
+              '17163':
+                name: Sant Gregori
+                data:
+                - 14
+                - 13
+              '17164':
+                name: Sant Hilari Sacalm
+                data:
+                - 6
+                - 7
+              '17165':
+                name: Sant Jaume de Llierca
+                data:
+                - 0
+                - 0
+              '17167':
+                name: Sant Joan de les Abadesses
+                data:
+                - 8
+                - 8
+              '17168':
+                name: Sant Joan de Mollet
+                data:
+                - 2
+                - 2
+              '17185':
+                name: Sant Joan les Fonts
+                data:
+                - 0
+                - 0
+              '17166':
+                name: Sant Jordi Desvalls
+                data:
+                - 1
+                - 1
+              '17903':
+                name: Sant Julià del Llor i Bonmatí
+                data:
+                - 1
+                - 1
+              '17169':
+                name: Sant Julià de Ramis
+                data:
+                - 4
+                - 4
+              '17171':
+                name: Sant Llorenç de la Muga
+                data:
+                - 0
+                - 0
+              '17172':
+                name: Sant Martí de Llémena
+                data:
+                - 12
+                - 12
+              '17173':
+                name: Sant Martí Vell
+                data:
+                - 2
+                - 2
+              '17174':
+                name: Sant Miquel de Campmajor
+                data:
+                - 2
+                - 2
+              '17175':
+                name: Sant Miquel de Fluvià
+                data:
+                - 2
+                - 2
+              '17176':
+                name: Sant Mori
+                data:
+                - 0
+                - 0
+              '17177':
+                name: Sant Pau de Segúries
+                data:
+                - 1
+                - 1
+              '17178':
+                name: Sant Pere Pescador
+                data:
+                - 2
+                - 2
+              '17186':
+                name: Sarrià de Ter
+                data:
+                - 8
+                - 7
+              '17187':
+                name: Saus,  Camallera i Llampaies
+                data:
+                - 5
+                - 5
+              '17188':
+                name: Selva de Mar, La
+                data:
+                - 2
+                - 2
+              '17190':
+                name: Serinyà
+                data:
+                - 2
+                - 2
+              '17191':
+                name: Serra de Daró
+                data:
+                - 0
+                - 0
+              '17192':
+                name: Setcases
+                data:
+                - 1
+                - 1
+              '17193':
+                name: Sils
+                data:
+                - 5
+                - 5
+              '17052':
+                name: Siurana
+                data:
+                - 0
+                - 0
+              '17194':
+                name: Susqueda
+                data:
+                - 0
+                - 0
+              '17195':
+                name: Tallada d'Empordà, La
+                data:
+                - 0
+                - 0
+              '17196':
+                name: Terrades
+                data:
+                - 0
+                - 0
+              '17198':
+                name: Torroella de Fluvià
+                data:
+                - 2
+                - 2
+              '17199':
+                name: Torroella de Montgrí
+                data:
+                - 28
+                - 29
+              '17200':
+                name: Tortellà
+                data:
+                - 6
+                - 6
+              '17201':
+                name: Toses
+                data:
+                - 3
+                - 3
+              '17202':
+                name: Tossa de Mar
+                data:
+                - 9
+                - 9
+              '17204':
+                name: Ullà
+                data:
+                - 1
+                - 2
+              '17205':
+                name: Ullastret
+                data:
+                - 0
+                - 0
+              '17203':
+                name: Ultramort
+                data:
+                - 0
+                - 0
+              '17206':
+                name: Urús
+                data:
+                - 0
+                - 0
+              '17014':
+                name: Vajol, La
+                data:
+                - 0
+                - 0
+              '17208':
+                name: Vall de Bianya, La
+                data:
+                - 2
+                - 2
+              '17207':
+                name: Vall d'en Bas, La
+                data:
+                - 6
+                - 7
+              '17170':
+                name: Vallfogona de Ripollès
+                data:
+                - 1
+                - 1
+              '17209':
+                name: Vall-llobrega
+                data:
+                - 0
+                - 1
+              '17210':
+                name: Ventalló
+                data:
+                - 1
+                - 2
+              '17211':
+                name: Verges
+                data:
+                - 1
+                - 1
+              '17213':
+                name: Vidreres
+                data:
+                - 5
+                - 5
+              '17214':
+                name: Vilabertran
+                data:
+                - 1
+                - 1
+              '17215':
+                name: Vilablareix
+                data:
+                - 6
+                - 6
+              '17217':
+                name: Viladamat
+                data:
+                - 0
+                - 0
+              '17216':
+                name: Viladasens
+                data:
+                - 0
+                - 0
+              '17218':
+                name: Vilademuls
+                data:
+                - 8
+                - 8
+              '17220':
+                name: Viladrau
+                data:
+                - 1
+                - 1
+              '17221':
+                name: Vilafant
+                data:
+                - 3
+                - 3
+              '17223':
+                name: Vilajuïga
+                data:
+                - 5
+                - 5
+              '17224':
+                name: Vilallonga de Ter
+                data:
+                - 0
+                - 1
+              '17225':
+                name: Vilamacolum
+                data:
+                - 0
+                - 0
+              '17226':
+                name: Vilamalla
+                data:
+                - 1
+                - 1
+              '17227':
+                name: Vilamaniscle
+                data:
+                - 2
+                - 2
+              '17228':
+                name: Vilanant
+                data:
+                - 0
+                - 0
+              '17222':
+                name: Vilaür
+                data:
+                - 5
+                - 5
+              '17233':
+                name: Vilobí d'Onyar
+                data:
+                - 7
+                - 8
+              '17232':
+                name: Vilopriu
+                data:
+                - 5
+                - 5
+          '25':
+            name: Lleida
+            data:
+            - 577
+            - 620
+            cities:
+              '25002':
+                name: Àger
+                data:
+                - 6
+                - 6
+              '25003':
+                name: Agramunt
+                data:
+                - 3
+                - 3
+              '25038':
+                name: Aitona
+                data:
+                - 1
+                - 1
+              '25004':
+                name: Alamús, Els
+                data:
+                - 2
+                - 2
+              '25005':
+                name: Alàs i Cerc
+                data:
+                - 0
+                - 0
+              '25006':
+                name: Albagés, L'
+                data:
+                - 0
+                - 0
+              '25007':
+                name: Albatàrrec
+                data:
+                - 1
+                - 1
+              '25008':
+                name: Albesa
+                data:
+                - 1
+                - 1
+              '25009':
+                name: Albi, L'
+                data:
+                - 1
+                - 1
+              '25010':
+                name: Alcanó
+                data:
+                - 0
+                - 0
+              '25011':
+                name: Alcarràs
+                data:
+                - 2
+                - 2
+              '25012':
+                name: Alcoletge
+                data:
+                - 2
+                - 2
+              '25013':
+                name: Alfarràs
+                data:
+                - 1
+                - 1
+              '25014':
+                name: Alfés
+                data:
+                - 0
+                - 0
+              '25015':
+                name: Algerri
+                data:
+                - 0
+                - 0
+              '25016':
+                name: Alguaire
+                data:
+                - 5
+                - 5
+              '25019':
+                name: Almacelles
+                data:
+                - 4
+                - 4
+              '25022':
+                name: Alòs de Balaguer
+                data:
+                - 2
+                - 2
+              '25023':
+                name: Alpicat
+                data:
+                - 4
+                - 4
+              '25024':
+                name: Alt Àneu
+                data:
+                - 3
+                - 3
+              '25027':
+                name: Anglesola
+                data:
+                - 0
+                - 0
+              '25029':
+                name: Arbeca
+                data:
+                - 0
+                - 0
+              '25033':
+                name: Artesa de Lleida
+                data:
+                - 1
+                - 1
+              '25034':
+                name: Artesa de Segre
+                data:
+                - 1
+                - 1
+              '25036':
+                name: Aspa
+                data:
+                - 0
+                - 0
+              '25037':
+                name: Avellanes i Santa Linya, Les
+                data:
+                - 1
+                - 1
+              '25039':
+                name: Baix Pallars
+                data:
+                - 5
+                - 5
+              '25040':
+                name: Balaguer
+                data:
+                - 25
+                - 26
+              '25041':
+                name: Barbens
+                data:
+                - 6
+                - 6
+              '25044':
+                name: Bassella
+                data:
+                - 0
+                - 0
+              '25046':
+                name: Belianes
+                data:
+                - 3
+                - 3
+              '25170':
+                name: Bellaguarda
+                data:
+                - 0
+                - 0
+              '25047':
+                name: Bellcaire d'Urgell
+                data:
+                - 2
+                - 2
+              '25048':
+                name: Bell-lloc d'Urgell
+                data:
+                - 1
+                - 1
+              '25050':
+                name: Bellpuig
+                data:
+                - 14
+                - 15
+              '25051':
+                name: Bellver de Cerdanya
+                data:
+                - 3
+                - 4
+              '25052':
+                name: Bellvís
+                data:
+                - 2
+                - 2
+              '25053':
+                name: Benavent de Segrià
+                data:
+                - 2
+                - 2
+              '25055':
+                name: Biosca
+                data:
+                - 0
+                - 0
+              '25058':
+                name: Borges Blanques, Les
+                data:
+                - 7
+                - 7
+              '25059':
+                name: Bossòst
+                data:
+                - 0
+                - 0
+              '25056':
+                name: Bovera
+                data:
+                - 1
+                - 1
+              '25061':
+                name: Cabó
+                data:
+                - 1
+                - 1
+              '25062':
+                name: Camarasa
+                data:
+                - 1
+                - 1
+              '25064':
+                name: Castellar de la Ribera
+                data:
+                - 0
+                - 0
+              '25067':
+                name: Castelldans
+                data:
+                - 1
+                - 1
+              '25904':
+                name: Castell de Mur
+                data:
+                - 1
+                - 1
+              '25068':
+                name: Castellnou de Seana
+                data:
+                - 0
+                - 0
+              '25070':
+                name: Castellserà
+                data:
+                - 2
+                - 3
+              '25071':
+                name: Cava
+                data:
+                - 1
+                - 1
+              '25072':
+                name: Cervera
+                data:
+                - 7
+                - 9
+              '25073':
+                name: Cervià de les Garrigues
+                data:
+                - 1
+                - 1
+              '25074':
+                name: Ciutadilla
+                data:
+                - 3
+                - 3
+              '25077':
+                name: Coll de Nargó
+                data:
+                - 0
+                - 0
+              '25163':
+                name: Coma i la Pedra, La
+                data:
+                - 2
+                - 2
+              '25161':
+                name: Conca de Dalt
+                data:
+                - 3
+                - 3
+              '25078':
+                name: Corbins
+                data:
+                - 1
+                - 1
+              '25079':
+                name: Cubells
+                data:
+                - 0
+                - 0
+              '25081':
+                name: Espluga Calba, L'
+                data:
+                - 0
+                - 0
+              '25082':
+                name: Espot
+                data:
+                - 3
+                - 3
+              '25088':
+                name: Estamariu
+                data:
+                - 0
+                - 0
+              '25085':
+                name: Estaràs
+                data:
+                - 1
+                - 1
+              '25086':
+                name: Esterri d'Àneu
+                data:
+                - 4
+                - 4
+              '25089':
+                name: Farrera
+                data:
+                - 0
+                - 0
+              '25908':
+                name: Fígols i Alinyà
+                data:
+                - 1
+                - 1
+              '25092':
+                name: Floresta, La
+                data:
+                - 0
+                - 0
+              '25093':
+                name: Fondarella
+                data:
+                - 0
+                - 0
+              '25094':
+                name: Foradada
+                data:
+                - 0
+                - 0
+              '25096':
+                name: Fuliola, La
+                data:
+                - 0
+                - 2
+              '25097':
+                name: Fulleda
+                data:
+                - 1
+                - 1
+              '25912':
+                name: Gimenells i el Pla de la Font
+                data:
+                - 0
+                - 0
+              '25099':
+                name: Golmés
+                data:
+                - 1
+                - 1
+              '25100':
+                name: Gósol
+                data:
+                - 1
+                - 1
+              '25101':
+                name: Granadella, La
+                data:
+                - 1
+                - 1
+              '25105':
+                name: Granyena de les Garrigues
+                data:
+                - 1
+                - 1
+              '25104':
+                name: Granyena de Segarra
+                data:
+                - 0
+                - 0
+              '25109':
+                name: Guimerà
+                data:
+                - 3
+                - 3
+              '25903':
+                name: Guingueta d'Àneu, La
+                data:
+                - 2
+                - 2
+              '25110':
+                name: Guissona
+                data:
+                - 5
+                - 5
+              '25111':
+                name: Guixers
+                data:
+                - 0
+                - 0
+              '25115':
+                name: Isona i Conca Dellà
+                data:
+                - 1
+                - 1
+              '25112':
+                name: Ivars de Noguera
+                data:
+                - 0
+                - 0
+              '25113':
+                name: Ivars d'Urgell
+                data:
+                - 10
+                - 9
+              '25910':
+                name: Josa i Tuixén
+                data:
+                - 2
+                - 2
+              '25119':
+                name: Juneda
+                data:
+                - 9
+                - 10
+              '25121':
+                name: Les
+                data:
+                - 6
+                - 6
+              '25122':
+                name: Linyola
+                data:
+                - 6
+                - 7
+              '25123':
+                name: Lladorre
+                data:
+                - 0
+                - 0
+              '25124':
+                name: Lladurs
+                data:
+                - 0
+                - 0
+              '25125':
+                name: Llardecans
+                data:
+                - 1
+                - 1
+              '25126':
+                name: Llavorsí
+                data:
+                - 1
+                - 1
+              '25120':
+                name: Lleida
+                data:
+                - 180
+                - 193
+              '25127':
+                name: Lles de Cerdanya
+                data:
+                - 2
+                - 3
+              '25133':
+                name: Maials
+                data:
+                - 0
+                - 0
+              '25130':
+                name: Maldà
+                data:
+                - 1
+                - 1
+              '25132':
+                name: Massoteres
+                data:
+                - 2
+                - 2
+              '25134':
+                name: Menàrguens
+                data:
+                - 2
+                - 2
+              '25135':
+                name: Miralcamp
+                data:
+                - 1
+                - 1
+              '25137':
+                name: Mollerussa
+                data:
+                - 11
+                - 12
+              '25136':
+                name: Molsosa, La
+                data:
+                - 1
+                - 1
+              '25139':
+                name: Montellà i Martinet
+                data:
+                - 1
+                - 1
+              '25140':
+                name: Montferrer i Castellbò
+                data:
+                - 1
+                - 1
+              '25138':
+                name: Montgai
+                data:
+                - 1
+                - 1
+              '25141':
+                name: Montoliu de Segarra
+                data:
+                - 2
+                - 2
+              '25145':
+                name: Nalec
+                data:
+                - 0
+                - 0
+              '25025':
+                name: Naut Aran
+                data:
+                - 2
+                - 6
+              '25146':
+                name: Navès
+                data:
+                - 1
+                - 1
+              '25148':
+                name: Odèn
+                data:
+                - 0
+                - 0
+              '25149':
+                name: Oliana
+                data:
+                - 0
+                - 1
+              '25151':
+                name: Olius
+                data:
+                - 0
+                - 0
+              '25152':
+                name: Oluges, Les
+                data:
+                - 0
+                - 0
+              '25153':
+                name: Omellons, Els
+                data:
+                - 0
+                - 0
+              '25154':
+                name: Omells de na Gaia, Els
+                data:
+                - 1
+                - 1
+              '25155':
+                name: Organyà
+                data:
+                - 0
+                - 0
+              '25156':
+                name: Os de Balaguer
+                data:
+                - 0
+                - 0
+              '25158':
+                name: Palau d'Anglesola, El
+                data:
+                - 6
+                - 7
+              '25165':
+                name: Peramola
+                data:
+                - 3
+                - 3
+              '25166':
+                name: Pinell de Solsonès
+                data:
+                - 1
+                - 1
+              '25167':
+                name: Pinós
+                data:
+                - 2
+                - 2
+              '25911':
+                name: Plans de Sió, Els
+                data:
+                - 0
+                - 0
+              '25168':
+                name: Poal, El
+                data:
+                - 1
+                - 1
+              '25169':
+                name: Pobla de Cérvoles, La
+                data:
+                - 2
+                - 2
+              '25171':
+                name: Pobla de Segur, La
+                data:
+                - 13
+                - 14
+              '25173':
+                name: Pont de Suert, El
+                data:
+                - 9
+                - 9
+              '25172':
+                name: Ponts
+                data:
+                - 4
+                - 4
+              '25175':
+                name: Prats i Sansor
+                data:
+                - 1
+                - 1
+              '25176':
+                name: Preixana
+                data:
+                - 1
+                - 1
+              '25177':
+                name: Preixens
+                data:
+                - 3
+                - 3
+              '25179':
+                name: Prullans
+                data:
+                - 0
+                - 0
+              '25180':
+                name: Puiggròs
+                data:
+                - 0
+                - 1
+              '25181':
+                name: Puigverd d'Agramunt
+                data:
+                - 2
+                - 2
+              '25182':
+                name: Puigverd de Lleida
+                data:
+                - 0
+                - 0
+              '25183':
+                name: Rialp
+                data:
+                - 1
+                - 1
+              '25905':
+                name: Ribera d'Ondara
+                data:
+                - 2
+                - 2
+              '25185':
+                name: Ribera d'Urgellet
+                data:
+                - 0
+                - 0
+              '25186':
+                name: Riner
+                data:
+                - 0
+                - 0
+              '25913':
+                name: Riu de Cerdanya
+                data:
+                - 0
+                - 0
+              '25189':
+                name: Rosselló
+                data:
+                - 3
+                - 3
+              '25191':
+                name: Sanaüja
+                data:
+                - 1
+                - 1
+              '25196':
+                name: Sant Esteve de la Sarga
+                data:
+                - 1
+                - 1
+              '25192':
+                name: Sant Guim de Freixenet
+                data:
+                - 8
+                - 9
+              '25197':
+                name: Sant Guim de la Plana
+                data:
+                - 0
+                - 0
+              '25193':
+                name: Sant Llorenç de Morunys
+                data:
+                - 2
+                - 2
+              '25902':
+                name: Sant Martí de Riucorb
+                data:
+                - 3
+                - 3
+              '25194':
+                name: Sant Ramon
+                data:
+                - 0
+                - 0
+              '25201':
+                name: Sarroca de Bellera
+                data:
+                - 0
+                - 0
+              '25200':
+                name: Sarroca de Lleida
+                data:
+                - 0
+                - 0
+              '25202':
+                name: Senterada
+                data:
+                - 0
+                - 0
+              '25035':
+                name: Sentiu de Sió, La
+                data:
+                - 0
+                - 0
+              '25203':
+                name: Seu d'Urgell, La
+                data:
+                - 4
+                - 5
+              '25205':
+                name: Sidamon
+                data:
+                - 1
+                - 1
+              '25206':
+                name: Soleràs, El
+                data:
+                - 0
+                - 0
+              '25207':
+                name: Solsona
+                data:
+                - 10
+                - 11
+              '25208':
+                name: Soriguera
+                data:
+                - 3
+                - 3
+              '25209':
+                name: Sort
+                data:
+                - 7
+                - 10
+              '25211':
+                name: Sudanell
+                data:
+                - 0
+                - 0
+              '25212':
+                name: Sunyer
+                data:
+                - 0
+                - 0
+              '25215':
+                name: Talarn
+                data:
+                - 1
+                - 1
+              '25216':
+                name: Talavera
+                data:
+                - 0
+                - 0
+              '25217':
+                name: Tàrrega
+                data:
+                - 34
+                - 35
+              '25218':
+                name: Tarrés
+                data:
+                - 0
+                - 0
+              '25219':
+                name: Tarroja de Segarra
+                data:
+                - 0
+                - 0
+              '25220':
+                name: Térmens
+                data:
+                - 0
+                - 0
+              '25221':
+                name: Tírvia
+                data:
+                - 1
+                - 1
+              '25222':
+                name: Tiurana
+                data:
+                - 0
+                - 0
+              '25223':
+                name: Torà
+                data:
+                - 0
+                - 0
+              '25224':
+                name: Torms, Els
+                data:
+                - 1
+                - 1
+              '25225':
+                name: Tornabous
+                data:
+                - 0
+                - 0
+              '25227':
+                name: Torre de Cabdella, La
+                data:
+                - 1
+                - 1
+              '25228':
+                name: Torrefarrera
+                data:
+                - 1
+                - 2
+              '25907':
+                name: Torrefeta i Florejacs
+                data:
+                - 2
+                - 3
+              '25230':
+                name: Torregrossa
+                data:
+                - 2
+                - 2
+              '25231':
+                name: Torrelameu
+                data:
+                - 1
+                - 1
+              '25232':
+                name: Torres de Segre
+                data:
+                - 0
+                - 0
+              '25234':
+                name: Tremp
+                data:
+                - 9
+                - 9
+              '25238':
+                name: Vallbona de les Monges
+                data:
+                - 3
+                - 3
+              '25043':
+                name: Vall de Boí, La
+                data:
+                - 1
+                - 2
+              '25901':
+                name: Vall de Cardós
+                data:
+                - 0
+                - 0
+              '25240':
+                name: Vallfogona de Balaguer
+                data:
+                - 4
+                - 4
+              '25906':
+                name: Valls d'Aguilar, Les
+                data:
+                - 1
+                - 1
+              '25909':
+                name: Vansa i Fórnols, La
+                data:
+                - 0
+                - 0
+              '25242':
+                name: Verdú
+                data:
+                - 2
+                - 3
+              '25243':
+                name: Vielha e Mijaran
+                data:
+                - 3
+                - 3
+              '25244':
+                name: Vilagrassa
+                data:
+                - 1
+                - 1
+              '25245':
+                name: Vilaller
+                data:
+                - 3
+                - 3
+              '25248':
+                name: Vilanova de Bellpuig
+                data:
+                - 3
+                - 3
+              '25254':
+                name: Vilanova de la Barca
+                data:
+                - 0
+                - 0
+              '25249':
+                name: Vilanova de l'Aguda
+                data:
+                - 0
+                - 0
+              '25250':
+                name: Vilanova de Meià
+                data:
+                - 2
+                - 2
+              '25251':
+                name: Vilanova de Segrià
+                data:
+                - 2
+                - 2
+              '25252':
+                name: Vila-sana
+                data:
+                - 0
+                - 0
+              '25253':
+                name: Vilosell, El
+                data:
+                - 0
+                - 0
+              '25255':
+                name: Vinaixa
+                data:
+                - 0
+                - 0
+          '43':
+            name: Tarragona
+            data:
+            - 746
+            - 788
+            cities:
+              '43001':
+                name: Aiguamúrcia
+                data:
+                - 4
+                - 5
+              '43002':
+                name: Albinyana
+                data:
+                - 1
+                - 1
+              '43003':
+                name: Albiol, L'
+                data:
+                - 0
+                - 0
+              '43004':
+                name: Alcanar
+                data:
+                - 13
+                - 14
+              '43005':
+                name: Alcover
+                data:
+                - 3
+                - 3
+              '43904':
+                name: Aldea, L'
+                data:
+                - 0
+                - 0
+              '43006':
+                name: Aldover
+                data:
+                - 2
+                - 2
+              '43007':
+                name: Aleixar, L'
+                data:
+                - 2
+                - 2
+              '43008':
+                name: Alfara de Carles
+                data:
+                - 2
+                - 2
+              '43009':
+                name: Alforja
+                data:
+                - 1
+                - 1
+              '43010':
+                name: Alió
+                data:
+                - 0
+                - 0
+              '43011':
+                name: Almoster
+                data:
+                - 1
+                - 1
+              '43012':
+                name: Altafulla
+                data:
+                - 17
+                - 18
+              '43013':
+                name: Ametlla de Mar, L'
+                data:
+                - 8
+                - 9
+              '43906':
+                name: Ampolla, L'
+                data:
+                - 1
+                - 1
+              '43014':
+                name: Amposta
+                data:
+                - 23
+                - 25
+              '43016':
+                name: Arboç, L'
+                data:
+                - 6
+                - 6
+              '43015':
+                name: Arbolí
+                data:
+                - 1
+                - 1
+              '43017':
+                name: Argentera, L'
+                data:
+                - 0
+                - 1
+              '43018':
+                name: Arnes
+                data:
+                - 5
+                - 5
+              '43019':
+                name: Ascó
+                data:
+                - 0
+                - 0
+              '43020':
+                name: Banyeres del Penedès
+                data:
+                - 7
+                - 7
+              '43021':
+                name: Barberà de la Conca
+                data:
+                - 3
+                - 3
+              '43022':
+                name: Batea
+                data:
+                - 0
+                - 0
+              '43023':
+                name: Bellmunt del Priorat
+                data:
+                - 0
+                - 0
+              '43024':
+                name: Bellvei
+                data:
+                - 1
+                - 1
+              '43025':
+                name: Benifallet
+                data:
+                - 1
+                - 2
+              '43026':
+                name: Benissanet
+                data:
+                - 1
+                - 1
+              '43027':
+                name: Bisbal de Falset, La
+                data:
+                - 1
+                - 1
+              '43028':
+                name: Bisbal del Penedès, La
+                data:
+                - 2
+                - 3
+              '43029':
+                name: Blancafort
+                data:
+                - 1
+                - 1
+              '43030':
+                name: Bonastre
+                data:
+                - 0
+                - 0
+              '43031':
+                name: Borges del Camp, Les
+                data:
+                - 2
+                - 2
+              '43032':
+                name: Bot
+                data:
+                - 0
+                - 0
+              '43033':
+                name: Botarell
+                data:
+                - 0
+                - 0
+              '43034':
+                name: Bràfim
+                data:
+                - 2
+                - 2
+              '43035':
+                name: Cabacés
+                data:
+                - 0
+                - 0
+              '43036':
+                name: Cabra del Camp
+                data:
+                - 0
+                - 0
+              '43037':
+                name: Calafell
+                data:
+                - 15
+                - 15
+              '43903':
+                name: Camarles
+                data:
+                - 0
+                - 0
+              '43038':
+                name: Cambrils
+                data:
+                - 34
+                - 37
+              '43907':
+                name: Canonja, La
+                data:
+                - 3
+                - 3
+              '43039':
+                name: Capafonts
+                data:
+                - 0
+                - 0
+              '43040':
+                name: Capçanes
+                data:
+                - 2
+                - 2
+              '43041':
+                name: Caseres
+                data:
+                - 0
+                - 0
+              '43042':
+                name: Castellvell del Camp
+                data:
+                - 3
+                - 3
+              '43043':
+                name: Catllar, El
+                data:
+                - 2
+                - 2
+              '43046':
+                name: Conesa
+                data:
+                - 1
+                - 1
+              '43047':
+                name: Constantí
+                data:
+                - 6
+                - 6
+              '43048':
+                name: Corbera d'Ebre
+                data:
+                - 2
+                - 2
+              '43049':
+                name: Cornudella de Montsant
+                data:
+                - 1
+                - 1
+              '43050':
+                name: Creixell
+                data:
+                - 7
+                - 7
+              '43051':
+                name: Cunit
+                data:
+                - 7
+                - 7
+              '43901':
+                name: Deltebre
+                data:
+                - 6
+                - 6
+              '43053':
+                name: Duesaigües
+                data:
+                - 0
+                - 0
+              '43054':
+                name: Espluga de Francolí, L'
+                data:
+                - 6
+                - 6
+              '43055':
+                name: Falset
+                data:
+                - 4
+                - 4
+              '43056':
+                name: Fatarella, La
+                data:
+                - 2
+                - 2
+              '43057':
+                name: Febró, La
+                data:
+                - 0
+                - 0
+              '43059':
+                name: Figuerola del Camp
+                data:
+                - 0
+                - 0
+              '43060':
+                name: Flix
+                data:
+                - 5
+                - 5
+              '43062':
+                name: Freginals
+                data:
+                - 0
+                - 0
+              '43063':
+                name: Galera, La
+                data:
+                - 5
+                - 5
+              '43064':
+                name: Gandesa
+                data:
+                - 2
+                - 3
+              '43065':
+                name: Garcia
+                data:
+                - 1
+                - 1
+              '43066':
+                name: Garidells, Els
+                data:
+                - 0
+                - 0
+              '43067':
+                name: Ginestar
+                data:
+                - 0
+                - 0
+              '43068':
+                name: Godall
+                data:
+                - 0
+                - 0
+              '43069':
+                name: Gratallops
+                data:
+                - 4
+                - 4
+              '43070':
+                name: Guiamets, Els
+                data:
+                - 4
+                - 4
+              '43071':
+                name: Horta de Sant Joan
+                data:
+                - 1
+                - 1
+              '43072':
+                name: Lloar, El
+                data:
+                - 0
+                - 0
+              '43074':
+                name: Llorenç del Penedès
+                data:
+                - 2
+                - 2
+              '43076':
+                name: Marçà
+                data:
+                - 1
+                - 1
+              '43075':
+                name: Margalef
+                data:
+                - 1
+                - 1
+              '43078':
+                name: Masdenverge
+                data:
+                - 0
+                - 0
+              '43079':
+                name: Masllorenç
+                data:
+                - 0
+                - 0
+              '43080':
+                name: Masó, La
+                data:
+                - 1
+                - 1
+              '43081':
+                name: Maspujols
+                data:
+                - 1
+                - 1
+              '43082':
+                name: Masroig, El
+                data:
+                - 2
+                - 2
+              '43084':
+                name: Miravet
+                data:
+                - 0
+                - 0
+              '43085':
+                name: Molar, El
+                data:
+                - 0
+                - 0
+              '43086':
+                name: Montblanc
+                data:
+                - 14
+                - 17
+              '43088':
+                name: Montbrió del Camp
+                data:
+                - 8
+                - 8
+              '43089':
+                name: Montferri
+                data:
+                - 0
+                - 0
+              '43090':
+                name: Montmell, El
+                data:
+                - 2
+                - 2
+              '43091':
+                name: Mont-ral
+                data:
+                - 2
+                - 2
+              '43092':
+                name: Mont-roig del Camp
+                data:
+                - 8
+                - 9
+              '43093':
+                name: Móra d'Ebre
+                data:
+                - 2
+                - 2
+              '43094':
+                name: Móra la Nova
+                data:
+                - 5
+                - 5
+              '43095':
+                name: Morell, El
+                data:
+                - 4
+                - 4
+              '43096':
+                name: Morera de Montsant, La
+                data:
+                - 1
+                - 1
+              '43097':
+                name: Nou de Gaià, La
+                data:
+                - 2
+                - 3
+              '43098':
+                name: Nulles
+                data:
+                - 3
+                - 3
+              '43100':
+                name: Pallaresos, Els
+                data:
+                - 6
+                - 6
+              '43099':
+                name: Palma d'Ebre, La
+                data:
+                - 1
+                - 1
+              '43101':
+                name: Passanant i Belltall
+                data:
+                - 0
+                - 0
+              '43102':
+                name: Paüls
+                data:
+                - 0
+                - 0
+              '43103':
+                name: Perafort
+                data:
+                - 3
+                - 3
+              '43104':
+                name: Perelló, El
+                data:
+                - 2
+                - 2
+              '43105':
+                name: Piles, Les
+                data:
+                - 2
+                - 2
+              '43106':
+                name: Pinell de Brai, El
+                data:
+                - 2
+                - 2
+              '43108':
+                name: Pla de Santa Maria, El
+                data:
+                - 1
+                - 1
+              '43109':
+                name: Pobla de Mafumet, La
+                data:
+                - 3
+                - 3
+              '43111':
+                name: Pobla de Montornès, La
+                data:
+                - 3
+                - 3
+              '43112':
+                name: Poboleda
+                data:
+                - 0
+                - 0
+              '43113':
+                name: Pont d'Armentera, El
+                data:
+                - 1
+                - 1
+              '43114':
+                name: Porrera
+                data:
+                - 1
+                - 1
+              '43115':
+                name: Pradell de la Teixeta
+                data:
+                - 4
+                - 4
+              '43116':
+                name: Prades
+                data:
+                - 1
+                - 1
+              '43117':
+                name: Prat de Comte
+                data:
+                - 0
+                - 0
+              '43118':
+                name: Pratdip
+                data:
+                - 0
+                - 0
+              '43119':
+                name: Puigpelat
+                data:
+                - 3
+                - 3
+              '43120':
+                name: Querol
+                data:
+                - 0
+                - 0
+              '43121':
+                name: Rasquera
+                data:
+                - 1
+                - 1
+              '43122':
+                name: Renau
+                data:
+                - 0
+                - 0
+              '43123':
+                name: Reus
+                data:
+                - 99
+                - 106
+              '43125':
+                name: Riba-roja d'Ebre
+                data:
+                - 0
+                - 0
+              '43126':
+                name: Riera de Gaià, La
+                data:
+                - 4
+                - 4
+              '43127':
+                name: Riudecanyes
+                data:
+                - 1
+                - 1
+              '43128':
+                name: Riudecols
+                data:
+                - 1
+                - 1
+              '43129':
+                name: Riudoms
+                data:
+                - 5
+                - 5
+              '43130':
+                name: Rocafort de Queralt
+                data:
+                - 1
+                - 1
+              '43131':
+                name: Roda de Barà
+                data:
+                - 4
+                - 4
+              '43132':
+                name: Rodonyà
+                data:
+                - 0
+                - 0
+              '43133':
+                name: Roquetes
+                data:
+                - 10
+                - 10
+              '43134':
+                name: Rourell, El
+                data:
+                - 1
+                - 1
+              '43135':
+                name: Salomó
+                data:
+                - 2
+                - 2
+              '43905':
+                name: Salou
+                data:
+                - 10
+                - 10
+              '43138':
+                name: Santa Bàrbara
+                data:
+                - 2
+                - 2
+              '43139':
+                name: Santa Coloma de Queralt
+                data:
+                - 0
+                - 0
+              '43140':
+                name: Santa Oliva
+                data:
+                - 4
+                - 4
+              '43136':
+                name: Sant Carles de la Ràpita
+                data:
+                - 11
+                - 11
+              '43137':
+                name: Sant Jaume dels Domenys
+                data:
+                - 4
+                - 4
+              '43902':
+                name: Sant Jaume d'Enveja
+                data:
+                - 1
+                - 1
+              '43142':
+                name: Sarral
+                data:
+                - 0
+                - 1
+              '43143':
+                name: Savallà del Comtat
+                data:
+                - 0
+                - 0
+              '43144':
+                name: Secuita, La
+                data:
+                - 1
+                - 1
+              '43145':
+                name: Selva del Camp, La
+                data:
+                - 9
+                - 9
+              '43146':
+                name: Senan
+                data:
+                - 1
+                - 1
+              '43044':
+                name: Sénia, La
+                data:
+                - 3
+                - 4
+              '43147':
+                name: Solivella
+                data:
+                - 0
+                - 2
+              '43148':
+                name: Tarragona
+                data:
+                - 125
+                - 131
+              '43149':
+                name: Tivenys
+                data:
+                - 3
+                - 3
+              '43150':
+                name: Tivissa
+                data:
+                - 1
+                - 1
+              '43151':
+                name: Torre de Fontaubella, La
+                data:
+                - 0
+                - 0
+              '43152':
+                name: Torre de l'Espanyol, La
+                data:
+                - 0
+                - 0
+              '43153':
+                name: Torredembarra
+                data:
+                - 12
+                - 12
+              '43155':
+                name: Tortosa
+                data:
+                - 22
+                - 22
+              '43156':
+                name: Ulldecona
+                data:
+                - 6
+                - 6
+              '43157':
+                name: Ulldemolins
+                data:
+                - 0
+                - 0
+              '43158':
+                name: Vallclara
+                data:
+                - 0
+                - 0
+              '43159':
+                name: Vallfogona de Riucorb
+                data:
+                - 1
+                - 1
+              '43160':
+                name: Vallmoll
+                data:
+                - 2
+                - 2
+              '43161':
+                name: Valls
+                data:
+                - 20
+                - 20
+              '43162':
+                name: Vandellòs i l'Hospitalet de l'Infant
+                data:
+                - 3
+                - 3
+              '43163':
+                name: Vendrell, El
+                data:
+                - 27
+                - 30
+              '43164':
+                name: Vespella de Gaià
+                data:
+                - 0
+                - 0
+              '43165':
+                name: Vilabella
+                data:
+                - 3
+                - 3
+              '43175':
+                name: Vilalba dels Arcs
+                data:
+                - 0
+                - 0
+              '43166':
+                name: Vilallonga del Camp
+                data:
+                - 6
+                - 6
+              '43168':
+                name: Vilanova de Prades
+                data:
+                - 0
+                - 0
+              '43167':
+                name: Vilanova d'Escornalbou
+                data:
+                - 0
+                - 0
+              '43169':
+                name: Vilaplana
+                data:
+                - 0
+                - 0
+              '43170':
+                name: Vila-rodona
+                data:
+                - 2
+                - 2
+              '43171':
+                name: Vila-seca
+                data:
+                - 6
+                - 6
+              '43172':
+                name: Vilaverd
+                data:
+                - 0
+                - 1
+              '43173':
+                name: Vilella Alta, La
+                data:
+                - 0
+                - 0
+              '43174':
+                name: Vilella Baixa, La
+                data:
+                - 2
+                - 5
+              '43176':
+                name: Vimbodí i Poblet
+                data:
+                - 1
+                - 1
+              '43177':
+                name: Vinebre
+                data:
+                - 1
+                - 1
+              '43178':
+                name: Vinyols i els Arcs
+                data:
+                - 1
+                - 1
+              '43052':
+                name: Xerta
+                data:
+                - 1
+                - 1
+level: countries
