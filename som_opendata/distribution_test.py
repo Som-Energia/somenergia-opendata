@@ -463,19 +463,22 @@ class Distribution_Test(unittest.TestCase):
                     provincia='Almería',
                     codi_ine='04003',
                     municipi='Adra',
-                    count_2018_01_01='2'),
-                ns(codi_pais='FR',
-                    pais='France',
-                    codi_ccaa='76',
-                    comunitat_autonoma='Occità',
-                    codi_provincia='66',
-                    provincia='Pyrénées-Orientales',
-                    codi_ine='66136',
-                    municipi='Perpignan',
-                    count_2018_01_01='10')
+                    count_2018_01_01='2')
         ]
         self.assertEqual(len(r), len(test_r))
         [self.assertNsEqual(r[i], test_r[i]) for i in range(len(r))]
+
+
+    def test__filter_aggregate__backToBack(self):
+        with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
+            data = f.read()
+
+        objectList = tuples2objects(parse_tsv(data))
+        objectList = locationFilter(objectList,
+                ns(codi_pais=['ES'],codi_ccaa=['01','09'])
+            )
+        r = aggregate(objectList)
+        self.assertB2BEqual(r.dump())
 
 
 # vim: et sw=4 ts=4
