@@ -536,5 +536,14 @@ class Distribution_Test(unittest.TestCase):
                         data: [2020]
             """)
 
+    def test__filter_aggregateWithDetail__backToBack(self):
+        with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
+            data = f.read()
+
+        objectList = tuples2objects(parse_tsv(data))
+        r = aggregate(objectList,'ccaa')
+        self.assertB2BEqual(r.dump())
+
+
 
 # vim: et sw=4 ts=4
