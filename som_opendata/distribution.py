@@ -78,6 +78,7 @@ def aggregate(entries):
 
     return result
 
+
 def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
     sibblings = parent.setdefault(sibbling_attr, ns())
     name = entry[name_attr]
@@ -91,6 +92,15 @@ def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
         result.data = entry.count[:]
 
     return result
+
+
+def locationFilter(objectList, typeFilter, filt):
+
+    r = ns({filt:objectList[filt]})
+
+    return r
+
+
 
 
 
