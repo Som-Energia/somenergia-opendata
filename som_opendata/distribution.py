@@ -96,16 +96,9 @@ def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
 
 def locationFilter(objectList, typeFilter, filt):
 
-    return [ns(codi_pais='ES',
-                pais='España',
-                codi_ccaa='01',
-                comunitat_autonoma='Andalucía',
-                codi_provincia='04',
-                provincia='Almería',
-                codi_ine='04003',
-                municipi='Adra',
-                count_2018_01_01=2)]
+    r = [e for e in objectList if filt in e[typeFilter]]
 
+    return r
 
 
 
