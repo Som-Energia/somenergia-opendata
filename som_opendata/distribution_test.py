@@ -6,6 +6,7 @@ from distribution import (
     aggregate,
     escollirINES,
     state_dates,
+    locationFilter,
     )
 from yamlns import namespace as ns
 from yamlns.dateutils import Date as isoDate
@@ -348,6 +349,47 @@ class Distribution_Test(unittest.TestCase):
 
     # TODO: test__aggregate__withNoRows
 
+
+    def test__filter__1country(self):
+        data = ns(ES=ns({'01':ns(name='Andalucía')}),FR=ns({'02':ns(name='Perpignan')}))
+        r = locationFilter(data,'country','ES')
+        self.assertNsEqual(r,"""
+                ES:
+                  1:
+                    name: Andalucía
+            """)
+
+        '''
+        data = u'\n'.join([
+            headers,
+            data_Adra,
+            data_Perignan,
+        ])
+        objectList = tuples2objects(parse_tsv(data))
+        objectList = locationFilter(objectList,'country','ES')
+        r = aggregate(objectList)
+        self.assertNsEqual(r,"""\
+            dates: 
+            - 2018-01-01
+            level: countries
+            countries:
+              ES:
+                name: España
+                data: [2]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    data: [2]
+                    states:
+                      '04':
+                        name: Almería
+                        data: [2]
+                        cities:
+                          '04003':
+                            name: Adra
+                            data: [2]
+            """)
+            '''
 
 
 # vim: et sw=4 ts=4
