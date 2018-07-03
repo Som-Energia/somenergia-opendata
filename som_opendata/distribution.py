@@ -43,7 +43,7 @@ def state_dates(entry):
         ]
 
 
-def aggregate(entries, detail = 'City'):
+def aggregate(entries, detail = None):
     """
         Aggregates a list of entries by geographical scopes:
         Country, CCAA, state, city.
