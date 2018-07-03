@@ -43,7 +43,7 @@ def state_dates(entry):
         ]
 
 
-def aggregate(entries):
+def aggregate(entries, detail = 'City'):
     """
         Aggregates a list of entries by geographical scopes:
         Country, CCAA, state, city.
@@ -64,17 +64,21 @@ def aggregate(entries):
             int(entry['count_'+date.isoDate.replace('-','_')])
             for date in dates ]
 
-        country = aggregate_level(
-            entry, result, 'countries', 'codi_pais', 'pais')
+        if detail != 'country':
+            country = aggregate_level(
+                entry, result, 'countries', 'codi_pais', 'pais')
 
-        ccaa = aggregate_level(
-            entry, country, 'ccaas', 'codi_ccaa', 'comunitat_autonoma')
+            if detail != 'ccaa':
+                ccaa = aggregate_level(
+                    entry, country, 'ccaas', 'codi_ccaa', 'comunitat_autonoma')
 
-        provincia = aggregate_level(
-            entry, ccaa, 'states', 'codi_provincia', 'provincia')
+                if detail != 'state':
+                    provincia = aggregate_level(
+                        entry, ccaa, 'states', 'codi_provincia', 'provincia')
 
-        city = aggregate_level(
-            entry, provincia, 'cities', 'codi_ine', 'municipi')
+                    if detail != 'city':
+                        city = aggregate_level(
+                            entry, provincia, 'cities', 'codi_ine', 'municipi')
 
     return result
 
