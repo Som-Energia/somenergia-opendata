@@ -357,7 +357,7 @@ class Distribution_Test(unittest.TestCase):
             data_Perignan,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = locationFilter(objectList,'codi_pais',['ES'])
+        r = locationFilter(objectList,ns(codi_pais=['ES']))
         test_r = [ns(codi_pais='ES',
                 pais='España',
                 codi_ccaa='01',
@@ -379,7 +379,7 @@ class Distribution_Test(unittest.TestCase):
             data_Perignan,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = locationFilter(objectList,'codi_pais',['FR'])
+        r = locationFilter(objectList,ns(codi_pais=['FR']))
         test_r = [ns(codi_pais='FR',
                 pais='France',
                 codi_ccaa='76',
@@ -401,7 +401,7 @@ class Distribution_Test(unittest.TestCase):
             data_Perignan,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = locationFilter(objectList,'codi_ccaa',['01'])
+        r = locationFilter(objectList,ns(codi_ccaa=['01']))
         test_r = [ns(codi_pais='ES',
                 pais='España',
                 codi_ccaa='01',
@@ -423,7 +423,7 @@ class Distribution_Test(unittest.TestCase):
             data_Perignan,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = locationFilter(objectList,'codi_pais',['ES','FR'])
+        r = locationFilter(objectList,ns(codi_pais=['ES','FR']))
         test_r = [ns(codi_pais='ES',
                     pais='España',
                     codi_ccaa='01',
@@ -445,5 +445,8 @@ class Distribution_Test(unittest.TestCase):
         ]
         self.assertEqual(len(r), len(test_r))
         [self.assertNsEqual(r[i], test_r[i]) for i in range(len(r))]
+
+
+
 
 # vim: et sw=4 ts=4

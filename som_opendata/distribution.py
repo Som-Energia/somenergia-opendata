@@ -94,14 +94,17 @@ def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
     return result
 
 
-def locationFilter(objectList, typeFilter, filt):
+def locationFilter(objectList, typeFilter):
 
-    r = [
-            e for e in objectList if sum(
-                [i in e[typeFilter] for i in filt]) > 0
+    for k, v in typeFilter.iteritems():
+        r = [
+            e for e in objectList if sum([i in e[k] for i in v]) > 0
         ]
 
     return r
+
+
+
 
 
 
