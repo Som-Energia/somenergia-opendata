@@ -394,4 +394,25 @@ class Distribution_Test(unittest.TestCase):
         [self.assertNsEqual(r[i], test_r[i]) for i in range(len(r))]
 
 
+    def test__filter__1State(self):
+        data = u'\n'.join([
+            headers,
+            data_Adra,
+            data_Perignan,
+        ])
+        objectList = tuples2objects(parse_tsv(data))
+        r = locationFilter(objectList,'codi_ccaa','01')
+        test_r = [ns(codi_pais='ES',
+                pais='España',
+                codi_ccaa='01',
+                comunitat_autonoma='Andalucía',
+                codi_provincia=u'04',
+                provincia='Almería',
+                codi_ine='04003',
+                municipi='Adra',
+                count_2018_01_01='2')
+        ]
+        self.assertEqual(len(r), len(test_r))
+        [self.assertNsEqual(r[i], test_r[i]) for i in range(len(r))]
+
 # vim: et sw=4 ts=4
