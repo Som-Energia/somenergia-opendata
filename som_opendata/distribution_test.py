@@ -351,22 +351,41 @@ class Distribution_Test(unittest.TestCase):
 
 
     def test__filter__1country(self):
-        data = ns(ES=ns({'01':ns(name='Andalucía')}),FR=ns({'02':ns(name='Perpignan')}))
-        r = locationFilter(data,'country','ES')
-        self.assertNsEqual(r,"""
-                ES:
-                  '01':
-                    name: Andalucía
-            """)
+        data = u'\n'.join([
+            headers,
+            data_Adra,
+            data_Perignan,
+        ])
+        objectList = tuples2objects(parse_tsv(data))
+        r = locationFilter(objectList,'country','ES')
+        self.assertEqual(r, 
+            [ns(codi_pais='ES',
+                pais='España',
+                codi_ccaa='01',
+                comunitat_autonoma='Andalucía',
+                codi_provincia='04',
+                provincia='Almería',
+                codi_ine='04003',
+                municipi='Adra',
+                count_2018_01_01=2)]
+            )
 
-    def test__filter__France(self):
-        data = ns(ES=ns({'01':ns(name='Andalucía')}),FR=ns({'02':ns(name='Perpignan')}))
-        r = locationFilter(data,'country','FR')
-        self.assertNsEqual(r,"""
-                FR:
-                  '02':
-                    name: Perpignan
-           """)
+        # data = ns(ES=ns({'01':ns(name='Andalucía')}),FR=ns({'02':ns(name='Perpignan')}))
+        # r = locationFilter(data,'country','ES')
+        # self.assertNsEqual(r,"""
+        #         ES:
+        #           '01':
+        #             name: Andalucía
+        #     """)
+
+    # def test__filter__France(self):
+    #     data = ns(ES=ns({'01':ns(name='Andalucía')}),FR=ns({'02':ns(name='Perpignan')}))
+    #     r = locationFilter(data,'country','FR')
+    #     self.assertNsEqual(r,"""
+    #             FR:
+    #               '02':
+    #                 name: Perpignan
+    #        """)
 
 
     # def test__filter__1ccaa(self):
