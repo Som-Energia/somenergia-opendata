@@ -370,32 +370,7 @@ class Distribution_Test(unittest.TestCase):
                 count_2018_01_01=2)]
             )
 
-        # data = ns(ES=ns({'01':ns(name='Andalucía')}),FR=ns({'02':ns(name='Perpignan')}))
-        # r = locationFilter(data,'country','ES')
-        # self.assertNsEqual(r,"""
-        #         ES:
-        #           '01':
-        #             name: Andalucía
-        #     """)
 
-    # def test__filter__France(self):
-    #     data = ns(ES=ns({'01':ns(name='Andalucía')}),FR=ns({'02':ns(name='Perpignan')}))
-    #     r = locationFilter(data,'country','FR')
-    #     self.assertNsEqual(r,"""
-    #             FR:
-    #               '02':
-    #                 name: Perpignan
-    #        """)
-
-
-    # def test__filter__1ccaa(self):
-    #     data = ns(ES=ns({'01':ns(name='Andalucía')}),FR=ns({'02':ns(name='Perpignan')}))
-    #     r = locationFilter(data,'ccaa','01')
-    #     self.assertNsEqual(r,"""
-    #             ES:
-    #               '01':
-    #                 name: Andalucía
-    #         """)
 
 
 # vim: et sw=4 ts=4
