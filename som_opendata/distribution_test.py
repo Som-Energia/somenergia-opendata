@@ -347,7 +347,17 @@ class Distribution_Test(unittest.TestCase):
         r = aggregate(objectList)
         self.assertB2BEqual(r.dump())
 
-    # TODO: test__aggregate__withNoRows
+
+    @unittest.skip("TODO")  # Tant facil com if objectList == [] no crida aggregate i mostra un missatge explicatiu
+    def test__aggregate__withNoRows(self):
+        data = u'\n'.join([
+            headers,
+        ])
+        objectList = tuples2objects(parse_tsv(data))
+        r = aggregate(objectList)
+        self.assertNsEqual(r,"")
+
+
 
 
     def test__filter__1country(self):
