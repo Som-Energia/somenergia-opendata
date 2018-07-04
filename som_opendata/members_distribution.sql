@@ -7,7 +7,13 @@ SELECT
     provincia,
     codi_ine,
     municipi,
-    COUNT(soci_id) AS quants
+    count(CASE
+        WHEN create_date IS NULL THEN NULL
+    WHEN create_date > '{}' THEN NULL
+    WHEN create_date <= '{}' THEN TRUE
+        WHEN active THEN TRUE
+    ELSE NULL
+        END) AS quants
 FROM (
     SELECT
         pc.name AS categoria,
@@ -28,7 +34,9 @@ FROM (
         prov.code AS codi_provincia,
         ccaa.codi AS codi_ccaa,
         country.code AS codi_pais,
-        dades_inicials.partner_id AS partner_id
+        dades_inicials.partner_id AS partner_id,
+        pa.create_date as create_date,
+        pa.active as active
     FROM res_partner_address AS pa
     JOIN (
         SELECT
@@ -49,7 +57,7 @@ FROM (
     LEFT JOIN res_comarca AS com ON (com.id=m.comarca)
     LEFT JOIN res_country AS country ON (country.id=pa.country_id)
     WHERE
-        pa.active AND
+    pa.active AND
         pa.create_date <= '{}' AND
         p__c.category_id IS NOT NULL AND
         p__c.category_id = (SELECT id FROM res_partner_category WHERE name='Soci')
@@ -70,4 +78,4 @@ ORDER BY
     comunitat_autonoma ASC,
     provincia ASC,
     municipi ASC,
-    TRUE ASC
+    TRUE ASC;

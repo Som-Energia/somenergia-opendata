@@ -131,7 +131,7 @@ def membersSparse(dates, dbhandler, debug=False):
 
     db = psycopg2.connect(**config.psycopg)
     query = readQuery('members_distribution')
-    query = query.format(Date(adate))
+    query = query.format(Date(adate),Date(adate),Date(adate))
     with db.cursor() as cursor :
         cursor.execute(query)
         return csvTable(cursor)
@@ -157,5 +157,5 @@ def contracts(fromdate=None, todate=None):
 @tsv_response
 def members(fromdate=None, todate=None):
     dates=dateSequence(fromdate, todate)
-    return membersSparse([fromdate], csvTable)
+    return membersSparse(dates, csvTable)
 
