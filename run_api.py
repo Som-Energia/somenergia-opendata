@@ -1,5 +1,5 @@
 import sys
-from som_opendata import app
+from som_opendata.app import app
 
 
 if __name__ == '__main__':
