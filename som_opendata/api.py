@@ -125,7 +125,7 @@ def contractsSeries(dates):
         cursor.execute(query)
         return csvTable(cursor)
 
-'''
+
 def activeMembersCounter(adate):
     # TODO: Unsafe substitution
     return """
@@ -137,13 +137,23 @@ def activeMembersCounter(adate):
         ELSE NULL
             END) AS quants
         """.format(adate=adate)
-'''
+
 
 def membersSparse(dates, dbhandler, debug=False):
-    adate = dates[0]
+    #adate = dates[0]
 
     db = psycopg2.connect(**config.psycopg)
     query = readQuery('members_distribution')
+    query = query.format(','.join(
+        activeMembersCounter(Date(adate))
+        for adate in dates
+        ))
+    with db.cursor() as cursor :
+        cursor.execute(query)
+        return csvTable(cursor)
+
+
+
     query = query.format(Date(adate),Date(adate),Date(adate))
     with db.cursor() as cursor :
         cursor.execute(query)

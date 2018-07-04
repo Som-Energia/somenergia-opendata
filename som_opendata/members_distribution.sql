@@ -7,13 +7,7 @@ SELECT
     provincia,
     codi_ine,
     municipi,
-    count(CASE
-        WHEN create_date IS NULL THEN NULL
-    WHEN create_date > '{}' THEN NULL
-    WHEN create_date <= '{}' THEN TRUE
-        WHEN active THEN TRUE
-    ELSE NULL
-        END) AS quants
+    {}
 FROM (
     SELECT
         pc.name AS categoria,
