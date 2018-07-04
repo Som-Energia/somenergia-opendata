@@ -57,8 +57,6 @@ FROM (
     LEFT JOIN res_comarca AS com ON (com.id=m.comarca)
     LEFT JOIN res_country AS country ON (country.id=pa.country_id)
     WHERE
-    pa.active AND
-        pa.create_date <= '{}' AND
         p__c.category_id IS NOT NULL AND
         p__c.category_id = (SELECT id FROM res_partner_category WHERE name='Soci')
     ORDER BY p.ref

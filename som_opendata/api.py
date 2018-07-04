@@ -125,6 +125,19 @@ def contractsSeries(dates):
         cursor.execute(query)
         return csvTable(cursor)
 
+'''
+def activeMembersCounter(adate):
+    # TODO: Unsafe substitution
+    return """
+    count(CASE
+        WHEN create_date IS NULL THEN NULL
+        WHEN create_date > '{adate}'::date THEN NULL
+        WHEN create_date <= '{adate}'::date THEN TRUE
+            WHEN active THEN TRUE
+        ELSE NULL
+            END) AS quants
+        """.format(adate=adate)
+'''
 
 def membersSparse(dates, dbhandler, debug=False):
     adate = dates[0]
