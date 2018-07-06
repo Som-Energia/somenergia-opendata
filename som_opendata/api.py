@@ -132,11 +132,13 @@ def activeMembersCounter(adate):
     count(CASE
         WHEN create_date IS NULL THEN NULL
         WHEN create_date > '{adate}'::date THEN NULL
+        WHEN data_baixa_soci < '{adate}'::date THEN NULL
         WHEN create_date <= '{adate}'::date THEN TRUE
             WHEN active THEN TRUE
         ELSE NULL
-            END) AS quants
+            END) AS count_{adate:%Y_%m_%d}
         """.format(adate=adate)
+
 
 
 def membersSparse(dates, dbhandler, debug=False):

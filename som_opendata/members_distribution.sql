@@ -10,7 +10,6 @@ SELECT
     {}
 FROM (
     SELECT
-        pc.name AS categoria,
         m.name AS municipi,
         p.ref AS num_soci,
         p.vat AS nif,
@@ -30,7 +29,8 @@ FROM (
         country.code AS codi_pais,
         dades_inicials.partner_id AS partner_id,
         pa.create_date as create_date,
-        pa.active as active
+        pa.active as active,
+        ss.data_baixa_soci as data_baixa_soci
     FROM res_partner_address AS pa
     JOIN (
         SELECT
@@ -43,18 +43,14 @@ FROM (
         GROUP BY dades_inicials.partner_id
         ) AS dades_inicials ON dades_inicials.id_unic = pa.id
     LEFT JOIN res_partner AS p ON (p.id=pa.partner_id)
-    LEFT JOIN res_partner_category_rel AS p__c ON (pa.partner_id=p__c.partner_id)
-    LEFT JOIN res_partner_category AS pc ON (pc.id=p__c.category_id and pc.name='Soci')
     LEFT JOIN res_municipi AS m ON (m.id=pa.id_municipi)
     LEFT JOIN res_country_state AS prov ON (prov.id=pa.state_id)
     LEFT JOIN res_comunitat_autonoma AS ccaa ON (ccaa.id=prov.comunitat_autonoma)
     LEFT JOIN res_comarca AS com ON (com.id=m.comarca)
     LEFT JOIN res_country AS country ON (country.id=pa.country_id)
-    WHERE
-        p__c.category_id IS NOT NULL AND
-        p__c.category_id = (SELECT id FROM res_partner_category WHERE name='Soci')
+    JOIN somenergia_soci as ss on (ss.partner_id=p.id)
     ORDER BY p.ref
-) AS detall
+) AS detall    
 GROUP BY
     codi_pais,
     codi_ccaa,
@@ -71,3 +67,4 @@ ORDER BY
     provincia ASC,
     municipi ASC,
     TRUE ASC;
+

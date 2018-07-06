@@ -26,7 +26,7 @@ ES	España	01	Andalucia	11	Cádiz	11005	Algodonales	0	0
 ES	España	01	Andalucia	11	Cádiz	11006	Arcos de la Frontera	0	0
 ES	España	01	Andalucia	11	Cádiz	11007	Barbate	0	0
 ES	España	01	Andalucia	11	Cádiz	11008	Barrios, Los	0	0
-ES	España	01	Andalucia	11	Cádiz	11012	Cádiz	8	9
+ES	España	01	Andalucia	11	Cádiz	11012	Cádiz	9	10
 ES	España	01	Andalucia	11	Cádiz	11015	Chiclana de la Frontera	2	2
 ES	España	01	Andalucia	11	Cádiz	11016	Chipiona	1	1
 ES	España	01	Andalucia	11	Cádiz	11014	Conil de la Frontera	1	1
@@ -35,7 +35,7 @@ ES	España	01	Andalucia	11	Cádiz	11020	Jerez de la Frontera	8	8
 ES	España	01	Andalucia	11	Cádiz	11022	Línea de la Concepción, La	0	0
 ES	España	01	Andalucia	11	Cádiz	11025	Paterna de Rivera	0	0
 ES	España	01	Andalucia	11	Cádiz	11027	Puerto de Santa María, El	7	7
-ES	España	01	Andalucia	11	Cádiz	11028	Puerto Real	6	6
+ES	España	01	Andalucia	11	Cádiz	11028	Puerto Real	7	7
 ES	España	01	Andalucia	11	Cádiz	11031	San Fernando	1	1
 ES	España	01	Andalucia	11	Cádiz	11032	Sanlúcar de Barrameda	1	1
 ES	España	01	Andalucia	11	Cádiz	11033	San Roque	1	1
@@ -64,7 +64,7 @@ ES	España	01	Andalucia	14	Córdoba	14067	Villafranca de Córdoba	1	1
 ES	España	01	Andalucia	18	Granada	18003	Albolote	1	1
 ES	España	01	Andalucia	18	Granada	18011	Alfacar	0	0
 ES	España	01	Andalucia	18	Granada	18014	Alhendín	1	1
-ES	España	01	Andalucia	18	Granada	18017	Almuñécar	3	3
+ES	España	01	Andalucia	18	Granada	18017	Almuñécar	4	4
 ES	España	01	Andalucia	18	Granada	18904	Alpujarra de la Sierra	0	0
 ES	España	01	Andalucia	18	Granada	18021	Armilla	0	0
 ES	España	01	Andalucia	18	Granada	18022	Atarfe	1	1
@@ -82,7 +82,7 @@ ES	España	01	Andalucia	18	Granada	18070	Dúdar	0	0
 ES	España	01	Andalucia	18	Granada	18071	Dúrcal	0	0
 ES	España	01	Andalucia	18	Granada	18905	Gabias, Las	0	0
 ES	España	01	Andalucia	18	Granada	18084	Gójar	0	1
-ES	España	01	Andalucia	18	Granada	18087	Granada	57	57
+ES	España	01	Andalucia	18	Granada	18087	Granada	58	58
 ES	España	01	Andalucia	18	Granada	18089	Guadix	0	0
 ES	España	01	Andalucia	18	Granada	18093	Gualchos	1	1
 ES	España	01	Andalucia	18	Granada	18095	Güevéjar	1	1
@@ -106,6 +106,7 @@ ES	España	01	Andalucia	18	Granada	18157	Pinos Genil	0	0
 ES	España	01	Andalucia	18	Granada	18159	Píñar	0	0
 ES	España	01	Andalucia	18	Granada	18165	Pulianas	0	0
 ES	España	01	Andalucia	18	Granada	18168	Quéntar	0	0
+ES	España	01	Andalucia	18	Granada	18171	Salar	0	0
 ES	España	01	Andalucia	18	Granada	18173	Salobreña	1	1
 ES	España	01	Andalucia	18	Granada	18175	Santa Fe	3	3
 ES	España	01	Andalucia	18	Granada	18902	Valle, El	0	0
@@ -150,6 +151,7 @@ ES	España	01	Andalucia	23	Jaen	23055	Linares	2	2
 ES	España	01	Andalucia	23	Jaen	23056	Lopera	1	1
 ES	España	01	Andalucia	23	Jaen	23058	Mancha Real	0	0
 ES	España	01	Andalucia	23	Jaen	23060	Martos	2	2
+ES	España	01	Andalucia	23	Jaen	23067	Pegalajar	1	1
 ES	España	01	Andalucia	23	Jaen	23904	Santiago-Pontones	1	1
 ES	España	01	Andalucia	23	Jaen	23088	Torreperogil	0	0
 ES	España	01	Andalucia	23	Jaen	23090	Torres	0	0
@@ -213,6 +215,7 @@ ES	España	01	Andalucia	41	Sevilla	41049	Guillena	0	0
 ES	España	01	Andalucia	41	Sevilla	41050	Herrera	0	0
 ES	España	01	Andalucia	41	Sevilla	41053	Lebrija	1	1
 ES	España	01	Andalucia	41	Sevilla	41055	Lora del Río	0	0
+ES	España	01	Andalucia	41	Sevilla	41056	Luisiana, La	0	0
 ES	España	01	Andalucia	41	Sevilla	41058	Mairena del Alcor	2	2
 ES	España	01	Andalucia	41	Sevilla	41059	Mairena del Aljarafe	8	8
 ES	España	01	Andalucia	41	Sevilla	41060	Marchena	6	6
@@ -233,7 +236,7 @@ ES	España	01	Andalucia	41	Sevilla	41086	San Juan de Aznalfarache	0	0
 ES	España	01	Andalucia	41	Sevilla	41087	Sanlúcar la Mayor	0	0
 ES	España	01	Andalucia	41	Sevilla	41089	Santiponce	0	0
 ES	España	01	Andalucia	41	Sevilla	41090	Saucejo, El	0	0
-ES	España	01	Andalucia	41	Sevilla	41091	Sevilla	70	73
+ES	España	01	Andalucia	41	Sevilla	41091	Sevilla	71	75
 ES	España	01	Andalucia	41	Sevilla	41093	Tomares	2	2
 ES	España	01	Andalucia	41	Sevilla	41094	Umbrete	1	1
 ES	España	01	Andalucia	41	Sevilla	41095	Utrera	1	1
@@ -246,6 +249,7 @@ ES	España	02	Aragón	22	Huesca	22907	Aínsa-Sobrarbe	2	2
 ES	España	02	Aragón	22	Huesca	22006	Aisa	0	0
 ES	España	02	Aragón	22	Huesca	22007	Albalate de Cinca	0	0
 ES	España	02	Aragón	22	Huesca	22009	Albelda	1	1
+ES	España	02	Aragón	22	Huesca	22011	Albero Alto	0	0
 ES	España	02	Aragón	22	Huesca	22017	Alcolea de Cinca	0	0
 ES	España	02	Aragón	22	Huesca	22021	Almudévar	1	1
 ES	España	02	Aragón	22	Huesca	22022	Almunia de San Juan	1	1
@@ -276,7 +280,7 @@ ES	España	02	Aragón	22	Huesca	22135	Laluenga	1	1
 ES	España	02	Aragón	22	Huesca	22150	Loporzano	0	0
 ES	España	02	Aragón	22	Huesca	22156	Monflorite-Lascasas	0	0
 ES	España	02	Aragón	22	Huesca	22157	Montanuy	0	0
-ES	España	02	Aragón	22	Huesca	22158	Monzón	4	5
+ES	España	02	Aragón	22	Huesca	22158	Monzón	5	6
 ES	España	02	Aragón	22	Huesca	22163	Nueno	0	0
 ES	España	02	Aragón	22	Huesca	22167	Osso de Cinca	0	0
 ES	España	02	Aragón	22	Huesca	22174	Peralta de Alcofea	0	0
@@ -334,7 +338,7 @@ ES	España	02	Aragón	50	Zaragoza	50062	Burgo de Ebro, El	0	0
 ES	España	02	Aragón	50	Zaragoza	50066	Cadrete	1	1
 ES	España	02	Aragón	50	Zaragoza	50067	Calatayud	4	4
 ES	España	02	Aragón	50	Zaragoza	50069	Calcena	0	0
-ES	España	02	Aragón	50	Zaragoza	50073	Cariñena	1	1
+ES	España	02	Aragón	50	Zaragoza	50073	Cariñena	2	2
 ES	España	02	Aragón	50	Zaragoza	50074	Caspe	0	0
 ES	España	02	Aragón	50	Zaragoza	50075	Castejón de Alarba	0	0
 ES	España	02	Aragón	50	Zaragoza	50080	Cerveruela	1	1
@@ -375,10 +379,10 @@ ES	España	02	Aragón	50	Zaragoza	50265	Trasmoz	0	0
 ES	España	02	Aragón	50	Zaragoza	50272	Utebo	2	2
 ES	España	02	Aragón	50	Zaragoza	50903	Villamayor de Gállego	1	1
 ES	España	02	Aragón	50	Zaragoza	50288	Villanueva de Gállego	1	1
-ES	España	02	Aragón	50	Zaragoza	50297	Zaragoza	388	399
+ES	España	02	Aragón	50	Zaragoza	50297	Zaragoza	393	404
 ES	España	02	Aragón	50	Zaragoza	50298	Zuera	3	4
 ES	España	03	Asturias, Principado de	33	Asturias	33002	Aller	0	0
-ES	España	03	Asturias, Principado de	33	Asturias	33004	Avilés	5	5
+ES	España	03	Asturias, Principado de	33	Asturias	33004	Avilés	6	6
 ES	España	03	Asturias, Principado de	33	Asturias	33007	Boal	0	0
 ES	España	03	Asturias, Principado de	33	Asturias	33009	Cabranes	1	1
 ES	España	03	Asturias, Principado de	33	Asturias	33010	Candamo	0	0
@@ -418,21 +422,21 @@ ES	España	03	Asturias, Principado de	33	Asturias	33034	Valdés	1	1
 ES	España	03	Asturias, Principado de	33	Asturias	33074	Vegadeo	0	0
 ES	España	03	Asturias, Principado de	33	Asturias	33076	Villaviciosa	3	3
 ES	España	04	Baleares, Islas	07	Balears, Illes	07002	Alaior	17	17
-ES	España	04	Baleares, Islas	07	Balears, Illes	07001	Alaró	10	10
+ES	España	04	Baleares, Islas	07	Balears, Illes	07001	Alaró	11	11
 ES	España	04	Baleares, Islas	07	Balears, Illes	07003	Alcúdia	3	3
 ES	España	04	Baleares, Islas	07	Balears, Illes	07004	Algaida	12	12
 ES	España	04	Baleares, Islas	07	Balears, Illes	07005	Andratx	4	5
 ES	España	04	Baleares, Islas	07	Balears, Illes	07006	Artà	6	7
 ES	España	04	Baleares, Islas	07	Balears, Illes	07007	Banyalbufar	1	1
-ES	España	04	Baleares, Islas	07	Balears, Illes	07008	Binissalem	13	13
+ES	España	04	Baleares, Islas	07	Balears, Illes	07008	Binissalem	14	14
 ES	España	04	Baleares, Islas	07	Balears, Illes	07009	Búger	0	0
-ES	España	04	Baleares, Islas	07	Balears, Illes	07010	Bunyola	18	18
+ES	España	04	Baleares, Islas	07	Balears, Illes	07010	Bunyola	19	19
 ES	España	04	Baleares, Islas	07	Balears, Illes	07011	Calvià	16	16
 ES	España	04	Baleares, Islas	07	Balears, Illes	07012	Campanet	9	9
 ES	España	04	Baleares, Islas	07	Balears, Illes	07013	Campos	3	3
 ES	España	04	Baleares, Islas	07	Balears, Illes	07014	Capdepera	3	4
 ES	España	04	Baleares, Islas	07	Balears, Illes	07064	Castell, Es	17	17
-ES	España	04	Baleares, Islas	07	Balears, Illes	07015	Ciutadella de Menorca	24	25
+ES	España	04	Baleares, Islas	07	Balears, Illes	07015	Ciutadella de Menorca	25	26
 ES	España	04	Baleares, Islas	07	Balears, Illes	07016	Consell	7	7
 ES	España	04	Baleares, Islas	07	Balears, Illes	07017	Costitx	1	2
 ES	España	04	Baleares, Islas	07	Balears, Illes	07018	Deyá	1	1
@@ -451,12 +455,12 @@ ES	España	04	Baleares, Islas	07	Balears, Illes	07033	Manacor	38	38
 ES	España	04	Baleares, Islas	07	Balears, Illes	07034	Mancor de la Vall	7	7
 ES	España	04	Baleares, Islas	07	Balears, Illes	07032	Maó	46	47
 ES	España	04	Baleares, Islas	07	Balears, Illes	07035	Maria de la Salut	2	2
-ES	España	04	Baleares, Islas	07	Balears, Illes	07036	Marratxí	33	35
+ES	España	04	Baleares, Islas	07	Balears, Illes	07036	Marratxí	36	38
 ES	España	04	Baleares, Islas	07	Balears, Illes	07037	Mercadal, Es	8	8
 ES	España	04	Baleares, Islas	07	Balears, Illes	07902	Migjorn Gran, Es	6	6
 ES	España	04	Baleares, Islas	07	Balears, Illes	07038	Montuïri	1	2
 ES	España	04	Baleares, Islas	07	Balears, Illes	07039	Muro	1	1
-ES	España	04	Baleares, Islas	07	Balears, Illes	07040	Palma	349	363
+ES	España	04	Baleares, Islas	07	Balears, Illes	07040	Palma	351	365
 ES	España	04	Baleares, Islas	07	Balears, Illes	07041	Petra	2	3
 ES	España	04	Baleares, Islas	07	Balears, Illes	07044	Pobla, Sa	7	7
 ES	España	04	Baleares, Islas	07	Balears, Illes	07042	Pollença	22	23
@@ -557,6 +561,7 @@ ES	España	06	Cantabria	39	Cantabria	39014	Cabuérniga	0	0
 ES	España	06	Cantabria	39	Cantabria	39016	Camargo	3	3
 ES	España	06	Cantabria	39	Cantabria	39020	Castro-Urdiales	4	4
 ES	España	06	Cantabria	39	Cantabria	39023	Colindres	1	1
+ES	España	06	Cantabria	39	Cantabria	39025	Corrales de Buelna, Los	0	1
 ES	España	06	Cantabria	39	Cantabria	39028	Entrambasaguas	0	0
 ES	España	06	Cantabria	39	Cantabria	39029	Escalante	0	0
 ES	España	06	Cantabria	39	Cantabria	39032	Hermandad de Campoo de Suso	0	0
@@ -621,7 +626,7 @@ ES	España	08	Castilla - La Mancha	13	Ciudad Real	13071	Puertollano	0	0
 ES	España	08	Castilla - La Mancha	13	Ciudad Real	13074	San Carlos del Valle	2	2
 ES	España	08	Castilla - La Mancha	13	Ciudad Real	13078	Socuéllamos	1	1
 ES	España	08	Castilla - La Mancha	13	Ciudad Real	13082	Tomelloso	0	0
-ES	España	08	Castilla - La Mancha	13	Ciudad Real	13087	Valdepeñas	2	3
+ES	España	08	Castilla - La Mancha	13	Ciudad Real	13087	Valdepeñas	3	4
 ES	España	08	Castilla - La Mancha	13	Ciudad Real	13090	Villamanrique	1	1
 ES	España	08	Castilla - La Mancha	13	Ciudad Real	13093	Villanueva de los Infantes	1	1
 ES	España	08	Castilla - La Mancha	13	Ciudad Real	13096	Villarrubia de los Ojos	3	3
@@ -631,7 +636,7 @@ ES	España	08	Castilla - La Mancha	16	Cuenca	16033	Belmonte	1	1
 ES	España	08	Castilla - La Mancha	16	Cuenca	16052	Cañete	1	1
 ES	España	08	Castilla - La Mancha	16	Cuenca	16053	Cañizares	0	0
 ES	España	08	Castilla - La Mancha	16	Cuenca	16066	Casasimarro	1	1
-ES	España	08	Castilla - La Mancha	16	Cuenca	16078	Cuenca	18	19
+ES	España	08	Castilla - La Mancha	16	Cuenca	16078	Cuenca	19	20
 ES	España	08	Castilla - La Mancha	16	Cuenca	16112	Huete	1	1
 ES	España	08	Castilla - La Mancha	16	Cuenca	16113	Iniesta	1	1
 ES	España	08	Castilla - La Mancha	16	Cuenca	16117	Landete	0	0
@@ -647,7 +652,7 @@ ES	España	08	Castilla - La Mancha	16	Cuenca	16238	Vara de Rey	0	0
 ES	España	08	Castilla - La Mancha	16	Cuenca	16910	Villar y Velasco	1	1
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19024	Alovera	1	1
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19046	Azuqueca de Henares	3	3
-ES	España	08	Castilla - La Mancha	19	Guadalajara	19058	Cabanillas del Campo	1	1
+ES	España	08	Castilla - La Mancha	19	Guadalajara	19058	Cabanillas del Campo	1	2
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19070	Casa de Uceda	1	1
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19071	Casar, El	4	4
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19105	Chiloeches	4	4
@@ -656,7 +661,7 @@ ES	España	08	Castilla - La Mancha	19	Guadalajara	19126	Galápagos	1	1
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19130	Guadalajara	15	15
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19143	Horche	0	0
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19190	Molina de Aragón	1	1
-ES	España	08	Castilla - La Mancha	19	Guadalajara	19220	Pioz	0	0
+ES	España	08	Castilla - La Mancha	19	Guadalajara	19220	Pioz	1	1
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19225	Pozo de Guadalajara	0	0
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19257	Sigüenza	0	0
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19274	Torija	1	1
@@ -681,6 +686,7 @@ ES	España	08	Castilla - La Mancha	45	Toledo	45066	Fuensalida	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45079	Iglesuela, La	1	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45081	Illescas	2	2
 ES	España	08	Castilla - La Mancha	45	Toledo	45082	Lagartera	0	0
+ES	España	08	Castilla - La Mancha	45	Toledo	45084	Lillo	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45087	Madridejos	2	2
 ES	España	08	Castilla - La Mancha	45	Toledo	45096	Mazarambroz	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45099	Méntrida	1	1
@@ -692,6 +698,7 @@ ES	España	08	Castilla - La Mancha	45	Toledo	45119	Numancia de la Sagra	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45122	Olías del Rey	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45125	Oropesa	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45126	Otero	0	0
+ES	España	08	Castilla - La Mancha	45	Toledo	45132	Pepino	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45135	Puebla de Almoradiel, La	1	2
 ES	España	08	Castilla - La Mancha	45	Toledo	45137	Pueblanueva, La	0	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45142	Quintanar de la Orden	1	1
@@ -699,11 +706,11 @@ ES	España	08	Castilla - La Mancha	45	Toledo	45144	Real de San Vicente, El	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45147	Rielves	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45154	San Román de los Montes	1	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45155	Santa Ana de Pusa	0	0
-ES	España	08	Castilla - La Mancha	45	Toledo	45161	Seseña	0	0
+ES	España	08	Castilla - La Mancha	45	Toledo	45161	Seseña	1	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45162	Sevilleja de la Jara	0	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45163	Sonseca	0	0
-ES	España	08	Castilla - La Mancha	45	Toledo	45165	Talavera de la Reina	7	7
-ES	España	08	Castilla - La Mancha	45	Toledo	45167	Toboso, El	0	0
+ES	España	08	Castilla - La Mancha	45	Toledo	45165	Talavera de la Reina	8	8
+ES	España	08	Castilla - La Mancha	45	Toledo	45167	Toboso, El	2	2
 ES	España	08	Castilla - La Mancha	45	Toledo	45168	Toledo	27	27
 ES	España	08	Castilla - La Mancha	45	Toledo	45176	Ugena	1	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45180	Valmojado	0	0
@@ -733,7 +740,7 @@ ES	España	07	Castilla y León	09	Burgos	09039	Barbadillo del Pez	0	0
 ES	España	07	Castilla y León	09	Burgos	09048	Belorado	0	0
 ES	España	07	Castilla y León	09	Burgos	09056	Briviesca	0	0
 ES	España	07	Castilla y León	09	Burgos	09058	Buniel	0	0
-ES	España	07	Castilla y León	09	Burgos	09059	Burgos	33	34
+ES	España	07	Castilla y León	09	Burgos	09059	Burgos	34	35
 ES	España	07	Castilla y León	09	Burgos	09067	Canicosa de la Sierra	0	0
 ES	España	07	Castilla y León	09	Burgos	09084	Castrillo de la Reina	0	0
 ES	España	07	Castilla y León	09	Burgos	09109	Condado de Treviño	0	0
@@ -770,6 +777,7 @@ ES	España	07	Castilla y León	24	León	24014	Bembibre	1	1
 ES	España	07	Castilla y León	24	León	24015	Benavides	1	1
 ES	España	07	Castilla y León	24	León	24023	Brazuelo	1	1
 ES	España	07	Castilla y León	24	León	24038	Carracedelo	0	0
+ES	España	07	Castilla y León	24	León	24065	Chozas de Abajo	1	1
 ES	España	07	Castilla y León	24	León	24068	Ercina, La	0	0
 ES	España	07	Castilla y León	24	León	24076	Garrafe de Torío	1	1
 ES	España	07	Castilla y León	24	León	24088	Laguna de Negrillos	0	0
@@ -791,10 +799,11 @@ ES	España	07	Castilla y León	24	León	24202	Villablino	1	1
 ES	España	07	Castilla y León	24	León	24222	Villaquilambre	1	1
 ES	España	07	Castilla y León	24	León	24227	Villaturiel	1	1
 ES	España	07	Castilla y León	34	Palencia	34004	Aguilar de Campoo	0	0
+ES	España	07	Castilla y León	34	Palencia	34012	Antigüedad	1	1
 ES	España	07	Castilla y León	34	Palencia	34069	Dueñas	0	0
 ES	España	07	Castilla y León	34	Palencia	34080	Guardo	0	0
 ES	España	07	Castilla y León	34	Palencia	34098	Magaz de Pisuerga	1	1
-ES	España	07	Castilla y León	34	Palencia	34120	Palencia	12	12
+ES	España	07	Castilla y León	34	Palencia	34120	Palencia	13	13
 ES	España	07	Castilla y León	34	Palencia	34169	Santervás de la Vega	0	0
 ES	España	07	Castilla y León	34	Palencia	34023	Venta de Baños	1	1
 ES	España	07	Castilla y León	34	Palencia	34231	Villarrabé	0	0
@@ -807,7 +816,7 @@ ES	España	07	Castilla y León	37	Salamanca	37194	Mogarraz	0	0
 ES	España	07	Castilla y León	37	Salamanca	37238	Pedrosillo el Ralo	1	1
 ES	España	07	Castilla y León	37	Salamanca	37251	Peromingo	1	1
 ES	España	07	Castilla y León	37	Salamanca	37257	Pozos de Hinojo	1	1
-ES	España	07	Castilla y León	37	Salamanca	37274	Salamanca	21	21
+ES	España	07	Castilla y León	37	Salamanca	37274	Salamanca	22	22
 ES	España	07	Castilla y León	37	Salamanca	37294	Santa Marta de Tormes	1	1
 ES	España	07	Castilla y León	37	Salamanca	37328	Trabanca	1	1
 ES	España	07	Castilla y León	37	Salamanca	37354	Villamayor	0	0
@@ -831,12 +840,14 @@ ES	España	07	Castilla y León	42	Soria	42018	Almaluez	1	1
 ES	España	07	Castilla y León	42	Soria	42028	Ausejo de la Sierra	1	1
 ES	España	07	Castilla y León	42	Soria	42046	Calatañazor	0	0
 ES	España	07	Castilla y León	42	Soria	42076	Deza	1	1
+ES	España	07	Castilla y León	42	Soria	42087	Fuentecantos	1	1
 ES	España	07	Castilla y León	42	Soria	42094	Garray	1	1
 ES	España	07	Castilla y León	42	Soria	42095	Golmayo	1	1
 ES	España	07	Castilla y León	42	Soria	42121	Montenegro de Cameros	0	0
 ES	España	07	Castilla y León	42	Soria	42134	Ólvega	0	0
 ES	España	07	Castilla y León	42	Soria	42162	San Esteban de Gormaz	0	0
 ES	España	07	Castilla y León	42	Soria	42173	Soria	6	7
+ES	España	07	Castilla y León	42	Soria	37312	Sorihuela	0	0
 ES	España	07	Castilla y León	42	Soria	42181	Tardelcuende	1	1
 ES	España	07	Castilla y León	42	Soria	42218	Yanguas	1	1
 ES	España	07	Castilla y León	42	Soria	42219	Yelo	0	0
@@ -849,6 +860,7 @@ ES	España	07	Castilla y León	47	Valladolid	47085	Medina del Campo	0	0
 ES	España	07	Castilla y León	47	Valladolid	47087	Megeces	0	0
 ES	España	07	Castilla y León	47	Valladolid	47093	Montemayor de Pililla	1	1
 ES	España	07	Castilla y León	47	Valladolid	47098	Mucientes	1	1
+ES	España	07	Castilla y León	47	Valladolid	47104	Olmedo	1	1
 ES	España	07	Castilla y León	47	Valladolid	47114	Peñafiel	0	0
 ES	España	07	Castilla y León	47	Valladolid	47122	Portillo	0	0
 ES	España	07	Castilla y León	47	Valladolid	47133	Renedo de Esgueva	1	1
@@ -882,7 +894,7 @@ ES	España	09	Cataluña	08	Barcelona	08016	Bagà	6	6
 ES	España	09	Cataluña	08	Barcelona	08017	Balenyà	0	0
 ES	España	09	Cataluña	08	Barcelona	08018	Balsareny	5	6
 ES	España	09	Cataluña	08	Barcelona	08252	Barberà del Vallès	29	29
-ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3154	3267
+ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3194	3311
 ES	España	09	Cataluña	08	Barcelona	08020	Begues	18	19
 ES	España	09	Cataluña	08	Barcelona	08021	Bellprat	0	0
 ES	España	09	Cataluña	08	Barcelona	08022	Berga	30	30
@@ -910,7 +922,7 @@ ES	España	09	Cataluña	08	Barcelona	08042	Cànoves i Samalús	6	6
 ES	España	09	Cataluña	08	Barcelona	08043	Canyelles	2	2
 ES	España	09	Cataluña	08	Barcelona	08044	Capellades	3	3
 ES	España	09	Cataluña	08	Barcelona	08045	Capolat	1	1
-ES	España	09	Cataluña	08	Barcelona	08046	Cardedeu	96	107
+ES	España	09	Cataluña	08	Barcelona	08046	Cardedeu	97	108
 ES	España	09	Cataluña	08	Barcelona	08047	Cardona	4	4
 ES	España	09	Cataluña	08	Barcelona	08048	Carme	0	0
 ES	España	09	Cataluña	08	Barcelona	08049	Casserres	5	5
@@ -920,7 +932,7 @@ ES	España	09	Cataluña	08	Barcelona	08052	Castellar de n'Hug	0	0
 ES	España	09	Cataluña	08	Barcelona	08053	Castellbell i el Vilar	2	2
 ES	España	09	Cataluña	08	Barcelona	08054	Castellbisbal	14	15
 ES	España	09	Cataluña	08	Barcelona	08055	Castellcir	1	1
-ES	España	09	Cataluña	08	Barcelona	08056	Castelldefels	61	63
+ES	España	09	Cataluña	08	Barcelona	08056	Castelldefels	62	64
 ES	España	09	Cataluña	08	Barcelona	08057	Castell de l'Areny	0	0
 ES	España	09	Cataluña	08	Barcelona	08058	Castellet i la Gornal	5	5
 ES	España	09	Cataluña	08	Barcelona	08059	Castellfollit del Boix	0	0
@@ -933,13 +945,13 @@ ES	España	09	Cataluña	08	Barcelona	08065	Castellví de la Marca	4	4
 ES	España	09	Cataluña	08	Barcelona	08066	Castellví de Rosanes	2	2
 ES	España	09	Cataluña	08	Barcelona	08067	Centelles	6	6
 ES	España	09	Cataluña	08	Barcelona	08268	Cercs	1	1
-ES	España	09	Cataluña	08	Barcelona	08266	Cerdanyola del Vallès	97	99
+ES	España	09	Cataluña	08	Barcelona	08266	Cerdanyola del Vallès	98	100
 ES	España	09	Cataluña	08	Barcelona	08068	Cervelló	4	4
 ES	España	09	Cataluña	08	Barcelona	08069	Collbató	12	12
 ES	España	09	Cataluña	08	Barcelona	08070	Collsuspina	3	3
 ES	España	09	Cataluña	08	Barcelona	08071	Copons	2	2
 ES	España	09	Cataluña	08	Barcelona	08072	Corbera de Llobregat	13	13
-ES	España	09	Cataluña	08	Barcelona	08073	Cornellà de Llobregat	57	60
+ES	España	09	Cataluña	08	Barcelona	08073	Cornellà de Llobregat	58	61
 ES	España	09	Cataluña	08	Barcelona	08074	Cubelles	13	14
 ES	España	09	Cataluña	08	Barcelona	00000	DESCON.	1	1
 ES	España	09	Cataluña	08	Barcelona	08075	Dosrius	7	7
@@ -957,17 +969,17 @@ ES	España	09	Cataluña	08	Barcelona	08085	Font-rubí	1	1
 ES	España	09	Cataluña	08	Barcelona	08086	Franqueses del Vallès, Les	18	18
 ES	España	09	Cataluña	08	Barcelona	08090	Gaià	0	0
 ES	España	09	Cataluña	08	Barcelona	08088	Garriga, La	31	34
-ES	España	09	Cataluña	08	Barcelona	08089	Gavà	25	25
+ES	España	09	Cataluña	08	Barcelona	08089	Gavà	26	26
 ES	España	09	Cataluña	08	Barcelona	08091	Gelida	15	15
 ES	España	09	Cataluña	08	Barcelona	08092	Gironella	5	5
 ES	España	09	Cataluña	08	Barcelona	08094	Granada, La	2	2
-ES	España	09	Cataluña	08	Barcelona	08096	Granollers	60	62
+ES	España	09	Cataluña	08	Barcelona	08096	Granollers	61	63
 ES	España	09	Cataluña	08	Barcelona	08097	Gualba	6	6
 ES	España	09	Cataluña	08	Barcelona	08099	Guardiola de Berguedà	2	2
 ES	España	09	Cataluña	08	Barcelona	08100	Gurb	5	5
 ES	España	09	Cataluña	08	Barcelona	08101	Hospitalet de Llobregat, L'	118	122
 ES	España	09	Cataluña	08	Barcelona	08162	Hostalets de Pierola, Els	5	5
-ES	España	09	Cataluña	08	Barcelona	08102	Igualada	44	47
+ES	España	09	Cataluña	08	Barcelona	08102	Igualada	45	48
 ES	España	09	Cataluña	08	Barcelona	08103	Jorba	1	1
 ES	España	09	Cataluña	08	Barcelona	08104	Llacuna, La	7	7
 ES	España	09	Cataluña	08	Barcelona	08105	Llagosta, La	5	5
@@ -978,7 +990,7 @@ ES	España	09	Cataluña	08	Barcelona	08109	Lluçà	1	1
 ES	España	09	Cataluña	08	Barcelona	08110	Malgrat de Mar	15	16
 ES	España	09	Cataluña	08	Barcelona	08111	Malla	0	0
 ES	España	09	Cataluña	08	Barcelona	08112	Manlleu	22	24
-ES	España	09	Cataluña	08	Barcelona	08113	Manresa	120	122
+ES	España	09	Cataluña	08	Barcelona	08113	Manresa	122	124
 ES	España	09	Cataluña	08	Barcelona	08242	Marganell	0	0
 ES	España	09	Cataluña	08	Barcelona	08114	Martorell	15	15
 ES	España	09	Cataluña	08	Barcelona	08115	Martorelles	8	8
@@ -987,11 +999,11 @@ ES	España	09	Cataluña	08	Barcelona	08117	Masies de Voltregà, Les	1	1
 ES	España	09	Cataluña	08	Barcelona	08118	Masnou, El	42	45
 ES	España	09	Cataluña	08	Barcelona	08119	Masquefa	4	4
 ES	España	09	Cataluña	08	Barcelona	08120	Matadepera	10	11
-ES	España	09	Cataluña	08	Barcelona	08121	Mataró	249	256
+ES	España	09	Cataluña	08	Barcelona	08121	Mataró	251	258
 ES	España	09	Cataluña	08	Barcelona	08122	Mediona	12	12
 ES	España	09	Cataluña	08	Barcelona	08138	Moià	27	27
-ES	España	09	Cataluña	08	Barcelona	08123	Molins de Rei	57	59
-ES	España	09	Cataluña	08	Barcelona	08124	Mollet del Vallès	54	54
+ES	España	09	Cataluña	08	Barcelona	08123	Molins de Rei	58	60
+ES	España	09	Cataluña	08	Barcelona	08124	Mollet del Vallès	55	55
 ES	España	09	Cataluña	08	Barcelona	08128	Monistrol de Calders	1	1
 ES	España	09	Cataluña	08	Barcelona	08127	Monistrol de Montserrat	5	5
 ES	España	09	Cataluña	08	Barcelona	08125	Montcada i Reixac	23	23
@@ -1017,17 +1029,17 @@ ES	España	09	Cataluña	08	Barcelona	08144	Olvan	1	1
 ES	España	09	Cataluña	08	Barcelona	08150	Orís	0	0
 ES	España	09	Cataluña	08	Barcelona	08151	Oristà	3	3
 ES	España	09	Cataluña	08	Barcelona	08152	Orpí	1	1
-ES	España	09	Cataluña	08	Barcelona	08153	Òrrius	8	8
-ES	España	09	Cataluña	08	Barcelona	08154	Pacs del Penedès	1	1
+ES	España	09	Cataluña	08	Barcelona	08153	Òrrius	9	9
+ES	España	09	Cataluña	08	Barcelona	08154	Pacs del Penedès	2	2
 ES	España	09	Cataluña	08	Barcelona	08155	Palafolls	11	12
-ES	España	09	Cataluña	08	Barcelona	08156	Palau-solità i Plegamans	8	9
+ES	España	09	Cataluña	08	Barcelona	08156	Palau-solità i Plegamans	9	10
 ES	España	09	Cataluña	08	Barcelona	08157	Pallejà	11	12
 ES	España	09	Cataluña	08	Barcelona	08905	Palma de Cervelló, La	3	3
 ES	España	09	Cataluña	08	Barcelona	08158	Papiol, El	2	2
 ES	España	09	Cataluña	08	Barcelona	08159	Parets del Vallès	14	14
 ES	España	09	Cataluña	08	Barcelona	08160	Perafita	2	2
 ES	España	09	Cataluña	08	Barcelona	08161	Piera	12	13
-ES	España	09	Cataluña	08	Barcelona	08163	Pineda de Mar	15	16
+ES	España	09	Cataluña	08	Barcelona	08163	Pineda de Mar	16	17
 ES	España	09	Cataluña	08	Barcelona	08164	Pla del Penedès, El	5	5
 ES	España	09	Cataluña	08	Barcelona	08165	Pobla de Claramunt, La	2	3
 ES	España	09	Cataluña	08	Barcelona	08166	Pobla de Lillet, La	5	5
@@ -1047,14 +1059,14 @@ ES	España	09	Cataluña	08	Barcelona	08179	Rellinars	1	1
 ES	España	09	Cataluña	08	Barcelona	08180	Ripollet	30	30
 ES	España	09	Cataluña	08	Barcelona	08181	Roca del Vallès, La	11	13
 ES	España	09	Cataluña	08	Barcelona	08183	Roda de Ter	6	6
-ES	España	09	Cataluña	08	Barcelona	08184	Rubí	83	83
+ES	España	09	Cataluña	08	Barcelona	08184	Rubí	85	85
 ES	España	09	Cataluña	08	Barcelona	08185	Rubió	1	1
-ES	España	09	Cataluña	08	Barcelona	08187	Sabadell	355	359
+ES	España	09	Cataluña	08	Barcelona	08187	Sabadell	358	362
 ES	España	09	Cataluña	08	Barcelona	08188	Sagàs	0	0
 ES	España	09	Cataluña	08	Barcelona	08190	Saldes	3	3
 ES	España	09	Cataluña	08	Barcelona	08191	Sallent	9	10
 ES	España	09	Cataluña	08	Barcelona	08244	Santa Coloma de Cervelló	11	11
-ES	España	09	Cataluña	08	Barcelona	08245	Santa Coloma de Gramenet	59	59
+ES	España	09	Cataluña	08	Barcelona	08245	Santa Coloma de Gramenet	62	62
 ES	España	09	Cataluña	08	Barcelona	08194	Sant Adrià de Besòs	16	17
 ES	España	09	Cataluña	08	Barcelona	08246	Santa Eugènia de Berga	3	3
 ES	España	09	Cataluña	08	Barcelona	08247	Santa Eulàlia de Riuprimer	6	6
@@ -1076,9 +1088,9 @@ ES	España	09	Cataluña	08	Barcelona	08199	Sant Bartomeu del Grau	5	6
 ES	España	09	Cataluña	08	Barcelona	08200	Sant Boi de Llobregat	48	48
 ES	España	09	Cataluña	08	Barcelona	08201	Sant Boi de Lluçanès	2	2
 ES	España	09	Cataluña	08	Barcelona	08203	Sant Cebrià de Vallalta	3	3
-ES	España	09	Cataluña	08	Barcelona	08202	Sant Celoni	57	58
+ES	España	09	Cataluña	08	Barcelona	08202	Sant Celoni	60	61
 ES	España	09	Cataluña	08	Barcelona	08204	Sant Climent de Llobregat	6	6
-ES	España	09	Cataluña	08	Barcelona	08205	Sant Cugat del Vallès	236	244
+ES	España	09	Cataluña	08	Barcelona	08205	Sant Cugat del Vallès	240	248
 ES	España	09	Cataluña	08	Barcelona	08206	Sant Cugat Sesgarrigues	3	3
 ES	España	09	Cataluña	08	Barcelona	08207	Sant Esteve de Palautordera	14	14
 ES	España	09	Cataluña	08	Barcelona	08208	Sant Esteve Sesrovires	12	13
@@ -1086,11 +1098,11 @@ ES	España	09	Cataluña	08	Barcelona	08210	Sant Feliu de Codines	12	12
 ES	España	09	Cataluña	08	Barcelona	08211	Sant Feliu de Llobregat	53	54
 ES	España	09	Cataluña	08	Barcelona	08212	Sant Feliu Sasserra	0	0
 ES	España	09	Cataluña	08	Barcelona	08209	Sant Fost de Campsentelles	8	9
-ES	España	09	Cataluña	08	Barcelona	08213	Sant Fruitós de Bages	13	14
+ES	España	09	Cataluña	08	Barcelona	08213	Sant Fruitós de Bages	14	15
 ES	España	09	Cataluña	08	Barcelona	08215	Sant Hipòlit de Voltregà	5	6
 ES	España	09	Cataluña	08	Barcelona	08193	Sant Iscle de Vallalta	1	1
 ES	España	09	Cataluña	08	Barcelona	08217	Sant Joan Despí	45	45
-ES	España	09	Cataluña	08	Barcelona	08218	Sant Joan de Vilatorrada	5	5
+ES	España	09	Cataluña	08	Barcelona	08218	Sant Joan de Vilatorrada	6	6
 ES	España	09	Cataluña	08	Barcelona	08903	Sant Julià de Cerdanyola	0	0
 ES	España	09	Cataluña	08	Barcelona	08220	Sant Julià de Vilatorta	5	5
 ES	España	09	Cataluña	08	Barcelona	08221	Sant Just Desvern	30	32
@@ -1103,25 +1115,25 @@ ES	España	09	Cataluña	08	Barcelona	08227	Sant Martí Sarroca	3	3
 ES	España	09	Cataluña	08	Barcelona	08228	Sant Martí Sesgueioles	0	0
 ES	España	09	Cataluña	08	Barcelona	08229	Sant Mateu de Bages	0	0
 ES	España	09	Cataluña	08	Barcelona	08192	Santpedor	14	15
-ES	España	09	Cataluña	08	Barcelona	08231	Sant Pere de Ribes	44	45
+ES	España	09	Cataluña	08	Barcelona	08231	Sant Pere de Ribes	45	46
 ES	España	09	Cataluña	08	Barcelona	08232	Sant Pere de Riudebitlles	5	5
 ES	España	09	Cataluña	08	Barcelona	08233	Sant Pere de Torelló	2	2
 ES	España	09	Cataluña	08	Barcelona	08234	Sant Pere de Vilamajor	8	8
 ES	España	09	Cataluña	08	Barcelona	08189	Sant Pere Sallavinera	2	2
-ES	España	09	Cataluña	08	Barcelona	08235	Sant Pol de Mar	9	9
+ES	España	09	Cataluña	08	Barcelona	08235	Sant Pol de Mar	10	10
 ES	España	09	Cataluña	08	Barcelona	08236	Sant Quintí de Mediona	2	2
 ES	España	09	Cataluña	08	Barcelona	08237	Sant Quirze de Besora	3	3
 ES	España	09	Cataluña	08	Barcelona	08238	Sant Quirze del Vallès	27	27
 ES	España	09	Cataluña	08	Barcelona	08239	Sant Quirze Safaja	1	1
 ES	España	09	Cataluña	08	Barcelona	08240	Sant Sadurní d'Anoia	14	15
 ES	España	09	Cataluña	08	Barcelona	08098	Sant Salvador de Guardiola	7	7
-ES	España	09	Cataluña	08	Barcelona	08262	Sant Vicenç de Castellet	14	14
+ES	España	09	Cataluña	08	Barcelona	08262	Sant Vicenç de Castellet	15	15
 ES	España	09	Cataluña	08	Barcelona	08263	Sant Vicenç dels Horts	15	15
 ES	España	09	Cataluña	08	Barcelona	08264	Sant Vicenç de Montalt	6	6
 ES	España	09	Cataluña	08	Barcelona	08265	Sant Vicenç de Torelló	0	2
 ES	España	09	Cataluña	08	Barcelona	08267	Sentmenat	11	12
 ES	España	09	Cataluña	08	Barcelona	08269	Seva	5	5
-ES	España	09	Cataluña	08	Barcelona	08270	Sitges	35	36
+ES	España	09	Cataluña	08	Barcelona	08270	Sitges	36	37
 ES	España	09	Cataluña	08	Barcelona	08271	Sobremunt	1	1
 ES	España	09	Cataluña	08	Barcelona	08272	Sora	0	0
 ES	España	09	Cataluña	08	Barcelona	08273	Subirats	10	10
@@ -1132,7 +1144,7 @@ ES	España	09	Cataluña	08	Barcelona	08278	Taradell	11	11
 ES	España	09	Cataluña	08	Barcelona	08275	Tavèrnoles	2	3
 ES	España	09	Cataluña	08	Barcelona	08280	Tavertet	0	0
 ES	España	09	Cataluña	08	Barcelona	08281	Teià	12	12
-ES	España	09	Cataluña	08	Barcelona	08279	Terrassa	270	279
+ES	España	09	Cataluña	08	Barcelona	08279	Terrassa	273	282
 ES	España	09	Cataluña	08	Barcelona	08282	Tiana	18	18
 ES	España	09	Cataluña	08	Barcelona	08283	Tona	7	7
 ES	España	09	Cataluña	08	Barcelona	08284	Tordera	12	12
@@ -1147,16 +1159,16 @@ ES	España	09	Cataluña	08	Barcelona	08292	Vallbona d'Anoia	0	0
 ES	España	09	Cataluña	08	Barcelona	08294	Vallgorguina	5	5
 ES	España	09	Cataluña	08	Barcelona	08295	Vallirana	7	7
 ES	España	09	Cataluña	08	Barcelona	08296	Vallromanes	4	4
-ES	España	09	Cataluña	08	Barcelona	08298	Vic	97	100
+ES	España	09	Cataluña	08	Barcelona	08298	Vic	98	101
 ES	España	09	Cataluña	08	Barcelona	08299	Vilada	0	0
 ES	España	09	Cataluña	08	Barcelona	08301	Viladecans	34	35
 ES	España	09	Cataluña	08	Barcelona	08300	Viladecavalls	6	6
-ES	España	09	Cataluña	08	Barcelona	08305	Vilafranca del Penedès	90	92
+ES	España	09	Cataluña	08	Barcelona	08305	Vilafranca del Penedès	92	94
 ES	España	09	Cataluña	08	Barcelona	08306	Vilalba Sasserra	1	1
 ES	España	09	Cataluña	08	Barcelona	08302	Vilanova del Camí	7	7
 ES	España	09	Cataluña	08	Barcelona	08902	Vilanova del Vallès	5	6
 ES	España	09	Cataluña	08	Barcelona	08303	Vilanova de Sau	1	1
-ES	España	09	Cataluña	08	Barcelona	08307	Vilanova i la Geltrú	179	183
+ES	España	09	Cataluña	08	Barcelona	08307	Vilanova i la Geltrú	182	186
 ES	España	09	Cataluña	08	Barcelona	08214	Vilassar de Dalt	13	16
 ES	España	09	Cataluña	08	Barcelona	08219	Vilassar de Mar	29	29
 ES	España	09	Cataluña	08	Barcelona	08304	Vilobí del Penedès	4	4
@@ -1172,7 +1184,7 @@ ES	España	09	Cataluña	17	Girona	17009	Arbúcies	16	16
 ES	España	09	Cataluña	17	Girona	17010	Argelaguer	6	6
 ES	España	09	Cataluña	17	Girona	17011	Armentera, L'	3	4
 ES	España	09	Cataluña	17	Girona	17012	Avinyonet de Puigventós	0	0
-ES	España	09	Cataluña	17	Girona	17015	Banyoles	62	62
+ES	España	09	Cataluña	17	Girona	17015	Banyoles	64	64
 ES	España	09	Cataluña	17	Girona	08019	Barcelona	1	1
 ES	España	09	Cataluña	17	Girona	17016	Bàscara	1	1
 ES	España	09	Cataluña	17	Girona	17013	Begur	5	5
@@ -1180,7 +1192,7 @@ ES	España	09	Cataluña	17	Girona	17018	Bellcaire d'Empordà	0	0
 ES	España	09	Cataluña	17	Girona	17019	Besalú	3	3
 ES	España	09	Cataluña	17	Girona	17020	Bescanó	11	12
 ES	España	09	Cataluña	17	Girona	17021	Beuda	2	2
-ES	España	09	Cataluña	17	Girona	17022	Bisbal d'Empordà, La	18	19
+ES	España	09	Cataluña	17	Girona	17022	Bisbal d'Empordà, La	18	20
 ES	España	09	Cataluña	17	Girona	17234	Biure	1	1
 ES	España	09	Cataluña	17	Girona	17023	Blanes	26	28
 ES	España	09	Cataluña	17	Girona	17029	Boadella i les Escaules	1	1
@@ -1201,10 +1213,10 @@ ES	España	09	Cataluña	17	Girona	17039	Camprodon	0	0
 ES	España	09	Cataluña	17	Girona	17040	Canet d'Adri	1	1
 ES	España	09	Cataluña	17	Girona	17042	Capmany	0	0
 ES	España	09	Cataluña	17	Girona	17044	Cassà de la Selva	18	18
-ES	España	09	Cataluña	17	Girona	17047	Castelló d'Empúries	10	10
+ES	España	09	Cataluña	17	Girona	17047	Castelló d'Empúries	11	11
 ES	España	09	Cataluña	17	Girona	17048	Castell-Platja d'Aro	4	4
 ES	España	09	Cataluña	17	Girona	17189	Cellera de Ter, La	2	2
-ES	España	09	Cataluña	17	Girona	17049	Celrà	20	20
+ES	España	09	Cataluña	17	Girona	17049	Celrà	21	21
 ES	España	09	Cataluña	17	Girona	17050	Cervià de Ter	0	0
 ES	España	09	Cataluña	17	Girona	17051	Cistella	3	3
 ES	España	09	Cataluña	17	Girona	17055	Colomers	1	1
@@ -1229,7 +1241,7 @@ ES	España	09	Cataluña	17	Girona	17074	Fortià	1	1
 ES	España	09	Cataluña	17	Girona	17075	Garrigàs	1	1
 ES	España	09	Cataluña	17	Girona	17076	Garrigoles	1	1
 ES	España	09	Cataluña	17	Girona	17077	Garriguella	4	4
-ES	España	09	Cataluña	17	Girona	17079	Girona	345	350
+ES	España	09	Cataluña	17	Girona	17079	Girona	350	355
 ES	España	09	Cataluña	17	Girona	17080	Gombrèn	0	0
 ES	España	09	Cataluña	17	Girona	17081	Gualta	1	2
 ES	España	09	Cataluña	17	Girona	17082	Guils de Cerdanya	0	0
@@ -1262,7 +1274,7 @@ ES	España	09	Cataluña	17	Girona	17112	Ogassa	1	1
 ES	España	09	Cataluña	17	Girona	17114	Olot	49	50
 ES	España	09	Cataluña	17	Girona	17115	Ordis	3	3
 ES	España	09	Cataluña	17	Girona	17116	Osor	0	0
-ES	España	09	Cataluña	17	Girona	17117	Palafrugell	14	16
+ES	España	09	Cataluña	17	Girona	17117	Palafrugell	15	17
 ES	España	09	Cataluña	17	Girona	17118	Palamós	20	20
 ES	España	09	Cataluña	17	Girona	17119	Palau de Santa Eulàlia	4	4
 ES	España	09	Cataluña	17	Girona	17120	Palau-saverdera	1	1
@@ -1304,7 +1316,7 @@ ES	España	09	Cataluña	17	Girona	17183	Sant Aniol de Finestres	3	3
 ES	España	09	Cataluña	17	Girona	17184	Santa Pau	2	2
 ES	España	09	Cataluña	17	Girona	17158	Sant Climent Sescebes	1	1
 ES	España	09	Cataluña	17	Girona	17159	Sant Feliu de Buixalleu	4	4
-ES	España	09	Cataluña	17	Girona	17160	Sant Feliu de Guíxols	27	27
+ES	España	09	Cataluña	17	Girona	17160	Sant Feliu de Guíxols	28	28
 ES	España	09	Cataluña	17	Girona	17161	Sant Feliu de Pallerols	3	4
 ES	España	09	Cataluña	17	Girona	17163	Sant Gregori	12	12
 ES	España	09	Cataluña	17	Girona	17164	Sant Hilari Sacalm	9	9
@@ -1334,7 +1346,7 @@ ES	España	09	Cataluña	17	Girona	17052	Siurana	1	2
 ES	España	09	Cataluña	17	Girona	17195	Tallada d'Empordà, La	0	0
 ES	España	09	Cataluña	17	Girona	17198	Torroella de Fluvià	0	0
 ES	España	09	Cataluña	17	Girona	17199	Torroella de Montgrí	28	29
-ES	España	09	Cataluña	17	Girona	17200	Tortellà	3	3
+ES	España	09	Cataluña	17	Girona	17200	Tortellà	4	4
 ES	España	09	Cataluña	17	Girona	17201	Toses	1	1
 ES	España	09	Cataluña	17	Girona	17202	Tossa de Mar	6	6
 ES	España	09	Cataluña	17	Girona	17204	Ullà	2	2
@@ -1355,7 +1367,7 @@ ES	España	09	Cataluña	17	Girona	17216	Viladasens	3	3
 ES	España	09	Cataluña	17	Girona	17218	Vilademuls	15	15
 ES	España	09	Cataluña	17	Girona	17220	Viladrau	0	0
 ES	España	09	Cataluña	17	Girona	17221	Vilafant	5	5
-ES	España	09	Cataluña	17	Girona	17223	Vilajuïga	4	4
+ES	España	09	Cataluña	17	Girona	17223	Vilajuïga	5	5
 ES	España	09	Cataluña	17	Girona	17225	Vilamacolum	0	0
 ES	España	09	Cataluña	17	Girona	17226	Vilamalla	1	1
 ES	España	09	Cataluña	17	Girona	17228	Vilanant	0	0
@@ -1436,17 +1448,18 @@ ES	España	09	Cataluña	25	Lleida	25112	Ivars de Noguera	0	0
 ES	España	09	Cataluña	25	Lleida	25113	Ivars d'Urgell	6	6
 ES	España	09	Cataluña	25	Lleida	25910	Josa i Tuixén	1	1
 ES	España	09	Cataluña	25	Lleida	25118	Juncosa	1	1
-ES	España	09	Cataluña	25	Lleida	25119	Juneda	8	9
+ES	España	09	Cataluña	25	Lleida	25119	Juneda	9	10
 ES	España	09	Cataluña	25	Lleida	25121	Les	3	3
 ES	España	09	Cataluña	25	Lleida	25122	Linyola	3	3
 ES	España	09	Cataluña	25	Lleida	25124	Lladurs	1	1
-ES	España	09	Cataluña	25	Lleida	25120	Lleida	154	157
+ES	España	09	Cataluña	25	Lleida	25120	Lleida	156	159
 ES	España	09	Cataluña	25	Lleida	25127	Lles de Cerdanya	1	2
 ES	España	09	Cataluña	25	Lleida	25128	Llimiana	1	1
+ES	España	09	Cataluña	25	Lleida	25133	Maials	0	0
 ES	España	09	Cataluña	25	Lleida	25130	Maldà	1	1
 ES	España	09	Cataluña	25	Lleida	25134	Menàrguens	2	2
 ES	España	09	Cataluña	25	Lleida	25135	Miralcamp	0	0
-ES	España	09	Cataluña	25	Lleida	25137	Mollerussa	7	8
+ES	España	09	Cataluña	25	Lleida	25137	Mollerussa	8	9
 ES	España	09	Cataluña	25	Lleida	25136	Molsosa, La	0	0
 ES	España	09	Cataluña	25	Lleida	25139	Montellà i Martinet	1	1
 ES	España	09	Cataluña	25	Lleida	25140	Montferrer i Castellbò	0	0
@@ -1530,8 +1543,8 @@ ES	España	09	Cataluña	43	Tarragona	43004	Alcanar	8	8
 ES	España	09	Cataluña	43	Tarragona	43005	Alcover	3	3
 ES	España	09	Cataluña	43	Tarragona	43006	Aldover	1	1
 ES	España	09	Cataluña	43	Tarragona	43007	Aleixar, L'	1	1
-ES	España	09	Cataluña	43	Tarragona	43009	Alforja	0	0
-ES	España	09	Cataluña	43	Tarragona	43010	Alió	0	0
+ES	España	09	Cataluña	43	Tarragona	43009	Alforja	2	2
+ES	España	09	Cataluña	43	Tarragona	43010	Alió	1	1
 ES	España	09	Cataluña	43	Tarragona	43011	Almoster	1	2
 ES	España	09	Cataluña	43	Tarragona	43012	Altafulla	10	12
 ES	España	09	Cataluña	43	Tarragona	43013	Ametlla de Mar, L'	3	3
@@ -1562,7 +1575,7 @@ ES	España	09	Cataluña	43	Tarragona	43038	Cambrils	24	25
 ES	España	09	Cataluña	43	Tarragona	43907	Canonja, La	3	3
 ES	España	09	Cataluña	43	Tarragona	43039	Capafonts	0	0
 ES	España	09	Cataluña	43	Tarragona	43040	Capçanes	2	2
-ES	España	09	Cataluña	43	Tarragona	43042	Castellvell del Camp	4	4
+ES	España	09	Cataluña	43	Tarragona	43042	Castellvell del Camp	5	5
 ES	España	09	Cataluña	43	Tarragona	43043	Catllar, El	1	1
 ES	España	09	Cataluña	43	Tarragona	43045	Colldejou	0	1
 ES	España	09	Cataluña	43	Tarragona	43046	Conesa	1	1
@@ -1580,6 +1593,7 @@ ES	España	09	Cataluña	43	Tarragona	43060	Flix	5	5
 ES	España	09	Cataluña	43	Tarragona	43063	Galera, La	3	3
 ES	España	09	Cataluña	43	Tarragona	43064	Gandesa	1	1
 ES	España	09	Cataluña	43	Tarragona	43065	Garcia	1	1
+ES	España	09	Cataluña	43	Tarragona	43066	Garidells, Els	0	0
 ES	España	09	Cataluña	43	Tarragona	43068	Godall	0	0
 ES	España	09	Cataluña	43	Tarragona	43069	Gratallops	1	1
 ES	España	09	Cataluña	43	Tarragona	43070	Guiamets, Els	2	2
@@ -1597,7 +1611,7 @@ ES	España	09	Cataluña	43	Tarragona	43088	Montbrió del Camp	5	5
 ES	España	09	Cataluña	43	Tarragona	43089	Montferri	1	1
 ES	España	09	Cataluña	43	Tarragona	43090	Montmell, El	1	1
 ES	España	09	Cataluña	43	Tarragona	43091	Mont-ral	1	1
-ES	España	09	Cataluña	43	Tarragona	43092	Mont-roig del Camp	4	4
+ES	España	09	Cataluña	43	Tarragona	43092	Mont-roig del Camp	5	5
 ES	España	09	Cataluña	43	Tarragona	43093	Móra d'Ebre	1	1
 ES	España	09	Cataluña	43	Tarragona	43094	Móra la Nova	4	4
 ES	España	09	Cataluña	43	Tarragona	43095	Morell, El	4	4
@@ -1623,7 +1637,7 @@ ES	España	09	Cataluña	43	Tarragona	43119	Puigpelat	2	2
 ES	España	09	Cataluña	43	Tarragona	43120	Querol	0	0
 ES	España	09	Cataluña	43	Tarragona	43121	Rasquera	0	0
 ES	España	09	Cataluña	43	Tarragona	43122	Renau	0	0
-ES	España	09	Cataluña	43	Tarragona	43123	Reus	80	81
+ES	España	09	Cataluña	43	Tarragona	43123	Reus	81	82
 ES	España	09	Cataluña	43	Tarragona	43124	Riba, La	0	0
 ES	España	09	Cataluña	43	Tarragona	43125	Riba-roja d'Ebre	0	0
 ES	España	09	Cataluña	43	Tarragona	43126	Riera de Gaià, La	3	3
@@ -1651,7 +1665,7 @@ ES	España	09	Cataluña	43	Tarragona	43145	Selva del Camp, La	9	9
 ES	España	09	Cataluña	43	Tarragona	43146	Senan	0	0
 ES	España	09	Cataluña	43	Tarragona	43044	Sénia, La	2	2
 ES	España	09	Cataluña	43	Tarragona	43147	Solivella	1	1
-ES	España	09	Cataluña	43	Tarragona	43148	Tarragona	114	117
+ES	España	09	Cataluña	43	Tarragona	43148	Tarragona	116	119
 ES	España	09	Cataluña	43	Tarragona	43149	Tivenys	0	0
 ES	España	09	Cataluña	43	Tarragona	43150	Tivissa	1	1
 ES	España	09	Cataluña	43	Tarragona	43151	Torre de Fontaubella, La	0	0
@@ -1661,11 +1675,11 @@ ES	España	09	Cataluña	43	Tarragona	43155	Tortosa	21	22
 ES	España	09	Cataluña	43	Tarragona	43156	Ulldecona	8	8
 ES	España	09	Cataluña	43	Tarragona	43161	Valls	20	20
 ES	España	09	Cataluña	43	Tarragona	43162	Vandellòs i l'Hospitalet de l'Infant	2	2
-ES	España	09	Cataluña	43	Tarragona	43163	Vendrell, El	12	12
+ES	España	09	Cataluña	43	Tarragona	43163	Vendrell, El	13	13
 ES	España	09	Cataluña	43	Tarragona	43164	Vespella de Gaià	0	0
 ES	España	09	Cataluña	43	Tarragona	43165	Vilabella	2	2
 ES	España	09	Cataluña	43	Tarragona	43175	Vilalba dels Arcs	0	0
-ES	España	09	Cataluña	43	Tarragona	43166	Vilallonga del Camp	2	2
+ES	España	09	Cataluña	43	Tarragona	43166	Vilallonga del Camp	4	4
 ES	España	09	Cataluña	43	Tarragona	43167	Vilanova d'Escornalbou	0	0
 ES	España	09	Cataluña	43	Tarragona	43169	Vilaplana	0	0
 ES	España	09	Cataluña	43	Tarragona	43170	Vila-rodona	0	0
@@ -1692,24 +1706,24 @@ ES	España	10	Comunidad Valenciana	03	Alacant	03022	Benasau	0	0
 ES	España	10	Comunidad Valenciana	03	Alacant	03026	Beniarbeig	1	1
 ES	España	10	Comunidad Valenciana	03	Alacant	03028	Beniarrés	1	1
 ES	España	10	Comunidad Valenciana	03	Alacant	03030	Benidoleig	1	1
-ES	España	10	Comunidad Valenciana	03	Alacant	03031	Benidorm	1	1
+ES	España	10	Comunidad Valenciana	03	Alacant	03031	Benidorm	2	2
 ES	España	10	Comunidad Valenciana	03	Alacant	03029	Benigembla	0	0
-ES	España	10	Comunidad Valenciana	03	Alacant	03041	Benissa	5	6
+ES	España	10	Comunidad Valenciana	03	Alacant	03041	Benissa	6	7
 ES	España	10	Comunidad Valenciana	03	Alacant	03042	Benitachell/Poble Nou de Benitatxell, el	0	0
 ES	España	10	Comunidad Valenciana	03	Alacant	03043	Biar	0	0
 ES	España	10	Comunidad Valenciana	03	Alacant	03048	Callosa d'En Sarrià	0	0
 ES	España	10	Comunidad Valenciana	03	Alacant	03049	Callosa de Segura	0	0
 ES	España	10	Comunidad Valenciana	03	Alacant	03047	Calp	3	3
-ES	España	10	Comunidad Valenciana	03	Alacant	03050	Campello, el	6	6
+ES	España	10	Comunidad Valenciana	03	Alacant	03050	Campello, el	7	7
 ES	España	10	Comunidad Valenciana	03	Alacant	03052	Cañada	1	1
 ES	España	10	Comunidad Valenciana	03	Alacant	03053	Castalla	4	4
 ES	España	10	Comunidad Valenciana	03	Alacant	03056	Cocentaina	5	5
 ES	España	10	Comunidad Valenciana	03	Alacant	03058	Cox	0	0
 ES	España	10	Comunidad Valenciana	03	Alacant	03059	Crevillent	1	1
-ES	España	10	Comunidad Valenciana	03	Alacant	03063	Dénia	15	15
+ES	España	10	Comunidad Valenciana	03	Alacant	03063	Dénia	16	16
 ES	España	10	Comunidad Valenciana	03	Alacant	03065	Elche/Elx	23	23
 ES	España	10	Comunidad Valenciana	03	Alacant	03066	Elda	7	7
-ES	España	10	Comunidad Valenciana	03	Alacant	03069	Finestrat	1	1
+ES	España	10	Comunidad Valenciana	03	Alacant	03069	Finestrat	2	2
 ES	España	10	Comunidad Valenciana	03	Alacant	03072	Gaianes	2	2
 ES	España	10	Comunidad Valenciana	03	Alacant	03071	Gata de Gorgos	1	1
 ES	España	10	Comunidad Valenciana	03	Alacant	03076	Guardamar del Segura	0	0
@@ -1723,10 +1737,10 @@ ES	España	10	Comunidad Valenciana	03	Alacant	03089	Monóvar/Monòver	2	2
 ES	España	10	Comunidad Valenciana	03	Alacant	03091	Murla	0	0
 ES	España	10	Comunidad Valenciana	03	Alacant	03092	Muro de Alcoy	1	1
 ES	España	10	Comunidad Valenciana	03	Alacant	03090	Mutxamel	7	7
-ES	España	10	Comunidad Valenciana	03	Alacant	03093	Novelda	5	5
+ES	España	10	Comunidad Valenciana	03	Alacant	03093	Novelda	5	6
 ES	España	10	Comunidad Valenciana	03	Alacant	03094	Nucia, la	1	1
 ES	España	10	Comunidad Valenciana	03	Alacant	03095	Ondara	0	0
-ES	España	10	Comunidad Valenciana	03	Alacant	03096	Onil	4	5
+ES	España	10	Comunidad Valenciana	03	Alacant	03096	Onil	5	6
 ES	España	10	Comunidad Valenciana	03	Alacant	03097	Orba	2	2
 ES	España	10	Comunidad Valenciana	03	Alacant	03099	Orihuela	8	8
 ES	España	10	Comunidad Valenciana	03	Alacant	03101	Pedreguer	3	3
@@ -1742,8 +1756,10 @@ ES	España	10	Comunidad Valenciana	03	Alacant	03116	Salinas	2	2
 ES	España	10	Comunidad Valenciana	03	Alacant	03121	Santa Pola	3	3
 ES	España	10	Comunidad Valenciana	03	Alacant	03119	Sant Joan d'Alacant	5	5
 ES	España	10	Comunidad Valenciana	03	Alacant	03122	San Vicente del Raspeig/Sant Vicent del Raspeig	17	17
+ES	España	10	Comunidad Valenciana	03	Alacant	03123	Sax	0	0
 ES	España	10	Comunidad Valenciana	03	Alacant	03124	Sella	0	0
 ES	España	10	Comunidad Valenciana	03	Alacant	03128	Teulada	0	0
+ES	España	10	Comunidad Valenciana	03	Alacant	03129	Tibi	0	0
 ES	España	10	Comunidad Valenciana	03	Alacant	03132	Torremanzanas/Torre de les Maçanes, la	0	0
 ES	España	10	Comunidad Valenciana	03	Alacant	03133	Torrevieja	1	1
 ES	España	10	Comunidad Valenciana	03	Alacant	03137	Vall de Laguar, la	0	0
@@ -1755,7 +1771,7 @@ ES	España	10	Comunidad Valenciana	12	Castelló	12002	Aín	0	0
 ES	España	10	Comunidad Valenciana	12	Castelló	12004	Alcalà de Xivert	4	4
 ES	España	10	Comunidad Valenciana	12	Castelló	12005	Alcora, l'	3	3
 ES	España	10	Comunidad Valenciana	12	Castelló	12007	Alfondeguilla	0	0
-ES	España	10	Comunidad Valenciana	12	Castelló	12009	Almazora/Almassora	5	5
+ES	España	10	Comunidad Valenciana	12	Castelló	12009	Almazora/Almassora	6	6
 ES	España	10	Comunidad Valenciana	12	Castelló	12011	Almenara	1	1
 ES	España	10	Comunidad Valenciana	12	Castelló	12901	Alquerías del Niño Perdido	5	5
 ES	España	10	Comunidad Valenciana	12	Castelló	12016	Artana	1	1
@@ -1769,7 +1785,7 @@ ES	España	10	Comunidad Valenciana	12	Castelló	12032	Borriana/Burriana	4	4
 ES	España	10	Comunidad Valenciana	12	Castelló	12031	Borriol	3	3
 ES	España	10	Comunidad Valenciana	12	Castelló	12033	Cabanes	2	2
 ES	España	10	Comunidad Valenciana	12	Castelló	12034	Càlig	3	3
-ES	España	10	Comunidad Valenciana	12	Castelló	12040	Castellón de la Plana/Castelló de la Plana	69	71
+ES	España	10	Comunidad Valenciana	12	Castelló	12040	Castellón de la Plana/Castelló de la Plana	70	72
 ES	España	10	Comunidad Valenciana	12	Castelló	12044	Cervera del Maestre	0	0
 ES	España	10	Comunidad Valenciana	12	Castelló	12052	Chert/Xert	0	0
 ES	España	10	Comunidad Valenciana	12	Castelló	12053	Chilches/Xilxes	2	2
@@ -1795,11 +1811,11 @@ ES	España	10	Comunidad Valenciana	12	Castelló	12122	Useras/Useres, les	2	2
 ES	España	10	Comunidad Valenciana	12	Castelló	12124	Vall d'Alba	0	0
 ES	España	10	Comunidad Valenciana	12	Castelló	12126	Vall d'Uixó, la	6	7
 ES	España	10	Comunidad Valenciana	12	Castelló	12128	Vilafamés	0	0
-ES	España	10	Comunidad Valenciana	12	Castelló	12135	Vila-real	9	11
-ES	España	10	Comunidad Valenciana	12	Castelló	12136	Vilavella, la	0	0
+ES	España	10	Comunidad Valenciana	12	Castelló	12135	Vila-real	10	12
+ES	España	10	Comunidad Valenciana	12	Castelló	12136	Vilavella, la	1	1
 ES	España	10	Comunidad Valenciana	12	Castelló	12129	Villafranca del Cid/Vilafranca	1	1
 ES	España	10	Comunidad Valenciana	12	Castelló	12137	Villores	0	0
-ES	España	10	Comunidad Valenciana	12	Castelló	12138	Vinaròs	22	22
+ES	España	10	Comunidad Valenciana	12	Castelló	12138	Vinaròs	23	23
 ES	España	10	Comunidad Valenciana	12	Castelló	12140	Viver	1	1
 ES	España	10	Comunidad Valenciana	46	València	46001	Ademuz	2	2
 ES	España	10	Comunidad Valenciana	46	València	46002	Ador	1	1
@@ -1807,11 +1823,12 @@ ES	España	10	Comunidad Valenciana	46	València	46004	Agullent	2	2
 ES	España	10	Comunidad Valenciana	46	València	46042	Aielo de Malferit	2	2
 ES	España	10	Comunidad Valenciana	46	València	46005	Alaquàs	6	6
 ES	España	10	Comunidad Valenciana	46	València	46006	Albaida	1	1
-ES	España	10	Comunidad Valenciana	46	València	46007	Albal	3	3
-ES	España	10	Comunidad Valenciana	46	València	46008	Albalat de la Ribera	0	0
+ES	España	10	Comunidad Valenciana	46	València	46007	Albal	4	4
+ES	España	10	Comunidad Valenciana	46	València	46008	Albalat de la Ribera	0	1
 ES	España	10	Comunidad Valenciana	46	València	46009	Albalat dels Sorells	5	7
 ES	España	10	Comunidad Valenciana	46	València	46010	Albalat dels Tarongers	1	1
 ES	España	10	Comunidad Valenciana	46	València	46011	Alberic	4	4
+ES	España	10	Comunidad Valenciana	46	València	46012	Alborache	0	0
 ES	España	10	Comunidad Valenciana	46	València	46013	Alboraya	23	23
 ES	España	10	Comunidad Valenciana	46	València	46014	Albuixech	4	4
 ES	España	10	Comunidad Valenciana	46	València	46016	Alcàntera de Xúquer	0	0
@@ -1882,7 +1899,7 @@ ES	España	10	Comunidad Valenciana	46	València	46136	Godelleta	2	2
 ES	España	10	Comunidad Valenciana	46	València	46140	Guardamar de la Safor	1	1
 ES	España	10	Comunidad Valenciana	46	València	46155	Llaurí	1	1
 ES	España	10	Comunidad Valenciana	46	València	46147	Llíria	6	6
-ES	España	10	Comunidad Valenciana	46	València	46151	Llocnou d'En Fenollet	0	0
+ES	España	10	Comunidad Valenciana	46	València	46151	Llocnou d'En Fenollet	1	1
 ES	España	10	Comunidad Valenciana	46	València	46156	Llombai	0	0
 ES	España	10	Comunidad Valenciana	46	València	46157	Llosa de Ranes, la	0	0
 ES	España	10	Comunidad Valenciana	46	València	46158	Macastre	0	0
@@ -1894,7 +1911,7 @@ ES	España	10	Comunidad Valenciana	46	València	46164	Massamagrell	6	6
 ES	España	10	Comunidad Valenciana	46	València	46165	Massanassa	4	5
 ES	España	10	Comunidad Valenciana	46	València	46166	Meliana	9	9
 ES	España	10	Comunidad Valenciana	46	València	46168	Miramar	1	1
-ES	España	10	Comunidad Valenciana	46	València	46169	Mislata	12	13
+ES	España	10	Comunidad Valenciana	46	València	46169	Mislata	13	14
 ES	España	10	Comunidad Valenciana	46	València	46171	Moncada	7	7
 ES	España	10	Comunidad Valenciana	46	València	46174	Montesa	1	1
 ES	España	10	Comunidad Valenciana	46	València	46172	Montserrat	4	4
@@ -1903,15 +1920,15 @@ ES	España	10	Comunidad Valenciana	46	València	46178	Náquera	1	1
 ES	España	10	Comunidad Valenciana	46	València	46181	Oliva	8	8
 ES	España	10	Comunidad Valenciana	46	València	46183	Olleria, l'	1	1
 ES	España	10	Comunidad Valenciana	46	València	46182	Olocau	1	1
-ES	España	10	Comunidad Valenciana	46	València	46184	Ontinyent	22	22
+ES	España	10	Comunidad Valenciana	46	València	46184	Ontinyent	23	23
 ES	España	10	Comunidad Valenciana	46	València	46186	Paiporta	14	14
 ES	España	10	Comunidad Valenciana	46	València	46187	Palma de Gandía	0	0
 ES	España	10	Comunidad Valenciana	46	València	46188	Palmera	1	1
-ES	España	10	Comunidad Valenciana	46	València	46190	Paterna	21	23
+ES	España	10	Comunidad Valenciana	46	València	46190	Paterna	22	24
 ES	España	10	Comunidad Valenciana	46	València	46191	Pedralba	1	1
 ES	España	10	Comunidad Valenciana	46	València	46192	Petrés	0	0
 ES	España	10	Comunidad Valenciana	46	València	46193	Picanya	14	15
-ES	España	10	Comunidad Valenciana	46	València	46194	Picassent	7	9
+ES	España	10	Comunidad Valenciana	46	València	46194	Picassent	8	10
 ES	España	10	Comunidad Valenciana	46	València	46199	Pobla de Farnals, la	1	1
 ES	España	10	Comunidad Valenciana	46	València	46202	Pobla de Vallbona, la	6	6
 ES	España	10	Comunidad Valenciana	46	València	46203	Pobla Llarga, la	2	2
@@ -1947,7 +1964,7 @@ ES	España	10	Comunidad Valenciana	46	València	46240	Terrateig	1	1
 ES	España	10	Comunidad Valenciana	46	València	46244	Torrent	23	23
 ES	España	10	Comunidad Valenciana	46	València	46245	Torres Torres	0	0
 ES	España	10	Comunidad Valenciana	46	València	46249	Utiel	0	0
-ES	España	10	Comunidad Valenciana	46	València	46250	Valencia	444	460
+ES	España	10	Comunidad Valenciana	46	València	46250	Valencia	449	465
 ES	España	10	Comunidad Valenciana	46	València	46251	Vallada	3	3
 ES	España	10	Comunidad Valenciana	46	València	46252	Vallanca	1	1
 ES	España	10	Comunidad Valenciana	46	València	46254	Venta del Moro	1	1
@@ -1962,10 +1979,11 @@ ES	España	10	Comunidad Valenciana	46	València	46110	Xirivella	5	5
 ES	España	10	Comunidad Valenciana	46	València	46261	Yátova	0	0
 ES	España	11	Extremadura	06	Badajoz	06006	Alburquerque	1	1
 ES	España	11	Extremadura	06	Badajoz	06011	Almendralejo	1	1
-ES	España	11	Extremadura	06	Badajoz	06015	Badajoz	9	10
+ES	España	11	Extremadura	06	Badajoz	06015	Badajoz	10	11
 ES	España	11	Extremadura	06	Badajoz	06016	Barcarrota	0	0
 ES	España	11	Extremadura	06	Badajoz	06019	Berlanga	1	1
 ES	España	11	Extremadura	06	Badajoz	06022	Burguillos del Cerro	2	2
+ES	España	11	Extremadura	06	Badajoz	06023	Cabeza del Buey	0	0
 ES	España	11	Extremadura	06	Badajoz	06036	Castuera	1	1
 ES	España	11	Extremadura	06	Badajoz	06043	Don Álvaro	0	0
 ES	España	11	Extremadura	06	Badajoz	06044	Don Benito	1	1
@@ -2007,17 +2025,20 @@ ES	España	12	Galicia	15	A Coruña	15008	Bergondo	1	1
 ES	España	12	Galicia	15	A Coruña	15009	Betanzos	2	2
 ES	España	12	Galicia	15	A Coruña	15011	Boiro	0	0
 ES	España	12	Galicia	15	A Coruña	15013	Brión	2	2
+ES	España	12	Galicia	15	A Coruña	15015	Cabanas	0	0
 ES	España	12	Galicia	15	A Coruña	15017	Cambre	0	0
 ES	España	12	Galicia	15	A Coruña	15018	Capela, A	1	1
 ES	España	12	Galicia	15	A Coruña	15019	Carballo	1	1
 ES	España	12	Galicia	15	A Coruña	15021	Carral	0	0
+ES	España	12	Galicia	15	A Coruña	15022	Cedeira	1	1
 ES	España	12	Galicia	15	A Coruña	15025	Cerdido	0	0
 ES	España	12	Galicia	15	A Coruña	15030	Coruña, A	40	40
-ES	España	12	Galicia	15	A Coruña	15031	Culleredo	10	10
+ES	España	12	Galicia	15	A Coruña	15031	Culleredo	11	11
 ES	España	12	Galicia	15	A Coruña	15036	Ferrol	7	10
 ES	España	12	Galicia	15	A Coruña	15039	Irixoa	1	1
 ES	España	12	Galicia	15	A Coruña	15043	Malpica de Bergantiños	1	1
 ES	España	12	Galicia	15	A Coruña	15048	Miño	2	2
+ES	España	12	Galicia	15	A Coruña	15051	Mugardos	0	0
 ES	España	12	Galicia	15	A Coruña	15053	Muros	1	1
 ES	España	12	Galicia	15	A Coruña	15054	Narón	1	2
 ES	España	12	Galicia	15	A Coruña	15057	Noia	0	0
@@ -2031,9 +2052,11 @@ ES	España	12	Galicia	15	A Coruña	15070	Pontes de García Rodríguez, As	0	0
 ES	España	12	Galicia	15	A Coruña	15072	Rianxo	2	2
 ES	España	12	Galicia	15	A Coruña	15073	Ribeira	4	4
 ES	España	12	Galicia	15	A Coruña	15074	Rois	1	1
-ES	España	12	Galicia	15	A Coruña	15078	Santiago de Compostela	24	25
+ES	España	12	Galicia	15	A Coruña	15075	Sada	0	0
+ES	España	12	Galicia	15	A Coruña	15078	Santiago de Compostela	26	27
 ES	España	12	Galicia	15	A Coruña	15082	Teo	0	0
 ES	España	12	Galicia	15	A Coruña	15089	Vedra	0	2
+ES	España	12	Galicia	15	A Coruña	15093	Zas	1	1
 ES	España	12	Galicia	27	Lugo	27001	Abadín	0	0
 ES	España	12	Galicia	27	Lugo	27003	Antas de Ulla	0	0
 ES	España	12	Galicia	27	Lugo	27005	Barreiros	1	1
@@ -2094,20 +2117,20 @@ ES	España	12	Galicia	36	Pontevedra	36049	Salceda de Caselas	1	1
 ES	España	12	Galicia	36	Pontevedra	36051	Sanxenxo	0	0
 ES	España	12	Galicia	36	Pontevedra	36052	Silleda	1	1
 ES	España	12	Galicia	36	Pontevedra	36054	Tomiño	0	0
-ES	España	12	Galicia	36	Pontevedra	36057	Vigo	32	33
+ES	España	12	Galicia	36	Pontevedra	36057	Vigo	33	34
 ES	España	12	Galicia	36	Pontevedra	36058	Vilaboa	1	1
-ES	España	12	Galicia	36	Pontevedra	36060	Vilagarcía de Arousa	4	4
+ES	España	12	Galicia	36	Pontevedra	36060	Vilagarcía de Arousa	5	5
 ES	España	13	Madrid, Comunidad de	28	Madrid	28001	Acebeda, La	6	6
 ES	España	13	Madrid, Comunidad de	28	Madrid	28002	Ajalvir	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28004	Álamo, El	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28005	Alcalá de Henares	46	47
-ES	España	13	Madrid, Comunidad de	28	Madrid	28006	Alcobendas	17	17
+ES	España	13	Madrid, Comunidad de	28	Madrid	28006	Alcobendas	18	18
 ES	España	13	Madrid, Comunidad de	28	Madrid	28007	Alcorcón	35	37
 ES	España	13	Madrid, Comunidad de	28	Madrid	28008	Aldea del Fresno	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28009	Algete	3	3
 ES	España	13	Madrid, Comunidad de	28	Madrid	28010	Alpedrete	7	7
 ES	España	13	Madrid, Comunidad de	28	Madrid	28013	Aranjuez	2	2
-ES	España	13	Madrid, Comunidad de	28	Madrid	28014	Arganda del Rey	1	1
+ES	España	13	Madrid, Comunidad de	28	Madrid	28014	Arganda del Rey	2	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28015	Arroyomolinos	6	6
 ES	España	13	Madrid, Comunidad de	28	Madrid	28017	Batres	2	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28018	Becerril de la Sierra	0	1
@@ -2138,7 +2161,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28044	Colmenarejo	5	6
 ES	España	13	Madrid, Comunidad de	28	Madrid	28045	Colmenar Viejo	9	9
 ES	España	13	Madrid, Comunidad de	28	Madrid	28048	Corpa	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28049	Coslada	7	7
-ES	España	13	Madrid, Comunidad de	28	Madrid	28053	Daganzo de Arriba	2	2
+ES	España	13	Madrid, Comunidad de	28	Madrid	28053	Daganzo de Arriba	3	3
 ES	España	13	Madrid, Comunidad de	28	Madrid	28054	Escorial, El	11	11
 ES	España	13	Madrid, Comunidad de	28	Madrid	28056	Fresnedillas de la Oliva	3	3
 ES	España	13	Madrid, Comunidad de	28	Madrid	28057	Fresno de Torote	1	1
@@ -2154,11 +2177,11 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28068	Guadarrama	6	6
 ES	España	13	Madrid, Comunidad de	28	Madrid	28071	Horcajuelo de la Sierra	2	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28072	Hoyo de Manzanares	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28073	Humanes de Madrid	1	1
-ES	España	13	Madrid, Comunidad de	28	Madrid	28074	Leganés	19	22
+ES	España	13	Madrid, Comunidad de	28	Madrid	28074	Leganés	20	23
 ES	España	13	Madrid, Comunidad de	28	Madrid	28075	Loeches	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28901	Lozoyuela-Navas-Sieteiglesias	2	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28078	Madarcos	0	0
-ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	927	960
+ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	945	978
 ES	España	13	Madrid, Comunidad de	28	Madrid	28080	Majadahonda	12	12
 ES	España	13	Madrid, Comunidad de	28	Madrid	28082	Manzanares el Real	12	12
 ES	España	13	Madrid, Comunidad de	28	Madrid	28083	Meco	3	3
@@ -2169,7 +2192,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28087	Molinos, Los	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28088	Montejo de la Sierra	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28089	Moraleja de Enmedio	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28090	Moralzarzal	4	4
-ES	España	13	Madrid, Comunidad de	28	Madrid	28092	Móstoles	28	29
+ES	España	13	Madrid, Comunidad de	28	Madrid	28092	Móstoles	29	30
 ES	España	13	Madrid, Comunidad de	28	Madrid	28094	Navalafuente	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28096	Navalcarnero	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28099	Navas del Rey	1	1
@@ -2180,14 +2203,14 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28108	Pedrezuela	3	3
 ES	España	13	Madrid, Comunidad de	28	Madrid	28109	Pelayos de la Presa	2	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28110	Perales de Tajuña	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28111	Pezuela de las Torres	1	1
-ES	España	13	Madrid, Comunidad de	28	Madrid	28113	Pinto	8	8
+ES	España	13	Madrid, Comunidad de	28	Madrid	28113	Pinto	8	9
 ES	España	13	Madrid, Comunidad de	28	Madrid	28114	Piñuécar-Gandullas	0	0
-ES	España	13	Madrid, Comunidad de	28	Madrid	28115	Pozuelo de Alarcón	12	13
+ES	España	13	Madrid, Comunidad de	28	Madrid	28115	Pozuelo de Alarcón	13	14
 ES	España	13	Madrid, Comunidad de	28	Madrid	28116	Pozuelo del Rey	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28902	Puentes Viejas	0	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28120	Rascafría	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28122	Ribatejada	0	0
-ES	España	13	Madrid, Comunidad de	28	Madrid	28123	Rivas-Vaciamadrid	19	20
+ES	España	13	Madrid, Comunidad de	28	Madrid	28123	Rivas-Vaciamadrid	21	22
 ES	España	13	Madrid, Comunidad de	28	Madrid	28124	Robledillo de la Jara	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28125	Robledo de Chavela	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28127	Rozas de Madrid, Las	17	17
@@ -2197,7 +2220,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28130	San Fernando de Henares	12	13
 ES	España	13	Madrid, Comunidad de	28	Madrid	28131	San Lorenzo de El Escorial	6	6
 ES	España	13	Madrid, Comunidad de	28	Madrid	28132	San Martín de la Vega	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28133	San Martín de Valdeiglesias	2	2
-ES	España	13	Madrid, Comunidad de	28	Madrid	28134	San Sebastián de los Reyes	21	22
+ES	España	13	Madrid, Comunidad de	28	Madrid	28134	San Sebastián de los Reyes	22	23
 ES	España	13	Madrid, Comunidad de	28	Madrid	28135	Santa María de la Alameda	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28137	Santos de la Humosa, Los	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28141	Sevilla la Nueva	1	1
@@ -2224,10 +2247,11 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28172	Villalbilla	3	4
 ES	España	13	Madrid, Comunidad de	28	Madrid	28174	Villamanta	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28175	Villamantilla	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28176	Villanueva de la Cañada	1	1
-ES	España	13	Madrid, Comunidad de	28	Madrid	28177	Villanueva del Pardillo	0	1
+ES	España	13	Madrid, Comunidad de	28	Madrid	28177	Villanueva del Pardillo	1	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28179	Villar del Olmo	3	3
 ES	España	13	Madrid, Comunidad de	28	Madrid	28181	Villaviciosa de Odón	3	3
 ES	España	13	Madrid, Comunidad de	28	Madrid	28183	Zarzalejo	2	2
+ES	España	13	Madrid, Comunidad de	28	Madrid	None	None	0	0
 ES	España	19	Melilla	52	Melilla	52001	Melilla	1	1
 ES	España	14	Murcia, Región de	30	Murcia	30001	Abanilla	2	2
 ES	España	14	Murcia, Región de	30	Murcia	30002	Abarán	0	0
@@ -2239,26 +2263,27 @@ ES	España	14	Murcia, Región de	30	Murcia	30009	Archena	2	2
 ES	España	14	Murcia, Región de	30	Murcia	30011	Blanca	1	1
 ES	España	14	Murcia, Región de	30	Murcia	30012	Bullas	1	2
 ES	España	14	Murcia, Región de	30	Murcia	30014	Campos del Río	0	0
-ES	España	14	Murcia, Región de	30	Murcia	30016	Cartagena	15	17
+ES	España	14	Murcia, Región de	30	Murcia	30016	Cartagena	16	18
 ES	España	14	Murcia, Región de	30	Murcia	30017	Cehegín	1	1
-ES	España	14	Murcia, Región de	30	Murcia	30018	Ceutí	2	2
+ES	España	14	Murcia, Región de	30	Murcia	30018	Ceutí	3	3
 ES	España	14	Murcia, Región de	30	Murcia	30019	Cieza	2	2
 ES	España	14	Murcia, Región de	30	Murcia	30020	Fortuna	1	1
 ES	España	14	Murcia, Región de	30	Murcia	30021	Fuente Álamo de Murcia	0	0
+ES	España	14	Murcia, Región de	30	Murcia	30022	Jumilla	1	1
 ES	España	14	Murcia, Región de	30	Murcia	30023	Librilla	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30024	Lorca	4	5
 ES	España	14	Murcia, Región de	30	Murcia	30026	Mazarrón	1	1
-ES	España	14	Murcia, Región de	30	Murcia	30027	Molina de Segura	7	7
+ES	España	14	Murcia, Región de	30	Murcia	30027	Molina de Segura	8	8
 ES	España	14	Murcia, Región de	30	Murcia	30028	Moratalla	1	1
 ES	España	14	Murcia, Región de	30	Murcia	30029	Mula	1	1
-ES	España	14	Murcia, Región de	30	Murcia	30030	Murcia	62	67
+ES	España	14	Murcia, Región de	30	Murcia	30030	Murcia	69	74
 ES	España	14	Murcia, Región de	30	Murcia	30035	San Javier	1	1
 ES	España	14	Murcia, Región de	30	Murcia	30036	San Pedro del Pinatar	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30901	Santomera	4	4
 ES	España	14	Murcia, Región de	30	Murcia	30037	Torre-Pacheco	1	2
 ES	España	14	Murcia, Región de	30	Murcia	30038	Torres de Cotillas, Las	3	3
 ES	España	14	Murcia, Región de	30	Murcia	30039	Totana	0	1
-ES	España	14	Murcia, Región de	30	Murcia	30043	Yecla	3	3
+ES	España	14	Murcia, Región de	30	Murcia	30043	Yecla	4	4
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31001	Abáigar	2	2
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31002	Abárzuza/Abartzuza	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31003	Abaurregaina/Abaurrea Alta	0	0
@@ -2275,6 +2300,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31019	Aoiz/Agoitz	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31020	Araitz	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31025	Arakil	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31023	Aranguren	4	4
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31027	Arbizu	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31028	Arce/Artzi	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31029	Arcos, Los	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31032	Arguedas	1	1
@@ -2285,7 +2311,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31058	Auritz/Burguete	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31041	Ayegui/Aiegi	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31042	Azagra	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31044	Bakaiku	1	1
-ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31901	Barañain	6	6
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31901	Barañain	7	7
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31045	Barásoain	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31049	Basaburua	2	2
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31050	Baztan	11	12
@@ -2296,7 +2322,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31902	Berrioplano/Berriobei
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31903	Berriozar	16	16
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31056	Biurrun-Olcoz	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31059	Burgui/Burgi	0	0
-ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31060	Burlada/Burlata	21	21
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31060	Burlada/Burlata	22	22
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31062	Cabanillas	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31063	Cabredo	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31065	Caparroso	4	4
@@ -2331,7 +2357,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31115	Garralda	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31117	Goizueta	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31121	Guirguillano	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31256	Hiriberri/Villanueva de Aezkoa	0	0
-ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31122	Huarte/Uharte	9	9
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31122	Huarte/Uharte	10	10
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31124	Ibargoiti	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31126	Imotz	2	2
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31904	Irurtzun	0	1
@@ -2365,15 +2391,15 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31195	Orbaizeta	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31906	Orkoien	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31199	Oroz-Betelu/Orotz-Betelu	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31200	Oteiza	0	0
-ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31201	Pamplona/Iruña	266	270
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31201	Pamplona/Iruña	267	271
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31202	Peralta/Azkoien	2	2
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31206	Puente la Reina/Gares	6	6
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31208	Ribaforada	0	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31209	Romanzado	2	2
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31216	Sangüesa/Zangoza	3	4
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31217	San Martín de Unx	0	0
-ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31227	Tafalla	11	11
-ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31232	Tudela	8	8
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31227	Tafalla	13	13
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31232	Tudela	9	9
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31234	Ucar	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31123	Uharte-Arakil	2	2
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31235	Ujué	1	1
@@ -2389,6 +2415,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31907	Zizur Mayor/Zizur Nag
 ES	España	16	País Vasco	01	Araba	01001	Alegría-Dulantzi	0	0
 ES	España	16	País Vasco	01	Araba	01002	Amurrio	2	2
 ES	España	16	País Vasco	01	Araba	01004	Artziniega	0	0
+ES	España	16	País Vasco	01	Araba	01010	Ayala/Aiara	1	1
 ES	España	16	País Vasco	01	Araba	01017	Campezo/Kanpezu	1	1
 ES	España	16	País Vasco	01	Araba	01021	Elburgo/Burgelu	0	0
 ES	España	16	País Vasco	01	Araba	01022	Elciego	1	1
@@ -2401,7 +2428,7 @@ ES	España	16	País Vasco	01	Araba	01043	Oyón-Oion	2	2
 ES	España	16	País Vasco	01	Araba	01047	Ribera Baja/Erribera Beitia	0	0
 ES	España	16	País Vasco	01	Araba	01052	Samaniego	0	0
 ES	España	16	País Vasco	01	Araba	01054	Urkabustaiz	1	1
-ES	España	16	País Vasco	01	Araba	01059	Vitoria-Gasteiz	36	37
+ES	España	16	País Vasco	01	Araba	01059	Vitoria-Gasteiz	37	38
 ES	España	16	País Vasco	01	Araba	01061	Zalduondo	0	0
 ES	España	16	País Vasco	01	Araba	01063	Zuia	0	0
 ES	España	16	País Vasco	48	Bizkaia	48001	Abadiño	1	1
@@ -2410,9 +2437,10 @@ ES	España	16	País Vasco	48	Bizkaia	48003	Amorebieta-Etxano	4	4
 ES	España	16	País Vasco	48	Bizkaia	48006	Arantzazu	0	0
 ES	España	16	País Vasco	48	Bizkaia	48093	Areatza	0	0
 ES	España	16	País Vasco	48	Bizkaia	48011	Arrigorriaga	1	1
-ES	España	16	País Vasco	48	Bizkaia	48013	Barakaldo	30	31
+ES	España	16	País Vasco	48	Bizkaia	48008	Artzentales	0	0
+ES	España	16	País Vasco	48	Bizkaia	48013	Barakaldo	31	32
 ES	España	16	País Vasco	48	Bizkaia	48014	Barrika	1	1
-ES	España	16	País Vasco	48	Bizkaia	48015	Basauri	1	1
+ES	España	16	País Vasco	48	Bizkaia	48015	Basauri	2	2
 ES	España	16	País Vasco	48	Bizkaia	48016	Berango	1	1
 ES	España	16	País Vasco	48	Bizkaia	48017	Bermeo	0	0
 ES	España	16	País Vasco	48	Bizkaia	48019	Berriz	1	1
@@ -2456,6 +2484,7 @@ ES	España	16	País Vasco	48	Bizkaia	48089	Urduliz	1	1
 ES	España	16	País Vasco	48	Bizkaia	48080	Valle de Trápaga-Trapagaran	1	2
 ES	España	16	País Vasco	48	Bizkaia	48096	Zalla	1	1
 ES	España	16	País Vasco	48	Bizkaia	48905	Zamudio	2	2
+ES	España	16	País Vasco	48	Bizkaia	48025	Zeberio	0	0
 ES	España	16	País Vasco	48	Bizkaia	48913	Zierbena	1	1
 ES	España	16	País Vasco	20	Gipuzkoa	20001	Abaltzisketa	1	1
 ES	España	16	País Vasco	20	Gipuzkoa	20007	Altzo	1	1
@@ -2469,18 +2498,18 @@ ES	España	16	País Vasco	20	Gipuzkoa	20022	Berastegi	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20074	Bergara	7	7
 ES	España	16	País Vasco	20	Gipuzkoa	20023	Berrobi	1	1
 ES	España	16	País Vasco	20	Gipuzkoa	20029	Deba	0	0
-ES	España	16	País Vasco	20	Gipuzkoa	20069	Donostia-San Sebastián	24	24
+ES	España	16	País Vasco	20	Gipuzkoa	20069	Donostia-San Sebastián	25	25
 ES	España	16	País Vasco	20	Gipuzkoa	20030	Eibar	3	3
 ES	España	16	País Vasco	20	Gipuzkoa	20032	Elgoibar	2	2
 ES	España	16	País Vasco	20	Gipuzkoa	20067	Errenteria	4	4
 ES	España	16	País Vasco	20	Gipuzkoa	20040	Hernani	1	1
 ES	España	16	País Vasco	20	Gipuzkoa	20036	Hondarribia	2	2
-ES	España	16	País Vasco	20	Gipuzkoa	20043	Idiazabal	0	0
+ES	España	16	País Vasco	20	Gipuzkoa	20043	Idiazabal	1	1
 ES	España	16	País Vasco	20	Gipuzkoa	20045	Irun	3	3
-ES	España	16	País Vasco	20	Gipuzkoa	20902	Lasarte-Oria	2	2
+ES	España	16	País Vasco	20	Gipuzkoa	20902	Lasarte-Oria	3	3
 ES	España	16	País Vasco	20	Gipuzkoa	20049	Lazkao	1	1
 ES	España	16	País Vasco	20	Gipuzkoa	20051	Legazpi	1	1
-ES	España	16	País Vasco	20	Gipuzkoa	20053	Lezo	0	0
+ES	España	16	País Vasco	20	Gipuzkoa	20053	Lezo	1	1
 ES	España	16	País Vasco	20	Gipuzkoa	20901	Mendaro	1	1
 ES	España	16	País Vasco	20	Gipuzkoa	20063	Oiartzun	5	5
 ES	España	16	País Vasco	20	Gipuzkoa	20059	Oñati	3	3
@@ -2488,7 +2517,7 @@ ES	España	16	País Vasco	20	Gipuzkoa	20076	Ordizia	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20064	Pasaia	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20065	Soraluze/Placencia de las Armas	0	1
 ES	España	16	País Vasco	20	Gipuzkoa	20071	Tolosa	1	1
-ES	España	16	País Vasco	20	Gipuzkoa	20077	Urretxu	1	1
+ES	España	16	País Vasco	20	Gipuzkoa	20077	Urretxu	2	2
 ES	España	16	País Vasco	20	Gipuzkoa	20073	Usurbil	1	1
 ES	España	16	País Vasco	20	Gipuzkoa	20079	Zarautz	2	2
 ES	España	16	País Vasco	20	Gipuzkoa	20081	Zumaia	1	1
@@ -2504,6 +2533,7 @@ ES	España	17	Rioja, La	26	La Rioja	26026	Baños de Río Tobía	0	0
 ES	España	17	Rioja, La	26	La Rioja	26028	Bergasa	1	1
 ES	España	17	Rioja, La	26	La Rioja	26036	Calahorra	0	0
 ES	España	17	Rioja, La	26	La Rioja	26042	Casalarreina	1	1
+ES	España	17	Rioja, La	26	La Rioja	26052	Cordovín	0	0
 ES	España	17	Rioja, La	26	La Rioja	26056	Cuzcurrita de Río Tirón	0	0
 ES	España	17	Rioja, La	26	La Rioja	26061	Ezcaray	0	0
 ES	España	17	Rioja, La	26	La Rioja	26064	Fuenmayor	0	0
@@ -2522,7 +2552,7 @@ ES	España	17	Rioja, La	26	La Rioja	26138	Santo Domingo de la Calzada	0	0
 ES	España	17	Rioja, La	26	La Rioja	26140	Santurde de Rioja	1	1
 ES	España	17	Rioja, La	26	La Rioja	26146	Soto en Cameros	2	2
 ES	España	17	Rioja, La	26	La Rioja	26165	Viguera	1	1
-ES	España	17	Rioja, La	26	La Rioja	26168	Villamediana de Iregua	2	2
+ES	España	17	Rioja, La	26	La Rioja	26168	Villamediana de Iregua	3	3
 ES	España	17	Rioja, La	26	La Rioja	26177	Villoslada de Cameros	1	1
 ES	España	None	None	None	None	None	None	0	0
 FR	France	None	None	None	None	None	None	2	2
