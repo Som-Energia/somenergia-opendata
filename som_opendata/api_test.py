@@ -234,9 +234,6 @@ class BaseApi_Test(unittest.TestCase):
 
 
 
-
-
-
 """
 /version
 /members/2015-02
