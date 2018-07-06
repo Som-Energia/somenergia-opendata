@@ -4,7 +4,7 @@ import unittest
 import b2btest
 from yamlns import namespace as ns
 from yamlns.dateutils import Date
-from som_opendata.api import (
+from api import (
     dateSequence,
     contractsSparse,
     contractsSeries,
@@ -12,6 +12,7 @@ from som_opendata.api import (
     )
 from app import app
 from dbutils import csvTable
+from common import dateSequenceWeeks
 
 
 class BaseApi_Test(unittest.TestCase):
@@ -105,6 +106,77 @@ class BaseApi_Test(unittest.TestCase):
             Date('2016-02-01'),
             ])
 
+
+    # dateSequenceWeeks
+
+    def test_dateSequenceWeeks_noStartEnd_today(self):
+        self.assertEqual(
+            dateSequenceWeeks(None, None), [
+            Date.today(),
+            ])
+
+    def test_dateSequenceWeeks_singleDate_thatDate(self):
+        self.assertEqual(
+            dateSequenceWeeks('2015-01-01', None), [
+            Date('2015-01-01'),
+            ])
+
+    def test_dateSequenceWeeks_twoDatesUnderAMonth(self):
+        self.assertEqual(
+            dateSequenceWeeks('2015-01-01', '2015-01-08'), [
+            Date('2015-01-01'),
+            Date('2015-01-08'),
+            ])
+
+    def test_dateSequenceWeeks_twoDatesBeyondMonth(self):
+        self.assertEqual(
+            dateSequenceWeeks('2015-01-01', '2015-02-01'), [
+            Date('2015-01-01'),
+            Date('2015-01-08'),
+            Date('2015-01-15'),
+            Date('2015-01-22'),
+            Date('2015-01-29'),
+            ])
+
+    def test_dateSequenceWeeks_midMonth(self):
+        self.assertEqual(
+            dateSequenceWeeks('2015-01-05', '2015-02-05'), [
+            Date('2015-01-05'),
+            Date('2015-01-12'),
+            Date('2015-01-19'),
+            Date('2015-01-26'),
+            Date('2015-02-02'),
+            ])
+
+    def test_dateSequenceWeeks_nearlyMidMonth(self):
+        self.assertEqual(
+            dateSequenceWeeks('2015-01-05', '2015-02-04'), [
+            Date('2015-01-05'),
+            Date('2015-01-12'),
+            Date('2015-01-19'),
+            Date('2015-01-26'),
+            Date('2015-02-02'),
+            ])
+
+    def test_dateSequenceWeeks_lateMonth(self):
+        self.assertEqual(
+            dateSequenceWeeks('2015-01-31', '2015-04-30'), [
+            Date('2015-01-31'),
+            Date('2015-02-07'),
+            Date('2015-02-14'),
+            Date('2015-02-21'),
+            Date('2015-02-28'),
+            Date('2015-03-07'),
+            Date('2015-03-14'),
+            Date('2015-03-21'),
+            Date('2015-03-28'),
+            Date('2015-04-04'),
+            Date('2015-04-11'),
+            Date('2015-04-18'),
+            Date('2015-04-25'),
+            ])
+
+
     def test_contractsSparse_single(self):
         dates = ['2015-01-01']
         result = contractsSparse(dates)
@@ -138,7 +210,6 @@ class BaseApi_Test(unittest.TestCase):
         self.assertB2BEqual(result)
 
 
-
     def test_version(self):
         r = self.get('/old/version')
         self.assertYamlResponse(r, """\
@@ -157,10 +228,13 @@ class BaseApi_Test(unittest.TestCase):
         r = self.get('/old/members/2015-01-01')
         self.assertTsvResponse(r)
 
-    # TODO: Not implemented yet
-    def _test_members_series(self):
+    def test_members_series(self):
         r = self.get('/old/members/2015-01-01/monthlyto/2015-04-01')
         self.assertTsvResponse(r)
+
+
+
+
 
 
 """
