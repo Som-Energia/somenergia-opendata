@@ -6,6 +6,8 @@ from yamlns import namespace as ns
 from flask import Response, make_response, current_app
 from werkzeug.routing import BaseConverter, ValidationError
 from yamlns.dateutils import Date
+from datetime import date, datetime, timedelta
+from datetime import datetime, timedelta
 
 
 def dateSequence(first, last):
@@ -17,6 +19,19 @@ def dateSequence(first, last):
         first + delta(months=n)
         for n in xrange(0, months)
     ]
+
+
+
+    
+def dateSequenceWeeks(first, last):
+    first = Date(first or Date.today())
+    last = Date(last or first)
+    weeks = (last - first).days / 7 + 1
+    return [
+        Date(first + delta(weeks=n))
+        for n in xrange(0, weeks)
+    ]
+
 
 
 def relative(path):
