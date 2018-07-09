@@ -4,6 +4,7 @@ from flask import (
     Flask,
     make_response,
     Response,
+    json,
     )
 
 import logging
@@ -162,6 +163,21 @@ def membersSparse(dates, dbhandler, debug=False):
         return csvTable(cursor)
 
 
+"""
+@api {get} /old/version
+@apiVersion 1.0.1
+@apiName Version
+@apiGroup Version
+@apiDescription Response version API
+
+@apiSampleRequest http://DNS-NAME:5001/old/version
+@apiSuccessExample {yaml} Success-Response:
+    HTTP/1.1 200OK
+    {
+        version: 1.0
+    }
+"""
+
 
 @old_modul.route('/version')
 @yaml_response
@@ -170,6 +186,38 @@ def version():
         version = '1.0',
         )
 
+
+"""
+@api {get} /old/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>
+@apiVersion 1.0.1
+@apiName Contracts
+@apiGroup Contracts
+@apiDescription Retorna un fitxer yaml amb els contractes de cada pais-ccaa-provincia-municipi
+
+
+@apiSampleRequest http://DNS-NAME:5001/old/contracts/2015-01-01/monthlyto/2015-12-01
+@apiSuccessExample {yaml} Success-Response:
+    HTTP/1.1 200OK
+    {
+        dates: 
+            - 2018-01-01
+            level: countries
+            countries:
+              ES:
+                name: España
+                data: [2020]
+                ccaas:
+                  '09':
+                    name: Catalunya
+                    data: [2020]
+                    states:
+                      '17':
+                        name: Girona
+                        data: [2020]
+    }
+"""
+
+
 @old_modul.route('/contracts/<isodate:fromdate>')
 @old_modul.route('/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>')
 @tsv_response
@@ -177,10 +225,40 @@ def contracts(fromdate=None, todate=None):
     dates=dateSequence(fromdate, todate)
     return contractsSeries(dates)
 
+
+"""
+@api {get} /old/members/<isodate:fromdate>/monthlyto/<isodate:todate>
+@apiVersion 1.0.1
+@apiName Members
+@apiGroup Members
+@apiDescription Retorna un fitxer yaml amb els socis de cada pais-ccaa-provincia-municipi
+
+
+@apiSampleRequest http://DNS-NAME:5001/old/members/2015-01-01/monthlyto/2015-12-01
+@apiSuccessExample {yaml} Success-Response:
+    HTTP/1.1 200OK
+    {
+        dates: 
+            - 2018-01-01
+            level: countries
+            countries:
+              ES:
+                name: España
+                data: [2020]
+                ccaas:
+                  '09':
+                    name: Catalunya
+                    data: [2020]
+                    states:
+                      '17':
+                        name: Girona
+                        data: [2020]
+    }
+"""
+
 @old_modul.route('/members/<isodate:fromdate>')
 @old_modul.route('/members/<isodate:fromdate>/monthlyto/<isodate:todate>')
-@tsv_response
+#@tsv_response
 def members(fromdate=None, todate=None):
     dates=dateSequence(fromdate, todate)
     return membersSparse(dates, csvTable)
-

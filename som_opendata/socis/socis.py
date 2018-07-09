@@ -108,6 +108,22 @@ def socis_totals():
     return dict(socis=query.count)
 
 
+
+"""
+@api {get} /socis/<country:pais>
+@apiVersion 1.0.1
+@apiName Socis-Country
+@apiGroup Socis
+@apiDescription Retorna els socis que hi ha en el pais
+
+@apiSampleRequest http://DNS-NAME:5001/socis/ES
+@apiSuccessExample {yaml} Success-Response:
+    HTTP/1.1 200OK
+    {
+        socis: 88000
+    }
+"""
+
 @modul_socis.route('/<country:pais>')
 @yaml_response
 def socis_pais(pais):
@@ -122,6 +138,21 @@ def socis_pais(pais):
         current_app.e = [pais]
         abort(400)
 
+
+"""
+@api {get} /socis/<country:pais>/<int:ccaa>
+@apiVersion 1.0.1
+@apiName Socis-CCAA
+@apiGroup Socis
+@apiDescription Retorna els socis que hi ha en una CCAA d'un pais
+
+@apiSampleRequest http://DNS-NAME:5001/socis/ES/09
+@apiSuccessExample {yaml} Success-Response:
+    HTTP/1.1 200OK
+    {
+        socis: 8800
+    }
+"""
 
 @modul_socis.route('/<country:pais>/<int:ccaa>')
 @yaml_response
@@ -141,6 +172,21 @@ def socis_CCAA(pais, ccaa):
         abort(400)
 
 
+"""
+@api {get} /socis/<country:pais>/<int:ccaa>/<int:provincia>
+@apiVersion 1.0.1
+@apiName Socis-CCAA
+@apiGroup Socis
+@apiDescription Retorna els socis que hi ha en una provincia d'una CCAA d'un pais
+
+@apiSampleRequest http://DNS-NAME:5001/socis/ES/09/17
+@apiSuccessExample {yaml} Success-Response:
+    HTTP/1.1 200OK
+    {
+        socis: 880
+    }
+"""
+
 @modul_socis.route('/<country:pais>/<int:ccaa>/<int:provincia>')
 @yaml_response
 def socis_provincia(pais, ccaa, provincia):
@@ -159,6 +205,22 @@ def socis_provincia(pais, ccaa, provincia):
         current_app.errors = errors
         abort(400)
 
+
+
+"""
+@api {get} /socis/<country:pais>/<int:ccaa>/<int:provincia>/<int:ine>
+@apiVersion 1.0.1
+@apiName Socis-CCAA
+@apiGroup Socis
+@apiDescription Retorna els socis que hi ha en un municipi d'una provincia d'una CCAA d'un pais
+
+@apiSampleRequest http://DNS-NAME:5001/socis/ES/09/17/17079
+@apiSuccessExample {yaml} Success-Response:
+    HTTP/1.1 200OK
+    {
+        socis: 88
+    }
+"""
 
 @modul_socis.route('/<country:pais>/<int:ccaa>/<int:provincia>/<int:ine>')
 @yaml_response
