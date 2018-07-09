@@ -12,7 +12,7 @@ from api import (
     )
 from app import app
 from dbutils import csvTable
-from common import dateSequenceWeeks
+from common import dateSequenceWeeks, dateSequenceYears
 
 
 class BaseApi_Test(unittest.TestCase):
@@ -174,6 +174,44 @@ class BaseApi_Test(unittest.TestCase):
             Date('2015-04-11'),
             Date('2015-04-18'),
             Date('2015-04-25'),
+            ])
+
+
+    # dateSequenceYears
+
+    def test_dateSequenceYears_noStartEnd_today(self):
+        self.assertEqual(
+            dateSequenceYears(None, None), [
+            Date.today(),
+            ])
+
+    def test_dateSequenceYears_singleDate_thatDate(self):
+        self.assertEqual(
+            dateSequenceYears('2015-01-01', None), [
+            Date('2015-01-01'),
+            ])
+
+    def test_dateSequenceYears_twoDatesUnderAMonth(self):
+        self.assertEqual(
+            dateSequenceYears('2015-01-01', '2015-01-08'), [
+            Date('2015-01-01')
+            ])
+
+    def test_dateSequenceYears_2years(self):
+        self.assertEqual(
+            dateSequenceYears('2015-01-31', '2016-04-30'), [
+            Date('2015-01-31'),
+            Date('2016-01-31'),
+            ])
+
+    def test_dateSequenceYears_29february(self):
+        self.assertEqual(
+            dateSequenceYears('2012-02-29', '2016-04-30'), [
+            Date('2012-02-29'),
+            Date('2013-02-28'),
+            Date('2014-02-28'),
+            Date('2015-02-28'),
+            Date('2016-02-29'),
             ])
 
 

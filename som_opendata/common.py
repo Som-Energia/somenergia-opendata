@@ -20,8 +20,6 @@ def dateSequence(first, last):
         for n in xrange(0, months)
     ]
 
-
-
     
 def dateSequenceWeeks(first, last):
     first = Date(first or Date.today())
@@ -32,6 +30,15 @@ def dateSequenceWeeks(first, last):
         for n in xrange(0, weeks)
     ]
 
+
+def dateSequenceYears(first, last):
+    first = Date(first or Date.today())
+    last = Date(last or first)
+    years = (last - first).days / 365 + 1
+    return [
+        Date(first + delta(years=n))
+        for n in xrange(0, years)
+    ]
 
 
 def relative(path):
