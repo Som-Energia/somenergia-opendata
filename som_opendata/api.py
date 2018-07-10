@@ -77,7 +77,7 @@ def tsv_response(f):
 from yamlns.dateutils import Date
 
 from .common import (
-    dateSequence,
+    dateSequenceMonths,
     readQuery,
     )
 
@@ -222,7 +222,7 @@ def version():
 @old_modul.route('/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>')
 @tsv_response
 def contracts(fromdate=None, todate=None):
-    dates=dateSequence(fromdate, todate)
+    dates=dateSequenceMonths(fromdate, todate)
     return contractsSeries(dates)
 
 
@@ -260,5 +260,5 @@ def contracts(fromdate=None, todate=None):
 @old_modul.route('/members/<isodate:fromdate>/monthlyto/<isodate:todate>')
 @tsv_response
 def members(fromdate=None, todate=None):
-    dates=dateSequence(fromdate, todate)
+    dates=dateSequenceMonths(fromdate, todate)
     return membersSparse(dates, csvTable)

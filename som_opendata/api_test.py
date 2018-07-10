@@ -5,7 +5,7 @@ import b2btest
 from yamlns import namespace as ns
 from yamlns.dateutils import Date
 from api import (
-    dateSequence,
+    dateSequenceMonths,
     contractsSparse,
     contractsSeries,
     membersSparse,
@@ -37,49 +37,49 @@ class BaseApi_Test(unittest.TestCase):
     def assertTsvResponse(self, response):
         self.assertB2BEqual(response.data)
 
-    # dateSequence
+    # dateSequenceMonths
 
     def test_dateSequence_noStartEnd_today(self):
         self.assertEqual(
-            dateSequence(None, None), [
+            dateSequenceMonths(None, None), [
             Date.today(),
             ])
 
     def test_dateSequence_singleDate_thatDate(self):
         self.assertEqual(
-            dateSequence('2015-01-01', None), [
+            dateSequenceMonths('2015-01-01', None), [
             Date('2015-01-01'),
             ])
 
     def test_dateSequence_twoDatesUnderAMonth(self):
         self.assertEqual(
-            dateSequence('2015-01-01', '2015-01-08'), [
+            dateSequenceMonths('2015-01-01', '2015-01-08'), [
             Date('2015-01-01'),
             ])
 
     def test_dateSequence_twoDatesBeyondMonth(self):
         self.assertEqual(
-            dateSequence('2015-01-01', '2015-02-01'), [
+            dateSequenceMonths('2015-01-01', '2015-02-01'), [
             Date('2015-01-01'),
             Date('2015-02-01'),
             ])
 
     def test_dateSequence_midMonth(self):
         self.assertEqual(
-            dateSequence('2015-01-05', '2015-02-05'), [
+            dateSequenceMonths('2015-01-05', '2015-02-05'), [
             Date('2015-01-05'),
             Date('2015-02-05'),
             ])
 
     def test_dateSequence_nearlyMidMonth(self):
         self.assertEqual(
-            dateSequence('2015-01-05', '2015-02-04'), [
+            dateSequenceMonths('2015-01-05', '2015-02-04'), [
             Date('2015-01-05'),
             ])
 
     def test_dateSequence_lateMonth(self):
         self.assertEqual(
-            dateSequence('2015-01-31', '2015-04-30'), [
+            dateSequenceMonths('2015-01-31', '2015-04-30'), [
             Date('2015-01-31'),
             Date('2015-02-28'),
             Date('2015-03-31'),
@@ -88,7 +88,7 @@ class BaseApi_Test(unittest.TestCase):
 
     def test_dateSequence_moreThanAYear(self):
         self.assertEqual(
-            dateSequence('2014-12-01', '2016-02-01'), [
+            dateSequenceMonths('2014-12-01', '2016-02-01'), [
             Date('2014-12-01'),
             Date('2015-01-01'),
             Date('2015-02-01'),

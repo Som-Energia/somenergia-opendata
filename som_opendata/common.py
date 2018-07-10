@@ -7,12 +7,15 @@ from flask import Response, make_response, current_app
 from werkzeug.routing import BaseConverter, ValidationError
 from yamlns.dateutils import Date
 from datetime import date, datetime, timedelta
-from datetime import datetime, timedelta
 
 
-def dateSequence(first, last):
+def getDates(first, last):
     first = Date(first or Date.today())
-    last = Date(last or first)
+    return first, Date(last or first)
+
+
+def dateSequenceMonths(first, last):
+    first, last = getDates(first, last)
     interval = delta(last, first)
     months = interval.months + interval.years * 12 + 1
     return [
@@ -20,26 +23,21 @@ def dateSequence(first, last):
         for n in xrange(0, months)
     ]
 
-    
 def dateSequenceWeeks(first, last):
-    first = Date(first or Date.today())
-    last = Date(last or first)
+    first, last = getDates(first, last)
     weeks = (last - first).days / 7 + 1
     return [
         Date(first + delta(weeks=n))
         for n in xrange(0, weeks)
     ]
 
-
 def dateSequenceYears(first, last):
-    first = Date(first or Date.today())
-    last = Date(last or first)
+    first, last = getDates(first, last)
     years = (last - first).days / 365 + 1
     return [
         Date(first + delta(years=n))
         for n in xrange(0, years)
     ]
-
 
 def relative(path):
     return os.path.abspath(os.path.join(os.path.dirname(__file__), path))
