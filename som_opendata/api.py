@@ -1,3 +1,4 @@
+# coding=utf-8
 
 from flask import (
     Blueprint,
@@ -143,21 +144,12 @@ def activeMembersCounter(adate):
 
 
 def membersSparse(dates, dbhandler, debug=False):
-    #adate = dates[0]
-
     db = psycopg2.connect(**config.psycopg)
     query = readQuery('members_distribution')
     query = query.format(','.join(
         activeMembersCounter(Date(adate))
         for adate in dates
         ))
-    with db.cursor() as cursor :
-        cursor.execute(query)
-        return csvTable(cursor)
-
-
-
-    query = query.format(Date(adate),Date(adate),Date(adate))
     with db.cursor() as cursor :
         cursor.execute(query)
         return csvTable(cursor)
@@ -204,7 +196,7 @@ def version():
             level: countries
             countries:
               ES:
-                name: Espanya
+                name: España
                 data: [2020]
                 ccaas:
                   '09':
@@ -243,7 +235,7 @@ def contracts(fromdate=None, todate=None):
             level: countries
             countries:
               ES:
-                name: Espanya
+                name: España
                 data: [2020]
                 ccaas:
                   '09':
@@ -262,3 +254,4 @@ def contracts(fromdate=None, todate=None):
 def members(fromdate=None, todate=None):
     dates=dateSequenceMonths(fromdate, todate)
     return membersSparse(dates, csvTable)
+
