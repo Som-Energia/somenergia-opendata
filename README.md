@@ -2,6 +2,7 @@
 
 Public API to access open data information about the cooperative
 
+## Geographical distributions
 
 
 ### Example queries
@@ -54,7 +55,7 @@ Public API to access open data information about the cooperative
     Include just cities in state 004
 
 
-
+### Response format
 
 
 
