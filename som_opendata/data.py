@@ -12,4 +12,6 @@ class ExtractData(object):
     def extractObjects(self, object, dates, source):
     
         first_source = source.extractObjects(object, dates)
+        if not first_source:
+            return []
         return first_source
