@@ -3,6 +3,7 @@ import logging
 from flask import Flask, current_app
 from socis.socis import modul_socis
 from api import old_modul
+from members.members import members_modul
 import records
 import dbconfig as config
 from som_opendata.common import IsoDateConverter, IsoCountryA2Converter, handle_request_not_found, handle_bad_request
@@ -34,6 +35,7 @@ def create_app():
 
     app.register_blueprint(old_modul, url_prefix='/old')
     app.register_blueprint(modul_socis, url_prefix='/socis')
+    app.register_blueprint(members_modul, url_prefix='/members')
     app.register_error_handler(404, handle_request_not_found)
     app.register_error_handler(400, handle_bad_request)
     app.teardown_appcontext
