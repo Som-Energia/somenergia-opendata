@@ -6,7 +6,14 @@ from api import old_modul
 from members.members import members_modul
 import records
 import dbconfig as config
-from som_opendata.common import IsoDateConverter, IsoCountryA2Converter, handle_request_not_found, handle_bad_request
+from som_opendata.common import (
+    IsoDateConverter,
+    IsoCountryA2Converter,
+    handle_request_not_found,
+    handle_bad_request,
+    IsoFrequencyConverte,
+    IsoAggregateLevelConverter,
+    )
 
 VERSION = 4
 sentry = None
@@ -32,6 +39,8 @@ def create_app():
 
     app.url_map.converters['isodate'] = IsoDateConverter
     app.url_map.converters['country'] = IsoCountryA2Converter
+    app.url_map.converters['frequency'] = IsoFrequencyConverte
+    app.url_map.converters['aggregateLevel'] = IsoAggregateLevelConverter
 
     app.register_blueprint(old_modul, url_prefix='/old')
     app.register_blueprint(modul_socis, url_prefix='/socis')

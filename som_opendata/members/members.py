@@ -2,24 +2,67 @@
 from functools import wraps
 from flask import Blueprint, request, current_app, abort
 from yamlns import namespace as ns
-
-from ..common import yaml_response
-
-
+from yamlns.dateutils import Date
+from ..common import (
+        yaml_response,
+        dateSequenceMonths,
+        dateSequenceWeeks,
+        dateSequenceYears,
+    )    
+from ..data import (
+    ExtractData,
+    )
+from ..datafromcsv import DataFromCSV
+from ..distribution import (
+    tuples2objects,
+    aggregate,
+    )
 
 
 members_modul = Blueprint(name='members_modul', import_name=__name__)
 
-# @members_modul.route('/by/<aggregateLevel:al>')
-# @members_modul.route('/by/<aggregateLevel:al>/on/<isodate:ondate>')
-# @members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>')
-# @members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>')
-# @members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
-# @members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/to/<isodate:todate>')
-# @tsv_response
-# def members(fromdate=None, todate=None):
-#     dates=dateSequenceMonths(fromdate, todate)
-#     return membersSparse(dates, csvTable)
 
 
+def caseFrequency(frequency):
+    if frequency == 'weekly':
+        return dateSequenceWeeks
+    elif frequency == 'monthly':
+        return dateSequenceMonths
+    elif frequency == 'yearly':
+        return dateSequenceYears
 
+def caseDates(dates):
+    if dates.__class__ is str:
+        return (dates, dates)
+    else:
+        return (dates[0], dates[1])
+
+
+@members_modul.route('')
+@members_modul.route('/on/<isodate:ondate>')
+@members_modul.route('/by/<aggregateLevel:al>')
+@members_modul.route('/by/<aggregateLevel:al>/on/<isodate:ondate>')
+@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>')
+@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>')
+@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/to/<isodate:todate>')
+@yaml_response
+def members(al=None, ondate=None, frequency=None, fromdate=None, todate=None):
+
+    city = request.args.getlist('city')
+    state = request.args.getlist('state')
+    ccaa = request.args.getlist('ccaa')
+
+    # Actualment default és que dongui del primer al final
+    date = ondate or ((fromdate or '2010-01-01'), (todate or Date.today()))
+    frequency_method = caseFrequency(frequency)
+    dates = caseDates(date)
+    d = frequency_method(dates[0], dates[1])
+    dCorrect = [str(dat) for dat in d]
+
+    data = ExtractData().extractObjects('members', dCorrect, DataFromCSV())
+
+    data = tuples2objects(data)
+
+
+    return aggregate(data, al)

@@ -86,6 +86,36 @@ class IsoCountryA2Converter(BaseConverter):
         raise ValidationError()
 
 
+class IsoFrequencyConverte(BaseConverter):
+
+    def to_python(self, value):
+        if value == 'weekly' or value == 'monthly' or value == 'yearly':
+            return str(value)
+
+        raise ValidationError()
+
+    def to_url(self, value):
+        if value == 'weekly' or value == 'monthly' or value == 'yearly':
+            return str(value)
+
+        raise ValidationError()
+
+
+class IsoAggregateLevelConverter(BaseConverter):
+
+    def to_python(self, value):
+        if value == 'world' or value == 'countries' or value == 'states' or value == 'ccaas' or value == 'cities':
+            return str(value)
+
+        raise ValidationError()
+
+    def to_url(self, value):
+        if value == 'world' or value == 'countries' or value == 'states' or value == 'ccaas' or value == 'cities':
+            return str(value)
+
+        raise ValidationError()
+
+
 @yaml_response
 def handle_request_not_found(e):
     response = make_response('Request not found!', 404)
