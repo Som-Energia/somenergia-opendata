@@ -43,7 +43,7 @@ def state_dates(entry):
         ]
 
 
-def aggregate(entries, detail = 'city'):
+def aggregate(entries, detail = 'world'):
     """
         Aggregates a list of entries by geographical scopes:
         Country, CCAA, state, city.
@@ -53,9 +53,10 @@ def aggregate(entries, detail = 'city'):
     dates = state_dates(entry)
 
     result = ns (
+        world = [0 for e in dates],
         dates = dates,
-        level = 'countries',
-        countries = ns()
+        level = 'world',
+        #countries = ns()
     )
 
     for entry in entries:
@@ -64,21 +65,23 @@ def aggregate(entries, detail = 'city'):
             int(entry['count_'+date.isoDate.replace('-','_')])
             for date in dates ]
 
+        result.world = [a+b for a,b in zip(result.world, entry.count)]
         
-        country = aggregate_level(
-            entry, result, 'countries', 'codi_pais', 'pais')
+        if detail == 'countries' or detail == 'ccaas' or detail == 'states' or detail == 'cities':
+            country = aggregate_level(
+                entry, result, 'countries', 'codi_pais', 'pais')
 
-        if detail != 'country':
-            ccaa = aggregate_level(
-                entry, country, 'ccaas', 'codi_ccaa', 'comunitat_autonoma')
+            if detail == 'ccaas' or detail == 'states' or detail == 'cities':
+                ccaa = aggregate_level(
+                    entry, country, 'ccaas', 'codi_ccaa', 'comunitat_autonoma')
 
-            if detail != 'ccaa':
-                provincia = aggregate_level(
-                    entry, ccaa, 'states', 'codi_provincia', 'provincia')
+                if detail == 'states' or detail == 'cities':
+                    provincia = aggregate_level(
+                        entry, ccaa, 'states', 'codi_provincia', 'provincia')
 
-                if detail != 'state':
-                    city = aggregate_level(
-                        entry, provincia, 'cities', 'codi_ine', 'municipi')
+                    if detail == 'cities':
+                        city = aggregate_level(
+                            entry, provincia, 'cities', 'codi_ine', 'municipi')
 
     return result
 

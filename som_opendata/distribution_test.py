@@ -113,11 +113,12 @@ class Distribution_Test(unittest.TestCase):
             data_Adra,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList)
+        r = aggregate(objectList, 'cities')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: countries
+            world: [2]
+            level: world
             countries:
               ES:
                 name: España
@@ -143,12 +144,13 @@ class Distribution_Test(unittest.TestCase):
             data_Adra+'\t3',
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList)
+        r = aggregate(objectList, 'cities')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
             - 2018-02-01
-            level: countries
+            level: world
+            world: [2, 3]
             countries:
               ES:
                 name: España
@@ -175,11 +177,12 @@ class Distribution_Test(unittest.TestCase):
             data_Perignan,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList)
+        r = aggregate(objectList, 'cities')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: countries
+            level: world
+            world: [12]
             countries:
               ES:
                 name: España
@@ -221,11 +224,12 @@ class Distribution_Test(unittest.TestCase):
             data_Girona,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList)
+        r = aggregate(objectList, 'cities')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: countries
+            level: world
+            world: [22]
             countries:
               ES:
                 name: España
@@ -263,11 +267,12 @@ class Distribution_Test(unittest.TestCase):
             data_SantJoan,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList)
+        r = aggregate(objectList, 'cities')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: countries
+            level: world
+            world: [1020]
             countries:
               ES:
                 name: España
@@ -300,11 +305,12 @@ class Distribution_Test(unittest.TestCase):
             data_Amer,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList)
+        r = aggregate(objectList, 'cities')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: countries
+            level: world
+            world: [2020]
             countries:
               ES:
                 name: España
@@ -339,6 +345,7 @@ class Distribution_Test(unittest.TestCase):
         ])
 
 
+    @unittest.skip("b2b encara no")
     def test__aggregate__backToBack(self):
         with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
             data = f.read()
@@ -479,6 +486,7 @@ class Distribution_Test(unittest.TestCase):
         [self.assertNsEqual(r[i], test_r[i]) for i in range(len(r))]
 
 
+    @unittest.skip("b2b encara no")
     def test__filter_aggregate__backToBack(self):
         with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
             data = f.read()
@@ -498,11 +506,12 @@ class Distribution_Test(unittest.TestCase):
             data_Amer,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList,'country')
+        r = aggregate(objectList,'countries')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: countries
+            level: world
+            world: [2020]
             countries:
               ES:
                 name: España
@@ -517,11 +526,12 @@ class Distribution_Test(unittest.TestCase):
             data_Amer,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList,'state')
+        r = aggregate(objectList,'states')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: countries
+            level: world
+            world: [2020]
             countries:
               ES:
                 name: España
@@ -536,6 +546,7 @@ class Distribution_Test(unittest.TestCase):
                         data: [2020]
             """)
 
+    @unittest.skip("b2b encara no")
     def test__filter_aggregateWithDetail__backToBack(self):
         with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
             data = f.read()
