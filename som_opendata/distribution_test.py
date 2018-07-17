@@ -4,7 +4,6 @@ from distribution import (
     parse_tsv,
     tuples2objects,
     aggregate,
-    escollirINES,
     state_dates,
     locationFilter,
     )

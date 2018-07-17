@@ -47,4 +47,4 @@ setup(
 		'Operating System :: OS Independent',
 	],
 )
-
+# vim: noet ts=4 sw=4
