@@ -8,11 +8,21 @@ from distribution import (
 
 
 
-import io
+# import io
 
-with io.open('som_opendata/utils/membersSparse_many-expected') as f:
-    data = f.read()
+# with io.open('som_opendata/utils/membersSparse_many-expected') as f:
+#     data = f.read()
 
+
+headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
+data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
+data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
+
+data = u'\n'.join([
+            headers,
+            data_Girona,
+            data_SantJoan,
+        ])
 
 class DataFromCSV():
 
