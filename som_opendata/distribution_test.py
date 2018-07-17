@@ -345,13 +345,12 @@ class Distribution_Test(unittest.TestCase):
         ])
 
 
-    @unittest.skip("b2b encara no")
     def test__aggregate__backToBack(self):
         with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
             data = f.read()
 
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList)
+        r = aggregate(objectList, 'cities')
         self.assertB2BEqual(r.dump())
 
 
@@ -486,7 +485,6 @@ class Distribution_Test(unittest.TestCase):
         [self.assertNsEqual(r[i], test_r[i]) for i in range(len(r))]
 
 
-    @unittest.skip("b2b encara no")
     def test__filter_aggregate__backToBack(self):
         with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
             data = f.read()
@@ -495,7 +493,7 @@ class Distribution_Test(unittest.TestCase):
         objectList = locationFilter(objectList,
                 ns(codi_pais=['ES'],codi_ccaa=['01','09'])
             )
-        r = aggregate(objectList)
+        r = aggregate(objectList, 'cities')
         self.assertB2BEqual(r.dump())
 
 
@@ -546,13 +544,12 @@ class Distribution_Test(unittest.TestCase):
                         data: [2020]
             """)
 
-    @unittest.skip("b2b encara no")
     def test__filter_aggregateWithDetail__backToBack(self):
         with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
             data = f.read()
 
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList,'ccaa')
+        r = aggregate(objectList,'ccaas')
         self.assertB2BEqual(r.dump())
 
 

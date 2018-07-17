@@ -1,6 +1,10 @@
+world:
+- 19831
+- 20754
 dates:
 - 2015-01-01
 - 2015-02-01
+level: world
 countries:
   ES:
     name: España
@@ -93,4 +97,3 @@ countries:
         data:
         - 184
         - 194
-level: countries
