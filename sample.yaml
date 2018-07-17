@@ -1,79 +1,89 @@
 dates:
-  - 2018-01-01
-  - 2018-02-01
-  - 2018-03-01
-  - 2018-04-01
-  - 2018-05-01
-level: countries
+- 2018-01-01
+- 2018-02-01
+level: world
+world:
+- 3032
+- 10033
 countries:
-	- code: FR
-		name: Republique du France
-		data: 10 11 12 13 14
-		ccaas:
-		- name: Indefinido
-			code: None
-			data: 10 11 12 13 14
-			states:
-			- name: Indefinido
-				code: None
-				data: 10 11 12 13 14
-				cities:
-				- name: Indefinido
-					code: None
-					data: 10 11 12 13 14
-	- name: España
-		code: ES
-		data: 10 11 12 13 14
-		ccaas:
-		- name: Catalunya
-			code: 09
-			data: 10 11 12 13 14
-			states:
-			- name: Girona
-				code: 09
-				data: 10 11 12 13 14
-				cities:
-				- name: Castelló d'Empúries
-					code: 09
-					data: 10 11 12 13 14
-				- name: Castelló d'Empúries
-					code: 09
-					data: 10 11 12 13 14
-				- name: Castelló d'Empúries
-					code: 09
-					data: 10 11 12 13 14
-				- name: Castelló d'Empúries
-					code: 09
-					data: 10 11 12 13 14
-				- name: Castelló d'Empúries
-					code: 09
-					data: 10 11 12 13 14
-				- name: Castelló d'Empúries
-					code: 09
-					data: 10 11 12 13 14
-			- name: Girona
-				code: 09
-				data: 10 11 12 13 14
-				cities:
-				- name: Castelló d'Empúries
-					code: 09
-					data: 10 11 12 13 14
-				- name: Castelló d'Empúries
-					code: 09
-					data: 10 11 12 13 14
-				- name: Castelló d'Empúries
-					code: 09
-					data: 10 11 12 13 14
-				- name: Castelló d'Empúries
-					code: 09
-					data: 10 11 12 13 14
-				- name: Castelló d'Empúries
-					code: 09
-					data: 10 11 12 13 14
-				- name: Castelló d'Empúries
-					code: 09
-					data: 10 11 12 13 14
-
-
+  ES:
+    name: España
+    data:
+    - 3022
+    - 10013
+    ccaas:
+      09:
+        name: Catalunya
+        data:
+        - 3020
+        - 10011
+        states:
+          '17':
+            name: Girona
+            data:
+            - 2020
+            - 11
+            cities:
+              '17079':
+                name: Girona
+                data:
+                - 20
+                - 10
+              '17007':
+                name: Amer
+                data:
+                - 2000
+                - 1
+          08:
+            name: Barcelona
+            data:
+            - 1000
+            - 10000
+            cities:
+              08217:
+                name: Sant Joan Despí
+                data:
+                - 1000
+                - 10000
+      '01':
+        name: Andalucía
+        data:
+        - 2
+        - 2
+        states:
+          '04':
+            name: Almería
+            data:
+            - 2
+            - 2
+            cities:
+              '04003':
+                name: Adra
+                data:
+                - 2
+                - 2
+  FR:
+    name: France
+    data:
+    - 10
+    - 20
+    ccaas:
+      '76':
+        name: Occità
+        data:
+        - 10
+        - 20
+        states:
+          '66':
+            name: Pyrénées-Orientales
+            data:
+            - 10
+            - 20
+            cities:
+              '66136':
+                name: Perpignan
+                data:
+                - 10
+                - 20
 
 # vim: noet sw=2 ts=2
