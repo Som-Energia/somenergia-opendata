@@ -372,19 +372,19 @@ class Distribution_Test(unittest.TestCase):
             data_Perignan,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = locationFilter(objectList,ns(codi_pais=['ES']))
-        test_r = [ns(codi_pais='ES',
-                pais='España',
-                codi_ccaa='01',
-                comunitat_autonoma='Andalucía',
-                codi_provincia=u'04',
-                provincia='Almería',
-                codi_ine='04003',
-                municipi='Adra',
-                count_2018_01_01='2')
-        ]
-        self.assertEqual(len(r), len(test_r))
-        [self.assertNsEqual(r[i], test_r[i]) for i in range(len(r))]
+        result = locationFilter(objectList,ns(codi_pais=['ES']))
+        self.assertNsEqual(ns(data=result), """\
+            data:
+            - codi_pais: ES
+              pais: 'España'
+              codi_ccaa: '01'
+              comunitat_autonoma: Andalucía
+              codi_provincia: '04'
+              provincia: Almería
+              codi_ine: '04003'
+              municipi: Adra
+              count_2018_01_01: '2'
+        """)
 
 
     def test__filter__France(self):
