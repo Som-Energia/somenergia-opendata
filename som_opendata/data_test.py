@@ -22,14 +22,19 @@ class Data_Test(unittest.TestCase):
             []
         )
 
+    def test__extractObjects__oneDateExist(self):
+        self.assertEqual(e.extractObjects('members', ['2018_01_01'], DataFromCSV()),
+            [[u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
+             [u'ES', u'España', u'09', u'Catalunya', u'17', u'Girona', u'17079', u'Girona', u'20'],
+             [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000']]
+        )
+
     def test__extractObjects__twoDatesOneExist(self):
         self.assertEqual(e.extractObjects('members', ['2018_01_01', '2018_07_01'], DataFromCSV()),
             [[u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
              [u'ES', u'España', u'09', u'Catalunya', u'17', u'Girona', u'17079', u'Girona', u'20'],
              [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000']]
         )
-
-
 
     @unittest.skip("Cal veure com es fan els b2b")
     def test__extractObjects__oneDateExistBackToBack(self):

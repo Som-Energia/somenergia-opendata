@@ -53,3 +53,11 @@ class DataFromCSV():
         else:
             return dataImportant
 
+''' TODO: Casos:
+    - Nomes hi ha una data i l'usari la vol:        OK
+    - Hi ha més d'una data i l'usuari en vol una:   Es filtra
+    - Hi ha una data per l'usuari en vol més d'una: Es don només una data 
+                                                    i es va a buscar l'altre (?)
+    - No hi ha la data:                             Es va a buscar
+
+'''
