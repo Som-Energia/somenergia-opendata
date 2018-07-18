@@ -1,5 +1,24 @@
 # ROADMAP 
 
+## El de hoy
+
+
+- TDD de requestedDates(firstDate, onDate, fromDate, toDate, periodicity): dates
+- TDD de pickDates(tuples, dates): tuples
+- TDD de la api contra cvs' sinteticos que no fallen
+- Considerar los casos que falln
+- Decidir un punto de la cascada de lo que sera un Source. Eso definira,
+	- que parametros necesita
+	- cual es el formato de salida
+- TDD Unittest CsvSource
+- Refactoring substitucion de la cadena `members_modul.source` de texto tsv
+
+
+
+
+
+
+
 ## Casos d'ús
 
 Recopilar usos que ens podem imaginar que ens facin de l'api
