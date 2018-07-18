@@ -39,7 +39,7 @@ class BaseApi_Test(unittest.TestCase):
     def assertTsvResponse(self, response):
         self.assertB2BEqual(response.data)
 
-    def test_version(self):
+    def test__on_date__exists(self):
         self.setupSource(
             headers,
             data_SantJoan,
@@ -51,6 +51,10 @@ class BaseApi_Test(unittest.TestCase):
             dates:
                 - 2018-01-01
             """)
+
+    @unittest.skip("Not implemented yet")
+    def test__on_date__missingDate(self): pass
+
 
 
 unittest.TestCase.__str__ = unittest.TestCase.id

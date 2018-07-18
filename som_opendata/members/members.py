@@ -50,10 +50,11 @@ def caseDates(dates):
 @yaml_response
 def members(al=None, ondate=None, frequency=None, fromdate=None, todate=None):
     content = members_modul.source
-    return aggregate(tuples2objects(parse_tsv(content)))
+    tuples = parse_tsv(content)
+    objects = tuples2objects(tuples)
+    result = aggregate(objects)
+    return result
 
-
-    return ns()
     city = request.args.getlist('city')
     state = request.args.getlist('state')
     ccaa = request.args.getlist('ccaa')
