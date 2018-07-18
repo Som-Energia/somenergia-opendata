@@ -4,7 +4,6 @@ dates:
 data:
 - 19831
 - 20754
-level: world
 countries:
   ES:
     name: España

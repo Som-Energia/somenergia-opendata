@@ -117,7 +117,6 @@ class Distribution_Test(unittest.TestCase):
             dates: 
             - 2018-01-01
             data: [2]
-            level: world
             countries:
               ES:
                 name: España
@@ -148,7 +147,6 @@ class Distribution_Test(unittest.TestCase):
             dates: 
             - 2018-01-01
             - 2018-02-01
-            level: world
             data: [2, 3]
             countries:
               ES:
@@ -180,7 +178,6 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: world
             data: [12]
             countries:
               ES:
@@ -227,7 +224,6 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: world
             data: [22]
             countries:
               ES:
@@ -270,7 +266,6 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: world
             data: [1020]
             countries:
               ES:
@@ -308,7 +303,6 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: world
             data: [2020]
             countries:
               ES:
@@ -507,7 +501,6 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: world
             data: [2020]
             countries:
               ES:
@@ -526,7 +519,6 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: world
             data: [2020]
             countries:
               ES:
@@ -553,7 +545,6 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            level: world
             data: [2020]
             """)
 
