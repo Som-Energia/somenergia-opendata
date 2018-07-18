@@ -47,7 +47,6 @@ def create_app():
     app.register_blueprint(members_modul, url_prefix='/members')
     app.register_error_handler(404, handle_request_not_found)
     app.register_error_handler(400, handle_bad_request)
-    app.teardown_appcontext
 
     with app.app_context():
         init_db()
