@@ -14,6 +14,7 @@ from ..data import (
     )
 from ..datafromcsv import DataFromCSV
 from ..distribution import (
+    parse_tsv,
     tuples2objects,
     aggregate,
     )
@@ -38,17 +39,21 @@ def caseDates(dates):
         return (dates[0], dates[1])
 
 
-@members_modul.route('')
+#@members_modul.route('')
 @members_modul.route('/on/<isodate:ondate>')
-@members_modul.route('/by/<aggregateLevel:al>')
-@members_modul.route('/by/<aggregateLevel:al>/on/<isodate:ondate>')
-@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>')
-@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>')
-@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
-@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/to/<isodate:todate>')
+#@members_modul.route('/by/<aggregateLevel:al>')
+#@members_modul.route('/by/<aggregateLevel:al>/on/<isodate:ondate>')
+##@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>')
+#@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>')
+#@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+#@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/to/<isodate:todate>')
 @yaml_response
 def members(al=None, ondate=None, frequency=None, fromdate=None, todate=None):
+    content = members_modul.source
+    return aggregate(tuples2objects(parse_tsv(content)))
 
+
+    return ns()
     city = request.args.getlist('city')
     state = request.args.getlist('state')
     ccaa = request.args.getlist('ccaa')
@@ -66,3 +71,6 @@ def members(al=None, ondate=None, frequency=None, fromdate=None, todate=None):
 
 
     return aggregate(data, al)
+
+
+members_modul.source = None
