@@ -116,7 +116,7 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            world: [2]
+            data: [2]
             level: world
             countries:
               ES:
@@ -149,7 +149,7 @@ class Distribution_Test(unittest.TestCase):
             - 2018-01-01
             - 2018-02-01
             level: world
-            world: [2, 3]
+            data: [2, 3]
             countries:
               ES:
                 name: España
@@ -181,7 +181,7 @@ class Distribution_Test(unittest.TestCase):
             dates: 
             - 2018-01-01
             level: world
-            world: [12]
+            data: [12]
             countries:
               ES:
                 name: España
@@ -228,7 +228,7 @@ class Distribution_Test(unittest.TestCase):
             dates: 
             - 2018-01-01
             level: world
-            world: [22]
+            data: [22]
             countries:
               ES:
                 name: España
@@ -271,7 +271,7 @@ class Distribution_Test(unittest.TestCase):
             dates: 
             - 2018-01-01
             level: world
-            world: [1020]
+            data: [1020]
             countries:
               ES:
                 name: España
@@ -309,7 +309,7 @@ class Distribution_Test(unittest.TestCase):
             dates: 
             - 2018-01-01
             level: world
-            world: [2020]
+            data: [2020]
             countries:
               ES:
                 name: España
@@ -508,7 +508,7 @@ class Distribution_Test(unittest.TestCase):
             dates: 
             - 2018-01-01
             level: world
-            world: [2020]
+            data: [2020]
             countries:
               ES:
                 name: España
@@ -528,7 +528,7 @@ class Distribution_Test(unittest.TestCase):
             dates: 
             - 2018-01-01
             level: world
-            world: [2020]
+            data: [2020]
             countries:
               ES:
                 name: España

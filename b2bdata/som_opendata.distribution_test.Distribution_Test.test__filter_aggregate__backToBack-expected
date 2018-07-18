@@ -1,9 +1,9 @@
-world:
-- 11851
-- 12373
 dates:
 - 2015-01-01
 - 2015-02-01
+data:
+- 11851
+- 12373
 level: world
 countries:
   ES:

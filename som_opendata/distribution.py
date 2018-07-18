@@ -53,7 +53,7 @@ def aggregate(entries, detail = 'world'):
     dates = state_dates(entry)
 
     result = ns (
-        world = [0 for e in dates],
+        data = [0 for e in dates],
         dates = dates,
         level = 'world',
         #countries = ns()
@@ -65,7 +65,7 @@ def aggregate(entries, detail = 'world'):
             int(entry['count_'+date.isoDate.replace('-','_')])
             for date in dates ]
 
-        result.world = [a+b for a,b in zip(result.world, entry.count)]
+        result.data = [a+b for a,b in zip(result.data, entry.count)]
         
         if detail == 'countries' or detail == 'ccaas' or detail == 'states' or detail == 'cities':
             country = aggregate_level(
