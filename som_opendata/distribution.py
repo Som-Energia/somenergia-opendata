@@ -56,7 +56,6 @@ def aggregate(entries, detail = 'world'):
         data = [0 for e in dates],
         dates = dates,
         level = 'world',
-        #countries = ns()
     )
 
     for entry in entries:

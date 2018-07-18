@@ -496,7 +496,7 @@ class Distribution_Test(unittest.TestCase):
         self.assertB2BEqual(r.dump())
 
 
-    def test__aggregateWithDetailCountry__2lines_differentCities(self):
+    def test__aggregate__detailCountry_2lines_differentCities(self):
         data = u'\n'.join([
             headers,
             data_Girona,
@@ -515,8 +515,7 @@ class Distribution_Test(unittest.TestCase):
                 data: [2020]
             """)
 
-
-    def test__aggregateWithDetailState__2lines_differentCities(self):
+    def test__aggregate__detailState_2lines_differentCities(self):
         data = u'\n'.join([
             headers,
             data_Girona,
@@ -543,7 +542,23 @@ class Distribution_Test(unittest.TestCase):
                         data: [2020]
             """)
 
-    def test__filter_aggregateWithDetail__backToBack(self):
+    def test__aggregate__detailWorld_2lines_differentCities(self):
+        data = u'\n'.join([
+            headers,
+            data_Girona,
+            data_Amer,
+        ])
+        objectList = tuples2objects(parse_tsv(data))
+        r = aggregate(objectList,'world')
+        self.assertNsEqual(r,"""\
+            dates: 
+            - 2018-01-01
+            level: world
+            data: [2020]
+            """)
+
+
+    def test__filter_aggregate__withDetail_backToBack(self):
         with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
             data = f.read()
 
