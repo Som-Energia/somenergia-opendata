@@ -72,17 +72,20 @@ def aggregate(entries, detail = 'world'):
 
         if detail == 'countries':
             continue
-            
+
         ccaa = aggregate_level(
             entry, country, 'ccaas', 'codi_ccaa', 'comunitat_autonoma')
 
-        if detail == 'states' or detail == 'cities':
-            provincia = aggregate_level(
-                entry, ccaa, 'states', 'codi_provincia', 'provincia')
 
-            if detail == 'cities':
-                city = aggregate_level(
-                    entry, provincia, 'cities', 'codi_ine', 'municipi')
+        if detail == 'ccaas':
+            continue
+
+        provincia = aggregate_level(
+            entry, ccaa, 'states', 'codi_provincia', 'provincia')
+
+        if detail == 'cities':
+            city = aggregate_level(
+                entry, provincia, 'cities', 'codi_ine', 'municipi')
 
     return result
 
