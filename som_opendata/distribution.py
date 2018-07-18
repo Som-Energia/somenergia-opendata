@@ -63,8 +63,9 @@ def aggregate(entries, detail = 'world'):
             for date in dates ]
 
         result.data = [a+b for a,b in zip(result.data, entry.count)]
-        
-        if detail == 'countries' or detail == 'ccaas' or detail == 'states' or detail == 'cities':
+        if not(detail == 'countries' or detail == 'ccaas' or detail == 'states' or detail == 'cities'):
+            continue
+        else:
             country = aggregate_level(
                 entry, result, 'countries', 'codi_pais', 'pais')
 
