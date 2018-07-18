@@ -52,11 +52,10 @@ def aggregate(entries, detail = 'world'):
     entry = entries[0]
     dates = state_dates(entry)
 
-    result = ns (
-        data = [0 for e in dates],
-        dates = dates,
-        level = 'world',
-    )
+    result = ns ()
+    result.dates = dates
+    result.data = [0 for e in dates]
+    result.level = 'world'
 
     for entry in entries:
 
