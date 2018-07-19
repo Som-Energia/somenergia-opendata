@@ -16,8 +16,7 @@ from common import (
     dateSequenceWeeks,
     dateSequenceYears,
     requestDates,
-    caseFrequency,
-    caseDates,
+    caseFrequency
     )
 
 class BaseApi_Test(unittest.TestCase):
@@ -288,16 +287,6 @@ class BaseApi_Test(unittest.TestCase):
     def test__caseFrequency__yearly(self):
         r = caseFrequency('yearly')
         self.assertEqual(r, dateSequenceYears)
-
-    # caseDates
-
-    def test__caseDates__oneDate(self):
-        r = caseDates('2018-07-20')
-        self.assertEqual(r, ('2018-07-20', '2018-07-20'))
-
-    def test__caseDates__intervalDates(self):
-        r = caseDates(['2018-07-20', '2018-08-01'])
-        self.assertEqual(r, ('2018-07-20', '2018-08-01'))
 
     # requestDates
 
