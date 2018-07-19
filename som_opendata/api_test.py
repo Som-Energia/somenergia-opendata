@@ -291,6 +291,10 @@ class BaseApi_Test(unittest.TestCase):
 
     # caseDates
 
+    def test__caseDates__oneDate(self):
+        r = caseDates('2018-07-20')
+        self.assertEqual(r, ('2018-07-20', '2018-07-20'))
+
 
     def test__requestDates__toDay(self):
         r = requestDates(None, None, None, None, None)
