@@ -20,6 +20,7 @@ from common import (
     pickDates,
     )
 from distribution import parse_tsv
+from dateutil.relativedelta import relativedelta as delta
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
@@ -364,6 +365,13 @@ class BaseApi_Test(unittest.TestCase):
                          periodicity='weekly',
                         )
         self.assertEqual(r, ['2000-01-01', '2000-01-08', '2000-01-15'])
+
+    def test__requestDates__sinceWithoutTo(self):
+        r = requestDates(first='2000-01-01',
+                         since=str(Date.today()-delta(weeks=1)),
+                         periodicity='weekly',
+                        )
+        self.assertEqual(r, [str(Date.today()-delta(weeks=1)), str(Date.today())])
 
     def createTuples(self, *lines):
         source = '\n'.join(lines)
