@@ -381,6 +381,17 @@ class BaseApi_Test(unittest.TestCase):
             ['ES', u'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000', '20']
             ])
 
+    def test__pickDates__twoDateColumn_oneDateRequest(self):
+        tuples = self.createTuples(
+            headers+'\tcount_2018-02-01',
+            data_Amer+'\t20',
+            )
+        r = pickDates(tuples, ['2018-01-01'])
+        self.assertEqual(r, [
+            ['codi_pais', 'pais', 'codi_ccaa', 'comunitat_autonoma', 'codi_provincia', 'provincia', 'codi_ine', 'municipi', 'count_2018_01_01'],
+            ['ES', u'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000']
+            ])
+
 """
 /version
 /members/2015-02
