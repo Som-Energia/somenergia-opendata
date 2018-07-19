@@ -50,14 +50,14 @@ def caseFrequency(frequency):
         return dateSequenceYears
 
 
-def requestDates(firstDate, onDate, fromDate, toDate, periodicity):
+def requestDates(first, on, since, to, periodicity):
 
     if periodicity:
-        request_date = ((fromDate or firstDate), (toDate or Date.today()))
+        request_date = ((since or first), (to or Date.today()))
         frequency_method = caseFrequency(periodicity)
         all_dates = frequency_method(*request_date)
 
-    elif onDate: all_dates = dateSequenceWeeks(onDate, onDate)
+    elif on: all_dates = dateSequenceWeeks(on, on)
 
     else: all_dates = dateSequenceWeeks(Date.today(), Date.today())
 
