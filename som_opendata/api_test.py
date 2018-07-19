@@ -281,6 +281,10 @@ class BaseApi_Test(unittest.TestCase):
         r = caseFrequency('weekly')
         self.assertEqual(r, dateSequenceWeeks)
 
+    def test__caseFrequency__monthly(self):
+        r = caseFrequency('monthly')
+        self.assertEqual(r, dateSequenceMonths)
+
     # caseDates
 
 
