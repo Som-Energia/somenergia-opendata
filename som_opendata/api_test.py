@@ -310,6 +310,14 @@ class BaseApi_Test(unittest.TestCase):
         r = requestDates('2000-01-01', None, '2018-07-20', '2018-07-20', 'monthly')
         self.assertEqual(r, ['2018-07-20'])
 
+    def test__requestDates__monthlyDifferentDate(self):
+        r = requestDates('2000-01-01', None, '2018-06-20', '2018-07-20', 'monthly')
+        self.assertEqual(r, ['2018-06-20', '2018-07-20'])
+
+    def test__requestDates__yearlySameDate(self):
+        r = requestDates('2000-01-01', None, '2018-07-20', '2018-07-20', 'yearly')
+        self.assertEqual(r, ['2018-07-20'])
+
 """
 /version
 /members/2015-02
