@@ -291,35 +291,75 @@ class BaseApi_Test(unittest.TestCase):
     # requestDates
 
     def test__requestDates__toDay(self):
-        r = requestDates('2000-01-01', None, None, None, None)
+        r = requestDates(first='2000-01-01',
+                         on=None,
+                         since=None,
+                         to=None,
+                         periodicity=None,
+                        )
         self.assertEqual(r, [str(Date.today())])
 
     def test__requestDates__onDate(self):
-        r = requestDates('2000-01-01', '2018-07-20', None, None, None)
+        r = requestDates(first='2000-01-01',
+                         on='2018-07-20',
+                         since=None,
+                         to=None,
+                         periodicity=None,
+                        )
         self.assertEqual(r, ['2018-07-20'])
 
     def test__requestDates__weeklySameDate(self):
-        r = requestDates('2000-01-01', None, '2018-07-20', '2018-07-20', 'weekly')
+        r = requestDates(first='2000-01-01',
+                         on=None,
+                         since='2018-07-20',
+                         to='2018-07-20',
+                         periodicity='weekly',
+                        )
         self.assertEqual(r, ['2018-07-20'])
 
     def test__requestDates__weeklyDifferentDate(self):
-        r = requestDates('2000-01-01', None, '2018-07-10', '2018-07-20', 'weekly')
+        r = requestDates(first='2000-01-01',
+                         on=None,
+                         since='2018-07-10',
+                         to='2018-07-20',
+                         periodicity='weekly',
+                        )
         self.assertEqual(r, ['2018-07-10', '2018-07-17'])
 
     def test__requestDates__monthlySameDate(self):
-        r = requestDates('2000-01-01', None, '2018-07-20', '2018-07-20', 'monthly')
+        r = requestDates(first='2000-01-01',
+                         on=None,
+                         since='2018-07-20',
+                         to='2018-07-20',
+                         periodicity='monthly',
+                        )
         self.assertEqual(r, ['2018-07-20'])
 
     def test__requestDates__monthlyDifferentDate(self):
-        r = requestDates('2000-01-01', None, '2018-06-20', '2018-07-20', 'monthly')
+        r = requestDates(first='2000-01-01',
+                         on=None,
+                         since='2018-06-20',
+                         to='2018-07-20',
+                         periodicity='monthly',
+                        )
         self.assertEqual(r, ['2018-06-20', '2018-07-20'])
 
     def test__requestDates__yearlySameDate(self):
-        r = requestDates('2000-01-01', None, '2018-07-20', '2018-07-20', 'yearly')
+        r = requestDates(first='2000-01-01',
+                         on=None,
+                         since='2018-07-20',
+                         to='2018-07-20',
+                         periodicity='yearly',
+                        )
         self.assertEqual(r, ['2018-07-20'])
 
     def test__requestDates__yearlyDifferentDate(self):
-        r = requestDates('2000-01-01', None, '2017-07-20', '2018-07-20', 'yearly')
+        r = requestDates(first='2000-01-01',
+                         on=None,
+                         since='2017-07-20',
+                         to='2018-07-20',
+                         periodicity='yearly',
+                        )
         self.assertEqual(r, ['2017-07-20', '2018-07-20'])
 
 """
