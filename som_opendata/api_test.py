@@ -301,25 +301,17 @@ class BaseApi_Test(unittest.TestCase):
 
     def test__requestDates__toDay(self):
         r = requestDates(first='2000-01-01',
-                         on=None,
-                         since=None,
-                         to=None,
-                         periodicity=None,
                         )
         self.assertEqual(r, [str(Date.today())])
 
     def test__requestDates__onDate(self):
         r = requestDates(first='2000-01-01',
                          on='2018-07-20',
-                         since=None,
-                         to=None,
-                         periodicity=None,
                         )
         self.assertEqual(r, ['2018-07-20'])
 
     def test__requestDates__weeklySameDate(self):
         r = requestDates(first='2000-01-01',
-                         on=None,
                          since='2018-07-20',
                          to='2018-07-20',
                          periodicity='weekly',
@@ -328,7 +320,6 @@ class BaseApi_Test(unittest.TestCase):
 
     def test__requestDates__weeklyDifferentDate(self):
         r = requestDates(first='2000-01-01',
-                         on=None,
                          since='2018-07-10',
                          to='2018-07-20',
                          periodicity='weekly',
@@ -337,7 +328,6 @@ class BaseApi_Test(unittest.TestCase):
 
     def test__requestDates__monthlySameDate(self):
         r = requestDates(first='2000-01-01',
-                         on=None,
                          since='2018-07-20',
                          to='2018-07-20',
                          periodicity='monthly',
@@ -346,7 +336,6 @@ class BaseApi_Test(unittest.TestCase):
 
     def test__requestDates__monthlyDifferentDate(self):
         r = requestDates(first='2000-01-01',
-                         on=None,
                          since='2018-06-20',
                          to='2018-07-20',
                          periodicity='monthly',
@@ -355,7 +344,6 @@ class BaseApi_Test(unittest.TestCase):
 
     def test__requestDates__yearlySameDate(self):
         r = requestDates(first='2000-01-01',
-                         on=None,
                          since='2018-07-20',
                          to='2018-07-20',
                          periodicity='yearly',

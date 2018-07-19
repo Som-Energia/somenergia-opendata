@@ -50,7 +50,7 @@ def caseFrequency(frequency):
         return dateSequenceYears
 
 
-def requestDates(first, on, since, to, periodicity):
+def requestDates(first=None, on=None, since=None, to=None, periodicity=None):
 
     if periodicity:
         request_date = ((since or first), (to or Date.today()))
