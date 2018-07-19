@@ -358,6 +358,13 @@ class BaseApi_Test(unittest.TestCase):
                         )
         self.assertEqual(r, ['2017-07-20', '2018-07-20'])
 
+    def test__requestDates__toWithoutSince(self):
+        r = requestDates(first='2000-01-01',
+                         to='2000-01-20',
+                         periodicity='weekly',
+                        )
+        self.assertEqual(r, ['2000-01-01', '2000-01-08', '2000-01-15'])
+
     def createTuples(self, *lines):
         source = '\n'.join(lines)
         return parse_tsv(source)
