@@ -46,7 +46,7 @@ def caseFrequency(frequency):
         return dateSequenceWeeks
     elif frequency == 'monthly':
         return dateSequenceMonths
-    elif frequency == 'yearly':
+    else:
         return dateSequenceYears
 
 # TODO: Està massa lligat a l'entrada dels endpoints, poder caldria fer-ho més abstracte
@@ -58,7 +58,18 @@ def caseDates(dates):
 
 
 def requestDates(firstDate, onDate, fromDate, toDate, periodicity):
-    return Date.today()
+
+    if periodicity:
+        request_date = ((fromDate or firstDate), (toDate or Date.today()))
+    elif onDate:
+        request_date = onDate
+    else:
+        request_date = str(Date.today())
+
+    frequency_method = caseFrequency(periodicity)
+    correct_date = caseDates(request_date)
+    dates = frequency_method(correct_date[0], correct_date[1])
+    return [str(date) for date in dates]
 
 
 def relative(path):
