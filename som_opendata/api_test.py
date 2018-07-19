@@ -302,6 +302,9 @@ class BaseApi_Test(unittest.TestCase):
         r = requestDates('2000-01-01', None, '2018-07-20', '2018-07-20', 'weekly')
         self.assertEqual(r, ['2018-07-20'])
 
+    def test__requestDates__weeklyDifferentDate(self):
+        r = requestDates('2000-01-01', None, '2018-07-10', '2018-07-20', 'weekly')
+        self.assertEqual(r, ['2018-07-10', '2018-07-17'])
 
 
 """
