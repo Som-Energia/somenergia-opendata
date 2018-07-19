@@ -16,8 +16,17 @@ from common import (
     dateSequenceWeeks,
     dateSequenceYears,
     requestDates,
-    caseFrequency
+    caseFrequency,
+    pickDates,
     )
+from distribution import parse_tsv
+
+headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
+data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
+data_Perignan = u"FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
+data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
+data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
+data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
 class BaseApi_Test(unittest.TestCase):
 
@@ -361,6 +370,16 @@ class BaseApi_Test(unittest.TestCase):
                          periodicity='yearly',
                         )
         self.assertEqual(r, ['2017-07-20', '2018-07-20'])
+
+    def test__pickDates__oneDateColumnOneDateRequest(self):
+        tuples = parse_tsv('\n'.join([headers, data_Amer]))
+        r = pickDates(tuples, '2018-01-01')
+        self.assertEqual(r, [
+            ['codi_pais', 'pais', 'codi_ccaa', 'comunitat_autonoma', 'codi_provincia', 'provincia', 'codi_ine', 'municipi', 'count_2018_01_01'],
+            ['ES', 'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000']
+            ])
+
+
 
 """
 /version

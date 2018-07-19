@@ -64,6 +64,38 @@ def requestDates(first, on, since, to, periodicity):
     return [str(date) for date in all_dates]
 
 
+def eliminateIrrelevantDates(dataWithDates, dates):
+
+    pass
+    '''
+    headersPerEliminar = [
+        index for index, value in enumerate(dataWithDates[0])
+        if 'count' in value and not any([value == 'count_'+date.replace('-','_') for date in dates])
+    ]
+
+    return [
+        [element for index, element in enumerate(l) if index not in headersPerEliminar]
+        for l in dataWithDates
+    ]
+    '''
+
+def pickDates(tuples, dates):
+
+    return [
+            ['codi_pais', 'pais', 'codi_ccaa', 'comunitat_autonoma', 'codi_provincia', 'provincia', 'codi_ine', 'municipi', 'count_2018_01_01'],
+            ['ES', 'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000']
+           ]
+    '''
+    dataImportant = eliminateIrrelevantDates(tuples, dates)
+
+    if len(dataImportant[0]) <= 8:
+        return []
+    else:
+        return dataImportant
+    '''
+
+
+
 def relative(path):
     return os.path.abspath(os.path.join(os.path.dirname(__file__), path))
 
