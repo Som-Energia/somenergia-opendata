@@ -1,3 +1,5 @@
+# -*- encoding: utf-8 -*-
+
 import os
 from dateutil.relativedelta import relativedelta as delta
 from functools import wraps
@@ -47,6 +49,7 @@ def caseFrequency(frequency):
     elif frequency == 'yearly':
         return dateSequenceYears
 
+# TODO: Està massa lligat a l'entrada dels endpoints, poder caldria fer-ho més abstracte
 def caseDates(dates):
     if dates.__class__ is str:
         return (dates, dates)

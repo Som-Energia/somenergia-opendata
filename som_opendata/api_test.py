@@ -295,6 +295,9 @@ class BaseApi_Test(unittest.TestCase):
         r = caseDates('2018-07-20')
         self.assertEqual(r, ('2018-07-20', '2018-07-20'))
 
+    def test__caseDates__intervalDates(self):
+        r = caseDates(['2018-07-20', '2018-08-01'])
+        self.assertEqual(r, ('2018-07-20', '2018-08-01'))
 
     def test__requestDates__toDay(self):
         r = requestDates(None, None, None, None, None)
