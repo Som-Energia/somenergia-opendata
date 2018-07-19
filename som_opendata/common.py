@@ -39,6 +39,10 @@ def dateSequenceYears(first, last):
         for n in xrange(0, years)
     ]
 
+def requestDates(firstDate, onDate, fromDate, toDate, periodicity):
+    return Date.today()
+
+
 def relative(path):
     return os.path.abspath(os.path.join(os.path.dirname(__file__), path))
 

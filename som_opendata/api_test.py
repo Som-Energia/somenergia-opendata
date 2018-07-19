@@ -12,8 +12,11 @@ from api import (
     )
 from app import app
 from dbutils import csvTable
-from common import dateSequenceWeeks, dateSequenceYears
-
+from common import (
+    dateSequenceWeeks, 
+    dateSequenceYears,
+    requestDates
+    )
 
 class BaseApi_Test(unittest.TestCase):
 
@@ -270,6 +273,9 @@ class BaseApi_Test(unittest.TestCase):
         r = self.get('/old/members/2015-01-01/monthlyto/2015-04-01')
         self.assertTsvResponse(r)
 
+    def test__requestDates__yearlyToDay(self):
+        r = requestDates(None, None, None, None, None)
+        self.assertEqual(r, Date.today())
 
 
 """
