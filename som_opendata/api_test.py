@@ -273,7 +273,7 @@ class BaseApi_Test(unittest.TestCase):
         r = self.get('/old/members/2015-01-01/monthlyto/2015-04-01')
         self.assertTsvResponse(r)
 
-    def test__requestDates__yearlyToDay(self):
+    def test__requestDates__toDay(self):
         r = requestDates(None, None, None, None, None)
         self.assertEqual(r, Date.today())
 
