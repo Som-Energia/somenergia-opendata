@@ -305,6 +305,9 @@ class BaseApi_Test(unittest.TestCase):
         r = requestDates('2000-01-01', None, None, None, None)
         self.assertEqual(r, [str(Date.today())])
 
+    def test__requestDates__onDate(self):
+        r = requestDates('2000-01-01', '2018-07-20', None, None, None)
+        self.assertEqual(r, ['2018-07-20'])
 
 """
 /version
