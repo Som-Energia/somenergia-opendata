@@ -64,33 +64,17 @@ def requestDates(first=None, on=None, since=None, to=None, periodicity=None):
     return [str(date) for date in all_dates]
 
 
-def eliminateIrrelevantDates(dataWithDates, dates):
+def pickDates(tuples, dates):
 
-    pass
-    '''
     headersPerEliminar = [
-        index for index, value in enumerate(dataWithDates[0])
+        index for index, value in enumerate(tuples[0])
         if 'count' in value and not any([value == 'count_'+date.replace('-','_') for date in dates])
     ]
 
     return [
         [element for index, element in enumerate(l) if index not in headersPerEliminar]
-        for l in dataWithDates
+        for l in tuples
     ]
-    '''
-
-def pickDates(tuples, dates):
-
-    return tuples
-    '''
-    dataImportant = eliminateIrrelevantDates(tuples, dates)
-
-    if len(dataImportant[0]) <= 8:
-        return []
-    else:
-        return dataImportant
-    '''
-
 
 
 def relative(path):
