@@ -55,7 +55,7 @@ def requestDates(firstDate, onDate, fromDate, toDate, periodicity):
     if periodicity:
         request_date = ((fromDate or firstDate), (toDate or Date.today()))
         frequency_method = caseFrequency(periodicity)
-        all_dates = frequency_method(request_date)
+        all_dates = frequency_method(*request_date)
 
     elif onDate: all_dates = dateSequenceWeeks(onDate, onDate)
 
