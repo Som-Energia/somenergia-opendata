@@ -24,21 +24,6 @@ members_modul = Blueprint(name='members_modul', import_name=__name__)
 
 
 
-def caseFrequency(frequency):
-    if frequency == 'weekly':
-        return dateSequenceWeeks
-    elif frequency == 'monthly':
-        return dateSequenceMonths
-    elif frequency == 'yearly':
-        return dateSequenceYears
-
-def caseDates(dates):
-    if dates.__class__ is str:
-        return (dates, dates)
-    else:
-        return (dates[0], dates[1])
-
-
 #@members_modul.route('')
 @members_modul.route('/on/<isodate:ondate>')
 #@members_modul.route('/by/<aggregateLevel:al>')

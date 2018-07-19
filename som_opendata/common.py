@@ -39,6 +39,21 @@ def dateSequenceYears(first, last):
         for n in xrange(0, years)
     ]
 
+def caseFrequency(frequency):
+    if frequency == 'weekly':
+        return dateSequenceWeeks
+    elif frequency == 'monthly':
+        return dateSequenceMonths
+    elif frequency == 'yearly':
+        return dateSequenceYears
+
+def caseDates(dates):
+    if dates.__class__ is str:
+        return (dates, dates)
+    else:
+        return (dates[0], dates[1])
+
+
 def requestDates(firstDate, onDate, fromDate, toDate, periodicity):
     return Date.today()
 
