@@ -55,15 +55,13 @@ def requestDates(firstDate, onDate, fromDate, toDate, periodicity):
     if periodicity:
         request_date = ((fromDate or firstDate), (toDate or Date.today()))
         frequency_method = caseFrequency(periodicity)
-        dates = frequency_method(request_date)
-    elif onDate:
-        request_date = onDate
-        dates = dateSequenceWeeks(request_date, request_date)
-    else:
-        request_date = str(Date.today())
-        dates = dateSequenceWeeks(request_date, request_date)
+        all_dates = frequency_method(request_date)
 
-    return [str(date) for date in dates]
+    elif onDate: all_dates = dateSequenceWeeks(onDate, onDate)
+
+    else: all_dates = dateSequenceWeeks(Date.today(), Date.today())
+
+    return [str(date) for date in all_dates]
 
 
 def relative(path):
