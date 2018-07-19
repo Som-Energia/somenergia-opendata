@@ -81,10 +81,7 @@ def eliminateIrrelevantDates(dataWithDates, dates):
 
 def pickDates(tuples, dates):
 
-    return [
-            ['codi_pais', 'pais', 'codi_ccaa', 'comunitat_autonoma', 'codi_provincia', 'provincia', 'codi_ine', 'municipi', 'count_2018_01_01'],
-            ['ES', 'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000']
-           ]
+    return tuples
     '''
     dataImportant = eliminateIrrelevantDates(tuples, dates)
 
