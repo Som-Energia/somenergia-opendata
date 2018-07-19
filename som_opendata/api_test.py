@@ -352,15 +352,18 @@ class BaseApi_Test(unittest.TestCase):
 
     def test__requestDates__yearlyDifferentDate(self):
         r = requestDates(first='2000-01-01',
-                         on=None,
                          since='2017-07-20',
                          to='2018-07-20',
                          periodicity='yearly',
                         )
         self.assertEqual(r, ['2017-07-20', '2018-07-20'])
 
+    def createTuples(self, *lines):
+        source = '\n'.join(lines)
+        return parse_tsv(source)
+
     def test__pickDates__oneDateColumn_oneDateRequest(self):
-        tuples = parse_tsv('\n'.join([headers, data_Amer]))
+        tuples = self.createTuples(headers, data_Amer)
         r = pickDates(tuples, ['2018-01-01'])
         self.assertEqual(r, [
             ['codi_pais', 'pais', 'codi_ccaa', 'comunitat_autonoma', 'codi_provincia', 'provincia', 'codi_ine', 'municipi', 'count_2018_01_01'],
@@ -368,7 +371,10 @@ class BaseApi_Test(unittest.TestCase):
             ])
 
     def test__pickDates__twoDateColumn_twoDateRequest(self):
-        tuples = parse_tsv('\n'.join([headers+'\tcount_2018-02-01', data_Amer+'\t20']))
+        tuples = self.createTuples(
+            headers+'\tcount_2018-02-01',
+            data_Amer+'\t20',
+            )
         r = pickDates(tuples, ['2018-01-01', '2018-02-01'])
         self.assertEqual(r, [
             ['codi_pais', 'pais', 'codi_ccaa', 'comunitat_autonoma', 'codi_provincia', 'provincia', 'codi_ine', 'municipi', 'count_2018_01_01', 'count_2018-02-01'],
