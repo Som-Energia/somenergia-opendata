@@ -24,6 +24,18 @@ data = u'\n'.join([
             data_SantJoan,
         ])
 
+class CsvSource():
+    
+    def __init__(self, content):
+        pass
+
+    def extract(self, field, dates):
+        pass
+
+
+
+
+
 class DataFromCSV():
 
     def __init__(self):
