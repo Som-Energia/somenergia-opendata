@@ -13,9 +13,11 @@ from api import (
 from app import app
 from dbutils import csvTable
 from common import (
-    dateSequenceWeeks, 
+    dateSequenceWeeks,
     dateSequenceYears,
-    requestDates
+    requestDates,
+    caseFrequency,
+    caseDates,
     )
 
 class BaseApi_Test(unittest.TestCase):
@@ -272,6 +274,15 @@ class BaseApi_Test(unittest.TestCase):
     def test_members_series(self):
         r = self.get('/old/members/2015-01-01/monthlyto/2015-04-01')
         self.assertTsvResponse(r)
+
+    # caseFrequency
+
+    def test__caseFrequency__weekly(self):
+        r = caseFrequency('weekly')
+        self.assertEqual(r, dateSequenceWeeks)
+
+    # caseDates
+
 
     def test__requestDates__toDay(self):
         r = requestDates(None, None, None, None, None)
