@@ -6,9 +6,11 @@ from ..app import app
 from members import members_modul
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
+data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
+data_Perignan = u"FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
 data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
 data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
-
+data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
 class BaseApi_Test(unittest.TestCase):
 
@@ -39,7 +41,7 @@ class BaseApi_Test(unittest.TestCase):
     def assertTsvResponse(self, response):
         self.assertB2BEqual(response.data)
 
-    def test__on_date__exists(self):
+    def test__onDate__exists(self):
         self.setupSource(
             headers,
             data_SantJoan,
@@ -48,6 +50,22 @@ class BaseApi_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             data: 
                 - 1000
+            dates:
+                - 2018-01-01
+            """)
+
+    def test__onDate__moreCities(self):
+        self.setupSource(
+            headers,
+            data_Adra,
+            data_Amer,
+            data_SantJoan,
+            data_Perignan,
+            )
+        r = self.get('/members/on/2018-01-01')
+        self.assertYamlResponse(r, """\
+            data: 
+                - 3012
             dates:
                 - 2018-01-01
             """)
