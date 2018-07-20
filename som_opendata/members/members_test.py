@@ -5,6 +5,7 @@ import b2btest
 from ..app import app
 from members import members_modul
 from yamlns.dateutils import Date
+from dateutil.relativedelta import relativedelta as delta
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
@@ -169,6 +170,26 @@ class BaseApi_Test(unittest.TestCase):
                 data:
                     - 2
                     - 123
+            """)
+
+    def test__aggregateLevel_frequency_fromDate__exist(self):
+        self.setupSource(
+            headers+'\tcount_'+str(Date.today()-delta(weeks=1)).replace('-','_')+'\tcount_'+str(Date.today()).replace('-','_'),
+            data_Adra+'\t123\t1234567',
+            )
+        r = self.get('/members/by/countries/weekly/from/'+str(Date.today()-delta(weeks=1)))
+        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
+        self.assertYamlResponse(r, """\
+            dates: ["""+str(Date.today()-delta(weeks=1))+""", """+str(Date.today())+"""]
+            data:
+                - 123
+                - 1234567
+            countries:
+              ES:
+                name: España
+                data:
+                    - 123
+                    - 1234567
             """)
 
     @unittest.skip("Not implemented yet")
