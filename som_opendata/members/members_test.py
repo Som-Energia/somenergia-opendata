@@ -70,6 +70,40 @@ class BaseApi_Test(unittest.TestCase):
                 - 2018-01-01
             """)
 
+    def test__onDate_aggregateLevel__exist(self):
+        self.setupSource(
+            headers,
+            data_Adra,
+            )
+        r = self.get('/members/by/cities/on/2018-01-01')
+        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
+        self.assertYamlResponse(r, """\
+            dates:
+                - 2018-01-01
+            data:
+                - 2
+            countries:
+              ES:
+                name: España
+                data:
+                    - 2
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    data:
+                        - 2
+                    states:
+                      '04':
+                        name: Almería
+                        data:
+                            - 2
+                        cities:
+                          '04003':
+                            name: Adra
+                            data:
+                                - 2
+            """)
+
     @unittest.skip("Not implemented yet")
     def test__on_date__missingDate(self): pass
 

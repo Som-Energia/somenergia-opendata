@@ -27,17 +27,17 @@ members_modul = Blueprint(name='members_modul', import_name=__name__)
 #@members_modul.route('')
 @members_modul.route('/on/<isodate:ondate>')
 #@members_modul.route('/by/<aggregateLevel:al>')
-#@members_modul.route('/by/<aggregateLevel:al>/on/<isodate:ondate>')
+@members_modul.route('/by/<aggregateLevel:al>/on/<isodate:ondate>')
 ##@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>')
 #@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>')
 #@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
 #@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/to/<isodate:todate>')
 @yaml_response
-def members(al=None, ondate=None, frequency=None, fromdate=None, todate=None):
+def members(al='world', ondate=None, frequency=None, fromdate=None, todate=None):
     content = members_modul.source
     tuples = parse_tsv(content)
     objects = tuples2objects(tuples)
-    result = aggregate(objects)
+    result = aggregate(objects, al)
     return result
 
     city = request.args.getlist('city')
