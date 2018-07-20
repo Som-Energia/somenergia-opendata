@@ -151,6 +151,26 @@ class BaseApi_Test(unittest.TestCase):
                 - 123
             """)
 
+    def test__aggregateLevel_frequency__exist(self):
+        self.setupSource(
+            headers+'\tcount_2018_05_01',
+            data_Adra+'\t123',
+            )
+        r = self.get('/members/by/countries/monthly')
+        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
+        self.assertYamlResponse(r, """\
+            dates: [2018-01-01, 2018-05-01]
+            data:
+                - 2
+                - 123
+            countries:
+              ES:
+                name: España
+                data:
+                    - 2
+                    - 123
+            """)
+
     @unittest.skip("Not implemented yet")
     def test__on_date__missingDate(self): pass
 
