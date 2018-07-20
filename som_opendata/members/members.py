@@ -8,6 +8,8 @@ from ..common import (
         dateSequenceMonths,
         dateSequenceWeeks,
         dateSequenceYears,
+        requestDates,
+        pickDates,
     )    
 from ..data import (
     ExtractData,
@@ -26,7 +28,7 @@ members_modul = Blueprint(name='members_modul', import_name=__name__)
 
 #@members_modul.route('')
 @members_modul.route('/on/<isodate:ondate>')
-#@members_modul.route('/by/<aggregateLevel:al>')
+@members_modul.route('/by/<aggregateLevel:al>')
 @members_modul.route('/by/<aggregateLevel:al>/on/<isodate:ondate>')
 ##@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>')
 #@members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>')
@@ -36,7 +38,9 @@ members_modul = Blueprint(name='members_modul', import_name=__name__)
 def members(al='world', ondate=None, frequency=None, fromdate=None, todate=None):
     content = members_modul.source
     tuples = parse_tsv(content)
-    objects = tuples2objects(tuples)
+    request_dates = requestDates(first='2000-01-01', on=ondate, since=fromdate, to=todate, periodicity=frequency)
+    filtered_tuples = pickDates(tuples, request_dates)
+    objects = tuples2objects(filtered_tuples)
     result = aggregate(objects, al)
     return result
 

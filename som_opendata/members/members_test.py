@@ -4,6 +4,7 @@ import unittest
 import b2btest
 from ..app import app
 from members import members_modul
+from yamlns.dateutils import Date
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
@@ -102,6 +103,39 @@ class BaseApi_Test(unittest.TestCase):
                             name: Adra
                             data:
                                 - 2
+            """)
+
+    def test__aggregateLevel__exist(self):
+        self.setupSource(
+            headers+'\tcount_'+str(Date.today()).replace('-','_'),
+            data_Adra+'\t123',
+            )
+        r = self.get('/members/by/cities')
+        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
+        self.assertYamlResponse(r, """\
+            dates: ["""+str(Date.today())+"""]
+            data:
+                - 123
+            countries:
+              ES:
+                name: España
+                data:
+                    - 123
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    data:
+                        - 123
+                    states:
+                      '04':
+                        name: Almería
+                        data:
+                            - 123
+                        cities:
+                          '04003':
+                            name: Adra
+                            data:
+                                - 123
             """)
 
     @unittest.skip("Not implemented yet")
