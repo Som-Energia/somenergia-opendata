@@ -68,7 +68,7 @@ def pickDates(tuples, dates):
 
     headersPerEliminar = [
         index for index, value in enumerate(tuples[0])
-        if 'count' in value and not any([value == 'count_'+date.replace('-','_') for date in dates])
+        if value.startswith('count_') and value[len('count_'):].replace('_','-') not in dates
     ]
 
     return [
