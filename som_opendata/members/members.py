@@ -26,7 +26,7 @@ members_modul = Blueprint(name='members_modul', import_name=__name__)
 
 
 
-#@members_modul.route('')
+@members_modul.route('')
 @members_modul.route('/on/<isodate:ondate>')
 @members_modul.route('/by/<aggregateLevel:al>')
 @members_modul.route('/by/<aggregateLevel:al>/on/<isodate:ondate>')

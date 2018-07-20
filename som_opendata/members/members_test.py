@@ -138,6 +138,19 @@ class BaseApi_Test(unittest.TestCase):
                                 - 123
             """)
 
+    def test__basicUrl__exist(self):
+        self.setupSource(
+            headers+'\tcount_'+str(Date.today()).replace('-','_'),
+            data_Adra+'\t123',
+            )
+        r = self.get('/members')
+        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
+        self.assertYamlResponse(r, """\
+            dates: ["""+str(Date.today())+"""]
+            data:
+                - 123
+            """)
+
     @unittest.skip("Not implemented yet")
     def test__on_date__missingDate(self): pass
 
