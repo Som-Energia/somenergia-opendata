@@ -50,10 +50,8 @@ class BaseApi_Test(unittest.TestCase):
             )
         r = self.get('/members/on/2018-01-01')
         self.assertYamlResponse(r, """\
-            data: 
-                - 1000
-            dates:
-                - 2018-01-01
+            data: [1000]
+            dates: [2018-01-01]
             """)
 
     def test__onDate__moreCities(self):
@@ -66,10 +64,8 @@ class BaseApi_Test(unittest.TestCase):
             )
         r = self.get('/members/on/2018-01-01')
         self.assertYamlResponse(r, """\
-            data: 
-                - 3012
-            dates:
-                - 2018-01-01
+            data: [3012]
+            dates: [2018-01-01]
             """)
 
     def test__onDate_aggregateLevel__exist(self):
@@ -80,30 +76,24 @@ class BaseApi_Test(unittest.TestCase):
         r = self.get('/members/by/cities/on/2018-01-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
-            dates:
-                - 2018-01-01
-            data:
-                - 2
+            dates: [2018-01-01]
+            data: [2]
             countries:
               ES:
                 name: España
-                data:
-                    - 2
+                data: [2]
                 ccaas:
                   '01':
                     name: Andalucía
-                    data:
-                        - 2
+                    data: [2]
                     states:
                       '04':
                         name: Almería
-                        data:
-                            - 2
+                        data: [2]
                         cities:
                           '04003':
                             name: Adra
-                            data:
-                                - 2
+                            data: [2]
             """)
 
     def test__aggregateLevel__exist(self):
@@ -115,28 +105,23 @@ class BaseApi_Test(unittest.TestCase):
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: ["""+str(Date.today())+"""]
-            data:
-                - 123
+            data: [123]
             countries:
               ES:
                 name: España
-                data:
-                    - 123
+                data: [123]
                 ccaas:
                   '01':
                     name: Andalucía
-                    data:
-                        - 123
+                    data: [123]
                     states:
                       '04':
                         name: Almería
-                        data:
-                            - 123
+                        data: [123]
                         cities:
                           '04003':
                             name: Adra
-                            data:
-                                - 123
+                            data: [123]
             """)
 
     def test__basicUrl__exist(self):
@@ -148,8 +133,7 @@ class BaseApi_Test(unittest.TestCase):
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: ["""+str(Date.today())+"""]
-            data:
-                - 123
+            data: [123]
             """)
 
     def test__aggregateLevel_frequency__exist(self):
@@ -161,15 +145,11 @@ class BaseApi_Test(unittest.TestCase):
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-01, 2018-05-01]
-            data:
-                - 2
-                - 123
+            data: [2, 123]
             countries:
               ES:
                 name: España
-                data:
-                    - 2
-                    - 123
+                data: [2, 123]
             """)
 
     def test__aggregateLevel_frequency_fromDate__exist(self):
@@ -181,15 +161,11 @@ class BaseApi_Test(unittest.TestCase):
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: ["""+str(Date.today()-delta(weeks=1))+""", """+str(Date.today())+"""]
-            data:
-                - 123
-                - 1234567
+            data: [123, 1234567]
             countries:
               ES:
                 name: España
-                data:
-                    - 123
-                    - 1234567
+                data: [123, 1234567]
             """)
 
     @unittest.skip("Not implemented yet")
