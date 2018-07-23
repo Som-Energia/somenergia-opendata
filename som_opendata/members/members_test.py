@@ -31,6 +31,7 @@ class BaseApi_Test(unittest.TestCase):
 
     def setupSource(self, *lines):
         members_modul.source = '\n'.join(lines)
+        members_modul.firstDate = '2000-01-01'
 
     def get(self, *args, **kwds):
         return self.client.get(*args,**kwds)
