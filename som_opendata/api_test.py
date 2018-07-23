@@ -439,6 +439,11 @@ class BaseApi_Test(unittest.TestCase):
         r = self.aggregateLevelConverter.to_python('countries')
         self.assertEqual(r, 'countries')
 
+    def test__AggregateLevelConverter__invalid(self):
+        with self.assertRaises(ValidationError) as ctx:
+            self.aggregateLevelConverter.to_python('caracola')
+        self.assertEquals(format(ctx.exception), 'Incorrect Aggregate Level')
+
 """
 /version
 /members/2015-02

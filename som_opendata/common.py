@@ -145,7 +145,7 @@ class IsoAggregateLevelConverter(BaseConverter):
         if value == 'world' or value == 'countries' or value == 'states' or value == 'ccaas' or value == 'cities':
             return str(value)
 
-        raise ValidationError()
+        raise ValidationError('Incorrect Aggregate Level')
 
     def to_url(self, value):
         if value == 'world' or value == 'countries' or value == 'states' or value == 'ccaas' or value == 'cities':
