@@ -227,6 +227,38 @@ class BaseApi_Test(unittest.TestCase):
             """)
 
 
+
+
+    @unittest.skip("Not implemented yet")
+    def test__aggregateLevel_frequency_toDate__exist_NoExactFirstDate(self):
+        self.setupSource(
+            headers+'\tcount_2018_02_01'+'\tcount_2018_03_01',
+            data_Adra+'\t123\t1234567',
+            )
+        members_modul.firstDate = '2018-01-15'
+        r = self.get('/members/by/cities/monthly/to/2018-03-01')
+        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
+        self.assertYamlResponse(r, """\
+            dates: [2018-01-15, 2018-02-15]
+            data: [___, ___]
+            countries:
+              ES:
+                name: España
+                data: [___, ___]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    data: [___, ___]
+                    states:
+                      '04':
+                        name: Almería
+                        data: [___, ___]
+                        cities:
+                          '04003':
+                            name: Adra
+                            data: [___, ___]
+            """)
+
     @unittest.skip("Not implemented yet")
     def test__on_date__missingDate(self): pass
 
