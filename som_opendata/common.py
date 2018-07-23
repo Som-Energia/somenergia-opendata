@@ -130,7 +130,7 @@ class IsoFrequencyConverte(BaseConverter):
         if value == 'weekly' or value == 'monthly' or value == 'yearly':
             return str(value)
 
-        raise ValidationError()
+        raise ValidationError('Incorrect Frequency')
 
     def to_url(self, value):
         if value == 'weekly' or value == 'monthly' or value == 'yearly':

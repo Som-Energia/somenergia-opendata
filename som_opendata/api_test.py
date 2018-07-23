@@ -22,6 +22,7 @@ from common import (
     )
 from distribution import parse_tsv
 from dateutil.relativedelta import relativedelta as delta
+from werkzeug.routing import ValidationError
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
@@ -428,10 +429,10 @@ class BaseApi_Test(unittest.TestCase):
         self.assertEqual(r, 'weekly')
 
 
-    #@unittest.skip('Not implemented yet')
-    #def test__FrequencyConvertes__invalid(self):
-
-
+    def test__FrequencyConvertes__invalid(self):
+        with self.assertRaises(ValidationError) as ctx:
+            self.frequencyConverter.to_python('caracola')
+        self.assertEquals(format(ctx.exception), 'Incorrect Frequency')
 
 
 """
