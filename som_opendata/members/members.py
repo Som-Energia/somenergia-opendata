@@ -36,7 +36,7 @@ members_modul = Blueprint(name='members_modul', import_name=__name__)
 @members_modul.route('/by/<aggregateLevel:al>/<frequency:frequency>/to/<isodate:todate>')
 # @members_modul.route('/<frequency:frequency>') # CONCEPTUALMENT NO TE SENTIT
 @members_modul.route('/<frequency:frequency>/from/<isodate:fromdate>')
-#@members_modul.route('/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@members_modul.route('/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
 #@members_modul.route('/<frequency:frequency>/to/<isodate:todate>')
 @yaml_response
 def members(al='world', ondate=None, frequency=None, fromdate=None, todate=None):
