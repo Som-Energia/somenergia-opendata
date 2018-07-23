@@ -47,6 +47,7 @@ def members(al='world', ondate=None, frequency=None, fromdate=None, todate=None)
     filtered_tuples = pickDates(tuples, request_dates)
     objects = tuples2objects(filtered_tuples)
 
+    # TODO: REFACTOR
     location_filter_req = ns()
     country = request.args.getlist('country')
     if len(country) != 0:
@@ -61,29 +62,10 @@ def members(al='world', ondate=None, frequency=None, fromdate=None, todate=None)
     if len(city) != 0:
         location_filter_req['codi_ine'] = city
 
-
-    # location_filter_req = ns(country=country, ccaa=ccaa, state=state, city=city)
-
     filtered_objects = locationFilter(objects, location_filter_req)
 
     result = aggregate(filtered_objects, al)
     return result
-
-
-
-    # Actualment default és que dongui del primer al final
-    date = ondate or ((fromdate or '2010-01-01'), (todate or Date.today()))
-    frequency_method = caseFrequency(frequency)
-    dates = caseDates(date)
-    d = frequency_method(dates[0], dates[1])
-    dCorrect = [str(dat) for dat in d]
-
-    data = ExtractData().extractObjects('members', dCorrect, DataFromCSV())
-
-    data = tuples2objects(data)
-
-
-    return aggregate(data, al)
 
 
 members_modul.source = None
