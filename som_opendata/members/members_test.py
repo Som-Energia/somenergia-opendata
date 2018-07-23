@@ -226,6 +226,17 @@ class BaseApi_Test(unittest.TestCase):
                             data: [123, 1234567]
             """)
 
+    def test__frequency_formDate__exist(self):
+        self.setupSource(
+            headers+'\tcount_'+str(Date.today()-delta(weeks=1)).replace('-','_')+'\tcount_'+str(Date.today()).replace('-','_'),
+            data_Adra+'\t123\t1234567',
+            )
+        r = self.get('/members/weekly/from/'+str(Date.today()-delta(weeks=1)))
+        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
+        self.assertYamlResponse(r, """\
+            dates: ["""+str(Date.today()-delta(weeks=1))+""", """+str(Date.today())+"""]
+            data: [123, 1234567]
+            """)
 
 
 
