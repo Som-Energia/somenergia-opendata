@@ -275,6 +275,17 @@ class BaseApi_Test(unittest.TestCase):
             data: [2, 123]
             """)
 
+    def test__frequencyYearly_fromDate_toDate__exist(self):
+        self.setupSource(
+            headers+'\tcount_2019_01_01',
+            data_Adra+'\t123',
+            )
+        r = self.get('/members/yearly/from/2018-01-01/to/2019-01-01')
+        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
+        self.assertYamlResponse(r, """\
+            dates: [2018-01-01, 2019-01-01]
+            data: [2, 123]
+            """)
 
     @unittest.skip("Not implemented yet")
     def test__aggregateLevel_frequency_toDate__exist_NoExactFirstDate(self):
