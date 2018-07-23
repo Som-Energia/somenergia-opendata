@@ -335,7 +335,14 @@ class BaseApi_Test(unittest.TestCase):
         r = self.get('/members/piolin')
         self.assertEqual(r.status_code, 404)
 
-
+    @unittest.skip("Not implemented yet | Caldria retocar el converter de Date")
+    def test__membersError__URLparamsNotExist_date(self):
+        self.setupSource(
+            headers,
+            data_Adra,
+            )
+        r = self.get('/members/on/piolin')
+        self.assertEqual(r.status_code, 404)
 
 
 
