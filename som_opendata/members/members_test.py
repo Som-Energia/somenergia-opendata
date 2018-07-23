@@ -250,6 +250,20 @@ class BaseApi_Test(unittest.TestCase):
             data: [2, 123]
             """)
 
+    def test__frequency_toDate__exist(self):
+        self.setupSource(
+            headers+'\tcount_2018_02_01'+'\tcount_2018_03_01',
+            data_Adra+'\t123\t1234567',
+            )
+        members_modul.firstDate = '2018-02-01'
+        r = self.get('/members/monthly/to/2018-03-01')
+        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
+        self.assertYamlResponse(r, """\
+            dates: [2018-02-01, 2018-03-01]
+            data: [123, 1234567]
+            """)
+
+
 
 
     @unittest.skip("Not implemented yet")
