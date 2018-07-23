@@ -20,6 +20,7 @@ from common import (
     pickDates,
     IsoFrequencyConverte,
     IsoAggregateLevelConverter,
+    IsoDateConverter,
     )
 from distribution import parse_tsv
 from dateutil.relativedelta import relativedelta as delta
@@ -425,6 +426,7 @@ class BaseApi_Test(unittest.TestCase):
     # Convertes
     frequencyConverter = IsoFrequencyConverte({})
     aggregateLevelConverter = IsoAggregateLevelConverter({})
+    dateConverter = IsoDateConverter({})
 
     def test__FrequencyConverter__valid(self):
         r = self.frequencyConverter.to_python('weekly')
@@ -443,6 +445,12 @@ class BaseApi_Test(unittest.TestCase):
         with self.assertRaises(ValidationError) as ctx:
             self.aggregateLevelConverter.to_python('caracola')
         self.assertEquals(format(ctx.exception), 'Incorrect Aggregate Level')
+
+    def test__DateConverter__valid(self):
+        r = self.dateConverter.to_python('2018-01-01')
+        self.assertEqual(r, Date('2018-01-01'))
+
+
 
 """
 /version
