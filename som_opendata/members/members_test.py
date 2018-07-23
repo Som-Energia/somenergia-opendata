@@ -325,7 +325,7 @@ class BaseApi_Test(unittest.TestCase):
             data_Adra+'\t123',
             )
         r = self.get('/members/by/piolin')
-        self.assertEqual(r.status, '404 NOT FOUND')
+        self.assertEqual(r.status_code, 404)
 
     def test__membersError__URLparamsNotExist_frequency(self):
         self.setupSource(
@@ -333,7 +333,7 @@ class BaseApi_Test(unittest.TestCase):
             data_Adra,
             )
         r = self.get('/members/piolin')
-        self.assertEqual(r.status, '404 NOT FOUND')
+        self.assertEqual(r.status_code, 404)
 
 
 
