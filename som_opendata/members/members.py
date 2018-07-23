@@ -19,6 +19,7 @@ from ..distribution import (
     parse_tsv,
     tuples2objects,
     aggregate,
+    locationFilter,
     )
 
 
@@ -45,12 +46,30 @@ def members(al='world', ondate=None, frequency=None, fromdate=None, todate=None)
     request_dates = requestDates(first=members_modul.firstDate, on=ondate, since=fromdate, to=todate, periodicity=frequency)
     filtered_tuples = pickDates(tuples, request_dates)
     objects = tuples2objects(filtered_tuples)
-    result = aggregate(objects, al)
+
+    location_filter_req = ns()
+    country = request.args.getlist('country')
+    if len(country) != 0:
+        location_filter_req['country'] = country
+    state = request.args.getlist('state')
+    if len(state) != 0:
+        location_filter_req['state'] = state
+    ccaa = request.args.getlist('ccaa')
+    if len(ccaa) != 0:
+        location_filter_req['ccaa'] = ccaa
+    city = request.args.getlist('city')
+    if len(city) != 0:
+        location_filter_req['city'] = city
+
+
+    # location_filter_req = ns(country=country, ccaa=ccaa, state=state, city=city)
+
+    filtered_objects = locationFilter(objects, location_filter_req)
+
+    result = aggregate(filtered_objects, al)
     return result
 
-    city = request.args.getlist('city')
-    state = request.args.getlist('state')
-    ccaa = request.args.getlist('ccaa')
+
 
     # Actualment default és que dongui del primer al final
     date = ondate or ((fromdate or '2010-01-01'), (todate or Date.today()))
