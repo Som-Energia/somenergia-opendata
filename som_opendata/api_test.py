@@ -450,7 +450,10 @@ class BaseApi_Test(unittest.TestCase):
         r = self.dateConverter.to_python('2018-01-01')
         self.assertEqual(r, Date('2018-01-01'))
 
-
+    def test__DateConverter__invalid(self):
+        with self.assertRaises(ValueError) as ctx:
+            self.dateConverter.to_python('PEP 8')
+        self.assertEquals(format(ctx.exception), 'Invalid date initializator \'PEP 8\'')
 
 """
 /version
