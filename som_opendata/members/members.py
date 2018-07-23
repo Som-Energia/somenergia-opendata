@@ -50,16 +50,16 @@ def members(al='world', ondate=None, frequency=None, fromdate=None, todate=None)
     location_filter_req = ns()
     country = request.args.getlist('country')
     if len(country) != 0:
-        location_filter_req['country'] = country
+        location_filter_req['codi_pais'] = country
     state = request.args.getlist('state')
     if len(state) != 0:
-        location_filter_req['state'] = state
+        location_filter_req['codi_provincia'] = state
     ccaa = request.args.getlist('ccaa')
     if len(ccaa) != 0:
-        location_filter_req['ccaa'] = ccaa
+        location_filter_req['codi_ccaa'] = ccaa
     city = request.args.getlist('city')
     if len(city) != 0:
-        location_filter_req['city'] = city
+        location_filter_req['codi_ine'] = city
 
 
     # location_filter_req = ns(country=country, ccaa=ccaa, state=state, city=city)

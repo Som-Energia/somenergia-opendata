@@ -287,6 +287,41 @@ class BaseApi_Test(unittest.TestCase):
             data: [2, 123]
             """)
 
+    def test__onDate_aggregateLevel_queryParams__exist(self):
+        self.setupSource(
+            headers,
+            data_Adra,
+            data_Perignan,
+            data_Girona,
+            data_SantJoan,
+            data_Amer
+            )
+        r = self.get('/members/by/cities/on/2018-01-01?country=ES&ccaa=09&state=17&city=17007')
+        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
+        self.assertYamlResponse(r, """\
+            dates: [2018-01-01]
+            data: [2000]
+            countries:
+              ES:
+                name: España
+                data: [2000]
+                ccaas:
+                  '09':
+                    name: Catalunya
+                    data: [2000]
+                    states:
+                      '17':
+                        name: Girona
+                        data: [2000]
+                        cities:
+                          '17007':
+                            name: Amer
+                            data: [2000]
+            """)
+
+
+
+
     @unittest.skip("Not implemented yet")
     def test__aggregateLevel_frequency_toDate__exist_NoExactFirstDate(self):
         self.setupSource(
