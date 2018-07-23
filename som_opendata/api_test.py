@@ -19,6 +19,7 @@ from common import (
     caseFrequency,
     pickDates,
     IsoFrequencyConverte,
+    IsoAggregateLevelConverter,
     )
 from distribution import parse_tsv
 from dateutil.relativedelta import relativedelta as delta
@@ -423,17 +424,20 @@ class BaseApi_Test(unittest.TestCase):
 
     # Convertes
     frequencyConverter = IsoFrequencyConverte({})
+    aggregateLevelConverter = IsoAggregateLevelConverter({})
 
     def test__FrequencyConverter__valid(self):
         r = self.frequencyConverter.to_python('weekly')
         self.assertEqual(r, 'weekly')
-
 
     def test__FrequencyConvertes__invalid(self):
         with self.assertRaises(ValidationError) as ctx:
             self.frequencyConverter.to_python('caracola')
         self.assertEquals(format(ctx.exception), 'Incorrect Frequency')
 
+    def test__AggregateLevelConverter__valid(self):
+        r = self.aggregateLevelConverter.to_python('countries')
+        self.assertEqual(r, 'countries')
 
 """
 /version
