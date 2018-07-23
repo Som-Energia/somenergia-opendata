@@ -18,6 +18,7 @@ from common import (
     requestDates,
     caseFrequency,
     pickDates,
+    IsoFrequencyConverte,
     )
 from distribution import parse_tsv
 from dateutil.relativedelta import relativedelta as delta
@@ -418,6 +419,20 @@ class BaseApi_Test(unittest.TestCase):
             ['codi_pais', 'pais', 'codi_ccaa', 'comunitat_autonoma', 'codi_provincia', 'provincia', 'codi_ine', 'municipi', 'count_2018_01_01', 'count_2018_02_01'],
             ['ES', u'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000', '3']
             ])
+
+    # Convertes
+    frequencyConverter = IsoFrequencyConverte({})
+
+    def test__FrequencyConverter__valid(self):
+        r = self.frequencyConverter.to_python('weekly')
+        self.assertEqual(r, 'weekly')
+
+
+    #@unittest.skip('Not implemented yet')
+    #def test__FrequencyConvertes__invalid(self):
+
+
+
 
 """
 /version
