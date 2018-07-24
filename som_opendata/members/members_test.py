@@ -379,6 +379,15 @@ class BaseApi_Test(unittest.TestCase):
         r = self.get('/members/by/cities/on/2018-01-01?city=9999999')
         self.assertYamlResponse(r, ns())
 
+    def test__membersError__incorrectDates(self):
+        self.setupSource(
+            headers,
+            data_Adra,
+            )
+        r = self.get('/members/by/cities/on/2018-01-01/from/2018-02-02')
+        self.assertEqual(r.status_code, 404)
+
+
 
 
     @unittest.skip("Not implemented yet")
