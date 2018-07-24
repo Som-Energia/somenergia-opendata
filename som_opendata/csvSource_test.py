@@ -29,7 +29,7 @@ class CsvSource_Test(unittest.TestCase):
         content = '\n'.join(lines)
         return CsvSource(content)
 
-    @unittest.skip("Not implemented yet")
+
     def test__extract__oneDateExist(self):
         source = self.createSource(
             headers,

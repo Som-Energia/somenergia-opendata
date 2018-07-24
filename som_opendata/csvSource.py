@@ -7,12 +7,25 @@ from distribution import (
     )
 
 
+data = None
 
 class CsvSource():
     
     def __init__(self, content):
-        pass
+        self.data = content
 
     def extract(self, field, dates):
-        pass
+
+        tuples = parse_tsv(self.data)
+
+        headersPerEliminar = [
+            index for index, value in enumerate(tuples[0])
+            if value.startswith('count_') and value[len('count_'):].replace('_','-') not in dates
+        ]
+
+        return [
+            [element for index, element in enumerate(l) if index not in headersPerEliminar]
+            for l in tuples
+        ]
+
 
