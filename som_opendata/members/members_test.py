@@ -49,6 +49,10 @@ class BaseApi_Test(unittest.TestCase):
         r = validateInputDates(since='2018-01-01', todate='2018-01-02')
         self.assertEqual(r, True)
 
+    def test__validateInputDates__since(self):
+        r = validateInputDates(since='2018-01-01')
+        self.assertEqual(r, True)
+
     def test__validateInputDates__since_toDate_turnedDates(self):
         r = validateInputDates(since='2010-01-01', todate='2018-01-01')
         self.assertEqual(r, True)
