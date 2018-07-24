@@ -26,6 +26,11 @@ from ..distribution import (
 members_modul = Blueprint(name='members_modul', import_name=__name__)
 
 
+def validateInputDates(ondate = None, since = None, todate = None):
+    return not (not ondate is None and (not since is None or not todate is None))
+
+
+
 def extractQueryParam(location_filter_req, queryName, objectName):
     queryParam = request.args.getlist(queryName)
     if len(queryParam) != 0:

@@ -3,7 +3,7 @@
 import unittest
 import b2btest
 from ..app import app
-from members import members_modul
+from members import members_modul, validateInputDates
 from yamlns.dateutils import Date
 from dateutil.relativedelta import relativedelta as delta
 from yamlns import namespace as ns
@@ -44,6 +44,10 @@ class BaseApi_Test(unittest.TestCase):
 
     def assertTsvResponse(self, response):
         self.assertB2BEqual(response.data)
+
+    def test__validateInputDates__since_toDate(self):
+        r = validateInputDates(since='2018-01-01', todate='2018-01-02')
+        self.assertEqual(r, True)
 
     def test__onDate__exists(self):
         self.setupSource(
