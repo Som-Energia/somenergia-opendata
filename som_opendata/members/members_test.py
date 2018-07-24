@@ -6,6 +6,7 @@ from ..app import app
 from members import members_modul
 from yamlns.dateutils import Date
 from dateutil.relativedelta import relativedelta as delta
+from yamlns import namespace as ns
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
@@ -142,6 +143,7 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_2018_05_01',
             data_Adra+'\t123',
             )
+        members_modul.firstDate = '2000-01-01'
         r = self.get('/members/by/countries/monthly')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
@@ -268,6 +270,7 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_2018_05_01',
             data_Adra+'\t123',
             )
+        members_modul.firstDate = '2000-01-01'
         r = self.get('/members/monthly')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
@@ -344,7 +347,13 @@ class BaseApi_Test(unittest.TestCase):
         r = self.get('/members/on/piolin')
         self.assertEqual(r.status_code, 404)
 
-
+    def test__membersError__queryParamsNotExist(self):
+        self.setupSource(
+            headers,
+            data_Adra,
+            )
+        r = self.get('/members/by/cities/on/2018-01-01?city=9999999')
+        self.assertYamlResponse(r, ns())
 
 
 

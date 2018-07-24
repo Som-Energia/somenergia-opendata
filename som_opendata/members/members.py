@@ -61,8 +61,8 @@ def members(al='world', ondate=None, frequency=None, fromdate=None, todate=None)
 
     filtered_objects = locationFilter(objects, location_filter_req)
 
-    result = aggregate(filtered_objects, al)
-    return result
+    if len(filtered_objects) > 0: return aggregate(filtered_objects, al)
+    else: return ns()
 
 
 members_modul.source = None
