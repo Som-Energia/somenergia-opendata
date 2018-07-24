@@ -57,6 +57,9 @@ class BaseApi_Test(unittest.TestCase):
         r = validateInputDates(ondate='2010-01-01')
         self.assertEqual(r, True)
 
+    def test__validateInputDates__onDate_since(self):
+        r = validateInputDates(ondate='2010-01-01', since='2018-01-01')
+        self.assertEqual(r, False)
 
     def test__onDate__exists(self):
         self.setupSource(
