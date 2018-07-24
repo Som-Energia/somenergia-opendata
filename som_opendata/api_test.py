@@ -377,6 +377,15 @@ class BaseApi_Test(unittest.TestCase):
                         )
         self.assertEqual(r, [str(Date.today()-delta(weeks=1)), str(Date.today())])
 
+    def test__requestDates__turnedDates(self):
+        r = requestDates(first='2000-01-01',
+                         since='2018-02-01',
+                         to='2018-01-01',
+                         periodicity='monthly',
+                        )
+        self.assertEqual(r, [])
+
+
     def createTuples(self, *lines):
         source = '\n'.join(lines)
         return parse_tsv(source)
