@@ -6,20 +6,18 @@ from yamlns.dateutils import Date as isoDate
 from .data import (
     ExtractData,
     )
-from datafromcsv import DataFromCSV, CsvSource
+from csvSource import CsvSource
 import b2btest
 
 
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
+data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
+data_Perignan = u"FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
 data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
 data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
+data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
-data = u'\n'.join([
-            headers,
-            data_Girona,
-            data_SantJoan,
-        ])
 
 
 class CsvSource_Test(unittest.TestCase):
