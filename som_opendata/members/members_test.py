@@ -323,7 +323,7 @@ class BaseApi_Test(unittest.TestCase):
             data_SantJoan,
             data_Amer
             )
-        r = self.get('/members/by/cities/on/2018-01-01?country=ES&ccaa=09&state=17&city=17007')
+        r = self.get('/members/by/cities/on/2018-01-01?city=17007')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-01]
