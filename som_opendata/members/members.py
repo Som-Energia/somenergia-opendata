@@ -61,10 +61,16 @@ def members(al='world', ondate=None, frequency=None, fromdate=None, todate=None)
     objects = tuples2objects(filtered_tuples)
 
     location_filter_req = ns()
-    extractQueryParam(location_filter_req, 'country', 'codi_pais')
-    extractQueryParam(location_filter_req, 'ccaa', 'codi_ccaa')
-    extractQueryParam(location_filter_req, 'state', 'codi_provincia')
-    extractQueryParam(location_filter_req, 'city', 'codi_ine')
+
+    relation_locationLevel_id = [
+            ['country', 'codi_pais'],
+            ['ccaa', 'codi_ccaa'],
+            ['state', 'codi_provincia'],
+            ['city', 'codi_ine']
+          ]
+
+    for locationLevel_id in relation_locationLevel_id:
+        extractQueryParam(location_filter_req, *locationLevel_id)
 
     filtered_objects = locationFilter(objects, location_filter_req)
 
