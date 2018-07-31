@@ -68,11 +68,9 @@ def aggregate(entries, detail = 'world'):
         current = aggregate_level(
             entry, current, 'countries', 'codi_pais', 'pais')
         if detail == 'countries': continue
-        current = aggregate_level(
-            entry, current, 'ccaas', 'codi_ccaa', 'comunitat_autonoma')
-        if detail == 'ccaas': continue
         
         levels = [
+            ('ccaas', 'codi_ccaa', 'comunitat_autonoma'),
             ('states', 'codi_provincia', 'provincia'),
             ('cities', 'codi_ine', 'municipi'),
             ]
