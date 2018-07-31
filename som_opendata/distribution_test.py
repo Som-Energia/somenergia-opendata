@@ -20,6 +20,8 @@ data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan De
 data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
 
+skipSlow = True
+
 class Distribution_Test(unittest.TestCase):
     
 
@@ -337,7 +339,7 @@ class Distribution_Test(unittest.TestCase):
             isoDate("20180201"),
         ])
 
-
+    @unittest.skipIf(skipSlow, 'test lent')
     def test__aggregate__backToBack(self):
         with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
             data = f.read()
@@ -592,7 +594,7 @@ class Distribution_Test(unittest.TestCase):
             data: [2020]
             """)
 
-
+    @unittest.skipIf(skipSlow, 'test lent')
     def test__filter_aggregate__withDetail_backToBack(self):
         with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
             data = f.read()
