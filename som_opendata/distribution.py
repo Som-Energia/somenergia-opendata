@@ -2,7 +2,12 @@
 from yamlns import namespace as ns
 from yamlns.dateutils import Date as isoDate
 
-
+aggregation_levels = [
+    ('countries', 'country', 'codi_pais', 'pais'),
+    ('ccaas', 'ccaa', 'codi_ccaa', 'comunitat_autonoma'),
+    ('states', 'state', 'codi_provincia', 'provincia'),
+    ('cities', 'city', 'codi_ine', 'municipi'),
+    ]
 
 def parse_tsv(tsv_data):
     """
@@ -66,14 +71,7 @@ def aggregate(entries, detail = 'world'):
         if detail == 'world': continue
         current = result
         
-        levels = [
-            ('countries', 'codi_pais', 'pais'),
-            ('ccaas', 'codi_ccaa', 'comunitat_autonoma'),
-            ('states', 'codi_provincia', 'provincia'),
-            ('cities', 'codi_ine', 'municipi'),
-            ]
-
-        for level_name, codi, name in levels:
+        for level_name, level_single, codi, name in aggregation_levels:
             current = aggregate_level(
                 entry, current, level_name, codi, name)
             if detail == level_name: break
