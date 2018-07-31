@@ -96,14 +96,12 @@ def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
 
 def locationFilter(objectList, typeFilter):
 
-    r = objectList
-
+    result = objectList
     for k, v in typeFilter.iteritems():
-        r = [
-            e for e in r if sum([i in e[k] for i in v]) > 0
+        result = [
+            entry for entry in result if entry[k] in v
         ]
-
-    return r
+    return result
 
 
 def pickDates(tuples, dates):
