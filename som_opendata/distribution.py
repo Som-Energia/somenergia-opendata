@@ -106,4 +106,17 @@ def locationFilter(objectList, typeFilter):
 
     return r
 
+
+def pickDates(tuples, dates):
+
+    headersPerEliminar = [
+        index for index, value in enumerate(tuples[0])
+        if value.startswith('count_') and value[len('count_'):].replace('_','-') not in dates
+    ]
+
+    return [
+        [element for index, element in enumerate(l) if index not in headersPerEliminar]
+        for l in tuples
+    ]
+
 # vim: et sw=4 ts=4

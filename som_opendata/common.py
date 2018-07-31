@@ -64,19 +64,6 @@ def requestDates(first=None, on=None, since=None, to=None, periodicity=None):
     return [str(date) for date in all_dates]
 
 
-def pickDates(tuples, dates):
-
-    headersPerEliminar = [
-        index for index, value in enumerate(tuples[0])
-        if value.startswith('count_') and value[len('count_'):].replace('_','-') not in dates
-    ]
-
-    return [
-        [element for index, element in enumerate(l) if index not in headersPerEliminar]
-        for l in tuples
-    ]
-
-
 def relative(path):
     return os.path.abspath(os.path.join(os.path.dirname(__file__), path))
 

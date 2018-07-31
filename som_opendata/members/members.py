@@ -9,7 +9,6 @@ from ..common import (
         dateSequenceWeeks,
         dateSequenceYears,
         requestDates,
-        pickDates,
     )    
 from ..data import (
     ExtractData,
@@ -20,6 +19,7 @@ from ..distribution import (
     tuples2objects,
     aggregate,
     locationFilter,
+    pickDates,
     )
 
 

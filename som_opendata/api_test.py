@@ -17,12 +17,11 @@ from common import (
     dateSequenceYears,
     requestDates,
     caseFrequency,
-    pickDates,
     IsoFrequencyConverte,
     IsoAggregateLevelConverter,
     IsoDateConverter,
     )
-from distribution import parse_tsv
+from distribution import parse_tsv, pickDates
 from dateutil.relativedelta import relativedelta as delta
 from werkzeug.routing import ValidationError
 
