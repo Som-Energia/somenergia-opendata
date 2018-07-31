@@ -18,25 +18,19 @@ setup(
 		'run_api.py',
 	],
 	install_requires=[
-		'Flask-Cors',
-		'decorator',
 		'yamlns>=0.3', # earlier are not Py2 compatible
 		'Flask',
 		'psycopg2',
-		'dbutils',
-		'python-dateutil',
-		# TODO: integrate dependencies in requirements.txt
 		'rednose',
 		'nose',
 		'b2btest',
 		'coverage',
 		'consolemsg',
 		'wavefile',
-		'numpy',
 		'lxml',
 		'python-dateutil',
 		'records',
-		'tablib',
+		# somenergia-utils
 	],
 	include_package_data = True,
 	test_suite = 'som_opendata',
