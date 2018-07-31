@@ -16,7 +16,6 @@ import psycopg2
 import dbconfig as config
 from dbutils import csvTable
 from common import yaml_response
-from socis.socis import modul_socis
 
 
 VERSION = 4
