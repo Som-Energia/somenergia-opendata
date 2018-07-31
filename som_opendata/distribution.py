@@ -74,11 +74,14 @@ def aggregate(entries, detail = 'world'):
             entry, ccaa, 'states', 'codi_provincia', 'provincia')
         if detail == 'states': continue
         
-        level_name, codi, name = ('cities', 'codi_ine', 'municipi')
+        levels = [
+            ('cities', 'codi_ine', 'municipi'),
+            ]
 
-        city = aggregate_level(
-            entry, provincia, level_name, codi, name)
-        if detail == level_name: continue
+        for level_name, codi, name in levels:
+            city = aggregate_level(
+                entry, provincia, level_name, codi, name)
+            if detail == level_name: continue
 
     return result
 
