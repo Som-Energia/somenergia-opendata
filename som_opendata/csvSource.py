@@ -31,5 +31,5 @@ class CsvSource():
 
     def set(self, datum, content):
 
-        self.data += '\n' + '\t'.join(content)
+        self.data += '\n' + '\n'.join('\t'.join(row) for row in content)
 
