@@ -59,10 +59,20 @@ class CsvSource_Test(unittest.TestCase):
             ns(members=[headers,
             data_SantJoan])
             )
-        self.assertEqual(source.get('members', ['2018-01-01','2018-02-01'], ns()), [
+        with self.assertRaises(MissingDataError) as ctx:
+            source.get('members', ['2018-01-01','2018-02-01'], ns())
+        self.assertEquals(ctx.exception.data, [
             [u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
             [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000'],
             ])
+        self. assertEquals(ctx.exception.missedDates, None)
+        self. assertEquals(ctx.exception.missedLocations, None)
+
+
+        #self.assertEqual(source.get('members', ['2018-01-01','2018-02-01'], ns()), [
+        #    [u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
+        #    [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000'],
+        #    ])
 
 
     def test__set__oneRow(self):

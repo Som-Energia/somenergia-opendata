@@ -10,6 +10,7 @@ from distribution import (
 from source import Source
 from missingDataError import MissingDataError
 
+staticColumns = 8
 
 class CsvSource(Source):
     
@@ -23,7 +24,7 @@ class CsvSource(Source):
 
         tuples = parse_tsv(self.data[datum])
 
-        if not tuples: raise MissingDataError([], None, None)
+        if not tuples or len(tuples[0])<len(dates)+8: raise MissingDataError(tuples, None, None)
 
         filtered_tuples = locationFilter(tuples, filters)
 
