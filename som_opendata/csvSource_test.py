@@ -35,7 +35,7 @@ class CsvSource_Test(unittest.TestCase):
             headers,
             data_SantJoan,
             )
-        self.assertEqual(source.extract('members', ['2018-01-01']), [
+        self.assertEqual(source.get('members', ['2018-01-01'], ns()), [
             [u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
             [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000'],
             ])

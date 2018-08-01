@@ -4,28 +4,26 @@ from dbutils import csvTable
 from distribution import (
     parse_tsv,
     tuples2objects,
+    locationFilter,
+    pickDates,
     )
 
 
-data = None
 
 class CsvSource():
     
+    data = None
+
     def __init__(self, content):
         self.data = content
 
-    def extract(self, field, dates):
+
+    def get(self, datum, dates, filters):
 
         tuples = parse_tsv(self.data)
 
-        headersPerEliminar = [
-            index for index, value in enumerate(tuples[0])
-            if value.startswith('count_') and value[len('count_'):].replace('_','-') not in dates
-        ]
+        filtered_tuples = locationFilter(tuples, filters)
 
-        return [
-            [element for index, element in enumerate(l) if index not in headersPerEliminar]
-            for l in tuples
-        ]
+        return pickDates(filtered_tuples, dates)
 
 
