@@ -30,7 +30,7 @@ class CsvSource_Test(unittest.TestCase):
         return CsvSource(content)
 
 
-    def test__extract__oneDateExist(self):
+    def test__get__oneDateExist(self):
         source = self.createSource(
             headers,
             data_SantJoan,
@@ -41,7 +41,7 @@ class CsvSource_Test(unittest.TestCase):
             ])
 
 
-    def test__extractObjects__oneDateNoExist(self):
+    def test__get__oneDateNoExist(self):
         source = self.createSource(
             )
         self.assertEqual(source.get('members', ['2018-01-01'], ns()),
