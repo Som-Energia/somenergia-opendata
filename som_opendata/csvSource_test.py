@@ -57,11 +57,16 @@ class CsvSource_Test(unittest.TestCase):
             [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000'],
             ])
 
-    @unittest.skip("Cal veure com es fan els b2b")
-    def test__extractObjects__oneDateExistBackToBack(self):
-        members_table = e.extractObjects('members', ['2015-01-01'], DataFromCSV())
 
-        s = u'\n'.join(
-            [u' '.join([elem for elem in row]) for row in members_table]
-        ).encode('utf-8')
-        self.assertB2BEqual(s)
+    def test__set__oneRow(self):
+        source = self.createSource(
+            headers,
+            data_Perignan,
+            )
+        source.set('members',
+            [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000']
+        )
+        self.assertEqual(source.data,
+            u'''codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01\n''' +
+            u'''FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10\n''' +
+            u'''ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000''')

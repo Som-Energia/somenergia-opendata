@@ -29,3 +29,7 @@ class CsvSource():
         return pickDates(filtered_tuples, dates)
 
 
+    def set(self, datum, content):
+
+        self.data += '\n' + '\t'.join(content)
+
