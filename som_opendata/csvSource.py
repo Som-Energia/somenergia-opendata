@@ -20,7 +20,7 @@ class CsvSource():
 
     def get(self, datum, dates, filters):
 
-        tuples = parse_tsv(self.data)
+        tuples = parse_tsv(self.data[datum])
 
         filtered_tuples = locationFilter(tuples, filters)
 
@@ -31,5 +31,4 @@ class CsvSource():
 
     def set(self, datum, content):
 
-        self.data += '\n' + '\n'.join('\t'.join(row) for row in content)
-
+        self.data[datum] += '\n' + '\n'.join('\t'.join(row) for row in content)

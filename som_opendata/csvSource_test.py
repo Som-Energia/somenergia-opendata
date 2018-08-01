@@ -25,15 +25,19 @@ class CsvSource_Test(unittest.TestCase):
     def setUp(self):
         self.maxDiff=None
 
-    def createSource(self, *lines):
-        content = '\n'.join(lines)
+    def createSource(self, datums):
+
+        content = ns()
+        for datum, lines in datums.iteritems():
+            content[datum] = '\n'.join(lines)
+
         return CsvSource(content)
 
 
     def test__get__oneDateRequestExist(self):
         source = self.createSource(
-            headers,
-            data_SantJoan,
+            ns(members=[headers,
+            data_SantJoan])
             )
         self.assertEqual(source.get('members', ['2018-01-01'], ns()), [
             [u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
@@ -42,6 +46,7 @@ class CsvSource_Test(unittest.TestCase):
 
     def test__get__oneDateRequestNoExist(self):
         source = self.createSource(
+            ns(members=[])
             )
         self.assertEqual(source.get('members', ['2018-01-01'], ns()),
             []
@@ -49,8 +54,8 @@ class CsvSource_Test(unittest.TestCase):
 
     def test__get__twoDatesRequestOneExist(self):
         source = self.createSource(
-            headers,
-            data_SantJoan,
+            ns(members=[headers,
+            data_SantJoan])
             )
         self.assertEqual(source.get('members', ['2018-01-01','2018-02-01'], ns()), [
             [u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
@@ -60,29 +65,29 @@ class CsvSource_Test(unittest.TestCase):
 
     def test__set__oneRow(self):
         source = self.createSource(
-            headers,
-            data_Perignan,
+            ns(members=[headers,
+            data_Perignan])
             )
         source.set('members',
             [[u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000']
             ]
         )
-        self.assertEqual(source.data,
+        self.assertEqual(source.data['members'],
             u'''codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01\n''' +
             u'''FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10\n''' +
             u'''ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000''')
 
     def test__set__twoRow(self):
         source = self.createSource(
-            headers,
-            data_Perignan,
+            ns(members=[headers,
+            data_Perignan])
             )
         source.set('members',
             [[u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000'],
              [u'ES', u'España', u'09', u'Catalunya', u'17', u'Girona', u'17007', u'Amer', u'2000']
             ]
         )
-        self.assertEqual(source.data,
+        self.assertEqual(source.data['members'],
             u'''codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01\n''' +
             u'''FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10\n''' +
             u'''ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000\n''' +
