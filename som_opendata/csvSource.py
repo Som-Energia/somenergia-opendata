@@ -8,6 +8,7 @@ from distribution import (
     pickDates,
     )
 from source import Source
+from missingDataError import MissingDataError
 
 
 class CsvSource(Source):
@@ -22,12 +23,17 @@ class CsvSource(Source):
 
         tuples = parse_tsv(self.data[datum])
 
+        if not tuples: raise MissingDataError([], None, None)
+
         filtered_tuples = locationFilter(tuples, filters)
 
-        if not filtered_tuples: return []
+        if not filtered_tuples: raise MissingDataError(filtered_tuples, None, None)
 
-        return pickDates(filtered_tuples, dates)
+        result = pickDates(filtered_tuples, dates)
 
+        if not result: raise MissingDataError(result, None, None)
+
+        return result
 
     def set(self, datum, content):
 

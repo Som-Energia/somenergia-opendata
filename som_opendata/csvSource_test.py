@@ -8,7 +8,7 @@ from .data import (
     )
 from csvSource import CsvSource
 import b2btest
-
+from missingDataError import MissingDataError
 
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -48,9 +48,11 @@ class CsvSource_Test(unittest.TestCase):
         source = self.createSource(
             ns(members=[])
             )
-        self.assertEqual(source.get('members', ['2018-01-01'], ns()),
-            []
-        )
+        with self.assertRaises(MissingDataError) as ctx:
+            source.get('members', ['2018-01-01'], ns())
+        self.assertEquals(ctx.exception.data, [])
+        self. assertEquals(ctx.exception.missedDates, None)
+        self. assertEquals(ctx.exception.missedLocations, None)
 
     def test__get__twoDatesRequestOneExist(self):
         source = self.createSource(
