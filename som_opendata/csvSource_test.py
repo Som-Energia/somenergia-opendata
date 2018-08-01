@@ -41,11 +41,10 @@ class CsvSource_Test(unittest.TestCase):
             ])
 
 
-
-    @unittest.skip("Not implemented yet")
     def test__extractObjects__oneDateNoExist(self):
-        testing_module.setupData(data)
-        self.assertEqual(testing_module.extractObjects('members', ['2018-07-01']),
+        source = self.createSource(
+            )
+        self.assertEqual(source.get('members', ['2018-01-01'], ns()),
             []
         )
 

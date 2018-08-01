@@ -24,6 +24,8 @@ class CsvSource():
 
         filtered_tuples = locationFilter(tuples, filters)
 
+        if not filtered_tuples: return []
+
         return pickDates(filtered_tuples, dates)
 
 
