@@ -33,6 +33,13 @@ class CsvSource_Test(unittest.TestCase):
 
         return CsvSource(content)
 
+    def raisesAssertion(self, source, request, expected, missedDates, missedLocations):
+        with self.assertRaises(MissingDataError) as ctx:
+            source.get(*request)
+        self.assertEquals(ctx.exception.data, expected)
+        self. assertEquals(ctx.exception.missedDates, missedDates)
+        self. assertEquals(ctx.exception.missedLocations, missedLocations)
+
 
     def test__get__oneDateRequestExist(self):
         source = self.createSource(
@@ -48,32 +55,29 @@ class CsvSource_Test(unittest.TestCase):
         source = self.createSource(
             ns(members=[])
             )
-        with self.assertRaises(MissingDataError) as ctx:
-            source.get('members', ['2018-01-01'], ns())
-        self.assertEquals(ctx.exception.data, [])
-        self. assertEquals(ctx.exception.missedDates, None)
-        self. assertEquals(ctx.exception.missedLocations, None)
+        self.raisesAssertion(
+            source=source,
+            request=['members', ['2018-01-01'], ns()],
+            expected=[],
+            missedDates=None,
+            missedLocations=None
+            )
 
     def test__get__twoDatesRequestOneExist(self):
         source = self.createSource(
             ns(members=[headers,
             data_SantJoan])
             )
-        with self.assertRaises(MissingDataError) as ctx:
-            source.get('members', ['2018-01-01','2018-02-01'], ns())
-        self.assertEquals(ctx.exception.data, [
-            [u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
-            [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000'],
-            ])
-        self. assertEquals(ctx.exception.missedDates, None)
-        self. assertEquals(ctx.exception.missedLocations, None)
-
-
-        #self.assertEqual(source.get('members', ['2018-01-01','2018-02-01'], ns()), [
-        #    [u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
-        #    [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000'],
-        #    ])
-
+        self.raisesAssertion(
+            source=source,
+            request=['members', ['2018-01-01','2018-02-01'], ns()],
+            expected=[
+                 [u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
+                 [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000'],
+                ],
+            missedDates=None,
+            missedLocations=None
+            )
 
     def test__set__oneRow(self):
         source = self.createSource(
