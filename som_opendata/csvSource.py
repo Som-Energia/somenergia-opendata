@@ -7,10 +7,10 @@ from distribution import (
     locationFilter,
     pickDates,
     )
+from source import Source
 
 
-
-class CsvSource():
+class CsvSource(Source):
     
     data = None
 
