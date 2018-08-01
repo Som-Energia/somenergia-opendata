@@ -5,10 +5,11 @@ from source import Source
 
 class IntelligentSource(Source):
     
-    data = None
+    sources = []
 
-    def __init__(self, content):
-        self.data = content
+    def __init__(self, sourceA, sourceB):
+        self.sources.append(sourceA)
+        self.sources.append(sourceB)
 
 
     def get(self, datum, dates, filters):
