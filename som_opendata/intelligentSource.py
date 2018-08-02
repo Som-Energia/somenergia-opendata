@@ -14,7 +14,7 @@ class IntelligentSource(Source):
 
     def get(self, datum, dates, filters):
 
-        pass
+        return self.sources[0].get(datum, dates, filters)
 
 
     def set(self, datum, content):

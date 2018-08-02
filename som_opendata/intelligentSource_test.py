@@ -20,21 +20,41 @@ data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
 class IntelligentSource_test(unittest.TestCase):
 
+    from testutils import assertNsEqual
+
     def setUp(self):
         self.maxDiff=None
 
-    def createSource(self, datumA, datumB):
+    def createSource(self, firstDatum, secondDatum):
 
         content = ns()
-        for datum, lines in datumA.iteritems():
+        for datum, lines in firstDatum.iteritems():
             content[datum] = '\n'.join(lines)
-        sourceA = CsvSource(content)
+        firstSource = CsvSource(content)
         content = ns()
-        for datum, lines in datumB.iteritems():
+        for datum, lines in secondDatum.iteritems():
             content[datum] = '\n'.join(lines)
-        sourceB = CsvSource(content)
+        secondSource = CsvSource(content)
 
-        return IntelligentSource(sourceA, sourceB)
+        return IntelligentSource(firstSource, secondSource)
 
 
+    def test__get__firstSourceResponse(self):
+        source = self.createSource(
+            ns(members=[headers, data_SantJoan]),
+            ns(members=[headers, data_Perignan]),
+        )
+        result = source.get('members', ['2018-01-01'], ns())
+        self.assertNsEqual(ns(data=result), """\
+            data:
+            - codi_pais: ES
+              pais: 'España'
+              codi_ccaa: '09'
+              comunitat_autonoma: Catalunya
+              codi_provincia: '08'
+              provincia: Barcelona
+              codi_ine: '08217'
+              municipi: Sant Joan Despí
+              count_2018_01_01: '1000'
+        """)
 
