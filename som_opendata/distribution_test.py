@@ -640,4 +640,23 @@ class Distribution_Test(unittest.TestCase):
             ['2018-02-01']
         )
 
+    def test__missedDates__moreDateExist(self):
+        tuples = [[
+            'codi_pais',
+            'pais',
+            'codi_ccaa',
+            'comunitat_autonoma',
+            'codi_provincia',
+            'provincia',
+            'codi_ine',
+            'municipi',
+            'count_2018_01_01',
+            'count_2018_02_01',
+        ]]
+        dates = ['2018-01-01',]
+        self.assertEquals(missedDates(tuples, dates),
+            []
+        )
+
+
 # vim: et sw=4 ts=4
