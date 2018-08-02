@@ -21,19 +21,22 @@ class CsvSource(Source):
         self.data = content
 
 
+    # TODO: Refactor --> "1 sol raise"
     def get(self, datum, dates, filters):
 
         tuples = parse_tsv(self.data[datum])
-        if not tuples or len(tuples[0])<len(dates)+8:
-            raise MissingDataError(tuples, missedDates(tuples, dates), None)
-        
+
+        if not tuples:
+            raise MissingDataError([], dates, None)
+
         filtered_dates = pickDates(tuples, dates)
-        if not filtered_dates: 
-            raise MissingDataError(filtered_dates, None, None)
-        
+
+        if not filtered_dates or len(filtered_dates[0]) < staticColumns + len(dates):
+            raise MissingDataError(locationFilter(tuples2objects(filtered_dates), filters), missedDates(tuples, dates), None)
+
         objectList = tuples2objects(filtered_dates)
         filtered_tuples = locationFilter(objectList, filters)
-        if not filtered_tuples: 
+        if not filtered_tuples:
             raise MissingDataError(filtered_tuples, None, None)
 
         return filtered_tuples

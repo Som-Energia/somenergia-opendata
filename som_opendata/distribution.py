@@ -26,6 +26,7 @@ def tuples2objects(tuples):
         into a list of entries (ns objects) having the colunm names as
         attribute names.
     """
+    if not tuples: return []
     headers = tuples[0]
     data = tuples[1:]
     return [
@@ -53,6 +54,7 @@ def aggregate(entries, detail = 'world'):
         Aggregates a list of entries by geographical scopes:
         Country, CCAA, state, city.
     """
+    if not entries: return []
 
     entry = entries[0]
     dates = state_dates(entry)
@@ -113,6 +115,11 @@ def pickDates(tuples, dates):
         index for index, value in enumerate(tuples[0])
         if value.startswith('count_') and value[len('count_'):].replace('_','-') not in dates
     ]
+
+    #if len(tuples[0]) - len(headersPerEliminar) < len(dates) + 8: 
+    #    return []
+    if len(tuples[0]) - len(headersPerEliminar) == 8:
+        return []
 
     return [
         [element for index, element in enumerate(l) if index not in headersPerEliminar]
