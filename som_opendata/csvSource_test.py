@@ -90,7 +90,6 @@ class CsvSource_Test(unittest.TestCase):
             missedLocations=None
             )
 
-    @unittest.skip('TODO')
     def test__get__filterNoExist(self):
         source = self.createSource(
             ns(members=[headers,
