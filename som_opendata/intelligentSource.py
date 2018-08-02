@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from yamlns import namespace as ns
 from source import Source
+from missingDataError import MissingDataError
 
 
 class IntelligentSource(Source):
@@ -14,8 +15,13 @@ class IntelligentSource(Source):
 
     def get(self, datum, dates, filters):
 
-        return self.sources[0].get(datum, dates, filters)
-
+        for source in self.sources:
+            try:
+                result = source.get(datum, dates, filters)
+            except MissingDataError: pass
+            else: break
+        
+        return result
 
     def set(self, datum, content):
 
