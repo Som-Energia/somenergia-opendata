@@ -121,7 +121,8 @@ def pickDates(tuples, dates):
 
 
 def missedDates(tuples, dates):
-     return [
+    if not tuples or len(tuples[0]) <= 8: return dates
+    return [
         date 
         for date in dates 
         if not 'count_' + date.replace('-','_') in tuples[0][8:]
