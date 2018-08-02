@@ -119,4 +119,13 @@ def pickDates(tuples, dates):
         for l in tuples
     ]
 
+
+def missedDates(tuples, dates):
+     return [
+        date 
+        for date in dates 
+        if not 'count_' + date.replace('-','_') in tuples[0][8:]
+    ]
+
+
 # vim: et sw=4 ts=4
