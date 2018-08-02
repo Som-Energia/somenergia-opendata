@@ -22,6 +22,8 @@ data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
 class CsvSource_Test(unittest.TestCase):
 
+    from testutils import assertNsEqual 
+
     def setUp(self):
         self.maxDiff=None
 
@@ -46,10 +48,19 @@ class CsvSource_Test(unittest.TestCase):
             ns(members=[headers,
             data_SantJoan])
             )
-        self.assertEqual(source.get('members', ['2018-01-01'], ns()), [
-            [u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
-            [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000'],
-            ])
+        self.assertNsEqual(
+            ns(data=source.get('members', ['2018-01-01'], ns())), """\
+            data:
+            - codi_pais: ES
+              pais: 'España'
+              codi_ccaa: '09'
+              comunitat_autonoma: Catalunya
+              codi_provincia: '08'
+              provincia: Barcelona
+              codi_ine: '08217'
+              municipi: Sant Joan Despí
+              count_2018_01_01: '1000'
+        """)
 
     def test__get__oneDateRequestNoExist(self):
         source = self.createSource(
@@ -59,7 +70,7 @@ class CsvSource_Test(unittest.TestCase):
             source=source,
             request=['members', ['2018-01-01'], ns()],
             expected=[],
-            missedDates=None,
+            missedDates=['2018-01-01'],
             missedLocations=None
             )
 
@@ -75,6 +86,20 @@ class CsvSource_Test(unittest.TestCase):
                  [u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
                  [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000'],
                 ],
+            missedDates=['2018-02-01'],
+            missedLocations=None
+            )
+
+    @unittest.skip('TODO')
+    def test__get__filterNoExist(self):
+        source = self.createSource(
+            ns(members=[headers,
+            data_SantJoan])
+            )
+        self.raisesAssertion(
+            source=source,
+            request=['members', ['2018-01-01'], ns(codi_ccaa=['05'])],
+            expected=[],
             missedDates=None,
             missedLocations=None
             )
