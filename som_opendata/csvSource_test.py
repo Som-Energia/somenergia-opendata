@@ -103,6 +103,25 @@ class CsvSource_Test(unittest.TestCase):
             missedLocations=None
             )
 
+    def test__get__filterExist(self):
+        source = self.createSource(
+            ns(members=[headers,
+            data_SantJoan])
+            )
+        self.assertNsEqual(
+            ns(data=source.get('members', ['2018-01-01'], ns(codi_pais=['ES']))), """\
+            data:
+            - codi_pais: ES
+              pais: 'España'
+              codi_ccaa: '09'
+              comunitat_autonoma: Catalunya
+              codi_provincia: '08'
+              provincia: Barcelona
+              codi_ine: '08217'
+              municipi: Sant Joan Despí
+              count_2018_01_01: '1000'
+        """)
+
     def test__set__oneRow(self):
         source = self.createSource(
             ns(members=[headers,
