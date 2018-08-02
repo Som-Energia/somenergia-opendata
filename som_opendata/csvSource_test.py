@@ -38,7 +38,8 @@ class CsvSource_Test(unittest.TestCase):
     def raisesAssertion(self, source, request, expected, missedDates, missedLocations):
         with self.assertRaises(MissingDataError) as ctx:
             source.get(*request)
-        self.assertEquals(ctx.exception.data, expected)
+
+        self.assertNsEqual(ns(data=ctx.exception.data), expected)
         self. assertEquals(ctx.exception.missedDates, missedDates)
         self. assertEquals(ctx.exception.missedLocations, missedLocations)
 
@@ -64,13 +65,14 @@ class CsvSource_Test(unittest.TestCase):
 
     def test__get__oneDateRequestNoExist(self):
         source = self.createSource(
-            ns(members=[])
+            ns(members=[headers,
+            data_SantJoan])
             )
         self.raisesAssertion(
             source=source,
-            request=['members', ['2018-01-01'], ns()],
-            expected=[],
-            missedDates=['2018-01-01'],
+            request=['members', ['2018-02-01'], ns()],
+            expected=ns(data=[]),
+            missedDates=['2018-02-01'],
             missedLocations=None
             )
 
@@ -82,10 +84,18 @@ class CsvSource_Test(unittest.TestCase):
         self.raisesAssertion(
             source=source,
             request=['members', ['2018-01-01','2018-02-01'], ns()],
-            expected=[
-                 [u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
-                 [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000'],
-                ],
+            expected='''
+                data:
+                - codi_pais: ES
+                  pais: 'España'
+                  codi_ccaa: '09'
+                  comunitat_autonoma: Catalunya
+                  codi_provincia: '08'
+                  provincia: Barcelona
+                  codi_ine: '08217'
+                  municipi: Sant Joan Despí
+                  count_2018_01_01: '1000'
+                  ''',
             missedDates=['2018-02-01'],
             missedLocations=None
             )
@@ -98,7 +108,7 @@ class CsvSource_Test(unittest.TestCase):
         self.raisesAssertion(
             source=source,
             request=['members', ['2018-01-01'], ns(codi_ccaa=['05'])],
-            expected=[],
+            expected=ns(data=[]),
             missedDates=None,
             missedLocations=None
             )
