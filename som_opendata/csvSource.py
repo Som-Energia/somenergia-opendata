@@ -7,6 +7,7 @@ from distribution import (
     locationFilter,
     pickDates,
     missedDates,
+    findTuple,
     )
 from source import Source
 from missingDataError import MissingDataError

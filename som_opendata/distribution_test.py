@@ -7,6 +7,7 @@ from distribution import (
     state_dates,
     locationFilter,
     missedDates,
+    findTuple,
     )
 from yamlns import namespace as ns
 from yamlns.dateutils import Date as isoDate
@@ -658,5 +659,74 @@ class Distribution_Test(unittest.TestCase):
             []
         )
 
+    # findTuples
+
+    def test__findTuple__tuplesFound(self):
+        namespace = ns(
+            codi_pais='ES',
+            pais='España',
+            codi_ccaa='09',
+            comunitatutonoma='Catalunya',
+            codi_provcia='08',
+            provincia='Barcelona',
+            codi_ine='08217',
+            municipi='Sant Joan Despí',
+            count_2018_01_01='1000',
+        )
+        oldHeaders = [
+            'codi_pais',
+            'pais',
+            'codi_ccaa',
+            'comunitat_autonoma',
+            'codi_provincia',
+            'provincia',
+            'codi_ine',
+            'municipi',
+            'count_2018_01_01'
+        ]
+        tuples = [[
+            'codi_pais',
+            'pais',
+            'codi_ccaa',
+            'comunitat_autonoma',
+            'codi_provincia',
+            'provincia',
+            'codi_ine',
+            'municipi',
+            'count_2018_01_01',
+            ],
+            ['ES',
+            'España',
+            '09',
+            'Catalunya',
+            '08',
+            'Barcelona',
+            '08217',
+            'Sant Joan Despí',
+            '1000',
+            ],
+            ['ES',
+            'España',
+            '09',
+            'Catalunya',
+            '08',
+            'Barcelona',
+            '17007',
+            'Amer',
+            '2000',
+            ],
+        ]
+        result = findTuple(namespace, oldHeaders, tuples)
+        self.assertEquals(result,
+            ['ES',
+            'España',
+            '09',
+            'Catalunya',
+            '08',
+            'Barcelona',
+            '08217',
+            'Sant Joan Despí',
+            '1000',
+            ])
 
 # vim: et sw=4 ts=4
