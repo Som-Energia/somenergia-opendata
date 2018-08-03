@@ -132,20 +132,30 @@ class CsvSource_Test(unittest.TestCase):
               count_2018_01_01: '1000'
         """)
 
+    @unittest.skip('Teoricament no té sentit / NOT YET...')
     def test__set__oneRow(self):
         source = self.createSource(
             ns(members=[headers,
             data_Perignan])
             )
         source.set('members',
-            [[u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000']
-            ]
+            #[[u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000']]
+            [ns(codi_pais='ES',
+                pais='España',
+                codi_ccaa='09',
+                comunitat_autonoma='Catalunya',
+                codi_provincia='08',
+                provincia='Barcelona',
+                codi_ine='08217',
+                municipi='Sant Joan Despí',
+                count_2018_01_01='1000')]
         )
         self.assertEqual(source.data['members'],
             u'''codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01\n''' +
             u'''FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10\n''' +
             u'''ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000''')
 
+    @unittest.skip('Teoricament no té sentit / NOT YET...')
     def test__set__twoRow(self):
         source = self.createSource(
             ns(members=[headers,
@@ -164,17 +174,24 @@ class CsvSource_Test(unittest.TestCase):
 
 
 
-    @unittest.skip('TODO')
     def test__set__oneDate(self):
         source = self.createSource(
-            headers,
-            data_SantJoan,
+            ns(members=[headers,
+            data_SantJoan])
             )
         source.set('members',
-            [u'codi_pais', u'pais', u'codi_ccaa', u'comunitat_autonoma', u'codi_provincia', u'provincia', u'codi_ine', u'municipi', u'count_2018_01_01'],
-            [u'ES', u'España', u'09', u'Catalunya', u'08', u'Barcelona', u'08217', u'Sant Joan Despí', u'1000']
+            [ns(codi_pais=u'ES',
+                pais=u'España',
+                codi_ccaa=u'09',
+                comunitat_autonoma=u'Catalunya',
+                codi_provincia=u'08',
+                provincia=u'Barcelona',
+                codi_ine=u'08217',
+                municipi=u'Sant Joan Despí',
+                count_2018_01_01=u'1000',
+                count_2018_02_01=u'201')]
         )
-        self.assertEqual(source.data,
-            u'''codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01\n''' +
-            u'''FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10\n''' +
-            u'''ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000''')
+        self.assertEqual(source.data['members'],
+            u'''codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01\tcount_2018_02_01\n''' +
+            u'''ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000\t201'''
+        )

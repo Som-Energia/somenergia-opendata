@@ -671,7 +671,7 @@ class Distribution_Test(unittest.TestCase):
             provincia='Barcelona',
             codi_ine='08217',
             municipi='Sant Joan Despí',
-            count_2018_01_01='1000',
+            count_2018_02_01='1000',
         )
         oldHeaders = [
             'codi_pais',
@@ -703,7 +703,7 @@ class Distribution_Test(unittest.TestCase):
             'Barcelona',
             '08217',
             'Sant Joan Despí',
-            '1000',
+            '2',
             ],
             ['ES',
             'España',
@@ -726,7 +726,7 @@ class Distribution_Test(unittest.TestCase):
             'Barcelona',
             '08217',
             'Sant Joan Despí',
-            '1000',
+            '2',
             ])
 
 # vim: et sw=4 ts=4

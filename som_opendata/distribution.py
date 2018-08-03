@@ -137,8 +137,13 @@ def missedDates(tuples, dates):
 
 
 def findTuple(namespace, hOld, tuples):
+    values = [
+        value
+        for key, value in namespace.iteritems()
+        if not key.startswith('count_')
+    ]
     for t in tuples:
-        if all(t_elem in namespace.values() for t_elem in t):
+        if all(value in t for value in values):
             return t
 
 # vim: et sw=4 ts=4
