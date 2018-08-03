@@ -82,3 +82,75 @@ class IntelligentSource_test(unittest.TestCase):
               municipi: Sant Joan Despí
               count_2018_02_01: '201'
         """)
+
+    def test__get__combineSourceResponse(self):
+        source = self.createSource(
+            ns(members=[
+                headers,
+                data_SantJoan
+            ]),
+            ns(members=[
+                headers+'\tcount_2018_02_01',
+                data_SantJoan+'\t201'
+            ]),
+        )
+        result = source.get('members', ['2018-01-01', '2018-02-01'], ns())
+        self.assertNsEqual(ns(data=result), """\
+            data:
+            - codi_pais: ES
+              pais: 'España'
+              codi_ccaa: '09'
+              comunitat_autonoma: Catalunya
+              codi_provincia: '08'
+              provincia: Barcelona
+              codi_ine: '08217'
+              municipi: Sant Joan Despí
+              count_2018_01_01: '1000'
+              count_2018_02_01: '201'
+        """)
+
+
+
+    @unittest.skip('TODO')
+    def test__get__failedAllSources(self):
+        source = self.createSource(
+            ns(members=[
+                headers,
+                data_SantJoan
+            ]),
+            ns(members=[
+                headers,
+                data_SantJoan
+            ]),
+        )
+        result = source.get('members', ['2018-02-01'], ns())
+        self.assertNsEqual(ns(data=result), """\
+            data:S
+            - codi_pais: ES
+              pais: 'España'
+              codi_ccaa: '09'
+              comunitat_autonoma: Catalunya
+              codi_provincia: '08'
+              provincia: Barcelona
+              codi_ine: '08217'
+              municipi: Sant Joan Despí
+              count_2018_02_01: '201'
+        """)
+
+
+    @unittest.skip('TODO!')
+    def test__set__updateFristSource(self):
+        source = self.createSource(
+            ns(members=[
+                headers,
+                data_SantJoan
+            ]),
+            ns(members=[
+                headers+'\tcount_2018_02_01',
+                data_SantJoan+'\t201'
+            ]),
+        )
+        source.get('members', ['2018-02-01'], ns())
+        self.assertEqual(source.sources[0].data['members'],
+            u'''codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_02_01\n''' +
+            u'''ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t201''')
