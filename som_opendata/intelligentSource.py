@@ -16,6 +16,7 @@ class IntelligentSource(Source):
     def get(self, datum, dates, filters):
 
         index = 0
+        result = []
 
         for index, source in enumerate(self.sources):
 
@@ -26,6 +27,7 @@ class IntelligentSource(Source):
         
         if result:
             for i in range(0, index): self.sources[i].set(datum, result)
+        else: raise MissingDataError(result, dates, None)
 
         return result
 

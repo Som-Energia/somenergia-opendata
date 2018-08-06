@@ -6,6 +6,7 @@ from yamlns.dateutils import Date as isoDate
 
 from csvSource import CsvSource
 from intelligentSource import IntelligentSource
+from missingDataError import MissingDataError
 
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -108,8 +109,6 @@ class IntelligentSource_test(unittest.TestCase):
         """)
 
 
-
-    @unittest.skip('TODO')
     def test__get__failedAllSources(self):
         source = self.createSource(
             ns(members=[
@@ -118,23 +117,14 @@ class IntelligentSource_test(unittest.TestCase):
             ]),
             ns(members=[
                 headers,
-                data_SantJoan
+                data_SantJoan,
+                data_Amer
             ]),
         )
-        result = source.get('members', ['2018-02-01'], ns())
-        self.assertNsEqual(ns(data=result), """\
-            data:S
-            - codi_pais: ES
-              pais: 'España'
-              codi_ccaa: '09'
-              comunitat_autonoma: Catalunya
-              codi_provincia: '08'
-              provincia: Barcelona
-              codi_ine: '08217'
-              municipi: Sant Joan Despí
-              count_2018_02_01: '201'
-        """)
-
+        with self.assertRaises(MissingDataError) as ctx:
+            source.get('members', ['2018-10-01'], ns())
+        #TODO: Complete test
+        
 
     def test__set__updateFristSource(self):
         source = self.createSource(
