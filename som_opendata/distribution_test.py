@@ -423,19 +423,19 @@ class Distribution_Test(unittest.TestCase):
             data_Perignan,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = locationFilter(objectList,ns(codi_pais=['FR']))
-        test_r = [ns(codi_pais='FR',
-                pais='France',
-                codi_ccaa='76',
-                comunitat_autonoma='Occità',
-                codi_provincia='66',
-                provincia='Pyrénées-Orientales',
-                codi_ine='66136',
-                municipi='Perpignan',
-                count_2018_01_01='10')
-        ]
-        self.assertEqual(len(r), len(test_r))
-        [self.assertNsEqual(r[i], test_r[i]) for i in range(len(r))]
+        result = locationFilter(objectList,ns(codi_pais=['FR']))
+        self.assertNsEqual(ns(data=result), """\
+            data:
+            - codi_pais: FR
+              pais: France
+              codi_ccaa: '76'
+              comunitat_autonoma: Occità
+              codi_provincia: '66'
+              provincia: Pyrénées-Orientales
+              codi_ine: '66136'
+              municipi: Perpignan
+              count_2018_01_01: '10'
+        """)
 
 
     def test__filter__1state(self):
@@ -445,19 +445,19 @@ class Distribution_Test(unittest.TestCase):
             data_Perignan,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = locationFilter(objectList,ns(codi_ccaa=['01']))
-        test_r = [ns(codi_pais='ES',
-                pais='España',
-                codi_ccaa='01',
-                comunitat_autonoma='Andalucía',
-                codi_provincia=u'04',
-                provincia='Almería',
-                codi_ine='04003',
-                municipi='Adra',
-                count_2018_01_01='2')
-        ]
-        self.assertEqual(len(r), len(test_r))
-        [self.assertNsEqual(r[i], test_r[i]) for i in range(len(r))]
+        result = locationFilter(objectList,ns(codi_ccaa=['01']))
+        self.assertNsEqual(ns(data=result), """\
+            data:
+            - codi_pais: ES
+              pais: 'España'
+              codi_ccaa: '01'
+              comunitat_autonoma: Andalucía
+              codi_provincia: '04'
+              provincia: Almería
+              codi_ine: '04003'
+              municipi: Adra
+              count_2018_01_01: '2'
+        """)
 
 
     def test__filter__2countries(self):
@@ -467,29 +467,29 @@ class Distribution_Test(unittest.TestCase):
             data_Perignan,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = locationFilter(objectList,ns(codi_pais=['ES','FR']))
-        test_r = [ns(codi_pais='ES',
-                    pais='España',
-                    codi_ccaa='01',
-                    comunitat_autonoma='Andalucía',
-                    codi_provincia=u'04',
-                    provincia='Almería',
-                    codi_ine='04003',
-                    municipi='Adra',
-                    count_2018_01_01='2'),
-                ns(codi_pais='FR',
-                    pais='France',
-                    codi_ccaa='76',
-                    comunitat_autonoma='Occità',
-                    codi_provincia='66',
-                    provincia='Pyrénées-Orientales',
-                    codi_ine='66136',
-                    municipi='Perpignan',
-                    count_2018_01_01='10')
-        ]
-        self.assertEqual(len(r), len(test_r))
-        [self.assertNsEqual(r[i], test_r[i]) for i in range(len(r))]
+        result = locationFilter(objectList,ns(codi_pais=['ES','FR']))
+        self.assertNsEqual(ns(data=result), """\
+            data:
+            - codi_pais: ES
+              pais: 'España'
+              codi_ccaa: '01'
+              comunitat_autonoma: Andalucía
+              codi_provincia: '04'
+              provincia: Almería
+              codi_ine: '04003'
+              municipi: Adra
+              count_2018_01_01: '2'
 
+            - codi_pais: FR
+              pais: France
+              codi_ccaa: '76'
+              comunitat_autonoma: Occità
+              codi_provincia: '66'
+              provincia: Pyrénées-Orientales
+              codi_ine: '66136'
+              municipi: Perpignan
+              count_2018_01_01: '10'
+        """)
 
     def test__filter__differentLevels(self):
         data = u'\n'.join([
@@ -666,8 +666,8 @@ class Distribution_Test(unittest.TestCase):
             codi_pais='ES',
             pais='España',
             codi_ccaa='09',
-            comunitatutonoma='Catalunya',
-            codi_provcia='08',
+            comunitat_autonoma='Catalunya',
+            codi_provincia='08',
             provincia='Barcelona',
             codi_ine='08217',
             municipi='Sant Joan Despí',
