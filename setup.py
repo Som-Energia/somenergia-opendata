@@ -30,6 +30,7 @@ setup(
 		'lxml',
 		'python-dateutil',
 		'records',
+		'tablib',
 		# somenergia-utils
 	],
 	include_package_data = True,
