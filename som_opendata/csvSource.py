@@ -11,6 +11,7 @@ from distribution import (
     )
 from source import Source
 from missingDataError import MissingDataError
+import tablib
 
 staticColumns = 8
 
@@ -45,33 +46,26 @@ class CsvSource(Source):
 
     def set(self, datum, content):
 
-        # ??????????
-        # self.data[datum] += '\n' + '\n'.join('\t'.join(row) for row in content)
-
-        oldHeaders = self.data[datum].split('\n')[0].split('\t') # amb l'anterior
         tuples = parse_tsv(self.data[datum])
-        newHeaders = content[0].keys()
-        newDatum = []
-        newDatum.append(oldHeaders + [  header 
-                                        for header in newHeaders
-                                        if header not in oldHeaders
-                                     ]
-        )
+        namespaces = tuples2objects(tuples)
+        _data = tablib.Dataset()
+        _data.dict = namespaces
 
-        for _ns in content:
-            t = findTuple(_ns, oldHeaders, tuples)
-            t = t + [None] * (len(newHeaders) - len(oldHeaders))
-            for index, elem_header in enumerate(newHeaders):
-                t[index] = _ns[elem_header]
-            newDatum.append(t)
+        _content = tablib.Dataset()
+        _content.dict = content
+        sortedData = _data.sort('codi_ine')
+        sortedContent = _content.sort('codi_ine')
+        newHeaders = [header
+                    for header in sortedContent.headers
+                    if header not in tuples[0]
+        ]
 
-        self.data[datum] = '\n'.join('\t'.join(elem for elem in _tuple) for _tuple in newDatum)
+        for newHeader in newHeaders:
+            sortedData.append_col(
+                sortedContent[newHeader],
+                header=newHeader
+            )
+        _datum = sortedData.tsv.replace('\r\n', '\n')
 
-        #if len(content[0]) > len(self.data[datum].split('\n')[0].split('\t')):
-#        #    # Afegir columnes
-#        #    pass
-#
-#        #if len(content) > len(self.data[datum].split('\n')) - 1:
-#        #    # Afegir rows
-#
-        #    self.data[datum] += '\n' + '\n'.join('\t'.join(row) for row in content)
+
+        self.data[datum] = _datum.decode('utf8')[:-1]
