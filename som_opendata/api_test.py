@@ -1,29 +1,29 @@
 # -*- encoding: utf-8 -*-
-
 import unittest
-import b2btest
-from yamlns import namespace as ns
+from dateutil.relativedelta import relativedelta as delta
+from dbutils import csvTable
+from werkzeug.routing import ValidationError
 from yamlns.dateutils import Date
+from yamlns import namespace as ns
+import b2btest
 from api import (
-    dateSequenceMonths,
     contractsSparse,
     contractsSeries,
+    dateSequenceMonths,
     membersSparse,
     )
 from app import app
-from dbutils import csvTable
 from common import (
-    dateSequenceWeeks,
-    dateSequenceYears,
-    requestDates,
     caseFrequency,
-    IsoFrequencyConverte,
+    dateSequenceYears,
+    dateSequenceWeeks,
     IsoAggregateLevelConverter,
     IsoDateConverter,
+    IsoFrequencyConverte,
+    requestDates,
     )
 from distribution import parse_tsv, pickDates
-from dateutil.relativedelta import relativedelta as delta
-from werkzeug.routing import ValidationError
+
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"

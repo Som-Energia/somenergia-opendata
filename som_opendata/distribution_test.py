@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
+import io
 import unittest
+from yamlns.dateutils import Date as isoDate
+from yamlns import namespace as ns
+import b2btest
 from distribution import (
     parse_tsv,
     tuples2objects,
@@ -9,10 +13,6 @@ from distribution import (
     missedDates,
     findTuple,
     )
-from yamlns import namespace as ns
-from yamlns.dateutils import Date as isoDate
-import io
-import b2btest
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"

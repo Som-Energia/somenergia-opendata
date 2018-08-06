@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from yamlns import namespace as ns
+import tablib
 from dbutils import csvTable
+from yamlns import namespace as ns
 from distribution import (
     parse_tsv,
     tuples2objects,
@@ -11,7 +12,6 @@ from distribution import (
     )
 from source import Source
 from missingDataError import MissingDataError
-import tablib
 
 staticColumns = 8
 

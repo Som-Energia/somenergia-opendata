@@ -1,20 +1,15 @@
 # coding=utf-8
-
+import dbconfig as config
+import psycopg2
+from dbutils import csvTable
 from flask import (
     Blueprint,
     Flask,
-    make_response,
     Response,
-    json,
+    make_response,
     )
-
-import logging
-from yamlns import namespace as ns
 from functools import wraps
-import os
-import psycopg2
-import dbconfig as config
-from dbutils import csvTable
+from yamlns import namespace as ns
 from common import yaml_response
 
 

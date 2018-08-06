@@ -1,14 +1,13 @@
 # -*- encoding: utf-8 -*-
-
 import os
 from dateutil.relativedelta import relativedelta as delta
-from functools import wraps
-from yamlns import namespace as ns
-
+from datetime import date
 from flask import Response, make_response, current_app
+from functools import wraps
 from werkzeug.routing import BaseConverter, ValidationError
 from yamlns.dateutils import Date
-from datetime import date, datetime, timedelta
+from yamlns import namespace as ns
+
 
 
 def getDates(first, last):

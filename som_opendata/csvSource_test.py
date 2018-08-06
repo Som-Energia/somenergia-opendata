@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-
-import unittest
-from yamlns import namespace as ns
-from yamlns.dateutils import Date as isoDate
-from csvSource import CsvSource
 import b2btest
+import unittest
+from yamlns.dateutils import Date as isoDate
+from yamlns import namespace as ns
+from csvSource import CsvSource
 from missingDataError import MissingDataError
+
 
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"

@@ -1,18 +1,19 @@
+# -*- encoding: utf-8 -*-
+import dbconfig as config
 import logging
-
+import records
 from flask import Flask, current_app
 from api import old_modul
 from members.members import members_modul
-import records
-import dbconfig as config
 from som_opendata.common import (
-    IsoDateConverter,
-    IsoCountryA2Converter,
-    handle_request_not_found,
     handle_bad_request,
-    IsoFrequencyConverte,
+    handle_request_not_found,
     IsoAggregateLevelConverter,
+    IsoCountryA2Converter,
+    IsoDateConverter,
+    IsoFrequencyConverte,
     )
+
 
 VERSION = 4
 sentry = None

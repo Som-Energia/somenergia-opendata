@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-
 import unittest
 from yamlns import namespace as ns
+
 
 # Readable verbose testcase listing
 unittest.TestCase.__str__ = unittest.TestCase.id

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from yamlns import namespace as ns
 from yamlns.dateutils import Date as isoDate
+from yamlns import namespace as ns
 
 aggregation_levels = [
     ('countries', 'country', 'codi_pais', 'pais'),
