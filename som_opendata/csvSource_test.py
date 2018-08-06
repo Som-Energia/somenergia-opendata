@@ -3,9 +3,6 @@
 import unittest
 from yamlns import namespace as ns
 from yamlns.dateutils import Date as isoDate
-from .data import (
-    ExtractData,
-    )
 from csvSource import CsvSource
 import b2btest
 from missingDataError import MissingDataError

@@ -1,3 +1,0 @@
-COUNTRY_CODES = [
-
-]
