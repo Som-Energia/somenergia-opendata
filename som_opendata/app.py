@@ -3,8 +3,8 @@ import dbconfig as config
 import logging
 import records
 from flask import Flask, current_app
-from api import old_modul
-from members.members import members_modul
+from .api import old_modul
+from .members.members import members_modul
 from som_opendata.common import (
     handle_bad_request,
     handle_request_not_found,

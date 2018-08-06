@@ -21,7 +21,7 @@ def dateSequenceMonths(first, last):
     months = interval.months + interval.years * 12 + 1
     return [
         first + delta(months=n)
-        for n in xrange(0, months)
+        for n in range(0, months)
     ]
 
 def dateSequenceWeeks(first, last):
@@ -29,7 +29,7 @@ def dateSequenceWeeks(first, last):
     weeks = (last - first).days / 7 + 1
     return [
         Date(first + delta(weeks=n))
-        for n in xrange(0, weeks)
+        for n in range(0, weeks)
     ]
 
 def dateSequenceYears(first, last):
@@ -37,7 +37,7 @@ def dateSequenceYears(first, last):
     years = (last - first).days / 365 + 1
     return [
         Date(first + delta(years=n))
-        for n in xrange(0, years)
+        for n in range(0, years)
     ]
 
 def caseFrequency(frequency):

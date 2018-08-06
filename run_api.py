@@ -15,7 +15,7 @@ if __name__ == '__main__':
             ssl_context=context,
             debug=app.config.get('DEBUG', False) or '--debug' in sys.argv,
         )
-    except KeyboardInterrupt, SystemExit:
+    except (KeyboardInterrupt, SystemExit):
         db_conn = getattr(app, 'db', None)
         if db_conn is not None:
             db_conn.close()

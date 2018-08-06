@@ -10,7 +10,7 @@ from flask import (
     )
 from functools import wraps
 from yamlns import namespace as ns
-from common import yaml_response
+from .common import yaml_response
 
 
 VERSION = 4
@@ -37,9 +37,9 @@ def handle(e, status_code):
 
 
 def utf8(thing):
-    if type(thing) is unicode: return thing
-    if type(thing) is str: return unicode(thing,'utf-8',errors='ignore')
-    return unicode(thing)
+    if type(thing) is str: return thing
+    if type(thing) is str: return str(thing,'utf-8',errors='ignore')
+    return str(thing)
 
 def tsv_response(f):
     @wraps(f)
@@ -48,7 +48,7 @@ def tsv_response(f):
 
         if type(result) is Response:
             return result
-        if type(result) in (str,unicode):
+        if type(result) in (str,str):
             response = make_response(result)
             response.mimetype='text/tab-separated-values'
             response.headers["Content-Disposition"] = "filename=contracts.tsv"

@@ -2,7 +2,7 @@
 import tablib
 from dbutils import csvTable
 from yamlns import namespace as ns
-from distribution import (
+from .distribution import (
     parse_tsv,
     tuples2objects,
     locationFilter,
@@ -10,8 +10,8 @@ from distribution import (
     missedDates,
     findTuple,
     )
-from source import Source
-from missingDataError import MissingDataError
+from .source import Source
+from .missingDataError import MissingDataError
 
 staticColumns = 8
 

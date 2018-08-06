@@ -6,14 +6,14 @@ from werkzeug.routing import ValidationError
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
 import b2btest
-from api import (
+from .api import (
     contractsSparse,
     contractsSeries,
     dateSequenceMonths,
     membersSparse,
     )
-from app import app
-from common import (
+from .app import app
+from .common import (
     caseFrequency,
     dateSequenceYears,
     dateSequenceWeeks,
@@ -22,15 +22,15 @@ from common import (
     IsoFrequencyConverte,
     requestDates,
     )
-from distribution import parse_tsv, pickDates
+from .distribution import parse_tsv, pickDates
 
 
-headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
-data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
-data_Perignan = u"FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
-data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
-data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
-data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
+headers = "codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
+data_Adra = "ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
+data_Perignan = "FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
+data_Girona = "ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
+data_SantJoan = "ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
+data_Amer = "ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
 class BaseApi_Test(unittest.TestCase):
 
@@ -394,7 +394,7 @@ class BaseApi_Test(unittest.TestCase):
         r = pickDates(tuples, ['2018-01-01'])
         self.assertEqual(r, [
             ['codi_pais', 'pais', 'codi_ccaa', 'comunitat_autonoma', 'codi_provincia', 'provincia', 'codi_ine', 'municipi', 'count_2018_01_01'],
-            ['ES', u'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000']
+            ['ES', 'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000']
             ])
 
     def test__pickDates__twoDateColumn_twoDateRequest(self):
@@ -405,7 +405,7 @@ class BaseApi_Test(unittest.TestCase):
         r = pickDates(tuples, ['2018-01-01', '2018-02-01'])
         self.assertEqual(r, [
             ['codi_pais', 'pais', 'codi_ccaa', 'comunitat_autonoma', 'codi_provincia', 'provincia', 'codi_ine', 'municipi', 'count_2018_01_01', 'count_2018_02_01'],
-            ['ES', u'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000', '20']
+            ['ES', 'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000', '20']
             ])
 
     def test__pickDates__twoDateColumn_oneDateRequest(self):
@@ -416,7 +416,7 @@ class BaseApi_Test(unittest.TestCase):
         r = pickDates(tuples, ['2018-01-01'])
         self.assertEqual(r, [
             ['codi_pais', 'pais', 'codi_ccaa', 'comunitat_autonoma', 'codi_provincia', 'provincia', 'codi_ine', 'municipi', 'count_2018_01_01'],
-            ['ES', u'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000']
+            ['ES', 'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000']
             ])
 
 
@@ -428,7 +428,7 @@ class BaseApi_Test(unittest.TestCase):
         r = pickDates(tuples, ['2018-01-01', '2018-02-01'])
         self.assertEqual(r, [
             ['codi_pais', 'pais', 'codi_ccaa', 'comunitat_autonoma', 'codi_provincia', 'provincia', 'codi_ine', 'municipi', 'count_2018_01_01', 'count_2018_02_01'],
-            ['ES', u'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000', '3']
+            ['ES', 'España', '09', 'Catalunya', '17', 'Girona', '17007', 'Amer', '2000', '3']
             ])
 
     # Convertes
@@ -443,7 +443,7 @@ class BaseApi_Test(unittest.TestCase):
     def test__FrequencyConvertes__invalid(self):
         with self.assertRaises(ValidationError) as ctx:
             self.frequencyConverter.to_python('caracola')
-        self.assertEquals(format(ctx.exception), 'Incorrect Frequency')
+        self.assertEqual(format(ctx.exception), 'Incorrect Frequency')
 
     def test__AggregateLevelConverter__valid(self):
         r = self.aggregateLevelConverter.to_python('countries')
@@ -452,7 +452,7 @@ class BaseApi_Test(unittest.TestCase):
     def test__AggregateLevelConverter__invalid(self):
         with self.assertRaises(ValidationError) as ctx:
             self.aggregateLevelConverter.to_python('caracola')
-        self.assertEquals(format(ctx.exception), 'Incorrect Aggregate Level')
+        self.assertEqual(format(ctx.exception), 'Incorrect Aggregate Level')
 
     def test__DateConverter__valid(self):
         r = self.dateConverter.to_python('2018-01-01')
@@ -461,7 +461,7 @@ class BaseApi_Test(unittest.TestCase):
     def test__DateConverter__invalid(self):
         with self.assertRaises(ValueError) as ctx:
             self.dateConverter.to_python('PEP 8')
-        self.assertEquals(format(ctx.exception), 'Invalid date initializator \'PEP 8\'')
+        self.assertEqual(format(ctx.exception), 'Invalid date initializator \'PEP 8\'')
 
 """
 /version
