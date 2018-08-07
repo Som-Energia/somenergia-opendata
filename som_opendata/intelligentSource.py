@@ -27,9 +27,11 @@ class IntelligentSource(Source):
                     result = err.data
             else: break
         
-        if result:
-            for i in range(0, index): self.sources[i].set(datum, result)
-        else: raise MissingDataError(result, dates, None)
+        if not result:
+            raise MissingDataError(result, dates, None)
+
+        for i in range(0, index):
+            self.sources[i].set(datum, result)
 
         return result
 
