@@ -22,7 +22,9 @@ class IntelligentSource(Source):
 
             try:
                 result = source.get(datum, dates, filters)
-            except MissingDataError: pass
+            except MissingDataError as err:
+                if err.data:
+                    result = err.data
             else: break
         
         if result:
