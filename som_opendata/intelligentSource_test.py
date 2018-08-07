@@ -158,7 +158,6 @@ class IntelligentSource_test(unittest.TestCase):
               count_2018_02_01: '201'
         """)
 
-
     def test__get__failedAllSources(self):
         source = self.createSource(
             ns(members=[
@@ -188,6 +187,22 @@ class IntelligentSource_test(unittest.TestCase):
             ]),
         )
         source.get('members', ['2018-01-01', '2018-02-01'], ns())
+        self.assertEqual(source.sources[0].data['members'],
+            u'''codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01\tcount_2018_02_01\n''' +
+            u'''ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000\t201''')
+
+    def test__set__updatePartialResponse(self):
+        source = self.createSource(
+            ns(members=[
+                headers,
+                data_SantJoan
+            ]),
+            ns(members=[
+                headers+'\tcount_2018_02_01',
+                data_SantJoan+'\t201'
+            ]),
+        )
+        source.get('members', ['2018-02-01', '2018-03-01'], ns())
         self.assertEqual(source.sources[0].data['members'],
             u'''codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01\tcount_2018_02_01\n''' +
             u'''ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000\t201''')
