@@ -6,9 +6,9 @@ from missingDataError import MissingDataError
 
 class IntelligentSource(Source):
     
-    sources = []
-
+   
     def __init__(self, sourceA, sourceB):
+        self.sources = []
         self.sources.append(sourceA)
         self.sources.append(sourceB)
 

@@ -133,6 +133,31 @@ class IntelligentSource_test(unittest.TestCase):
               count_2018_01_01: '1000'
         """)
 
+    def test__get__secondPartialResponse(self):
+        source = self.createSource(
+            ns(members=[
+                headers,
+                data_SantJoan
+            ]),
+            ns(members=[
+                headers+'\tcount_2018_02_01',
+                data_SantJoan+'\t201'
+            ]),
+        )
+        result = source.get('members', ['2018-02-01', '2018-03-01'], ns())
+        self.assertNsEqual(ns(data=result), """\
+            data:
+            - codi_pais: ES
+              pais: 'España'
+              codi_ccaa: '09'
+              comunitat_autonoma: Catalunya
+              codi_provincia: '08'
+              provincia: Barcelona
+              codi_ine: '08217'
+              municipi: Sant Joan Despí
+              count_2018_02_01: '201'
+        """)
+
 
     def test__get__failedAllSources(self):
         source = self.createSource(
