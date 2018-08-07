@@ -38,7 +38,9 @@ class CsvSource(Source):
         filtered_dates = pickDates(tuples, dates)
 
         if not filtered_dates or len(filtered_dates[0]) < staticColumns + len(dates):
-            raise MissingDataError(locationFilter(tuples2objects(filtered_dates), filters), missedDates(tuples, dates), None)
+            raise MissingDataError(
+                locationFilter(tuples2objects(filtered_dates), filters),
+                missedDates(tuples, dates), None)
 
         objectList = tuples2objects(filtered_dates)
         filtered_tuples = locationFilter(objectList, filters)
@@ -59,9 +61,10 @@ class CsvSource(Source):
         _content.dict = content
         sortedData = _data.sort('codi_ine')
         sortedContent = _content.sort('codi_ine')
-        newHeaders = [header
-                    for header in sortedContent.headers
-                    if header not in tuples[0]
+        newHeaders = [
+            header
+            for header in sortedContent.headers
+            if header not in tuples[0]
         ]
 
         for newHeader in newHeaders:
