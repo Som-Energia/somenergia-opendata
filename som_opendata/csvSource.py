@@ -21,12 +21,16 @@ class CsvSource(Source):
 
     def __init__(self, content):
         self.data = content
+        self._tuples = {
+            datum : parse_tsv(data)
+            for datum, data in self.data.iteritems()
+        }
 
 
     # TODO: Refactor --> "1 sol raise"
     def get(self, datum, dates, filters):
 
-        tuples = parse_tsv(self.data[datum])
+        tuples = self._tuples[datum]
 
         if not tuples:
             raise MissingDataError([], dates, None)
@@ -46,7 +50,7 @@ class CsvSource(Source):
 
     def set(self, datum, content):
 
-        tuples = parse_tsv(self.data[datum])
+        tuples = self._tuples[datum]
         namespaces = tuples2objects(tuples)
         _data = tablib.Dataset()
         _data.dict = namespaces
@@ -69,3 +73,4 @@ class CsvSource(Source):
 
 
         self.data[datum] = _datum.decode('utf8')[:-1]
+        self._tuples[datum] = parse_tsv(self.data[datum])
