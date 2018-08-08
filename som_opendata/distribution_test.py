@@ -15,6 +15,7 @@ from distribution import (
     validateStringDate,
     includedDates,
     field2date,
+    date2field,
     )
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -770,5 +771,10 @@ class Distribution_Test(unittest.TestCase):
         self.assertEquals(result, '2018-01-01')
 
 
+    # date2field
+
+    def test__date2field__correctDate(self):
+        result = date2field('2018-01-01')
+        self.assertEquals(result, 'count_2018_01_01')
 
 # vim: et sw=4 ts=4
