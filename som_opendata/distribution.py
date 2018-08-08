@@ -45,7 +45,7 @@ def state_dates(entry):
     return [
         isoDate(field2date(k))
         for k in entry.keys()
-        if k.startswith('count_')
+        if isField(k)
         ]
 
 
