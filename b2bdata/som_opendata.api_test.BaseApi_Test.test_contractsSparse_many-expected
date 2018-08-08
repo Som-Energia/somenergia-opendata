@@ -457,6 +457,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	01	Andalucia	29	Málaga	29002	Alcaucín	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29007	Alhaurín de la Torre	0	None
 2015-02-01	ES	España	01	Andalucia	29	Málaga	29007	Alhaurín de la Torre	0	None
+2015-01-01	ES	España	01	Andalucia	29	Málaga	29008	Alhaurín el Grande	0	None
+2015-02-01	ES	España	01	Andalucia	29	Málaga	29008	Alhaurín el Grande	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29009	Almáchar	0	None
 2015-02-01	ES	España	01	Andalucia	29	Málaga	29009	Almáchar	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29011	Almogía	0	None
@@ -691,6 +693,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	02	Aragón	22	Huesca	22032	Aragüés del Puerto	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22035	Arén	1	21799
 2015-02-01	ES	España	02	Aragón	22	Huesca	22035	Arén	1	21799
+2015-01-01	ES	España	02	Aragón	22	Huesca	22037	Arguis	0	None
+2015-02-01	ES	España	02	Aragón	22	Huesca	22037	Arguis	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22039	Ayerbe	0	None
 2015-02-01	ES	España	02	Aragón	22	Huesca	22039	Ayerbe	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22040	Azanuy-Alins	0	None
@@ -719,6 +723,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	02	Aragón	22	Huesca	22058	Bierge	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22059	Biescas	1	27477
 2015-02-01	ES	España	02	Aragón	22	Huesca	22059	Biescas	1	27477
+2015-01-01	ES	España	02	Aragón	22	Huesca	22060	Binaced	0	None
+2015-02-01	ES	España	02	Aragón	22	Huesca	22060	Binaced	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22061	Binéfar	1	38681
 2015-02-01	ES	España	02	Aragón	22	Huesca	22061	Binéfar	1	38681
 2015-01-01	ES	España	02	Aragón	22	Huesca	22062	Bisaurri	0	None
@@ -865,6 +871,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	02	Aragón	44	Teruel	44001	Ababuj	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44004	Aguaviva	0	None
 2015-02-01	ES	España	02	Aragón	44	Teruel	44004	Aguaviva	0	None
+2015-01-01	ES	España	02	Aragón	44	Teruel	44008	Albalate del Arzobispo	0	None
+2015-02-01	ES	España	02	Aragón	44	Teruel	44008	Albalate del Arzobispo	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44010	Albentosa	2	2162,27179
 2015-02-01	ES	España	02	Aragón	44	Teruel	44010	Albentosa	2	2162,27179
 2015-01-01	ES	España	02	Aragón	44	Teruel	44011	Alcaine	0	None
@@ -873,6 +881,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	02	Aragón	44	Teruel	44012	Alcalá de la Selva	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44013	Alcañiz	9	11413,13821,16036,17807,22831,29305,37037,39929,40257
 2015-02-01	ES	España	02	Aragón	44	Teruel	44013	Alcañiz	9	11413,13821,16036,17807,22831,29305,37037,39929,40257
+2015-01-01	ES	España	02	Aragón	44	Teruel	44014	Alcorisa	0	None
+2015-02-01	ES	España	02	Aragón	44	Teruel	44014	Alcorisa	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44021	Allepuz	0	None
 2015-02-01	ES	España	02	Aragón	44	Teruel	44021	Allepuz	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44022	Alloza	0	None
@@ -887,6 +897,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	02	Aragón	44	Teruel	44039	Bello	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44041	Bezas	1	23498
 2015-02-01	ES	España	02	Aragón	44	Teruel	44041	Bezas	1	23498
+2015-01-01	ES	España	02	Aragón	44	Teruel	44049	Calaceite	0	None
+2015-02-01	ES	España	02	Aragón	44	Teruel	44049	Calaceite	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44050	Calamocha	1	37968
 2015-02-01	ES	España	02	Aragón	44	Teruel	44050	Calamocha	1	37968
 2015-01-01	ES	España	02	Aragón	44	Teruel	44051	Calanda	0	None
@@ -957,6 +969,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	02	Aragón	44	Teruel	44187	Portellada, La	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44189	Pozondón	0	None
 2015-02-01	ES	España	02	Aragón	44	Teruel	44189	Pozondón	0	None
+2015-01-01	ES	España	02	Aragón	44	Teruel	44190	Pozuel del Campo	0	None
+2015-02-01	ES	España	02	Aragón	44	Teruel	44190	Pozuel del Campo	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44191	Puebla de Híjar, La	0	None
 2015-02-01	ES	España	02	Aragón	44	Teruel	44191	Puebla de Híjar, La	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44192	Puebla de Valverde, La	0	None
@@ -983,6 +997,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	02	Aragón	44	Teruel	44223	Torre de Arcas	1	1987
 2015-01-01	ES	España	02	Aragón	44	Teruel	44230	Torrevelilla	0	None
 2015-02-01	ES	España	02	Aragón	44	Teruel	44230	Torrevelilla	0	None
+2015-01-01	ES	España	02	Aragón	44	Teruel	44231	Torrijas	0	None
+2015-02-01	ES	España	02	Aragón	44	Teruel	44231	Torrijas	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44232	Torrijo del Campo	1	40945
 2015-02-01	ES	España	02	Aragón	44	Teruel	44232	Torrijo del Campo	1	40945
 2015-01-01	ES	España	02	Aragón	44	Teruel	44239	Valacloche	1	30740
@@ -993,6 +1009,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	02	Aragón	44	Teruel	44241	Valdealgorfa	1	26028
 2015-01-01	ES	España	02	Aragón	44	Teruel	44244	Valdelinares	2	32716,32718
 2015-02-01	ES	España	02	Aragón	44	Teruel	44244	Valdelinares	2	32716,32718
+2015-01-01	ES	España	02	Aragón	44	Teruel	44245	Valdeltormo	0	None
+2015-02-01	ES	España	02	Aragón	44	Teruel	44245	Valdeltormo	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44246	Valderrobres	5	4314,23384,23398,27053,30881
 2015-02-01	ES	España	02	Aragón	44	Teruel	44246	Valderrobres	5	4314,23384,23398,27053,30881
 2015-01-01	ES	España	02	Aragón	44	Teruel	44260	Villarluengo	0	None
@@ -1135,6 +1153,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	02	Aragón	50	Zaragoza	50265	Trasmoz	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50266	Trasobares	0	None
 2015-02-01	ES	España	02	Aragón	50	Zaragoza	50266	Trasobares	0	None
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50270	Urriés	0	None
+2015-02-01	ES	España	02	Aragón	50	Zaragoza	50270	Urriés	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50272	Utebo	2	10747,43760
 2015-02-01	ES	España	02	Aragón	50	Zaragoza	50272	Utebo	2	10747,43760
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50903	Villamayor de Gállego	2	29825,39391
@@ -2043,6 +2063,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	08	Castilla - La Mancha	45	Toledo	45132	Pepino	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45135	Puebla de Almoradiel, La	1	14477
 2015-02-01	ES	España	08	Castilla - La Mancha	45	Toledo	45135	Puebla de Almoradiel, La	1	14477
+2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45136	Puebla de Montalbán, La	0	None
+2015-02-01	ES	España	08	Castilla - La Mancha	45	Toledo	45136	Puebla de Montalbán, La	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45137	Pueblanueva, La	0	None
 2015-02-01	ES	España	08	Castilla - La Mancha	45	Toledo	45137	Pueblanueva, La	1	45864
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45142	Quintanar de la Orden	1	24464
@@ -2117,6 +2139,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	07	Castilla y León	05	Avila	05022	Barraco, El	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Avila	05024	Becedas	0	None
 2015-02-01	ES	España	07	Castilla y León	05	Avila	05024	Becedas	0	None
+2015-01-01	ES	España	07	Castilla y León	05	Avila	05038	Bonilla de la Sierra	0	None
+2015-02-01	ES	España	07	Castilla y León	05	Avila	05038	Bonilla de la Sierra	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Avila	05044	Cabezas del Villar	0	None
 2015-02-01	ES	España	07	Castilla y León	05	Avila	05044	Cabezas del Villar	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Avila	05047	Candeleda	4	3702,9323,14493,36809
@@ -2239,6 +2263,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	07	Castilla y León	09	Burgos	09137	Fuentelcésped	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09149	Grisaleña	0	None
 2015-02-01	ES	España	07	Castilla y León	09	Burgos	09149	Grisaleña	0	None
+2015-01-01	ES	España	07	Castilla y León	09	Burgos	09151	Gumiel de Izán	0	None
+2015-02-01	ES	España	07	Castilla y León	09	Burgos	09151	Gumiel de Izán	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09152	Gumiel de Mercado	0	None
 2015-02-01	ES	España	07	Castilla y León	09	Burgos	09152	Gumiel de Mercado	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09174	Huerta de Rey	1	28369
@@ -2457,6 +2483,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	07	Castilla y León	24	León	24167	Soto y Amío	1	25675
 2015-01-01	ES	España	07	Castilla y León	24	León	24169	Toreno	1	36484
 2015-02-01	ES	España	07	Castilla y León	24	León	24169	Toreno	1	36484
+2015-01-01	ES	España	07	Castilla y León	24	León	24172	Truchas	0	None
+2015-02-01	ES	España	07	Castilla y León	24	León	24172	Truchas	0	None
 2015-01-01	ES	España	07	Castilla y León	24	León	24173	Turcia	1	20075
 2015-02-01	ES	España	07	Castilla y León	24	León	24173	Turcia	1	20075
 2015-01-01	ES	España	07	Castilla y León	24	León	24174	Urdiales del Páramo	0	None
@@ -2831,6 +2859,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	07	Castilla y León	42	Soria	42110	Matalebreras	0	None
 2015-01-01	ES	España	07	Castilla y León	42	Soria	42111	Matamala de Almazán	3	40446,40448,40452
 2015-02-01	ES	España	07	Castilla y León	42	Soria	42111	Matamala de Almazán	3	40446,40448,40452
+2015-01-01	ES	España	07	Castilla y León	42	Soria	42113	Medinaceli	0	None
+2015-02-01	ES	España	07	Castilla y León	42	Soria	42113	Medinaceli	0	None
 2015-01-01	ES	España	07	Castilla y León	42	Soria	42121	Montenegro de Cameros	0	None
 2015-02-01	ES	España	07	Castilla y León	42	Soria	42121	Montenegro de Cameros	0	None
 2015-01-01	ES	España	07	Castilla y León	42	Soria	42134	Ólvega	1	30667
@@ -2967,6 +2997,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	07	Castilla y León	47	Valladolid	47178	Urueña	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47179	Valbuena de Duero	1	5325
 2015-02-01	ES	España	07	Castilla y León	47	Valladolid	47179	Valbuena de Duero	1	5325
+2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47181	Valdenebro de los Valles	0	None
+2015-02-01	ES	España	07	Castilla y León	47	Valladolid	47181	Valdenebro de los Valles	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47182	Valdestillas	0	None
 2015-02-01	ES	España	07	Castilla y León	47	Valladolid	47182	Valdestillas	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47186	Valladolid	55	3847,9852,12109,12591,13785,15854,15878,17011,17157,18082,18084,18086,18100,18244,18918,20688,21965,22431,22870,24010,24012,26984,26992,27768,28696,29259,29311,30282,30777,30943,30948,31254,31357,31753,31997,32857,33002,34969,34973,35327,36221,36227,36518,36579,37938,38651,38816,39241,39843,40271,40275,40302,40662,42040,43610
@@ -2995,6 +3027,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	07	Castilla y León	49	Zamora	49005	Alfaraz de Sayago	0	None
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49021	Benavente	1	18771
 2015-02-01	ES	España	07	Castilla y León	49	Zamora	49021	Benavente	1	18771
+2015-01-01	ES	España	07	Castilla y León	49	Zamora	49023	Bermillo de Sayago	0	None
+2015-02-01	ES	España	07	Castilla y León	49	Zamora	49023	Bermillo de Sayago	0	None
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49043	Castroverde de Campos	1	12912
 2015-02-01	ES	España	07	Castilla y León	49	Zamora	49043	Castroverde de Campos	1	12912
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49068	Ferreruela	0	None
@@ -3323,6 +3357,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	09	Cataluña	08	Barcelona	08143	Òdena	4	139,31116,32760,41746
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08145	Olèrdola	4	1458,1628,2431,8138
 2015-02-01	ES	España	09	Cataluña	08	Barcelona	08145	Olèrdola	4	1458,1628,2431,8138
+2015-01-01	ES	España	09	Cataluña	08	Barcelona	08146	Olesa de Bonesvalls	0	None
+2015-02-01	ES	España	09	Cataluña	08	Barcelona	08146	Olesa de Bonesvalls	0	None
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08147	Olesa de Montserrat	23	577,4041,4543,6641,8076,8078,8610,10914,14907,17574,18299,20553,23808,24496,24784,24957,27522,28139,28993,32219,34501,35947,36490
 2015-02-01	ES	España	09	Cataluña	08	Barcelona	08147	Olesa de Montserrat	25	577,4041,4543,6641,8076,8078,8610,10914,14907,17574,18299,20553,23808,24496,24784,24957,27522,28139,28993,32219,34501,35947,36490,48801,49419
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08148	Olivella	4	14397,24122,36583,48873
@@ -4655,6 +4691,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	09	Cataluña	43	Tarragona	43105	Piles, Les	2	21520,21919
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43106	Pinell de Brai, El	2	1874,16176
 2015-02-01	ES	España	09	Cataluña	43	Tarragona	43106	Pinell de Brai, El	2	1874,16176
+2015-01-01	ES	España	09	Cataluña	43	Tarragona	43107	Pira	0	None
+2015-02-01	ES	España	09	Cataluña	43	Tarragona	43107	Pira	0	None
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43108	Pla de Santa Maria, El	1	183
 2015-02-01	ES	España	09	Cataluña	43	Tarragona	43108	Pla de Santa Maria, El	1	183
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43109	Pobla de Mafumet, La	3	16342,27445,27449
@@ -5081,6 +5119,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	10	Comunidad Valenciana	12	Castelló	12070	Jana, la	2	5951,31034
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castelló	12071	Jérica	1	34627
 2015-02-01	ES	España	10	Comunidad Valenciana	12	Castelló	12071	Jérica	1	34627
+2015-01-01	ES	España	10	Comunidad Valenciana	12	Castelló	12074	Llosa, la	0	None
+2015-02-01	ES	España	10	Comunidad Valenciana	12	Castelló	12074	Llosa, la	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castelló	12072	Lucena del Cid	1	40890
 2015-02-01	ES	España	10	Comunidad Valenciana	12	Castelló	12072	Lucena del Cid	1	40890
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castelló	12073	Ludiente	2	3553,9510
@@ -5263,6 +5303,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	10	Comunidad Valenciana	46	València	46058	Benifairó de les Valls	1	14173
 2015-01-01	ES	España	10	Comunidad Valenciana	46	València	46061	Beniflá	1	703
 2015-02-01	ES	España	10	Comunidad Valenciana	46	València	46061	Beniflá	1	703
+2015-01-01	ES	España	10	Comunidad Valenciana	46	València	46062	Benigánim	0	None
+2015-02-01	ES	España	10	Comunidad Valenciana	46	València	46062	Benigánim	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	46	València	46063	Benimodo	0	None
 2015-02-01	ES	España	10	Comunidad Valenciana	46	València	46063	Benimodo	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	46	València	46064	Benimuslem	0	None
@@ -5511,6 +5553,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	10	Comunidad Valenciana	46	València	46250	Valencia	582	253,410,542,569,619,651,708,786,870,1045,1061,1170,1487,1561,1569,1579,1594,1608,1630,1654,1661,1713,1737,1755,1768,1774,1786,1818,1836,1953,1994,1995,2148,2150,2173,2183,2432,2436,2461,2483,2513,2647,2657,2658,2671,2729,2734,2739,2793,2805,2858,2870,2880,2913,2921,2935,2967,2985,2999,3095,3120,3167,3228,3283,3285,3289,3322,3378,3400,3521,3655,3666,3667,3685,3717,3757,3771,3788,3829,3832,3863,3866,3870,3876,3887,3933,3972,4009,4010,4023,4048,4113,4161,4263,4269,4289,4418,4463,4490,4513,4529,4596,4604,4644,4702,4762,5061,5124,5174,5268,5284,5298,5476,5641,5790,5858,5874,6140,6408,6431,6447,6558,7096,7100,7133,7599,7772,7786,7928,7971,7993,8068,8152,8168,8208,8251,8310,8669,8782,9158,9357,9723,9735,9823,9854,9979,10027,10029,10105,10244,10266,10720,10967,10990,11039,11089,11191,11231,11237,11282,11292,11409,11477,11499,11598,11614,11727,11760,11916,12058,12087,12248,12278,12304,12332,12398,12557,12589,12633,13017,13168,13250,13341,13419,13465,13527,13584,13682,13771,13776,13779,13781,13783,13801,13890,13900,13932,13939,13963,14029,14130,14285,14507,14509,14783,14789,14819,14855,14899,14929,15027,15037,15156,15209,15265,15275,15392,15487,15489,15778,15923,16274,16290,16523,16560,16646,16650,16785,16831,16851,16956,17054,17104,17210,17298,17302,17314,17358,17403,17420,17514,17580,17598,17635,17697,17751,17839,17847,17861,17988,18027,18039,18189,18209,18303,18384,18395,18397,18444,18699,18737,18787,18904,18910,18912,18983,19105,19111,19489,19566,19640,19654,19787,19994,20065,20077,20228,20238,20403,20536,20574,20578,20675,20709,20710,20889,20935,20994,21050,21136,21166,21311,21313,21335,21567,21683,21693,21881,22042,22129,22167,22189,22330,22427,22541,22624,22783,23037,23356,23443,23739,23741,23843,23861,23998,24028,24283,24294,24514,24657,24659,24733,24983,24999,25059,25061,25095,25123,25131,25221,25362,25641,25773,26195,26201,26511,26583,26630,26644,26689,26711,26825,27119,27171,27227,27246,27283,27346,27354,27414,27461,27534,27740,27764,27850,28081,28126,28210,28480,28516,28537,28652,28662,28901,28942,28947,29159,29227,29460,29462,29563,29946,30023,30155,30266,30294,30527,30561,30671,30673,30722,30836,30911,31299,31497,31501,31536,31570,31637,31747,31773,31777,31807,31832,31983,32010,32260,32262,32331,32388,32394,32402,32493,32571,32575,32873,32936,32949,33053,33094,33132,33512,33556,33639,33742,33847,34330,34342,34492,34629,34678,34798,34870,34880,34884,35003,35094,35096,35189,35476,35527,35794,35950,35982,36069,36173,36197,36213,36273,36340,36361,36377,36443,36626,36654,36697,36704,36707,36747,36783,36989,37052,37071,37163,37165,37294,37495,37499,37608,37635,37916,37961,38046,38093,38231,38236,38303,38422,38520,38528,38542,38562,38645,38744,38764,38798,38818,38882,38938,38990,39003,39043,39087,39089,39159,39197,39332,39375,39544,39633,39697,39783,40013,40123,40127,40129,40135,40141,40143,40177,40201,40273,40398,40498,40607,40688,40723,40725,40733,40865,40920,40926,40975,41015,41055,41173,41188,41195,41249,41291,41417,41451,41484,41506,41640,41812,41884,41946,41958,41976,41978,42284,42323,42327,42329,42369,42544,42552,42586,42596,42630,42730,42826,43226,43309,43409,43503,43507,43527,43683,43766,43866,43878,44039,44141,44292,44330,44360,44370,44399,44452,44512,44524,44538,44672,44694,44735,44752,44852,45089,45503,45505,45752,45812,45892,45912,45940,46160,46319,46441,49003,57275
 2015-01-01	ES	España	10	Comunidad Valenciana	46	València	46251	Vallada	1	31344
 2015-02-01	ES	España	10	Comunidad Valenciana	46	València	46251	Vallada	1	31344
+2015-01-01	ES	España	10	Comunidad Valenciana	46	València	46252	Vallanca	0	None
+2015-02-01	ES	España	10	Comunidad Valenciana	46	València	46252	Vallanca	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	46	València	46254	Venta del Moro	2	23453,23455
 2015-02-01	ES	España	10	Comunidad Valenciana	46	València	46254	Venta del Moro	2	23453,23455
 2015-01-01	ES	España	10	Comunidad Valenciana	46	València	46256	Vilamarxant	1	30132
@@ -5595,6 +5639,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	11	Extremadura	06	Badajoz	06123	San Vicente de Alcántara	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06125	Siruela	0	None
 2015-02-01	ES	España	11	Extremadura	06	Badajoz	06125	Siruela	0	None
+2015-01-01	ES	España	11	Extremadura	06	Badajoz	06127	Talarrubias	0	None
+2015-02-01	ES	España	11	Extremadura	06	Badajoz	06127	Talarrubias	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06901	Valdelacalzada	0	None
 2015-02-01	ES	España	11	Extremadura	06	Badajoz	06901	Valdelacalzada	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06149	Villafranca de los Barros	0	None
@@ -5893,6 +5939,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	12	Galicia	32	Ourense	32051	Muíños	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32054	Ourense	4	26093,31904,42286,44055
 2015-02-01	ES	España	12	Galicia	32	Ourense	32054	Ourense	4	26093,31904,42286,44055
+2015-01-01	ES	España	12	Galicia	32	Ourense	32057	Parada de Sil	0	None
+2015-02-01	ES	España	12	Galicia	32	Ourense	32057	Parada de Sil	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32058	Pereiro de Aguiar, O	0	None
 2015-02-01	ES	España	12	Galicia	32	Ourense	32058	Pereiro de Aguiar, O	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32060	Petín	0	None
