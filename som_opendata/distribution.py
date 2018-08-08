@@ -150,8 +150,8 @@ def includedDates(tuples):
 
     if not tuples: return []
 
-    return [ header
-        for header in tuples[0] 
+    return [ field2date(header)
+        for header in tuples[0]
         if isField(header) and
         validateStringDate(field2date(header))
         ]

@@ -758,11 +758,11 @@ class Distribution_Test(unittest.TestCase):
 
     def test__includedDates__correctDates(self):
         result = includedDates([['blah', 'blah', 'count_2018_01_01']])
-        self.assertEquals(result, ['count_2018_01_01'])
+        self.assertEquals(result, ['2018-01-01'])
 
     def test__includedDates__incorrectDates(self):
         result = includedDates([['blah', 'count_2018_20_54', 'count_2018_01_01']])
-        self.assertEquals(result, ['count_2018_01_01'])
+        self.assertEquals(result, ['2018-01-01'])
 
 
     # field2date
