@@ -165,4 +165,8 @@ def validateStringDate(date):
 
     return True
 
+def field2date(field):
+
+    return field[len('count_'):].replace('_', '-')
+
 # vim: et sw=4 ts=4

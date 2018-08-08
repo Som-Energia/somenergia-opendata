@@ -14,6 +14,7 @@ from distribution import (
     findTuple,
     validateStringDate,
     includedDates,
+    field2date,
     )
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -760,5 +761,14 @@ class Distribution_Test(unittest.TestCase):
     def test__includedDates__incorrectDates(self):
         result = includedDates([['blah', 'count_2018_20_54', 'count_2018_01_01']])
         self.assertEquals(result, ['count_2018_01_01'])
+
+
+    # field2date
+
+    def test__field2date__correctDate(self):
+        result = field2date('count_2018_01_01')
+        self.assertEquals(result, '2018-01-01')
+
+
 
 # vim: et sw=4 ts=4
