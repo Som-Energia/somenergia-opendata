@@ -43,7 +43,7 @@ def state_dates(entry):
         Returns the dates included in the entry
     """
     return [
-        isoDate(k[len('count_'):].replace('_', ''))
+        isoDate(field2date(k))
         for k in entry.keys()
         if k.startswith('count_')
         ]
@@ -66,7 +66,7 @@ def aggregate(entries, detail = 'world'):
     for entry in entries:
 
         entry.count = [
-            int(entry['count_'+date.isoDate.replace('-','_')])
+            int(entry[date2field(date.isoDate)])
             for date in dates ]
 
         result.data = [a+b for a,b in zip(result.data, entry.count)]
@@ -113,7 +113,7 @@ def pickDates(tuples, dates):
 
     headersPerEliminar = [
         index for index, value in enumerate(tuples[0])
-        if value.startswith('count_') and value[len('count_'):].replace('_','-') not in dates
+        if value.startswith('count_') and field2date(value) not in dates
     ]
 
     #if len(tuples[0]) - len(headersPerEliminar) < len(dates) + 8: 
@@ -132,7 +132,7 @@ def missedDates(tuples, dates):
     return [
         date 
         for date in dates 
-        if not 'count_' + date.replace('-','_') in tuples[0][8:]
+        if not date2field(date) in tuples[0][8:]
     ]
 
 
@@ -152,8 +152,8 @@ def includedDates(tuples):
 
     return [ header
         for header in tuples[0] 
-        if header.startswith('count_') and 
-        validateStringDate(header[len('count_'):].replace('_', '-'))
+        if header.startswith('count_') and
+        validateStringDate(field2date(header))
         ]
 
 def validateStringDate(date):
