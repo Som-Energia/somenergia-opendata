@@ -177,5 +177,21 @@ def isField(field):
 def missingDates(datesExist, datesRequest):
     return list(set(datesRequest) - set(datesExist))
 
+# def removeDates(objects, dates):
+# 
+#     return [
+#         removeCounts(o, (date2field(d) for d in dates))
+#         for o in objects
+#     ]
+
+def removeCounts(_object, counts):
+    ret = ns(_object)
+    return ret
+
+    #ret = ns()
+    #for key, value in _object.iteritems():
+    #    if key not in counts:
+    #        ret[key] = value
+    #return ret
 
 # vim: et sw=4 ts=4
