@@ -797,5 +797,8 @@ class Distribution_Test(unittest.TestCase):
         result = missingDates(['2018-01-01'], ['2018-01-01'])
         self.assertEquals(result, [])
 
+    def test__missingDates__moreRequestThatExist(self):
+        result = missingDates(['2018-01-01'], ['2018-01-01', '2018-02-01'])
+        self.assertEquals(result, [])
 
 # vim: et sw=4 ts=4
