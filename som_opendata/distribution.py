@@ -152,8 +152,8 @@ def includedDates(tuples):
 
     return [ header
         for header in tuples[0] 
-        if header.startswith('count_')# and 
-        #validateStringDate(header[len('count_'):].replace('_', '-'))
+        if header.startswith('count_') and 
+        validateStringDate(header[len('count_'):].replace('_', '-'))
         ]
 
 def validateStringDate(date):

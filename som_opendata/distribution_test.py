@@ -757,4 +757,8 @@ class Distribution_Test(unittest.TestCase):
         result = includedDates([['blah', 'blah', 'count_2018_01_01']])
         self.assertEquals(result, ['count_2018_01_01'])
 
+    def test__includedDates__incorrectDates(self):
+        result = includedDates([['blah', 'count_2018_20_54', 'count_2018_01_01']])
+        self.assertEquals(result, ['count_2018_01_01'])
+
 # vim: et sw=4 ts=4
