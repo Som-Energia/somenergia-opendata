@@ -12,6 +12,7 @@ from distribution import (
     locationFilter,
     missedDates,
     findTuple,
+    validateStringDate,
     )
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -728,5 +729,13 @@ class Distribution_Test(unittest.TestCase):
             'Sant Joan Despí',
             '2',
             ])
+
+
+    # validateStringDate
+
+    def test__validateStringDate__existDate(self):
+        result = validateStringDate('2018-01-01')
+        self.assertEquals(result, True)
+
 
 # vim: et sw=4 ts=4
