@@ -128,11 +128,11 @@ def pickDates(tuples, dates):
 
 
 def missedDates(tuples, dates):
-    if not tuples or len(tuples[0]) <= 8: return dates
+    if not tuples: return dates
     return [
         date 
         for date in dates 
-        if not date2field(date) in tuples[0][8:]
+        if date2field(date) not in tuples[0][8:]
     ]
 
 

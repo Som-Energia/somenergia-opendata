@@ -9,9 +9,12 @@ from .distribution import (
     pickDates,
     missedDates,
     findTuple,
+    includedDates,
+    missingDates,
     )
 from .source import Source
 from .missingDataError import MissingDataError
+from .missingDateError import MissingDateError
 
 staticColumns = 8
 
@@ -33,21 +36,25 @@ class CsvSource(Source):
         tuples = self._tuples[datum]
 
         if not tuples:
-            raise MissingDataError([], dates, None)
+            raise MissingDateError(dates)
 
         filtered_dates = pickDates(tuples, dates)
 
-        if not filtered_dates or len(filtered_dates[0]) < staticColumns + len(dates):
-            raise MissingDataError(
-                locationFilter(tuples2objects(filtered_dates), filters),
-                missedDates(tuples, dates), None)
+        if not filtered_dates:
+            raise MissingDateError(
+                missedDates(tuples, dates)
+                )
+
+        if len(filtered_dates[0]) < staticColumns + len(dates):
+            raise MissingDateError(
+                missedDates(tuples, dates)
+                )
 
         objectList = tuples2objects(filtered_dates)
         filtered_tuples = locationFilter(objectList, filters)
-        if not filtered_tuples:
-            raise MissingDataError(filtered_tuples, None, None)
 
         return filtered_tuples
+
 
 
     def set(self, datum, content):

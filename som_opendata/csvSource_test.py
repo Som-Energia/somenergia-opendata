@@ -5,6 +5,7 @@ from yamlns.dateutils import Date as isoDate
 from yamlns import namespace as ns
 from csvSource import CsvSource
 from missingDataError import MissingDataError
+from missingDateError import MissingDateError
 
 
 
@@ -32,13 +33,11 @@ class CsvSource_Test(unittest.TestCase):
 
         return CsvSource(content)
 
-    def raisesAssertion(self, source, request, expected, missedDates, missedLocations):
-        with self.assertRaises(MissingDataError) as ctx:
-            source.get(*request)
+    def raisesAssertion(self, source, datum, dates, missingDates):
+        with self.assertRaises(MissingDateError) as ctx:
+            source.get(datum=datum, dates=dates, filters=ns())
 
-        self.assertNsEqual(ns(data=ctx.exception.data), expected)
-        self. assertEquals(ctx.exception.missedDates, missedDates)
-        self. assertEquals(ctx.exception.missedLocations, missedLocations)
+        self. assertEquals(ctx.exception.missingDates, missingDates)
 
 
     def test__get__oneDateRequestExist(self):
@@ -67,10 +66,9 @@ class CsvSource_Test(unittest.TestCase):
             )
         self.raisesAssertion(
             source=source,
-            request=['members', ['2018-02-01'], ns()],
-            expected=ns(data=[]),
-            missedDates=['2018-02-01'],
-            missedLocations=None
+            datum='members',
+            dates=['2018-02-01'],
+            missingDates=['2018-02-01'],
             )
 
     def test__get__twoDatesRequestOneExist(self):
@@ -80,34 +78,9 @@ class CsvSource_Test(unittest.TestCase):
             )
         self.raisesAssertion(
             source=source,
-            request=['members', ['2018-01-01','2018-02-01'], ns()],
-            expected='''
-                data:
-                - codi_pais: ES
-                  pais: 'España'
-                  codi_ccaa: '09'
-                  comunitat_autonoma: Catalunya
-                  codi_provincia: '08'
-                  provincia: Barcelona
-                  codi_ine: '08217'
-                  municipi: Sant Joan Despí
-                  count_2018_01_01: '1000'
-                  ''',
-            missedDates=['2018-02-01'],
-            missedLocations=None
-            )
-
-    def test__get__filterNoExist(self):
-        source = self.createSource(
-            ns(members=[headers,
-            data_SantJoan])
-            )
-        self.raisesAssertion(
-            source=source,
-            request=['members', ['2018-01-01'], ns(codi_ccaa=['05'])],
-            expected=ns(data=[]),
-            missedDates=None,
-            missedLocations=None
+            datum='members',
+            dates=['2018-01-01','2018-02-01'],
+            missingDates=['2018-02-01'],
             )
 
     def test__get__filterExist(self):
