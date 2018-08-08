@@ -13,6 +13,7 @@ from distribution import (
     missedDates,
     findTuple,
     validateStringDate,
+    includedDates,
     )
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -741,4 +742,10 @@ class Distribution_Test(unittest.TestCase):
         result = validateStringDate('2018-21-01')
         self.assertEquals(result, False)
 
+
+    # includedDates
+
+    def test__includedDates__empty(self):
+        result = includedDates([])
+        self.assertEquals(result, [])
 # vim: et sw=4 ts=4

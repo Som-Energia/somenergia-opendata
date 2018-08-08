@@ -146,15 +146,15 @@ def findTuple(namespace, hOld, tuples):
         if all(value in t for value in values):
             return t
 
-#def includedDates(tuples):
-#
-#    if not tuples: return []
-#
-#    return [ header
-#        for header in tuples[0] 
-#        if header.startswith('count_') and 
-#        validateStringDate(header[len('count_'):].replace('_', '-'))
-#        ]
+def includedDates(tuples):
+
+    if not tuples: return []
+
+    return [ header
+        for header in tuples[0] 
+        if header.startswith('count_') and 
+        validateStringDate(header[len('count_'):].replace('_', '-'))
+        ]
 
 def validateStringDate(date):
 
