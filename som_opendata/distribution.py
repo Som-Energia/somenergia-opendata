@@ -174,4 +174,9 @@ def date2field(date):
 def isField(field):
     return field.startswith('count_')
 
+def missingDates(datesExist, datesRequest):
+    return []
+    #return list(set(datesRequest) - set(datesExist))
+
+
 # vim: et sw=4 ts=4

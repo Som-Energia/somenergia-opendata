@@ -17,6 +17,7 @@ from distribution import (
     field2date,
     date2field,
     isField,
+    missingDates,
     )
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -788,5 +789,13 @@ class Distribution_Test(unittest.TestCase):
     def test__isField__incorrectField(self):
         result = isField('codi_pais')
         self.assertEquals(result, False)
+
+
+    # missingDates
+
+    def test__missingDates__existAllDates(self):
+        result = missingDates(['2018-01-01'], ['2018-01-01'])
+        self.assertEquals(result, [])
+
 
 # vim: et sw=4 ts=4
