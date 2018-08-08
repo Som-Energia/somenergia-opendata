@@ -748,4 +748,9 @@ class Distribution_Test(unittest.TestCase):
     def test__includedDates__empty(self):
         result = includedDates([])
         self.assertEquals(result, [])
+
+    def test__includedDates__emptyHeaders(self):
+        result = includedDates([[],[]])
+        self.assertEquals(result, [])
+
 # vim: et sw=4 ts=4
