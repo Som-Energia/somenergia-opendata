@@ -113,7 +113,7 @@ def pickDates(tuples, dates):
 
     headersPerEliminar = [
         index for index, value in enumerate(tuples[0])
-        if value.startswith('count_') and field2date(value) not in dates
+        if isField(value) and field2date(value) not in dates
     ]
 
     #if len(tuples[0]) - len(headersPerEliminar) < len(dates) + 8: 
@@ -140,8 +140,8 @@ def findTuple(namespace, hOld, tuples):
     values = [
         value
         for key, value in namespace.iteritems()
-        if not key.startswith('count_')
-    ]
+        if not isField(key)
+        ]
     for t in tuples:
         if all(value in t for value in values):
             return t
@@ -152,7 +152,7 @@ def includedDates(tuples):
 
     return [ header
         for header in tuples[0] 
-        if header.startswith('count_') and
+        if isField(header) and
         validateStringDate(field2date(header))
         ]
 
