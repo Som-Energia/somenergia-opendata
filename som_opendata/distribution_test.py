@@ -737,5 +737,8 @@ class Distribution_Test(unittest.TestCase):
         result = validateStringDate('2018-01-01')
         self.assertEquals(result, True)
 
+    def test__validateStringDate__noExistDate(self):
+        result = validateStringDate('2018-21-01')
+        self.assertEquals(result, False)
 
 # vim: et sw=4 ts=4

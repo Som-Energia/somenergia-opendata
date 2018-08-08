@@ -158,10 +158,10 @@ def findTuple(namespace, hOld, tuples):
 
 def validateStringDate(date):
 
-    #try:
-    #    isoDate(date)
-    #except ValueError:
-    #    return False
+    try:
+        isoDate(date)
+    except ValueError:
+        return False
 
     return True
 
