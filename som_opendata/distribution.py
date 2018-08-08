@@ -172,7 +172,6 @@ def date2field(date):
     return 'count_' + date.replace('-', '_')
 
 def isField(field):
-    return True
-    #return field.startswith('count_')
+    return field.startswith('count_')
 
 # vim: et sw=4 ts=4

@@ -785,4 +785,8 @@ class Distribution_Test(unittest.TestCase):
         result = isField('count_2018_01_01')
         self.assertEquals(result, True)
 
+    def test__isField__incorrectField(self):
+        result = isField('codi_pais')
+        self.assertEquals(result, False)
+
 # vim: et sw=4 ts=4
