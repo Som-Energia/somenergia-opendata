@@ -35,26 +35,16 @@ class CsvSource(Source):
 
         tuples = self._tuples[datum]
 
-        if not tuples:
-            raise MissingDateError(dates)
+        missing_dates = missingDates(includedDates(tuples), dates)
+        if missing_dates:
+            raise MissingDateError(missing_dates)
 
         filtered_dates = pickDates(tuples, dates)
-
-        if not filtered_dates:
-            raise MissingDateError(
-                missedDates(tuples, dates)
-                )
-
-        if len(filtered_dates[0]) < staticColumns + len(dates):
-            raise MissingDateError(
-                missedDates(tuples, dates)
-                )
 
         objectList = tuples2objects(filtered_dates)
         filtered_tuples = locationFilter(objectList, filters)
 
         return filtered_tuples
-
 
 
     def set(self, datum, content):
