@@ -179,13 +179,9 @@ def missingDates(datesExist, datesRequest):
 
 def removeDates(objects, dates):
     return [
-        o
+        removeCounts(o, [date2field(d) for d in dates])
         for o in objects
     ]
-    #return [
-    #    removeCounts(o, (date2field(d) for d in dates))
-    #    for o in objects
-    #]
 
 def removeCounts(_object, counts):
     ret = ns()
