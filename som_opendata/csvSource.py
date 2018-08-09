@@ -27,13 +27,9 @@ class CsvSource(Source):
 
     def __init__(self, content):
         self.data = content
-        self._tuples = {
-            datum : parse_tsv(data)
-            for datum, data in self.data.iteritems()
-        }
         self._objects = {
-            datum : tuples2objects(_tuples)
-            for datum, _tuples in self._tuples.iteritems()
+            datum : tuples2objects(parse_tsv(data))
+            for datum, data in self.data.iteritems()
         }
 
 
