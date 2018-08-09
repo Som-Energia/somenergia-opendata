@@ -11,6 +11,7 @@ from .distribution import (
     findTuple,
     includedDates,
     missingDates,
+    removeDates,
     )
 from .source import Source
 from .missingDataError import MissingDataError
@@ -30,19 +31,19 @@ class CsvSource(Source):
         }
 
 
-    # TODO: Refactor --> "1 sol raise"
     def get(self, datum, dates, filters):
 
         tuples = self._tuples[datum]
+        objectList = tuples2objects(tuples)
 
         missing_dates = missingDates(includedDates(tuples), dates)
         if missing_dates:
             raise MissingDateError(missing_dates)
 
-        filtered_dates = pickDates(tuples, dates)
-
-        objectList = tuples2objects(filtered_dates)
-        filtered_tuples = locationFilter(objectList, filters)
+        unnecessaryDates = missingDates(dates, includedDates(tuples))
+        filtered_dates = removeDates(objectList, unnecessaryDates)
+        
+        filtered_tuples = locationFilter(filtered_dates, filters)
 
         return filtered_tuples
 
