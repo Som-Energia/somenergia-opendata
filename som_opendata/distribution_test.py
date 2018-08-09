@@ -19,6 +19,7 @@ from distribution import (
     isField,
     missingDates,
     removeCounts,
+    removeDates,
     )
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -842,5 +843,23 @@ class Distribution_Test(unittest.TestCase):
         del _object['count_2018_01_01']
         self.assertEquals(result, _object)
 
+
+    # removeDates
+
+    def test__removeDates__notFound(self):
+        _object = ns(
+            codi_pais='ES',
+            pais='España',
+            codi_ccaa='09',
+            comunitat_autonoma='Catalunya',
+            codi_provincia='08',
+            provincia='Barcelona',
+            codi_ine='08217',
+            municipi='Sant Joan Despí',
+            count_2018_01_01='1000',
+            count_2018_02_01='201',
+            )
+        result = removeDates([_object], ['2018-03-01'])
+        self.assertEquals(result, [_object])
 
 # vim: et sw=4 ts=4
