@@ -185,13 +185,10 @@ def missingDates(datesExist, datesRequest):
 #     ]
 
 def removeCounts(_object, counts):
-    ret = ns(_object)
+    ret = ns()
+    for key, value in _object.iteritems():
+        if key not in counts:
+            ret[key] = value
     return ret
-
-    #ret = ns()
-    #for key, value in _object.iteritems():
-    #    if key not in counts:
-    #        ret[key] = value
-    #return ret
 
 # vim: et sw=4 ts=4

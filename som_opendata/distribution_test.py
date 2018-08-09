@@ -825,5 +825,22 @@ class Distribution_Test(unittest.TestCase):
         result = removeCounts(_object, ['count_2018_03_01'])
         self.assertEquals(result, _object)
 
+    def test__removeCounts__oneCount(self):
+        _object = ns(
+            codi_pais='ES',
+            pais='España',
+            codi_ccaa='09',
+            comunitat_autonoma='Catalunya',
+            codi_provincia='08',
+            provincia='Barcelona',
+            codi_ine='08217',
+            municipi='Sant Joan Despí',
+            count_2018_01_01='1000',
+            count_2018_02_01='201',
+            )
+        result = removeCounts(_object, ['count_2018_01_01'])
+        del _object['count_2018_01_01']
+        self.assertEquals(result, _object)
+
 
 # vim: et sw=4 ts=4
