@@ -127,15 +127,6 @@ def pickDates(tuples, dates):
     ]
 
 
-def missedDates(tuples, dates):
-    if not tuples: return dates
-    return [
-        date 
-        for date in dates 
-        if date2field(date) not in tuples[0][8:]
-    ]
-
-
 def findTuple(namespace, hOld, tuples):
     values = [
         value

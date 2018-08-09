@@ -10,7 +10,6 @@ from distribution import (
     aggregate,
     state_dates,
     locationFilter,
-    missedDates,
     findTuple,
     validateStringDate,
     includedDates,
@@ -614,59 +613,6 @@ class Distribution_Test(unittest.TestCase):
         r = aggregate(objectList,'ccaas')
         self.assertB2BEqual(r.dump())
 
-    # MissedDates
-
-    def test__missedDates__existDate(self):
-        tuples = [[
-            'codi_pais',
-            'pais',
-            'codi_ccaa',
-            'comunitat_autonoma',
-            'codi_provincia',
-            'provincia',
-            'codi_ine',
-            'municipi',
-            'count_2018_01_01',
-        ]]
-        dates = ['2018-01-01']
-        self.assertEquals(missedDates(tuples, dates),
-            []
-        )
-
-    def test__missedDates__noExistDate(self):
-        tuples = [[
-            'codi_pais',
-            'pais',
-            'codi_ccaa',
-            'comunitat_autonoma',
-            'codi_provincia',
-            'provincia',
-            'codi_ine',
-            'municipi',
-            'count_2018_01_01',
-        ]]
-        dates = ['2018-01-01', '2018-02-01']
-        self.assertEquals(missedDates(tuples, dates),
-            ['2018-02-01']
-        )
-
-    def test__missedDates__moreDateExist(self):
-        tuples = [[
-            'codi_pais',
-            'pais',
-            'codi_ccaa',
-            'comunitat_autonoma',
-            'codi_provincia',
-            'provincia',
-            'codi_ine',
-            'municipi',
-            'count_2018_01_01',
-            'count_2018_02_01',
-        ]]
-        dates = ['2018-01-01',]
-        self.assertEquals(missedDates(tuples, dates),
-            []
-        )
 
     # findTuples
 
