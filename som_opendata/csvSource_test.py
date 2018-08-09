@@ -132,4 +132,53 @@ class CsvSource_Test(unittest.TestCase):
               count_2018_02_01: '201'
         """)
 
+    @unittest.skip('TODO TOMORROW! WIP')
+    def test__set__oneDateWithNewCity(self):
+        source = self.createSource(
+            ns(members=[headers,
+            data_SantJoan])
+            )
+        source.update('members',
+            [ns(codi_pais=u'ES',
+                pais=u'España',
+                codi_ccaa=u'09',
+                comunitat_autonoma=u'Catalunya',
+                codi_provincia=u'08',
+                provincia=u'Barcelona',
+                codi_ine=u'08217',
+                municipi=u'Sant Joan Despí',
+                count_2018_02_01=u'201'),
+            ns(codi_pais=u'ES',
+                pais=u'España',
+                codi_ccaa=u'09',
+                comunitat_autonoma=u'Catalunya',
+                codi_provincia=u'17',
+                provincia=u'Girona',
+                codi_ine=u'17007',
+                municipi=u'Amer',
+                count_2018_02_01=u'2001')]
+        )
+        self.assertNsEqual(ns(data=source._objects['members']), """
+            data:
+            - codi_pais: ES
+              pais: 'España'
+              codi_ccaa: '09'
+              comunitat_autonoma: Catalunya
+              codi_provincia: '08'
+              provincia: Barcelona
+              codi_ine: '08217'
+              municipi: Sant Joan Despí
+              count_2018_01_01: '1000'
+              count_2018_02_01: '201'
+            - codi_ccaa: '09'
+              codi_ine: '17007'
+              codi_pais: ES
+              codi_provincia: '17'
+              comunitat_autonoma: Catalunya
+              municipi: Amer
+              pais: 'España'
+              provincia: Girona
+              count_2018_01_01: '0'
+              count_2018_02_01: '2001'
+        """)
 
