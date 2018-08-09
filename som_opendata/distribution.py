@@ -156,6 +156,17 @@ def includedDates(tuples):
         validateStringDate(field2date(header))
         ]
 
+def includedDatesObject(objects):
+    
+    if not objects: return []
+
+    return [ field2date(key)
+        for key, value in objects[0].iteritems()
+        if isField(key) and validateStringDate(field2date(key))
+    ]
+
+
+
 def validateStringDate(date):
 
     try:

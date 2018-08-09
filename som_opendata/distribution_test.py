@@ -20,6 +20,7 @@ from distribution import (
     missingDates,
     removeCounts,
     removeDates,
+    includedDatesObject,
     )
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -765,6 +766,25 @@ class Distribution_Test(unittest.TestCase):
 
     def test__includedDates__incorrectDates(self):
         result = includedDates([['blah', 'count_2018_20_54', 'count_2018_01_01']])
+        self.assertEquals(result, ['2018-01-01'])
+
+
+    # includedDates
+
+    def test__includedDatesObject__empty(self):
+        result = includedDatesObject([])
+        self.assertEquals(result, [])
+
+    def test__includedDatesObject__emptyHeaders(self):
+        result = includedDatesObject([ns(),ns()])
+        self.assertEquals(result, [])
+
+    def test__includedDatesObject__correctDates(self):
+        result = includedDatesObject([ns(codi_pais='ES', count_2018_01_01='1000')])
+        self.assertEquals(result, ['2018-01-01'])
+
+    def test__includedDatesObject__incorrectDates(self):
+        result = includedDatesObject([ns(codi_pais='ES', count_2018_41_01='1000', count_2018_01_01='1000')])
         self.assertEquals(result, ['2018-01-01'])
 
 
