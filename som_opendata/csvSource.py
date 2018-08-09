@@ -29,20 +29,23 @@ class CsvSource(Source):
             datum : parse_tsv(data)
             for datum, data in self.data.iteritems()
         }
+        self._objects = {
+            datum : tuples2objects(_tuples)
+            for datum, _tuples in self._tuples.iteritems()
+        }
 
 
     def get(self, datum, dates, filters):
 
         tuples = self._tuples[datum]
-        objectList = tuples2objects(tuples)
+        objects = self._objects[datum]
 
         missing_dates = missingDates(includedDates(tuples), dates)
         if missing_dates:
             raise MissingDateError(missing_dates)
 
         unnecessaryDates = missingDates(dates, includedDates(tuples))
-        filtered_dates = removeDates(objectList, unnecessaryDates)
-        
+        filtered_dates = removeDates(objects, unnecessaryDates)
         filtered_tuples = locationFilter(filtered_dates, filters)
 
         return filtered_tuples
@@ -51,7 +54,7 @@ class CsvSource(Source):
     def set(self, datum, content):
 
         tuples = self._tuples[datum]
-        namespaces = tuples2objects(tuples)
+        namespaces = self._objects[datum]
         _data = tablib.Dataset()
         _data.dict = namespaces
 
@@ -75,3 +78,4 @@ class CsvSource(Source):
 
         self.data[datum] = _datum.decode('utf8')[:-1]
         self._tuples[datum] = parse_tsv(self.data[datum])
+        self._objects[datum] = tuples2objects(self._tuples[datum])
