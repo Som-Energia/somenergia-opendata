@@ -12,6 +12,8 @@ from .distribution import (
     includedDates,
     missingDates,
     removeDates,
+    includedDatesObject,
+    date2field,
     )
 from .source import Source
 from .missingDataError import MissingDataError
@@ -37,45 +39,41 @@ class CsvSource(Source):
 
     def get(self, datum, dates, filters):
 
-        tuples = self._tuples[datum]
         objects = self._objects[datum]
 
-        missing_dates = missingDates(includedDates(tuples), dates)
+        missing_dates = missingDates(includedDatesObject(objects), dates)
         if missing_dates:
             raise MissingDateError(missing_dates)
 
-        unnecessaryDates = missingDates(dates, includedDates(tuples))
+        unnecessaryDates = missingDates(dates, includedDatesObject(objects))
         filtered_dates = removeDates(objects, unnecessaryDates)
         filtered_tuples = locationFilter(filtered_dates, filters)
 
         return filtered_tuples
 
 
-    def set(self, datum, content):
+    def update(self, datum, content):
 
-        tuples = self._tuples[datum]
-        namespaces = self._objects[datum]
         _data = tablib.Dataset()
-        _data.dict = namespaces
-
+        _data.dict = self._objects[datum]
         _content = tablib.Dataset()
         _content.dict = content
+        
         sortedData = _data.sort('codi_ine')
         sortedContent = _content.sort('codi_ine')
-        newHeaders = [
-            header
-            for header in sortedContent.headers
-            if header not in tuples[0]
+
+        newDates = missingDates(includedDatesObject(_data.dict),
+            includedDatesObject(_content.dict)
+        )
+
+        for newDate in newDates:
+            sortedData.append_col(
+                sortedContent[date2field(newDate)],
+                header=date2field(newDate)
+            )
+
+        self._objects[datum] = [ ns(o)
+            for o in sortedData.dict
+
         ]
 
-        for newHeader in newHeaders:
-            sortedData.append_col(
-                sortedContent[newHeader],
-                header=newHeader
-            )
-        _datum = sortedData.tsv.replace('\r\n', '\n')
-
-
-        self.data[datum] = _datum.decode('utf8')[:-1]
-        self._tuples[datum] = parse_tsv(self.data[datum])
-        self._objects[datum] = tuples2objects(self._tuples[datum])

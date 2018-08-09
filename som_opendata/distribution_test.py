@@ -769,7 +769,7 @@ class Distribution_Test(unittest.TestCase):
         self.assertEquals(result, ['2018-01-01'])
 
 
-    # includedDates
+    # includedDatesObjects
 
     def test__includedDatesObject__empty(self):
         result = includedDatesObject([])

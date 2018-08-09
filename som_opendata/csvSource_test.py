@@ -120,15 +120,18 @@ class CsvSource_Test(unittest.TestCase):
                 count_2018_01_01=u'1000',
                 count_2018_02_01=u'201')]
         )
-        self.assertEqual(source._objects['members'],
-            [ns(codi_pais=u'ES',
-                pais=u'España',
-                codi_ccaa=u'09',
-                comunitat_autonoma=u'Catalunya',
-                codi_provincia=u'08',
-                provincia=u'Barcelona',
-                codi_ine=u'08217',
-                municipi=u'Sant Joan Despí',
-                count_2018_01_01=u'1000',
-                count_2018_02_01=u'201')]
-            )
+        self.assertNsEqual(ns(data=source._objects['members']), """
+            data:
+            - codi_pais: ES
+              pais: 'España'
+              codi_ccaa: '09'
+              comunitat_autonoma: Catalunya
+              codi_provincia: '08'
+              provincia: Barcelona
+              codi_ine: '08217'
+              municipi: Sant Joan Despí
+              count_2018_01_01: '1000'
+              count_2018_02_01: '201'
+        """)
+
+
