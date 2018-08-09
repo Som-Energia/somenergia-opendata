@@ -15,7 +15,6 @@ from .distribution import (
     date2field,
     )
 from .source import Source
-from .missingDataError import MissingDataError
 from .missingDateError import MissingDateError
 
 staticColumns = 8
