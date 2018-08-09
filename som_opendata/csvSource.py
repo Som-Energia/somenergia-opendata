@@ -70,6 +70,5 @@ class CsvSource(Source):
 
         self._objects[datum] = [ ns(o)
             for o in sortedData.dict
-
         ]
 

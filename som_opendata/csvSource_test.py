@@ -108,7 +108,7 @@ class CsvSource_Test(unittest.TestCase):
             ns(members=[headers,
             data_SantJoan])
             )
-        source.set('members',
+        source.update('members',
             [ns(codi_pais=u'ES',
                 pais=u'España',
                 codi_ccaa=u'09',
@@ -117,7 +117,6 @@ class CsvSource_Test(unittest.TestCase):
                 provincia=u'Barcelona',
                 codi_ine=u'08217',
                 municipi=u'Sant Joan Despí',
-                count_2018_01_01=u'1000',
                 count_2018_02_01=u'201')]
         )
         self.assertNsEqual(ns(data=source._objects['members']), """
