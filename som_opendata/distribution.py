@@ -194,10 +194,9 @@ def removeCounts(_object, counts):
 
 # TODO : TEST IT
 def findObject(objectList, key, value):
-    return None
-     #for o in objectList:
-     #    if o[key] == value:
-     #        return o
+     for o in objectList:
+         if o[key] == value:
+             return o
 
 #TODO : TEST IT
 #def addObjects(data, content):

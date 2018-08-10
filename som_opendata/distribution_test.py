@@ -857,5 +857,12 @@ class Distribution_Test(unittest.TestCase):
         result = findObject(objectList, 'key1', 'value5')
         self.assertEquals(result, None)
 
+    def test__findObject__existObject(self):
+        objectList = [
+            ns(key1='value1', key2='value2'),
+            ns(key1='value3', key2='value4')
+        ]
+        result = findObject(objectList, 'key1', 'value3')
+        self.assertEquals(result, ns(key1='value3', key2='value4'))
 
 # vim: et sw=4 ts=4
