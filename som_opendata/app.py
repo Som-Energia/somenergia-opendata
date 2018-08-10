@@ -4,7 +4,7 @@ import logging
 import records
 from flask import Flask, current_app
 from .api import old_modul
-from .members.members import members_modul
+from .printer.printer import printer_module
 from som_opendata.common import (
     handle_bad_request,
     handle_request_not_found,
@@ -12,6 +12,7 @@ from som_opendata.common import (
     IsoCountryA2Converter,
     IsoDateConverter,
     IsoFrequencyConverte,
+    IsoFieldConverter,
     )
 
 
@@ -41,9 +42,10 @@ def create_app():
     app.url_map.converters['country'] = IsoCountryA2Converter
     app.url_map.converters['frequency'] = IsoFrequencyConverte
     app.url_map.converters['aggregateLevel'] = IsoAggregateLevelConverter
+    app.url_map.converters['field'] = IsoFieldConverter
 
     app.register_blueprint(old_modul, url_prefix='/old')
-    app.register_blueprint(members_modul, url_prefix='/members')
+    app.register_blueprint(printer_module, url_prefix='/printer')
     app.register_error_handler(404, handle_request_not_found)
     app.register_error_handler(400, handle_bad_request)
 

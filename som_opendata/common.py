@@ -139,6 +139,17 @@ class IsoAggregateLevelConverter(BaseConverter):
 
         raise ValidationError()
 
+class IsoFieldConverter(BaseConverter):
+
+    def to_python(self, value):
+        if value == 'members' or value == 'contracts':
+            return value    
+        raise ValidationError('Incorrect Frequency')
+
+    def to_url(self, value):
+        if value == 'members' or value == 'contracts':
+            return value
+        raise ValidationError()
 
 @yaml_response
 def handle_request_not_found(e):

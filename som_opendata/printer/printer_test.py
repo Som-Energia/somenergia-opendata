@@ -5,7 +5,7 @@ from yamlns.dateutils import Date
 from yamlns import namespace as ns
 import b2btest
 from ..app import app
-from members import members_modul, validateInputDates
+from printer import printer_module, validateInputDates
 
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -25,14 +25,14 @@ class BaseApi_Test(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client()
         self.b2bdatapath = 'b2bdata'
-        self.oldsource = members_modul.source
+        self.oldsource = printer_module.source
 
     def tearDown(self):
-        members_modul.source = self.oldsource
+        printer_module.source = self.oldsource
 
     def setupSource(self, *lines):
-        members_modul.source = '\n'.join(lines)
-        members_modul.firstDate = '2000-01-01'
+        printer_module.source = '\n'.join(lines)
+        printer_module.firstDate = '2000-01-01'
 
     def get(self, *args, **kwds):
         return self.client.get(*args,**kwds)
@@ -74,7 +74,7 @@ class BaseApi_Test(unittest.TestCase):
             headers,
             data_SantJoan,
             )
-        r = self.get('/members/on/2018-01-01')
+        r = self.get('/printer/members/on/2018-01-01')
         self.assertYamlResponse(r, """\
             data: [1000]
             dates: [2018-01-01]
@@ -88,7 +88,7 @@ class BaseApi_Test(unittest.TestCase):
             data_SantJoan,
             data_Perignan,
             )
-        r = self.get('/members/on/2018-01-01')
+        r = self.get('/printer/members/on/2018-01-01')
         self.assertYamlResponse(r, """\
             data: [3012]
             dates: [2018-01-01]
@@ -99,7 +99,7 @@ class BaseApi_Test(unittest.TestCase):
             headers,
             data_Adra,
             )
-        r = self.get('/members/by/cities/on/2018-01-01')
+        r = self.get('/printer/members/by/cities/on/2018-01-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-01]
@@ -127,7 +127,7 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_'+str(Date.today()).replace('-','_'),
             data_Adra+'\t123',
             )
-        r = self.get('/members/by/cities')
+        r = self.get('/printer/members/by/cities')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: ["""+str(Date.today())+"""]
@@ -155,7 +155,7 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_'+str(Date.today()).replace('-','_'),
             data_Adra+'\t123',
             )
-        r = self.get('/members')
+        r = self.get('/printer/members')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: ["""+str(Date.today())+"""]
@@ -167,8 +167,8 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_2018_05_01',
             data_Adra+'\t123',
             )
-        members_modul.firstDate = '2000-01-01'
-        r = self.get('/members/by/countries/monthly')
+        printer_module.firstDate = '2000-01-01'
+        r = self.get('/printer/members/by/countries/monthly')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-01, 2018-05-01]
@@ -184,7 +184,7 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_'+str(Date.today()-delta(weeks=1)).replace('-','_')+'\tcount_'+str(Date.today()).replace('-','_'),
             data_Adra+'\t123\t1234567',
             )
-        r = self.get('/members/by/countries/weekly/from/'+str(Date.today()-delta(weeks=1)))
+        r = self.get('/printer/members/by/countries/weekly/from/'+str(Date.today()-delta(weeks=1)))
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: ["""+str(Date.today()-delta(weeks=1))+""", """+str(Date.today())+"""]
@@ -200,7 +200,7 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_2018_02_01'+'\tcount_2018_03_01',
             data_Adra+'\t123\t1234567',
             )
-        r = self.get('/members/by/cities/monthly/from/2018-01-01/to/2018-02-01')
+        r = self.get('/printer/members/by/cities/monthly/from/2018-01-01/to/2018-02-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-01, 2018-02-01]
@@ -228,8 +228,8 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_2018_02_01'+'\tcount_2018_03_01',
             data_Adra+'\t123\t1234567',
             )
-        members_modul.firstDate = '2018-02-01'
-        r = self.get('/members/by/cities/monthly/to/2018-03-01')
+        printer_module.firstDate = '2018-02-01'
+        r = self.get('/printer/members/by/cities/monthly/to/2018-03-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-02-01, 2018-03-01]
@@ -257,7 +257,7 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_'+str(Date.today()-delta(weeks=1)).replace('-','_')+'\tcount_'+str(Date.today()).replace('-','_'),
             data_Adra+'\t123\t1234567',
             )
-        r = self.get('/members/weekly/from/'+str(Date.today()-delta(weeks=1)))
+        r = self.get('/printer/members/weekly/from/'+str(Date.today()-delta(weeks=1)))
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: ["""+str(Date.today()-delta(weeks=1))+""", """+str(Date.today())+"""]
@@ -269,7 +269,7 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_2018_02_01'+'\tcount_2018_03_01',
             data_Adra+'\t123\t1234567',
             )
-        r = self.get('/members/monthly/from/2018-01-01/to/2018-02-01')
+        r = self.get('/printer/members/monthly/from/2018-01-01/to/2018-02-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-01, 2018-02-01]
@@ -281,8 +281,8 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_2018_02_01'+'\tcount_2018_03_01',
             data_Adra+'\t123\t1234567',
             )
-        members_modul.firstDate = '2018-02-01'
-        r = self.get('/members/monthly/to/2018-03-01')
+        printer_module.firstDate = '2018-02-01'
+        r = self.get('/printer/members/monthly/to/2018-03-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-02-01, 2018-03-01]
@@ -294,8 +294,8 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_2018_05_01',
             data_Adra+'\t123',
             )
-        members_modul.firstDate = '2000-01-01'
-        r = self.get('/members/monthly')
+        printer_module.firstDate = '2000-01-01'
+        r = self.get('/printer/members/monthly')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-01, 2018-05-01]
@@ -307,7 +307,7 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_2019_01_01',
             data_Adra+'\t123',
             )
-        r = self.get('/members/yearly/from/2018-01-01/to/2019-01-01')
+        r = self.get('/printer/members/yearly/from/2018-01-01/to/2019-01-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-01, 2019-01-01]
@@ -323,7 +323,7 @@ class BaseApi_Test(unittest.TestCase):
             data_SantJoan,
             data_Amer
             )
-        r = self.get('/members/by/cities/on/2018-01-01?city=17007')
+        r = self.get('/printer/members/by/cities/on/2018-01-01?city=17007')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-01]
@@ -346,45 +346,45 @@ class BaseApi_Test(unittest.TestCase):
                             data: [2000]
             """)
 
-    def test__membersError__URLparamsNotExist_aggregateLevel(self):
+    def test__printerError__URLparamsNotExist_aggregateLevel(self):
         self.setupSource(
             headers+'\tcount_2018_05_01',
             data_Adra+'\t123',
             )
-        r = self.get('/members/by/piolin')
+        r = self.get('/printer/members/by/piolin')
         self.assertEqual(r.status_code, 404)
 
-    def test__membersError__URLparamsNotExist_frequency(self):
+    def test__printerError__URLparamsNotExist_frequency(self):
         self.setupSource(
             headers,
             data_Adra,
             )
-        r = self.get('/members/piolin')
+        r = self.get('/printer/members/piolin')
         self.assertEqual(r.status_code, 404)
 
     @unittest.skip("Not implemented yet | Caldria retocar el converter de Date")
-    def test__membersError__URLparamsNotExist_date(self):
+    def test__printerError__URLparamsNotExist_date(self):
         self.setupSource(
             headers,
             data_Adra,
             )
-        r = self.get('/members/on/piolin')
+        r = self.get('/printer/members/on/piolin')
         self.assertEqual(r.status_code, 404)
 
-    def test__membersError__queryParamsNotExist(self):
+    def test__printerError__queryParamsNotExist(self):
         self.setupSource(
             headers,
             data_Adra,
             )
-        r = self.get('/members/by/cities/on/2018-01-01?city=9999999')
+        r = self.get('/printer/members/by/cities/on/2018-01-01?city=9999999')
         self.assertYamlResponse(r, ns())
 
-    def test__membersError__incorrectDates(self):
+    def test__printerError__incorrectDates(self):
         self.setupSource(
             headers,
             data_Adra,
             )
-        r = self.get('/members/by/cities/on/2018-01-01/from/2018-02-02')
+        r = self.get('/printer/members/by/cities/on/2018-01-01/from/2018-02-02')
         self.assertEqual(r.status_code, 404)
 
 
@@ -396,8 +396,8 @@ class BaseApi_Test(unittest.TestCase):
             headers+'\tcount_2018_02_01'+'\tcount_2018_03_01',
             data_Adra+'\t123\t1234567',
             )
-        members_modul.firstDate = '2018-01-15'
-        r = self.get('/members/by/cities/monthly/to/2018-03-01')
+        printer_module.firstDate = '2018-01-15'
+        r = self.get('/printer/members/by/cities/monthly/to/2018-03-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-15, 2018-02-15]
