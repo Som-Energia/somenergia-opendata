@@ -207,7 +207,7 @@ def addObjects(data, content):
                 aux = ns(_object)
                 dates = missingDates(includedDatesObject(content), includedDatesObject(data))
                 for date in dates:
-                    aux[date2field(date)] = 0
+                    aux[date2field(date)] = '0'
                 data.append(aux)
 
 # vim: et sw=4 ts=4

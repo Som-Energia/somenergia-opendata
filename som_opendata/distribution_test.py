@@ -984,4 +984,69 @@ class Distribution_Test(unittest.TestCase):
                 ),
             ])
 
+    def test__addObjects__diferentCounts(self):
+        data = [
+                ns(
+                    codi_pais=u'ES',
+                    pais=u'España',
+                    codi_ccaa=u'09',
+                    comunitat_autonoma=u'Catalunya',
+                    codi_provincia=u'08',
+                    provincia=u'Barcelona',
+                    codi_ine=u'08217',
+                    municipi=u'Sant Joan Despí',
+                    count_2018_02_01=u'201',
+                ),
+            ]
+        content = [
+                ns(
+                    codi_pais=u'ES',
+                    pais=u'España',
+                    codi_ccaa=u'09',
+                    comunitat_autonoma=u'Catalunya',
+                    codi_provincia=u'08',
+                    provincia=u'Barcelona',
+                    codi_ine=u'08217',
+                    municipi=u'Sant Joan Despí',
+                    count_2018_03_01=u'2010',
+                ),
+                ns(
+                    codi_pais=u'ES',
+                    pais=u'España',
+                    codi_ccaa=u'09',
+                    comunitat_autonoma=u'Catalunya',
+                    codi_provincia=u'17',
+                    provincia=u'Girona',
+                    codi_ine=u'17007',
+                    municipi=u'Amer',
+                    count_2018_03_01=u'1000',
+                ),
+            ]
+        addObjects(data, content)
+        self.assertEquals(data, [
+                ns(
+                    codi_pais=u'ES',
+                    pais=u'España',
+                    codi_ccaa=u'09',
+                    comunitat_autonoma=u'Catalunya',
+                    codi_provincia=u'08',
+                    provincia=u'Barcelona',
+                    codi_ine=u'08217',
+                    municipi=u'Sant Joan Despí',
+                    count_2018_02_01=u'201',
+                ),
+                ns(
+                    codi_pais=u'ES',
+                    pais=u'España',
+                    codi_ccaa=u'09',
+                    comunitat_autonoma=u'Catalunya',
+                    codi_provincia=u'17',
+                    provincia=u'Girona',
+                    codi_ine=u'17007',
+                    municipi=u'Amer',
+                    count_2018_02_01='0',
+                    count_2018_03_01=u'1000',
+                ),
+            ])
+
 # vim: et sw=4 ts=4
