@@ -20,6 +20,7 @@ from distribution import (
     removeCounts,
     removeDates,
     includedDatesObject,
+    findObject,
     )
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -844,5 +845,17 @@ class Distribution_Test(unittest.TestCase):
         result = removeDates([_object], ['2018-01-01'])
         del _object['count_2018_01_01']
         self.assertEquals(result, [_object])
+
+
+    # finsObject
+
+    def test__findObject__NotFound(self):
+        objectList = [
+            ns(key1='value1', key2='value2'),
+            ns(key1='value3', key2='value4')
+        ]
+        result = findObject(objectList, 'key1', 'value5')
+        self.assertEquals(result, None)
+
 
 # vim: et sw=4 ts=4
