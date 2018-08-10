@@ -21,6 +21,7 @@ from distribution import (
     removeDates,
     includedDatesObject,
     findObject,
+    addObjects,
     )
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -864,5 +865,60 @@ class Distribution_Test(unittest.TestCase):
         ]
         result = findObject(objectList, 'key1', 'value3')
         self.assertEquals(result, ns(key1='value3', key2='value4'))
+
+
+    # addObjects
+
+    def test__addObjects__Equals(self):
+        data = [
+                ns(
+                    codi_pais=u'ES',
+                    pais=u'España',
+                    codi_ccaa=u'09',
+                    comunitat_autonoma=u'Catalunya',
+                    codi_provincia=u'08',
+                    provincia=u'Barcelona',
+                    codi_ine=u'08217',
+                    municipi=u'Sant Joan Despí',
+                    count_2018_02_01=u'201',
+                ),
+                ns(
+                    codi_pais=u'ES',
+                    pais=u'España',
+                    codi_ccaa=u'09',
+                    comunitat_autonoma=u'Catalunya',
+                    codi_provincia=u'17',
+                    provincia=u'Girona',
+                    codi_ine=u'17007',
+                    municipi=u'Amer',
+                    count_2018_02_01=u'2001',
+                )
+            ]
+        addObjects(data, data)
+        self.assertEquals(data, [
+                ns(
+                    codi_pais=u'ES',
+                    pais=u'España',
+                    codi_ccaa=u'09',
+                    comunitat_autonoma=u'Catalunya',
+                    codi_provincia=u'08',
+                    provincia=u'Barcelona',
+                    codi_ine=u'08217',
+                    municipi=u'Sant Joan Despí',
+                    count_2018_02_01=u'201',
+                ),
+                ns(
+                    codi_pais=u'ES',
+                    pais=u'España',
+                    codi_ccaa=u'09',
+                    comunitat_autonoma=u'Catalunya',
+                    codi_provincia=u'17',
+                    provincia=u'Girona',
+                    codi_ine=u'17007',
+                    municipi=u'Amer',
+                    count_2018_02_01=u'2001',
+                )
+            ])
+
 
 # vim: et sw=4 ts=4

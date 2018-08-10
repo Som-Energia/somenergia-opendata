@@ -192,22 +192,22 @@ def removeCounts(_object, counts):
             ret[key] = value
     return ret
 
-# TODO : TEST IT
 def findObject(objectList, key, value):
      for o in objectList:
          if o[key] == value:
              return o
 
 #TODO : TEST IT
-#def addObjects(data, content):
-#     index = 0
-#     for _object in content:
-#         _d = findObject(data, 'codi_ine', _object['codi_ine'])
-#         if not _d:
-#             aux = ns(_object)
-#             dates = missingDates(includedDatesObject(content), includedDatesObject(data))
-#             for date in dates:
-#                 aux[date2field(date)] = 0
-#             data.append(aux)
+def addObjects(data, content):
+    if len(data) != len(content):
+        index = 0
+        for _object in content:
+            _d = findObject(data, 'codi_ine', _object['codi_ine'])
+            if not _d:
+                aux = ns(_object)
+                dates = missingDates(includedDatesObject(content), includedDatesObject(data))
+                for date in dates:
+                    aux[date2field(date)] = 0
+                data.append(aux)
 
 # vim: et sw=4 ts=4
