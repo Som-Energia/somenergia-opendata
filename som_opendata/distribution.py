@@ -2,6 +2,7 @@
 from yamlns.dateutils import Date as isoDate
 from yamlns import namespace as ns
 
+
 aggregation_levels = [
     ('countries', 'country', 'codi_pais', 'pais'),
     ('ccaas', 'ccaa', 'codi_ccaa', 'comunitat_autonoma'),
@@ -197,10 +198,7 @@ def findObject(objectList, key, value):
          if o[key] == value:
              return o
 
-#TODO : TEST IT
 def addObjects(data, content):
-    if len(data) != len(content):
-        index = 0
         for _object in content:
             _d = findObject(data, 'codi_ine', _object['codi_ine'])
             if not _d:
@@ -209,5 +207,14 @@ def addObjects(data, content):
                 for date in dates:
                     aux[date2field(date)] = '0'
                 data.append(aux)
+            else:
+                addCounts(_d, ((key, value)
+                    for key, value in _object.iteritems() if isField(key)
+                    ))
+
+def addCounts(dictionary, newElements):
+    for (key, value) in newElements:
+        dictionary[key] = value
+
 
 # vim: et sw=4 ts=4

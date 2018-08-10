@@ -13,6 +13,7 @@ from .distribution import (
     removeDates,
     includedDatesObject,
     date2field,
+    addObjects,
     )
 from .source import Source
 from .missingDateError import MissingDateError
@@ -53,20 +54,6 @@ class CsvSource(Source):
         _content = tablib.Dataset()
         _content.dict = content
         
-        sortedData = _data.sort('codi_ine')
-        sortedContent = _content.sort('codi_ine')
+        addObjects(self._objects[datum], content)
 
-        newDates = missingDates(includedDatesObject(_data.dict),
-            includedDatesObject(_content.dict)
-        )
-
-        for newDate in newDates:
-            sortedData.append_col(
-                sortedContent[date2field(newDate)],
-                header=date2field(newDate)
-            )
-
-        self._objects[datum] = [ ns(o)
-            for o in sortedData.dict
-        ]
 

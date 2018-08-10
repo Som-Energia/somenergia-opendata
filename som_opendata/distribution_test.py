@@ -1023,30 +1023,28 @@ class Distribution_Test(unittest.TestCase):
                 ),
             ]
         addObjects(data, content)
-        self.assertEquals(data, [
-                ns(
-                    codi_pais=u'ES',
-                    pais=u'España',
-                    codi_ccaa=u'09',
-                    comunitat_autonoma=u'Catalunya',
-                    codi_provincia=u'08',
-                    provincia=u'Barcelona',
-                    codi_ine=u'08217',
-                    municipi=u'Sant Joan Despí',
-                    count_2018_02_01=u'201',
-                ),
-                ns(
-                    codi_pais=u'ES',
-                    pais=u'España',
-                    codi_ccaa=u'09',
-                    comunitat_autonoma=u'Catalunya',
-                    codi_provincia=u'17',
-                    provincia=u'Girona',
-                    codi_ine=u'17007',
-                    municipi=u'Amer',
-                    count_2018_02_01='0',
-                    count_2018_03_01=u'1000',
-                ),
-            ])
+        self.assertNsEqual(ns(data=data), """\
+            data:
+            - municipi: Sant Joan Despí
+              codi_ccaa: '09'
+              provincia: Barcelona
+              codi_pais: ES
+              codi_ine: '08217'
+              comunitat_autonoma: Catalunya
+              codi_provincia: '08'
+              pais: 'España'
+              count_2018_02_01: '201'
+              count_2018_03_01: '2010'
+            - municipi: Amer
+              count_2018_03_01: '1000'
+              provincia: Girona
+              codi_pais: ES
+              codi_ine: '17007'
+              comunitat_autonoma: Catalunya
+              codi_ccaa: '09'
+              codi_provincia: '17'
+              pais: 'España'
+              count_2018_02_01: '0'
+        """)
 
 # vim: et sw=4 ts=4

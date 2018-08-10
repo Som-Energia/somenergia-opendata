@@ -132,7 +132,6 @@ class CsvSource_Test(unittest.TestCase):
               count_2018_02_01: '201'
         """)
 
-    @unittest.skip('TODO TOMORROW! WIP')
     def test__set__oneDateWithNewCity(self):
         source = self.createSource(
             ns(members=[headers,
@@ -170,15 +169,15 @@ class CsvSource_Test(unittest.TestCase):
               municipi: Sant Joan Despí
               count_2018_01_01: '1000'
               count_2018_02_01: '201'
-            - codi_ccaa: '09'
-              codi_ine: '17007'
-              codi_pais: ES
-              codi_provincia: '17'
-              comunitat_autonoma: Catalunya
-              municipi: Amer
-              pais: 'España'
+            - municipi: Amer
+              codi_ccaa: '09'
               provincia: Girona
-              count_2018_01_01: '0'
+              codi_pais: ES
+              codi_ine: '17007'
+              comunitat_autonoma: Catalunya
+              codi_provincia: '17'
+              pais: 'España'
               count_2018_02_01: '2001'
+              count_2018_01_01: '0'
         """)
 
