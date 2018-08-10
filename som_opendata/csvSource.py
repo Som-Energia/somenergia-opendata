@@ -35,7 +35,6 @@ class CsvSource(Source):
     def get(self, datum, dates, filters):
 
         objects = self._objects[datum]
-
         missing_dates = missingDates(includedDatesObject(objects), dates)
         if missing_dates:
             raise MissingDateError(missing_dates)

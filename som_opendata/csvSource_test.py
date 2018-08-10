@@ -23,6 +23,7 @@ class CsvSource_Test(unittest.TestCase):
 
     def setUp(self):
         self.maxDiff=None
+        self.b2bdatapath = 'b2bdata'
 
     def createSource(self, datums):
 
@@ -181,3 +182,27 @@ class CsvSource_Test(unittest.TestCase):
               count_2018_01_01: '0'
         """)
 
+    def test__get__readCsvFile(self):
+        rows = []
+        with open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contracts_series-expected') as f:
+            for line in f:
+                rows.append(line.strip('\n'))
+        f.close()
+        
+        source = self.createSource(
+            ns(contracts=rows)
+        )
+        result = source.get('contracts', ['2015-01-01'], ns(codi_ine='17066'))
+        self.assertNsEqual(ns(data=result), """
+            data:
+            - codi_pais: ES
+              pais: España
+              codi_ccaa: 09
+              comunitat_autonoma: Cataluña
+              codi_provincia: '17'
+              provincia: Girona
+              codi_ine: '17066'
+              municipi: Figueres
+              count_2015_01_01: '31'
+            """)
+        
