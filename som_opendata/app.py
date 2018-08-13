@@ -6,6 +6,7 @@ import records
 from flask import Flask, current_app
 from yamlns import namespace as ns
 from .api import old_modul
+from csvSource import CsvSource
 from .printer.printer import printer_module
 from som_opendata.common import (
     handle_bad_request,
@@ -33,6 +34,7 @@ def readCsvFiles():
 
 def init_db():
     current_app.csvData = readCsvFiles()
+    current_app.csvSource = CsvSource(current_app.csvData)
 
     current_app.db = records.Database(
         'postgres://{user}:{password}@{host}:{port}/{database}'.format(**config.psycopg)

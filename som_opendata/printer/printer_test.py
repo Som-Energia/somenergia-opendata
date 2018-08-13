@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 import unittest
 from dateutil.relativedelta import relativedelta as delta
+from flask import current_app
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
 import b2btest
@@ -19,7 +20,7 @@ class BaseApi_Test(unittest.TestCase):
 
     @staticmethod
     def setUpClass():
-        #BaseApi_Test.maxDiff=None
+        BaseApi_Test.maxDiff=100000
         app.config['TESTING']=True
 
     def setUp(self):
@@ -30,9 +31,8 @@ class BaseApi_Test(unittest.TestCase):
     def tearDown(self):
         printer_module.source = self.oldsource
 
-    def setupSource(self, *lines):
-        printer_module.source = '\n'.join(lines)
-        printer_module.firstDate = '2000-01-01'
+    def setupSource(self, *lines):  #TODO ESBORRAR
+        printer_module.firstDate = '2010-01-01'
 
     def get(self, *args, **kwds):
         return self.client.get(*args,**kwds)
@@ -70,59 +70,32 @@ class BaseApi_Test(unittest.TestCase):
         self.assertEqual(r, False)
 
     def test__onDate__exists(self):
-        self.setupSource(
-            headers,
-            data_SantJoan,
-            )
+        printer_module.firstDate = '2010-01-01'
         r = self.get('/printer/members/on/2018-01-01')
         self.assertYamlResponse(r, """\
-            data: [1000]
+            data: [41660]
             dates: [2018-01-01]
             """)
 
-    def test__onDate__moreCities(self):
-        self.setupSource(
-            headers,
-            data_Adra,
-            data_Amer,
-            data_SantJoan,
-            data_Perignan,
-            )
+    def test__onDate__moreCities(self): #TODO ESBORRAR
+        printer_module.firstDate = '2010-01-01'
         r = self.get('/printer/members/on/2018-01-01')
         self.assertYamlResponse(r, """\
-            data: [3012]
+            data: [41660]
             dates: [2018-01-01]
             """)
 
     def test__onDate_aggregateLevel__exist(self):
-        self.setupSource(
-            headers,
-            data_Adra,
-            )
-        r = self.get('/printer/members/by/cities/on/2018-01-01')
+        printer_module.firstDate = '2010-01-01'
+        r = self.get('/printer/members/by/world/on/2018-01-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-01]
-            data: [2]
-            countries:
-              ES:
-                name: España
-                data: [2]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    data: [2]
-                    states:
-                      '04':
-                        name: Almería
-                        data: [2]
-                        cities:
-                          '04003':
-                            name: Adra
-                            data: [2]
+            data: [41660]
             """)
 
-    def test__aggregateLevel__exist(self):
+    @unittest.skip('NOT IMPLEMENTED YET')
+    def test__aggregateLevel__existToday(self):
         self.setupSource(
             headers+'\tcount_'+str(Date.today()).replace('-','_'),
             data_Adra+'\t123',
@@ -150,6 +123,7 @@ class BaseApi_Test(unittest.TestCase):
                             data: [123]
             """)
 
+    @unittest.skip('NOT IMPLEMENTED YET')
     def test__basicUrl__exist(self):
         self.setupSource(
             headers+'\tcount_'+str(Date.today()).replace('-','_'),
@@ -163,95 +137,67 @@ class BaseApi_Test(unittest.TestCase):
             """)
 
     def test__aggregateLevel_frequency__exist(self):
-        self.setupSource(
-            headers+'\tcount_2018_05_01',
-            data_Adra+'\t123',
-            )
-        printer_module.firstDate = '2000-01-01'
-        r = self.get('/printer/members/by/countries/monthly')
+        printer_module.firstDate = '2010-01-01'
+        r = self.get('/printer/members/by/countries/yearly')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
-            dates: [2018-01-01, 2018-05-01]
-            data: [2, 123]
+            dates: [2010-01-01, 2011-01-01, 2012-01-01, 2013-01-01, 2014-01-01, 2015-01-01, 2016-01-01, 2017-01-01, 2018-01-01]
+            data: [0, 0, 1067, 4905, 11748, 17703, 23579, 29946, 41660]
             countries:
+              CL:
+                name: Chile
+                data: [0, 0, 1, 1, 1, 1, 1, 1, 1]
+              DE:
+                name: Germany
+                data: [0, 0, 0, 0, 1, 2, 2, 3, 3]
               ES:
                 name: España
-                data: [2, 123]
+                data: [0, 0, 1064, 4898, 11738, 17692, 23568, 29931, 41644]
+              FR:
+                name: France
+                data: [0, 0, 1, 1, 2, 2, 2, 4, 4]
+              NL:
+                name: Netherlands
+                data: [0, 0, 1, 3, 3, 3, 3, 3, 3]
+              None:
+                name: None
+                data: [0, 0, 0, 0, 0, 0, 0, 1, 2]
+              PT:
+                name: Portugal
+                data: [0, 0, 0, 1, 1, 1, 1, 1, 1]
+              UK:
+                name: United Kingdom
+                data: [0, 0, 0, 1, 2, 2, 2, 2, 2]
             """)
 
     def test__aggregateLevel_frequency_fromDate__exist(self):
-        self.setupSource(
-            headers+'\tcount_'+str(Date.today()-delta(weeks=1)).replace('-','_')+'\tcount_'+str(Date.today()).replace('-','_'),
-            data_Adra+'\t123\t1234567',
-            )
-        r = self.get('/printer/members/by/countries/weekly/from/'+str(Date.today()-delta(weeks=1)))
+        printer_module.firstDate = '2010-01-01'
+        r = self.get('/printer/members/by/world/yearly/from/2017-01-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
-            dates: ["""+str(Date.today()-delta(weeks=1))+""", """+str(Date.today())+"""]
-            data: [123, 1234567]
-            countries:
-              ES:
-                name: España
-                data: [123, 1234567]
+            dates: [2017-01-01, 2018-01-01]
+            data: [29946, 41660]
             """)
 
     def test__aggregateLevel_frequency_fromDate_toDate__exist(self):
-        self.setupSource(
-            headers+'\tcount_2018_02_01'+'\tcount_2018_03_01',
-            data_Adra+'\t123\t1234567',
-            )
-        r = self.get('/printer/members/by/cities/monthly/from/2018-01-01/to/2018-02-01')
+        printer_module.firstDate = '2010-01-01'
+        r = self.get('/printer/members/by/world/monthly/from/2018-01-01/to/2018-03-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
-            dates: [2018-01-01, 2018-02-01]
-            data: [2, 123]
-            countries:
-              ES:
-                name: España
-                data: [2, 123]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    data: [2, 123]
-                    states:
-                      '04':
-                        name: Almería
-                        data: [2, 123]
-                        cities:
-                          '04003':
-                            name: Adra
-                            data: [2, 123]
+            dates: [2018-01-01, 2018-02-01, 2018-03-01]
+            data: [41660, 44402, 45810]
             """)
 
     def test__aggregateLevel_frequency_toDate__exist(self):
-        self.setupSource(
-            headers+'\tcount_2018_02_01'+'\tcount_2018_03_01',
-            data_Adra+'\t123\t1234567',
-            )
         printer_module.firstDate = '2018-02-01'
-        r = self.get('/printer/members/by/cities/monthly/to/2018-03-01')
+        r = self.get('/printer/members/by/world/monthly/to/2018-03-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-02-01, 2018-03-01]
-            data: [123, 1234567]
-            countries:
-              ES:
-                name: España
-                data: [123, 1234567]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    data: [123, 1234567]
-                    states:
-                      '04':
-                        name: Almería
-                        data: [123, 1234567]
-                        cities:
-                          '04003':
-                            name: Adra
-                            data: [123, 1234567]
+            data: [44402, 45810]
             """)
 
+    @unittest.skip('NOT IMPLEMENTED YET')
     def test__frequency_formDate__exist(self):
         self.setupSource(
             headers+'\tcount_'+str(Date.today()-delta(weeks=1)).replace('-','_')+'\tcount_'+str(Date.today()).replace('-','_'),
@@ -265,125 +211,109 @@ class BaseApi_Test(unittest.TestCase):
             """)
 
     def test__frequency_fromDate_toDate__exist(self):
-        self.setupSource(
-            headers+'\tcount_2018_02_01'+'\tcount_2018_03_01',
-            data_Adra+'\t123\t1234567',
-            )
+        printer_module.firstDate = '2010-01-01'
         r = self.get('/printer/members/monthly/from/2018-01-01/to/2018-02-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-01, 2018-02-01]
-            data: [2, 123]
+            data: [41660, 44402]
             """)
 
-    def test__frequency_toDate__exist(self):
-        self.setupSource(
-            headers+'\tcount_2018_02_01'+'\tcount_2018_03_01',
-            data_Adra+'\t123\t1234567',
-            )
+    def test__frequency_toDate__exist(self): # TODO ESBORRAR
         printer_module.firstDate = '2018-02-01'
         r = self.get('/printer/members/monthly/to/2018-03-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-02-01, 2018-03-01]
-            data: [123, 1234567]
+            data: [44402, 45810]
             """)
 
-    def test__frequency__exist(self):
-        self.setupSource(
-            headers+'\tcount_2018_05_01',
-            data_Adra+'\t123',
-            )
-        printer_module.firstDate = '2000-01-01'
-        r = self.get('/printer/members/monthly')
+    def test__urlBaseFrequency__exist(self):
+        printer_module.firstDate = '2010-01-01'
+        r = self.get('/printer/members/yearly')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
-            dates: [2018-01-01, 2018-05-01]
-            data: [2, 123]
+            dates: [
+                2010-01-01,
+                2011-01-01,
+                2012-01-01,
+                2013-01-01,
+                2014-01-01,
+                2015-01-01,
+                2016-01-01,
+                2017-01-01,
+                2018-01-01,
+            ]
+            data: [
+                0,
+                0,
+                1067,
+                4905,
+                11748,
+                17703,
+                23579,
+                29946,
+                41660
+            ]
             """)
 
-    def test__frequencyYearly_fromDate_toDate__exist(self):
-        self.setupSource(
-            headers+'\tcount_2019_01_01',
-            data_Adra+'\t123',
-            )
-        r = self.get('/printer/members/yearly/from/2018-01-01/to/2019-01-01')
+    def test__frequencyYearly_fromDate_toDate__exist(self): # TODO ESBORRAR
+        printer_module.firstDate = '2010-01-01'
+        r = self.get('/printer/members/yearly/from/2017-01-01/to/2018-01-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
-            dates: [2018-01-01, 2019-01-01]
-            data: [2, 123]
+            dates: [2017-01-01, 2018-01-01]
+            data: [29946, 41660]
             """)
 
     def test__onDate_aggregateLevel_queryParams__exist(self):
-        self.setupSource(
-            headers,
-            data_Adra,
-            data_Perignan,
-            data_Girona,
-            data_SantJoan,
-            data_Amer
-            )
+        printer_module.firstDate = '2010-01-01'
         r = self.get('/printer/members/by/cities/on/2018-01-01?city=17007')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-01]
-            data: [2000]
+            data: [11]
             countries:
               ES:
                 name: España
-                data: [2000]
+                data: [11]
                 ccaas:
                   '09':
-                    name: Catalunya
-                    data: [2000]
+                    name: Cataluña
+                    data: [11]
                     states:
                       '17':
                         name: Girona
-                        data: [2000]
+                        data: [11]
                         cities:
                           '17007':
                             name: Amer
-                            data: [2000]
+                            data: [11]
             """)
 
     def test__printerError__URLparamsNotExist_aggregateLevel(self):
-        self.setupSource(
-            headers+'\tcount_2018_05_01',
-            data_Adra+'\t123',
-            )
+        printer_module.firstDate = '2010-01-01'
         r = self.get('/printer/members/by/piolin')
         self.assertEqual(r.status_code, 404)
 
     def test__printerError__URLparamsNotExist_frequency(self):
-        self.setupSource(
-            headers,
-            data_Adra,
-            )
+        printer_module.firstDate = '2010-01-01'
         r = self.get('/printer/members/piolin')
         self.assertEqual(r.status_code, 404)
 
     @unittest.skip("Not implemented yet | Caldria retocar el converter de Date")
     def test__printerError__URLparamsNotExist_date(self):
-        self.setupSource(
-            headers,
-            data_Adra,
-            )
+        printer_module.firstDate = '2010-01-01'
         r = self.get('/printer/members/on/piolin')
         self.assertEqual(r.status_code, 404)
 
     def test__printerError__queryParamsNotExist(self):
-        self.setupSource(
-            headers,
-            data_Adra,
-            )
+        printer_module.firstDate = '2010-01-01'
         r = self.get('/printer/members/by/cities/on/2018-01-01?city=9999999')
         self.assertYamlResponse(r, ns())
 
     def test__printerError__incorrectDates(self):
-        self.setupSource(
-            headers,
-            data_Adra,
-            )
+        printer_module.firstDate = '2010-01-01'
         r = self.get('/printer/members/by/cities/on/2018-01-01/from/2018-02-02')
         self.assertEqual(r.status_code, 404)
 
@@ -392,10 +322,6 @@ class BaseApi_Test(unittest.TestCase):
 
     @unittest.skip("Not implemented yet")
     def test__aggregateLevel_frequency_toDate__exist_NoExactFirstDate(self):
-        self.setupSource(
-            headers+'\tcount_2018_02_01'+'\tcount_2018_03_01',
-            data_Adra+'\t123\t1234567',
-            )
         printer_module.firstDate = '2018-01-15'
         r = self.get('/printer/members/by/cities/monthly/to/2018-03-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert

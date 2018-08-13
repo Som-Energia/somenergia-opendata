@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, request
+from flask import Blueprint, request, current_app
 from yamlns import namespace as ns
 from ..common import (
         yaml_response,
@@ -31,7 +31,6 @@ def extractQueryParam(location_filter_req, queryName, objectName):
         location_filter_req[objectName] = queryParam
 
 
-
 @printer_module.route('/<field:field>')
 @printer_module.route('/<field:field>/on/<isodate:ondate>')
 @printer_module.route('/<field:field>/by/<aggregateLevel:al>')
@@ -47,13 +46,9 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 @yaml_response
 def printer(field=None, al='world', ondate=None, frequency=None, fromdate=None, todate=None):
 
+    content = current_app.csvSource
 
-    content = printer_module.source
-    tuples = parse_tsv(content)
     request_dates = requestDates(first=printer_module.firstDate, on=ondate, since=fromdate, to=todate, periodicity=frequency)
-    filtered_tuples = pickDates(tuples, request_dates)
-    objects = tuples2objects(filtered_tuples)
-
     location_filter_req = ns()
 
     relation_locationLevel_id = [
@@ -66,8 +61,7 @@ def printer(field=None, al='world', ondate=None, frequency=None, fromdate=None, 
     for locationLevel_id in relation_locationLevel_id:
         extractQueryParam(location_filter_req, *locationLevel_id)
 
-    filtered_objects = locationFilter(objects, location_filter_req)
-
+    filtered_objects = content.get(field, request_dates, location_filter_req)
     if len(filtered_objects) > 0: return aggregate(filtered_objects, al)
     else: return ns()
 
