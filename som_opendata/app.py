@@ -1,8 +1,10 @@
 # -*- encoding: utf-8 -*-
 import dbconfig as config
 import logging
+import os.path
 import records
 from flask import Flask, current_app
+from yamlns import namespace as ns
 from .api import old_modul
 from .printer.printer import printer_module
 from som_opendata.common import (
@@ -19,8 +21,19 @@ from som_opendata.common import (
 VERSION = 4
 sentry = None
 
+# TODO: TEST READCSVFILES
+def readCsvFiles():
+    myPath = os.path.abspath(os.path.dirname('.'))
+    datums = ns()
+    for datum, path in config.opendata.iteritems():
+        with open(myPath + path) as f:
+            csvFile = f.read()
+        datums[datum] = csvFile
+    return datums
 
 def init_db():
+    current_app.csvData = readCsvFiles()
+
     current_app.db = records.Database(
         'postgres://{user}:{password}@{host}:{port}/{database}'.format(**config.psycopg)
     )
