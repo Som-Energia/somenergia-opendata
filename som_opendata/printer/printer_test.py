@@ -1,7 +1,6 @@
 # -*- encoding: utf-8 -*-
 import unittest
 from dateutil.relativedelta import relativedelta as delta
-from flask import current_app
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
 import b2btest
@@ -30,9 +29,6 @@ class BaseApi_Test(unittest.TestCase):
 
     def tearDown(self):
         printer_module.source = self.oldsource
-
-    def setupSource(self, *lines):  #TODO ESBORRAR
-        printer_module.firstDate = '2010-01-01'
 
     def get(self, *args, **kwds):
         return self.client.get(*args,**kwds)
@@ -70,14 +66,6 @@ class BaseApi_Test(unittest.TestCase):
         self.assertEqual(r, False)
 
     def test__onDate__exists(self):
-        printer_module.firstDate = '2010-01-01'
-        r = self.get('/printer/members/on/2018-01-01')
-        self.assertYamlResponse(r, """\
-            data: [41660]
-            dates: [2018-01-01]
-            """)
-
-    def test__onDate__moreCities(self): #TODO ESBORRAR
         printer_module.firstDate = '2010-01-01'
         r = self.get('/printer/members/on/2018-01-01')
         self.assertYamlResponse(r, """\
@@ -219,15 +207,6 @@ class BaseApi_Test(unittest.TestCase):
             data: [41660, 44402]
             """)
 
-    def test__frequency_toDate__exist(self): # TODO ESBORRAR
-        printer_module.firstDate = '2018-02-01'
-        r = self.get('/printer/members/monthly/to/2018-03-01')
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertYamlResponse(r, """\
-            dates: [2018-02-01, 2018-03-01]
-            data: [44402, 45810]
-            """)
-
     def test__urlBaseFrequency__exist(self):
         printer_module.firstDate = '2010-01-01'
         r = self.get('/printer/members/yearly')
@@ -255,15 +234,6 @@ class BaseApi_Test(unittest.TestCase):
                 29946,
                 41660
             ]
-            """)
-
-    def test__frequencyYearly_fromDate_toDate__exist(self): # TODO ESBORRAR
-        printer_module.firstDate = '2010-01-01'
-        r = self.get('/printer/members/yearly/from/2017-01-01/to/2018-01-01')
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertYamlResponse(r, """\
-            dates: [2017-01-01, 2018-01-01]
-            data: [29946, 41660]
             """)
 
     def test__onDate_aggregateLevel_queryParams__exist(self):
