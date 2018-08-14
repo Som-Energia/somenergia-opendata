@@ -18,7 +18,7 @@ from ..distribution import (
 
 
 printer_module = Blueprint(name='printer_module', import_name=__name__)
-
+printer_module.firstDate = '2010-01-01'
 
 def validateInputDates(ondate = None, since = None, todate = None):
     return not (not ondate is None and (not since is None or not todate is None))

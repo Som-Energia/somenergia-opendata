@@ -15,12 +15,11 @@ from .distribution import (
     date2field,
     addObjects,
     )
-from .source import Source
 from .missingDateError import MissingDateError
 
 staticColumns = 8
 
-class CsvSource(Source):
+class CsvSource():
     
     data = None
 
