@@ -16,7 +16,9 @@ from som_opendata.common import (
     IsoDateConverter,
     IsoFrequencyConverte,
     IsoFieldConverter,
+    handle_missingDateError,
     )
+from som_opendata.missingDateError import MissingDateError
 
 
 VERSION = 4
@@ -63,6 +65,7 @@ def create_app():
     app.register_blueprint(printer_module, url_prefix='/printer')
     app.register_error_handler(404, handle_request_not_found)
     app.register_error_handler(400, handle_bad_request)
+    app.register_error_handler(MissingDateError, handle_missingDateError)
 
     with app.app_context():
         init_db()

@@ -2,7 +2,7 @@
 import os
 from dateutil.relativedelta import relativedelta as delta
 from datetime import date
-from flask import Response, make_response, current_app
+from flask import Response, make_response, current_app, jsonify
 from functools import wraps
 from werkzeug.routing import BaseConverter, ValidationError
 from yamlns.dateutils import Date
@@ -169,3 +169,11 @@ def handle_bad_request(self):
         current_app.errors = None
     response.mimetype = 'application/yaml'
     return response
+
+@yaml_response
+def handle_missingDateError(error):
+    return make_response(
+        jsonify(ns(message=error.description, errorId=error.errorId)),
+        error.code
+    )
+    

@@ -15,7 +15,7 @@ from ..distribution import (
     locationFilter,
     pickDates,
     )
-
+from ..missingDateError import MissingDateError
 
 printer_module = Blueprint(name='printer_module', import_name=__name__)
 printer_module.firstDate = '2010-01-01'

@@ -261,6 +261,15 @@ class BaseApi_Test(unittest.TestCase):
                             data: [11]
             """)
 
+    def test__printerError__datesNotExist(self):
+        printer_module.firstDate = '2010-01-01'
+        r = self.get('/printer/members/on/1994-09-01')
+        self.assertEqual(r.status_code, 500)
+        self.assertYamlResponse(r, """\
+            errorId: 1001
+            message: Missing Dates ['1994-09-01']
+            """)
+
     def test__printerError__URLparamsNotExist_aggregateLevel(self):
         printer_module.firstDate = '2010-01-01'
         r = self.get('/printer/members/by/piolin')
@@ -282,7 +291,7 @@ class BaseApi_Test(unittest.TestCase):
         r = self.get('/printer/members/by/cities/on/2018-01-01?city=9999999')
         self.assertYamlResponse(r, ns())
 
-    def test__printerError__incorrectDates(self):
+    def test__printerError__incorrectFormatDates(self):
         printer_module.firstDate = '2010-01-01'
         r = self.get('/printer/members/by/cities/on/2018-01-01/from/2018-02-02')
         self.assertEqual(r.status_code, 404)
