@@ -102,6 +102,17 @@ class CsvSource_Test(unittest.TestCase):
               count_2018_01_01: '1000'
         """)
 
+    def test__get__filterNotExist(self):
+        source = self.createSource(
+            ns(members=[headers,
+            data_SantJoan])
+            )
+        self.assertEqual(
+            source.get('members', ['2018-01-01'], ns(codi_pais=['PA'])),
+                []
+            )
+
+
 
     def test__set__oneDate(self):
         source = self.createSource(
