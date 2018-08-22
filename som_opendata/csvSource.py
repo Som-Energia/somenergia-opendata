@@ -6,8 +6,6 @@ from .distribution import (
     parse_tsv,
     tuples2objects,
     locationFilter,
-    pickDates,
-    findTuple,
     includedDates,
     missingDates,
     removeDates,

@@ -10,7 +10,6 @@ from distribution import (
     aggregate,
     state_dates,
     locationFilter,
-    findTuple,
     validateStringDate,
     includedDates,
     field2date,
@@ -614,78 +613,7 @@ class Distribution_Test(unittest.TestCase):
         objectList = tuples2objects(parse_tsv(data))
         r = aggregate(objectList,'ccaas')
         self.assertB2BEqual(r.dump())
-
-
-    # findTuples
-
-    def test__findTuple__tuplesFound(self):
-        namespace = ns(
-            codi_pais='ES',
-            pais='España',
-            codi_ccaa='09',
-            comunitat_autonoma='Catalunya',
-            codi_provincia='08',
-            provincia='Barcelona',
-            codi_ine='08217',
-            municipi='Sant Joan Despí',
-            count_2018_02_01='1000',
-        )
-        oldHeaders = [
-            'codi_pais',
-            'pais',
-            'codi_ccaa',
-            'comunitat_autonoma',
-            'codi_provincia',
-            'provincia',
-            'codi_ine',
-            'municipi',
-            'count_2018_01_01'
-        ]
-        tuples = [[
-            'codi_pais',
-            'pais',
-            'codi_ccaa',
-            'comunitat_autonoma',
-            'codi_provincia',
-            'provincia',
-            'codi_ine',
-            'municipi',
-            'count_2018_01_01',
-            ],
-            ['ES',
-            'España',
-            '09',
-            'Catalunya',
-            '08',
-            'Barcelona',
-            '08217',
-            'Sant Joan Despí',
-            '2',
-            ],
-            ['ES',
-            'España',
-            '09',
-            'Catalunya',
-            '08',
-            'Barcelona',
-            '17007',
-            'Amer',
-            '2000',
-            ],
-        ]
-        result = findTuple(namespace, oldHeaders, tuples)
-        self.assertEquals(result,
-            ['ES',
-            'España',
-            '09',
-            'Catalunya',
-            '08',
-            'Barcelona',
-            '08217',
-            'Sant Joan Despí',
-            '2',
-            ])
-
+        
 
     # validateStringDate
 

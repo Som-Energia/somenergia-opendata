@@ -110,34 +110,6 @@ def locationFilter(objectList, typeFilter):
     ]
 
 
-def pickDates(tuples, dates):
-
-    headersPerEliminar = [
-        index for index, value in enumerate(tuples[0])
-        if isField(value) and field2date(value) not in dates
-    ]
-
-    #if len(tuples[0]) - len(headersPerEliminar) < len(dates) + 8: 
-    #    return []
-    if len(tuples[0]) - len(headersPerEliminar) == 8:
-        return []
-
-    return [
-        [element for index, element in enumerate(l) if index not in headersPerEliminar]
-        for l in tuples
-    ]
-
-
-def findTuple(namespace, hOld, tuples):
-    values = [
-        value
-        for key, value in namespace.iteritems()
-        if not isField(key)
-        ]
-    for t in tuples:
-        if all(value in t for value in values):
-            return t
-
 def includedDates(tuples):
 
     if not tuples: return []

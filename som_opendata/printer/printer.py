@@ -13,7 +13,6 @@ from ..distribution import (
     tuples2objects,
     aggregate,
     locationFilter,
-    pickDates,
     )
 from ..missingDateError import MissingDateError
 
