@@ -12,7 +12,6 @@ from som_opendata.common import (
     handle_bad_request,
     handle_request_not_found,
     IsoAggregateLevelConverter,
-    IsoCountryA2Converter,
     IsoDateConverter,
     IsoFrequencyConverte,
     IsoFieldConverter,
@@ -56,7 +55,6 @@ def create_app():
         )
 
     app.url_map.converters['isodate'] = IsoDateConverter
-    app.url_map.converters['country'] = IsoCountryA2Converter
     app.url_map.converters['frequency'] = IsoFrequencyConverte
     app.url_map.converters['aggregateLevel'] = IsoAggregateLevelConverter
     app.url_map.converters['field'] = IsoFieldConverter

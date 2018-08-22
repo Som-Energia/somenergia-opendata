@@ -94,22 +94,6 @@ class IsoDateConverter(BaseConverter):
     def to_url(self, value):
         return str(value)
 
-
-class IsoCountryA2Converter(BaseConverter):
-
-    def to_python(self, value):
-        if (len(value) == 2):
-            return str(value)
-
-        raise ValidationError()
-
-    def to_url(self, value):
-        if (len(value) == 2):
-            return str(value)
-
-        raise ValidationError()
-
-
 class IsoFrequencyConverte(BaseConverter):
 
     def to_python(self, value):
