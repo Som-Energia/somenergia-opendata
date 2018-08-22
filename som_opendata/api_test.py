@@ -395,8 +395,8 @@ class BaseApi_Test(unittest.TestCase):
     dateConverter = IsoDateConverter({})
 
     def test__FrequencyConverter__valid(self):
-        r = self.frequencyConverter.to_python('weekly')
-        self.assertEqual(r, 'weekly')
+        r = self.frequencyConverter.to_python('monthly')
+        self.assertEqual(r, 'monthly')
 
     def test__FrequencyConvertes__invalid(self):
         with self.assertRaises(ValidationError) as ctx:

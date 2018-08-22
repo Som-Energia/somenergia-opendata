@@ -15,7 +15,6 @@ from .distribution import (
     )
 from .missingDateError import MissingDateError
 
-staticColumns = 8
 
 class CsvSource():
     

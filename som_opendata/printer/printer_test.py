@@ -297,7 +297,7 @@ class BaseApi_Test(unittest.TestCase):
         self.assertEqual(r.status_code, 404)
 
 
-    def test__aggregateLevel_frequency_toDate__exist_NoExactFirstDate(self):
+    def test__printerError_frequency_toDate__exist_NoExactFirstDate(self):
         printer_module.firstDate = '2018-01-15'
         r = self.get('/printer/members/by/cities/monthly/to/2018-03-01')
         self.assertEqual(r.status_code, 500)
@@ -306,8 +306,7 @@ class BaseApi_Test(unittest.TestCase):
                 message: Missing Dates ['2018-02-15', '2018-01-15']
             """)
 
-    @unittest.skip("Not implemented yet")
-    def test__on_date__missingDate(self): pass
+
 
 
 

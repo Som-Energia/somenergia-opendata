@@ -33,7 +33,7 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 """
 @api {get} /printer/:field[/by/:aggregateLevel]/on/:ondate|/frequency/:frequency[/from/:fromdate][/to/:todate]?queryFilter=:locationFilters
 
-@apiVersion 1.0.1
+@apiVersion 0.1
 @apiName OpenData
 @apiGroup Printer
 @apiDescription Retorna un yaml amb la distribució desitjada repartida en espai - temps

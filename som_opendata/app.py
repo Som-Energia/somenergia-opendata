@@ -23,7 +23,6 @@ from som_opendata.missingDateError import MissingDateError
 VERSION = 4
 sentry = None
 
-# TODO: TEST READCSVFILES
 def readCsvFiles():
     myPath = os.path.abspath(os.path.dirname('.'))
     datums = ns()
@@ -59,8 +58,8 @@ def create_app():
     app.url_map.converters['aggregateLevel'] = IsoAggregateLevelConverter
     app.url_map.converters['field'] = IsoFieldConverter
 
-    app.register_blueprint(old_modul, url_prefix='/old')
-    app.register_blueprint(printer_module, url_prefix='/printer')
+    #app.register_blueprint(old_modul, url_prefix='/old')
+    app.register_blueprint(printer_module, url_prefix='')
     app.register_error_handler(404, handle_request_not_found)
     app.register_error_handler(400, handle_bad_request)
     app.register_error_handler(MissingDateError, handle_missingDateError)
@@ -72,7 +71,6 @@ def create_app():
     return app
 
 
-#if __name__ == '__main__':
 app = create_app()
 
 # vim: et ts=4 sw=4
