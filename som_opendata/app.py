@@ -24,7 +24,7 @@ def readCsvFiles():
     myPath = os.path.abspath(os.path.dirname('.'))
     datums = ns()
     for datum, path in config.opendata.iteritems():
-        with open(myPath + path) as f:
+        with open(os.path.join(myPath, path)) as f:
             csvFile = f.read()
         datums[datum] = csvFile
     return datums
