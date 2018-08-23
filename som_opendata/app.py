@@ -5,7 +5,7 @@ import os.path
 import records
 from flask import Flask, current_app
 from yamlns import namespace as ns
-from .api import blueprint as oldapi
+from .oldapi import blueprint as oldapi
 from csvSource import CsvSource
 from .printer.printer import printer_module
 from som_opendata.common import (

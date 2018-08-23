@@ -6,12 +6,11 @@ from werkzeug.routing import ValidationError
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
 import b2btest
-from .api import (
+from .oldapi import (
     contractsSparse,
     contractsSeries,
     membersSparse,
     )
-from .app import app
 from .common import (
     caseFrequency,
     dateSequenceYears,
@@ -22,7 +21,44 @@ from .common import (
     IsoFrequencyConverte,
     requestDates,
     )
-from .distribution import parse_tsv
+
+class BaseApi_Test(unittest.TestCase):
+
+    def setUp(self):
+        self.b2bdatapath = 'b2bdata'
+
+
+    def test_contractsSparse_single(self):
+        dates = ['2015-01-01']
+        result = contractsSparse(dates)
+        self.assertB2BEqual(result)
+
+    def test_contractsSparse_many(self):
+        dates = ['2015-01-01','2015-02-01']
+        result = contractsSparse(dates)
+        self.assertB2BEqual(result)
+
+    def test_contractsSeries_single(self):
+        dates = ['2015-01-01']
+        result = contractsSeries(dates)
+        self.assertB2BEqual(result)
+
+    def test_contractsSeries_many(self):
+        dates = ['2015-01-01','2015-02-01']
+        result = contractsSeries(dates)
+        self.assertB2BEqual(result)
+
+
+    def test_membersSparse_single(self):
+        dates = ['2015-01-01']
+        result = membersSparse(dates, csvTable)
+        self.assertB2BEqual(result)
+
+    def test_membersSparse_many(self):
+        # TODO: Not implemented (b2b expects same as single)
+        dates = ['2015-01-01','2015-02-01']
+        result = membersSparse(dates, csvTable)
+        self.assertB2BEqual(result)
 
 class DateSequence_Test(unittest.TestCase):
 
@@ -203,43 +239,7 @@ class DateSequence_Test(unittest.TestCase):
             Date('2016-02-29'),
             ])
 
-class BaseApi_Test(unittest.TestCase):
-
-    def setUp(self):
-        self.b2bdatapath = 'b2bdata'
-
-
-    def test_contractsSparse_single(self):
-        dates = ['2015-01-01']
-        result = contractsSparse(dates)
-        self.assertB2BEqual(result)
-
-    def test_contractsSparse_many(self):
-        dates = ['2015-01-01','2015-02-01']
-        result = contractsSparse(dates)
-        self.assertB2BEqual(result)
-
-    def test_contractsSeries_single(self):
-        dates = ['2015-01-01']
-        result = contractsSeries(dates)
-        self.assertB2BEqual(result)
-
-    def test_contractsSeries_many(self):
-        dates = ['2015-01-01','2015-02-01']
-        result = contractsSeries(dates)
-        self.assertB2BEqual(result)
-
-
-    def test_membersSparse_single(self):
-        dates = ['2015-01-01']
-        result = membersSparse(dates, csvTable)
-        self.assertB2BEqual(result)
-
-    def test_membersSparse_many(self):
-        # TODO: Not implemented (b2b expects same as single)
-        dates = ['2015-01-01','2015-02-01']
-        result = membersSparse(dates, csvTable)
-        self.assertB2BEqual(result)
+class Common_Test(unittest.TestCase):
 
     # caseFrequency
 
@@ -338,10 +338,6 @@ class BaseApi_Test(unittest.TestCase):
                         )
         self.assertEqual(r, [])
 
-
-    def createTuples(self, *lines):
-        source = '\n'.join(lines)
-        return parse_tsv(source)
 
     # Convertes
     frequencyConverter = IsoFrequencyConverte({})

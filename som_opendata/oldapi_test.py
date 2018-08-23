@@ -3,9 +3,7 @@ import unittest
 from yamlns import namespace as ns
 import b2btest
 from flask import Flask
-from .api import (
-    blueprint,
-    )
+from .oldapi import blueprint
 from .common import (
     register_converters,
     )
