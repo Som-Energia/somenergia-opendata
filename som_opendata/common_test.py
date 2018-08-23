@@ -9,13 +9,13 @@ import b2btest
 from .api import (
     contractsSparse,
     contractsSeries,
-    dateSequenceMonths,
     membersSparse,
     )
 from .app import app
 from .common import (
     caseFrequency,
     dateSequenceYears,
+    dateSequenceMonths,
     dateSequenceWeeks,
     IsoAggregateLevelConverter,
     IsoDateConverter,
@@ -24,77 +24,49 @@ from .common import (
     )
 from .distribution import parse_tsv
 
-
-headers = "codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
-data_Adra = "ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
-data_Perignan = "FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
-data_Girona = "ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
-data_SantJoan = "ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
-data_Amer = "ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
-
-class BaseApi_Test(unittest.TestCase):
-
-    @staticmethod
-    def setUpClass():
-        #BaseApi_Test.maxDiff=None
-        app.config['TESTING']=True
-
-    def setUp(self):
-        self.client = app.test_client()
-        self.b2bdatapath = 'b2bdata'
-
-    def get(self, *args, **kwds):
-        return self.client.get(*args,**kwds)
-
-    from .testutils import assertNsEqual
-
-    def assertYamlResponse(self, response, expected):
-        self.assertNsEqual(response.data, expected)
-
-    def assertTsvResponse(self, response):
-        self.assertB2BEqual(response.data)
+class DateSequence_Test(unittest.TestCase):
 
     # dateSequenceMonths
 
-    def test_dateSequence_noStartEnd_today(self):
+    def test_dateSequenceMonths_noStartEnd_today(self):
         self.assertEqual(
             dateSequenceMonths(None, None), [
             Date.today(),
             ])
 
-    def test_dateSequence_singleDate_thatDate(self):
+    def test_dateSequenceMonth_singleDate_thatDate(self):
         self.assertEqual(
             dateSequenceMonths('2015-01-01', None), [
             Date('2015-01-01'),
             ])
 
-    def test_dateSequence_twoDatesUnderAMonth(self):
+    def test_dateSequenceMonths_twoDatesUnderAMonth(self):
         self.assertEqual(
             dateSequenceMonths('2015-01-01', '2015-01-08'), [
             Date('2015-01-01'),
             ])
 
-    def test_dateSequence_twoDatesBeyondMonth(self):
+    def test_dateSequenceMonths_twoDatesBeyondMonth(self):
         self.assertEqual(
             dateSequenceMonths('2015-01-01', '2015-02-01'), [
             Date('2015-01-01'),
             Date('2015-02-01'),
             ])
 
-    def test_dateSequence_midMonth(self):
+    def test_dateSequenceMonths_midMonth(self):
         self.assertEqual(
             dateSequenceMonths('2015-01-05', '2015-02-05'), [
             Date('2015-01-05'),
             Date('2015-02-05'),
             ])
 
-    def test_dateSequence_nearlyMidMonth(self):
+    def test_dateSequenceMonths_nearlyMidMonth(self):
         self.assertEqual(
             dateSequenceMonths('2015-01-05', '2015-02-04'), [
             Date('2015-01-05'),
             ])
 
-    def test_dateSequence_lateMonth(self):
+    def test_dateSequenceMonths_lateMonth(self):
         self.assertEqual(
             dateSequenceMonths('2015-01-31', '2015-04-30'), [
             Date('2015-01-31'),
@@ -103,7 +75,7 @@ class BaseApi_Test(unittest.TestCase):
             Date('2015-04-30'),
             ])
 
-    def test_dateSequence_moreThanAYear(self):
+    def test_dateSequenceMonths_moreThanAYear(self):
         self.assertEqual(
             dateSequenceMonths('2014-12-01', '2016-02-01'), [
             Date('2014-12-01'),
@@ -231,6 +203,11 @@ class BaseApi_Test(unittest.TestCase):
             Date('2016-02-29'),
             ])
 
+class BaseApi_Test(unittest.TestCase):
+
+    def setUp(self):
+        self.b2bdatapath = 'b2bdata'
+
 
     def test_contractsSparse_single(self):
         dates = ['2015-01-01']
@@ -263,29 +240,6 @@ class BaseApi_Test(unittest.TestCase):
         dates = ['2015-01-01','2015-02-01']
         result = membersSparse(dates, csvTable)
         self.assertB2BEqual(result)
-
-
-    def test_version(self):
-        r = self.get('/old/version')
-        self.assertYamlResponse(r, """\
-            version: '1.0'
-            """)
-
-    def test_contracts_single(self):
-        r = self.get('/old/contracts/2015-01-01')
-        self.assertTsvResponse(r)
-
-    def test_contracts_series(self):
-        r = self.get('/old/contracts/2015-01-01/monthlyto/2015-04-01')
-        self.assertTsvResponse(r)
-
-    def test_members_single(self):
-        r = self.get('/old/members/2015-01-01')
-        self.assertTsvResponse(r)
-
-    def test_members_series(self):
-        r = self.get('/old/members/2015-01-01/monthlyto/2015-04-01')
-        self.assertTsvResponse(r)
 
     # caseFrequency
 

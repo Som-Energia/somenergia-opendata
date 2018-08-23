@@ -149,8 +149,8 @@ ES	España	01	Andalucia	18	Granada	18145	Ogíjares	0	0	0	0
 ES	España	01	Andalucia	18	Granada	18149	Otura	0	0	0	0
 ES	España	01	Andalucia	18	Granada	18150	Padul	5	5	5	5
 ES	España	01	Andalucia	18	Granada	18153	Peligros	1	1	1	1
-ES	España	01	Andalucia	18	Granada	18157	Pinos Genil	0	0	0	0
 ES	España	01	Andalucia	18	Granada	18159	Píñar	0	0	0	0
+ES	España	01	Andalucia	18	Granada	18157	Pinos Genil	0	0	0	0
 ES	España	01	Andalucia	18	Granada	18162	Polopos	0	0	0	0
 ES	España	01	Andalucia	18	Granada	18165	Pulianas	0	0	0	0
 ES	España	01	Andalucia	18	Granada	18168	Quéntar	0	0	1	1
@@ -279,8 +279,8 @@ ES	España	01	Andalucia	41	Sevilla	41016	Bollullos de la Mitación	2	2	2	2
 ES	España	01	Andalucia	41	Sevilla	41017	Bormujos	1	1	1	1
 ES	España	01	Andalucia	41	Sevilla	41018	Brenes	0	0	0	0
 ES	España	01	Andalucia	41	Sevilla	41021	Camas	0	0	0	0
-ES	España	01	Andalucia	41	Sevilla	41023	Cantillana	0	0	0	0
 ES	España	01	Andalucia	41	Sevilla	41901	Cañada Rosal	0	0	0	0
+ES	España	01	Andalucia	41	Sevilla	41023	Cantillana	0	0	0	0
 ES	España	01	Andalucia	41	Sevilla	41024	Carmona	0	0	0	0
 ES	España	01	Andalucia	41	Sevilla	41025	Carrión de los Céspedes	0	0	0	0
 ES	España	01	Andalucia	41	Sevilla	41028	Castilleja de Guzmán	0	1	1	1
@@ -375,6 +375,7 @@ ES	España	02	Aragón	22	Huesca	22081	Casbas de Huesca	1	1	1	1
 ES	España	02	Aragón	22	Huesca	22083	Castejón de Monegros	0	1	1	1
 ES	España	02	Aragón	22	Huesca	22084	Castejón de Sos	3	3	3	3
 ES	España	02	Aragón	22	Huesca	22086	Castiello de Jaca	0	1	1	1
+ES	España	02	Aragón	22	Huesca	22095	Chía	0	0	0	0
 ES	España	02	Aragón	22	Huesca	22096	Chimillas	1	1	1	1
 ES	España	02	Aragón	22	Huesca	22103	Estadilla	0	0	0	0
 ES	España	02	Aragón	22	Huesca	22109	Fiscal	1	1	1	1
@@ -451,8 +452,8 @@ ES	España	02	Aragón	44	Teruel	44041	Bezas	1	1	1	1
 ES	España	02	Aragón	44	Teruel	44049	Calaceite	0	0	0	0
 ES	España	02	Aragón	44	Teruel	44050	Calamocha	1	1	1	1
 ES	España	02	Aragón	44	Teruel	44051	Calanda	0	0	0	0
-ES	España	02	Aragón	44	Teruel	44059	Cantavieja	2	2	2	2
 ES	España	02	Aragón	44	Teruel	44060	Cañada de Benatanduz	1	1	1	1
+ES	España	02	Aragón	44	Teruel	44059	Cantavieja	2	2	2	2
 ES	España	02	Aragón	44	Teruel	44065	Castejón de Tornos	0	0	0	0
 ES	España	02	Aragón	44	Teruel	44070	Castellar, El	1	1	1	1
 ES	España	02	Aragón	44	Teruel	44068	Castelserás	1	1	1	1
@@ -569,6 +570,7 @@ ES	España	02	Aragón	50	Zaragoza	50215	Pozuel de Ariza	1	1	1	1
 ES	España	02	Aragón	50	Zaragoza	50219	Puebla de Alfindén, La	1	1	1	1
 ES	España	02	Aragón	50	Zaragoza	50232	Salvatierra de Esca	0	0	0	0
 ES	España	02	Aragón	50	Zaragoza	50235	San Mateo de Gállego	1	1	1	2
+ES	España	02	Aragón	50	Zaragoza	50240	Sástago	0	0	0	0
 ES	España	02	Aragón	50	Zaragoza	50242	Sediles	1	1	1	1
 ES	España	02	Aragón	50	Zaragoza	50251	Tarazona	6	6	6	6
 ES	España	02	Aragón	50	Zaragoza	50252	Tauste	0	0	0	0
@@ -1324,12 +1326,14 @@ ES	España	07	Castilla y León	37	Salamanca	37139	Fuentes de Béjar	0	0	0	0
 ES	España	07	Castilla y León	37	Salamanca	37147	Garcibuey	1	1	1	1
 ES	España	07	Castilla y León	37	Salamanca	37148	Garcihernández	0	0	0	0
 ES	España	07	Castilla y León	37	Salamanca	37160	Hinojosa de Duero	0	0	0	0
+ES	España	07	Castilla y León	37	Salamanca	37170	Ledesma	0	0	0	0
 ES	España	07	Castilla y León	37	Salamanca	37174	Macotera	1	2	2	2
 ES	España	07	Castilla y León	37	Salamanca	37192	Miranda de Azán	0	0	0	0
 ES	España	07	Castilla y León	37	Salamanca	37194	Mogarraz	0	0	0	0
 ES	España	07	Castilla y León	37	Salamanca	37196	Monforte de la Sierra	0	0	0	0
 ES	España	07	Castilla y León	37	Salamanca	37197	Monleón	0	0	0	0
 ES	España	07	Castilla y León	37	Salamanca	37198	Monleras	0	0	0	0
+ES	España	07	Castilla y León	37	Salamanca	37200	Montejo	0	0	0	0
 ES	España	07	Castilla y León	37	Salamanca	37205	Morille	0	0	0	0
 ES	España	07	Castilla y León	37	Salamanca	37224	Orbada, La	0	0	0	0
 ES	España	07	Castilla y León	37	Salamanca	37240	Pelabravo	0	0	0	0
@@ -1361,6 +1365,7 @@ ES	España	07	Castilla y León	40	Segovia	40041	Cantimpalos	0	0	0	0
 ES	España	07	Castilla y León	40	Segovia	40045	Casla	0	0	0	0
 ES	España	07	Castilla y León	40	Segovia	40047	Castro de Fuentidueña	0	0	0	0
 ES	España	07	Castilla y León	40	Segovia	40054	Cerezo de Arriba	0	0	0	0
+ES	España	07	Castilla y León	40	Segovia	40065	Chañe	0	0	0	0
 ES	España	07	Castilla y León	40	Segovia	40057	Coca	0	1	1	1
 ES	España	07	Castilla y León	40	Segovia	40059	Collado Hermoso	0	0	0	0
 ES	España	07	Castilla y León	40	Segovia	40060	Condado de Castilnovo	0	0	0	0
@@ -2124,6 +2129,7 @@ ES	España	09	Cataluña	25	Lleida	25912	Gimenells i el Pla de la Font	0	0	0	0
 ES	España	09	Cataluña	25	Lleida	25099	Golmés	1	1	1	1
 ES	España	09	Cataluña	25	Lleida	25100	Gósol	1	1	1	1
 ES	España	09	Cataluña	25	Lleida	25101	Granadella, La	1	1	1	2
+ES	España	09	Cataluña	25	Lleida	25102	Granja d'Escarp, La	0	0	0	0
 ES	España	09	Cataluña	25	Lleida	25105	Granyena de les Garrigues	1	1	1	1
 ES	España	09	Cataluña	25	Lleida	25104	Granyena de Segarra	0	0	0	0
 ES	España	09	Cataluña	25	Lleida	25109	Guimerà	3	3	4	4
@@ -2323,6 +2329,7 @@ ES	España	09	Cataluña	43	Tarragona	43079	Masllorenç	0	0	0	0
 ES	España	09	Cataluña	43	Tarragona	43080	Masó, La	1	1	1	1
 ES	España	09	Cataluña	43	Tarragona	43081	Maspujols	1	1	2	2
 ES	España	09	Cataluña	43	Tarragona	43082	Masroig, El	2	2	2	2
+ES	España	09	Cataluña	43	Tarragona	43083	Milà, El	0	0	0	0
 ES	España	09	Cataluña	43	Tarragona	43084	Miravet	0	0	1	1
 ES	España	09	Cataluña	43	Tarragona	43085	Molar, El	0	0	0	0
 ES	España	09	Cataluña	43	Tarragona	43086	Montblanc	14	17	17	17
@@ -2981,6 +2988,7 @@ ES	España	12	Galicia	32	Ourense	32081	Toén	1	1	1	1
 ES	España	12	Galicia	32	Ourense	32085	Verín	0	0	0	0
 ES	España	12	Galicia	32	Ourense	32086	Viana do Bolo	0	0	0	0
 ES	España	12	Galicia	32	Ourense	32089	Vilar de Barrio	0	0	0	0
+ES	España	12	Galicia	32	Ourense	32092	Vilariño de Conso	0	0	0	0
 ES	España	12	Galicia	32	Ourense	32032	Xinzo de Limia	3	3	3	3
 ES	España	12	Galicia	36	Pontevedra	36003	Baiona	0	0	0	0
 ES	España	12	Galicia	36	Pontevedra	36002	Barro	1	1	1	1
@@ -3206,9 +3214,9 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31009	Aibar/Oibar	1	1	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31011	Allín/Allin	0	0	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31010	Altsasu/Alsasua	2	2	2	3
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31013	Améscoa Baja	1	1	1	1
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31018	Añorbe	0	0	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31016	Ansoáin/Antsoain	12	13	12	13
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31017	Anue	0	0	0	0
-ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31018	Añorbe	0	0	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31019	Aoiz/Agoitz	2	2	2	2
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31020	Araitz	0	0	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31025	Arakil	2	2	2	2
@@ -3504,6 +3512,7 @@ ES	España	17	Rioja, La	26	La Rioja	26074	Hervías	0	0	0	0
 ES	España	17	Rioja, La	26	La Rioja	26084	Lardero	3	3	3	3
 ES	España	17	Rioja, La	26	La Rioja	26089	Logroño	132	141	147	150
 ES	España	17	Rioja, La	26	La Rioja	26093	Mansilla de la Sierra	0	0	0	0
+ES	España	17	Rioja, La	26	La Rioja	26095	Matute	0	0	0	0
 ES	España	17	Rioja, La	26	La Rioja	26096	Medrano	0	0	0	0
 ES	España	17	Rioja, La	26	La Rioja	26098	Munilla	2	2	2	2
 ES	España	17	Rioja, La	26	La Rioja	26099	Murillo de Río Leza	1	1	1	1

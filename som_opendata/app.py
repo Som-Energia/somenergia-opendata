@@ -5,7 +5,7 @@ import os.path
 import records
 from flask import Flask, current_app
 from yamlns import namespace as ns
-from .api import old_modul
+from .api import blueprint as oldapi
 from csvSource import CsvSource
 from .printer.printer import printer_module
 from som_opendata.common import (
@@ -52,8 +52,8 @@ def create_app():
 
     register_converters(app)
 
-    #app.register_blueprint(old_modul, url_prefix='/old')
-    app.register_blueprint(printer_module, url_prefix='')
+    app.register_blueprint(oldapi, url_prefix='')
+    #app.register_blueprint(printer_module, url_prefix='')
     app.register_error_handler(404, handle_request_not_found)
     app.register_error_handler(400, handle_bad_request)
     app.register_error_handler(MissingDateError, handle_missingDateError)

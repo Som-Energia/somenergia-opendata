@@ -17,7 +17,7 @@ VERSION = 4
 
 
 
-old_modul = Blueprint(name='old_modul', import_name=__name__)
+blueprint = Blueprint(name=__name__, import_name=__name__)
 
 sentry = None
 
@@ -165,7 +165,7 @@ def membersSparse(dates, dbhandler, debug=False):
 """
 
 
-@old_modul.route('/version')
+@blueprint.route('/version')
 @yaml_response
 def version():
     return ns(
@@ -204,8 +204,8 @@ def version():
 """
 
 
-@old_modul.route('/contracts/<isodate:fromdate>')
-@old_modul.route('/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>')
+@blueprint.route('/contracts/<isodate:fromdate>')
+@blueprint.route('/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>')
 @tsv_response
 def contracts(fromdate=None, todate=None):
     dates=dateSequenceMonths(fromdate, todate)
@@ -242,8 +242,8 @@ def contracts(fromdate=None, todate=None):
     }
 """
 
-@old_modul.route('/members/<isodate:fromdate>')
-@old_modul.route('/members/<isodate:fromdate>/monthlyto/<isodate:todate>')
+@blueprint.route('/members/<isodate:fromdate>')
+@blueprint.route('/members/<isodate:fromdate>/monthlyto/<isodate:todate>')
 @tsv_response
 def members(fromdate=None, todate=None):
     dates=dateSequenceMonths(fromdate, todate)
