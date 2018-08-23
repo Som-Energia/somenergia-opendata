@@ -103,8 +103,8 @@ ES	España	01	Andalucia	18	Granada	18145	Ogíjares	0
 ES	España	01	Andalucia	18	Granada	18149	Otura	0
 ES	España	01	Andalucia	18	Granada	18150	Padul	3
 ES	España	01	Andalucia	18	Granada	18153	Peligros	1
-ES	España	01	Andalucia	18	Granada	18157	Pinos Genil	0
 ES	España	01	Andalucia	18	Granada	18159	Píñar	0
+ES	España	01	Andalucia	18	Granada	18157	Pinos Genil	0
 ES	España	01	Andalucia	18	Granada	18165	Pulianas	0
 ES	España	01	Andalucia	18	Granada	18168	Quéntar	0
 ES	España	01	Andalucia	18	Granada	18171	Salar	0
@@ -127,6 +127,7 @@ ES	España	01	Andalucia	21	Huelva	21025	Cortegana	1
 ES	España	01	Andalucia	21	Huelva	21026	Cortelazor	0
 ES	España	01	Andalucia	21	Huelva	21033	Fuenteheridos	0
 ES	España	01	Andalucia	21	Huelva	21035	Gibraleón	0
+ES	España	01	Andalucia	21	Huelva	21038	Higuera de la Sierra	0
 ES	España	01	Andalucia	21	Huelva	21041	Huelva	4
 ES	España	01	Andalucia	21	Huelva	21044	Lepe	1
 ES	España	01	Andalucia	21	Huelva	21050	Moguer	0
@@ -376,6 +377,7 @@ ES	España	02	Aragón	50	Zaragoza	50222	Quinto	0
 ES	España	02	Aragón	50	Zaragoza	50230	Sádaba	0
 ES	España	02	Aragón	50	Zaragoza	50232	Salvatierra de Esca	0
 ES	España	02	Aragón	50	Zaragoza	50235	San Mateo de Gállego	0
+ES	España	02	Aragón	50	Zaragoza	50240	Sástago	0
 ES	España	02	Aragón	50	Zaragoza	50242	Sediles	1
 ES	España	02	Aragón	50	Zaragoza	50251	Tarazona	4
 ES	España	02	Aragón	50	Zaragoza	50252	Tauste	0
@@ -791,6 +793,7 @@ ES	España	07	Castilla y León	24	León	24076	Garrafe de Torío	1
 ES	España	07	Castilla y León	24	León	24088	Laguna de Negrillos	0
 ES	España	07	Castilla y León	24	León	24089	León	9
 ES	España	07	Castilla y León	24	León	24091	Luyego	0
+ES	España	07	Castilla y León	24	León	24094	Mansilla de las Mulas	0
 ES	España	07	Castilla y León	24	León	24096	Maraña	1
 ES	España	07	Castilla y León	24	León	24098	Matallana de Torío	1
 ES	España	07	Castilla y León	24	León	24115	Ponferrada	7
@@ -820,6 +823,7 @@ ES	España	07	Castilla y León	37	Salamanca	37023	Aldeatejada	0
 ES	España	07	Castilla y León	37	Salamanca	37049	Bermellar	0
 ES	España	07	Castilla y León	37	Salamanca	37069	Calvarrasa de Abajo	0
 ES	España	07	Castilla y León	37	Salamanca	37092	Castellanos de Moriscos	0
+ES	España	07	Castilla y León	37	Salamanca	37170	Ledesma	0
 ES	España	07	Castilla y León	37	Salamanca	37194	Mogarraz	0
 ES	España	07	Castilla y León	37	Salamanca	37238	Pedrosillo el Ralo	1
 ES	España	07	Castilla y León	37	Salamanca	37251	Peromingo	1
@@ -1096,7 +1100,7 @@ ES	España	09	Cataluña	08	Barcelona	08199	Sant Bartomeu del Grau	5
 ES	España	09	Cataluña	08	Barcelona	08200	Sant Boi de Llobregat	48
 ES	España	09	Cataluña	08	Barcelona	08201	Sant Boi de Lluçanès	2
 ES	España	09	Cataluña	08	Barcelona	08203	Sant Cebrià de Vallalta	3
-ES	España	09	Cataluña	08	Barcelona	08202	Sant Celoni	60
+ES	España	09	Cataluña	08	Barcelona	08202	Sant Celoni	61
 ES	España	09	Cataluña	08	Barcelona	08204	Sant Climent de Llobregat	6
 ES	España	09	Cataluña	08	Barcelona	08205	Sant Cugat del Vallès	240
 ES	España	09	Cataluña	08	Barcelona	08206	Sant Cugat Sesgarrigues	3
@@ -1164,7 +1168,7 @@ ES	España	09	Cataluña	08	Barcelona	08289	Torrelles de Llobregat	19
 ES	España	09	Cataluña	08	Barcelona	08290	Ullastrell	1
 ES	España	09	Cataluña	08	Barcelona	08291	Vacarisses	8
 ES	España	09	Cataluña	08	Barcelona	08292	Vallbona d'Anoia	0
-ES	España	09	Cataluña	08	Barcelona	08294	Vallgorguina	5
+ES	España	09	Cataluña	08	Barcelona	08294	Vallgorguina	4
 ES	España	09	Cataluña	08	Barcelona	08295	Vallirana	7
 ES	España	09	Cataluña	08	Barcelona	08296	Vallromanes	4
 ES	España	09	Cataluña	08	Barcelona	08298	Vic	98
@@ -1206,6 +1210,7 @@ ES	España	09	Cataluña	17	Girona	17023	Blanes	26
 ES	España	09	Cataluña	17	Girona	17029	Boadella i les Escaules	1
 ES	España	09	Cataluña	17	Girona	17024	Bolvir	0
 ES	España	09	Cataluña	17	Girona	17025	Bordils	7
+ES	España	09	Cataluña	17	Girona	17026	Borrassà	0
 ES	España	09	Cataluña	17	Girona	17027	Breda	18
 ES	España	09	Cataluña	17	Girona	17028	Brunyola	1
 ES	España	09	Cataluña	17	Girona	17031	Cabanelles	1
@@ -1501,6 +1506,7 @@ ES	España	09	Cataluña	25	Lleida	25183	Rialp	2
 ES	España	09	Cataluña	25	Lleida	25905	Ribera d'Ondara	1
 ES	España	09	Cataluña	25	Lleida	25185	Ribera d'Urgellet	0
 ES	España	09	Cataluña	25	Lleida	25189	Rosselló	3
+ES	España	09	Cataluña	25	Lleida	25191	Sanaüja	0
 ES	España	09	Cataluña	25	Lleida	25196	Sant Esteve de la Sarga	0
 ES	España	09	Cataluña	25	Lleida	25192	Sant Guim de Freixenet	6
 ES	España	09	Cataluña	25	Lleida	25193	Sant Llorenç de Morunys	0
@@ -1523,6 +1529,7 @@ ES	España	09	Cataluña	25	Lleida	25219	Tarroja de Segarra	1
 ES	España	09	Cataluña	25	Lleida	25220	Térmens	0
 ES	España	09	Cataluña	25	Lleida	25223	Torà	2
 ES	España	09	Cataluña	25	Lleida	25224	Torms, Els	1
+ES	España	09	Cataluña	25	Lleida	25225	Tornabous	0
 ES	España	09	Cataluña	25	Lleida	25227	Torre de Cabdella, La	0
 ES	España	09	Cataluña	25	Lleida	25228	Torrefarrera	4
 ES	España	09	Cataluña	25	Lleida	25907	Torrefeta i Florejacs	1
@@ -1550,6 +1557,7 @@ ES	España	09	Cataluña	43	Tarragona	43002	Albinyana	0
 ES	España	09	Cataluña	43	Tarragona	43003	Albiol, L'	2
 ES	España	09	Cataluña	43	Tarragona	43004	Alcanar	8
 ES	España	09	Cataluña	43	Tarragona	43005	Alcover	3
+ES	España	09	Cataluña	43	Tarragona	43904	Aldea, L'	0
 ES	España	09	Cataluña	43	Tarragona	43006	Aldover	1
 ES	España	09	Cataluña	43	Tarragona	43007	Aleixar, L'	1
 ES	España	09	Cataluña	43	Tarragona	43009	Alforja	2
@@ -2306,9 +2314,9 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31009	Aibar/Oibar	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31011	Allín/Allin	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31010	Altsasu/Alsasua	3
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31013	Améscoa Baja	1
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31018	Añorbe	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31016	Ansoáin/Antsoain	8
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31017	Anue	0
-ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31018	Añorbe	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31019	Aoiz/Agoitz	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31020	Araitz	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31025	Arakil	1
