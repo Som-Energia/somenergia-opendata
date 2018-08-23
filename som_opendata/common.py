@@ -135,6 +135,13 @@ class IsoFieldConverter(BaseConverter):
             return value
         raise ValidationError()
 
+def register_converters(app):
+    app.url_map.converters['isodate'] = IsoDateConverter
+    app.url_map.converters['frequency'] = IsoFrequencyConverte
+    app.url_map.converters['aggregateLevel'] = IsoAggregateLevelConverter
+    app.url_map.converters['field'] = IsoFieldConverter
+
+
 @yaml_response
 def handle_request_not_found(e):
     response = make_response('Request not found!', 404)

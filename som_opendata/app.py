@@ -11,11 +11,8 @@ from .printer.printer import printer_module
 from som_opendata.common import (
     handle_bad_request,
     handle_request_not_found,
-    IsoAggregateLevelConverter,
-    IsoDateConverter,
-    IsoFrequencyConverte,
-    IsoFieldConverter,
     handle_missingDateError,
+    register_converters,
     )
 from som_opendata.missingDateError import MissingDateError
 
@@ -53,10 +50,7 @@ def create_app():
             level=logging.INFO
         )
 
-    app.url_map.converters['isodate'] = IsoDateConverter
-    app.url_map.converters['frequency'] = IsoFrequencyConverte
-    app.url_map.converters['aggregateLevel'] = IsoAggregateLevelConverter
-    app.url_map.converters['field'] = IsoFieldConverter
+    register_converters(app)
 
     #app.register_blueprint(old_modul, url_prefix='/old')
     app.register_blueprint(printer_module, url_prefix='')
