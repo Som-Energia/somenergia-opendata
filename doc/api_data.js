@@ -1,12 +1,34 @@
 define({ "api": [
   {
     "type": "get",
-    "url": "/v0.2/:field[/by/:geolevel]/on/:ondate|/frequency/:frequency[/from/:fromdate][/to/:todate]?queryFilter=:locationFilters",
+    "url": "/v0.2/:field/by/:geolevel/on/:ondate",
     "title": "",
     "version": "0.2.0",
-    "name": "Distribution",
     "group": "Distribution",
-    "description": "<p>Returns the geographical distribution and temporal evolution of a quantity.</p>",
+    "name": "Distribution",
+    "description": "<p>Returns the geographical distribution of a quantity at a given date.</p>",
+    "examples": [
+      {
+        "title": "Current number of contracts",
+        "content": "/v0.2/contracts",
+        "type": "json"
+      },
+      {
+        "title": "Current members at every state",
+        "content": "/v0.2/members/by/states",
+        "type": "json"
+      },
+      {
+        "title": "Members at every CCAA on 2018-02-01",
+        "content": "/v0.2/members/by/ccaas/on/2018-02-01",
+        "type": "json"
+      },
+      {
+        "title": "Members by city on Araba and Gipuzcoa provinces",
+        "content": "/v0.2/members/by/cities?state=01&state=20",
+        "type": "json"
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -20,6 +42,14 @@ define({ "api": [
             "optional": false,
             "field": "field",
             "description": "<p>Field to get.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "ondate",
+            "defaultValue": "today",
+            "description": "<p>Single date, in iso format.</p>"
           },
           {
             "group": "Parameter",
@@ -39,83 +69,49 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": true,
-            "field": "ondate",
-            "description": "<p>Single date, in iso format.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "allowedValues": [
-              "\"yearly\"",
-              "\"monthly\""
-            ],
-            "optional": true,
-            "field": "frequency",
-            "description": "<p>Indicate a date series (only first day of the month, year...)</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "fromdate",
-            "defaultValue": "2012-01-01",
-            "description": "<p>Earlier date to show, in iso format.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "todate",
-            "defaultValue": "2018-08-01",
-            "description": "<p>Later date to show, in iso format.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
             "field": "country",
-            "description": "<p>Country to be included</p>"
+            "description": "<p>ISO codes of the countries to be included</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": true,
             "field": "ccaa",
-            "description": "<p>CCAA's to be included</p>"
+            "description": "<p>INE codes of the CCAA's to be included</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": true,
             "field": "state",
-            "description": "<p>States to be included</p>"
+            "description": "<p>INE codes of the states to be included</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": true,
             "field": "city",
-            "description": "<p>Cities to be included</p>"
+            "description": "<p>INE codes of cities to be included</p>"
           }
         ]
       }
     },
-    "sampleRequest": [
-      {
-        "url": "https://opendata.somenergia.coop/v0.2/contracts/by/ccaas/yearly/from/2010-01-01/to/2013-01-01?country=ES"
-      }
-    ],
     "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200OK\ndates:\n- 2010-01-01\n- 2011-01-01\n- 2012-01-01\n- 2013-01-01\nvalues:\n- 0\n- 0\n- 277\n- 3197\ncountries:\n  ES:\n    name: España\n    values:\n    - 0\n    - 0\n    - 277\n    - 3197\n    ccaas:\n      '01':\n        name: Andalucia\n        values:\n        - 0\n        - 0\n        - 0\n        - 48\n      '02':\n        name: Aragón\n        values:\n        - 0\n        - 0\n        - 0\n        - 124\n      '03':\n        name: Asturias, Principado de\n        values:\n        - 0\n        - 0\n        - 0\n        - 13\n      '04':\n        name: Baleares, Islas\n        values:\n        - 0\n        - 0\n        - 1\n        - 235\n      '05':\n        name: Canarias\n        values:\n        - 0\n        - 0\n        - 0\n        - 0\n      '06':\n        name: Cantabria\n        values:\n        - 0\n        - 0\n        - 0\n        - 12\n      08:\n        name: Castilla - La Mancha\n        values:\n        - 0\n        - 0\n        - 0\n        - 28\n      '07':\n        name: Castilla y León\n        values:\n        - 0\n        - 0\n        - 0\n        - 24\n      09:\n        name: Cataluña\n        values:\n        - 0\n        - 0\n        - 256\n        - 2054\n      '10':\n        name: Comunidad Valenciana\n        values:\n        - 0\n        - 0\n        - 11\n        - 224\n      '11':\n        name: Extremadura\n        values:\n        - 0\n        - 0\n        - 0\n        - 14\n      '12':\n        name: Galicia\n        values:\n        - 0\n        - 0\n        - 0\n        - 24\n      '13':\n        name: Madrid, Comunidad de\n        values:\n        - 0\n        - 0\n        - 3\n        - 145\n      '14':\n        name: Murcia, Región de\n        values:\n        - 0\n        - 0\n        - 0\n        - 11\n      '15':\n        name: Navarra, Comunidad Foral de\n        values:\n        - 0\n        - 0\n        - 6\n        - 151\n      '16':\n        name: País Vasco\n        values:\n        - 0\n        - 0\n        - 0\n        - 53\n      '17':\n        name: Rioja, La\n        values:\n        - 0\n        - 0\n        - 0\n        - 37",
+          "content": "HTTP/1.1 200OK\ndates:\n- 2013-01-01\nvalues:\n- 3197\ncountries:\n  ES:\n    name: España\n    values:\n    - 3197\n    ccaas:\n      '01':\n        name: Andalucia\n        values:\n        - 48\n      '02':\n        name: Aragón\n        values:\n        - 124\n      '03':\n        name: Asturias, Principado de\n        values:\n        - 13\n      '04':\n        name: Baleares, Islas\n        values:\n        - 235\n      '05':\n        name: Canarias\n        values:\n        - 0\n      '06':\n        name: Cantabria\n        values:\n        - 12\n      08:\n        name: Castilla - La Mancha\n        values:\n        - 28\n      '07':\n        name: Castilla y León\n        values:\n        - 24\n      09:\n        name: Cataluña\n        values:\n        - 2054\n      '10':\n        name: Comunidad Valenciana\n        values:\n        - 224\n      '11':\n        name: Extremadura\n        values:\n        - 14\n      '12':\n        name: Galicia\n        values:\n        - 24\n      '13':\n        name: Madrid, Comunidad de\n        values:\n        - 145\n      '14':\n        name: Murcia, Región de\n        values:\n        - 11\n      '15':\n        name: Navarra, Comunidad Foral de\n        values:\n        - 151\n      '16':\n        name: País Vasco\n        values:\n        - 53\n      '17':\n        name: Rioja, La\n        values:\n        - 37",
           "type": "yaml"
         }
       ]
     },
     "filename": "som_opendata/api.py",
-    "groupTitle": "Distribution"
+    "groupTitle": "Distribution",
+    "sampleRequest": [
+      {
+        "url": "https://opendata.somenergia.coop/v0.2/:field/by/:geolevel/on/:ondate"
+      }
+    ]
   },
   {
     "type": "get",
@@ -188,6 +184,139 @@ define({ "api": [
     ],
     "filename": "som_opendata/oldapi.py",
     "groupTitle": "Distribution"
+  },
+  {
+    "type": "get",
+    "url": "/v0.2/:field/by/:geolevel/:frequency/from/:fromdate/to/:todate",
+    "title": "",
+    "version": "0.2.0",
+    "group": "DistributionSeries",
+    "name": "DistributionSeries",
+    "description": "<p>Returns the geographical distribution and temporal evolution of a quantity.</p>",
+    "examples": [
+      {
+        "title": "Evolution of all contracts every year",
+        "content": "/v0.2/contracts/yearly",
+        "type": "json"
+      },
+      {
+        "title": "Monthly evolution of members on 2018",
+        "content": "/v0.2/members/monthly/from/2018-01-01/to/2019-01-01",
+        "type": "json"
+      },
+      {
+        "title": "2018 monthly evolution of members",
+        "content": "/v0.2/members/monthly/from/2018-01-01/to/2019-01-01",
+        "type": "json"
+      },
+      {
+        "title": "Members by city on Araba and Gipuzcoa provinces every year",
+        "content": "/v0.2/members/by/cities/yearly?state=01&state=20",
+        "type": "json"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"contracts\"",
+              "\"members\""
+            ],
+            "optional": false,
+            "field": "field",
+            "description": "<p>Field to get.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"yearly\"",
+              "\"monthly\""
+            ],
+            "optional": false,
+            "field": "frequency",
+            "description": "<p>Indicate a date series (only first day of the month, year...)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "fromdate",
+            "defaultValue": "2012-01-01",
+            "description": "<p>Earlier date to show, in iso format.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "todate",
+            "defaultValue": "2018-08-01",
+            "description": "<p>Later date to show, in iso format.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"countries\"",
+              "\"ccaas\"",
+              "\"states\"",
+              "\"cities\""
+            ],
+            "optional": true,
+            "field": "geolevel",
+            "defaultValue": "world",
+            "description": "<p>Geographical detail level</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "country",
+            "description": "<p>ISO codes of the countries to be included</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "ccaa",
+            "description": "<p>INE codes of the CCAA's to be included</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "state",
+            "description": "<p>INE codes of the states to be included</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "city",
+            "description": "<p>INE codes of cities to be included</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200OK\ndates:\n- 2010-01-01\n- 2011-01-01\n- 2012-01-01\n- 2013-01-01\nvalues:\n- 0\n- 0\n- 277\n- 3197\ncountries:\n  ES:\n    name: España\n    values:\n    - 0\n    - 0\n    - 277\n    - 3197\n    ccaas:\n      '01':\n        name: Andalucia\n        values:\n        - 0\n        - 0\n        - 0\n        - 48\n      '02':\n        name: Aragón\n        values:\n        - 0\n        - 0\n        - 0\n        - 124\n      '03':\n        name: Asturias, Principado de\n        values:\n        - 0\n        - 0\n        - 0\n        - 13\n      '04':\n        name: Baleares, Islas\n        values:\n        - 0\n        - 0\n        - 1\n        - 235\n      '05':\n        name: Canarias\n        values:\n        - 0\n        - 0\n        - 0\n        - 0\n      '06':\n        name: Cantabria\n        values:\n        - 0\n        - 0\n        - 0\n        - 12\n      08:\n        name: Castilla - La Mancha\n        values:\n        - 0\n        - 0\n        - 0\n        - 28\n      '07':\n        name: Castilla y León\n        values:\n        - 0\n        - 0\n        - 0\n        - 24\n      09:\n        name: Cataluña\n        values:\n        - 0\n        - 0\n        - 256\n        - 2054\n      '10':\n        name: Comunidad Valenciana\n        values:\n        - 0\n        - 0\n        - 11\n        - 224\n      '11':\n        name: Extremadura\n        values:\n        - 0\n        - 0\n        - 0\n        - 14\n      '12':\n        name: Galicia\n        values:\n        - 0\n        - 0\n        - 0\n        - 24\n      '13':\n        name: Madrid, Comunidad de\n        values:\n        - 0\n        - 0\n        - 3\n        - 145\n      '14':\n        name: Murcia, Región de\n        values:\n        - 0\n        - 0\n        - 0\n        - 11\n      '15':\n        name: Navarra, Comunidad Foral de\n        values:\n        - 0\n        - 0\n        - 6\n        - 151\n      '16':\n        name: País Vasco\n        values:\n        - 0\n        - 0\n        - 0\n        - 53\n      '17':\n        name: Rioja, La\n        values:\n        - 0\n        - 0\n        - 0\n        - 37",
+          "type": "yaml"
+        }
+      ]
+    },
+    "filename": "som_opendata/api.py",
+    "groupTitle": "DistributionSeries",
+    "sampleRequest": [
+      {
+        "url": "https://opendata.somenergia.coop/v0.2/:field/by/:geolevel/:frequency/from/:fromdate/to/:todate"
+      }
+    ]
   },
   {
     "type": "get",

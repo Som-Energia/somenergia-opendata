@@ -29,26 +29,142 @@ def extractQueryParam(location_filter_req, queryName, objectName):
     if len(queryParam) != 0:
         location_filter_req[objectName] = queryParam
 
+"""
+@apiDefine CommonDistribution
+
+@apiParam {String="countries","ccaas","states","cities"} [geolevel=world] Geographical detail level
+@apiParam {String} [country] ISO codes of the countries to be included
+@apiParam {String} [ccaa] INE codes of the CCAA's to be included
+@apiParam {String} [state] INE codes of the states to be included
+@apiParam {String} [city] INE codes of cities to be included
+"""
 
 """
-@api {get} /v0.2/:field[/by/:geolevel]/on/:ondate|/frequency/:frequency[/from/:fromdate][/to/:todate]?queryFilter=:locationFilters
+@api {get} /v0.2/:field/by/:geolevel/on/:ondate
 
 @apiVersion 0.2.0
-@apiName Distribution
 @apiGroup Distribution
-@apiDescription Returns the geographical distribution and temporal evolution of a quantity.
+@apiName Distribution
+@apiDescription Returns the geographical distribution of a quantity at a given date.
+
+@apiExample Current number of contracts
+    /v0.2/contracts
+@apiExample Current members at every state
+    /v0.2/members/by/states
+@apiExample Members at every CCAA on 2018-02-01
+    /v0.2/members/by/ccaas/on/2018-02-01
+@apiExample Members by city on Araba and Gipuzcoa provinces
+    /v0.2/members/by/cities?state=01&state=20
+
 @apiParam {String="contracts","members"} field Field to get.
-@apiParam {String="countries","ccaas","states","cities"} [geolevel=world] Geographical detail level
-@apiParam {String} [ondate]  Single date, in iso format.
-@apiParam {String="yearly","monthly"} [frequency]  Indicate a date series (only first day of the month, year...)
+@apiUse CommonDistribution
+@apiParam {String} [ondate=today]  Single date, in iso format.
+
+@apiSuccessExample {yaml} Success-Response:
+    HTTP/1.1 200OK
+    dates:
+    - 2013-01-01
+    values:
+    - 3197
+    countries:
+      ES:
+        name: España
+        values:
+        - 3197
+        ccaas:
+          '01':
+            name: Andalucia
+            values:
+            - 48
+          '02':
+            name: Aragón
+            values:
+            - 124
+          '03':
+            name: Asturias, Principado de
+            values:
+            - 13
+          '04':
+            name: Baleares, Islas
+            values:
+            - 235
+          '05':
+            name: Canarias
+            values:
+            - 0
+          '06':
+            name: Cantabria
+            values:
+            - 12
+          08:
+            name: Castilla - La Mancha
+            values:
+            - 28
+          '07':
+            name: Castilla y León
+            values:
+            - 24
+          09:
+            name: Cataluña
+            values:
+            - 2054
+          '10':
+            name: Comunidad Valenciana
+            values:
+            - 224
+          '11':
+            name: Extremadura
+            values:
+            - 14
+          '12':
+            name: Galicia
+            values:
+            - 24
+          '13':
+            name: Madrid, Comunidad de
+            values:
+            - 145
+          '14':
+            name: Murcia, Región de
+            values:
+            - 11
+          '15':
+            name: Navarra, Comunidad Foral de
+            values:
+            - 151
+          '16':
+            name: País Vasco
+            values:
+            - 53
+          '17':
+            name: Rioja, La
+            values:
+            - 37
+"""
+
+"""
+@api {get} /v0.2/:field/by/:geolevel/:frequency/from/:fromdate/to/:todate
+
+@apiVersion 0.2.0
+@apiGroup DistributionSeries
+@apiName DistributionSeries
+@apiDescription Returns the geographical distribution and temporal evolution of a quantity.
+
+@apiExample Evolution of all contracts every year
+    /v0.2/contracts/yearly
+@apiExample Monthly evolution of members on 2018
+    /v0.2/members/monthly/from/2018-01-01/to/2019-01-01
+@apiExample 2018 monthly evolution of members
+    /v0.2/members/monthly/from/2018-01-01/to/2019-01-01
+@apiExample Members by city on Araba and Gipuzcoa provinces every year
+    /v0.2/members/by/cities/yearly?state=01&state=20
+
+@apiParam {String="contracts","members"} field Field to get.
+@apiUse CommonDistribution
+@apiParam {String="yearly","monthly"} frequency  Indicate a date series (only first day of the month, year...)
 @apiParam {String} [fromdate=2012-01-01]  Earlier date to show, in iso format. 
 @apiParam {String} [todate=2018-08-01]  Later date to show, in iso format. 
-@apiParam {String} [country] Country to be included
-@apiParam {String} [ccaa] CCAA's to be included
-@apiParam {String} [state] States to be included
-@apiParam {String} [city] Cities to be included
 
-@apiSampleRequest /v0.2/contracts/by/ccaas/yearly/from/2010-01-01/to/2013-01-01?country=ES
 @apiSuccessExample {yaml} Success-Response:
     HTTP/1.1 200OK
     dates:
@@ -191,7 +307,7 @@ def extractQueryParam(location_filter_req, queryName, objectName):
             - 37
 """
 
-#@api.route('/<field:field>') # TODO: Activate it when dates are free
+@api.route('/<field:field>') # TODO: UNTESTED
 @api.route('/<field:field>/on/<isodate:ondate>')
 @api.route('/<field:field>/<frequency:frequency>')
 @api.route('/<field:field>/<frequency:frequency>/from/<isodate:fromdate>')
