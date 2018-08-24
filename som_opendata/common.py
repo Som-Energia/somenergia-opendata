@@ -171,7 +171,7 @@ class IsoFieldConverter(BaseConverter):
 def register_converters(app):
     app.url_map.converters['isodate'] = IsoDateConverter
     app.url_map.converters['frequency'] = IsoFrequencyConverte
-    app.url_map.converters['aggregateLevel'] = IsoAggregateLevelConverter
+    app.url_map.converters['geolevel'] = IsoAggregateLevelConverter
     app.url_map.converters['field'] = IsoFieldConverter
 
 

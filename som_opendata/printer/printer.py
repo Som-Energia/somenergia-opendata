@@ -31,7 +31,7 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 
 
 """
-@api {get} /v2.0/:field[/by/:aggregateLevel]/on/:ondate|/frequency/:frequency[/from/:fromdate][/to/:todate]?queryFilter=:locationFilters
+@api {get} /v2.0/:field[/by/:geolevel]/on/:ondate|/frequency/:frequency[/from/:fromdate][/to/:todate]?queryFilter=:locationFilters
 
 @apiVersion 0.2.0
 @apiName Distribution
@@ -41,7 +41,7 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 @apiParam {String} [ondate]  Date in iso format.
 @apiParam {String} [fromdate=2012-01-01]  Date in iso format. 
 @apiParam {String} [todate=2018-08-01]  Date in iso format. 
-@apiParam {String="countries","ccaas","states","cities"} [aggregateLevel=world]  Aggregate level response.
+@apiParam {String="countries","ccaas","states","cities"} [geolevel=world]  Aggregate level response.
 @apiParam {String="yearly","monthly"} [frequency]  Frequency response.
 @apiParam {String="contry","ccaa","state","city"} [queryFilter] Query Geographical filter.
 
@@ -194,14 +194,14 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 @api.route('/<field:field>/<frequency:frequency>/from/<isodate:fromdate>')
 @api.route('/<field:field>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
 @api.route('/<field:field>/<frequency:frequency>/to/<isodate:todate>')
-@api.route('/<field:field>/by/<aggregateLevel:al>')
-@api.route('/<field:field>/by/<aggregateLevel:al>/on/<isodate:ondate>')
-@api.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>')
-@api.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>')
-@api.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
-@api.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>/to/<isodate:todate>')
+@api.route('/<field:field>/by/<geolevel:geolevel>')
+@api.route('/<field:field>/by/<geolevel:geolevel>/on/<isodate:ondate>')
+@api.route('/<field:field>/by/<geolevel:geolevel>/<frequency:frequency>')
+@api.route('/<field:field>/by/<geolevel:geolevel>/<frequency:frequency>/from/<isodate:fromdate>')
+@api.route('/<field:field>/by/<geolevel:geolevel>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@api.route('/<field:field>/by/<geolevel:geolevel>/<frequency:frequency>/to/<isodate:todate>')
 @yaml_response
-def printer(field=None, al='world', ondate=None, frequency=None, fromdate=None, todate=None):
+def distribution(field=None, geolevel='world', ondate=None, frequency=None, fromdate=None, todate=None):
 
     content = api.source
 
@@ -219,7 +219,7 @@ def printer(field=None, al='world', ondate=None, frequency=None, fromdate=None, 
         extractQueryParam(location_filter_req, *locationLevel_id)
 
     filtered_objects = content.get(field, request_dates, location_filter_req)
-    if len(filtered_objects) > 0: return aggregate(filtered_objects, al)
+    if len(filtered_objects) > 0: return aggregate(filtered_objects, geolevel)
     else: return ns()
 
 
