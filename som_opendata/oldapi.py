@@ -10,11 +10,16 @@ from flask import (
     )
 from functools import wraps
 from yamlns import namespace as ns
-from .common import yaml_response
+from yamlns.dateutils import Date
+from .common import (
+    yaml_response,
+    tsv_response,
+    dateSequenceMonths,
+    readQuery,
+    )
 
 
 VERSION = 4
-
 
 
 blueprint = Blueprint(name=__name__, import_name=__name__)
@@ -28,47 +33,6 @@ def handle(e, status_code):
     response.mimetype='application/yaml'
     response.status_code = status_code
     return response
-
-
-def utf8(thing):
-    if type(thing) is unicode: return thing
-    if type(thing) is str: return unicode(thing,'utf-8',errors='ignore')
-    return str(thing)
-
-def tsv_response(f):
-    @wraps(f)
-    def wrapper(*args, **kwd):
-        result = f(*args, **kwd)
-
-        if type(result) is Response:
-            return result
-        if type(result) in (str,str):
-            response = make_response(result)
-            response.mimetype='text/tab-separated-values'
-            response.headers["Content-Disposition"] = "filename=contracts.tsv"
-            return response
-
-        response = make_response('\n'.join(
-            '\t'.join(
-                utf8(x)
-                    .replace('\t',' ')
-                    .replace('\n',' ')
-                for x in line)
-            for line in result
-        ))
-        response.mimetype='text/tab-separated-values'
-        response.charset='utf-8'
-        response.headers["Content-Disposition"] = "attachment; filename=myplot.tsv"
-        return response
-    return wrapper
-
-
-from yamlns.dateutils import Date
-
-from .common import (
-    dateSequenceMonths,
-    readQuery,
-    )
 
 def activeContractCounter(adate):
     # TODO: Unsafe substitution

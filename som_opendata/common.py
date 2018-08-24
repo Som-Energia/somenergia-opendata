@@ -72,6 +72,38 @@ def readQuery(query):
     with open(relative(query + '.sql'), 'r') as queryfile:
         return queryfile.read().rstrip()
 
+def utf8(thing):
+    if type(thing) is unicode: return thing
+    if type(thing) is str: return unicode(thing,'utf-8',errors='ignore')
+    return str(thing)
+
+def tsv_response(f):
+    @wraps(f)
+    def wrapper(*args, **kwd):
+        result = f(*args, **kwd)
+
+        if type(result) is Response:
+            return result
+        if type(result) in (str,str):
+            response = make_response(result)
+            response.mimetype='text/tab-separated-values'
+            response.headers["Content-Disposition"] = "filename=contracts.tsv"
+            return response
+
+        response = make_response('\n'.join(
+            '\t'.join(
+                utf8(x)
+                    .replace('\t',' ')
+                    .replace('\n',' ')
+                for x in line)
+            for line in result
+        ))
+        response.mimetype='text/tab-separated-values'
+        response.charset='utf-8'
+        response.headers["Content-Disposition"] = "attachment; filename=myplot.tsv"
+        return response
+    return wrapper
+
 
 def yaml_response(f):
     @wraps(f)
