@@ -5,7 +5,7 @@ readme = open("README.md").read()
 
 setup(
 	name = "somenergia_api",
-	version = "1.0.0",
+	version = "0.2.0",
 	description =
 		"Som Energia API for opendata access",
 	author = "Gisce SSL, Som Energia SCCL",
