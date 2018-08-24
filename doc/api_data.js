@@ -45,7 +45,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "Date",
             "optional": true,
             "field": "ondate",
             "defaultValue": "today",
@@ -242,7 +242,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "Date",
             "optional": true,
             "field": "fromdate",
             "defaultValue": "2012-01-01",
@@ -250,7 +250,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "Date",
             "optional": true,
             "field": "todate",
             "defaultValue": "2018-08-01",

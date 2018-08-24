@@ -63,7 +63,7 @@ The filters are additive. That means that any city matching any of the specified
 
 @apiParam {String="contracts","members"} field Field to get.
 @apiUse CommonDistribution
-@apiParam {String} [ondate=today]  Single date, in iso format.
+@apiParam {Date} [ondate=today]  Single date, in iso format.
 
 @apiSuccessExample {yaml} Success-Response:
     HTTP/1.1 200OK
@@ -172,8 +172,8 @@ The filters are additive. That means that any city matching any of the specified
 @apiParam {String="contracts","members"} field Field to get.
 @apiUse CommonDistribution
 @apiParam {String="yearly","monthly"} frequency  Indicate a date series (only first day of the month, year...)
-@apiParam {String} [fromdate=2012-01-01]  Earlier date to show, in iso format. 
-@apiParam {String} [todate=2018-08-01]  Later date to show, in iso format. 
+@apiParam {Date} [fromdate=2012-01-01]  Earlier date to show, in iso format. 
+@apiParam {Date} [todate=2018-08-01]  Later date to show, in iso format. 
 
 @apiSuccessExample {yaml} Success-Response:
     HTTP/1.1 200OK
