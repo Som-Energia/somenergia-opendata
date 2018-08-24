@@ -52,8 +52,8 @@ def create_app():
 
     register_converters(app)
 
-    app.register_blueprint(oldapi, url_prefix='')
-    #app.register_blueprint(printer_module, url_prefix='')
+    app.register_blueprint(oldapi, url_prefix='/v0.1')
+    app.register_blueprint(printer_module, url_prefix='/v0.2')
     app.register_error_handler(404, handle_request_not_found)
     app.register_error_handler(400, handle_bad_request)
     app.register_error_handler(MissingDateError, handle_missingDateError)

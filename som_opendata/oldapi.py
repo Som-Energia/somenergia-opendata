@@ -149,103 +149,61 @@ def membersSparse(dates, dbhandler, debug=False):
         return csvTable(cursor)
 
 
-"""
-@api {get} /old/version
-@apiVersion 1.0.1
-@apiName Version
-@apiGroup Version
-@apiDescription Response version API
-
-@apiSampleRequest http://DNS-NAME:5001/old/version
-@apiSuccessExample {yaml} Success-Response:
-    HTTP/1.1 200OK
-    {
-        version: 1.0
-    }
-"""
-
 
 @blueprint.route('/version')
 @yaml_response
 def version():
+    """
+    @api {get} /v0.1/version
+    @apiVersion 0.1.0
+    @apiName Version
+    @apiGroup Version
+    @apiDescription Response version API
+
+    @apiSampleRequest /{version}/version
+    @apiSuccessExample {yaml} Success-Response:
+        HTTP/1.1 200OK
+        version: 0.1.0
+    """
     return ns(
-        version = '1.0',
+        version = '0.1.0',
+        compat = '0.1.0',
         )
-
-
-"""
-@api {get} /old/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>
-@apiVersion 1.0.1
-@apiName Contracts
-@apiGroup Contracts
-@apiDescription Retorna un fitxer yaml amb els contractes de cada pais-ccaa-provincia-municipi
-
-
-@apiSampleRequest http://DNS-NAME:5001/old/contracts/2015-01-01/monthlyto/2015-12-01
-@apiSuccessExample {yaml} Success-Response:
-    HTTP/1.1 200OK
-    {
-        dates: 
-            - 2018-01-01
-            level: countries
-            countries:
-              ES:
-                name: España
-                data: [2020]
-                ccaas:
-                  '09':
-                    name: Catalunya
-                    data: [2020]
-                    states:
-                      '17':
-                        name: Girona
-                        data: [2020]
-    }
-"""
 
 
 @blueprint.route('/contracts/<isodate:fromdate>')
 @blueprint.route('/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>')
 @tsv_response
 def contracts(fromdate=None, todate=None):
+    """
+    @api {get} /v0.1/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>
+    @apiVersion 0.1.0
+    @apiName Distribution
+    @apiDescription Returns a TSV file with the number of contracts for each city and for each date in the interval.
+    @apiParam {isodate} fromdate First date in the output
+    @apiParam {isodate} todate Last included date in the output, if not specified just fromdate is considered
+    @apiSampleRequest /v0.1/contracts/2015-01-01/monthlyto/2015-12-01
+    """
     dates=dateSequenceMonths(fromdate, todate)
     return contractsSeries(dates)
 
-
-"""
-@api {get} /old/members/<isodate:fromdate>/monthlyto/<isodate:todate>
-@apiVersion 1.0.1
-@apiName Members
-@apiGroup Members
-@apiDescription Retorna un fitxer yaml amb els socis de cada pais-ccaa-provincia-municipi
-
-
-@apiSampleRequest http://DNS-NAME:5001/old/members/2015-01-01/monthlyto/2015-12-01
-@apiSuccessExample {yaml} Success-Response:
-    HTTP/1.1 200OK
-    {
-        dates: 
-            - 2018-01-01
-            level: countries
-            countries:
-              ES:
-                name: España
-                data: [2020]
-                ccaas:
-                  '09':
-                    name: Catalunya
-                    data: [2020]
-                    states:
-                      '17':
-                        name: Girona
-                        data: [2020]
-    }
-"""
 
 @blueprint.route('/members/<isodate:fromdate>')
 @blueprint.route('/members/<isodate:fromdate>/monthlyto/<isodate:todate>')
 @tsv_response
 def members(fromdate=None, todate=None):
+    """
+    @api {get} /v0.1/members/<isodate:fromdate>[/monthlyto/<isodate:todate>]
+    @apiVersion 0.1.0
+    @apiName Distribution
+    @apiDescription Returns a TSV file with the number of members for each city and for each date in the interval.
+    @apiParam {isodate} fromdate First date in the output
+    @apiParam {isodate} todate Last included date in the output, if not specified just fromdate is considered
+
+    @apiSampleRequest /v0.1/members/2015-01-01/monthlyto/2015-12-01
+    """
     dates=dateSequenceMonths(fromdate, todate)
     return membersSparse(dates, csvTable)
 
+
+# vim: et sw=4 ts=4

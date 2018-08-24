@@ -37,7 +37,8 @@ class BaseApi_Test(unittest.TestCase):
     def test_version(self):
         r = self.get('/version')
         self.assertYamlResponse(r, """\
-            version: '1.0'
+            version: '0.1.0'
+            compat: '0.1.0'
             """)
 
     def test_contracts_single(self):
@@ -55,15 +56,6 @@ class BaseApi_Test(unittest.TestCase):
     def test_members_series(self):
         r = self.get('/members/2015-01-01/monthlyto/2015-04-01')
         self.assertTsvResponse(r)
-
-
-"""
-/version
-/members/2015-02
-/members/2015-02/weeklyuntil/2015-12
-/members/2015-02/monthlyuntil/2015-12
-/map/members/...
-"""
 
 
 
