@@ -4,9 +4,15 @@ from dateutil.relativedelta import relativedelta as delta
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
 import b2btest
-from .app import app
 from .printer import api, validateInputDates
+from flask import Flask
+from .common import (
+    register_converters,
+    register_handlers,
+    )
 
+from .csvSource import loadCsvSource
+source = loadCsvSource()
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
@@ -20,12 +26,17 @@ class BaseApi_Test(unittest.TestCase):
     @staticmethod
     def setUpClass():
         BaseApi_Test.maxDiff=100000
+        BaseApi_Test.app = app = Flask(__name__)
+        register_converters(app)
+        register_handlers(app)
+        app.register_blueprint(api, url_prefix='/v0.2')
         app.config['TESTING']=True
 
     def setUp(self):
-        self.client = app.test_client()
+        self.client = self.app.test_client()
         self.b2bdatapath = 'b2bdata'
         self.oldsource = api.source
+        api.source = source
 
     def tearDown(self):
         api.source = self.oldsource
