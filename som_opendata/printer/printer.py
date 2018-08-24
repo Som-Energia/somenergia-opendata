@@ -188,17 +188,18 @@ def extractQueryParam(location_filter_req, queryName, objectName):
             - 37
 """
 
+#@api.route('/<field:field>') # TODO: Activate it when dates are free
 @api.route('/<field:field>/on/<isodate:ondate>')
+@api.route('/<field:field>/<frequency:frequency>')
+@api.route('/<field:field>/<frequency:frequency>/from/<isodate:fromdate>')
+@api.route('/<field:field>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@api.route('/<field:field>/<frequency:frequency>/to/<isodate:todate>')
 @api.route('/<field:field>/by/<aggregateLevel:al>')
 @api.route('/<field:field>/by/<aggregateLevel:al>/on/<isodate:ondate>')
 @api.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>')
 @api.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>')
 @api.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
 @api.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>/to/<isodate:todate>')
-@api.route('/<field:field>/<frequency:frequency>')
-@api.route('/<field:field>/<frequency:frequency>/from/<isodate:fromdate>')
-@api.route('/<field:field>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
-@api.route('/<field:field>/<frequency:frequency>/to/<isodate:todate>')
 @yaml_response
 def printer(field=None, al='world', ondate=None, frequency=None, fromdate=None, todate=None):
 
