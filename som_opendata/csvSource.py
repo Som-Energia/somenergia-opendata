@@ -55,7 +55,7 @@ import dbconfig as config
 import os.path
 
 def loadCsvSource():
-    myPath = os.path.abspath(os.path.dirname('.'))
+    myPath = os.path.abspath(os.path.dirname(__file__))
     datums = ns()
     for datum, path in config.opendata.iteritems():
         with open(os.path.join(myPath, path)) as f:
