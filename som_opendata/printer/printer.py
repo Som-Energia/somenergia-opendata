@@ -34,8 +34,8 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 @api {get} /v2.0/:field[/by/:aggregateLevel]/on/:ondate|/frequency/:frequency[/from/:fromdate][/to/:todate]?queryFilter=:locationFilters
 
 @apiVersion 0.2.0
-@apiName Open Data
-@apiGroup Distributed data
+@apiName Distribution
+@apiGroup Distribution
 @apiDescription Returns the geographical distribution and evolution of a datum.
 @apiParam {String="contracts","members"} field  Firstname of the User.
 @apiParam {String} [ondate]  Date in iso format.
@@ -220,6 +220,29 @@ def printer(field=None, al='world', ondate=None, frequency=None, fromdate=None, 
     filtered_objects = content.get(field, request_dates, location_filter_req)
     if len(filtered_objects) > 0: return aggregate(filtered_objects, al)
     else: return ns()
+
+
+@printer_module.route('/version')
+@yaml_response
+def version():
+    """
+    @api {get} /v0.2/version
+    @apiVersion 0.2.0
+    @apiName Version
+    @apiGroup Version
+    @apiDescription Response version API
+
+    @apiSampleRequest /{version}/version
+    @apiSuccessExample {yaml} Success-Response:
+        HTTP/1.1 200OK
+        version: 0.2.0
+        compat: 0.2.0
+    """
+    return ns(
+        version = '0.2.0',
+        compat = '0.2.0',
+        )
+
 
 
 printer_module.source = None

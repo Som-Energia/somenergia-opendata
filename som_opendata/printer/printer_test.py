@@ -41,6 +41,13 @@ class BaseApi_Test(unittest.TestCase):
     def assertTsvResponse(self, response):
         self.assertB2BEqual(response.data)
 
+    def test_version(self):
+        r = self.get('/version')
+        self.assertYamlResponse(r, """\
+            version: '0.2.0'
+            compat: '0.2.0'
+            """)
+
     def test__validateInputDates__since_toDate(self):
         r = validateInputDates(since='2018-01-01', todate='2018-01-02')
         self.assertEqual(r, True)

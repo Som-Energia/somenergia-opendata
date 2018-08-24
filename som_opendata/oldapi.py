@@ -164,6 +164,7 @@ def version():
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
         version: 0.1.0
+        compat: 0.1.0
     """
     return ns(
         version = '0.1.0',
@@ -179,6 +180,7 @@ def contracts(fromdate=None, todate=None):
     @api {get} /v0.1/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>
     @apiVersion 0.1.0
     @apiName Distribution
+    @apiGroup Distribution
     @apiDescription Returns a TSV file with the number of contracts for each city and for each date in the interval.
     @apiParam {isodate} fromdate First date in the output
     @apiParam {isodate} todate Last included date in the output, if not specified just fromdate is considered
@@ -196,6 +198,7 @@ def members(fromdate=None, todate=None):
     @api {get} /v0.1/members/<isodate:fromdate>[/monthlyto/<isodate:todate>]
     @apiVersion 0.1.0
     @apiName Distribution
+    @apiGroup Distribution
     @apiDescription Returns a TSV file with the number of members for each city and for each date in the interval.
     @apiParam {isodate} fromdate First date in the output
     @apiParam {isodate} todate Last included date in the output, if not specified just fromdate is considered
