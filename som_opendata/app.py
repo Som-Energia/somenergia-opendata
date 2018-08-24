@@ -46,14 +46,13 @@ def create_app():
     app.register_blueprint(oldapi, url_prefix='/v0.1')
     app.register_blueprint(printer_module, url_prefix='/v0.2')
 
-    with app.app_context():
-        current_app.csvData = readCsvFiles()
-        current_app.csvSource = CsvSource(current_app.csvData)
+    app.csvData = readCsvFiles()
+    app.csvSource = CsvSource(app.csvData)
 
-        current_app.db = records.Database(
-            'postgres://{user}:{password}@{host}:{port}/{database}'.format(**config.psycopg)
-        )
-        current_app.errors = None
+    app.db = records.Database(
+        'postgres://{user}:{password}@{host}:{port}/{database}'.format(**config.psycopg)
+    )
+    app.errors = None
 
     return app
 
