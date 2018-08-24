@@ -1,5 +1,4 @@
 # -*- encoding: utf-8 -*-
-import logging
 from flask import Flask, current_app
 from .oldapi import blueprint as oldapi
 from .csvSource import loadCsvSource
