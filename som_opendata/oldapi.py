@@ -31,8 +31,8 @@ def handle(e, status_code):
 
 
 def utf8(thing):
-    if type(thing) is str: return thing
-    if type(thing) is str: return str(thing,'utf-8',errors='ignore')
+    if type(thing) is unicode: return thing
+    if type(thing) is str: return unicode(thing,'utf-8',errors='ignore')
     return str(thing)
 
 def tsv_response(f):
