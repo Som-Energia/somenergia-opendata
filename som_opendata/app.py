@@ -5,9 +5,9 @@ import os.path
 from flask import Flask, current_app
 from yamlns import namespace as ns
 from .oldapi import blueprint as oldapi
-from csvSource import CsvSource
-from .printer.printer import api
-from som_opendata.common import (
+from .csvSource import CsvSource
+from .printer import api
+from .common import (
     register_handlers,
     register_converters,
     )

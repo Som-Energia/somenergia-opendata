@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
 from flask import Blueprint, request, current_app
 from yamlns import namespace as ns
-from ..common import (
+from .common import (
         yaml_response,
         dateSequenceMonths,
         dateSequenceWeeks,
         dateSequenceYears,
         requestDates,
     )
-from ..distribution import (
+from .distribution import (
     parse_tsv,
     tuples2objects,
     aggregate,
     locationFilter,
     )
-from ..missingDateError import MissingDateError
+from .missingDateError import MissingDateError
 
 api = Blueprint(name=__name__, import_name=__name__)
 api.firstDate = '2010-01-01'
@@ -245,5 +245,6 @@ def version():
         )
 
 
-
 api.source = None
+
+# vim: et ts=4 sw=4

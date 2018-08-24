@@ -4,8 +4,8 @@ from dateutil.relativedelta import relativedelta as delta
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
 import b2btest
-from ..app import app
-from printer import api, validateInputDates
+from .app import app
+from .printer import api, validateInputDates
 
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -33,7 +33,7 @@ class BaseApi_Test(unittest.TestCase):
     def get(self, uri, *args, **kwds):
         return self.client.get('/v0.2'+uri,*args,**kwds)
 
-    from ..testutils import assertNsEqual
+    from .testutils import assertNsEqual
 
     def assertYamlResponse(self, response, expected):
         self.assertNsEqual(response.data, expected)
