@@ -1,13 +1,15 @@
 {
-  "name": "",
-  "version": "0.0.0",
-  "description": "",
-  "sampleUrl": false,
+  "name": "somenergia-opendata",
+  "version": "0.2.0",
+  "description": "Som Energia Open Data API",
+  "title": "Som Energia Open Data API documentation",
+  "url": "https://opendata.somenergia.coop",
+  "sampleUrl": "https://opendata.somenergia.coop",
   "defaultVersion": "0.0.0",
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2018-08-21T14:11:43.979Z",
+    "time": "2018-08-24T18:23:10.587Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }

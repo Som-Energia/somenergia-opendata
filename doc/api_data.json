@@ -1,12 +1,12 @@
 [
   {
     "type": "get",
-    "url": "/printer/:field[/by/:aggregateLevel]/on/:ondate|/frequency/:frequency[/from/:fromdate][/to/:todate]?queryFilter=:locationFilters",
+    "url": "/v2.0/:field[/by/:geolevel]/on/:ondate|/frequency/:frequency[/from/:fromdate][/to/:todate]?queryFilter=:locationFilters",
     "title": "",
-    "version": "1.0.1",
-    "name": "OpenData",
-    "group": "Printer",
-    "description": "<p>Retorna un yaml amb la distribució desitjada repartida en espai - temps</p>",
+    "version": "0.2.0",
+    "name": "Distribution",
+    "group": "Distribution",
+    "description": "<p>Returns the geographical distribution and evolution of a datum.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -54,7 +54,7 @@
               "\"cities\""
             ],
             "optional": true,
-            "field": "aggregateLevel",
+            "field": "geolevel",
             "defaultValue": "world",
             "description": "<p>Aggregate level response.</p>"
           },
@@ -87,19 +87,141 @@
     },
     "sampleRequest": [
       {
-        "url": "http://192.168.1.5:5001/printer/contracts/by/ccaas/yearly/from/2010-01-01/to/2013-01-01?country=ES"
+        "url": "https://opendata.somenergia.coopv0.2/contracts/by/ccaas/yearly/from/2010-01-01/to/2013-01-01?country=ES"
       }
     ],
     "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200OK\n{\n    dates:\n    - 2010-01-01\n    - 2011-01-01\n    - 2012-01-01\n    - 2013-01-01\n    data:\n    - 0\n    - 0\n    - 277\n    - 3197\n    countries:\n      ES:\n        name: España\n        data:\n        - 0\n        - 0\n        - 277\n        - 3197\n        ccaas:\n          '01':\n            name: Andalucia\n            data:\n            - 0\n            - 0\n            - 0\n            - 48\n          '02':\n            name: Aragón\n            data:\n            - 0\n            - 0\n            - 0\n            - 124\n          '03':\n            name: Asturias, Principado de\n            data:\n            - 0\n            - 0\n            - 0\n            - 13\n          '04':\n            name: Baleares, Islas\n            data:\n            - 0\n            - 0\n            - 1\n            - 235\n          '05':\n            name: Canarias\n            data:\n            - 0\n            - 0\n            - 0\n            - 0\n          '06':\n            name: Cantabria\n            data:\n            - 0\n            - 0\n            - 0\n            - 12\n          08:\n            name: Castilla - La Mancha\n            data:\n            - 0\n            - 0\n            - 0\n            - 28\n          '07':\n            name: Castilla y León\n            data:\n            - 0\n            - 0\n            - 0\n            - 24\n          09:\n            name: Cataluña\n            data:\n            - 0\n            - 0\n            - 256\n            - 2054\n          '10':\n            name: Comunidad Valenciana\n            data:\n            - 0\n            - 0\n            - 11\n            - 224\n          '11':\n            name: Extremadura\n            data:\n            - 0\n            - 0\n            - 0\n            - 14\n          '12':\n            name: Galicia\n            data:\n            - 0\n            - 0\n            - 0\n            - 24\n          '13':\n            name: Madrid, Comunidad de\n            data:\n            - 0\n            - 0\n            - 3\n            - 145\n          '14':\n            name: Murcia, Región de\n            data:\n            - 0\n            - 0\n            - 0\n            - 11\n          '15':\n            name: Navarra, Comunidad Foral de\n            data:\n            - 0\n            - 0\n            - 6\n            - 151\n          '16':\n            name: País Vasco\n            data:\n            - 0\n            - 0\n            - 0\n            - 53\n          '17':\n            name: Rioja, La\n            data:\n            - 0\n            - 0\n            - 0\n            - 37\n}",
+          "content": "HTTP/1.1 200OK\ndates:\n- 2010-01-01\n- 2011-01-01\n- 2012-01-01\n- 2013-01-01\ndata:\n- 0\n- 0\n- 277\n- 3197\ncountries:\n  ES:\n    name: España\n    data:\n    - 0\n    - 0\n    - 277\n    - 3197\n    ccaas:\n      '01':\n        name: Andalucia\n        data:\n        - 0\n        - 0\n        - 0\n        - 48\n      '02':\n        name: Aragón\n        data:\n        - 0\n        - 0\n        - 0\n        - 124\n      '03':\n        name: Asturias, Principado de\n        data:\n        - 0\n        - 0\n        - 0\n        - 13\n      '04':\n        name: Baleares, Islas\n        data:\n        - 0\n        - 0\n        - 1\n        - 235\n      '05':\n        name: Canarias\n        data:\n        - 0\n        - 0\n        - 0\n        - 0\n      '06':\n        name: Cantabria\n        data:\n        - 0\n        - 0\n        - 0\n        - 12\n      08:\n        name: Castilla - La Mancha\n        data:\n        - 0\n        - 0\n        - 0\n        - 28\n      '07':\n        name: Castilla y León\n        data:\n        - 0\n        - 0\n        - 0\n        - 24\n      09:\n        name: Cataluña\n        data:\n        - 0\n        - 0\n        - 256\n        - 2054\n      '10':\n        name: Comunidad Valenciana\n        data:\n        - 0\n        - 0\n        - 11\n        - 224\n      '11':\n        name: Extremadura\n        data:\n        - 0\n        - 0\n        - 0\n        - 14\n      '12':\n        name: Galicia\n        data:\n        - 0\n        - 0\n        - 0\n        - 24\n      '13':\n        name: Madrid, Comunidad de\n        data:\n        - 0\n        - 0\n        - 3\n        - 145\n      '14':\n        name: Murcia, Región de\n        data:\n        - 0\n        - 0\n        - 0\n        - 11\n      '15':\n        name: Navarra, Comunidad Foral de\n        data:\n        - 0\n        - 0\n        - 6\n        - 151\n      '16':\n        name: País Vasco\n        data:\n        - 0\n        - 0\n        - 0\n        - 53\n      '17':\n        name: Rioja, La\n        data:\n        - 0\n        - 0\n        - 0\n        - 37",
           "type": "yaml"
         }
       ]
     },
-    "filename": "som_opendata/printer/printer.py",
-    "groupTitle": "Printer"
+    "filename": "som_opendata/api.py",
+    "groupTitle": "Distribution"
+  },
+  {
+    "type": "get",
+    "url": "/v0.1/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>",
+    "title": "",
+    "version": "0.1.0",
+    "name": "Distribution",
+    "group": "Distribution",
+    "description": "<p>Returns a TSV file with the number of contracts for each city and for each date in the interval.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "isodate",
+            "optional": false,
+            "field": "fromdate",
+            "description": "<p>First date in the output</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "isodate",
+            "optional": false,
+            "field": "todate",
+            "description": "<p>Last included date in the output, if not specified just fromdate is considered</p>"
+          }
+        ]
+      }
+    },
+    "sampleRequest": [
+      {
+        "url": "https://opendata.somenergia.coop/v0.1/contracts/2015-01-01/monthlyto/2015-12-01"
+      }
+    ],
+    "filename": "som_opendata/oldapi.py",
+    "groupTitle": "Distribution"
+  },
+  {
+    "type": "get",
+    "url": "/v0.1/members/<isodate:fromdate>[/monthlyto/<isodate:todate>]",
+    "title": "",
+    "version": "0.1.0",
+    "name": "Distribution",
+    "group": "Distribution",
+    "description": "<p>Returns a TSV file with the number of members for each city and for each date in the interval.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "isodate",
+            "optional": false,
+            "field": "fromdate",
+            "description": "<p>First date in the output</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "isodate",
+            "optional": false,
+            "field": "todate",
+            "description": "<p>Last included date in the output, if not specified just fromdate is considered</p>"
+          }
+        ]
+      }
+    },
+    "sampleRequest": [
+      {
+        "url": "https://opendata.somenergia.coop/v0.1/members/2015-01-01/monthlyto/2015-12-01"
+      }
+    ],
+    "filename": "som_opendata/oldapi.py",
+    "groupTitle": "Distribution"
+  },
+  {
+    "type": "get",
+    "url": "/v0.2/version",
+    "title": "",
+    "version": "0.2.0",
+    "name": "Version",
+    "group": "Version",
+    "description": "<p>Response version API</p>",
+    "sampleRequest": [
+      {
+        "url": "https://opendata.somenergia.coop/{version}/version"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200OK\nversion: 0.2.0\ncompat: 0.2.0",
+          "type": "yaml"
+        }
+      ]
+    },
+    "filename": "som_opendata/api.py",
+    "groupTitle": "Version"
+  },
+  {
+    "type": "get",
+    "url": "/v0.1/version",
+    "title": "",
+    "version": "0.1.0",
+    "name": "Version",
+    "group": "Version",
+    "description": "<p>Response version API</p>",
+    "sampleRequest": [
+      {
+        "url": "https://opendata.somenergia.coop/{version}/version"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200OK\nversion: 0.1.0\ncompat: 0.1.0",
+          "type": "yaml"
+        }
+      ]
+    },
+    "filename": "som_opendata/oldapi.py",
+    "groupTitle": "Version"
   }
 ]
