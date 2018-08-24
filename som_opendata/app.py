@@ -18,7 +18,11 @@ def create_app():
     app.register_blueprint(oldapi, url_prefix='/v0.1')
     app.register_blueprint(api, url_prefix='/v0.2')
     api.source = loadCsvSource()
+    api.firstDate = '2010-01-01'
     app.errors = None
+
+    for rule in app.url_map.iter_rules():
+        print rule
 
     return app
 
