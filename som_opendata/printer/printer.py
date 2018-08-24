@@ -202,7 +202,7 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 @yaml_response
 def printer(field=None, al='world', ondate=None, frequency=None, fromdate=None, todate=None):
 
-    content = current_app.csvSource
+    content = api.source
 
     request_dates = requestDates(first=api.firstDate, on=ondate, since=fromdate, to=todate, periodicity=frequency)
     location_filter_req = ns()

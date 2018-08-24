@@ -45,7 +45,7 @@ def create_app():
     app.register_blueprint(oldapi, url_prefix='/v0.1')
     app.register_blueprint(api, url_prefix='/v0.2')
 
-    api.csvSource = loadCsvSource()
+    api.source = loadCsvSource()
 
     app.errors = None
 
