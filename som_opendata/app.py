@@ -2,7 +2,6 @@
 import dbconfig as config
 import logging
 import os.path
-import records
 from flask import Flask, current_app
 from yamlns import namespace as ns
 from .oldapi import blueprint as oldapi
@@ -48,9 +47,6 @@ def create_app():
 
     api.csvSource = loadCsvSource()
 
-    app.db = records.Database(
-        'postgres://{user}:{password}@{host}:{port}/{database}'.format(**config.psycopg)
-    )
     app.errors = None
 
     return app
