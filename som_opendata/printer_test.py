@@ -21,12 +21,12 @@ data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
 data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
 data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
-class BaseApi_Test(unittest.TestCase):
+class Api_Test(unittest.TestCase):
 
     @staticmethod
     def setUpClass():
-        BaseApi_Test.maxDiff=100000
-        BaseApi_Test.app = app = Flask(__name__)
+        Api_Test.maxDiff=100000
+        Api_Test.app = app = Flask(__name__)
         register_converters(app)
         register_handlers(app)
         app.register_blueprint(api, url_prefix='/v0.2')
