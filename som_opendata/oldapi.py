@@ -79,25 +79,25 @@ from .common import (
 def activeContractCounter(adate):
     # TODO: Unsafe substitution
     return """
-	count(CASE
-		WHEN polissa.data_alta IS NULL THEN NULL
-		WHEN polissa.data_alta > '{adate}'::date THEN NULL
-		WHEN polissa.data_baixa is NULL then TRUE
-		WHEN polissa.data_baixa > '{adate}'::date THEN TRUE
-		ELSE NULL
-		END) AS count_{adate:%Y_%m_%d}
+    count(CASE
+        WHEN polissa.data_alta IS NULL THEN NULL
+        WHEN polissa.data_alta > '{adate}'::date THEN NULL
+        WHEN polissa.data_baixa is NULL then TRUE
+        WHEN polissa.data_baixa > '{adate}'::date THEN TRUE
+        ELSE NULL
+        END) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
 
 def activeContractLister(adate):
     # TODO: Unsafe substitution
     return """
-	string_agg(CASE
-		WHEN polissa.data_alta IS NULL THEN NULL
-		WHEN polissa.data_alta > '{adate}'::date THEN NULL
-		WHEN polissa.data_baixa is NULL then polissa.id::text
-		WHEN polissa.data_baixa > '{adate)s'::date THEN polissa.id::text
-		ELSE NULL
-		END, ',' ORDER BY polissa.id) AS ids_{adate},
+    string_agg(CASE
+        WHEN polissa.data_alta IS NULL THEN NULL
+        WHEN polissa.data_alta > '{adate}'::date THEN NULL
+        WHEN polissa.data_baixa is NULL then polissa.id::text
+        WHEN polissa.data_baixa > '{adate)s'::date THEN polissa.id::text
+        ELSE NULL
+        END, ',' ORDER BY polissa.id) AS ids_{adate},
 """.format(adate=adate)
 
 
