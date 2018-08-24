@@ -66,6 +66,7 @@ class Api_Test(unittest.TestCase):
         self.b2bdatapath = 'b2bdata'
         self.oldsource = api.source
         api.source = source
+        api.firstDate = '2010-01-01'
 
     def tearDown(self):
         api.source = self.oldsource
@@ -91,7 +92,6 @@ class Api_Test(unittest.TestCase):
 
 
     def test__onDate__exists(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/on/2018-01-01')
         self.assertYamlResponse(r, """\
             values: [41660]
@@ -99,7 +99,6 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__onDate_aggregateLevel__exist(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/by/world/on/2018-01-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
@@ -151,7 +150,6 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__aggregateLevel_frequency__exist(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/by/countries/yearly')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
@@ -185,7 +183,6 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__aggregateLevel_frequency_fromDate__exist(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/by/world/yearly/from/2017-01-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
@@ -194,7 +191,6 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__aggregateLevel_frequency_fromDate_toDate__exist(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/by/world/monthly/from/2018-01-01/to/2018-03-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
@@ -225,7 +221,6 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__frequency_fromDate_toDate__exist(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/monthly/from/2018-01-01/to/2018-02-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
@@ -234,7 +229,6 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__urlBaseFrequency__exist(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/yearly')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
@@ -263,7 +257,6 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__onDate_aggregateLevel_queryParams__exist(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/by/cities/on/2018-01-01?city=17007')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
@@ -288,7 +281,6 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__printerError__datesNotExist(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/on/1994-09-01')
         self.assertEqual(r.status_code, 500)
         self.assertYamlResponse(r, """\
@@ -297,28 +289,23 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__printerError__URLparamsNotExist_aggregateLevel(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/by/piolin')
         self.assertEqual(r.status_code, 404)
 
     def test__printerError__URLparamsNotExist_frequency(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/piolin')
         self.assertEqual(r.status_code, 404)
 
     @unittest.skip("Not implemented yet | Caldria retocar el converter de Date")
     def test__printerError__URLparamsNotExist_date(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/on/piolin')
         self.assertEqual(r.status_code, 404)
 
     def test__printerError__queryParamsNotExist(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/by/cities/on/2018-01-01?city=9999999')
         self.assertYamlResponse(r, ns())
 
     def test__printerError__incorrectFormatDates(self):
-        api.firstDate = '2010-01-01'
         r = self.get('/members/by/cities/on/2018-01-01/from/2018-02-02')
         self.assertEqual(r.status_code, 404)
 
