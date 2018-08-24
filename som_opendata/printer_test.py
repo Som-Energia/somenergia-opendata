@@ -21,6 +21,35 @@ data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
 data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
 data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
+
+
+class ApiHelpers_Test(unittest.TestCase):
+
+    def test__validateInputDates__since_toDate(self):
+        r = validateInputDates(since='2018-01-01', todate='2018-01-02')
+        self.assertEqual(r, True)
+
+    def test__validateInputDates__since(self):
+        r = validateInputDates(since='2018-01-01')
+        self.assertEqual(r, True)
+
+    def test__validateInputDates__since_toDate_turnedDates(self):
+        r = validateInputDates(since='2010-01-01', todate='2018-01-01')
+        self.assertEqual(r, True)
+
+    def test__validateInputDates__onDate(self):
+        r = validateInputDates(ondate='2010-01-01')
+        self.assertEqual(r, True)
+
+    def test__validateInputDates__onDate_since(self):
+        r = validateInputDates(ondate='2010-01-01', since='2018-01-01')
+        self.assertEqual(r, False)
+
+    def test__validateInputDates__onDate_toDate(self):
+        r = validateInputDates(ondate='2010-01-01', todate='2018-01-01')
+        self.assertEqual(r, False)
+
+
 class Api_Test(unittest.TestCase):
 
     @staticmethod
@@ -52,6 +81,7 @@ class Api_Test(unittest.TestCase):
     def assertTsvResponse(self, response):
         self.assertB2BEqual(response.data)
 
+
     def test__version(self):
         r = self.get('/version')
         self.assertYamlResponse(r, """\
@@ -59,29 +89,6 @@ class Api_Test(unittest.TestCase):
             compat: '0.2.0'
             """)
 
-    def test__validateInputDates__since_toDate(self):
-        r = validateInputDates(since='2018-01-01', todate='2018-01-02')
-        self.assertEqual(r, True)
-
-    def test__validateInputDates__since(self):
-        r = validateInputDates(since='2018-01-01')
-        self.assertEqual(r, True)
-
-    def test__validateInputDates__since_toDate_turnedDates(self):
-        r = validateInputDates(since='2010-01-01', todate='2018-01-01')
-        self.assertEqual(r, True)
-
-    def test__validateInputDates__onDate(self):
-        r = validateInputDates(ondate='2010-01-01')
-        self.assertEqual(r, True)
-
-    def test__validateInputDates__onDate_since(self):
-        r = validateInputDates(ondate='2010-01-01', since='2018-01-01')
-        self.assertEqual(r, False)
-
-    def test__validateInputDates__onDate_toDate(self):
-        r = validateInputDates(ondate='2010-01-01', todate='2018-01-01')
-        self.assertEqual(r, False)
 
     def test__onDate__exists(self):
         api.firstDate = '2010-01-01'
@@ -99,6 +106,7 @@ class Api_Test(unittest.TestCase):
             dates: [2018-01-01]
             data: [41660]
             """)
+
 
     @unittest.skip('NOT IMPLEMENTED YET')
     def test__aggregateLevel__existToday(self):
