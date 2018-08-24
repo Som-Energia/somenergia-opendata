@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-from flask import Flask, current_app
+from flask import Flask
 from .oldapi import blueprint as oldapi
 from .csvSource import loadCsvSource
 from .printer import api
@@ -17,9 +17,7 @@ def create_app():
 
     app.register_blueprint(oldapi, url_prefix='/v0.1')
     app.register_blueprint(api, url_prefix='/v0.2')
-
     api.source = loadCsvSource()
-
     app.errors = None
 
     return app
