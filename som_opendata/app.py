@@ -17,14 +17,14 @@ from som_opendata.common import (
 VERSION = 4
 sentry = None
 
-def readCsvFiles():
+def loadCsvSource():
     myPath = os.path.abspath(os.path.dirname('.'))
     datums = ns()
     for datum, path in config.opendata.iteritems():
         with open(os.path.join(myPath, path)) as f:
             csvFile = f.read()
         datums[datum] = csvFile
-    return datums
+    return CsvSource(datums)
 
 
 
@@ -46,8 +46,7 @@ def create_app():
     app.register_blueprint(oldapi, url_prefix='/v0.1')
     app.register_blueprint(api, url_prefix='/v0.2')
 
-    app.csvData = readCsvFiles()
-    app.csvSource = CsvSource(app.csvData)
+    api.csvSource = loadCsvSource()
 
     app.db = records.Database(
         'postgres://{user}:{password}@{host}:{port}/{database}'.format(**config.psycopg)
