@@ -7,7 +7,7 @@ from flask import Flask, current_app
 from yamlns import namespace as ns
 from .oldapi import blueprint as oldapi
 from csvSource import CsvSource
-from .printer.printer import printer_module
+from .printer.printer import api
 from som_opendata.common import (
     register_handlers,
     register_converters,
@@ -44,7 +44,7 @@ def create_app():
     register_handlers(app)
 
     app.register_blueprint(oldapi, url_prefix='/v0.1')
-    app.register_blueprint(printer_module, url_prefix='/v0.2')
+    app.register_blueprint(api, url_prefix='/v0.2')
 
     app.csvData = readCsvFiles()
     app.csvSource = CsvSource(app.csvData)

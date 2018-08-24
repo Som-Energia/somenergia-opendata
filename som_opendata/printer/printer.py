@@ -16,8 +16,8 @@ from ..distribution import (
     )
 from ..missingDateError import MissingDateError
 
-printer_module = Blueprint(name='printer_module', import_name=__name__)
-printer_module.firstDate = '2010-01-01'
+api = Blueprint(name=__name__, import_name=__name__)
+api.firstDate = '2010-01-01'
 
 def validateInputDates(ondate = None, since = None, todate = None):
     return not (not ondate is None and (not since is None or not todate is None))
@@ -188,23 +188,23 @@ def extractQueryParam(location_filter_req, queryName, objectName):
             - 37
 """
 
-@printer_module.route('/<field:field>/on/<isodate:ondate>')
-@printer_module.route('/<field:field>/by/<aggregateLevel:al>')
-@printer_module.route('/<field:field>/by/<aggregateLevel:al>/on/<isodate:ondate>')
-@printer_module.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>')
-@printer_module.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>')
-@printer_module.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
-@printer_module.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>/to/<isodate:todate>')
-@printer_module.route('/<field:field>/<frequency:frequency>')
-@printer_module.route('/<field:field>/<frequency:frequency>/from/<isodate:fromdate>')
-@printer_module.route('/<field:field>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
-@printer_module.route('/<field:field>/<frequency:frequency>/to/<isodate:todate>')
+@api.route('/<field:field>/on/<isodate:ondate>')
+@api.route('/<field:field>/by/<aggregateLevel:al>')
+@api.route('/<field:field>/by/<aggregateLevel:al>/on/<isodate:ondate>')
+@api.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>')
+@api.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>')
+@api.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@api.route('/<field:field>/by/<aggregateLevel:al>/<frequency:frequency>/to/<isodate:todate>')
+@api.route('/<field:field>/<frequency:frequency>')
+@api.route('/<field:field>/<frequency:frequency>/from/<isodate:fromdate>')
+@api.route('/<field:field>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@api.route('/<field:field>/<frequency:frequency>/to/<isodate:todate>')
 @yaml_response
 def printer(field=None, al='world', ondate=None, frequency=None, fromdate=None, todate=None):
 
     content = current_app.csvSource
 
-    request_dates = requestDates(first=printer_module.firstDate, on=ondate, since=fromdate, to=todate, periodicity=frequency)
+    request_dates = requestDates(first=api.firstDate, on=ondate, since=fromdate, to=todate, periodicity=frequency)
     location_filter_req = ns()
 
     relation_locationLevel_id = [
@@ -222,7 +222,7 @@ def printer(field=None, al='world', ondate=None, frequency=None, fromdate=None, 
     else: return ns()
 
 
-@printer_module.route('/version')
+@api.route('/version')
 @yaml_response
 def version():
     """
@@ -245,4 +245,4 @@ def version():
 
 
 
-printer_module.source = None
+api.source = None
