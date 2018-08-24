@@ -314,11 +314,4 @@ class BaseApi_Test(unittest.TestCase):
             """)
 
 
-
-
-
-unittest.TestCase.__str__ = unittest.TestCase.id
-
-
-
 # vim: et ts=4 sw=4

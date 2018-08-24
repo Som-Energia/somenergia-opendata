@@ -328,17 +328,6 @@ class Common_Test(unittest.TestCase):
             self.dateConverter.to_python('PEP 8')
         self.assertEqual(format(ctx.exception), 'Invalid date initializator \'PEP 8\'')
 
-"""
-/version
-/members/2015-02
-/members/2015-02/weeklyuntil/2015-12
-/members/2015-02/monthlyuntil/2015-12
-/map/members/...
-"""
-
-
-unittest.TestCase.__str__ = unittest.TestCase.id
-
 
 
 # vim: et ts=4 sw=4
