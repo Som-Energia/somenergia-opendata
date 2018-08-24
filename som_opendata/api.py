@@ -31,7 +31,7 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 
 
 """
-@api {get} /v2.0/:field[/by/:geolevel]/on/:ondate|/frequency/:frequency[/from/:fromdate][/to/:todate]?queryFilter=:locationFilters
+@api {get} /v0.2/:field[/by/:geolevel]/on/:ondate|/frequency/:frequency[/from/:fromdate][/to/:todate]?queryFilter=:locationFilters
 
 @apiVersion 0.2.0
 @apiName Distribution
@@ -45,7 +45,7 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 @apiParam {String="yearly","monthly"} [frequency]  Frequency response.
 @apiParam {String="contry","ccaa","state","city"} [queryFilter] Query Geographical filter.
 
-@apiSampleRequest v0.2/contracts/by/ccaas/yearly/from/2010-01-01/to/2013-01-01?country=ES
+@apiSampleRequest /v0.2/contracts/by/ccaas/yearly/from/2010-01-01/to/2013-01-01?country=ES
 @apiSuccessExample {yaml} Success-Response:
     HTTP/1.1 200OK
     dates:
@@ -233,7 +233,7 @@ def version():
     @apiGroup Version
     @apiDescription Response version API
 
-    @apiSampleRequest /{version}/version
+    @apiSampleRequest /v0.2/version
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
         version: 0.2.0

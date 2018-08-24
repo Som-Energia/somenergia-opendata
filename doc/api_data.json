@@ -1,7 +1,7 @@
 [
   {
     "type": "get",
-    "url": "/v2.0/:field[/by/:geolevel]/on/:ondate|/frequency/:frequency[/from/:fromdate][/to/:todate]?queryFilter=:locationFilters",
+    "url": "/v0.2/:field[/by/:geolevel]/on/:ondate|/frequency/:frequency[/from/:fromdate][/to/:todate]?queryFilter=:locationFilters",
     "title": "",
     "version": "0.2.0",
     "name": "Distribution",
@@ -87,7 +87,7 @@
     },
     "sampleRequest": [
       {
-        "url": "https://opendata.somenergia.coopv0.2/contracts/by/ccaas/yearly/from/2010-01-01/to/2013-01-01?country=ES"
+        "url": "https://opendata.somenergia.coop/v0.2/contracts/by/ccaas/yearly/from/2010-01-01/to/2013-01-01?country=ES"
       }
     ],
     "success": {
@@ -184,7 +184,7 @@
     "description": "<p>Response version API</p>",
     "sampleRequest": [
       {
-        "url": "https://opendata.somenergia.coop/{version}/version"
+        "url": "https://opendata.somenergia.coop/v0.2/version"
       }
     ],
     "success": {
