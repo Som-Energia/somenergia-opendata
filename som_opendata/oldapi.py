@@ -19,12 +19,6 @@ VERSION = 4
 
 blueprint = Blueprint(name=__name__, import_name=__name__)
 
-sentry = None
-
-def sentry_exception():
-    if not sentry: return
-    sentry.client.captureException()
-
 def handle(e, status_code):
     response = make_response(ns(
         error=type(e).__name__,

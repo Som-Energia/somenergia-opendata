@@ -14,7 +14,6 @@ from som_opendata.common import (
 
 
 VERSION = 4
-sentry = None
 
 def loadCsvSource():
     myPath = os.path.abspath(os.path.dirname('.'))
@@ -29,15 +28,6 @@ def loadCsvSource():
 
 def create_app():
     app = Flask(__name__)
-
-    if app.config.get('SENTRY_DSN', False):
-        from raven.contrib.flask import Sentry
-        sentry = Sentry(app)
-        sentry.client.tags_context({'version': VERSION})
-        sentry.client.captureMessage(
-            "Starting API-WEBFORMS...",
-            level=logging.INFO
-        )
 
     register_converters(app)
     register_handlers(app)
