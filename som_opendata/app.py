@@ -10,9 +10,6 @@ from .common import (
     )
 
 
-VERSION = 4
-
-
 def create_app():
     app = Flask(__name__)
 
