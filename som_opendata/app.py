@@ -1,11 +1,8 @@
 # -*- encoding: utf-8 -*-
-import dbconfig as config
 import logging
-import os.path
 from flask import Flask, current_app
-from yamlns import namespace as ns
 from .oldapi import blueprint as oldapi
-from .csvSource import CsvSource
+from .csvSource import loadCsvSource
 from .printer import api
 from .common import (
     register_handlers,
@@ -14,16 +11,6 @@ from .common import (
 
 
 VERSION = 4
-
-def loadCsvSource():
-    myPath = os.path.abspath(os.path.dirname('.'))
-    datums = ns()
-    for datum, path in config.opendata.iteritems():
-        with open(os.path.join(myPath, path)) as f:
-            csvFile = f.read()
-        datums[datum] = csvFile
-    return CsvSource(datums)
-
 
 
 def create_app():

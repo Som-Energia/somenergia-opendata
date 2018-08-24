@@ -51,4 +51,16 @@ class CsvSource():
         
         addObjects(self._objects[datum], content)
 
+import dbconfig as config
+import os.path
+
+def loadCsvSource():
+    myPath = os.path.abspath(os.path.dirname('.'))
+    datums = ns()
+    for datum, path in config.opendata.iteritems():
+        with open(os.path.join(myPath, path)) as f:
+            csvFile = f.read()
+        datums[datum] = csvFile
+    return CsvSource(datums)
+
 
