@@ -26,13 +26,6 @@ def readCsvFiles():
         datums[datum] = csvFile
     return datums
 
-def init_db():
-    current_app.csvData = readCsvFiles()
-    current_app.csvSource = CsvSource(current_app.csvData)
-
-    current_app.db = records.Database(
-        'postgres://{user}:{password}@{host}:{port}/{database}'.format(**config.psycopg)
-    )
 
 
 def create_app():
@@ -54,7 +47,12 @@ def create_app():
     app.register_blueprint(printer_module, url_prefix='/v0.2')
 
     with app.app_context():
-        init_db()
+        current_app.csvData = readCsvFiles()
+        current_app.csvSource = CsvSource(current_app.csvData)
+
+        current_app.db = records.Database(
+            'postgres://{user}:{password}@{host}:{port}/{database}'.format(**config.psycopg)
+        )
         current_app.errors = None
 
     return app
