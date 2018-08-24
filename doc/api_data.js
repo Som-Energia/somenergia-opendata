@@ -6,7 +6,7 @@ define({ "api": [
     "version": "0.2.0",
     "name": "Distribution",
     "group": "Distribution",
-    "description": "<p>Returns the geographical distribution and evolution of a datum.</p>",
+    "description": "<p>Returns the geographical distribution and temporal evolution of a quantity.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -19,7 +19,7 @@ define({ "api": [
             ],
             "optional": false,
             "field": "field",
-            "description": "<p>Firstname of the User.</p>"
+            "description": "<p>Field to get.</p>"
           },
           {
             "group": "Parameter",

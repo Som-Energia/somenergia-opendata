@@ -36,8 +36,8 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 @apiVersion 0.2.0
 @apiName Distribution
 @apiGroup Distribution
-@apiDescription Returns the geographical distribution and evolution of a datum.
-@apiParam {String="contracts","members"} field  Firstname of the User.
+@apiDescription Returns the geographical distribution and temporal evolution of a quantity.
+@apiParam {String="contracts","members"} field Field to get.
 @apiParam {String} [ondate]  Date in iso format.
 @apiParam {String} [fromdate=2012-01-01]  Date in iso format. 
 @apiParam {String} [todate=2018-08-01]  Date in iso format. 
