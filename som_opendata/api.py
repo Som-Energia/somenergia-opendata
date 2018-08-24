@@ -47,6 +47,11 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 @apiName Distribution
 @apiDescription Returns the geographical distribution of a quantity at a given date.
 
+Use the geolevel to get more geographical detail (countries, ccaas, states, cities).
+
+Use the filters in the query string to restrict to a group of geographical entities.
+The filters are additive. That means that any city matching any of the specified values will be counted.
+
 @apiExample Current number of contracts
     /v0.2/contracts
 @apiExample Current members at every state
@@ -149,6 +154,11 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 @apiGroup DistributionSeries
 @apiName DistributionSeries
 @apiDescription Returns the geographical distribution and temporal evolution of a quantity.
+
+Use the geolevel to get more geographical detail (countries, ccaas, states, cities).
+
+Use the filters in the query string to restrict to a group of geographical entities.
+The filters are additive. That means that any city matching any of the specified values will be counted.
 
 @apiExample Evolution of all contracts every year
     /v0.2/contracts/yearly
