@@ -2,7 +2,7 @@
 from flask import Flask
 from .oldapi import blueprint as oldapi
 from .csvSource import loadCsvSource
-from .printer import api
+from .api import api
 from .common import (
     register_handlers,
     register_converters,

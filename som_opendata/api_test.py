@@ -4,7 +4,7 @@ from dateutil.relativedelta import relativedelta as delta
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
 import b2btest
-from .printer import api, validateInputDates
+from .api import api, validateInputDates
 from flask import Flask
 from .common import (
     register_converters,
