@@ -1,0 +1,30 @@
+{
+  "name": "somenergia-api",
+  "version": "0.2.0",
+  "description": "Som Energia open data api",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "docs": "apidoc -i som_opendata -o doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Som-Energia/somenergia-api.git"
+  },
+  "keywords": [
+    "api",
+    "somenergia",
+    "stats"
+  ],
+  "author": "Som Energia SCCL",
+  "license": "GPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/Som-Energia/somenergia-api/issues"
+  },
+  "homepage": "https://github.com/Som-Energia/somenergia-api#readme",
+  "dependencies": {
+    "apidoc": "^0.17.6"
+  }
+}
