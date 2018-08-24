@@ -4,19 +4,19 @@ from yamlns import namespace as ns
 import b2btest
 from flask import Flask
 from .oldapi import blueprint
-from .common import (
-    register_converters,
-    )
+from .common import register_converters
 
-app = Flask(__name__)
-register_converters(app)
-app.register_blueprint(blueprint, url_prefix='')
+app = None
 
 class BaseApi_Test(unittest.TestCase):
 
     @staticmethod
     def setUpClass():
         #BaseApi_Test.maxDiff=None
+        global app
+        app = Flask(__name__)
+        register_converters(app)
+        app.register_blueprint(blueprint, url_prefix='')
         app.config['TESTING']=True
 
     def setUp(self):
