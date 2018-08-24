@@ -53,7 +53,7 @@ def extractQueryParam(location_filter_req, queryName, objectName):
     - 2011-01-01
     - 2012-01-01
     - 2013-01-01
-    data:
+    values:
     - 0
     - 0
     - 277
@@ -61,7 +61,7 @@ def extractQueryParam(location_filter_req, queryName, objectName):
     countries:
       ES:
         name: España
-        data:
+        values:
         - 0
         - 0
         - 277
@@ -69,119 +69,119 @@ def extractQueryParam(location_filter_req, queryName, objectName):
         ccaas:
           '01':
             name: Andalucia
-            data:
+            values:
             - 0
             - 0
             - 0
             - 48
           '02':
             name: Aragón
-            data:
+            values:
             - 0
             - 0
             - 0
             - 124
           '03':
             name: Asturias, Principado de
-            data:
+            values:
             - 0
             - 0
             - 0
             - 13
           '04':
             name: Baleares, Islas
-            data:
+            values:
             - 0
             - 0
             - 1
             - 235
           '05':
             name: Canarias
-            data:
+            values:
             - 0
             - 0
             - 0
             - 0
           '06':
             name: Cantabria
-            data:
+            values:
             - 0
             - 0
             - 0
             - 12
           08:
             name: Castilla - La Mancha
-            data:
+            values:
             - 0
             - 0
             - 0
             - 28
           '07':
             name: Castilla y León
-            data:
+            values:
             - 0
             - 0
             - 0
             - 24
           09:
             name: Cataluña
-            data:
+            values:
             - 0
             - 0
             - 256
             - 2054
           '10':
             name: Comunidad Valenciana
-            data:
+            values:
             - 0
             - 0
             - 11
             - 224
           '11':
             name: Extremadura
-            data:
+            values:
             - 0
             - 0
             - 0
             - 14
           '12':
             name: Galicia
-            data:
+            values:
             - 0
             - 0
             - 0
             - 24
           '13':
             name: Madrid, Comunidad de
-            data:
+            values:
             - 0
             - 0
             - 3
             - 145
           '14':
             name: Murcia, Región de
-            data:
+            values:
             - 0
             - 0
             - 0
             - 11
           '15':
             name: Navarra, Comunidad Foral de
-            data:
+            values:
             - 0
             - 0
             - 6
             - 151
           '16':
             name: País Vasco
-            data:
+            values:
             - 0
             - 0
             - 0
             - 53
           '17':
             name: Rioja, La
-            data:
+            values:
             - 0
             - 0
             - 0

@@ -31,7 +31,7 @@ data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan De
 data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
 
-skipSlow = True
+skipSlow = False
 
 class Distribution_Test(unittest.TestCase):
     
@@ -129,23 +129,23 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            data: [2]
+            values: [2]
             countries:
               ES:
                 name: España
-                data: [2]
+                values: [2]
                 ccaas:
                   '01':
                     name: Andalucía
-                    data: [2]
+                    values: [2]
                     states:
                       '04':
                         name: Almería
-                        data: [2]
+                        values: [2]
                         cities:
                           '04003':
                             name: Adra
-                            data: [2]
+                            values: [2]
             """)
 
 
@@ -160,23 +160,23 @@ class Distribution_Test(unittest.TestCase):
             dates: 
             - 2018-01-01
             - 2018-02-01
-            data: [2, 3]
+            values: [2, 3]
             countries:
               ES:
                 name: España
-                data: [2, 3]
+                values: [2, 3]
                 ccaas:
                   '01':
                     name: Andalucía
-                    data: [2, 3]
+                    values: [2, 3]
                     states:
                       '04':
                         name: Almería
-                        data: [2, 3]
+                        values: [2, 3]
                         cities:
                           '04003':
                             name: Adra
-                            data: [2, 3]
+                            values: [2, 3]
             """)
 
 
@@ -191,38 +191,38 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            data: [12]
+            values: [12]
             countries:
               ES:
                 name: España
-                data: [2]
+                values: [2]
                 ccaas:
                   '01':
                     name: Andalucía
-                    data: [2]
+                    values: [2]
                     states:
                       '04':
                         name: Almería
-                        data: [2]
+                        values: [2]
                         cities:
                           '04003':
                             name: Adra
-                            data: [2]
+                            values: [2]
               FR:
                 name: France
-                data: [10]
+                values: [10]
                 ccaas:
                   '76':
                     name: Occità
-                    data: [10]
+                    values: [10]
                     states:
                       '66':
                         name: Pyrénées-Orientales
-                        data: [10]
+                        values: [10]
                         cities:
                           '66136':
                             name: Perpignan
-                            data: [10]
+                            values: [10]
             """)
 
 
@@ -237,34 +237,34 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            data: [22]
+            values: [22]
             countries:
               ES:
                 name: España
-                data: [22]
+                values: [22]
                 ccaas:
                   '01':
                     name: Andalucía
-                    data: [2]
+                    values: [2]
                     states:
                       '04':
                         name: Almería
-                        data: [2]
+                        values: [2]
                         cities:
                           '04003':
                             name: Adra
-                            data: [2]
+                            values: [2]
                   '09':
                     name: Catalunya
-                    data: [20]
+                    values: [20]
                     states:
                       '17':
                         name: Girona
-                        data: [20]
+                        values: [20]
                         cities:
                           '17079':
                             name: Girona
-                            data: [20]
+                            values: [20]
             """)
 
 
@@ -279,30 +279,30 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            data: [1020]
+            values: [1020]
             countries:
               ES:
                 name: España
-                data: [1020]
+                values: [1020]
                 ccaas:
                   '09':
                     name: Catalunya
-                    data: [1020]
+                    values: [1020]
                     states:
                       '17':
                         name: Girona
-                        data: [20]
+                        values: [20]
                         cities:
                           '17079':
                             name: Girona
-                            data: [20]
+                            values: [20]
                       '08':
                         name: Barcelona
-                        data: [1000]
+                        values: [1000]
                         cities:
                           '08217':
                             name: Sant Joan Despí
-                            data: [1000]
+                            values: [1000]
             """)
 
     def test__aggregate__2lines_differentCities(self):
@@ -316,26 +316,26 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            data: [2020]
+            values: [2020]
             countries:
               ES:
                 name: España
-                data: [2020]
+                values: [2020]
                 ccaas:
                   '09':
                     name: Catalunya
-                    data: [2020]
+                    values: [2020]
                     states:
                       '17':
                         name: Girona
-                        data: [2020]
+                        values: [2020]
                         cities:
                           '17079':
                             name: Girona
-                            data: [20]
+                            values: [20]
                           '17007':
                             name: Amer
-                            data: [2000]
+                            values: [2000]
             """)
 
     def test_state_dates_1date(self):
@@ -352,7 +352,7 @@ class Distribution_Test(unittest.TestCase):
 
     @unittest.skipIf(skipSlow, 'test lent')
     def test__aggregate__backToBack(self):
-        with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
+        with io.open('./b2bdata/som_opendata.queries_test.Queries_Test.test_contractsSeries_many-expected') as f:
             data = f.read()
 
         objectList = tuples2objects(parse_tsv(data))
@@ -536,7 +536,7 @@ class Distribution_Test(unittest.TestCase):
 
     @unittest.skipIf(skipSlow, 'test lent')
     def test__filter_aggregate__backToBack(self):
-        with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
+        with io.open('./b2bdata/som_opendata.queries_test.Queries_Test.test_contractsSeries_many-expected') as f:
             data = f.read()
 
         objectList = tuples2objects(parse_tsv(data))
@@ -558,11 +558,11 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            data: [2020]
+            values: [2020]
             countries:
               ES:
                 name: España
-                data: [2020]
+                values: [2020]
             """)
 
     def test__aggregate__detailState_2lines_differentCities(self):
@@ -576,19 +576,19 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            data: [2020]
+            values: [2020]
             countries:
               ES:
                 name: España
-                data: [2020]
+                values: [2020]
                 ccaas:
                   '09':
                     name: Catalunya
-                    data: [2020]
+                    values: [2020]
                     states:
                       '17':
                         name: Girona
-                        data: [2020]
+                        values: [2020]
             """)
 
     def test__aggregate__detailWorld_2lines_differentCities(self):
@@ -602,12 +602,12 @@ class Distribution_Test(unittest.TestCase):
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
-            data: [2020]
+            values: [2020]
             """)
 
     @unittest.skipIf(skipSlow, 'test lent')
     def test__filter_aggregate__withDetail_backToBack(self):
-        with io.open('./b2bdata/som_opendata.api_test.BaseApi_Test.test_contractsSeries_many-expected') as f:
+        with io.open('./b2bdata/som_opendata.queries_test.Queries_Test.test_contractsSeries_many-expected') as f:
             data = f.read()
 
         objectList = tuples2objects(parse_tsv(data))

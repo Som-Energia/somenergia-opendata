@@ -1,98 +1,98 @@
 dates:
 - 2015-01-01
 - 2015-02-01
-data:
+values:
 - 19831
 - 20754
 countries:
   ES:
     name: España
-    data:
+    values:
     - 19831
     - 20754
     ccaas:
       '01':
         name: Andalucia
-        data:
+        values:
         - 700
         - 746
       '02':
         name: Aragón
-        data:
+        values:
         - 700
         - 734
       '03':
         name: Asturias, Principado de
-        data:
+        values:
         - 91
         - 93
       '04':
         name: Baleares, Islas
-        data:
+        values:
         - 1031
         - 1099
       '05':
         name: Canarias
-        data:
+        values:
         - 0
         - 0
       '06':
         name: Cantabria
-        data:
+        values:
         - 95
         - 101
       08:
         name: Castilla - La Mancha
-        data:
+        values:
         - 296
         - 311
       '07':
         name: Castilla y León
-        data:
+        values:
         - 381
         - 399
       09:
         name: Cataluña
-        data:
+        values:
         - 11151
         - 11627
       '10':
         name: Comunidad Valenciana
-        data:
+        values:
         - 1964
         - 2068
       '11':
         name: Extremadura
-        data:
+        values:
         - 68
         - 71
       '12':
         name: Galicia
-        data:
+        values:
         - 283
         - 296
       '13':
         name: Madrid, Comunidad de
-        data:
+        values:
         - 1644
         - 1723
       '14':
         name: Murcia, Región de
-        data:
+        values:
         - 214
         - 218
       '15':
         name: Navarra, Comunidad Foral de
-        data:
+        values:
         - 685
         - 714
       '16':
         name: País Vasco
-        data:
+        values:
         - 344
         - 360
       '17':
         name: Rioja, La
-        data:
+        values:
         - 184
         - 194

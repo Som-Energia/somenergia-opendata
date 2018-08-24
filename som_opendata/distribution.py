@@ -62,7 +62,7 @@ def aggregate(entries, detail = 'world'):
 
     result = ns ()
     result.dates = dates
-    result.data = [0 for e in dates]
+    result['values'] = [0 for e in dates]
 
     for entry in entries:
 
@@ -70,7 +70,7 @@ def aggregate(entries, detail = 'world'):
             int(entry[date2field(date.isoDate)])
             for date in dates ]
 
-        result.data = [a+b for a,b in zip(result.data, entry.count)]
+        result['values'] = [a+b for a,b in zip(result['values'], entry.count)]
         if detail == 'world': continue
         current = result
         
@@ -88,11 +88,11 @@ def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
     code = entry[code_attr]
     if code in sibblings:
         result = sibblings[code]
-        result.data = [a+b for a,b in zip(result.data, entry.count)]
+        result['values'] = [a+b for a,b in zip(result['values'], entry.count)]
     else:
         result = sibblings[code] = ns()
         result.name = name
-        result.data = entry.count[:]
+        result['values'] = entry.count[:]
 
     return result
 
