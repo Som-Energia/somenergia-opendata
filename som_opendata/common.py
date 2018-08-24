@@ -7,6 +7,7 @@ from functools import wraps
 from werkzeug.routing import BaseConverter, ValidationError
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
+from .missingDateError import MissingDateError
 
 
 
@@ -167,4 +168,10 @@ def handle_missingDateError(error):
         jsonify(ns(message=error.description, errorId=error.errorId)),
         error.code
     )
-    
+
+def register_handlers(app):
+    app.register_error_handler(404, handle_request_not_found)
+    app.register_error_handler(400, handle_bad_request)
+    app.register_error_handler(MissingDateError, handle_missingDateError)
+
+
