@@ -24,29 +24,6 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "String",
-            "optional": true,
-            "field": "ondate",
-            "description": "<p>Date in iso format.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "fromdate",
-            "defaultValue": "2012-01-01",
-            "description": "<p>Date in iso format.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "todate",
-            "defaultValue": "2018-08-01",
-            "description": "<p>Date in iso format.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
             "allowedValues": [
               "\"countries\"",
               "\"ccaas\"",
@@ -56,7 +33,14 @@ define({ "api": [
             "optional": true,
             "field": "geolevel",
             "defaultValue": "world",
-            "description": "<p>Aggregate level response.</p>"
+            "description": "<p>Geographical detail level</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "ondate",
+            "description": "<p>Single date, in iso format.</p>"
           },
           {
             "group": "Parameter",
@@ -67,20 +51,51 @@ define({ "api": [
             ],
             "optional": true,
             "field": "frequency",
-            "description": "<p>Frequency response.</p>"
+            "description": "<p>Indicate a date series (only first day of the month, year...)</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
-            "allowedValues": [
-              "\"contry\"",
-              "\"ccaa\"",
-              "\"state\"",
-              "\"city\""
-            ],
             "optional": true,
-            "field": "queryFilter",
-            "description": "<p>Query Geographical filter.</p>"
+            "field": "fromdate",
+            "defaultValue": "2012-01-01",
+            "description": "<p>Earlier date to show, in iso format.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "todate",
+            "defaultValue": "2018-08-01",
+            "description": "<p>Later date to show, in iso format.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "country",
+            "description": "<p>Country to be included</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "ccaa",
+            "description": "<p>CCAA's to be included</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "state",
+            "description": "<p>States to be included</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "city",
+            "description": "<p>Cities to be included</p>"
           }
         ]
       }

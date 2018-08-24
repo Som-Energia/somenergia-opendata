@@ -38,12 +38,15 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 @apiGroup Distribution
 @apiDescription Returns the geographical distribution and temporal evolution of a quantity.
 @apiParam {String="contracts","members"} field Field to get.
-@apiParam {String} [ondate]  Date in iso format.
-@apiParam {String} [fromdate=2012-01-01]  Date in iso format. 
-@apiParam {String} [todate=2018-08-01]  Date in iso format. 
-@apiParam {String="countries","ccaas","states","cities"} [geolevel=world]  Aggregate level response.
-@apiParam {String="yearly","monthly"} [frequency]  Frequency response.
-@apiParam {String="contry","ccaa","state","city"} [queryFilter] Query Geographical filter.
+@apiParam {String="countries","ccaas","states","cities"} [geolevel=world] Geographical detail level
+@apiParam {String} [ondate]  Single date, in iso format.
+@apiParam {String="yearly","monthly"} [frequency]  Indicate a date series (only first day of the month, year...)
+@apiParam {String} [fromdate=2012-01-01]  Earlier date to show, in iso format. 
+@apiParam {String} [todate=2018-08-01]  Later date to show, in iso format. 
+@apiParam {String} [country] Country to be included
+@apiParam {String} [ccaa] CCAA's to be included
+@apiParam {String} [state] States to be included
+@apiParam {String} [city] Cities to be included
 
 @apiSampleRequest /v0.2/contracts/by/ccaas/yearly/from/2010-01-01/to/2013-01-01?country=ES
 @apiSuccessExample {yaml} Success-Response:
