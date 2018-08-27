@@ -127,44 +127,63 @@ class IsoDateConverter(BaseConverter):
     def to_url(self, value):
         return str(value)
 
+frequencies=[
+	#daily,
+	#weekly,
+	'monthly',
+	'yearly',
+]
+
 class IsoFrequencyConverte(BaseConverter):
 
     def to_python(self, value):
-        if value == 'monthly' or value == 'yearly':
-            return str(value)
+        if value in frequencies:
+            return value
 
         raise ValidationError('Incorrect Frequency')
 
     def to_url(self, value):
-        if value == 'monthly' or value == 'yearly':
-            return str(value)
+        if value in frequencies:
+            return value
 
         raise ValidationError()
 
+aggregationLevels=[
+	'world',
+	'country',
+	'ccaa',
+	'state',
+	'city',
+]
 
 class IsoAggregateLevelConverter(BaseConverter):
 
     def to_python(self, value):
-        if value == 'world' or value == 'country' or value == 'state' or value == 'ccaa' or value == 'city':
-            return str(value)
+        if value in aggregationLevels:
+            return value
 
         raise ValidationError('Incorrect Aggregate Level')
 
     def to_url(self, value):
-        if value == 'world' or value == 'country' or value == 'state' or value == 'ccaa' or value == 'city':
-            return str(value)
+        if value in aggregationLevels:
+            return value
 
         raise ValidationError()
+
+metrics=[
+	'members',
+	'contracts',
+]
 
 class IsoFieldConverter(BaseConverter):
 
     def to_python(self, value):
-        if value == 'members' or value == 'contracts':
+        if value in metrics:
             return value    
         raise ValidationError('Incorrect Frequency')
 
     def to_url(self, value):
-        if value == 'members' or value == 'contracts':
+        if value in metrics:
             return value
         raise ValidationError()
 
