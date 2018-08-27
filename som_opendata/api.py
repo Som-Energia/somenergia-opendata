@@ -32,7 +32,7 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 """
 @apiDefine CommonDistribution
 
-@apiParam {String="countries","ccaas","states","cities"} [geolevel=world] Geographical detail level
+@apiParam {String="country","ccaa","state","city"} [geolevel=world] Geographical detail level
 @apiParam {String} [country] ISO codes of the countries to be included
 @apiParam {String} [ccaa] INE codes of the CCAA's to be included
 @apiParam {String} [state] INE codes of the states to be included
@@ -47,7 +47,7 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 @apiName Distribution
 @apiDescription Returns the geographical distribution of a quantity at a given date.
 
-Use the geolevel to get more geographical detail (countries, ccaas, states, cities).
+Use the geolevel to get more geographical detail (country, ccaa, state, city).
 
 Use the filters in the query string to restrict to a group of geographical entities.
 The filters are additive. That means that any city matching any of the specified values will be counted.
@@ -155,7 +155,7 @@ The filters are additive. That means that any city matching any of the specified
 @apiName DistributionSeries
 @apiDescription Returns the geographical distribution and temporal evolution of a quantity.
 
-Use the geolevel to get more geographical detail (countries, ccaas, states, cities).
+Use the geolevel to get more geographical detail (country, ccaa, state, city).
 
 Use the filters in the query string to restrict to a group of geographical entities.
 The filters are additive. That means that any city matching any of the specified values will be counted.

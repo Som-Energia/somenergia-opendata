@@ -311,8 +311,8 @@ class Common_Test(unittest.TestCase):
         self.assertEqual(format(ctx.exception), 'Incorrect Frequency')
 
     def test__AggregateLevelConverter__valid(self):
-        r = self.aggregateLevelConverter.to_python('countries')
-        self.assertEqual(r, 'countries')
+        r = self.aggregateLevelConverter.to_python('country')
+        self.assertEqual(r, 'country')
 
     def test__AggregateLevelConverter__invalid(self):
         with self.assertRaises(ValidationError) as ctx:

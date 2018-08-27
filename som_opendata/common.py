@@ -145,13 +145,13 @@ class IsoFrequencyConverte(BaseConverter):
 class IsoAggregateLevelConverter(BaseConverter):
 
     def to_python(self, value):
-        if value == 'world' or value == 'countries' or value == 'states' or value == 'ccaas' or value == 'cities':
+        if value == 'world' or value == 'country' or value == 'state' or value == 'ccaa' or value == 'city':
             return str(value)
 
         raise ValidationError('Incorrect Aggregate Level')
 
     def to_url(self, value):
-        if value == 'world' or value == 'countries' or value == 'states' or value == 'ccaas' or value == 'cities':
+        if value == 'world' or value == 'country' or value == 'state' or value == 'ccaa' or value == 'city':
             return str(value)
 
         raise ValidationError()

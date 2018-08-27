@@ -125,7 +125,7 @@ class Distribution_Test(unittest.TestCase):
             data_Adra,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList, 'cities')
+        r = aggregate(objectList, 'city')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
@@ -155,7 +155,7 @@ class Distribution_Test(unittest.TestCase):
             data_Adra+'\t3',
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList, 'cities')
+        r = aggregate(objectList, 'city')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
@@ -187,7 +187,7 @@ class Distribution_Test(unittest.TestCase):
             data_Perignan,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList, 'cities')
+        r = aggregate(objectList, 'city')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
@@ -233,7 +233,7 @@ class Distribution_Test(unittest.TestCase):
             data_Girona,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList, 'cities')
+        r = aggregate(objectList, 'city')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
@@ -275,7 +275,7 @@ class Distribution_Test(unittest.TestCase):
             data_SantJoan,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList, 'cities')
+        r = aggregate(objectList, 'city')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
@@ -312,7 +312,7 @@ class Distribution_Test(unittest.TestCase):
             data_Amer,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList, 'cities')
+        r = aggregate(objectList, 'city')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
@@ -356,7 +356,7 @@ class Distribution_Test(unittest.TestCase):
             data = f.read()
 
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList, 'cities')
+        r = aggregate(objectList, 'city')
         self.assertB2BEqual(r.dump())
 
 
@@ -543,7 +543,7 @@ class Distribution_Test(unittest.TestCase):
         objectList = locationFilter(objectList,
                 ns(codi_pais=['ES'],codi_ccaa=['01','09'])
             )
-        r = aggregate(objectList, 'cities')
+        r = aggregate(objectList, 'city')
         self.assertB2BEqual(r.dump())
 
 
@@ -554,7 +554,7 @@ class Distribution_Test(unittest.TestCase):
             data_Amer,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList,'countries')
+        r = aggregate(objectList,'country')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
@@ -572,7 +572,7 @@ class Distribution_Test(unittest.TestCase):
             data_Amer,
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList,'states')
+        r = aggregate(objectList,'state')
         self.assertNsEqual(r,"""\
             dates: 
             - 2018-01-01
@@ -611,7 +611,7 @@ class Distribution_Test(unittest.TestCase):
             data = f.read()
 
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList,'ccaas')
+        r = aggregate(objectList,'ccaa')
         self.assertB2BEqual(r.dump())
         
 

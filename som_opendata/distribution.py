@@ -77,7 +77,7 @@ def aggregate(entries, detail = 'world'):
         for level_name, level_single, codi, name in aggregation_levels:
             current = aggregate_level(
                 entry, current, level_name, codi, name)
-            if detail == level_name: break
+            if detail == level_single: break
 
     return result
 

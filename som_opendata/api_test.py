@@ -113,7 +113,7 @@ class Api_Test(unittest.TestCase):
             headers+'\tcount_'+str(Date.today()).replace('-','_'),
             data_Adra+'\t123',
             )
-        r = self.get('/members/by/cities')
+        r = self.get('/members/by/city')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: ["""+str(Date.today())+"""]
@@ -150,7 +150,7 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__aggregateLevel_frequency__exist(self):
-        r = self.get('/members/by/countries/yearly')
+        r = self.get('/members/by/country/yearly')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2010-01-01, 2011-01-01, 2012-01-01, 2013-01-01, 2014-01-01, 2015-01-01, 2016-01-01, 2017-01-01, 2018-01-01]
@@ -257,7 +257,7 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__onDate_aggregateLevel_queryParams__exist(self):
-        r = self.get('/members/by/cities/on/2018-01-01?city=17007')
+        r = self.get('/members/by/city/on/2018-01-01?city=17007')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: [2018-01-01]
@@ -302,17 +302,17 @@ class Api_Test(unittest.TestCase):
         self.assertEqual(r.status_code, 404)
 
     def test__printerError__queryParamsNotExist(self):
-        r = self.get('/members/by/cities/on/2018-01-01?city=9999999')
+        r = self.get('/members/by/city/on/2018-01-01?city=9999999')
         self.assertYamlResponse(r, ns())
 
     def test__printerError__incorrectFormatDates(self):
-        r = self.get('/members/by/cities/on/2018-01-01/from/2018-02-02')
+        r = self.get('/members/by/city/on/2018-01-01/from/2018-02-02')
         self.assertEqual(r.status_code, 404)
 
 
     def test__printerError_frequency_toDate__exist_NoExactFirstDate(self):
         api.firstDate = '2018-01-15'
-        r = self.get('/members/by/cities/monthly/to/2018-03-01')
+        r = self.get('/members/by/city/monthly/to/2018-03-01')
         self.assertEqual(r.status_code, 500)
         self.assertYamlResponse(r, """\
                 errorId: 1001
