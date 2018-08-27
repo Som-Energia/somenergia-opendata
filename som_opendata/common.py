@@ -127,49 +127,6 @@ class IsoDateConverter(BaseConverter):
     def to_url(self, value):
         return str(value)
 
-frequencies=[
-	#daily,
-	#weekly,
-	'monthly',
-	'yearly',
-]
-
-class IsoFrequencyConverte(BaseConverter):
-
-    def to_python(self, value):
-        if value in frequencies:
-            return value
-
-        raise ValidationError('Incorrect Frequency')
-
-    def to_url(self, value):
-        if value in frequencies:
-            return value
-
-        raise ValidationError()
-
-aggregationLevels=[
-	'world',
-	'country',
-	'ccaa',
-	'state',
-	'city',
-]
-
-class IsoAggregateLevelConverter(BaseConverter):
-
-    def to_python(self, value):
-        if value in aggregationLevels:
-            return value
-
-        raise ValidationError('Incorrect Aggregate Level')
-
-    def to_url(self, value):
-        if value in aggregationLevels:
-            return value
-
-        raise ValidationError()
-
 def EnumConverter(kind, values):
     class AConverter(BaseConverter):
 
@@ -190,12 +147,27 @@ MetricConverter = EnumConverter('metric', [
 	'members',
 	'contracts',
 ])
+GeoLevelConverter = EnumConverter('geographical level', [
+	'world',
+	'country',
+	'ccaa',
+	'state',
+	'city',
+])
+
+FrequencyConverter = EnumConverter('frequency', [
+	#daily,
+	#weekly,
+	'monthly',
+	'yearly',
+])
+
 
 
 def register_converters(app):
     app.url_map.converters['isodate'] = IsoDateConverter
-    app.url_map.converters['frequency'] = IsoFrequencyConverte
-    app.url_map.converters['geolevel'] = IsoAggregateLevelConverter
+    app.url_map.converters['frequency'] = FrequencyConverter
+    app.url_map.converters['geolevel'] = GeoLevelConverter
     app.url_map.converters['field'] = MetricConverter
 
 

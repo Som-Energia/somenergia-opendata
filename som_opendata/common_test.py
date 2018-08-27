@@ -10,9 +10,9 @@ from .common import (
     dateSequenceYears,
     dateSequenceMonths,
     dateSequenceWeeks,
-    IsoAggregateLevelConverter,
     IsoDateConverter,
-    IsoFrequencyConverte,
+    GeoLevelConverter,
+    FrequencyConverter,
     MetricConverter,
     requestDates,
     )
@@ -298,18 +298,19 @@ class Common_Test(unittest.TestCase):
 
 
     # Convertes
-    frequencyConverter = IsoFrequencyConverte({})
-    aggregateLevelConverter = IsoAggregateLevelConverter({})
-    dateConverter = IsoDateConverter({})
 
     def test__FrequencyConverter__valid(self):
-        r = self.frequencyConverter.to_python('monthly')
+        frequencyConverter = FrequencyConverter({})
+        r = frequencyConverter.to_python('monthly')
         self.assertEqual(r, 'monthly')
 
     def test__FrequencyConvertes__invalid(self):
+        frequencyConverter = FrequencyConverter({})
         with self.assertRaises(ValidationError) as ctx:
-            self.frequencyConverter.to_python('badfrequency')
-        self.assertEqual(format(ctx.exception), 'Incorrect Frequency')
+            frequencyConverter.to_python('badfrequency')
+        self.assertEqual(format(ctx.exception),
+            "Incorrect frequency 'badfrequency'. "
+            "Try with: 'monthly', 'yearly'")
 
     def test__MetricConverter__valid(self):
         metricConverter = MetricConverter({})
@@ -326,21 +327,27 @@ class Common_Test(unittest.TestCase):
         )
 
     def test__AggregateLevelConverter__valid(self):
-        r = self.aggregateLevelConverter.to_python('country')
+        aggregateLevelConverter = GeoLevelConverter({})
+        r = aggregateLevelConverter.to_python('country')
         self.assertEqual(r, 'country')
 
     def test__AggregateLevelConverter__invalid(self):
+        aggregateLevelConverter = GeoLevelConverter({})
         with self.assertRaises(ValidationError) as ctx:
-            self.aggregateLevelConverter.to_python('badlevel')
-        self.assertEqual(format(ctx.exception), 'Incorrect Aggregate Level')
+            aggregateLevelConverter.to_python('badlevel')
+        self.assertEqual(format(ctx.exception),
+            "Incorrect geographical level 'badlevel'. "
+            "Try with: 'world', 'country', 'ccaa', 'state', 'city'")
 
     def test__DateConverter__valid(self):
-        r = self.dateConverter.to_python('2018-01-01')
+        dateConverter = IsoDateConverter({})
+        r = dateConverter.to_python('2018-01-01')
         self.assertEqual(r, Date('2018-01-01'))
 
     def test__DateConverter__invalid(self):
+        dateConverter = IsoDateConverter({})
         with self.assertRaises(ValueError) as ctx:
-            self.dateConverter.to_python('PEP 8')
+            dateConverter.to_python('PEP 8')
         self.assertEqual(format(ctx.exception), 'Invalid date initializator \'PEP 8\'')
 
 
