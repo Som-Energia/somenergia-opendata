@@ -13,6 +13,7 @@ from .common import (
     IsoAggregateLevelConverter,
     IsoDateConverter,
     IsoFrequencyConverte,
+    MetricConverter,
     requestDates,
     )
 
@@ -310,6 +311,20 @@ class Common_Test(unittest.TestCase):
             self.frequencyConverter.to_python('badfrequency')
         self.assertEqual(format(ctx.exception), 'Incorrect Frequency')
 
+    def test__MetricConverter__valid(self):
+        metricConverter = MetricConverter({})
+        r = metricConverter.to_python('members')
+        self.assertEqual(r, 'members')
+
+    def test__MetricConverter__invalid(self):
+        metricConverter = MetricConverter({})
+        with self.assertRaises(ValidationError) as ctx:
+            metricConverter.to_python('badmetric')
+        self.assertEqual(format(ctx.exception),
+            "Incorrect Metric 'badmetric'. "
+            "Try with: 'members', 'contracts'"
+        )
+
     def test__AggregateLevelConverter__valid(self):
         r = self.aggregateLevelConverter.to_python('country')
         self.assertEqual(r, 'country')
@@ -327,7 +342,6 @@ class Common_Test(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             self.dateConverter.to_python('PEP 8')
         self.assertEqual(format(ctx.exception), 'Invalid date initializator \'PEP 8\'')
-
 
 
 # vim: et ts=4 sw=4

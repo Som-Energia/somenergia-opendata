@@ -175,12 +175,13 @@ metrics=[
 	'contracts',
 ]
 
-class IsoFieldConverter(BaseConverter):
+class MetricConverter(BaseConverter):
 
     def to_python(self, value):
         if value in metrics:
             return value    
-        raise ValidationError('Incorrect Frequency')
+        raise ValidationError("Incorrect Metric '{}'. Try with: {}"
+            .format(value, ', '.join("'{}'".format(x) for x in metrics)))
 
     def to_url(self, value):
         if value in metrics:
@@ -191,7 +192,7 @@ def register_converters(app):
     app.url_map.converters['isodate'] = IsoDateConverter
     app.url_map.converters['frequency'] = IsoFrequencyConverte
     app.url_map.converters['geolevel'] = IsoAggregateLevelConverter
-    app.url_map.converters['field'] = IsoFieldConverter
+    app.url_map.converters['field'] = MetricConverter
 
 
 @yaml_response
