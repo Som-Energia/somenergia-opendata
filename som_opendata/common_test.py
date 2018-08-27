@@ -307,7 +307,7 @@ class Common_Test(unittest.TestCase):
 
     def test__FrequencyConvertes__invalid(self):
         with self.assertRaises(ValidationError) as ctx:
-            self.frequencyConverter.to_python('caracola')
+            self.frequencyConverter.to_python('badfrequency')
         self.assertEqual(format(ctx.exception), 'Incorrect Frequency')
 
     def test__AggregateLevelConverter__valid(self):
@@ -316,7 +316,7 @@ class Common_Test(unittest.TestCase):
 
     def test__AggregateLevelConverter__invalid(self):
         with self.assertRaises(ValidationError) as ctx:
-            self.aggregateLevelConverter.to_python('caracola')
+            self.aggregateLevelConverter.to_python('badlevel')
         self.assertEqual(format(ctx.exception), 'Incorrect Aggregate Level')
 
     def test__DateConverter__valid(self):
