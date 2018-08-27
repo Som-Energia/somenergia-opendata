@@ -321,7 +321,7 @@ class Common_Test(unittest.TestCase):
         with self.assertRaises(ValidationError) as ctx:
             metricConverter.to_python('badmetric')
         self.assertEqual(format(ctx.exception),
-            "Incorrect Metric 'badmetric'. "
+            "Incorrect metric 'badmetric'. "
             "Try with: 'members', 'contracts'"
         )
 

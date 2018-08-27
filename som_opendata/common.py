@@ -170,23 +170,27 @@ class IsoAggregateLevelConverter(BaseConverter):
 
         raise ValidationError()
 
-metrics=[
+def EnumConverter(kind, values):
+    class AConverter(BaseConverter):
+
+        def to_python(self, value):
+            if value in values:
+                return value
+            raise ValidationError("Incorrect {} '{}'. Try with: {}"
+                .format(kind, value, ', '.join("'{}'".format(x) for x in values)))
+
+        def to_url(self, value):
+            if value in values:
+                return value
+            raise ValidationError()
+    return AConverter
+
+
+MetricConverter = EnumConverter('metric', [
 	'members',
 	'contracts',
-]
+])
 
-class MetricConverter(BaseConverter):
-
-    def to_python(self, value):
-        if value in metrics:
-            return value    
-        raise ValidationError("Incorrect Metric '{}'. Try with: {}"
-            .format(value, ', '.join("'{}'".format(x) for x in metrics)))
-
-    def to_url(self, value):
-        if value in metrics:
-            return value
-        raise ValidationError()
 
 def register_converters(app):
     app.url_map.converters['isodate'] = IsoDateConverter
