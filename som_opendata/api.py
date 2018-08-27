@@ -55,11 +55,11 @@ The filters are additive. That means that any city matching any of the specified
 @apiExample Current number of contracts
     /v0.2/contracts
 @apiExample Current members at every state
-    /v0.2/members/by/states
+    /v0.2/members/by/state
 @apiExample Members at every CCAA on 2018-02-01
-    /v0.2/members/by/ccaas/on/2018-02-01
+    /v0.2/members/by/ccaa/on/2018-02-01
 @apiExample Members by city on Araba and Gipuzcoa provinces
-    /v0.2/members/by/cities?state=01&state=20
+    /v0.2/members/by/city?state=01&state=20
 
 @apiParam {String="contracts","members"} field Field to get.
 @apiUse CommonDistribution
@@ -167,7 +167,7 @@ The filters are additive. That means that any city matching any of the specified
 @apiExample 2018 monthly evolution of members
     /v0.2/members/monthly/from/2018-01-01/to/2019-01-01
 @apiExample Members by city on Araba and Gipuzcoa provinces every year
-    /v0.2/members/by/cities/yearly?state=01&state=20
+    /v0.2/members/by/city/yearly?state=01&state=20
 
 @apiParam {String="contracts","members"} field Field to get.
 @apiUse CommonDistribution

@@ -6,7 +6,7 @@
     "version": "0.2.0",
     "group": "Distribution",
     "name": "Distribution",
-    "description": "<p>Returns the geographical distribution of a quantity at a given date.</p> <p>Use the geolevel to get more geographical detail (countries, ccaas, states, cities).</p> <p>Use the filters in the query string to restrict to a group of geographical entities. The filters are additive. That means that any city matching any of the specified values will be counted.</p>",
+    "description": "<p>Returns the geographical distribution of a quantity at a given date.</p> <p>Use the geolevel to get more geographical detail (country, ccaa, state, city).</p> <p>Use the filters in the query string to restrict to a group of geographical entities. The filters are additive. That means that any city matching any of the specified values will be counted.</p>",
     "examples": [
       {
         "title": "Current number of contracts",
@@ -15,17 +15,17 @@
       },
       {
         "title": "Current members at every state",
-        "content": "/v0.2/members/by/states",
+        "content": "/v0.2/members/by/state",
         "type": "json"
       },
       {
         "title": "Members at every CCAA on 2018-02-01",
-        "content": "/v0.2/members/by/ccaas/on/2018-02-01",
+        "content": "/v0.2/members/by/ccaa/on/2018-02-01",
         "type": "json"
       },
       {
         "title": "Members by city on Araba and Gipuzcoa provinces",
-        "content": "/v0.2/members/by/cities?state=01&state=20",
+        "content": "/v0.2/members/by/city?state=01&state=20",
         "type": "json"
       }
     ],
@@ -55,10 +55,10 @@
             "group": "Parameter",
             "type": "String",
             "allowedValues": [
-              "\"countries\"",
-              "\"ccaas\"",
-              "\"states\"",
-              "\"cities\""
+              "\"country\"",
+              "\"ccaa\"",
+              "\"state\"",
+              "\"city\""
             ],
             "optional": true,
             "field": "geolevel",
@@ -192,7 +192,7 @@
     "version": "0.2.0",
     "group": "DistributionSeries",
     "name": "DistributionSeries",
-    "description": "<p>Returns the geographical distribution and temporal evolution of a quantity.</p> <p>Use the geolevel to get more geographical detail (countries, ccaas, states, cities).</p> <p>Use the filters in the query string to restrict to a group of geographical entities. The filters are additive. That means that any city matching any of the specified values will be counted.</p>",
+    "description": "<p>Returns the geographical distribution and temporal evolution of a quantity.</p> <p>Use the geolevel to get more geographical detail (country, ccaa, state, city).</p> <p>Use the filters in the query string to restrict to a group of geographical entities. The filters are additive. That means that any city matching any of the specified values will be counted.</p>",
     "examples": [
       {
         "title": "Evolution of all contracts every year",
@@ -211,7 +211,7 @@
       },
       {
         "title": "Members by city on Araba and Gipuzcoa provinces every year",
-        "content": "/v0.2/members/by/cities/yearly?state=01&state=20",
+        "content": "/v0.2/members/by/city/yearly?state=01&state=20",
         "type": "json"
       }
     ],
@@ -260,10 +260,10 @@
             "group": "Parameter",
             "type": "String",
             "allowedValues": [
-              "\"countries\"",
-              "\"ccaas\"",
-              "\"states\"",
-              "\"cities\""
+              "\"country\"",
+              "\"ccaa\"",
+              "\"state\"",
+              "\"city\""
             ],
             "optional": true,
             "field": "geolevel",
