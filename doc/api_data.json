@@ -3,7 +3,7 @@
     "type": "get",
     "url": "/v0.2/:field/by/:geolevel/on/:ondate",
     "title": "",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "group": "Distribution",
     "name": "Distribution",
     "description": "<p>Returns the geographical distribution of a quantity at a given date.</p> <p>Use the geolevel to get more geographical detail (country, ccaa, state, city).</p> <p>Use the filters in the query string to restrict to a group of geographical entities. The filters are additive. That means that any city matching any of the specified values will be counted.</p>",
@@ -189,7 +189,7 @@
     "type": "get",
     "url": "/v0.2/:field/by/:geolevel/:frequency/from/:fromdate/to/:todate",
     "title": "",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "group": "DistributionSeries",
     "name": "DistributionSeries",
     "description": "<p>Returns the geographical distribution and temporal evolution of a quantity.</p> <p>Use the geolevel to get more geographical detail (country, ccaa, state, city).</p> <p>Use the filters in the query string to restrict to a group of geographical entities. The filters are additive. That means that any city matching any of the specified values will be counted.</p>",
@@ -322,7 +322,7 @@
     "type": "get",
     "url": "/v0.2/version",
     "title": "",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "name": "Version",
     "group": "Version",
     "description": "<p>Response version API</p>",
@@ -335,7 +335,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200OK\nversion: 0.2.0\ncompat: 0.2.0",
+          "content": "HTTP/1.1 200OK\nversion: 0.2.1\ncompat: 0.2.0",
           "type": "yaml"
         }
       ]
