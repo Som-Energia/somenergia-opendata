@@ -58,7 +58,7 @@ class Api_Test(unittest.TestCase):
         Api_Test.app = app = Flask(__name__)
         register_converters(app)
         register_handlers(app)
-        app.register_blueprint(api, url_prefix='/v0.2')
+        app.register_blueprint(api, url_prefix='')
         app.config['TESTING']=True
 
     def setUp(self):
@@ -72,7 +72,7 @@ class Api_Test(unittest.TestCase):
         api.source = self.oldsource
 
     def get(self, uri, *args, **kwds):
-        return self.client.get('/v0.2'+uri,*args,**kwds)
+        return self.client.get(uri,*args,**kwds)
 
     from .testutils import assertNsEqual
 
