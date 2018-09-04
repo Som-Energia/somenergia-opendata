@@ -1,5 +1,17 @@
 # ROADMAP 
 
+## El de hoy hoy
+
+
+- field -> metric
+- metric de tipus string, i afegir el check que retorni error informatiu
+- geolevel de tipus string, i afegir el check que retorni error informatiu
+- frequency de tipus string, i afegir el check que retorni error informatiu
+- dateSequences: takes first day of week, month, year...
+
+
+
+
 ## El de hoy
 
 
