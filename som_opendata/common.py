@@ -127,6 +127,7 @@ class IsoDateConverter(BaseConverter):
     def to_url(self, value):
         return str(value)
 
+
 def EnumConverter(kind, values):
     class AConverter(BaseConverter):
 
@@ -202,4 +203,4 @@ def register_handlers(app):
     app.register_error_handler(400, handle_bad_request)
     app.register_error_handler(MissingDateError, handle_missingDateError)
 
-
+# vim: et ts=2 sw=2
