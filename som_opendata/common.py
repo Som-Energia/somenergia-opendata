@@ -18,6 +18,8 @@ def getDates(first, last):
 
 def dateSequenceMonths(first, last):
     first, last = getDates(first, last)
+    if first.day != 1:
+        first = first.replace(day=1)
     interval = delta(last, first)
     months = interval.months + interval.years * 12 + 1
     return [

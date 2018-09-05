@@ -311,13 +311,15 @@ class Api_Test(unittest.TestCase):
 
 
     def test__printerError_frequency_toDate__exist_NoExactFirstDate(self):
-        api.firstDate = '2018-01-15'
-        r = self.get('/members/by/city/monthly/to/2018-03-01')
-        self.assertEqual(r.status_code, 500)
+        r = self.get('/members/monthly/from/2018-03-15/to/2018-04-15')
+        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
-                errorId: 1001
-                message: Missing Dates ['2018-02-15', '2018-01-15']
+            dates: [2018-03-01, 2018-04-01]
+            values: [45810, 46985]
             """)
+
+
+
 
 
 # vim: et ts=4 sw=4

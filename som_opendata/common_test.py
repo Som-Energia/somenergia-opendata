@@ -25,7 +25,7 @@ class DateSequence_Test(unittest.TestCase):
     def test_dateSequenceMonths_noStartEnd_today(self):
         self.assertEqual(
             dateSequenceMonths(None, None), [
-            Date.today(),
+            Date.today().replace(day=1),
             ])
 
     def test_dateSequenceMonth_singleDate_thatDate(self):
@@ -50,23 +50,24 @@ class DateSequence_Test(unittest.TestCase):
     def test_dateSequenceMonths_midMonth(self):
         self.assertEqual(
             dateSequenceMonths('2015-01-05', '2015-02-05'), [
-            Date('2015-01-05'),
-            Date('2015-02-05'),
+            Date('2015-01-01'),
+            Date('2015-02-01'),
             ])
 
     def test_dateSequenceMonths_nearlyMidMonth(self):
         self.assertEqual(
             dateSequenceMonths('2015-01-05', '2015-02-04'), [
-            Date('2015-01-05'),
+            Date('2015-01-01'),
+            Date('2015-02-01'),
             ])
 
     def test_dateSequenceMonths_lateMonth(self):
         self.assertEqual(
             dateSequenceMonths('2015-01-31', '2015-04-30'), [
-            Date('2015-01-31'),
-            Date('2015-02-28'),
-            Date('2015-03-31'),
-            Date('2015-04-30'),
+            Date('2015-01-01'),
+            Date('2015-02-01'),
+            Date('2015-03-01'),
+            Date('2015-04-01'),
             ])
 
     def test_dateSequenceMonths_moreThanAYear(self):
@@ -248,7 +249,7 @@ class Common_Test(unittest.TestCase):
                          to='2018-07-20',
                          periodicity='monthly',
                         )
-        self.assertEqual(r, ['2018-07-20'])
+        self.assertEqual(r, ['2018-07-01'])
 
     def test__requestDates__monthlyDifferentDate(self):
         r = requestDates(first='2000-01-01',
@@ -256,7 +257,7 @@ class Common_Test(unittest.TestCase):
                          to='2018-07-20',
                          periodicity='monthly',
                         )
-        self.assertEqual(r, ['2018-06-20', '2018-07-20'])
+        self.assertEqual(r, ['2018-06-01', '2018-07-01'])
 
     def test__requestDates__yearlySameDate(self):
         r = requestDates(first='2000-01-01',
