@@ -37,6 +37,8 @@ def dateSequenceWeeks(first, last):
 
 def dateSequenceYears(first, last):
     first, last = getDates(first, last)
+    if first.day != 1 or first.month != 1:
+        first = first.replace(day=1, month=1)
     years = (last - first).days / 365 + 1
     return [
         Date(first + delta(years=n))

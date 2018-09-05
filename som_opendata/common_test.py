@@ -166,7 +166,7 @@ class DateSequence_Test(unittest.TestCase):
     def test_dateSequenceYears_noStartEnd_today(self):
         self.assertEqual(
             dateSequenceYears(None, None), [
-            Date.today(),
+            Date.today().replace(day=1, month=1),
             ])
 
     def test_dateSequenceYears_singleDate_thatDate(self):
@@ -184,18 +184,18 @@ class DateSequence_Test(unittest.TestCase):
     def test_dateSequenceYears_2years(self):
         self.assertEqual(
             dateSequenceYears('2015-01-31', '2016-04-30'), [
-            Date('2015-01-31'),
-            Date('2016-01-31'),
+            Date('2015-01-01'),
+            Date('2016-01-01'),
             ])
 
     def test_dateSequenceYears_29february(self):
         self.assertEqual(
             dateSequenceYears('2012-02-29', '2016-04-30'), [
-            Date('2012-02-29'),
-            Date('2013-02-28'),
-            Date('2014-02-28'),
-            Date('2015-02-28'),
-            Date('2016-02-29'),
+            Date('2012-01-01'),
+            Date('2013-01-01'),
+            Date('2014-01-01'),
+            Date('2015-01-01'),
+            Date('2016-01-01'),
             ])
 
 class Common_Test(unittest.TestCase):
@@ -265,7 +265,7 @@ class Common_Test(unittest.TestCase):
                          to='2018-07-20',
                          periodicity='yearly',
                         )
-        self.assertEqual(r, ['2018-07-20'])
+        self.assertEqual(r, ['2018-01-01'])
 
     def test__requestDates__yearlyDifferentDate(self):
         r = requestDates(first='2000-01-01',
@@ -273,7 +273,7 @@ class Common_Test(unittest.TestCase):
                          to='2018-07-20',
                          periodicity='yearly',
                         )
-        self.assertEqual(r, ['2017-07-20', '2018-07-20'])
+        self.assertEqual(r, ['2017-01-01', '2018-01-01'])
 
     def test__requestDates__toWithoutSince(self):
         r = requestDates(first='2000-01-01',
