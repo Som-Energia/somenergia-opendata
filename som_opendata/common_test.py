@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 import unittest
 from dateutil.relativedelta import relativedelta as delta
+from datetime import timedelta
 from werkzeug.routing import ValidationError
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
@@ -96,30 +97,30 @@ class DateSequence_Test(unittest.TestCase):
     def test_dateSequenceWeeks_noStartEnd_today(self):
         self.assertEqual(
             dateSequenceWeeks(None, None), [
-            Date.today(),
+            Date.today()-timedelta(days=Date.today().isoweekday()-1%7),
             ])
 
     def test_dateSequenceWeeks_singleDate_thatDate(self):
         self.assertEqual(
             dateSequenceWeeks('2015-01-01', None), [
-            Date('2015-01-01'),
+            Date('2014-12-29'),
             ])
 
     def test_dateSequenceWeeks_twoDatesUnderAMonth(self):
         self.assertEqual(
             dateSequenceWeeks('2015-01-01', '2015-01-08'), [
-            Date('2015-01-01'),
-            Date('2015-01-08'),
+            Date('2014-12-29'),
+            Date('2015-01-05'),
             ])
 
     def test_dateSequenceWeeks_twoDatesBeyondMonth(self):
         self.assertEqual(
             dateSequenceWeeks('2015-01-01', '2015-02-01'), [
-            Date('2015-01-01'),
-            Date('2015-01-08'),
-            Date('2015-01-15'),
-            Date('2015-01-22'),
-            Date('2015-01-29'),
+            Date('2014-12-29'),
+            Date('2015-01-05'),
+            Date('2015-01-12'),
+            Date('2015-01-19'),
+            Date('2015-01-26'),
             ])
 
     def test_dateSequenceWeeks_midMonth(self):
@@ -145,19 +146,20 @@ class DateSequence_Test(unittest.TestCase):
     def test_dateSequenceWeeks_lateMonth(self):
         self.assertEqual(
             dateSequenceWeeks('2015-01-31', '2015-04-30'), [
-            Date('2015-01-31'),
-            Date('2015-02-07'),
-            Date('2015-02-14'),
-            Date('2015-02-21'),
-            Date('2015-02-28'),
-            Date('2015-03-07'),
-            Date('2015-03-14'),
-            Date('2015-03-21'),
-            Date('2015-03-28'),
-            Date('2015-04-04'),
-            Date('2015-04-11'),
-            Date('2015-04-18'),
-            Date('2015-04-25'),
+            Date('2015-01-26'),
+            Date('2015-02-02'),
+            Date('2015-02-09'),
+            Date('2015-02-16'),
+            Date('2015-02-23'),
+            Date('2015-03-02'),
+            Date('2015-03-09'),
+            Date('2015-03-16'),
+            Date('2015-03-23'),
+            Date('2015-03-30'),
+            Date('2015-04-06'),
+            Date('2015-04-13'),
+            Date('2015-04-20'),
+            Date('2015-04-27'),
             ])
 
 
@@ -219,13 +221,13 @@ class Common_Test(unittest.TestCase):
     def test__requestDates__toDay(self):
         r = requestDates(first='2000-01-01',
                         )
-        self.assertEqual(r, [str(Date.today())])
+        self.assertEqual(r, [str(Date.today()-timedelta(days=Date.today().isoweekday()-1%7))])
 
     def test__requestDates__onDate(self):
         r = requestDates(first='2000-01-01',
                          on='2018-07-20',
                         )
-        self.assertEqual(r, ['2018-07-20'])
+        self.assertEqual(r, ['2018-07-16'])
 
     def test__requestDates__weeklySameDate(self):
         r = requestDates(first='2000-01-01',
@@ -233,7 +235,7 @@ class Common_Test(unittest.TestCase):
                          to='2018-07-20',
                          periodicity='weekly',
                         )
-        self.assertEqual(r, ['2018-07-20'])
+        self.assertEqual(r, ['2018-07-16'])
 
     def test__requestDates__weeklyDifferentDate(self):
         r = requestDates(first='2000-01-01',
@@ -241,7 +243,7 @@ class Common_Test(unittest.TestCase):
                          to='2018-07-20',
                          periodicity='weekly',
                         )
-        self.assertEqual(r, ['2018-07-10', '2018-07-17'])
+        self.assertEqual(r, ['2018-07-09', '2018-07-16'])
 
     def test__requestDates__monthlySameDate(self):
         r = requestDates(first='2000-01-01',
@@ -276,18 +278,11 @@ class Common_Test(unittest.TestCase):
         self.assertEqual(r, ['2017-01-01', '2018-01-01'])
 
     def test__requestDates__toWithoutSince(self):
-        r = requestDates(first='2000-01-01',
-                         to='2000-01-20',
+        r = requestDates(first='2011-01-01',
+                         to='2011-01-20',
                          periodicity='weekly',
                         )
-        self.assertEqual(r, ['2000-01-01', '2000-01-08', '2000-01-15'])
-
-    def test__requestDates__sinceWithoutTo(self):
-        r = requestDates(first='2000-01-01',
-                         since=str(Date.today()-delta(weeks=1)),
-                         periodicity='weekly',
-                        )
-        self.assertEqual(r, [str(Date.today()-delta(weeks=1)), str(Date.today())])
+        self.assertEqual(r, ['2010-12-27', '2011-01-03', '2011-01-10', '2011-01-17'])
 
     def test__requestDates__turnedDates(self):
         r = requestDates(first='2000-01-01',

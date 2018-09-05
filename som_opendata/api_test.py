@@ -285,7 +285,7 @@ class Api_Test(unittest.TestCase):
         self.assertEqual(r.status_code, 500)
         self.assertYamlResponse(r, """\
             errorId: 1001
-            message: Missing Dates ['1994-09-01']
+            message: Missing Dates ['1994-08-29']
             """)
 
     def test__printerError__URLparamsNotExist_aggregateLevel(self):

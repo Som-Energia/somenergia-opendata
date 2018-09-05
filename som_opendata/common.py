@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 import os
 from dateutil.relativedelta import relativedelta as delta
-from datetime import date
+from datetime import date, timedelta
 from flask import Response, make_response, current_app, jsonify
 from functools import wraps
 from werkzeug.routing import BaseConverter, ValidationError
@@ -29,6 +29,8 @@ def dateSequenceMonths(first, last):
 
 def dateSequenceWeeks(first, last):
     first, last = getDates(first, last)
+    if first.isoweekday() != 1:
+        first = Date(first - timedelta(days=first.isoweekday()-1%7))
     weeks = (last - first).days / 7 + 1
     return [
         Date(first + delta(weeks=n))
