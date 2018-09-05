@@ -40,7 +40,7 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 """
 
 """
-@api {get} /v0.2/:field/by/:geolevel/on/:ondate
+@api {get} /v0.2/:metric/by/:geolevel/on/:ondate
 
 @apiVersion 0.2.1
 @apiGroup Distribution
@@ -61,7 +61,7 @@ The filters are additive. That means that any city matching any of the specified
 @apiExample Members by city on Araba and Gipuzcoa provinces
     /v0.2/members/by/city?state=01&state=20
 
-@apiParam {String="contracts","members"} field Field to get.
+@apiParam {String="contracts","members"} metric Quantity to aggregate.
 @apiUse CommonDistribution
 @apiParam {Date} [ondate=today]  Single date, in iso format.
 
@@ -148,7 +148,7 @@ The filters are additive. That means that any city matching any of the specified
 """
 
 """
-@api {get} /v0.2/:field/by/:geolevel/:frequency/from/:fromdate/to/:todate
+@api {get} /v0.2/:metric/by/:geolevel/:frequency/from/:fromdate/to/:todate
 
 @apiVersion 0.2.1
 @apiGroup DistributionSeries
@@ -169,7 +169,7 @@ The filters are additive. That means that any city matching any of the specified
 @apiExample Members by city on Araba and Gipuzcoa provinces every year
     /v0.2/members/by/city/yearly?state=01&state=20
 
-@apiParam {String="contracts","members"} field Field to get.
+@apiParam {String="contracts","members"} metric Quantity to aggregate.
 @apiUse CommonDistribution
 @apiParam {String="yearly","monthly"} frequency  Indicate a date series (only first day of the month, year...)
 @apiParam {Date} [fromdate=2012-01-01]  Earlier date to show, in iso format. 
@@ -317,20 +317,20 @@ The filters are additive. That means that any city matching any of the specified
             - 37
 """
 
-@api.route('/<field:field>') # TODO: UNTESTED
-@api.route('/<field:field>/on/<isodate:ondate>')
-@api.route('/<field:field>/<frequency:frequency>')
-@api.route('/<field:field>/<frequency:frequency>/from/<isodate:fromdate>')
-@api.route('/<field:field>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
-@api.route('/<field:field>/<frequency:frequency>/to/<isodate:todate>')
-@api.route('/<field:field>/by/<geolevel:geolevel>')
-@api.route('/<field:field>/by/<geolevel:geolevel>/on/<isodate:ondate>')
-@api.route('/<field:field>/by/<geolevel:geolevel>/<frequency:frequency>')
-@api.route('/<field:field>/by/<geolevel:geolevel>/<frequency:frequency>/from/<isodate:fromdate>')
-@api.route('/<field:field>/by/<geolevel:geolevel>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
-@api.route('/<field:field>/by/<geolevel:geolevel>/<frequency:frequency>/to/<isodate:todate>')
+@api.route('/<metric:metric>') # TODO: UNTESTED
+@api.route('/<metric:metric>/on/<isodate:ondate>')
+@api.route('/<metric:metric>/<frequency:frequency>')
+@api.route('/<metric:metric>/<frequency:frequency>/from/<isodate:fromdate>')
+@api.route('/<metric:metric>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@api.route('/<metric:metric>/<frequency:frequency>/to/<isodate:todate>')
+@api.route('/<metric:metric>/by/<geolevel:geolevel>')
+@api.route('/<metric:metric>/by/<geolevel:geolevel>/on/<isodate:ondate>')
+@api.route('/<metric:metric>/by/<geolevel:geolevel>/<frequency:frequency>')
+@api.route('/<metric:metric>/by/<geolevel:geolevel>/<frequency:frequency>/from/<isodate:fromdate>')
+@api.route('/<metric:metric>/by/<geolevel:geolevel>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@api.route('/<metric:metric>/by/<geolevel:geolevel>/<frequency:frequency>/to/<isodate:todate>')
 @yaml_response
-def distribution(field=None, geolevel='world', ondate=None, frequency=None, fromdate=None, todate=None):
+def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fromdate=None, todate=None):
 
     content = api.source
 
@@ -347,7 +347,7 @@ def distribution(field=None, geolevel='world', ondate=None, frequency=None, from
     for locationLevel_id in relation_locationLevel_id:
         extractQueryParam(location_filter_req, *locationLevel_id)
 
-    filtered_objects = content.get(field, request_dates, location_filter_req)
+    filtered_objects = content.get(metric, request_dates, location_filter_req)
     if len(filtered_objects) > 0: return aggregate(filtered_objects, geolevel)
     else: return ns()
 
