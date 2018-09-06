@@ -175,7 +175,7 @@ def register_converters(app):
     app.url_map.converters['isodate'] = IsoDateConverter
     app.url_map.converters['frequency'] = FrequencyConverter
     app.url_map.converters['geolevel'] = GeoLevelConverter
-    app.url_map.converters['field'] = MetricConverter
+    app.url_map.converters['metric'] = MetricConverter
 
 
 @yaml_response
