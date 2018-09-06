@@ -61,7 +61,7 @@ The filters are additive. That means that any city matching any of the specified
 @apiExample Members by city on Araba and Gipuzcoa provinces
     /v0.2/members/by/city?state=01&state=20
 
-@apiParam {String="contracts","members"} metric metric to get.
+@apiParam {String="contracts","members"} metric Quantity to aggregate.
 @apiUse CommonDistribution
 @apiParam {Date} [ondate=today]  Single date, in iso format.
 
@@ -169,7 +169,8 @@ The filters are additive. That means that any city matching any of the specified
 @apiExample Members by city on Araba and Gipuzcoa provinces every year
     /v0.2/members/by/city/yearly?state=01&state=20
 
-@apiParam {String="contracts","members"} metric metric to get.
+
+@apiParam {String="contracts","members"} metric Quantity to aggregate.
 @apiUse CommonDistribution
 @apiParam {String="yearly","monthly"} frequency  Indicate a date series (only first day of the month, year...)
 @apiParam {Date} [fromdate=2012-01-01]  Earlier date to show, in iso format. 
