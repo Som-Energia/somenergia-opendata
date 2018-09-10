@@ -10,7 +10,7 @@
 - dateSequences: takes first day of week, month, year...
 - Fragilitat dels testos B2B de csv's amb l'ordre segons l'idioma del sistema
 - Actualitzar les dades del csv
-
+- Revisar SQL members
 
 
 ## El de hoy
