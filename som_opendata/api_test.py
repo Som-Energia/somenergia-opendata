@@ -318,7 +318,13 @@ class Api_Test(unittest.TestCase):
             values: [45810, 46985]
             """)
 
-
+    def test__printerError_incorrectMetric(self):
+        r = self.get('/incorrectMetric')
+        self.assertEqual(r.status_code, 400)
+        self.assertYamlResponse(r, """\
+            errorId: 1002
+            message: Incorrect metric 'incorrectMetric' try with ['members', 'contracts']
+            """)
 
 
 

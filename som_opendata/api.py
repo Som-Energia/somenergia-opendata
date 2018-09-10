@@ -2,6 +2,7 @@
 from flask import Blueprint, request, current_app
 from yamlns import namespace as ns
 from .common import (
+        validateMetric,
         yaml_response,
         dateSequenceMonths,
         dateSequenceWeeks,
@@ -318,20 +319,22 @@ The filters are additive. That means that any city matching any of the specified
             - 37
 """
 
-@api.route('/<metric:metric>') # TODO: UNTESTED
-@api.route('/<metric:metric>/on/<isodate:ondate>')
-@api.route('/<metric:metric>/<frequency:frequency>')
-@api.route('/<metric:metric>/<frequency:frequency>/from/<isodate:fromdate>')
-@api.route('/<metric:metric>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
-@api.route('/<metric:metric>/<frequency:frequency>/to/<isodate:todate>')
-@api.route('/<metric:metric>/by/<geolevel:geolevel>')
-@api.route('/<metric:metric>/by/<geolevel:geolevel>/on/<isodate:ondate>')
-@api.route('/<metric:metric>/by/<geolevel:geolevel>/<frequency:frequency>')
-@api.route('/<metric:metric>/by/<geolevel:geolevel>/<frequency:frequency>/from/<isodate:fromdate>')
-@api.route('/<metric:metric>/by/<geolevel:geolevel>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
-@api.route('/<metric:metric>/by/<geolevel:geolevel>/<frequency:frequency>/to/<isodate:todate>')
+@api.route('/<string:metric>') # TODO: UNTESTED
+@api.route('/<string:metric>/on/<isodate:ondate>')
+@api.route('/<string:metric>/<frequency:frequency>')
+@api.route('/<string:metric>/<frequency:frequency>/from/<isodate:fromdate>')
+@api.route('/<string:metric>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@api.route('/<string:metric>/<frequency:frequency>/to/<isodate:todate>')
+@api.route('/<string:metric>/by/<geolevel:geolevel>')
+@api.route('/<string:metric>/by/<geolevel:geolevel>/on/<isodate:ondate>')
+@api.route('/<string:metric>/by/<geolevel:geolevel>/<frequency:frequency>')
+@api.route('/<string:metric>/by/<geolevel:geolevel>/<frequency:frequency>/from/<isodate:fromdate>')
+@api.route('/<string:metric>/by/<geolevel:geolevel>/<frequency:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@api.route('/<string:metric>/by/<geolevel:geolevel>/<frequency:frequency>/to/<isodate:todate>')
 @yaml_response
 def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fromdate=None, todate=None):
+
+    validateMetric(metric)
 
     content = api.source
 

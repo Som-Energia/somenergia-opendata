@@ -169,6 +169,10 @@ FrequencyConverter = EnumConverter('frequency', [
 	'yearly',
 ])
 
+#TODO: Refactor with metric, geolevel, frequency
+def validateMetric(metric):
+    if metric != 'members' and metric != 'contracts':
+        raise MetricValidateError(metric)
 
 
 def register_converters(app):
@@ -208,5 +212,6 @@ def register_handlers(app):
     app.register_error_handler(404, handle_request_not_found)
     app.register_error_handler(400, handle_bad_request)
     app.register_error_handler(MissingDateError, handle_missingDateError)
+    app.register_error_handler(MetricValidateError, handle_missingDateError)
 
 # vim: et ts=2 sw=2
