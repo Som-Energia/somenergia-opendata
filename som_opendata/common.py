@@ -202,7 +202,7 @@ def handle_bad_request(self):
     return response
 
 @yaml_response
-def handle_missingDateError(error):
+def handle_missingCustomError(error):
     return make_response(
         jsonify(ns(message=error.description, errorId=error.errorId)),
         error.code
@@ -211,7 +211,8 @@ def handle_missingDateError(error):
 def register_handlers(app):
     app.register_error_handler(404, handle_request_not_found)
     app.register_error_handler(400, handle_bad_request)
-    app.register_error_handler(MissingDateError, handle_missingDateError)
-    app.register_error_handler(MetricValidateError, handle_missingDateError)
+    app.register_error_handler(MissingDateError, handle_missingCustomError)
+    app.register_error_handler(MetricValidateError, handle_missingCustomError)
+    app.register_error_handler(FrequencyValidateError, handle_missingCustomError)
 
 # vim: et ts=2 sw=2
