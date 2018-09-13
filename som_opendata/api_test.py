@@ -294,7 +294,11 @@ class Api_Test(unittest.TestCase):
 
     def test__printerError__URLparamsNotExist_frequency(self):
         r = self.get('/members/piolin')
-        self.assertEqual(r.status_code, 404)
+        self.assertEqual(r.status_code, 400)
+        self.assertYamlResponse(r, """\
+            errorId: 1003
+            message: Incorrect frequency 'piolin' try with ['monthly', 'yearly']
+            """)
 
     @unittest.skip("Not implemented yet | Caldria retocar el converter de Date")
     def test__printerError__URLparamsNotExist_date(self):

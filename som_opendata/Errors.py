@@ -23,3 +23,15 @@ class MetricValidateError(HTTPException):
         super(MetricValidateError, self).__init__("Incorrect metric \'"+metric+
             "\' try with "+str(self.correctMetrics)
             )
+
+
+class FrequencyValidateError(HTTPException):
+
+    correctFrequency = ['monthly', 'yearly']
+    code = 400
+    errorId = 1003
+
+    def __init__(self, frequency):
+        super(FrequencyValidateError, self).__init__("Incorrect frequency \'"+frequency+
+            "\' try with "+str(self.correctFrequency)
+            )

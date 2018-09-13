@@ -7,8 +7,11 @@ from functools import wraps
 from werkzeug.routing import BaseConverter, ValidationError
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
-from .Errors import MissingDateError, MetricValidateError
-
+from .Errors import (
+    MissingDateError,
+    MetricValidateError,
+    FrequencyValidateError
+)
 
 
 def getDates(first, last):
@@ -174,6 +177,9 @@ def validateMetric(metric):
     if metric != 'members' and metric != 'contracts':
         raise MetricValidateError(metric)
 
+def validateFrequency(frequency):
+    if frequency != 'monthly' and frequency != 'yearly':
+        raise FrequencyValidateError(frequency)
 
 def register_converters(app):
     app.url_map.converters['isodate'] = IsoDateConverter
