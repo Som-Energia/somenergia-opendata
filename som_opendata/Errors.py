@@ -35,3 +35,15 @@ class FrequencyValidateError(HTTPException):
         super(FrequencyValidateError, self).__init__("Incorrect frequency \'"+frequency+
             "\' try with "+str(self.correctFrequency)
             )
+
+
+class GeolevelValidateError(HTTPException):
+
+    correctGeolevel = ['country', 'ccaa', 'state', 'city']
+    code = 400
+    errorId = 1004
+
+    def __init__(self, geolevel):
+        super(GeolevelValidateError, self).__init__("Incorrect geolevel \'"+geolevel+
+            "\' try with "+str(self.correctGeolevel)
+            )

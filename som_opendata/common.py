@@ -10,7 +10,8 @@ from yamlns import namespace as ns
 from .Errors import (
     MissingDateError,
     MetricValidateError,
-    FrequencyValidateError
+    FrequencyValidateError,
+    GeolevelValidateError,
 )
 
 
@@ -181,6 +182,10 @@ def validateFrequency(frequency):
     if frequency != 'monthly' and frequency != 'yearly':
         raise FrequencyValidateError(frequency)
 
+def validateGeolevel(geolevel):
+    if geolevel != 'world' and geolevel != 'country' and geolevel != 'ccaa' and geolevel != 'state' and geolevel != 'city':
+        raise GeolevelValidateError(geolevel)
+
 def register_converters(app):
     app.url_map.converters['isodate'] = IsoDateConverter
     app.url_map.converters['frequency'] = FrequencyConverter
@@ -220,5 +225,6 @@ def register_handlers(app):
     app.register_error_handler(MissingDateError, handle_missingCustomError)
     app.register_error_handler(MetricValidateError, handle_missingCustomError)
     app.register_error_handler(FrequencyValidateError, handle_missingCustomError)
+    app.register_error_handler(GeolevelValidateError, handle_missingCustomError)
 
 # vim: et ts=2 sw=2

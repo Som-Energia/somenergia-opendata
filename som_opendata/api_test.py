@@ -288,9 +288,13 @@ class Api_Test(unittest.TestCase):
             message: Missing Dates ['1994-08-29']
             """)
 
-    def test__printerError__URLparamsNotExist_aggregateLevel(self):
+    def test__printerError__URLparamsNotExist_piolin(self):
         r = self.get('/members/by/piolin')
-        self.assertEqual(r.status_code, 404)
+        self.assertEqual(r.status_code, 400)
+        self.assertYamlResponse(r, """\
+            errorId: 1004
+            message: Incorrect geolevel 'piolin' try with ['country', 'ccaa', 'state', 'city']
+            """)
 
     def test__printerError__URLparamsNotExist_frequency(self):
         r = self.get('/members/piolin')

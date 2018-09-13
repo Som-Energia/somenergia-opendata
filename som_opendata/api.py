@@ -9,6 +9,7 @@ from .common import (
         dateSequenceYears,
         requestDates,
         validateFrequency,
+        validateGeolevel,
     )
 from .distribution import (
     parse_tsv,
@@ -326,17 +327,18 @@ The filters are additive. That means that any city matching any of the specified
 @api.route('/<string:metric>/<string:frequency>/from/<isodate:fromdate>')
 @api.route('/<string:metric>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
 @api.route('/<string:metric>/<string:frequency>/to/<isodate:todate>')
-@api.route('/<string:metric>/by/<geolevel:geolevel>')
-@api.route('/<string:metric>/by/<geolevel:geolevel>/on/<isodate:ondate>')
-@api.route('/<string:metric>/by/<geolevel:geolevel>/<string:frequency>')
-@api.route('/<string:metric>/by/<geolevel:geolevel>/<string:frequency>/from/<isodate:fromdate>')
-@api.route('/<string:metric>/by/<geolevel:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
-@api.route('/<string:metric>/by/<geolevel:geolevel>/<string:frequency>/to/<isodate:todate>')
+@api.route('/<string:metric>/by/<string:geolevel>')
+@api.route('/<string:metric>/by/<string:geolevel>/on/<isodate:ondate>')
+@api.route('/<string:metric>/by/<string:geolevel>/<string:frequency>')
+@api.route('/<string:metric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>')
+@api.route('/<string:metric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@api.route('/<string:metric>/by/<string:geolevel>/<string:frequency>/to/<isodate:todate>')
 @yaml_response
 def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fromdate=None, todate=None):
 
     validateMetric(metric)
     if frequency: validateFrequency(frequency)
+    validateGeolevel(geolevel)
 
     content = api.source
 
