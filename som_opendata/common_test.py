@@ -12,12 +12,10 @@ from .common import (
     dateSequenceMonths,
     dateSequenceWeeks,
     IsoDateConverter,
-    GeoLevelConverter,
-    FrequencyConverter,
-    MetricConverter,
     requestDates,
+    validateParams,
     )
-
+from .Errors import ValidateError
 
 class DateSequence_Test(unittest.TestCase):
 
@@ -295,46 +293,6 @@ class Common_Test(unittest.TestCase):
 
     # Convertes
 
-    def test__FrequencyConverter__valid(self):
-        frequencyConverter = FrequencyConverter({})
-        r = frequencyConverter.to_python('monthly')
-        self.assertEqual(r, 'monthly')
-
-    def test__FrequencyConvertes__invalid(self):
-        frequencyConverter = FrequencyConverter({})
-        with self.assertRaises(ValidationError) as ctx:
-            frequencyConverter.to_python('badfrequency')
-        self.assertEqual(format(ctx.exception),
-            "Incorrect frequency 'badfrequency'. "
-            "Try with: 'monthly', 'yearly'")
-
-    def test__MetricConverter__valid(self):
-        metricConverter = MetricConverter({})
-        r = metricConverter.to_python('members')
-        self.assertEqual(r, 'members')
-
-    def test__MetricConverter__invalid(self):
-        metricConverter = MetricConverter({})
-        with self.assertRaises(ValidationError) as ctx:
-            metricConverter.to_python('badmetric')
-        self.assertEqual(format(ctx.exception),
-            "Incorrect metric 'badmetric'. "
-            "Try with: 'members', 'contracts'"
-        )
-
-    def test__AggregateLevelConverter__valid(self):
-        aggregateLevelConverter = GeoLevelConverter({})
-        r = aggregateLevelConverter.to_python('country')
-        self.assertEqual(r, 'country')
-
-    def test__AggregateLevelConverter__invalid(self):
-        aggregateLevelConverter = GeoLevelConverter({})
-        with self.assertRaises(ValidationError) as ctx:
-            aggregateLevelConverter.to_python('badlevel')
-        self.assertEqual(format(ctx.exception),
-            "Incorrect geographical level 'badlevel'. "
-            "Try with: 'world', 'country', 'ccaa', 'state', 'city'")
-
     def test__DateConverter__valid(self):
         dateConverter = IsoDateConverter({})
         r = dateConverter.to_python('2018-01-01')
@@ -345,6 +303,20 @@ class Common_Test(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             dateConverter.to_python('PEP 8')
         self.assertEqual(format(ctx.exception), 'Invalid date initializator \'PEP 8\'')
+
+
+    # validateParams 
+
+    def test__validateParams__valid(self):
+        self.assertEqual(validateParams('metric', 'members'), None)
+
+    def test__validateParams__invalid(self):
+        with self.assertRaises(ValidateError) as ctx:
+            validateParams('metric', 'error')
+        self.assertEqual(ctx.exception.errorId, 1002)
+        self.assertEqual(ctx.exception.code, 400)
+        self.assertEqual(ctx.exception.description, 
+            'Incorrect metric \'error\' try with [\'members\', \'contracts\']')
 
 
 # vim: et ts=4 sw=4

@@ -136,41 +136,6 @@ class IsoDateConverter(BaseConverter):
         return str(value)
 
 
-def EnumConverter(kind, values):
-    class AConverter(BaseConverter):
-
-        def to_python(self, value):
-            if value in values:
-                return value
-            raise ValidationError("Incorrect {} '{}'. Try with: {}"
-                .format(kind, value, ', '.join("'{}'".format(x) for x in values)))
-
-        def to_url(self, value):
-            if value in values:
-                return value
-            raise ValidationError()
-    return AConverter
-
-
-MetricConverter = EnumConverter('metric', [
-	'members',
-	'contracts',
-])
-GeoLevelConverter = EnumConverter('geographical level', [
-	'world',
-	'country',
-	'ccaa',
-	'state',
-	'city',
-])
-
-FrequencyConverter = EnumConverter('frequency', [
-	#daily,
-	#weekly,
-	'monthly',
-	'yearly',
-])
-
 # None i world son valors por defecto de los parametros
 valorsAptes = ns(metric=['members', 'contracts'],
         frequency=['monthly', 'yearly', None],
@@ -183,10 +148,6 @@ def validateParams(field, value):
 
 def register_converters(app):
     app.url_map.converters['isodate'] = IsoDateConverter
-    app.url_map.converters['frequency'] = FrequencyConverter
-    app.url_map.converters['geolevel'] = GeoLevelConverter
-    app.url_map.converters['metric'] = MetricConverter
-
 
 @yaml_response
 def handle_request_not_found(e):
