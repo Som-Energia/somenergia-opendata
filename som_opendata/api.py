@@ -2,14 +2,12 @@
 from flask import Blueprint, request, current_app
 from yamlns import namespace as ns
 from .common import (
-        validateMetric,
         yaml_response,
         dateSequenceMonths,
         dateSequenceWeeks,
         dateSequenceYears,
         requestDates,
-        validateFrequency,
-        validateGeolevel,
+        validateParams,
     )
 from .distribution import (
     parse_tsv,
@@ -336,9 +334,14 @@ The filters are additive. That means that any city matching any of the specified
 @yaml_response
 def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fromdate=None, todate=None):
 
-    validateMetric(metric)
-    if frequency: validateFrequency(frequency)
-    validateGeolevel(geolevel)
+    relation_paramField_param = [
+            ['metric', metric],
+            ['frequency', frequency],
+            ['geolevel', geolevel]
+          ]
+
+    for paramField, param in relation_paramField_param:
+        validateParams(paramField, param)
 
     content = api.source
 

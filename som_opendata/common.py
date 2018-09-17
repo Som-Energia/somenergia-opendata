@@ -9,9 +9,7 @@ from yamlns.dateutils import Date
 from yamlns import namespace as ns
 from .Errors import (
     MissingDateError,
-    MetricValidateError,
-    FrequencyValidateError,
-    GeolevelValidateError,
+    ValidateError,
 )
 
 
@@ -173,18 +171,15 @@ FrequencyConverter = EnumConverter('frequency', [
 	'yearly',
 ])
 
-#TODO: Refactor with metric, geolevel, frequency
-def validateMetric(metric):
-    if metric != 'members' and metric != 'contracts':
-        raise MetricValidateError(metric)
+# None i world son valors por defecto de los parametros
+valorsAptes = ns(metric=['members', 'contracts'],
+        frequency=['monthly', 'yearly', None],
+        geolevel=['country', 'ccaa', 'state', 'city', 'world']
+        )
 
-def validateFrequency(frequency):
-    if frequency != 'monthly' and frequency != 'yearly':
-        raise FrequencyValidateError(frequency)
-
-def validateGeolevel(geolevel):
-    if geolevel != 'world' and geolevel != 'country' and geolevel != 'ccaa' and geolevel != 'state' and geolevel != 'city':
-        raise GeolevelValidateError(geolevel)
+def validateParams(field, value):
+    if value not in valorsAptes[field]:
+        raise ValidateError(field, value)
 
 def register_converters(app):
     app.url_map.converters['isodate'] = IsoDateConverter
@@ -223,8 +218,6 @@ def register_handlers(app):
     app.register_error_handler(404, handle_request_not_found)
     app.register_error_handler(400, handle_bad_request)
     app.register_error_handler(MissingDateError, handle_missingCustomError)
-    app.register_error_handler(MetricValidateError, handle_missingCustomError)
-    app.register_error_handler(FrequencyValidateError, handle_missingCustomError)
-    app.register_error_handler(GeolevelValidateError, handle_missingCustomError)
+    app.register_error_handler(ValidateError, handle_missingCustomError)
 
 # vim: et ts=2 sw=2

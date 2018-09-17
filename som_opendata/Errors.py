@@ -13,37 +13,20 @@ class MissingDateError(HTTPException):
         self.missingDates = missingDates
 
 
-class MetricValidateError(HTTPException):
+class ValidateError(HTTPException):
 
-    correctMetrics = ['members', 'contracts']
+    valors = ns(metric=['members', 'contracts'],
+        frequency=['monthly', 'yearly'],
+        geolevel=['country', 'ccaa', 'state', 'city']
+        )
+
     code = 400
-    errorId = 1002
+    errorId = 0
 
-    def __init__(self, metric):
-        super(MetricValidateError, self).__init__("Incorrect metric \'"+metric+
-            "\' try with "+str(self.correctMetrics)
-            )
+    typeErrors = ns(metric=1002, frequency=1003, geolevel=1004)
 
-
-class FrequencyValidateError(HTTPException):
-
-    correctFrequency = ['monthly', 'yearly']
-    code = 400
-    errorId = 1003
-
-    def __init__(self, frequency):
-        super(FrequencyValidateError, self).__init__("Incorrect frequency \'"+frequency+
-            "\' try with "+str(self.correctFrequency)
-            )
-
-
-class GeolevelValidateError(HTTPException):
-
-    correctGeolevel = ['country', 'ccaa', 'state', 'city']
-    code = 400
-    errorId = 1004
-
-    def __init__(self, geolevel):
-        super(GeolevelValidateError, self).__init__("Incorrect geolevel \'"+geolevel+
-            "\' try with "+str(self.correctGeolevel)
+    def __init__(self, typeError, value):
+        self.errorId = self.typeErrors[typeError]
+        super(ValidateError, self).__init__("Incorrect "+typeError+" \'"+value+
+            "\' try with "+str(self.valors[typeError])
             )
