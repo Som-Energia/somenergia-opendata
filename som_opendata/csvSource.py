@@ -29,7 +29,7 @@ class CsvSource():
 
     # TODO: Change name datum -> metric
     def getLastDay(self, datum):
-        d = parse_tsv(self.data['members'])
+        d = parse_tsv(self.data[datum])
         return d[0][len(d[0])-1]
 
     def get(self, datum, dates, filters):
