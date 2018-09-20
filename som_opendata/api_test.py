@@ -280,6 +280,15 @@ class Api_Test(unittest.TestCase):
                             values: [11]
             """)
 
+    def test__urlBase(self):
+        r = self.get('/members')
+        self.assertYamlResponse(r, """\
+            dates:
+            - 2018-08-01
+            values:
+            - 50299
+            """)
+
     def test__printerError__datesNotExist(self):
         r = self.get('/members/on/1994-09-01')
         self.assertEqual(r.status_code, 500)

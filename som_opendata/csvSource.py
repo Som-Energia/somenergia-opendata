@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import tablib
 from dbutils import csvTable
+from yamlns.dateutils import Date
 from yamlns import namespace as ns
 from .distribution import (
     parse_tsv,
@@ -12,6 +13,7 @@ from .distribution import (
     includedDatesObject,
     date2field,
     addObjects,
+    field2date,
     )
 from .Errors import MissingDateError
 
@@ -30,7 +32,7 @@ class CsvSource():
     # TODO: Change name datum -> metric
     def getLastDay(self, datum):
         d = parse_tsv(self.data[datum])
-        return d[0][len(d[0])-1]
+        return [field2date(d[0][len(d[0])-1])]
 
     def get(self, datum, dates, filters):
 

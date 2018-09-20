@@ -216,9 +216,9 @@ class Common_Test(unittest.TestCase):
 
     # requestDates
 
+    @unittest.skip("Need MockUp?")
     def test__requestDates__toDay(self):
-        r = requestDates(first='2000-01-01',
-                        )
+        r = self.requestDates(first='2000-01-01')
         self.assertEqual(r, [str(Date.today()-timedelta(days=Date.today().isoweekday()-1%7))])
 
     def test__requestDates__onDate(self):

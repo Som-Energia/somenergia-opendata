@@ -345,7 +345,7 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
 
     content = api.source
 
-    request_dates = requestDates(first=api.firstDate, on=ondate, since=fromdate, to=todate, periodicity=frequency)
+    request_dates = requestDates(first=api.firstDate, on=ondate, since=fromdate, to=todate, periodicity=frequency, metric=metric)
     location_filter_req = ns()
 
     relation_locationLevel_id = [

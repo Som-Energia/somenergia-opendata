@@ -223,4 +223,4 @@ class CsvSource_Test(unittest.TestCase):
             data_SantJoan+'10'])
             )
         r = source.getLastDay('members')
-        self.assertEqual(r, 'count_2018_02_01')
+        self.assertEqual(r, ['2018-02-01'])
