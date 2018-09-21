@@ -6,7 +6,6 @@ class MissingDateError(HTTPException):
 
     missingDates = []
     code = 500
-    errorId = 1001
 
     def __init__(self, missingDates):
         super(MissingDateError, self).__init__("Missing Dates " + str(missingDates))
@@ -21,12 +20,15 @@ class ValidateError(HTTPException):
         )
 
     code = 400
-    errorId = 0
 
-    typeErrors = ns(metric=1002, frequency=1003, geolevel=1004)
+    metric = ''
+    value = ''
+    possibleValues = []
 
     def __init__(self, typeError, value):
-        self.errorId = self.typeErrors[typeError]
+        self.metric = typeError
+        self.value = value
+        self.possibleValues = self.valors[typeError]
         super(ValidateError, self).__init__("Incorrect "+typeError+" \'"+value+
             "\' try with "+str(self.valors[typeError])
             )

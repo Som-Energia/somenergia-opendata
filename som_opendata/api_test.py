@@ -293,7 +293,6 @@ class Api_Test(unittest.TestCase):
         r = self.get('/members/on/1994-09-01')
         self.assertEqual(r.status_code, 500)
         self.assertYamlResponse(r, """\
-            errorId: 1001
             message: Missing Dates ['1994-08-29']
             """)
 
@@ -301,7 +300,9 @@ class Api_Test(unittest.TestCase):
         r = self.get('/members/by/piolin')
         self.assertEqual(r.status_code, 400)
         self.assertYamlResponse(r, """\
-            errorId: 1004
+            metric: geolevel
+            valueRequest: piolin
+            possibleValues: ['country', 'ccaa', 'state', 'city']
             message: Incorrect geolevel 'piolin' try with ['country', 'ccaa', 'state', 'city']
             """)
 
@@ -309,7 +310,9 @@ class Api_Test(unittest.TestCase):
         r = self.get('/members/piolin')
         self.assertEqual(r.status_code, 400)
         self.assertYamlResponse(r, """\
-            errorId: 1003
+            metric: frequency
+            valueRequest: piolin
+            possibleValues: ['monthly', 'yearly']
             message: Incorrect frequency 'piolin' try with ['monthly', 'yearly']
             """)
 
@@ -339,7 +342,9 @@ class Api_Test(unittest.TestCase):
         r = self.get('/incorrectMetric')
         self.assertEqual(r.status_code, 400)
         self.assertYamlResponse(r, """\
-            errorId: 1002
+            metric: metric
+            valueRequest: incorrectMetric
+            possibleValues: ['members', 'contracts']
             message: Incorrect metric 'incorrectMetric' try with ['members', 'contracts']
             """)
 
