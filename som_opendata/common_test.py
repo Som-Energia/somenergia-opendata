@@ -319,16 +319,5 @@ class Common_Test(unittest.TestCase):
         self.assertEqual(ctx.exception.description, 
             'Incorrect metric \'error\' try with [\'members\', \'contracts\']')
 
-    @unittest.skip('TODO BUG')
-    def test__validateParams__invalidKey(self):
-        with self.assertRaises(ValidateError) as ctx:
-            validateParams('error', 'error')
-        self.assertEqual(ctx.exception.metric, 'error')
-        self.assertEqual(ctx.exception.value, 'error')
-        self.assertEqual(ctx.exception.code, 400)
-        self.assertEqual(ctx.exception.description, 
-            'Incorrect metric \'error\' try with [\'members\', \'contracts\']')
-
-
 
 # vim: et ts=4 sw=4

@@ -30,5 +30,5 @@ class ValidateError(HTTPException):
         self.value = value
         self.possibleValues = self.valors[typeError]
         super(ValidateError, self).__init__("Incorrect "+typeError+" \'"+value+
-            "\' try with "+str(self.valors[typeError])
+            "\' try with "+str(self.possibleValues)
             )
