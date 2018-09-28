@@ -192,4 +192,18 @@ def register_handlers(app):
     app.register_error_handler(MissingDateError, handle_missingDatesError)
     app.register_error_handler(ValidateError, handle_customErrorValidation)
 
-# vim: et ts=2 sw=2
+
+def enable_cors(app):
+    # In production and testing servers, CORS is managed by the server,
+    # Call this just for development server
+    from flask_cors import CORS
+    CORS(app, resources={
+        r'/*': dict(
+            origins = '*',
+            supports_credentials = True, # Send cookies, requires no '*' origin
+            send_wildcard = False, # So, instead of '*' copy 'Origin' from request header
+        )})
+
+
+
+# vim: et ts=4 sw=4

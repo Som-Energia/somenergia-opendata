@@ -6,6 +6,7 @@ from .api import api
 from .common import (
     register_handlers,
     register_converters,
+    enable_cors,
     )
 
 
@@ -14,7 +15,7 @@ def create_app():
 
     register_converters(app)
     register_handlers(app)
-
+    enable_cors(app) # TODO: Config whether to call it, server may handle it
     app.register_blueprint(oldapi, url_prefix='/v0.1')
     app.register_blueprint(api, url_prefix='/v0.2')
     api.source = loadCsvSource()
