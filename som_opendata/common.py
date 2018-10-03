@@ -59,17 +59,19 @@ def caseFrequency(frequency):
 
 
 def requestDates(first=None, on=None, since=None, to=None, periodicity=None, metric = None):
-
+    """
+    Returns a list of dates to be requested given the query parameters.
+    """
     from .api import api
 
     if periodicity:
-        request_date = ((since or first), (to or Date.today()))
-        frequency_method = caseFrequency(periodicity)
-        all_dates = frequency_method(*request_date)
+        since = since or first
+        to = to or api.source.getLastDay(metric)
+        all_dates = caseFrequency(periodicity)(since, to)
 
     elif on: all_dates = dateSequenceWeeks(on, on)
 
-    else: all_dates = api.source.getLastDay(metric)
+    else: all_dates = [api.source.getLastDay(metric)]
 
     return [str(date) for date in all_dates]
 
