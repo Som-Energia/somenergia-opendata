@@ -5,7 +5,7 @@ readme = open("README.md").read()
 
 setup(
 	name = "somenergia_api",
-	version = "0.2.1",
+	version = "0.2.2",
 	description =
 		"Som Energia API for opendata access",
 	author = "Gisce SSL, Som Energia SCCL",
@@ -20,6 +20,7 @@ setup(
 	install_requires=[
 		'yamlns>=0.3', # earlier are not Py2 compatible
 		'Flask',
+		'Flask-Cors',
 		'psycopg2',
 		'rednose',
 		'nose',
