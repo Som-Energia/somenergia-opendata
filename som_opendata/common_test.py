@@ -7,6 +7,7 @@ from yamlns.dateutils import Date
 from yamlns import namespace as ns
 import b2btest
 from .common import (
+    previousFirstOfMonth,
     caseFrequency,
     dateSequenceYears,
     dateSequenceMonths,
@@ -233,7 +234,7 @@ class Common_Test(unittest.TestCase):
             first='2000-01-01',
             on='2018-07-20',
             expected = [
-                '2018-07-16',
+                '2018-07-01',
             ])
 
     def test__requestDates__weeklySameDate(self):
@@ -313,13 +314,33 @@ class Common_Test(unittest.TestCase):
 
     def test__requestDates__turnedDates(self):
         self.assertRequestDatesEqual(
+            periodicity='monthly',
             first='2000-01-01',
             since='2018-02-01',
             to='2018-01-01',
-            periodicity='monthly',
             expected = [
                 # empty
             ])
+
+    def test__requestDates__onMidMonth(self):
+        self.assertRequestDatesEqual(
+            first='2000-01-01',
+            on='2018-01-12',
+            expected = [
+                '2018-01-01',
+            ])
+
+    def test_previousFirstOfMonth_withAFirst(self):
+        self.assertEqual(
+            previousFirstOfMonth('2018-02-01'),
+            '2018-02-01'
+            )
+
+    def test_previousFirstOfMonth_whenWithin(self):
+        self.assertEqual(
+            previousFirstOfMonth('2018-02-12'),
+            '2018-02-01'
+            )
 
 
     # Convertes

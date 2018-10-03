@@ -13,6 +13,9 @@ from .Errors import (
 )
 
 
+def previousFirstOfMonth(date):
+    return str(Date(date).replace(day=1))
+
 def getDates(first, last):
     first = Date(first or Date.today())
     return first, Date(last or first)
@@ -70,13 +73,15 @@ def requestDates(first=None, last=None, on=None, since=None, to=None, periodicit
     """
     if periodicity:
         since = since or first
-        to = to or last or Date.today()
+        to = to or last or str(Date.today())
         all_dates = caseFrequency(periodicity)(since, to)
+        return [str(date) for date in all_dates]
 
-    elif on: all_dates = dateSequenceWeeks(on, on)
-    else: all_dates = [last]
+    if on:
+        return [previousFirstOfMonth(on)]
 
-    return [str(date) for date in all_dates]
+    return [last or str(Date.today())]
+
 
 
 def relative(path):
