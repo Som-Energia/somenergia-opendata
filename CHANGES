@@ -1,3 +1,13 @@
+# v0.2.2
+
+- Monthly series walks the first of the months for whichever fromdate
+- Yearly series walks the first of the year for whichever fromdate
+- Documentation talks about metrics (members, contracts, production...)
+- Data sources (CSV) for each metric are discovered in a directory
+  instead of being configured file by file
+- Enabled CORS support
+- Instead 404, more descriptive errors if you mispel metrics, geolevels...
+- oldapi: tsv download filename contains query information
 
 # v0.2.1
 

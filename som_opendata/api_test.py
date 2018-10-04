@@ -86,7 +86,7 @@ class Api_Test(unittest.TestCase):
     def test__version(self):
         r = self.get('/version')
         self.assertYamlResponse(r, """\
-            version: '0.2.1'
+            version: '0.2.2'
             compat: '0.2.1'
             """)
 

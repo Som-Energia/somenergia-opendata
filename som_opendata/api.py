@@ -43,7 +43,7 @@ def extractQueryParam(location_filter_req, queryName, objectName):
 """
 @api {get} /v0.2/:metric/by/:geolevel/on/:ondate
 
-@apiVersion 0.2.1
+@apiVersion 0.2.2
 @apiGroup Distribution
 @apiName Distribution
 @apiDescription Returns the geographical distribution of a quantity at a given date.
@@ -151,7 +151,7 @@ The filters are additive. That means that any city matching any of the specified
 """
 @api {get} /v0.2/:metric/by/:geolevel/:frequency/from/:fromdate/to/:todate
 
-@apiVersion 0.2.1
+@apiVersion 0.2.2
 @apiGroup DistributionSeries
 @apiName DistributionSeries
 @apiDescription Returns the geographical distribution and temporal evolution of a quantity.
@@ -368,7 +368,7 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
 def version():
     """
     @api {get} /v0.2/version
-    @apiVersion 0.2.1
+    @apiVersion 0.2.2
     @apiName Version
     @apiGroup Version
     @apiDescription Response version API
@@ -376,11 +376,11 @@ def version():
     @apiSampleRequest /v0.2/version
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
-        version: 0.2.1
-        compat: 0.2.0
+        version: 0.2.2
+        compat: 0.2.1
     """
     return ns(
-        version = '0.2.1',
+        version = '0.2.2',
         compat = '0.2.1',
         )
 
