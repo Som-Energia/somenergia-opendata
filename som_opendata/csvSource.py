@@ -57,12 +57,15 @@ class CsvSource():
 
 import dbconfig as config
 import os.path
+import glob
 
 def loadCsvSource():
     myPath = os.path.abspath(os.path.dirname(__file__))
+    dataPath = os.path.join(myPath, '..','data')
     datums = ns()
-    for datum, path in config.opendata.iteritems():
-        with open(os.path.join(myPath, path)) as f:
+    for datafile in glob.glob(os.path.join(dataPath,'*.tsv')):
+        datum = os.path.splitext(os.path.basename(datafile))[0]
+        with open(datafile) as f:
             csvFile = f.read()
         datums[datum] = csvFile
     return CsvSource(datums)
