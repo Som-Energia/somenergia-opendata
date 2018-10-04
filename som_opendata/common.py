@@ -107,14 +107,14 @@ def utf8(thing):
 def tsv_response(f):
     @wraps(f)
     def wrapper(*args, **kwd):
-        result = f(*args, **kwd)
+        filename, result = f(*args, **kwd)
 
         if type(result) is Response:
             return result
         if type(result) in (str,str):
             response = make_response(result)
             response.mimetype='text/tab-separated-values'
-            response.headers["Content-Disposition"] = "filename=contracts.tsv"
+            response.headers["Content-Disposition"] = "filename={}".format(filename or 'file.tsv')
             return response
 
         response = make_response('\n'.join(
