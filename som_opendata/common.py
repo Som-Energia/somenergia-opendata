@@ -42,6 +42,13 @@ def dateSequenceWeeks(first, last):
         for n in range(0, weeks)
     ]
 
+def dateSequenceWeeksMonths(first, last):
+    m = dateSequenceMonths(first, last)
+    w = dateSequenceWeeks(first, last)
+    return set(m + w)
+
+
+
 def dateSequenceYears(first, last):
     first, last = getDates(first, last)
     if first.day != 1 or first.month != 1:

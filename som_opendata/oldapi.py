@@ -16,6 +16,7 @@ from .common import (
     tsv_response,
     dateSequenceMonths,
     readQuery,
+    dateSequenceWeeksMonths,
     )
 
 
@@ -165,6 +166,26 @@ def members(fromdate=None, todate=None):
     """
     dates=dateSequenceMonths(fromdate, todate)
     return membersSparse(dates, csvTable)
+
+
+
+@blueprint.route('/contracts/<isodate:fromdate>/weeklyandmonthlyto/<isodate:todate>')
+@tsv_response
+def contractsAux(fromdate=None, todate=None):
+
+    dates=dateSequenceWeeksMonths(fromdate, todate)
+    return contractsSeries(dates)
+
+
+@blueprint.route('/members/<isodate:fromdate>/weeklyandmonthlyto/<isodate:todate>')
+@tsv_response
+def membersAux(fromdate=None, todate=None):
+
+    dates=dateSequenceWeeksMonths(fromdate, todate)
+    return membersSparse(dates, csvTable)
+
+
+
 
 
 # vim: et sw=4 ts=4
