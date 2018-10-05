@@ -16,7 +16,7 @@ from .common import (
     requestDates,
     validateParams,
     )
-from .Errors import ValidateError
+from .errors import ValidateError
 
 class DateSequence_Test(unittest.TestCase):
 

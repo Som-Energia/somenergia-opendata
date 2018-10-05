@@ -7,7 +7,7 @@ from functools import wraps
 from werkzeug.routing import BaseConverter, ValidationError
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
-from .Errors import (
+from .errors import (
     MissingDateError,
     ValidateError,
 )

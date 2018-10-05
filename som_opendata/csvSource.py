@@ -13,7 +13,7 @@ from .distribution import (
     addObjects,
     field2date,
     )
-from .Errors import MissingDateError
+from .errors import MissingDateError
 
 
 class CsvSource():

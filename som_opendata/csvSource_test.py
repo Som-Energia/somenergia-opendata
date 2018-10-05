@@ -4,7 +4,7 @@ import unittest
 from yamlns.dateutils import Date as isoDate
 from yamlns import namespace as ns
 from csvSource import CsvSource
-from Errors import MissingDateError
+from errors import MissingDateError
 
 
 

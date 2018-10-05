@@ -15,7 +15,7 @@ from .distribution import (
     aggregate,
     locationFilter,
     )
-from .Errors import MissingDateError
+from .errors import MissingDateError
 
 api = Blueprint(name=__name__, import_name=__name__)
 api.firstDate = '2010-01-01'
