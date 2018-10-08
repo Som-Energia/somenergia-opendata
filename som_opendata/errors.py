@@ -14,19 +14,19 @@ class MissingDateError(HTTPException):
 
 class ValidateError(HTTPException):
 
-    valors = ns(metric=['members', 'contracts'],
+    valors = ns(parameter=['members', 'contracts'],
         frequency=['monthly', 'yearly'],
         geolevel=['country', 'ccaa', 'state', 'city']
         )
 
     code = 400
 
-    metric = ''
+    parameter = ''
     value = ''
     possibleValues = []
 
     def __init__(self, typeError, value):
-        self.metric = typeError
+        self.parameter = typeError
         self.value = value
         self.possibleValues = self.valors[typeError]
         super(ValidateError, self).__init__("Incorrect "+typeError+" \'"+value+

@@ -93,19 +93,12 @@ class Api_Test(unittest.TestCase):
 
     def test__onDate__exists(self):
         r = self.get('/members/on/2018-01-01')
-        self.assertYamlResponse(r, """\
-            values: [41660]
-            dates: [2018-01-01]
-            """)
+        self.assertTsvResponse(r)
 
     def test__onDate_aggregateLevel__exist(self):
         r = self.get('/members/by/world/on/2018-01-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertYamlResponse(r, """\
-            dates: [2018-01-01]
-            values: [41660]
-            """)
-
+        self.assertTsvResponse(r)
 
     @unittest.skip('NOT IMPLEMENTED YET')
     def test__aggregateLevel__existToday(self):
@@ -152,60 +145,23 @@ class Api_Test(unittest.TestCase):
     def test__aggregateLevel_frequency__exist(self):
         r = self.get('/members/by/country/yearly')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertYamlResponse(r, """\
-            dates: [2010-01-01, 2011-01-01, 2012-01-01, 2013-01-01, 2014-01-01, 2015-01-01, 2016-01-01, 2017-01-01, 2018-01-01]
-            values: [0, 0, 1067, 4905, 11748, 17703, 23579, 29946, 41660]
-            countries:
-              CL:
-                name: Chile
-                values: [0, 0, 1, 1, 1, 1, 1, 1, 1]
-              DE:
-                name: Germany
-                values: [0, 0, 0, 0, 1, 2, 2, 3, 3]
-              ES:
-                name: España
-                values: [0, 0, 1064, 4898, 11738, 17692, 23568, 29931, 41644]
-              FR:
-                name: France
-                values: [0, 0, 1, 1, 2, 2, 2, 4, 4]
-              NL:
-                name: Netherlands
-                values: [0, 0, 1, 3, 3, 3, 3, 3, 3]
-              None:
-                name: None
-                values: [0, 0, 0, 0, 0, 0, 0, 1, 2]
-              PT:
-                name: Portugal
-                values: [0, 0, 0, 1, 1, 1, 1, 1, 1]
-              UK:
-                name: United Kingdom
-                values: [0, 0, 0, 1, 2, 2, 2, 2, 2]
-            """)
+        self.assertTsvResponse(r)
 
     def test__aggregateLevel_frequency_fromDate__exist(self):
         r = self.get('/members/by/world/yearly/from/2017-01-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertYamlResponse(r, """\
-            dates: [2017-01-01, 2018-01-01]
-            values: [29946, 41660]
-            """)
+        self.assertTsvResponse(r)
 
     def test__aggregateLevel_frequency_fromDate_toDate__exist(self):
         r = self.get('/members/by/world/monthly/from/2018-01-01/to/2018-03-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertYamlResponse(r, """\
-            dates: [2018-01-01, 2018-02-01, 2018-03-01]
-            values: [41660, 44402, 45810]
-            """)
+        self.assertTsvResponse(r)
 
     def test__aggregateLevel_frequency_toDate__exist(self):
         api.firstDate = '2018-02-01'
         r = self.get('/members/by/world/monthly/to/2018-03-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertYamlResponse(r, """\
-            dates: [2018-02-01, 2018-03-01]
-            values: [44402, 45810]
-            """)
+        self.assertTsvResponse(r)
 
     @unittest.skip('NOT IMPLEMENTED YET')
     def test__frequency_formDate__exist(self):
@@ -223,71 +179,21 @@ class Api_Test(unittest.TestCase):
     def test__frequency_fromDate_toDate__exist(self):
         r = self.get('/members/monthly/from/2018-01-01/to/2018-02-01')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertYamlResponse(r, """\
-            dates: [2018-01-01, 2018-02-01]
-            values: [41660, 44402]
-            """)
+        self.assertTsvResponse(r)
 
     def test__urlBaseFrequency__exist(self):
         r = self.get('/members/yearly')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertYamlResponse(r, """\
-            dates: [
-                2010-01-01,
-                2011-01-01,
-                2012-01-01,
-                2013-01-01,
-                2014-01-01,
-                2015-01-01,
-                2016-01-01,
-                2017-01-01,
-                2018-01-01,
-            ]
-            values: [
-                0,
-                0,
-                1067,
-                4905,
-                11748,
-                17703,
-                23579,
-                29946,
-                41660
-            ]
-            """)
+        self.assertTsvResponse(r)
 
     def test__onDate_aggregateLevel_queryParams__exist(self):
         r = self.get('/members/by/city/on/2018-01-01?city=17007')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertYamlResponse(r, """\
-            dates: [2018-01-01]
-            values: [11]
-            countries:
-              ES:
-                name: España
-                values: [11]
-                ccaas:
-                  '09':
-                    name: Cataluña
-                    values: [11]
-                    states:
-                      '17':
-                        name: Girona
-                        values: [11]
-                        cities:
-                          '17007':
-                            name: Amer
-                            values: [11]
-            """)
+        self.assertTsvResponse(r)
 
     def test__urlBase(self):
         r = self.get('/members')
-        self.assertYamlResponse(r, """\
-            dates:
-            - 2018-08-01
-            values:
-            - 50299
-            """)
+        self.assertTsvResponse(r)
 
     def test__printerError__datesNotExist(self):
         r = self.get('/members/on/1994-09-01')
@@ -329,14 +235,10 @@ class Api_Test(unittest.TestCase):
         r = self.get('/members/by/city/on/2018-01-01/from/2018-02-02')
         self.assertEqual(r.status_code, 404)
 
-
     def test__printerError_frequency_toDate__exist_NoExactFirstDate(self):
         r = self.get('/members/monthly/from/2018-03-15/to/2018-04-15')
         self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertYamlResponse(r, """\
-            dates: [2018-03-01, 2018-04-01]
-            values: [45810, 46985]
-            """)
+        self.assertTsvResponse(r)
 
     def test__printerError_incorrectMetric(self):
         r = self.get('/incorrectMetric')

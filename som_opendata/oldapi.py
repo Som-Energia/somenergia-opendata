@@ -169,9 +169,9 @@ def members(fromdate=None, todate=None):
     @apiSampleRequest /v0.1/members/2015-01-01/monthlyto/2015-12-01
     """
     dates=dateSequenceMonths(fromdate, todate)
-    filename = 'members{frm}{to}.tsv'.format(
-        frm = '-'+fromdate if fromdate else '',
-        to  = '-'+todate if todate else '',
+    filename = 'contracts{frm}{to}.tsv'.format(
+        frm = '-'+str(fromdate) if fromdate else '',
+        to  = '-'+str(todate) if todate else '',
     )
     return filename, membersSparse(dates, csvTable)
 

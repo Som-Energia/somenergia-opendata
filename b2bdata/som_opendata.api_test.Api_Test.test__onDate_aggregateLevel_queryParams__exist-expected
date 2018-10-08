@@ -1,0 +1,24 @@
+dates:
+- 2018-01-01
+values:
+- 11
+countries:
+  ES:
+    name: España
+    values:
+    - 11
+    ccaas:
+      09:
+        name: Cataluña
+        values:
+        - 11
+        states:
+          '17':
+            name: Girona
+            values:
+            - 11
+            cities:
+              '17007':
+                name: Amer
+                values:
+                - 11

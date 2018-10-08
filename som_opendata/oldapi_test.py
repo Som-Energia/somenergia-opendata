@@ -57,6 +57,13 @@ class BaseApi_Test(unittest.TestCase):
         r = self.get('/members/2015-01-01/monthlyto/2015-04-01')
         self.assertTsvResponse(r)
 
+    def text_membersAux_series(self):
+        r = self.get('/members/2015-01-01/weeklyandmonthlyto/2015-03-01')
+        self.assertTsvResponse(r)
+
+    def text_contractssAux_series(self):
+        r = self.get('/contracts/2015-01-01/weeklyandmonthlyto/2015-03-01')
+        self.assertTsvResponse(r)
 
 
 # vim: et ts=4 sw=4
