@@ -2,6 +2,9 @@
 
 Public API to access open data information about the cooperative
 
+- API UI: https://opendata.somenergia.coop/ui/
+- API Documentation: https://opendata.somenergia.coop/docs/
+
 ## Geographical distributions
 
 
