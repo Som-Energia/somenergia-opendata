@@ -14,7 +14,8 @@ class MissingDateError(HTTPException):
 
 class ValidateError(HTTPException):
 
-    valors = ns(parameter=['members', 'contracts'],
+    valors = ns(
+        parameter=['members', 'contracts'],
         frequency=['monthly', 'yearly'],
         geolevel=['country', 'ccaa', 'state', 'city']
         )
