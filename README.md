@@ -1,4 +1,4 @@
-# somenergia-api
+# somenergia-opendata
 
 Public API to access open data information about the cooperative
 
