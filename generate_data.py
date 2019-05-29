@@ -14,6 +14,7 @@ from som_opendata.common import (
 from yamlns.dateutils import Date
 from dbutils import csvTable
 import io
+import os
 from consolemsg import step
 
 
@@ -38,7 +39,12 @@ for metric, generator in dict(
     result = generator(dates)
     with io.open(filename,'w') as f:
         f.write(utf8(result))
-    
+
+    linkname = 'data/{}.tsv'.format(metric)
+
+    with io.open(linkname,'w') as f:
+        f.write(utf8(result))
+
 
 
 
