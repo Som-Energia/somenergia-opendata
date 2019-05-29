@@ -1,4 +1,9 @@
-# v0.2.2
+# v0.2.3 2018-05-28
+
+- Added script to precompute data
+- Fix: api error response attribute 'metric' is now 'parameter'
+
+# v0.2.2 2018-10-04
 
 - Monthly series walks the first of the months for whichever fromdate
 - Yearly series walks the first of the year for whichever fromdate
@@ -9,12 +14,15 @@
 - Instead 404, more descriptive errors if you mispel metrics, geolevels...
 - oldapi: tsv download filename contains query information
 
-# v0.2.1
+# v0.2.1 2018-08-27
 
 - Fix: Geographical detail levels (city, state...) are now singular words as the specification says.
 
-# v0.2.0
+# v0.2.0 2018-08-24
 
 - First public version
 
+# v0.1.0 2017-10-20
+
+- First internal release
 

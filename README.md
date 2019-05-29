@@ -61,24 +61,4 @@ Public API to access open data information about the cooperative
 ### Response format
 
 
-## Changelog
-
-### v0.2.3 2018-05-28
-
-- Added script to precompute data
-- Fix: api error response attribute 'metric' is now 'parameter'
-
-### v0.2.2 2018-10-04
-
-- First public release
-
-### v0.2.1 2018-08-27
-
-### v0.2.0 2018-08-24
-
-### v0.1.0 2017-10-20
-
-- First internal release
-
-
 
