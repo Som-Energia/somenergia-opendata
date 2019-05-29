@@ -63,10 +63,10 @@ Public API to access open data information about the cooperative
 
 ## Changelog
 
-### v0.2.3 In Development
+### v0.2.3 2018-05-28
 
 - Added script to precompute data
-- Fix: api errors attributes on enumerated parameters were called all 'metric' 
+- Fix: api error response attribute 'metric' is now 'parameter'
 
 ### v0.2.2 2018-10-04
 

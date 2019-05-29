@@ -380,7 +380,7 @@ def version():
         compat: 0.2.1
     """
     return ns(
-        version = '0.2.2',
+        version = '0.2.3',
         compat = '0.2.1',
         )
 
