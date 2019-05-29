@@ -206,7 +206,7 @@ class Api_Test(unittest.TestCase):
         r = self.get('/members/by/piolin')
         self.assertEqual(r.status_code, 400)
         self.assertYamlResponse(r, """\
-            metric: geolevel
+            parameter: geolevel
             valueRequest: piolin
             possibleValues: ['country', 'ccaa', 'state', 'city']
             message: Incorrect geolevel 'piolin' try with ['country', 'ccaa', 'state', 'city']
@@ -216,7 +216,7 @@ class Api_Test(unittest.TestCase):
         r = self.get('/members/piolin')
         self.assertEqual(r.status_code, 400)
         self.assertYamlResponse(r, """\
-            metric: frequency
+            parameter: frequency
             valueRequest: piolin
             possibleValues: ['monthly', 'yearly']
             message: Incorrect frequency 'piolin' try with ['monthly', 'yearly']
@@ -244,7 +244,7 @@ class Api_Test(unittest.TestCase):
         r = self.get('/incorrectMetric')
         self.assertEqual(r.status_code, 400)
         self.assertYamlResponse(r, """\
-            metric: metric
+            parameter: metric
             valueRequest: incorrectMetric
             possibleValues: ['members', 'contracts']
             message: Incorrect metric 'incorrectMetric' try with ['members', 'contracts']

@@ -156,10 +156,11 @@ class IsoDateConverter(BaseConverter):
 
 
 # None i world son valors por defecto de los parametros
-valorsAptes = ns(metric=['members', 'contracts'],
-        frequency=['monthly', 'yearly', None],
-        geolevel=['country', 'ccaa', 'state', 'city', 'world']
-        )
+valorsAptes = ns(
+    metric=['members', 'contracts'],
+    frequency=['monthly', 'yearly', None],
+    geolevel=['country', 'ccaa', 'state', 'city', 'world']
+)
 
 def validateParams(field, value):
     if value not in valorsAptes[field]:
@@ -191,7 +192,7 @@ def handle_bad_request(self):
 def handle_customErrorValidation(error):
     return make_response(
         jsonify(ns(message=error.description,
-            metric=error.metric,
+            parameter=error.parameter,
             valueRequest=error.value,
             possibleValues=error.possibleValues
             )), error.code

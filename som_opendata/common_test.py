@@ -364,12 +364,12 @@ class Common_Test(unittest.TestCase):
 
     def test__validateParams__invalidValue(self):
         with self.assertRaises(ValidateError) as ctx:
-            validateParams('metric', 'error')
-        self.assertEqual(ctx.exception.metric, 'metric')
-        self.assertEqual(ctx.exception.value, 'error')
+            validateParams('metric', 'badvalue')
+        self.assertEqual(ctx.exception.parameter, 'metric')
+        self.assertEqual(ctx.exception.value, 'badvalue')
         self.assertEqual(ctx.exception.code, 400)
         self.assertEqual(ctx.exception.description, 
-            'Incorrect metric \'error\' try with [\'members\', \'contracts\']')
+            'Incorrect metric \'badvalue\' try with [\'members\', \'contracts\']')
 
 
 # vim: et ts=4 sw=4

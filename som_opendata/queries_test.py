@@ -18,7 +18,6 @@ class Queries_Test(unittest.TestCase):
     def setUp(self):
         self.b2bdatapath = 'b2bdata'
 
-
     def test_contractsSparse_single(self):
         dates = ['2015-01-01']
         result = contractsSparse(dates)
