@@ -199,7 +199,7 @@ class Api_Test(unittest.TestCase):
         r = self.get('/members/on/1994-09-01')
         self.assertEqual(r.status_code, 500)
         self.assertYamlResponse(r, """\
-            message: Missing Dates ['1994-08-29']
+            message: Missing Dates ['1994-09-01']
             """)
 
     def test__printerError__URLparamsNotExist_piolin(self):
