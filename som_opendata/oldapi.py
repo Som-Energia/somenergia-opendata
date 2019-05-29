@@ -96,7 +96,7 @@ def activeMembersCounter(adate):
 
 
 
-def membersSparse(dates, dbhandler, debug=False):
+def membersSparse(dates, dbhandler=csvTable, debug=False):
     db = psycopg2.connect(**config.psycopg)
     query = readQuery('members_distribution')
     query = query.format(','.join(
@@ -105,7 +105,7 @@ def membersSparse(dates, dbhandler, debug=False):
         ))
     with db.cursor() as cursor :
         cursor.execute(query)
-        return csvTable(cursor)
+        return dbhandler(cursor)
 
 
 

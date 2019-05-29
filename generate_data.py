@@ -2,7 +2,7 @@
 import sys
 from som_opendata.oldapi import (
     membersSparse,
-    contractsSparse,
+    contractsSeries,
 )
 from som_opendata.common import (
     dateSequenceMonths,
@@ -25,7 +25,7 @@ dates=dateSequenceMonths(fromdate, todate)
 
 for metric, generator in dict(
         members=membersSparse,
-        contracts=contractsSparse,
+        contracts=contractsSeries,
         ).items():
 
     step("Generating {}...", metric)
