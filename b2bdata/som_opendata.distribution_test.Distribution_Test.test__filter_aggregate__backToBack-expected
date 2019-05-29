@@ -1048,7 +1048,7 @@ countries:
                 - 0
                 - 0
           '23':
-            name: Jaen
+            name: Jaén
             values:
             - 20
             - 20
@@ -3625,7 +3625,7 @@ countries:
         - 0
         states:
           '35':
-            name: Las Palmas
+            name: Palmas, Las
             values:
             - 0
             - 0
@@ -5501,7 +5501,7 @@ countries:
         - 399
         states:
           '05':
-            name: Avila
+            name: Ávila
             values:
             - 35
             - 35
@@ -12396,7 +12396,7 @@ countries:
         - 2068
         states:
           '03':
-            name: Alacant
+            name: Alicante/Alacant
             values:
             - 387
             - 410
@@ -12892,7 +12892,7 @@ countries:
                 - 0
                 - 0
           '12':
-            name: Castelló
+            name: Castellón/Castelló
             values:
             - 307
             - 314
@@ -13318,7 +13318,7 @@ countries:
                 - 23
                 - 23
           '46':
-            name: València
+            name: Valencia/València
             values:
             - 1270
             - 1344
@@ -14743,7 +14743,7 @@ countries:
         - 296
         states:
           '15':
-            name: A Coruña
+            name: Coruña, A
             values:
             - 151
             - 157
@@ -17184,7 +17184,7 @@ countries:
         - 360
         states:
           '01':
-            name: Araba
+            name: Araba/Álava
             values:
             - 48
             - 54
@@ -17813,7 +17813,7 @@ countries:
         - 194
         states:
           '26':
-            name: La Rioja
+            name: Rioja, La
             values:
             - 184
             - 194
