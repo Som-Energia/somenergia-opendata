@@ -17,7 +17,7 @@ import io
 from consolemsg import step
 
 
-fromdate = Date('2011-01-01')
+fromdate = Date('2010-01-01')
 todate = Date.today()
 
 dates=dateSequenceMonths(fromdate, todate)
