@@ -4,7 +4,7 @@ import unittest
 from yamlns.dateutils import Date as isoDate
 from yamlns import namespace as ns
 import b2btest
-from distribution import (
+from .distribution import (
     parse_tsv,
     tuples2objects,
     aggregate,
@@ -75,7 +75,7 @@ class Distribution_Test(unittest.TestCase):
         self.assertEqual(parse_tsv(fixture), [['item1', 'item2']])
 
 
-    from testutils import assertNsEqual 
+    from .testutils import assertNsEqual
 
     def assertTupleToObjectEquals(self, csv_input, yaml_output):
         fixture = parse_tsv(csv_input)

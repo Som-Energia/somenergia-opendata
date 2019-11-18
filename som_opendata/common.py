@@ -11,6 +11,7 @@ from .errors import (
     MissingDateError,
     ValidateError,
 )
+from consolemsg import u
 
 
 def previousFirstOfMonth(date):
@@ -36,7 +37,7 @@ def dateSequenceWeeks(first, last):
     first, last = getDates(first, last)
     if first.isoweekday() != 1:
         first = Date(first - timedelta(days=first.isoweekday()-1%7))
-    weeks = (last - first).days / 7 + 1
+    weeks = (last - first).days // 7 + 1
     return [
         Date(first + delta(weeks=n))
         for n in range(0, weeks)
@@ -53,7 +54,7 @@ def dateSequenceYears(first, last):
     first, last = getDates(first, last)
     if first.day != 1 or first.month != 1:
         first = first.replace(day=1, month=1)
-    years = (last - first).days / 365 + 1
+    years = (last - first).days // 365 + 1
     return [
         Date(first + delta(years=n))
         for n in range(0, years)
@@ -100,9 +101,7 @@ def readQuery(query):
         return queryfile.read().rstrip()
 
 def utf8(thing):
-    if type(thing) is unicode: return thing
-    if type(thing) is str: return unicode(thing,'utf-8',errors='ignore')
-    return str(thing)
+    return u(thing)
 
 def tsv_response(f):
     @wraps(f)

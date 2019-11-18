@@ -18,6 +18,7 @@ from .common import (
     readQuery,
     dateSequenceWeeksMonths,
     )
+from consolemsg import u
 
 
 VERSION = 4
@@ -28,7 +29,7 @@ blueprint = Blueprint(name=__name__, import_name=__name__)
 def handle(e, status_code):
     response = make_response(ns(
         error=type(e).__name__,
-        message=str(e),
+        message=u(e),
         arguments=e.arguments if hasattr(e,'arguments') else []
         ).dump())
     response.mimetype='application/yaml'
@@ -147,8 +148,8 @@ def contracts(fromdate=None, todate=None):
     """
     dates=dateSequenceMonths(fromdate, todate)
     filename = 'contracts{frm}{to}.tsv'.format(
-        frm = '-'+str(fromdate) if fromdate else '',
-        to  = '-'+str(todate) if todate else '',
+        frm = '-'+u(fromdate) if fromdate else '',
+        to  = '-'+u(todate) if todate else '',
     )
     return filename, contractsSeries(dates)
 
@@ -170,8 +171,8 @@ def members(fromdate=None, todate=None):
     """
     dates=dateSequenceMonths(fromdate, todate)
     filename = 'contracts{frm}{to}.tsv'.format(
-        frm = '-'+str(fromdate) if fromdate else '',
-        to  = '-'+str(todate) if todate else '',
+        frm = '-'+u(fromdate) if fromdate else '',
+        to  = '-'+u(todate) if todate else '',
     )
     return filename, membersSparse(dates, csvTable)
 

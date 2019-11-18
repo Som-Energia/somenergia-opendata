@@ -3,9 +3,9 @@ import b2btest
 import unittest
 from yamlns.dateutils import Date as isoDate
 from yamlns import namespace as ns
-from csvSource import CsvSource
-from errors import MissingDateError
-
+from .csvSource import CsvSource
+from .errors import MissingDateError
+from future.utils import iteritems
 
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -19,7 +19,7 @@ data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
 class CsvSource_Test(unittest.TestCase):
 
-    from testutils import assertNsEqual
+    from .testutils import assertNsEqual
 
     def setUp(self):
         self.maxDiff=None
@@ -28,7 +28,7 @@ class CsvSource_Test(unittest.TestCase):
     def createSource(self, datums):
 
         content = ns()
-        for datum, lines in datums.iteritems():
+        for datum, lines in iteritems(datums):
             content[datum] = '\n'.join(lines)
 
         return CsvSource(content)

@@ -1,6 +1,6 @@
 from werkzeug.exceptions import HTTPException
 from yamlns import namespace as ns
-
+from consolemsg import u
 
 class MissingDateError(HTTPException):
 
@@ -8,7 +8,7 @@ class MissingDateError(HTTPException):
     code = 500
 
     def __init__(self, missingDates):
-        super(MissingDateError, self).__init__("Missing Dates " + str(missingDates))
+        super(MissingDateError, self).__init__("Missing Dates " + u(missingDates))
         self.missingDates = missingDates
 
 
@@ -31,5 +31,5 @@ class ValidateError(HTTPException):
         self.value = value
         self.possibleValues = self.valors[field]
         super(ValidateError, self).__init__("Incorrect "+field+" \'"+value+
-            "\' try with "+str(self.possibleValues)
+            "\' try with "+u(self.possibleValues)
             )

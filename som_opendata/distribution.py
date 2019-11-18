@@ -105,7 +105,7 @@ def locationFilter(objectList, typeFilter):
         for entry in objectList
         if any(
              entry[k] in v
-             for k,v in typeFilter.iteritems()
+             for k,v in typeFilter.items()
         )
     ]
 
@@ -125,7 +125,7 @@ def includedDatesObject(objects):
     if not objects: return []
 
     return [ field2date(key)
-        for key, value in objects[0].iteritems()
+        for key, value in objects[0].items()
         if isField(key) and validateStringDate(field2date(key))
     ]
 
@@ -160,7 +160,7 @@ def removeDates(objects, dates):
 
 def removeCounts(_object, counts):
     ret = ns()
-    for key, value in _object.iteritems():
+    for key, value in _object.items():
         if key not in counts:
             ret[key] = value
     return ret
@@ -181,7 +181,7 @@ def addObjects(data, content):
                 data.append(aux)
             else:
                 addCounts(_d, ((key, value)
-                    for key, value in _object.iteritems() if isField(key)
+                    for key, value in _object.items() if isField(key)
                     ))
 
 def addCounts(dictionary, newElements):

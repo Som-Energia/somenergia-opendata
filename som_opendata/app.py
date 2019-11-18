@@ -23,7 +23,7 @@ def create_app():
     app.errors = None
 
     for rule in app.url_map.iter_rules():
-        print rule
+        print(rule)
 
     return app
 

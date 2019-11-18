@@ -14,9 +14,10 @@ from .distribution import (
     field2date,
     )
 from .errors import MissingDateError
+from future.utils import iteritems
 
 
-class CsvSource():
+class CsvSource(object):
     
     data = None
 
@@ -24,7 +25,7 @@ class CsvSource():
         self.data = content
         self._objects = {
             datum : tuples2objects(parse_tsv(data))
-            for datum, data in self.data.iteritems()
+            for datum, data in iteritems(self.data)
         }
 
     # TODO: Change name datum -> metric
