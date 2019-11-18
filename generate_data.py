@@ -6,8 +6,6 @@ from som_opendata.oldapi import (
 )
 from som_opendata.common import (
     dateSequenceMonths,
-    readQuery,
-    dateSequenceWeeksMonths,
     utf8,
     )
 
