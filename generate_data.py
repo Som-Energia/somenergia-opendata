@@ -21,11 +21,13 @@ todate = Date.today()
 
 dates=dateSequenceMonths(fromdate, todate)
 
+metricGenerators = dict(
+    members=membersSparse,
+    contracts=contractsSeries,
+)
 
-for metric, generator in dict(
-        members=membersSparse,
-        contracts=contractsSeries,
-        ).items():
+
+for metric, generator in metricGenerators.items():
 
     step("Generating {}...", metric)
 
