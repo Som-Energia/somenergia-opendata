@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
+from som_opendata import __version__
 
 readme = open("README.md").read()
 
 setup(
 	name = "somenergia_api",
-	version = "0.2.2",
+	version = __version__,
 	description =
 		"Som Energia API for opendata access",
 	author = "Gisce SSL, Som Energia SCCL",

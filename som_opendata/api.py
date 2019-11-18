@@ -16,6 +16,7 @@ from .distribution import (
     locationFilter,
     )
 from .errors import MissingDateError
+from . import __version__
 
 api = Blueprint(name=__name__, import_name=__name__)
 api.firstDate = '2010-01-01'
@@ -380,7 +381,7 @@ def version():
         compat: 0.2.1
     """
     return ns(
-        version = '0.2.3',
+        version = __version__,
         compat = '0.2.1',
         )
 

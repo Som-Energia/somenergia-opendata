@@ -12,6 +12,8 @@ from .common import (
     )
 
 from .csvSource import loadCsvSource
+from . import __version__
+
 source = loadCsvSource()
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -86,9 +88,9 @@ class Api_Test(unittest.TestCase):
     def test__version(self):
         r = self.get('/version')
         self.assertYamlResponse(r, """\
-            version: '0.2.2'
+            version: '{}'
             compat: '0.2.1'
-            """)
+            """.format(__version__))
 
 
     def test__onDate__exists(self):
