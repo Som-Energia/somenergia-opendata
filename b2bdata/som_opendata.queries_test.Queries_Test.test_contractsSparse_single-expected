@@ -228,6 +228,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23010	Bailén	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23902	Bedmar y Garcíez	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23014	Begíjar	0	None
+2015-01-01	ES	España	01	Andalucia	23	Jaén	23017	Cabra del Santo Cristo	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23024	Carolina, La	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23028	Cazorla	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23033	Frailes	0	None
@@ -613,6 +614,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50143	Longares	1	4555
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50146	Lucena de Jalón	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50148	Luesia	1	8284
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50152	Maella	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50153	Magallón	1	42411
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50156	Maleján	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50157	Malón	1	31338
@@ -3251,6 +3253,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	12	Galicia	32	Ourense	32062	Porqueira	1	6166
 2015-01-01	ES	España	12	Galicia	32	Ourense	32065	Punxín	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32069	Ribadavia	0	None
+2015-01-01	ES	España	12	Galicia	32	Ourense	32072	Rúa, A	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32073	Rubiá	1	32676
 2015-01-01	ES	España	12	Galicia	32	Ourense	32075	San Cibrao das Viñas	1	18322
 2015-01-01	ES	España	12	Galicia	32	Ourense	32081	Toén	1	17436
@@ -3780,6 +3783,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	16	País Vasco	20	Gipuzkoa	20027	Zestoa	0	None
 2015-01-01	ES	España	16	País Vasco	20	Gipuzkoa	20028	Zizurkil	0	None
 2015-01-01	ES	España	16	País Vasco	20	Gipuzkoa	20081	Zumaia	1	39033
+2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26001	Ábalos	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26002	Agoncillo	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26005	Albelda de Iregua	1	16453
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26006	Alberite	1	1798

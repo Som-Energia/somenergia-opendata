@@ -108,6 +108,7 @@ ES	España	01	Andalucia	18	Granada	18134	Monachil	2	2	2	2
 ES	España	01	Andalucia	18	Granada	18138	Moraleda de Zafayona	0	0	0	0
 ES	España	01	Andalucia	18	Granada	18140	Motril	4	4	4	4
 ES	España	01	Andalucia	18	Granada	18141	Murtas	0	0	0	0
+ES	España	01	Andalucia	18	Granada	18143	Nigüelas	0	0	0	0
 ES	España	01	Andalucia	18	Granada	18144	Nívar	0	0	0	0
 ES	España	01	Andalucia	18	Granada	18145	Ogíjares	0	0	0	0
 ES	España	01	Andalucia	18	Granada	18149	Otura	0	0	0	0
@@ -499,7 +500,7 @@ ES	España	04	Baleares, Islas	07	Balears, Illes	07030	Llubí	3	3	3	3
 ES	España	04	Baleares, Islas	07	Balears, Illes	07031	Llucmajor	19	20	20	20
 ES	España	04	Baleares, Islas	07	Balears, Illes	07033	Manacor	38	38	38	38
 ES	España	04	Baleares, Islas	07	Balears, Illes	07034	Mancor de la Vall	7	7	7	7
-ES	España	04	Baleares, Islas	07	Balears, Illes	07032	Maó	45	46	47	49
+ES	España	04	Baleares, Islas	07	Balears, Illes	07032	Maó	46	47	48	50
 ES	España	04	Baleares, Islas	07	Balears, Illes	07035	Maria de la Salut	3	3	2	2
 ES	España	04	Baleares, Islas	07	Balears, Illes	07036	Marratxí	37	39	39	40
 ES	España	04	Baleares, Islas	07	Balears, Illes	07037	Mercadal, Es	8	8	8	8
@@ -1060,7 +1061,7 @@ ES	España	09	Cataluña	08	Barcelona	08096	Granollers	61	63	63	64
 ES	España	09	Cataluña	08	Barcelona	08097	Gualba	6	6	7	9
 ES	España	09	Cataluña	08	Barcelona	08099	Guardiola de Berguedà	2	2	2	2
 ES	España	09	Cataluña	08	Barcelona	08100	Gurb	6	6	6	7
-ES	España	09	Cataluña	08	Barcelona	08101	Hospitalet de Llobregat, L'	119	122	130	135
+ES	España	09	Cataluña	08	Barcelona	08101	Hospitalet de Llobregat, L'	120	123	131	136
 ES	España	09	Cataluña	08	Barcelona	08162	Hostalets de Pierola, Els	5	5	5	5
 ES	España	09	Cataluña	08	Barcelona	08102	Igualada	45	48	49	49
 ES	España	09	Cataluña	08	Barcelona	08103	Jorba	1	1	2	2
@@ -1144,10 +1145,11 @@ ES	España	09	Cataluña	08	Barcelona	08181	Roca del Vallès, La	11	13	15	15
 ES	España	09	Cataluña	08	Barcelona	08183	Roda de Ter	6	6	6	6
 ES	España	09	Cataluña	08	Barcelona	08184	Rubí	87	87	90	92
 ES	España	09	Cataluña	08	Barcelona	08185	Rubió	1	1	1	1
-ES	España	09	Cataluña	08	Barcelona	08187	Sabadell	367	371	378	385
+ES	España	09	Cataluña	08	Barcelona	08187	Sabadell	366	370	377	384
 ES	España	09	Cataluña	08	Barcelona	08188	Sagàs	0	0	0	0
 ES	España	09	Cataluña	08	Barcelona	08190	Saldes	3	3	3	3
 ES	España	09	Cataluña	08	Barcelona	08191	Sallent	10	11	11	11
+ES	España	09	Cataluña	08	Barcelona	08243	Santa Cecília de Voltregà	0	0	0	0
 ES	España	09	Cataluña	08	Barcelona	08244	Santa Coloma de Cervelló	11	11	13	13
 ES	España	09	Cataluña	08	Barcelona	08245	Santa Coloma de Gramenet	61	61	61	61
 ES	España	09	Cataluña	08	Barcelona	08194	Sant Adrià de Besòs	16	17	18	18
@@ -1881,6 +1883,7 @@ ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03128	Teulada	0	0	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03129	Tibi	0	0	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03132	Torremanzanas/Torre de les Maçanes, la	0	0	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03133	Torrevieja	1	1	2	2
+ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03136	Vall de Gallinera	0	0	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03137	Vall de Laguar, la	0	0	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03138	Verger, el	0	0	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03139	Villajoyosa/Vila Joiosa, la	6	6	6	6
@@ -1955,7 +1958,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46014	Albuixech	4	4	4	4
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46016	Alcàntera de Xúquer	0	0	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46015	Alcàsser	10	10	10	10
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46019	Alcúdia, l'	6	6	6	6
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46021	Aldaia	14	14	15	15
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46021	Aldaia	13	13	14	14
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46022	Alfafar	4	4	4	4
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46024	Alfara de la Baronia	0	0	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46025	Alfara del Patriarca	0	0	0	0
@@ -2094,7 +2097,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46244	Torrent	24	24	25	
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46245	Torres Torres	0	0	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46246	Tous	0	0	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46249	Utiel	0	0	0	0
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46250	Valencia	456	472	484	497
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46250	Valencia	457	473	485	498
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46251	Vallada	3	3	3	3
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46252	Vallanca	1	1	1	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46254	Venta del Moro	1	1	1	1
@@ -2263,7 +2266,7 @@ ES	España	12	Galicia	36	Pontevedra	36054	Tomiño	0	0	0	0
 ES	España	12	Galicia	36	Pontevedra	36057	Vigo	33	34	34	35
 ES	España	12	Galicia	36	Pontevedra	36058	Vilaboa	1	1	1	1
 ES	España	12	Galicia	36	Pontevedra	36060	Vilagarcía de Arousa	6	6	6	6
-ES	España	13	Madrid, Comunidad de	28	Madrid	28001	Acebeda, La	6	6	6	6
+ES	España	13	Madrid, Comunidad de	28	Madrid	28001	Acebeda, La	5	5	5	5
 ES	España	13	Madrid, Comunidad de	28	Madrid	28002	Ajalvir	1	1	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28004	Álamo, El	0	0	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28005	Alcalá de Henares	47	48	51	53
@@ -2355,7 +2358,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28118	Puebla de la Sierra	0	0	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28902	Puentes Viejas	0	1	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28120	Rascafría	1	1	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28122	Ribatejada	0	0	0	0
-ES	España	13	Madrid, Comunidad de	28	Madrid	28123	Rivas-Vaciamadrid	22	22	22	22
+ES	España	13	Madrid, Comunidad de	28	Madrid	28123	Rivas-Vaciamadrid	23	23	23	23
 ES	España	13	Madrid, Comunidad de	28	Madrid	28124	Robledillo de la Jara	0	0	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28125	Robledo de Chavela	1	1	1	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28127	Rozas de Madrid, Las	17	17	21	22
@@ -2428,7 +2431,7 @@ ES	España	14	Murcia, Región de	30	Murcia	30030	Murcia	70	76	77	77
 ES	España	14	Murcia, Región de	30	Murcia	30035	San Javier	1	1	1	1
 ES	España	14	Murcia, Región de	30	Murcia	30036	San Pedro del Pinatar	0	0	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30901	Santomera	4	4	4	4
-ES	España	14	Murcia, Región de	30	Murcia	30037	Torre-Pacheco	1	2	2	2
+ES	España	14	Murcia, Región de	30	Murcia	30037	Torre-Pacheco	2	3	3	3
 ES	España	14	Murcia, Región de	30	Murcia	30038	Torres de Cotillas, Las	3	3	3	3
 ES	España	14	Murcia, Región de	30	Murcia	30039	Totana	0	1	1	1
 ES	España	14	Murcia, Región de	30	Murcia	30041	Unión, La	1	1	1	1
