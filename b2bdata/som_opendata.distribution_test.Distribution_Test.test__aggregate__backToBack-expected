@@ -1198,6 +1198,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '23017':
+                name: Cabra del Santo Cristo
+                values:
+                - 0
+                - 0
               '23024':
                 name: Carolina, La
                 values:
@@ -3154,6 +3159,11 @@ countries:
                 values:
                 - 1
                 - 1
+              '50152':
+                name: Maella
+                values:
+                - 0
+                - 0
               '50153':
                 name: Magallón
                 values:
@@ -16585,6 +16595,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '32072':
+                name: Rúa, A
+                values:
+                - 0
+                - 0
               '32073':
                 name: Rubiá
                 values:
@@ -19308,6 +19323,11 @@ countries:
             - 184
             - 194
             cities:
+              '26001':
+                name: Ábalos
+                values:
+                - 0
+                - 0
               '26002':
                 name: Agoncillo
                 values:
