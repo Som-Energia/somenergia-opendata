@@ -5,7 +5,7 @@ from som_opendata import __version__
 readme = open("README.md").read()
 
 setup(
-	name = "somenergia_api",
+	name = "somenergia-opendata",
 	version = __version__,
 	description =
 		"Som Energia API for opendata access",
@@ -13,6 +13,7 @@ setup(
 	author_email = "info@somenergia.coop",
 	url = 'https://github.com/Som-Energia/somenergia-api',
 	long_description = readme,
+	long_description_content_type = 'text/markdown', 
 	license = 'GNU Affero General Public License v3 or later (AGPLv3+)',
 	packages=find_packages(exclude=['*[tT]est*']),
 	scripts=[
