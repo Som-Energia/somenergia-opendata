@@ -19,7 +19,7 @@ setup(
 		'run_api.py',
 	],
 	install_requires=[
-		'yamlns>=0.3', # earlier are not Py2 compatible
+		'yamlns>=0.7', # earlier are not Py2 compatible
 		'Flask',
 		'Flask-Cors',
 		'psycopg2',
@@ -27,7 +27,7 @@ setup(
 		'nose',
 		'b2btest',
 		'coverage',
-		'consolemsg',
+		'consolemsg>=0.3.3',
 		'wavefile',
 		'lxml',
 		'python-dateutil',
