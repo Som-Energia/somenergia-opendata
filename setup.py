@@ -33,7 +33,9 @@ setup(
 		'python-dateutil',
 		'records',
 		'tablib',
-		# somenergia-utils
+		'pathlib2',
+		'somutils',
+		'future',
 	],
 	include_package_data = True,
 	test_suite = 'som_opendata',
