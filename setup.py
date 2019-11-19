@@ -22,7 +22,7 @@ setup(
 		'yamlns>=0.7', # earlier are not Py2 compatible
 		'Flask',
 		'Flask-Cors',
-		'psycopg2',
+		'psycopg2-binary',
 		'rednose',
 		'nose',
 		'b2btest',
