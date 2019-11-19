@@ -75,7 +75,7 @@ class Distribution_Test(unittest.TestCase):
         self.assertEqual(parse_tsv(fixture), [['item1', 'item2']])
 
 
-    from .testutils import assertNsEqual
+    from somutils.testutils import assertNsEqual
 
     def assertTupleToObjectEquals(self, csv_input, yaml_output):
         fixture = parse_tsv(csv_input)

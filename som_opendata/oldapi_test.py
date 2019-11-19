@@ -26,7 +26,7 @@ class BaseApi_Test(unittest.TestCase):
     def get(self, *args, **kwds):
         return self.client.get(*args,**kwds)
 
-    from .testutils import assertNsEqual
+    from somutils.testutils import assertNsEqual
 
     def assertYamlResponse(self, response, expected):
         self.assertNsEqual(response.data, expected)

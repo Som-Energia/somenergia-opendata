@@ -19,7 +19,7 @@ data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
 class CsvSource_Test(unittest.TestCase):
 
-    from .testutils import assertNsEqual
+    from somutils.testutils import assertNsEqual
 
     def setUp(self):
         self.maxDiff=None
