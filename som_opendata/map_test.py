@@ -1,9 +1,11 @@
 import unittest
 from yamlns.dateutils import Date
+from yamlns import namespace as ns
 from .map import dataToSvgDict
 
+
 """\
-dates: ["""+str(Date.today())+"""]
+dates: [2019-01-01]
 values: [123]
 countries:
   ES:
@@ -29,16 +31,16 @@ class Map_Test(unittest.TestCase):
     from somutils.testutils import assertNsEqual
 
     def test_dataToSvgDict_withNoRegion(self):
-        data = """\
-            dates: ["""+str(Date.today())+"""]
+        data = ns.loads("""\
+            dates: [2019-01-01]
             values: [123]
             countries:
               ES:
                 name: España
                 values: [123]
                 ccaas: {}
-            """
-        result = dataToSvgDict(titol="un títol", subtitol="un subtítol")
+            """)
+        result = dataToSvgDict(titol="un títol", subtitol="un subtítol", data=data)
 
         self.assertNsEqual(result, """\
             titol: un títol

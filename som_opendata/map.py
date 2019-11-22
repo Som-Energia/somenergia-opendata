@@ -1,10 +1,11 @@
 from yamlns import namespace as ns
 
 
-def dataToSvgDict(titol, subtitol):
+def dataToSvgDict(titol, subtitol, data):
+    date = data.dates[0]
     return ns(
             titol = titol,
             subtitol = subtitol,
-            year = 2019,
-            month = 1,
+            year = date.year,
+            month = date.month,
         )
