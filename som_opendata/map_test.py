@@ -81,14 +81,14 @@ class Map_Test(unittest.TestCase):
             year: 2019
             month: 1
             number_01: 123
-            percent_01: 100
+            percent_01: 100,0%
             color_01: '#fff'
         """)
 
     def test_dataToSvgDict_manyRegions(self):
         data = ns.loads("""\
             dates: [2019-01-01]
-            values: [123]
+            values: [143]
             countries:
               ES:
                 name: España
@@ -109,9 +109,9 @@ class Map_Test(unittest.TestCase):
             year: 2019
             month: 1
             number_01: 123
-            percent_01: 100
+            percent_01: 86,0%
             color_01: '#fff'
             number_09: 20
-            percent_09: 100
+            percent_09: 14,0%
             color_09: '#fff'
         """)
