@@ -12,8 +12,9 @@ def dataToSvgDict(titol, subtitol, data):
     if not data.countries.ES.ccaas:
         return result
 
+    ccaa = data.countries.ES.ccaas['01']
     result.update(
-        number_01=123,
+        number_01=ccaa["values"][0],
         percent_01=100,
         color_01="#fff",
         )
