@@ -48,3 +48,28 @@ class Map_Test(unittest.TestCase):
             year: 2019
             month: 1
         """)
+
+    def test_dataToSvgDict_withOneRegion(self):
+        data = ns.loads("""\
+            dates: [2019-01-01]
+            values: [123]
+            countries:
+              ES:
+                name: España
+                values: [123]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [123]
+            """)
+        result = dataToSvgDict(titol="un títol", subtitol="un subtítol", data=data)
+
+        self.assertNsEqual(result, """\
+            titol: un títol
+            subtitol: un subtítol
+            year: 2019
+            month: 1
+            number_01: 123
+            percent_01: 100
+            color_01: '#fff'
+        """)
