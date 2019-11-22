@@ -85,7 +85,7 @@ class Map_Test(unittest.TestCase):
             color_01: '#fff'
         """)
 
-    def _test_dataToSvgDict_manyRegions(self):
+    def test_dataToSvgDict_manyRegions(self):
         data = ns.loads("""\
             dates: [2019-01-01]
             values: [123]

@@ -12,11 +12,10 @@ def dataToSvgDict(titol, subtitol, data):
     if not data.countries.ES.ccaas:
         return result
 
-    code = '01'
-    ccaa = data.countries.ES.ccaas[code]
-    result.update({
-        'number_' + code: ccaa["values"][0],
-        'percent_' + code: 100,
-        'color_' + code: "#fff",
-        })
+    for code, ccaa in data.countries.ES.ccaas.items():
+        result.update({
+            'number_' + code: ccaa["values"][0],
+            'percent_' + code: 100,
+            'color_' + code: "#fff",
+            })
     return result
