@@ -1,7 +1,7 @@
 from yamlns import namespace as ns
 
 
-def dataToSvgDict(titol, subtitol, data):
+def dataToTemplateDict(titol, subtitol, data):
     date = data.dates[0]
     result = ns(
             titol = titol,
@@ -9,8 +9,6 @@ def dataToSvgDict(titol, subtitol, data):
             year = date.year,
             month = date.month,
         )
-    if not data.countries.ES.ccaas:
-        return result
 
     totalValue = data["values"][0]
     for code, ccaa in data.countries.ES.ccaas.items():
