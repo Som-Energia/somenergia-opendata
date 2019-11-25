@@ -1,3 +1,5 @@
+# -*- encoding: utf8 -*-
+
 import b2btest
 import unittest
 from yamlns.dateutils import Date
