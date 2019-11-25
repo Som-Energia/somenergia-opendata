@@ -1,5 +1,7 @@
 def greens(point):
+    lower = int('e3f4d8',16)
+    higher = int('2d5016',16)
     if not point:
-        return '#e3f4d8'
+        return '#{}'.format(hex(lower).strip('0x'))
     else:
-        return '#2d5016'
+        return '#{}'.format(hex(higher).strip('0x'))
