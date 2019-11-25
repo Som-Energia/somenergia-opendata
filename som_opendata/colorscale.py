@@ -1,8 +1,15 @@
 def greens(point):
-    lower =  [223,233,194]
-    higher = [60,72,20]
-    if not point:
-        return '({})'.format(str(lower).strip('[').strip(']'))
+    lower = [223, 233, 194]
+    middle = [150, 182, 52]
+    higher = [60, 72, 20]
+    rangeDarker =[m - h for m, h in zip(middle, higher)]
+    rangeBrighter = [l - m for l, m in zip(lower, middle)]
+
+    if point < 0.5:
+        val = [l - round(rBrig * point)
+                for l, rBrig in zip(lower, rangeBrighter)]
+        return '({})'.format(str(val).strip('[').strip(']'))
     else:
-       
+        val = [m - round(rDark * point)
+                for m, rDark in zip(middle, rangeDarker)]
         return '({})'.format(str(higher).strip('[').strip(']'))
