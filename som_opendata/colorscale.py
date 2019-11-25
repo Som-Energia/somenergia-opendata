@@ -6,10 +6,11 @@ def greens(point):
     rangeBrighter = [l - m for l, m in zip(lower, middle)]
 
     if point < 0.5:
-        val = [l - round(rBrig * point)
+        val = [l - round(rBrig * point / 2)
                 for l, rBrig in zip(lower, rangeBrighter)]
         return '({})'.format(str(val).strip('[').strip(']'))
     else:
-        val = [m - round(rDark * point)
+        newPoint = (point - 0.5) * 2
+        val = [m - round(rDark * newPoint)
                 for m, rDark in zip(middle, rangeDarker)]
-        return '({})'.format(str(higher).strip('[').strip(']'))
+        return '({})'.format(str(val).strip('[').strip(']'))
