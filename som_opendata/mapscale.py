@@ -5,4 +5,7 @@ class Scale(object):
         self.high = higher
 
     def __call__(self, point):
-        return 0
+        if point == self.low:
+            return 0
+        else:
+            return 1
