@@ -1,16 +1,18 @@
-def greens(point):
-    lower = [223, 233, 194]
-    middle = [150, 182, 52]
-    higher = [60, 72, 20]
-    rangeDarker =[m - h for m, h in zip(middle, higher)]
-    rangeBrighter = [l - m for l, m in zip(lower, middle)]
+from colour import Color
 
-    if point < 0.5:
-        val = [l - round(rBrig * point / 2)
-                for l, rBrig in zip(lower, rangeBrighter)]
-        return '({})'.format(str(val).strip('[').strip(']'))
-    else:
-        newPoint = (point - 0.5) * 2
-        val = [m - round(rDark * newPoint)
-                for m, rDark in zip(middle, rangeDarker)]
-        return '({})'.format(str(val).strip('[').strip(']'))
+
+class Gradient(object):
+
+    def __init__(self, fro, to):
+        self.low = Color(fro)
+        self.end = Color(to)
+
+    def __call__(self, point):
+        if point <= 0:
+            return self.low.hex_l
+        elif point >= 1:
+            return self.end.hex_l
+        else:
+            hsl_diff = [e - l for e, l in zip(self.end.hsl, self.low.hsl)]
+            res = [l + dif * point for l, dif in zip(self.low.hsl, hsl_diff)]
+            return Color(hsl=res).hex_l

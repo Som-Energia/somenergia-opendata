@@ -1,9 +1,10 @@
 class MapScale(object):
 
-    def __init__(self, min, max, type='linear'):
-        self.min = min
-        self.max = max
+    def __init__(self, lower, higher, type='linear'):
+        self.low = lower
+        self.high = higher
         self.type = type
 
     def __call__(self, point):
-        return 0
+        val = 
+        return round(val, 2)
