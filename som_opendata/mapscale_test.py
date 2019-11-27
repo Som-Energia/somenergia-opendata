@@ -29,21 +29,21 @@ class Scale_test(unittest.TestCase):
         self.assertEqual(scale(100), 1)
 
     def test_logScale_min(self):
-        scale = LogScale(higher=10000)
-        self.assertEqual(scale(1), 0)
+        scale = LogScale(lower=100, higher=10000)
+        self.assertEqual(scale(100), 0)
 
     def test_logScale_max(self):
-        scale = LogScale(higher=10000)
+        scale = LogScale(lower=100, higher=10000)
         self.assertEqual(scale(10000), 1)
 
     def test_logScale_middle(self):
-        scale = LogScale(higher=10000)
-        self.assertEqual(scale(100), 0.5)
+        scale = LogScale(lower=100, higher=10000)
+        self.assertEqual(scale(1000), 0.5)
 
     def test_logScale_outRangeLow(self):
-        scale = LogScale(higher=10000)
+        scale = LogScale(lower=100, higher=10000)
         self.assertEqual(scale(-1), 0)
 
     def test_logScale_outRangeHigh(self):
-        scale = LogScale(higher=10000)
-        self.assertEqual(scale(100000), 1.25)
+        scale = LogScale(lower=100, higher=10000)
+        self.assertEqual(scale(100000), 1.5)
