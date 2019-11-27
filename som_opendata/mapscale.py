@@ -27,5 +27,8 @@ class LogScale(object):
         else:
             return log10(val / self.low) / log10(self.high / self.low)
 
-    def inverse(self,val):
-        return val
+    def inverse(self, val):
+        if not val:
+            return self.low
+        else:
+            return self.high

@@ -85,3 +85,7 @@ class Scale_test(unittest.TestCase):
     def test_inverseLog_min(self):
         scale = LogScale(higher=1000)
         self.assertEqual(scale(scale.inverse(0)), 0)
+
+    def test_inverseLog_max(self):
+        scale = LogScale(higher=1000)
+        self.assertEqual(scale(scale.inverse(1)), 1)
