@@ -1,7 +1,7 @@
 from math import log10
 
 class LinearScale(object):
-
+#TODO assert low <= high
     def __init__(self, lower=0, higher=100):
         self.low = lower
         self.high = higher
@@ -15,8 +15,9 @@ class LinearScale(object):
     def inverse(self, val):
         return self.low + val * (self.high - self.low)
 
-class LogScale(object):
 
+class LogScale(object):
+#TODO assert low, high > 0
     def __init__(self, higher, lower=1):
         self.low = lower
         self.high = higher

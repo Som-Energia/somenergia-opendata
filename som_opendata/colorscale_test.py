@@ -24,3 +24,7 @@ class ColorScale_Test(unittest.TestCase):
     def test_gradient_outRangeHigh(self):
         gradient = Gradient('#e0ecbb','#384413')
         self.assertEqual(gradient(2), '#384413')
+
+    def test_gradient_reverseHueWay(self):
+        gradient = Gradient('#bf4040', '#a640bf')
+        self.assertEqual(gradient(0.5), '#bf8c40')
