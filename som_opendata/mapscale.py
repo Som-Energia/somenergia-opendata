@@ -5,4 +5,7 @@ class Scale(object):
         self.high = higher
 
     def __call__(self, val):
-        return (val - self.low) / (self.high - self.low)
+        if self.low == self.high:
+            return 1
+        else:
+            return (val - self.low) / (self.high - self.low)

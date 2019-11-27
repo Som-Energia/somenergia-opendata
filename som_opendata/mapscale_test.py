@@ -23,3 +23,7 @@ class Scale_test(unittest.TestCase):
     def test_scale_outRangeHigh(self):
         scale = Scale(0,100)
         self.assertEqual(scale(125), 1.25)
+
+    def test_scale_minEqualMax(self):
+        scale = Scale(100,100)
+        self.assertEqual(scale(100), 1)
