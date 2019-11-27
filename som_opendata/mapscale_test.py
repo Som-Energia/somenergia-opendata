@@ -64,3 +64,7 @@ class Scale_test(unittest.TestCase):
         scale = LinearScale()
         self.assertEqual(scale(scale.inverse(-0.25)), -0.25)
         self.assertEqual(scale(scale.inverse(1.25)), 1.25)
+
+    def test_inverseLin_min_set(self):
+        scale = LinearScale(lower=100, higher=1000)
+        self.assertEqual(scale(scale.inverse(0)), 0)
