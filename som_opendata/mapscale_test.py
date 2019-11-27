@@ -58,4 +58,9 @@ class Scale_test(unittest.TestCase):
 
     def test_inverseLin_midlle(self):
         scale = LinearScale()
-        self.assertEqual(scale(scale.inverse(0.5)),0.5)        
+        self.assertEqual(scale(scale.inverse(0.5)),0.5)
+
+    def test_LinearScale_inverseOutRange(self):
+        scale = LinearScale()
+        self.assertEqual(scale(scale.inverse(-0.25)), -0.25)
+        self.assertEqual(scale(scale.inverse(1.25)), 1.25)
