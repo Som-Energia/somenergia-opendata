@@ -1,6 +1,6 @@
 from math import log10
 
-class Scale(object):
+class LinearScale(object):
 
     def __init__(self, lower=0, higher=100):
         self.low = lower
@@ -23,4 +23,4 @@ class LogScale(object):
         if val <= 0:
             return 0
         else:
-            return log10(val/self.low)/log10(self.high/self.low)
+            return log10(val / self.low) / log10(self.high / self.low)
