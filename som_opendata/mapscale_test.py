@@ -39,3 +39,7 @@ class Scale_test(unittest.TestCase):
     def test_logScale_middle(self):
         scale = LogScale(higher=10000)
         self.assertEqual(scale(100), 0.5)
+
+    def test_logScale_outRangeLow(self):
+        scale = LogScale(higher=10000)
+        self.assertEqual(scale(-1), 0)

@@ -19,4 +19,7 @@ class LogScale(object):
         self.high = higher
 
     def __call__(self, val):
-        return log10(val)/log10(self.high)
+        if val <= 0:
+            return 0
+        else:
+            return log10(val)/log10(self.high)
