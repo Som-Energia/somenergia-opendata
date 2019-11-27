@@ -1,3 +1,5 @@
+from math import log10
+
 class Scale(object):
 
     def __init__(self, lower=0, higher=100):
@@ -9,3 +11,12 @@ class Scale(object):
             return 1
         else:
             return (val - self.low) / (self.high - self.low)
+
+
+class LogScale(object):
+
+    def __init__(self, higher):
+        self.high = higher
+
+    def __call__(self, val):
+        return log10(val)/log10(self.high)
