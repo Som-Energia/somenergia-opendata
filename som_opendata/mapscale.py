@@ -13,7 +13,7 @@ class LinearScale(object):
             return (val - self.low) / (self.high - self.low)
 
     def inverse(self, val):
-        return self.low + val * self.high
+        return self.low + val * (self.high - self.low)
 
 class LogScale(object):
 
