@@ -47,3 +47,7 @@ class Scale_test(unittest.TestCase):
     def test_logScale_outRangeHigh(self):
         scale = LogScale(lower=100, higher=10000)
         self.assertEqual(scale(100000), 1.5)
+
+    def test_inverseLin_min(self):
+        scale = LinearScale()
+        self.assertEqual(scale.inverse(0), 0)
