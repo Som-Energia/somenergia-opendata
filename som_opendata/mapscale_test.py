@@ -55,3 +55,7 @@ class Scale_test(unittest.TestCase):
     def test_inverseLin_max(self):
         scale = LinearScale(higher=100)
         self.assertEqual(scale(scale.inverse(1)),1)
+
+    def test_inverseLin_midlle(self):
+        scale = LinearScale()
+        self.assertEqual(scale(scale.inverse(0.5)),0.5)        
