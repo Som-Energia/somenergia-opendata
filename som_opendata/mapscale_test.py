@@ -127,3 +127,11 @@ class Scale_test(unittest.TestCase):
             "Log not defined for values <= 0",
             str(context.exception)
         )
+
+    def test_LinearScale_minGreaterMax(self):
+        with self.assertRaises(ValueError) as context:
+            LinearScale(lower=1000, higher=10)
+        self.assertEqual(
+            "Lower value is greater than higher value",
+            str(context.exception)
+        )

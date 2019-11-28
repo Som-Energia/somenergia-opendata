@@ -3,6 +3,8 @@ from math import log10
 class LinearScale(object):
 #TODO assert low <= high
     def __init__(self, lower=0, higher=100):
+        if higher < lower:
+            raise ValueError("Lower value is greater than higher value")
         self.low = lower
         self.high = higher
 
@@ -17,7 +19,7 @@ class LinearScale(object):
 
 
 class LogScale(object):
-#TODO assert low, high > 0
+
     def __init__(self, higher, lower=1):
         if higher < lower:
             raise ValueError("Lower value is greater than higher value")
