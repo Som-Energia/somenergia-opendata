@@ -48,7 +48,7 @@ class Map_Test(unittest.TestCase):
             month: 1
             number_01: 123
             percent_01: 100,0%
-            color_01: '#fff'
+            color_01: '#384413'
         """)
 
     def test_dataToTemplateDict_manyRegions(self):
@@ -76,8 +76,8 @@ class Map_Test(unittest.TestCase):
             month: 1
             number_01: 123
             percent_01: 86,0%
-            color_01: '#fff'
+            color_01: '#56691d'
             number_09: 20
             percent_09: 14,0%
-            color_09: '#fff'
+            color_09: '#cfe296'
         """)

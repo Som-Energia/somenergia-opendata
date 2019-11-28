@@ -1,4 +1,6 @@
 from yamlns import namespace as ns
+from .mapscale import LinearScale
+from .colorscale import Gradient
 
 
 def dataToTemplateDict(titol, subtitol, data):
@@ -10,12 +12,14 @@ def dataToTemplateDict(titol, subtitol, data):
             month = date.month,
         )
 
+    scale = LinearScale(higher=data["values"][0])
+    color = Gradient('#e0ecbb','#384413')
     totalValue = data["values"][0]
     for code, ccaa in data.countries.ES.ccaas.items():
         value = ccaa["values"][0]
         result.update({
             'number_' + code: value,
             'percent_' + code: '{:.1f}%'.format(value*100./totalValue).replace('.',','),
-            'color_' + code: "#fff",
+            'color_' + code: color(scale(value)),
             })
     return result
