@@ -118,6 +118,7 @@ class Map_Test(unittest.TestCase):
             year: 2019
             month: 1
             number_00: 0
+            percent_00: 0,0%
         """)
 
     def test_dataToTemplateDict_singleRegion(self):
@@ -141,6 +142,7 @@ class Map_Test(unittest.TestCase):
             year: 2019
             month: 1
             number_00: 0
+            percent_00: 0,0%
             number_01: 123
             percent_01: 100,0%
             color_01: '#384413'
@@ -170,6 +172,7 @@ class Map_Test(unittest.TestCase):
             year: 2019
             month: 1
             number_00: 0
+            percent_00: 0,0%
             number_01: 123
             percent_01: 86,0%
             color_01: '#56691d'
@@ -199,6 +202,7 @@ class Map_Test(unittest.TestCase):
             year: 2019
             month: 1
             number_00: 3
+            percent_00: 2,4%
             number_01: 123
             percent_01: 100,0%
             color_01: '#384413'

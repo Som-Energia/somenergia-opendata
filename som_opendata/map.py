@@ -22,7 +22,11 @@ def dataToTemplateDict(titol, subtitol, data):
             'percent_' + code: '{:.1f}%'.format(scale(value)*100).replace('.',','),
             'color_' + code: color(scale(value)),
             })
-    result.update({'number_00': data["values"][0]-data.countries.ES["values"][0]})
+    restWorld = data["values"][0] - data.countries.ES["values"][0]
+    result.update({
+        'number_00': restWorld,
+        'percent_00': '{:.1f}%'.format(restWorld * 100. / data["values"][0]).replace('.',','),
+        })
     return result
 
 
