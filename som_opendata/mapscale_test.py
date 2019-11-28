@@ -111,3 +111,19 @@ class Scale_test(unittest.TestCase):
         scale = LogScale(higher=1000)
         self.assertEqual(scale(scale.inverse(-0.25)), -0.25)
         self.assertEqual(scale(scale.inverse(1.25)), 1.25)
+
+    def test_LogScale_minGreaterMax(self):
+        with self.assertRaises(ValueError) as context:
+            LogScale(lower=1000, higher=10)
+        self.assertEqual(
+            "Lower value is greater than higher value",
+            str(context.exception)
+        )
+
+    def test_LogScale_scaleStartNotValid(self):
+        with self.assertRaises(ValueError) as context:
+            LogScale(lower=0, higher=10)
+        self.assertEqual(
+            "Log not defined for values <= 0",
+            str(context.exception)
+        )
