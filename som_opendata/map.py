@@ -19,7 +19,7 @@ def dataToTemplateDict(titol, subtitol, data):
         value = ccaa["values"][0]
         result.update({
             'number_' + code: value,
-            'percent_' + code: '{:.1f}%'.format(value*100./totalValue).replace('.',','),
+            'percent_' + code: '{:.1f}%'.format(scale(value)*100).replace('.',','),
             'color_' + code: color(scale(value)),
             })
     return result
