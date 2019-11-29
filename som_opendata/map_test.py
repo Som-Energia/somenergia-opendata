@@ -3,10 +3,11 @@ import unittest
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
 from .map import dataToTemplateDict, renderMap
+from .colorscale import Gradient
 
 fullData = ns.loads("""\
     dates:
-    - 2013-01-01
+    - 2019-11-01
     values:
     - 3208
     countries:
@@ -110,13 +111,14 @@ class Map_Test(unittest.TestCase):
                 values: [123]
                 ccaas: {}
             """)
-        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data)
+        color = Gradient('#e0ecbb','#384413')
+        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colors=color)
 
         self.assertNsEqual(result, """\
             titol: un títol
             subtitol: un subtítol
             year: 2019
-            month: 1
+            month: Enero
             number_00: 0
             percent_00: 0,0%
         """)
@@ -134,13 +136,14 @@ class Map_Test(unittest.TestCase):
                     name: Andalucía
                     values: [123]
             """)
-        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data)
+        color = Gradient('#e0ecbb','#384413')
+        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colors=color)
 
         self.assertNsEqual(result, """\
             titol: un títol
             subtitol: un subtítol
             year: 2019
-            month: 1
+            month: Enero
             number_00: 0
             percent_00: 0,0%
             number_01: 123
@@ -164,13 +167,14 @@ class Map_Test(unittest.TestCase):
                     name: Catalunya
                     values: [20]
             """)
-        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data)
+        color = Gradient('#e0ecbb','#384413')
+        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colors=color)
 
         self.assertNsEqual(result, """\
             titol: un títol
             subtitol: un subtítol
             year: 2019
-            month: 1
+            month: Enero
             number_00: 0
             percent_00: 0,0%
             number_01: 123
@@ -194,20 +198,57 @@ class Map_Test(unittest.TestCase):
                     name: Andalucía
                     values: [123]
             """)
-        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data)
+        color = Gradient('#e0ecbb','#384413')
+        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colors=color)
 
         self.assertNsEqual(result, """\
             titol: un títol
             subtitol: un subtítol
             year: 2019
-            month: 1
+            month: Enero
             number_00: 3
             percent_00: 2,4%
             number_01: 123
-            percent_01: 100,0%
-            color_01: '#384413'
+            percent_01: 97,6%
+            color_01: '#3d4a15'
         """)
 
-    def _test_renderMap_singleRegion(self):
-        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=fullData)
+    def test_dataToTemplateDict_LogColorScale(self):
+        data = ns.loads("""\
+            dates: [2019-01-01]
+            values: [143]
+            countries:
+              ES:
+                name: España
+                values: [143]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [123]
+                  '09':
+                    name: Catalunya
+                    values: [20]
+            """)
+        color = Gradient('#e0ecbb','#384413')
+        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colorScale='Log', colors=color)
+
+        self.assertNsEqual(result, """\
+            titol: un títol
+            subtitol: un subtítol
+            year: 2019
+            month: Enero
+            number_00: 0
+            percent_00: 0,0%
+            number_01: 123
+            percent_01: 86,0%
+            color_01: '#3f4c15'
+            number_09: 20
+            percent_09: 14,0%
+            color_09: '#8eac30'
+        """)
+
+    #@unittest.skip("Not implemented yet")
+    def test_renderMap_singleRegion(self):
+        color = Gradient('#e0ecbb','#384413')
+        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=fullData, colorScale='Log', colors=color)
         self.assertB2BEqual(renderMap(data=result, template='MapaSocios-template.svg'))
