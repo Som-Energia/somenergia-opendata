@@ -2,7 +2,7 @@ import b2btest
 import unittest
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
-from .map import dataToTemplateDict, renderMap
+from .map import dataToTemplateDict, renderMap, addEmpty
 from .colorscale import Gradient
 
 fullData = ns.loads("""\
@@ -93,6 +93,7 @@ fullData = ns.loads("""\
             values:
             - 5
 """)
+
 
 class Map_Test(unittest.TestCase):
 
@@ -247,11 +248,58 @@ class Map_Test(unittest.TestCase):
             color_09: '#cfe296'
         """)
 
-    unittest.skip("Not implemented yet")
+    #@unittest.skip("Not implemented yet")
     def test_renderMap_singleRegion(self):
         color = Gradient('#e0ecbb','#384413')
 
         self.assertB2BEqual(
             renderMap(data=fullData, template='MapaSocios-template.svg',
+                colors=color, title="un títol", subtitle="un subtítol")
+        )
+
+    def test_addEmpty_number(self):
+        data =ns.loads("""\
+            titol: un títol
+            subtitol: un subtítol
+            year: 2019
+            month: Enero
+            number_00: 3
+            percent_00: 2,4%
+            number_01: 123
+            percent_01: 97,6%
+            color_01: '#394513'
+        """)
+        
+        self.assertNsEqual(addEmpty('number_02',data=data), """\
+            titol: un títol
+            subtitol: un subtítol
+            year: 2019
+            month: Enero
+            number_00: 3
+            percent_00: 2,4%
+            number_01: 123
+            percent_01: 97,6%
+            color_01: '#394513'
+            number_02: 0
+        """)
+
+    @unittest.skip("not implemented yet")
+    def test_renderMap_missingCCAAs(self):
+        data = ns.loads("""\
+            dates: [2019-01-01]
+            values: [123]
+            countries:
+              ES:
+                name: España
+                values: [123]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [123]
+            """)
+        color = Gradient('#e0ecbb','#384413')
+
+        self.assertB2BEqual(
+            renderMap(data=data, template='MapaSocios-template.svg',
                 colors=color, title="un títol", subtitle="un subtítol")
         )

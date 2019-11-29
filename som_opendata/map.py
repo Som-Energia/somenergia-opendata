@@ -40,6 +40,9 @@ def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log'):
         })
     return result
 
+def addEmpty(missing, data):
+    data.update({missing: 0})
+    return data
 
 def renderMap(data, template, colors, title, subtitle='', colorScale='Log'):
 
@@ -48,6 +51,12 @@ def renderMap(data, template, colors, title, subtitle='', colorScale='Log'):
     with open(template, 'r') as svgTemplateFile:
         svgTemplate = svgTemplateFile.read()
 
-    svgContent = svgTemplate.format(**dataDict)
-
+    finished = False
+    while not finished:
+        try:
+            svgContent = svgTemplate.format(**dataDict)
+            finished = True
+        except KeyError as ke:
+            addEmpty(missing=ke, data=dataDict)
+            finished = True
     return svgContent
