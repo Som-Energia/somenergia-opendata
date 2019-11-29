@@ -41,17 +41,16 @@ def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log'):
     return result
 
 def addEmpty(missing, data):
-    data.update({missing: 0})
-    # if 'number_' in missing:
-    #     ccaa = missing.split('_')[1]
-    #     data.update({
-    #         'number_' + ccaa : 0,
-    #         'percent_' + ccaa: '0,0%',
-    #         'color_' + ccaa: '#fff',
-    #         })
-    # else:
-    #     return False, 
-    # return success,data
+    if 'number_' in missing:
+        ccaa = missing.split('_')[1]
+        data.update({
+            'number_' + ccaa : 0,
+            'percent_' + ccaa: '0,0%',
+            'color_' + ccaa: '#fff',
+            })
+    else:
+        raise KeyError(missing)
+
 
 def renderMap(data, template, colors, title, subtitle='', colorScale='Log'):
 
@@ -61,11 +60,10 @@ def renderMap(data, template, colors, title, subtitle='', colorScale='Log'):
         svgTemplate = svgTemplateFile.read()
 
     finished = False
-    while not finished:
+    #while not finished:
         try:
             svgContent = svgTemplate.format(**dataDict)
-            finished = True
+     #       finished = True
         except KeyError as ke:
             addEmpty(missing=ke, data=dataDict)
-            finished = True
     return svgContent

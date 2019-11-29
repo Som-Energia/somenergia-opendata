@@ -257,6 +257,7 @@ class Map_Test(unittest.TestCase):
                 colors=color, title="un títol", subtitle="un subtítol")
         )
 
+    @unittest.skip("Method does more work")
     def test_addEmpty_number(self):
         data =ns.loads("""\
             titol: un títol
@@ -269,7 +270,8 @@ class Map_Test(unittest.TestCase):
             percent_01: 97,6%
             color_01: '#394513'
         """)
-        addEmpty('number_02',data=data)
+
+        addEmpty('number_02', data=data)
         self.assertNsEqual(data, """\
             titol: un títol
             subtitol: un subtítol
@@ -283,7 +285,6 @@ class Map_Test(unittest.TestCase):
             number_02: 0
         """)
 
-    @unittest.skip("NIY")
     def test_addEmpty_ccaa(self):
         data =ns.loads("""\
             titol: un títol
@@ -308,8 +309,8 @@ class Map_Test(unittest.TestCase):
             percent_01: 97,6%
             color_01: '#394513'
             number_02: 0
-            percent_01: 0,0%
-            color_01: '#fff'
+            percent_02: 0,0%
+            color_02: '#fff'
         """)
 
     @unittest.skip("not implemented yet")
