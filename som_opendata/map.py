@@ -7,7 +7,11 @@ months = (
         "Julio Agosto Septiembre Octubre Noviembre Diciembre"
         ).split()
 
-def dataToTemplateDict(titol, subtitol, data, colors, colorScale='Linear'):
+def percentRegion(value, total):
+    return '{:.1f}%'.format(value * 100. / total).replace('.',',')
+
+
+def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log'):
     date = data.dates[0]
     result = ns(
             titol = titol,
@@ -20,27 +24,30 @@ def dataToTemplateDict(titol, subtitol, data, colors, colorScale='Linear'):
         scale = LinearScale(higher=data["values"][0])
     elif colorScale == 'Log':
         scale = LogScale(higher=data["values"][0])
-    color = Gradient('#e0ecbb','#384413')
+
     totalValue = data["values"][0]
     for code, ccaa in data.countries.ES.ccaas.items():
         value = ccaa["values"][0]
         result.update({
             'number_' + code: value,
-            'percent_' + code: '{:.1f}%'.format(value * 100. / totalValue).replace('.',','),
+            'percent_' + code: percentRegion(value, totalValue),
             'color_' + code: colors(scale(value)),
             })
     restWorld = data["values"][0] - data.countries.ES["values"][0]
     result.update({
         'number_00': restWorld,
-        'percent_00': '{:.1f}%'.format(restWorld * 100. / totalValue).replace('.',','),
+        'percent_00': percentRegion(restWorld,totalValue),
         })
     return result
 
 
-def renderMap(data, template):
-    with open(template,'r') as svgTemplateFile:
+def renderMap(data, template, colors, title, subtitle='', colorScale='Log'):
+
+    dataDict = dataToTemplateDict(data=data, colors=colors, colorScale=colorScale, titol=title, subtitol=subtitle)
+
+    with open(template, 'r') as svgTemplateFile:
         svgTemplate = svgTemplateFile.read()
 
-    svgContent = svgTemplate.format(**data)
+    svgContent = svgTemplate.format(**dataDict)
 
     return svgContent

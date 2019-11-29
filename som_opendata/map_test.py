@@ -179,10 +179,10 @@ class Map_Test(unittest.TestCase):
             percent_00: 0,0%
             number_01: 123
             percent_01: 86,0%
-            color_01: '#56691d'
+            color_01: '#3f4c15'
             number_09: 20
             percent_09: 14,0%
-            color_09: '#cfe296'
+            color_09: '#8eac30'
         """)
 
     def test_dataToTemplateDict_restWorld(self):
@@ -210,10 +210,10 @@ class Map_Test(unittest.TestCase):
             percent_00: 2,4%
             number_01: 123
             percent_01: 97,6%
-            color_01: '#3d4a15'
+            color_01: '#394513'
         """)
 
-    def test_dataToTemplateDict_LogColorScale(self):
+    def test_dataToTemplateDict_LinearColorScale(self):
         data = ns.loads("""\
             dates: [2019-01-01]
             values: [143]
@@ -230,7 +230,7 @@ class Map_Test(unittest.TestCase):
                     values: [20]
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colorScale='Log', colors=color)
+        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colorScale='Linear', colors=color)
 
         self.assertNsEqual(result, """\
             titol: un títol
@@ -241,14 +241,17 @@ class Map_Test(unittest.TestCase):
             percent_00: 0,0%
             number_01: 123
             percent_01: 86,0%
-            color_01: '#3f4c15'
+            color_01: '#56691d'
             number_09: 20
             percent_09: 14,0%
-            color_09: '#8eac30'
+            color_09: '#cfe296'
         """)
 
-    #@unittest.skip("Not implemented yet")
+    unittest.skip("Not implemented yet")
     def test_renderMap_singleRegion(self):
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=fullData, colorScale='Log', colors=color)
-        self.assertB2BEqual(renderMap(data=result, template='MapaSocios-template.svg'))
+
+        self.assertB2BEqual(
+            renderMap(data=fullData, template='MapaSocios-template.svg',
+                colors=color, title="un títol", subtitle="un subtítol")
+        )
