@@ -42,7 +42,16 @@ def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log'):
 
 def addEmpty(missing, data):
     data.update({missing: 0})
-    return data
+    # if 'number_' in missing:
+    #     ccaa = missing.split('_')[1]
+    #     data.update({
+    #         'number_' + ccaa : 0,
+    #         'percent_' + ccaa: '0,0%',
+    #         'color_' + ccaa: '#fff',
+    #         })
+    # else:
+    #     return False, 
+    # return success,data
 
 def renderMap(data, template, colors, title, subtitle='', colorScale='Log'):
 
