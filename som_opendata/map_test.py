@@ -250,7 +250,6 @@ class Map_Test(unittest.TestCase):
             color_09: '#cfe296'
         """)
 
-    #@unittest.skip("Not implemented yet")
     def test_renderMap_singleRegion(self):
         color = Gradient('#e0ecbb','#384413')
 
@@ -259,7 +258,6 @@ class Map_Test(unittest.TestCase):
                 colors=color, title="un títol", subtitle="un subtítol")
         )
 
-    @unittest.skip("Method does more work")
     def test_addEmpty_number(self):
         data =ns.loads("""\
             titol: un títol
@@ -300,6 +298,8 @@ class Map_Test(unittest.TestCase):
             color_01: '#394513'
         """)
         addEmpty('number_02',data=data)
+        addEmpty('percent_02',data=data)
+        addEmpty('color_02',data=data)
         self.assertNsEqual(data, """\
             titol: un títol
             subtitol: un subtítol
@@ -312,22 +312,90 @@ class Map_Test(unittest.TestCase):
             color_01: '#394513'
             number_02: 0
             percent_02: 0,0%
-            color_02: '#fff'
+            color_02: '#ffffff'
         """)
 
-    @unittest.skip("not implemented yet")
-    def test_renderMap_missingCCAAs(self):
+    def test_renderMap_missingCCAA(self):
         data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [123]
-            countries:
-              ES:
-                name: España
-                values: [123]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    values: [123]
+    dates: [2019-01-01]
+    values: [3208]
+    countries:
+      ES:
+        name: España
+        values: [3208]
+        ccaas:
+          '01':
+            name: Andalucia
+            values:
+            - 48
+          '03':
+            name: Asturias, Principado de
+            values:
+            - 13
+          '04':
+            name: Baleares, Islas
+            values:
+            - 235
+          '05':
+            name: Canarias
+            values:
+            - 0
+          '06':
+            name: Cantabria
+            values:
+            - 12
+          08:
+            name: Castilla - La Mancha
+            values:
+            - 28
+          '07':
+            name: Castilla y León
+            values:
+            - 24
+          09:
+            name: Cataluña
+            values:
+            - 2054
+          '10':
+            name: Comunidad Valenciana
+            values:
+            - 224
+          '11':
+            name: Extremadura
+            values:
+            - 14
+          '12':
+            name: Galicia
+            values:
+            - 24
+          '13':
+            name: Madrid, Comunidad de
+            values:
+            - 145
+          '14':
+            name: Murcia, Región de
+            values:
+            - 11
+          '15':
+            name: Navarra, Comunidad Foral de
+            values:
+            - 151
+          '16':
+            name: País Vasco
+            values:
+            - 53
+          '17':
+            name: Rioja, La
+            values:
+            - 37
+          '18':
+            name: Ceuta
+            values:
+            - 5
+          '19':
+            name: Melilla
+            values:
+            - 5
             """)
         color = Gradient('#e0ecbb','#384413')
 
