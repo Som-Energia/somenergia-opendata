@@ -404,3 +404,23 @@ class Map_Test(unittest.TestCase):
             renderMap(data=data, template='MapaSocios-template.svg',
                 colors=color, title="un títol", subtitle="un subtítol")
         )
+
+    def test_renderMap_missingCCAAs(self):
+        data = ns.loads("""\
+        dates: [2019-01-01]
+        values: [3208]
+        countries:
+          ES:
+            name: España
+            values: [3208]
+            ccaas:
+              '01':
+                name: Andalucia
+                values:
+                - 48
+        """)
+        color = Gradient('#e0ecbb','#384413')
+        self.assertB2BEqual(
+            renderMap(data=data, template='MapaSocios-template.svg',
+                colors=color, title="un títol", subtitle="un subtítol")
+        )
