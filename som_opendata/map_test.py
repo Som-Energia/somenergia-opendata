@@ -256,8 +256,7 @@ class Map_Test(unittest.TestCase):
                 colors=color, title="un títol", subtitle="un subtítol")
         )
 
-    @unittest.skip("Method does extra work")
-    def test_addEmpty_number(self):
+    def test_addEmpty_differentKeyError(self):
         data =ns.loads("""\
             titol: un títol
             subtitol: un subtítol
@@ -270,19 +269,12 @@ class Map_Test(unittest.TestCase):
             color_01: '#394513'
         """)
 
-        addEmpty('number_02', data=data)
-        self.assertNsEqual(data, """\
-            titol: un títol
-            subtitol: un subtítol
-            year: 2019
-            month: Enero
-            number_00: 3
-            percent_00: 2,4%
-            number_01: 123
-            percent_01: 97,6%
-            color_01: '#394513'
-            number_02: 0
-        """)
+        with self.assertRaises(KeyError) as context:
+            addEmpty('titol', data=data)
+        self.assertEqual(
+            "['titol']",
+            str(context.exception)
+        )
 
     def test_addEmpty_ccaa(self):
         data =ns.loads("""\
