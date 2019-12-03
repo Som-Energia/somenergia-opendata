@@ -54,20 +54,9 @@ def addEmpty(missing, data):
         raise KeyError(missing)
 
 
-def renderMap(data, template, colors, title, subtitle='', colorScale='Log'):
+def fillMap(data, template, gradient, title, subtitle='', scale='Log'):
 
-    dataDict = dataToTemplateDict(data=data, colors=colors, colorScale=colorScale, titol=title, subtitol=subtitle)
+    dataDict = dataToTemplateDict(data=data, colors=gradient, colorScale=scale, titol=title, subtitol=subtitle)
 
-    with open(template, 'r') as svgTemplateFile:
-        svgTemplate = svgTemplateFile.read()
+    return template.format(**dataDict)
 
-    finished = False
-    svgContent = ''
-    while not finished:
-        try:
-            svgContent = svgTemplate.format(**dataDict)
-            finished = True
-        except KeyError as ke:
-            addEmpty(missing=ke, data=dataDict)
-    svgContent = svgTemplate.format(**dataDict)
-    return svgContent
