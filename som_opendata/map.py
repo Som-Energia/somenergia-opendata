@@ -24,9 +24,9 @@ def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log'):
         Linear = LinearScale,
         Log = LogScale,
     )
-    scale = scales[colorScale](higher=data["values"][0])
-
     totalValue = data["values"][0]
+    scale = scales[colorScale](higher=totalValue)
+
     for code, ccaa in data.countries.ES.ccaas.items():
         value = ccaa["values"][0]
         result.update({
