@@ -45,14 +45,14 @@ def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log'):
 def addEmpty(missing, data):
     missing = str(missing).strip("'").split('_')
     isCCAA = missing[0] in 'number_percent_color_'
-    if isCCAA:
-        ccaa = missing[1]
-        data.update({
-            'number_' + ccaa: 0,
-            'percent_' + ccaa: '0,0%',
-            'color_' + ccaa: '#ffffff'})
-    else:
+    if  not isCCAA:
         raise KeyError(missing)
+
+    ccaa = missing[1]
+    data.update({
+        'number_' + ccaa: 0,
+        'percent_' + ccaa: '0,0%',
+        'color_' + ccaa: '#ffffff'})
 
 
 def fillMap(data, template, gradient, title, subtitle='', scale='Log'):
