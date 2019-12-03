@@ -137,3 +137,10 @@ class LogScale_Test(unittest.TestCase):
             "Log not defined for values <= 0",
             str(context.exception)
         )
+
+# TODO: Negative max and min in log
+# TODO: Fail on diferent sign log
+# TODO: Inverted limits log
+# TODO: Inverted limits linear
+
+
