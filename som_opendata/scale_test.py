@@ -1,5 +1,5 @@
 import unittest
-from .mapscale import LinearScale, LogScale
+from .scale import LinearScale, LogScale
 from somutils import testutils
 
 class Scale_test(unittest.TestCase):

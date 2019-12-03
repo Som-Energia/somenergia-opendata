@@ -1,5 +1,5 @@
 from yamlns import namespace as ns
-from .mapscale import LinearScale, LogScale
+from .scale import LinearScale, LogScale
 from .colorscale import Gradient
 
 months = (
