@@ -20,10 +20,11 @@ def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log'):
             month = months[date.month-1],
         )
 
-    if colorScale == 'Linear':
-        scale = LinearScale(higher=data["values"][0])
-    elif colorScale == 'Log':
-        scale = LogScale(higher=data["values"][0])
+    scales = dict(
+        Linear = LinearScale,
+        Log = LogScale,
+    )
+    scale = scales[colorScale](higher=data["values"][0])
 
     totalValue = data["values"][0]
     for code, ccaa in data.countries.ES.ccaas.items():
