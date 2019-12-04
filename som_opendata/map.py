@@ -63,14 +63,13 @@ def fillMap(data, template, title, subtitle='', scale='Log', locations=[]):
 
     return template.format(**dataDict)
 
-def renderMap(source, metric, date):
-    return
-    geolevel = 'ccaa'
+def renderMap(source, metric, date, geolevel):
+
+    locations = ['01', '09']
     filtered_objects = source.get(metric, [date], [])
     data = aggregate(filtered_objects, geolevel)
-    template = Path('ccaaMap.svg').read_text(encoding='utf8')
-    gradient = Gradient('#e0ecbb','#384413')
-    return fillMap(data=data, template=template, gradient=gradient, title=metric)
+    template = Path('mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
+    return fillMap(data=data, template=template, title=metric.title(), locations=locations)
 
 
 # map{Country}{ES}by{States}.svg

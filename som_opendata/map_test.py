@@ -6,8 +6,9 @@ from yamlns.dateutils import Date
 from yamlns import namespace as ns
 from .map import dataToTemplateDict, fillMap, renderMap
 from .colorscale import Gradient
-from .csvSource import loadCsvSource
-
+from .csvSource import loadCsvSource, CsvSource
+from future.utils import iteritems
+from pathlib import Path
 
 dummyTemplate="""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -23,6 +24,13 @@ dummyTemplate="""\
   <text y="200" x="240" style="text-anchor:middle">{percent_09}</text>
 </svg>
 """
+headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
+data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
+data_Perignan = u"FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
+data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
+data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
+data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
+
 
 fullData = ns.loads("""\
     dates:
@@ -118,6 +126,16 @@ class Map_Test(unittest.TestCase):
 
     def setUp(self):
         self.b2bdatapath = 'b2bdataMap'
+        Path('mapTemplate_dummy.svg').write_text(dummyTemplate, encoding='utf8')
+        population = (
+                '01\tAndalucía\t10000\n'
+                '09\tCatalunya\t20000\n'
+            )
+        Path('population_dummy.tsv').write_text(population,encoding='utf8')
+
+    def tearDown(self):
+        Path('mapTemplate_dummy.svg').unlink()
+        Path('population_dummy.tsv').unlink()
 
     from somutils.testutils import assertNsEqual
 
@@ -356,6 +374,68 @@ class Map_Test(unittest.TestCase):
   <circle cy="180" cx="100" r="60" fill="#3f4c15"/>
   <text y="180" x="100" style="text-anchor:middle">123</text>
   <text y="200" x="100" style="text-anchor:middle">86,0%</text>
+  <circle cy="180" cx="240" r="60" fill="#e0ecbb"/>
+  <text y="180" x="240" style="text-anchor:middle">0</text>
+  <text y="200" x="240" style="text-anchor:middle">0,0%</text>
+</svg>
+""")
+
+
+    def createSource(self, datums):
+
+        content = ns()
+        for datum, lines in iteritems(datums):
+            content[datum] = '\n'.join(lines)
+
+        return CsvSource(content)
+
+    def test_renderMap_(self):
+        self.maxDiff = None
+        source = self.createSource(
+            ns(members=[
+                headers,
+                data_Girona,
+                data_Adra,
+                ])
+            )
+
+        result = renderMap(source, 'members', '2018-01-01', geolevel='dummy')
+
+        self.assertMultiLineEqual(result, """\
+<svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
+  <text y="40" x="170" style="text-anchor:middle">Title: Members</text>
+  <text y="60" x="170" style="text-anchor:middle">Subtitle: </text>
+  <text y="80" x="170" style="text-anchor:middle">Year: 2018</text>
+  <text y="100" x="170" style="text-anchor:middle">Month: Enero</text>
+  <circle cy="180" cx="100" r="60" fill="#c5dc80"/>
+  <text y="180" x="100" style="text-anchor:middle">2</text>
+  <text y="200" x="100" style="text-anchor:middle">9,1%</text>
+  <circle cy="180" cx="240" r="60" fill="#3f4c15"/>
+  <text y="180" x="240" style="text-anchor:middle">20</text>
+  <text y="200" x="240" style="text-anchor:middle">90,9%</text>
+</svg>
+""")
+
+    def test_renderMap_missingLocation(self):
+        self.maxDiff = None
+        source = self.createSource(
+            ns(members=[
+                headers,
+                data_Adra,
+                ])
+            )
+
+        result = renderMap(source, 'members', '2018-01-01', geolevel='dummy')
+
+        self.assertMultiLineEqual(result, """\
+<svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
+  <text y="40" x="170" style="text-anchor:middle">Title: Members</text>
+  <text y="60" x="170" style="text-anchor:middle">Subtitle: </text>
+  <text y="80" x="170" style="text-anchor:middle">Year: 2018</text>
+  <text y="100" x="170" style="text-anchor:middle">Month: Enero</text>
+  <circle cy="180" cx="100" r="60" fill="#384413"/>
+  <text y="180" x="100" style="text-anchor:middle">2</text>
+  <text y="200" x="100" style="text-anchor:middle">100,0%</text>
   <circle cy="180" cx="240" r="60" fill="#e0ecbb"/>
   <text y="180" x="240" style="text-anchor:middle">0</text>
   <text y="200" x="240" style="text-anchor:middle">0,0%</text>
