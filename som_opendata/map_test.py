@@ -4,8 +4,10 @@ import b2btest
 import unittest
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
-from .map import dataToTemplateDict, fillMap, addEmpty, renderCCAAMap
+from .map import dataToTemplateDict, fillMap, renderMap
 from .colorscale import Gradient
+from .csvSource import loadCsvSource
+
 
 dummyTemplate="""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -376,57 +378,6 @@ class Map_Test(unittest.TestCase):
         )
 
 
-
-    def test_addEmpty_differentKeyError(self):
-        data =ns.loads("""\
-            titol: un títol
-            subtitol: un subtítol
-            year: 2019
-            month: Enero
-            number_00: 3
-            percent_00: 2,4%
-            number_01: 123
-            percent_01: 97,6%
-            color_01: '#394513'
-        """)
-
-        with self.assertRaises(KeyError) as context:
-            addEmpty('titol', data=data)
-        self.assertEqual(
-            "['titol']",
-            str(context.exception)
-        )
-
-    def test_addEmpty_ccaa(self):
-        data =ns.loads("""\
-            titol: un títol
-            subtitol: un subtítol
-            year: 2019
-            month: Enero
-            number_00: 3
-            percent_00: 2,4%
-            number_01: 123
-            percent_01: 97,6%
-            color_01: '#394513'
-        """)
-        addEmpty('number_02',data=data)
-        addEmpty('percent_02',data=data)
-        addEmpty('color_02',data=data)
-        self.assertNsEqual(data, """\
-            titol: un títol
-            subtitol: un subtítol
-            year: 2019
-            month: Enero
-            number_00: 3
-            percent_00: 2,4%
-            number_01: 123
-            percent_01: 97,6%
-            color_01: '#394513'
-            number_02: 0
-            percent_02: 0,0%
-            color_02: '#ffffff'
-        """)
-
     @unittest.skip("Rewrite")
     def test_fillMap_missingCCAA(self):
         data = ns.loads("""\
@@ -538,3 +489,4 @@ class Map_Test(unittest.TestCase):
             fillMap(data=data, template='MapaSocios-template.svg',
                 colors=color, title="un títol", subtitle="un subtítol")
         )
+

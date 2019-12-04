@@ -1,6 +1,8 @@
 from yamlns import namespace as ns
 from .scale import LinearScale, LogScale
 from .colorscale import Gradient
+from .distribution import aggregate
+from pathlib import Path
 
 months = (
         "Enero Febrero Marzo Abril Mayo Junio "
@@ -52,22 +54,26 @@ def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log', location
     return result
 
 
-def addEmpty(missing, data):
-    missing = str(missing).strip("'").split('_')
-    isCCAA = missing[0] in 'number_percent_color_'
-    if  not isCCAA:
-        raise KeyError(missing)
-
-    ccaa = missing[1]
-    data.update({
-        'number_' + ccaa: 0,
-        'percent_' + ccaa: '0,0%',
-        'color_' + ccaa: '#ffffff'})
-
-
 def fillMap(data, template, gradient, title, subtitle='', scale='Log', locations=[]):
 
-    dataDict = dataToTemplateDict(data=data, colors=gradient, colorScale=scale, titol=title, subtitol=subtitle)
+    dataDict = dataToTemplateDict(
+        data=data, colors=gradient,
+        colorScale=scale, titol=title, subtitol=subtitle, locations=locations
+    )
 
     return template.format(**dataDict)
 
+def renderMap(source, metric, date):
+    geolevel = 'ccaa'
+    filtered_objects = source.get(metric, [date], [])
+    data = aggregate(filtered_objects, geolevel)
+    template = Path('ccaaMap.svg').read_text(encoding='utf8')
+    gradient = Gradient('#e0ecbb','#384413')
+    return fillMap(data=data, template=template, gradient=gradient, title=metric)
+
+
+# map{Country}{ES}by{States}.svg
+# map{Province}{01}by{Counties}.svg
+
+# map.templateName(scope, code, subscope)
+# map.subdivisions(scope, code, subscope)
