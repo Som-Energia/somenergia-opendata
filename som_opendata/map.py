@@ -11,7 +11,7 @@ def percentRegion(value, total):
     return '{:.1f}%'.format(value * 100. / total).replace('.',',')
 
 
-def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log'):
+def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log', locations=[]):
     date = data.dates[0]
     result = ns(
             titol = titol,
@@ -39,6 +39,14 @@ def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log'):
         'number_00': restWorld,
         'percent_00': percentRegion(restWorld,totalValue),
         })
+
+    for code in locations:
+        if not result.get('number_{}'.format(code)):
+            result.update({
+            'number_' + code: 0,
+            'percent_' + code: percentRegion(0, totalValue),
+            'color_' + code: colors(scale(0)),
+                })
     return result
 
 
@@ -55,7 +63,7 @@ def addEmpty(missing, data):
         'color_' + ccaa: '#ffffff'})
 
 
-def fillMap(data, template, gradient, title, subtitle='', scale='Log'):
+def fillMap(data, template, gradient, title, subtitle='', scale='Log', locations=[]):
 
     dataDict = dataToTemplateDict(data=data, colors=gradient, colorScale=scale, titol=title, subtitol=subtitle)
 
