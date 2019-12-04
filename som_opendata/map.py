@@ -64,7 +64,7 @@ def fillMap(data, template, title, subtitle='', scale='Log', locations=[]):
     return template.format(**dataDict)
 
 def renderMap(source, metric, date, geolevel):
-    locationContent = Path('population_dummy.tsv').read_text(encoding='utf8')
+    locationContent = Path('population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     locations = [
         location.code for location in tuples2objects(parse_tsv(locationContent))
     ]
