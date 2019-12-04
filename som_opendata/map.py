@@ -12,7 +12,6 @@ def percentRegion(value, total):
         return '0,0%'
     return '{:.1f}%'.format(value * 100. / total).replace('.',',')
 
-
 def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log', locations=[]):
     date = data.dates[0]
     result = ns(
@@ -27,10 +26,8 @@ def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log', location
         Log = LogScale,
     )
     totalValue = data["values"][0]
-    if not totalValue:
-        scale = scales[colorScale](higher=1)
-    else:
-        scale = scales[colorScale](higher=totalValue)
+
+    scale = scales[colorScale](higher=totalValue or 1)
 
     for code, ccaa in data.countries.ES.ccaas.items():
         value = ccaa["values"][0]
