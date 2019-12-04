@@ -128,6 +128,7 @@ class Map_Test(unittest.TestCase):
         self.b2bdatapath = 'b2bdataMap'
         Path('mapTemplate_dummy.svg').write_text(dummyTemplate, encoding='utf8')
         population = (
+                'code\tname\tpopulation\n'
                 '01\tAndalucía\t10000\n'
                 '09\tCatalunya\t20000\n'
             )

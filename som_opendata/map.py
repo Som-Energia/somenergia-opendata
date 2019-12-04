@@ -1,7 +1,7 @@
 from yamlns import namespace as ns
 from .scale import LinearScale, LogScale
 from .colorscale import Gradient
-from .distribution import aggregate
+from .distribution import aggregate, parse_tsv, tuples2objects
 from pathlib import Path
 
 months = (
@@ -64,8 +64,10 @@ def fillMap(data, template, title, subtitle='', scale='Log', locations=[]):
     return template.format(**dataDict)
 
 def renderMap(source, metric, date, geolevel):
-
-    locations = ['01', '09']
+    locationContent = Path('population_dummy.tsv').read_text(encoding='utf8')
+    locations = [
+        location.code for location in tuples2objects(parse_tsv(locationContent))
+    ]
     filtered_objects = source.get(metric, [date], [])
     data = aggregate(filtered_objects, geolevel)
     template = Path('mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
