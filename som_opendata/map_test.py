@@ -125,7 +125,7 @@ fullData = ns.loads("""\
 class Map_Test(unittest.TestCase):
 
     def setUp(self):
-        self.b2bdatapath = 'b2bdataMap'
+        self.b2bdatapath = 'b2bdata'
         Path('mapTemplate_dummy.svg').write_text(dummyTemplate, encoding='utf8')
         population = (
                 'code\tname\tpopulation\n'
@@ -443,131 +443,14 @@ class Map_Test(unittest.TestCase):
 </svg>
 """)
 
-    @unittest.skip("Not yet")
-    def test_renderMap_byDefault(self):
+
+    def test_renderMap_members(self):
         source = loadCsvSource()
-        result = renderMap(source, 'members', '2019-01-01')
+        result = renderMap(source, 'members', '2019-01-01', geolevel='ccaa')
         self.assertB2BEqual(result)
 
-    @unittest.skip("Rewrite")
-    def test_fillMap_singleRegion(self):
-        color = Gradient('#e0ecbb','#384413')
 
-        self.assertB2BEqual(
-            fillMap(data=fullData, template='MapaSocios-template.svg',
-                colors=color, title="un títol", subtitle="un subtítol")
-        )
-
-
-    @unittest.skip("Rewrite")
-    def test_fillMap_missingCCAA(self):
-        data = ns.loads("""\
-    dates: [2019-01-01]
-    values: [3208]
-    countries:
-      ES:
-        name: España
-        values: [3208]
-        ccaas:
-          '01':
-            name: Andalucia
-            values:
-            - 48
-          '03':
-            name: Asturias, Principado de
-            values:
-            - 13
-          '04':
-            name: Baleares, Islas
-            values:
-            - 235
-          '05':
-            name: Canarias
-            values:
-            - 0
-          '06':
-            name: Cantabria
-            values:
-            - 12
-          08:
-            name: Castilla - La Mancha
-            values:
-            - 28
-          '07':
-            name: Castilla y León
-            values:
-            - 24
-          09:
-            name: Cataluña
-            values:
-            - 2054
-          '10':
-            name: Comunidad Valenciana
-            values:
-            - 224
-          '11':
-            name: Extremadura
-            values:
-            - 14
-          '12':
-            name: Galicia
-            values:
-            - 24
-          '13':
-            name: Madrid, Comunidad de
-            values:
-            - 145
-          '14':
-            name: Murcia, Región de
-            values:
-            - 11
-          '15':
-            name: Navarra, Comunidad Foral de
-            values:
-            - 151
-          '16':
-            name: País Vasco
-            values:
-            - 53
-          '17':
-            name: Rioja, La
-            values:
-            - 37
-          '18':
-            name: Ceuta
-            values:
-            - 5
-          '19':
-            name: Melilla
-            values:
-            - 5
-            """)
-        color = Gradient('#e0ecbb','#384413')
-
-        self.assertB2BEqual(
-            fillMap(data=data, template='MapaSocios-template.svg',
-                colors=color, title="un títol", subtitle="un subtítol")
-        )
-
-
-    @unittest.skip("Rewrite")
-    def test_fillMap_missingCCAAs(self):
-        data = ns.loads("""\
-        dates: [2019-01-01]
-        values: [3208]
-        countries:
-          ES:
-            name: España
-            values: [3208]
-            ccaas:
-              '01':
-                name: Andalucia
-                values:
-                - 48
-        """)
-        color = Gradient('#e0ecbb','#384413')
-        self.assertB2BEqual(
-            fillMap(data=data, template='MapaSocios-template.svg',
-                colors=color, title="un títol", subtitle="un subtítol")
-        )
-
+    def test_renderMap_contracts(self):
+        source = loadCsvSource()
+        result = renderMap(source, 'contracts', '2019-01-01', geolevel='ccaa')
+        self.assertB2BEqual(result)
