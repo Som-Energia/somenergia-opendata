@@ -169,6 +169,34 @@ class Map_Test(unittest.TestCase):
             color_01: '#384413'
         """)
 
+    def test_percentRegion_totalZero(self):
+        data = ns.loads("""\
+            dates: [2019-01-01]
+            values: [0]
+            countries:
+              ES:
+                name: España
+                values: [0]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [0]
+            """)
+        color = Gradient('#e0ecbb','#384413')
+        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colors=color)
+
+        self.assertNsEqual(result, """\
+            titol: un títol
+            subtitol: un subtítol
+            year: 2019
+            month: Enero
+            number_00: 0
+            percent_00: 0,0%
+            number_01: 0
+            percent_01: 0,0%
+            color_01: '#e0ecbb'
+        """)
+
     def test_dataToTemplateDict_manyRegions(self):
         data = ns.loads("""\
             dates: [2019-01-01]
