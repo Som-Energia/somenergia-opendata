@@ -54,8 +54,8 @@ def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log', location
     return result
 
 
-def fillMap(data, template, gradient, title, subtitle='', scale='Log', locations=[]):
-
+def fillMap(data, template, title, subtitle='', scale='Log', locations=[]):
+    gradient = Gradient('#e0ecbb','#384413')
     dataDict = dataToTemplateDict(
         data=data, colors=gradient,
         colorScale=scale, titol=title, subtitol=subtitle, locations=locations
@@ -64,6 +64,7 @@ def fillMap(data, template, gradient, title, subtitle='', scale='Log', locations
     return template.format(**dataDict)
 
 def renderMap(source, metric, date):
+    return
     geolevel = 'ccaa'
     filtered_objects = source.get(metric, [date], [])
     data = aggregate(filtered_objects, geolevel)

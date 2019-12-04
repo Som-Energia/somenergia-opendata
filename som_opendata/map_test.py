@@ -314,7 +314,7 @@ class Map_Test(unittest.TestCase):
             """)
         self.maxDiff = None
         result = fillMap(data=data, template=dummyTemplate,
-                gradient=color, title="un títol", subtitle="un subtítol")
+                title="un títol", subtitle="un subtítol")
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: un títol</text>
@@ -346,7 +346,7 @@ class Map_Test(unittest.TestCase):
             """)
         self.maxDiff = None
         result = fillMap(data=data, template=dummyTemplate,
-                gradient=color, title="un títol", subtitle="un subtítol", locations=['01','09'])
+                title="un títol", subtitle="un subtítol", locations=['01','09'])
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: un títol</text>
