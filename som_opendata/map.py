@@ -47,12 +47,13 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
         })
 
     for code in locations:
-        if not result.get('number_{}'.format(code)):
-            result.update({
-            'number_' + code: 0,
-            'percent_' + code: percentRegion(0, totalValue),
-            'color_' + code: colors(scale(0)),
-                })
+        if result.get('number_{}'.format(code)):
+            continue
+        result.update({
+        'number_' + code: 0,
+        'percent_' + code: percentRegion(0, totalValue),
+        'color_' + code: colors(scale(0)),
+        })
     return result
 
 
