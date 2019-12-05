@@ -4,7 +4,7 @@ import b2btest
 import unittest
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
-from .map import dataToTemplateDict, fillMap, renderMap
+from .map import dataToTemplateDict, fillMap, renderMap, percentRegion
 from .colorscale import Gradient
 from .csvSource import loadCsvSource, CsvSource
 from future.utils import iteritems
@@ -101,32 +101,7 @@ class Map_Test(unittest.TestCase):
         """)
 
     def test_percentRegion_totalZero(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [0]
-            countries:
-              ES:
-                name: España
-                values: [0]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    values: [0]
-            """)
-        color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color)
-
-        self.assertNsEqual(result, """\
-            title: un títol
-            subtitle: un subtítol
-            year: 2019
-            month: Enero
-            number_00: 0
-            percent_00: 0,0%
-            number_01: 0
-            percent_01: 0,0%
-            color_01: '#e0ecbb'
-        """)
+        self.assertEqual(percentRegion(0,0), '0,0%')
 
     def test_dataToTemplateDict_manyRegions(self):
         data = ns.loads("""\
