@@ -691,12 +691,12 @@
      y="67.399826"
      x="509.84473"
      sodipodi:role="line"
-     id="tspan2960">{titol}</tspan><tspan
+     id="tspan2960">{title}</tspan><tspan
      style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Sans;-inkscape-font-specification:Sans"
      y="78.047676"
      x="509.84473"
      sodipodi:role="line"
-     id="tspan2938">{subtitol}</tspan><tspan
+     id="tspan2938">{subtitle}</tspan><tspan
      style="font-size:11px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans Bold"
      y="88.047676"
      x="509.84473"
