@@ -3,6 +3,8 @@ from .scale import LinearScale, LogScale
 from .colorscale import Gradient
 from .distribution import aggregate, parse_tsv, tuples2objects
 from pathlib import Path
+from datetime import date, timedelta
+
 
 months = (
         "Enero Febrero Marzo Abril Mayo Junio "
@@ -62,6 +64,11 @@ def fillMap(data, template, title, subtitle='', scale='Log', locations=[]):
     )
 
     return template.format(**dataDict)
+
+def lastDateWithData():
+    today = date.today()
+    endLastMonth = today - timedelta(days=today.day)
+    return endLastMonth.replace(day=1).isoformat()
 
 def renderMap(source, metric, date, geolevel):
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
