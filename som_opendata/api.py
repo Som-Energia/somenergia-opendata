@@ -384,9 +384,9 @@ def version():
 
 api.source = None
 
-@api.route('/map')
-def map():
-    result = renderMap(api.source, 'members', '2019-01-01', 'ccaa')
+@api.route('/map/<string:metric>')
+def map(metric=None):
+    result = renderMap(source=api.source, metric=metric, date='2019-01-01', geolevel='ccaa')
     response = make_response(result)
     response.mimetype = 'image/svg+xml'
     return response

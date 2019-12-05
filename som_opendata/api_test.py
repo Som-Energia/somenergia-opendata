@@ -253,9 +253,10 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__map__ccaaMembers(self):
-        r = self.get('/map')
+        r = self.get('/map/members')
         self.assertEqual(r.status, '200 OK')
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
+
 
 # vim: et ts=4 sw=4
