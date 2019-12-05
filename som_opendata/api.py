@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, request, current_app
+from flask import Blueprint, request, current_app, make_response
 from yamlns import namespace as ns
 from .common import (
         yaml_response,
@@ -12,6 +12,7 @@ from .common import (
 from .distribution import aggregate
 from .errors import MissingDateError
 from . import __version__
+from .map import renderMap
 
 api = Blueprint(name=__name__, import_name=__name__)
 api.firstDate = '2010-01-01'
@@ -382,5 +383,13 @@ def version():
 
 
 api.source = None
+
+@api.route('/map')
+def map():
+    result = renderMap(api.source, 'members', '2019-01-01', 'ccaa')
+    response = make_response(result)
+    response.mimetype = 'image/svg+xml'
+    return response
+
 
 # vim: et ts=4 sw=4

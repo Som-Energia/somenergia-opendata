@@ -252,6 +252,10 @@ class Api_Test(unittest.TestCase):
             message: Incorrect metric 'incorrectMetric' try with ['members', 'contracts']
             """)
 
-
+    def test__map__ccaaMembers(self):
+        r = self.get('/map')
+        self.assertEqual(r.status, '200 OK')
+        self.assertEqual(r.mimetype, 'image/svg+xml')
+        self.assertB2BEqual(r.data)
 
 # vim: et ts=4 sw=4
