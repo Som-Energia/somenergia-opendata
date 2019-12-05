@@ -273,10 +273,11 @@ class Map_Test(unittest.TestCase):
 
         return CsvSource(content)
 
-   #@unittest.skip("TODO")
+
     def test_lastDateWithData_(self):
         result = lastDateWithData()
         self.assertEqual(result, '2019-11-01')
+
 
     def test_renderMap_(self):
         self.maxDiff = None
@@ -335,6 +336,12 @@ class Map_Test(unittest.TestCase):
         source = loadCsvSource()
         result = renderMap(source, 'members', '2019-01-01', geolevel='ccaa')
         self.assertB2BEqual(result)
+
+    def test_renderMap_members_defaultDate(self):
+        source = loadCsvSource()
+        result = renderMap(source, 'members', None, geolevel='ccaa')
+        expected = renderMap(source, 'members', '2019-11-01', 'ccaa')
+        self.assertMultiLineEqual(result,expected)
 
     def test_renderMap_contracts(self):
         source = loadCsvSource()

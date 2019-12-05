@@ -68,9 +68,11 @@ def fillMap(data, template, title, subtitle='', scale='Log', locations=[]):
 def lastDateWithData():
     today = date.today()
     endLastMonth = today - timedelta(days=today.day)
-    return endLastMonth.replace(day=1).isoformat()
+    return str(endLastMonth.replace(day=1).isoformat())
 
 def renderMap(source, metric, date, geolevel):
+    if not date:
+        date = lastDateWithData()
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     locations = [
         location.code for location in tuples2objects(parse_tsv(locationContent))
