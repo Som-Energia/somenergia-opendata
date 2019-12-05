@@ -12,8 +12,8 @@ from pathlib import Path
 
 dummyTemplate="""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
-  <text y="40" x="170" style="text-anchor:middle">Title: {titol}</text>
-  <text y="60" x="170" style="text-anchor:middle">Subtitle: {subtitol}</text>
+  <text y="40" x="170" style="text-anchor:middle">Title: {title}</text>
+  <text y="60" x="170" style="text-anchor:middle">Subtitle: {subtitle}</text>
   <text y="80" x="170" style="text-anchor:middle">Year: {year}</text>
   <text y="100" x="170" style="text-anchor:middle">Month: {month}</text>
   <circle cy="180" cx="100" r="60" fill="{color_01}"/>
@@ -36,17 +36,17 @@ class Map_Test(unittest.TestCase):
 
     def setUp(self):
         self.b2bdatapath = 'b2bdata'
-        Path('mapTemplate_dummy.svg').write_text(dummyTemplate, encoding='utf8')
+        Path('maps/mapTemplate_dummy.svg').write_text(dummyTemplate, encoding='utf8')
         population = (
                 'code\tname\tpopulation\n'
                 '01\tAndalucía\t10000\n'
                 '09\tCatalunya\t20000\n'
             )
-        Path('population_dummy.tsv').write_text(population,encoding='utf8')
+        Path('maps/population_dummy.tsv').write_text(population,encoding='utf8')
 
     def tearDown(self):
-        Path('mapTemplate_dummy.svg').unlink()
-        Path('population_dummy.tsv').unlink()
+        Path('maps/mapTemplate_dummy.svg').unlink()
+        Path('maps/population_dummy.tsv').unlink()
 
     from somutils.testutils import assertNsEqual
 
@@ -61,11 +61,11 @@ class Map_Test(unittest.TestCase):
                 ccaas: {}
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colors=color)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color)
 
         self.assertNsEqual(result, """\
-            titol: un títol
-            subtitol: un subtítol
+            title: un títol
+            subtitle: un subtítol
             year: 2019
             month: Enero
             number_00: 0
@@ -86,11 +86,11 @@ class Map_Test(unittest.TestCase):
                     values: [123]
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colors=color)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color)
 
         self.assertNsEqual(result, """\
-            titol: un títol
-            subtitol: un subtítol
+            title: un títol
+            subtitle: un subtítol
             year: 2019
             month: Enero
             number_00: 0
@@ -114,11 +114,11 @@ class Map_Test(unittest.TestCase):
                     values: [0]
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colors=color)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color)
 
         self.assertNsEqual(result, """\
-            titol: un títol
-            subtitol: un subtítol
+            title: un títol
+            subtitle: un subtítol
             year: 2019
             month: Enero
             number_00: 0
@@ -145,11 +145,11 @@ class Map_Test(unittest.TestCase):
                     values: [20]
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colors=color)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color)
 
         self.assertNsEqual(result, """\
-            titol: un títol
-            subtitol: un subtítol
+            title: un títol
+            subtitle: un subtítol
             year: 2019
             month: Enero
             number_00: 0
@@ -176,11 +176,11 @@ class Map_Test(unittest.TestCase):
                     values: [123]
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colors=color)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color)
 
         self.assertNsEqual(result, """\
-            titol: un títol
-            subtitol: un subtítol
+            title: un títol
+            subtitle: un subtítol
             year: 2019
             month: Enero
             number_00: 3
@@ -207,11 +207,11 @@ class Map_Test(unittest.TestCase):
                     values: [20]
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(titol="un títol", subtitol="un subtítol", data=data, colorScale='Linear', colors=color)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colorScale='Linear', colors=color)
 
         self.assertNsEqual(result, """\
-            titol: un títol
-            subtitol: un subtítol
+            title: un títol
+            subtitle: un subtítol
             year: 2019
             month: Enero
             number_00: 0

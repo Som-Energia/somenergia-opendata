@@ -14,11 +14,11 @@ def percentRegion(value, total):
         return '0,0%'
     return '{:.1f}%'.format(value * 100. / total).replace('.',',')
 
-def dataToTemplateDict(data, colors, titol, subtitol, colorScale='Log', locations=[]):
+def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[]):
     date = data.dates[0]
     result = ns(
-            titol = titol,
-            subtitol = subtitol,
+            title = title,
+            subtitle = subtitle,
             year = date.year,
             month = months[date.month-1],
         )
@@ -58,19 +58,19 @@ def fillMap(data, template, title, subtitle='', scale='Log', locations=[]):
     gradient = Gradient('#e0ecbb','#384413')
     dataDict = dataToTemplateDict(
         data=data, colors=gradient,
-        colorScale=scale, titol=title, subtitol=subtitle, locations=locations
+        colorScale=scale, title=title, subtitle=subtitle, locations=locations
     )
 
     return template.format(**dataDict)
 
 def renderMap(source, metric, date, geolevel):
-    locationContent = Path('population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
+    locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     locations = [
         location.code for location in tuples2objects(parse_tsv(locationContent))
     ]
     filtered_objects = source.get(metric, [date], [])
     data = aggregate(filtered_objects, geolevel)
-    template = Path('mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
+    template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
     return fillMap(data=data, template=template, title=metric.title(), locations=locations)
 
 
