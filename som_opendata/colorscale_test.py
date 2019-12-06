@@ -1,9 +1,7 @@
 import unittest
 from .colorscale import Gradient
 
-class ColorScale_Test(unittest.TestCase):
-
-    from somutils.testutils import assertNsEqual
+class Gradient_Test(unittest.TestCase):
 
     def test_gradient_zero(self):
         gradient = Gradient('#e0ecbb','#384413')
