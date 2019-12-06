@@ -8,7 +8,7 @@ from .map import dataToTemplateDict, fillMap, renderMap, percentRegion, lastDate
 from .colorscale import Gradient
 from .csvSource import loadCsvSource, CsvSource
 from future.utils import iteritems
-from pathlib import Path
+from pathlib2 import Path
 
 dummyTemplate="""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
