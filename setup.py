@@ -35,6 +35,7 @@ setup(
 		'records',
 		'tablib',
 		'somutils',
+		'colour',
 		'future', # Py2 backward compat
 		'pathlib2', # Py2 backward compat
 	],
