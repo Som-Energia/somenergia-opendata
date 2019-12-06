@@ -26,3 +26,7 @@ class Gradient_Test(unittest.TestCase):
     def test_gradient_reverseHueWay(self):
         gradient = Gradient('#bf4040', '#a640bf')
         self.assertEqual(gradient(0.5), '#bf408c')
+
+    def test_gradient_takesColorNames(self):
+        gradient = Gradient('green', 'blue')
+        self.assertEqual(gradient(0.5), '#00bfbf')
