@@ -10,7 +10,7 @@ from .csvSource import loadCsvSource, CsvSource
 from future.utils import iteritems
 from pathlib2 import Path
 
-dummyTemplate="""\
+dummyTemplate=u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: {title}</text>
   <text y="60" x="170" style="text-anchor:middle">Subtitle: {subtitle}</text>
