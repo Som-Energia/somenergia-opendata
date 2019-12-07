@@ -7,7 +7,7 @@ class Gradient_Test(unittest.TestCase):
         gradient = Gradient('#e0ecbb','#384413')
         self.assertEqual(gradient(0), '#e0ecbb')
 
-    def test_gradient_maxim(self):
+    def test_gradient_one(self):
         gradient = Gradient('#e0ecbb','#384413')
         self.assertEqual(gradient(1), '#384413')
 
@@ -15,11 +15,11 @@ class Gradient_Test(unittest.TestCase):
         gradient = Gradient('#e0ecbb','#384413')
         self.assertEqual(gradient(0.5), '#a4c738')
 
-    def test_gradient_outRangeLow(self):
+    def test_gradient_underZero_clamps(self):
         gradient = Gradient('#e0ecbb','#384413')
         self.assertEqual(gradient(-1), '#e0ecbb')
 
-    def test_gradient_outRangeHigh(self):
+    def test_gradient_aboveOne_clamps(self):
         gradient = Gradient('#e0ecbb','#384413')
         self.assertEqual(gradient(2), '#384413')
 
