@@ -37,7 +37,7 @@ class Map_Test(unittest.TestCase):
     def setUp(self):
         self.b2bdatapath = 'b2bdata'
         Path('maps/mapTemplate_dummy.svg').write_text(dummyTemplate, encoding='utf8')
-        population = (
+        population = (u''
                 'code\tname\tpopulation\n'
                 '01\tAndalucía\t10000\n'
                 '09\tCatalunya\t20000\n'
