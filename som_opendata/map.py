@@ -16,7 +16,7 @@ def percentRegion(value, total):
         return '0,0%'
     return '{:.1f}%'.format(value * 100. / total).replace('.',',')
 
-def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[]):
+def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa'):
     date = data.dates[0]
     result = ns(
             title = title,
@@ -34,12 +34,20 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
     scale = scales[colorScale](higher=totalValue or 1)
 
     for code, ccaa in data.countries.ES.ccaas.items():
-        value = ccaa["values"][0]
-        result.update({
-            'number_' + code: value,
-            'percent_' + code: percentRegion(value, totalValue),
-            'color_' + code: colors(scale(value)),
-            })
+        if geolevel is 'ccaa':
+            value = ccaa["values"][0]
+            result.update({
+                'number_' + code: value,
+                'percent_' + code: percentRegion(value, totalValue),
+                'color_' + code: colors(scale(value)),
+                })
+        elif geolevel is 'states':
+            for code, state in ccaa.states.items():
+                value = state["values"][0]
+                result.update({
+                    'color_' + code: colors(scale(value)),
+                })
+
     restWorld = data["values"][0] - data.countries.ES["values"][0]
     result.update({
         'number_00': restWorld,
