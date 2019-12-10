@@ -424,3 +424,40 @@ class Map_Test(unittest.TestCase):
             number_00: 0
             percent_00: 0,0%
         """)
+
+    def test_dataToTemplateDict_twoCounties(self):
+        data = ns.loads("""\
+            dates: [2019-01-01]
+            values: [750]
+            countries:
+              ES:
+                name: España
+                values: [750]
+                ccaas:
+                  '01':
+                    name: Andalucia
+                    values:
+                      - 750
+                    states:
+                      '11':
+                        name: Cádiz
+                        values:
+                          - 500
+                      '14':
+                        name: Córdoba
+                        values:
+                          - 250
+            """)
+        color = Gradient('#e0ecbb','#384413')
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='states')
+
+        self.assertNsEqual(result, """\
+            title: un títol
+            subtitle: un subtítol
+            year: 2019
+            month: Enero
+            number_00: 0
+            percent_00: 0,0%
+            color_11: '#455417'
+            color_14: '#5c701f'
+        """)
