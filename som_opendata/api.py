@@ -12,7 +12,7 @@ from .common import (
 from .distribution import aggregate
 from .errors import MissingDateError
 from . import __version__
-from .map import renderMap
+from .map import renderMap, requestedOrLastWithData
 
 api = Blueprint(name=__name__, import_name=__name__)
 api.firstDate = '2010-01-01'
@@ -385,8 +385,10 @@ def version():
 api.source = None
 
 @api.route('/map/<string:metric>')
-#@api.route('/map/<string:metric>/on/<isodate:ondate>')
+@api.route('/map/<string:metric>/on/<isodate:ondate>')
 def map(metric=None, ondate=None):
+    if ondate:
+        ondate = requestedOrLastWithData(ondate)
     result = renderMap(source=api.source, metric=metric, date=ondate, geolevel='ccaa')
     response = make_response(result)
     response.mimetype = 'image/svg+xml'
