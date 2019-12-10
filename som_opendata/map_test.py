@@ -461,3 +461,50 @@ class Map_Test(unittest.TestCase):
             color_11: '#455417'
             color_14: '#5c701f'
         """)
+
+    def test_dataToTemplateDict_twoCountiesDifCCAA(self):
+        data = ns.loads("""\
+            dates: [2019-01-01]
+            values: [750]
+            countries:
+              ES:
+                name: España
+                values: [750]
+                ccaas:
+                  '01':
+                    name: Andalucia
+                    values:
+                      - 500
+                    states:
+                      '11':
+                        name: Cádiz
+                        values:
+                          - 500
+                  '09':
+                    name: Catalunya
+                    values: [250]
+                    states:
+                      '43':
+                        name: Tarragona
+                        values:
+                          - 250
+            """)
+        color = Gradient('#e0ecbb','#384413')
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state')
+
+        self.assertNsEqual(result, """\
+            title: un títol
+            subtitle: un subtítol
+            year: 2019
+            month: Enero
+            number_00: 0
+            percent_00: 0,0%
+            color_11: '#455417'
+            color_43: '#5c701f'
+        """)
+
+    @unittest.skip("NiY")
+    def test_renderMap_contracts_byState(self):
+        source = loadCsvSource()
+        result = renderMap(source, 'contracts', '2019-01-01', geolevel='state')
+        self.assertB2BEqual(result)
