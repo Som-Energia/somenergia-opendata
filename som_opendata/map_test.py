@@ -395,6 +395,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            number_11: 1969
             color_11: '#384413'
         """)
 
@@ -458,7 +459,9 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            number_11: 500
             color_11: '#455417'
+            number_14: 250
             color_14: '#5c701f'
         """)
 

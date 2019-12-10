@@ -45,6 +45,7 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
             for code, state in ccaa.states.items():
                 value = state["values"][0]
                 result.update({
+                    'number_' + code: value,
                     'color_' + code: colors(scale(value)),
                 })
 
