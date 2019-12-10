@@ -4,7 +4,14 @@ import b2btest
 import unittest
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
-from .map import dataToTemplateDict, fillMap, renderMap, percentRegion, lastDateWithData
+from .map import (
+    dataToTemplateDict,
+    fillMap,
+    renderMap,
+    percentRegion,
+    lastDateWithData,
+    requestedOrLastWithData
+    )
 from .colorscale import Gradient
 from .csvSource import loadCsvSource, CsvSource
 from future.utils import iteritems
@@ -278,6 +285,17 @@ class Map_Test(unittest.TestCase):
         result = lastDateWithData()
         self.assertEqual(result, '2019-11-01')
 
+    def test_requestedOrLastWithData_requested(self):
+        requested = Date('2018-01-01')
+        self.assertEqual(requestedOrLastWithData(requested), '2018-01-01')
+
+    def test_requestedOrLastWithData_noDataYet(self):
+        requested = Date('2020-01-01')
+        self.assertEqual(requestedOrLastWithData(requested), '2019-11-01')
+
+    def test_requestedOrLastWithData_equals(self):
+        requested = Date('2019-11-01')
+        self.assertEqual(requestedOrLastWithData(requested), '2019-11-01')
 
     def test_renderMap_(self):
         self.maxDiff = None

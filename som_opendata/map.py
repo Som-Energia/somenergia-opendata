@@ -79,6 +79,13 @@ def lastDateWithData():
     endLastMonth = today - timedelta(days=today.day)
     return str(endLastMonth.replace(day=1).isoformat())
 
+def requestedOrLastWithData(date):
+    requested = str(date)
+    lastWithData = lastDateWithData()
+    if lastWithData < requested:
+        return lastWithData
+    return requested
+
 def renderMap(source, metric, date, geolevel):
     if not date:
         date = lastDateWithData()
