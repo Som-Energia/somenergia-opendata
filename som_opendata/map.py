@@ -41,7 +41,7 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
                 'percent_' + code: percentRegion(value, totalValue),
                 'color_' + code: colors(scale(value)),
                 })
-        elif geolevel is 'states':
+        elif geolevel is 'state':
             for code, state in ccaa.states.items():
                 value = state["values"][0]
                 result.update({

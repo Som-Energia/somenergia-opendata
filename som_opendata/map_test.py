@@ -386,7 +386,7 @@ class Map_Test(unittest.TestCase):
                           - 1969
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='states')
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state')
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -414,7 +414,7 @@ class Map_Test(unittest.TestCase):
                     states: {}
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='states')
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state')
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -449,7 +449,7 @@ class Map_Test(unittest.TestCase):
                           - 250
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='states')
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state')
 
         self.assertNsEqual(result, """\
             title: un títol
