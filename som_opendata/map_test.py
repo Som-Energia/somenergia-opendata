@@ -397,3 +397,30 @@ class Map_Test(unittest.TestCase):
             percent_00: 0,0%
             color_11: '#384413'
         """)
+
+    def test_dataToTemplateDict_noCounty(self):
+        data = ns.loads("""\
+            dates: [2019-01-01]
+            values: [1969]
+            countries:
+              ES:
+                name: España
+                values: [1969]
+                ccaas:
+                  '01':
+                    name: Andalucia
+                    values:
+                      - 1969
+                    states: {}
+            """)
+        color = Gradient('#e0ecbb','#384413')
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='states')
+
+        self.assertNsEqual(result, """\
+            title: un títol
+            subtitle: un subtítol
+            year: 2019
+            month: Enero
+            number_00: 0
+            percent_00: 0,0%
+        """)
