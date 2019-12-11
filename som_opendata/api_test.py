@@ -258,12 +258,16 @@ class Api_Test(unittest.TestCase):
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
 
-    #@unittest.skip("Not implemented")
     def test__map__ccaaMembersDateSet(self):
         r = self.get('/map/members/on/2018-01-01')
         self.assertEqual(r.status, '200 OK')
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
 
+    def test__map__statesMembers(self):
+        r = self.get('/map/members/by/state/on/2018-01-01')
+        self.assertEqual(r.status, '200 OK')
+        self.assertEqual(r.mimetype, 'image/svg+xml')
+        self.assertB2BEqual(r.data)
 
 # vim: et ts=4 sw=4

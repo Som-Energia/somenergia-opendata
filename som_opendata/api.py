@@ -382,17 +382,17 @@ def version():
         )
 
 
-api.source = None
 
 @api.route('/map/<string:metric>')
 @api.route('/map/<string:metric>/on/<isodate:ondate>')
-def map(metric=None, ondate=None):
-    if ondate:
-        ondate = requestedOrLastWithData(ondate)
-    result = renderMap(source=api.source, metric=metric, date=ondate, geolevel='ccaa')
+@api.route('/map/<string:metric>/by/<string:geolevel>')
+@api.route('/map/<string:metric>/by/<string:geolevel>/on/<isodate:ondate>')
+def map(metric=None, ondate=None, geolevel='ccaa'):
+    result = renderMap(source=api.source, metric=metric, date=ondate, geolevel=geolevel)
     response = make_response(result)
     response.mimetype = 'image/svg+xml'
     return response
 
+api.source = None
 
 # vim: et ts=4 sw=4
