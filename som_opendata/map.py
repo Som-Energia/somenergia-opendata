@@ -32,21 +32,22 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
     totalValue = data["values"][0]
 
     scale = scales[colorScale](higher=totalValue or 1)
-    for code, ccaa in data.countries.ES.ccaas.items():
-        if geolevel == 'state':
-            for stateCode, state in ccaa.states.items():
-                value = state["values"][0]
-                result.update({
-                    'number_' + stateCode: value,
-                    'color_' + stateCode: colors(scale(value)),
-                })
-        else:
-            value = ccaa["values"][0]
-            result.update({
+
+    def updateDict(code, value):
+        result.update({
                 'number_' + code: value,
                 'percent_' + code: percentRegion(value, totalValue),
                 'color_' + code: colors(scale(value)),
                 })
+
+    for code, ccaa in data.countries.ES.ccaas.items():
+        if geolevel == 'state':
+            for stateCode, state in ccaa.states.items():
+                value = state["values"][0]
+                updateDict(stateCode, value)
+        else:
+            value = ccaa["values"][0]
+            updateDict(code, value)
 
     restWorld = data["values"][0] - data.countries.ES["values"][0]
     result.update({
@@ -54,13 +55,9 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
         'percent_00': percentRegion(restWorld,totalValue),
         })
     for code in locations:
-        if result.get('number_{}'.format(code)):
+        if 'number_{}'.format(code) in result:
             continue
-        result.update({
-        'number_' + code: 0,
-        'percent_' + code: percentRegion(0, totalValue),
-        'color_' + code: colors(scale(0)),
-        })
+        updateDict(code, 0)
     return result
 
 

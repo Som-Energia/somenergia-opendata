@@ -398,6 +398,7 @@ class Map_Test(unittest.TestCase):
             number_00: 0
             percent_00: 0,0%
             number_11: 1969
+            percent_11: 100,0%
             color_11: '#384413'
         """)
 
@@ -462,8 +463,10 @@ class Map_Test(unittest.TestCase):
             number_00: 0
             percent_00: 0,0%
             number_11: 500
+            percent_11: 66,7%
             color_11: '#455417'
             number_14: 250
+            percent_14: 33,3%
             color_14: '#5c701f'
         """)
 
@@ -505,8 +508,10 @@ class Map_Test(unittest.TestCase):
             number_00: 0
             percent_00: 0,0%
             number_11: 500
+            percent_11: 66,7%
             color_11: '#455417'
             number_43: 250
+            percent_43: 33,3%
             color_43: '#5c701f'
         """)
 
