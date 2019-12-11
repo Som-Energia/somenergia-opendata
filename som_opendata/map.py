@@ -40,21 +40,28 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
                 'color_' + code: colors(scale(value)),
                 })
 
-    for code, ccaa in data.countries.ES.ccaas.items():
-        if geolevel == 'state':
-            for stateCode, state in ccaa.states.items():
-                value = state["values"][0]
-                updateDict(stateCode, value)
-        else:
-            value = ccaa["values"][0]
-            updateDict(code, value)
+    geolevels=[
+        ('ccaa', 'ccaas'),
+        ('state','states'),
+        ('city', 'cities'),
+        ]
+    # TODO: just for tests 
+    if geolevel == 'dummy':
+        geolevel = 'ccaa'
+
+    def processLevel(parentRegion, level):
+        singular, plural = geolevels[level]
+        for code, region in parentRegion[plural].items():
+            if singular == geolevel:
+                value = region["values"][0]
+                updateDict(code, value)
+            else:
+                processLevel(region, level+1)
+
+    processLevel(data.countries.ES, 0)
 
     restWorld = data["values"][0] - data.countries.ES["values"][0]
     updateDict('00',restWorld)
-    result.update({
-        'number_00': restWorld,
-        'percent_00': percentRegion(restWorld,totalValue),
-        })
     for code in locations:
         if 'number_{}'.format(code) in result:
             continue

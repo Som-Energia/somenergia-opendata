@@ -304,7 +304,8 @@ class Map_Test(unittest.TestCase):
 
     def test_requestedOrLastWithData_None(self):
         self.assertEqual(requestedOrLastWithData(None), lastDateWithData())
-    def test_renderMap_(self):
+
+    def test_renderMap_dummyAllLocations(self):
         self.maxDiff = None
         source = self.createSource(
             ns(members=[
@@ -331,7 +332,7 @@ class Map_Test(unittest.TestCase):
 </svg>
 """)
 
-    def test_renderMap_missingLocation(self):
+    def test_renderMap_dummyMissingLocation(self):
         self.maxDiff = None
         source = self.createSource(
             ns(members=[
