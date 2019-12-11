@@ -50,6 +50,7 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
             updateDict(code, value)
 
     restWorld = data["values"][0] - data.countries.ES["values"][0]
+    updateDict('00',restWorld)
     result.update({
         'number_00': restWorld,
         'percent_00': percentRegion(restWorld,totalValue),

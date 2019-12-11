@@ -77,6 +77,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
         """)
 
     def test_dataToTemplateDict_singleRegion(self):
@@ -102,6 +103,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
             number_01: 123
             percent_01: 100,0%
             color_01: '#384413'
@@ -136,6 +138,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
             number_01: 123
             percent_01: 86,0%
             color_01: '#3f4c15'
@@ -167,6 +170,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 3
             percent_00: 2,4%
+            color_00: '#c5db7f'
             number_01: 123
             percent_01: 97,6%
             color_01: '#394513'
@@ -198,6 +202,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
             number_01: 123
             percent_01: 86,0%
             color_01: '#56691d'
@@ -397,6 +402,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
             number_11: 1969
             percent_11: 100,0%
             color_11: '#384413'
@@ -427,6 +433,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
         """)
 
     def test_dataToTemplateDict_twoCounties(self):
@@ -462,6 +469,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
             number_11: 500
             percent_11: 66,7%
             color_11: '#455417'
@@ -507,6 +515,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
             number_11: 500
             percent_11: 66,7%
             color_11: '#455417'
