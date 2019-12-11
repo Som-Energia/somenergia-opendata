@@ -88,8 +88,7 @@ def requestedOrLastWithData(date):
     return requested
 
 def renderMap(source, metric, date, geolevel):
-    if not date:
-        date = lastDateWithData()
+    date = requestedOrLastWithData(date)
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     locations = [
         location.code for location in tuples2objects(parse_tsv(locationContent))
