@@ -15,9 +15,9 @@ from .map import (
 from .colorscale import Gradient
 from .csvSource import loadCsvSource, CsvSource
 from future.utils import iteritems
-from pathlib import Path
+from pathlib2 import Path
 
-dummyTemplate="""\
+dummyTemplate=u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: {title}</text>
   <text y="60" x="170" style="text-anchor:middle">Subtitle: {subtitle}</text>
@@ -44,7 +44,7 @@ class Map_Test(unittest.TestCase):
     def setUp(self):
         self.b2bdatapath = 'b2bdata'
         Path('maps/mapTemplate_dummy.svg').write_text(dummyTemplate, encoding='utf8')
-        population = (
+        population = (u''
                 'code\tname\tpopulation\n'
                 '01\tAndalucía\t10000\n'
                 '09\tCatalunya\t20000\n'

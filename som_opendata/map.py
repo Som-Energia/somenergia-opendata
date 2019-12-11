@@ -2,7 +2,7 @@ from yamlns import namespace as ns
 from .scale import LinearScale, LogScale
 from .colorscale import Gradient
 from .distribution import aggregate, parse_tsv, tuples2objects
-from pathlib import Path
+from pathlib2 import Path
 from datetime import date, timedelta
 
 

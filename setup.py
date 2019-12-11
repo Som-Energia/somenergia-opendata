@@ -34,9 +34,10 @@ setup(
 		'python-dateutil',
 		'records',
 		'tablib',
-		'pathlib2',
 		'somutils',
-		'future',
+		'colour',
+		'future', # Py2 backward compat
+		'pathlib2', # Py2 backward compat
 	],
 	include_package_data = True,
 	test_suite = 'som_opendata',

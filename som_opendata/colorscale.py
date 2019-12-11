@@ -2,6 +2,21 @@ from colour import Color
 
 
 class Gradient(object):
+    """
+    A Gradient interpolates between two colors in HSL space.
+	Colors are any text representing a web color:
+	'navyblue', '#fafe40'...
+
+    Input values are clamped into the 0 to 1 interval.
+
+	>>> gradient = Gradient('red', '#00F')
+	>>> gradient(0.0)
+	'#ff0000'
+	>>> gradient(1.0)
+	'#0000ff'
+	>>> gradient(0.5)
+	'#ff00ff'
+    """
 
     def __init__(self, fro, to):
         self.fro = Color(fro)
