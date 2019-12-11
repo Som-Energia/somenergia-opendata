@@ -224,7 +224,7 @@ class Map_Test(unittest.TestCase):
             """)
         self.maxDiff = None
         result = fillMap(data=data, template=dummyTemplate,
-                title="un títol", subtitle="un subtítol")
+                title="un títol", subtitle="un subtítol", geolevel='ccaa')
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: un títol</text>
@@ -255,7 +255,7 @@ class Map_Test(unittest.TestCase):
             """)
         self.maxDiff = None
         result = fillMap(data=data, template=dummyTemplate,
-                title="un títol", subtitle="un subtítol", locations=['01','09'])
+                title="un títol", subtitle="un subtítol", locations=['01','09'], geolevel='ccaa')
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: un títol</text>
@@ -359,7 +359,7 @@ class Map_Test(unittest.TestCase):
         source = loadCsvSource()
         result = renderMap(source, 'members', None, geolevel='ccaa')
         expected = renderMap(source, 'members', '2019-11-01', 'ccaa')
-        self.assertMultiLineEqual(result,expected)
+        self.assertMultiLineEqual(result, expected)
 
     def test_renderMap_contracts(self):
         source = loadCsvSource()
@@ -470,27 +470,27 @@ class Map_Test(unittest.TestCase):
             dates: [2019-01-01]
             values: [750]
             countries:
-              ES:
-                name: España
-                values: [750]
-                ccaas:
-                  '01':
-                    name: Andalucia
-                    values:
-                      - 500
-                    states:
-                      '11':
-                        name: Cádiz
-                        values:
+                ES:
+                  name: España
+                  values:
+                  - 750
+                  ccaas:
+                    '01':
+                      name: Andalucia
+                      values: [500]
+                      states:
+                        '11':
+                          name: Cádiz
+                          values:
                           - 500
-                  '09':
-                    name: Catalunya
-                    values: [250]
-                    states:
-                      '43':
-                        name: Tarragona
-                        values:
-                          - 250
+                    '09':
+                      name: Catalunya
+                      values: [250]
+                      states:
+                        '43':
+                          name: Tarragona
+                          values:
+                            - 250
             """)
         color = Gradient('#e0ecbb','#384413')
         result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state')
@@ -502,12 +502,13 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            number_11: 500
             color_11: '#455417'
+            number_43: 250
             color_43: '#5c701f'
         """)
 
-    @unittest.skip("NiY")
-    def test_renderMap_contracts_byState(self):
+    def test_renderMap_members_byState(self):
         source = loadCsvSource()
-        result = renderMap(source, 'contracts', '2019-01-01', geolevel='state')
+        result = renderMap(source, 'members', '2019-11-01', geolevel='state')
         self.assertB2BEqual(result)

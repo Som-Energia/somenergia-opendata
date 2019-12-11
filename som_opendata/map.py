@@ -32,21 +32,20 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
     totalValue = data["values"][0]
 
     scale = scales[colorScale](higher=totalValue or 1)
-
     for code, ccaa in data.countries.ES.ccaas.items():
-        if geolevel is 'ccaa':
+        if geolevel is 'state':
+            for stateCode, state in ccaa.states.items():
+                value = state["values"][0]
+                result.update({
+                    'number_' + stateCode: value,
+                    'color_' + stateCode: colors(scale(value)),
+                })
+        else:
             value = ccaa["values"][0]
             result.update({
                 'number_' + code: value,
                 'percent_' + code: percentRegion(value, totalValue),
                 'color_' + code: colors(scale(value)),
-                })
-        elif geolevel is 'state':
-            for code, state in ccaa.states.items():
-                value = state["values"][0]
-                result.update({
-                    'number_' + code: value,
-                    'color_' + code: colors(scale(value)),
                 })
 
     restWorld = data["values"][0] - data.countries.ES["values"][0]
@@ -54,7 +53,6 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
         'number_00': restWorld,
         'percent_00': percentRegion(restWorld,totalValue),
         })
-
     for code in locations:
         if result.get('number_{}'.format(code)):
             continue
@@ -66,11 +64,11 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
     return result
 
 
-def fillMap(data, template, title, subtitle='', scale='Log', locations=[]):
+def fillMap(data, template, geolevel, title, subtitle='', scale='Log', locations=[]):
     gradient = Gradient('#e0ecbb','#384413')
     dataDict = dataToTemplateDict(
         data=data, colors=gradient,
-        colorScale=scale, title=title, subtitle=subtitle, locations=locations
+        colorScale=scale, title=title, subtitle=subtitle, locations=locations, geolevel=geolevel
     )
 
     return template.format(**dataDict)
@@ -97,7 +95,7 @@ def renderMap(source, metric, date, geolevel):
     filtered_objects = source.get(metric, [date], [])
     data = aggregate(filtered_objects, geolevel)
     template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
-    return fillMap(data=data, template=template, title=metric.title(), locations=locations)
+    return fillMap(data=data, template=template, title=metric.title(), locations=locations, geolevel=geolevel)
 
 
 # map{Country}{ES}by{States}.svg
