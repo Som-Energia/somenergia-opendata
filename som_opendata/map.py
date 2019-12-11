@@ -33,7 +33,7 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
 
     scale = scales[colorScale](higher=totalValue or 1)
     for code, ccaa in data.countries.ES.ccaas.items():
-        if geolevel is 'state':
+        if geolevel == 'state':
             for stateCode, state in ccaa.states.items():
                 value = state["values"][0]
                 result.update({
