@@ -79,8 +79,10 @@ def lastDateWithData():
     return str(endLastMonth.replace(day=1).isoformat())
 
 def requestedOrLastWithData(date):
-    requested = str(date)
     lastWithData = lastDateWithData()
+    if not date:
+        return lastWithData
+    requested = str(date)
     if lastWithData < requested:
         return lastWithData
     return requested

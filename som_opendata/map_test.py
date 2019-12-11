@@ -297,6 +297,8 @@ class Map_Test(unittest.TestCase):
         requested = Date('2019-11-01')
         self.assertEqual(requestedOrLastWithData(requested), '2019-11-01')
 
+    def test_requestedOrLastWithData_None(self):
+        self.assertEqual(requestedOrLastWithData(None), lastDateWithData())
     def test_renderMap_(self):
         self.maxDiff = None
         source = self.createSource(
