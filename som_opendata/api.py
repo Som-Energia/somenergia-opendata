@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, request, current_app
+from flask import Blueprint, request, current_app, make_response
 from yamlns import namespace as ns
 from .common import (
         yaml_response,
@@ -12,6 +12,7 @@ from .common import (
 from .distribution import aggregate
 from .errors import MissingDateError
 from . import __version__
+from .map import renderMap, requestedOrLastWithData
 
 api = Blueprint(name=__name__, import_name=__name__)
 api.firstDate = '2010-01-01'
@@ -380,6 +381,17 @@ def version():
         compat = '0.2.1',
         )
 
+
+
+@api.route('/map/<string:metric>')
+@api.route('/map/<string:metric>/on/<isodate:ondate>')
+@api.route('/map/<string:metric>/by/<string:geolevel>')
+@api.route('/map/<string:metric>/by/<string:geolevel>/on/<isodate:ondate>')
+def map(metric=None, ondate=None, geolevel='ccaa'):
+    result = renderMap(source=api.source, metric=metric, date=ondate, geolevel=geolevel)
+    response = make_response(result)
+    response.mimetype = 'image/svg+xml'
+    return response
 
 api.source = None
 

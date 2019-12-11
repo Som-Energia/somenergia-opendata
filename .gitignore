@@ -105,3 +105,8 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+
+#sublime project
+opendata.sublime-project
+opendata.sublime-workspace
