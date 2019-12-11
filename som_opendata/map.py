@@ -52,11 +52,11 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
     def processLevel(parentRegion, level):
         singular, plural = geolevels[level]
         for code, region in parentRegion[plural].items():
-            if singular == geolevel:
-                value = region["values"][0]
-                updateDict(code, value)
-            else:
+            if singular != geolevel:
                 processLevel(region, level+1)
+                continue
+            value = region["values"][0]
+            updateDict(code, value)
 
     processLevel(data.countries.ES, 0)
 
