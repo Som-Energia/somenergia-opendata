@@ -62,6 +62,7 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
 
     restWorld = data["values"][0] - data.countries.ES["values"][0]
     updateDict('00',restWorld)
+
     for code in locations:
         if 'number_{}'.format(code) in result:
             continue
@@ -78,22 +79,7 @@ def fillMap(data, template, geolevel, title, subtitle='', scale='Log', locations
 
     return template.format(**dataDict)
 
-def lastDateWithData():
-    today = date.today()
-    endLastMonth = today - timedelta(days=today.day)
-    return str(endLastMonth.replace(day=1).isoformat())
-
-def requestedOrLastWithData(date):
-    lastWithData = lastDateWithData()
-    if not date:
-        return lastWithData
-    requested = str(date)
-    if lastWithData < requested:
-        return lastWithData
-    return requested
-
 def renderMap(source, metric, date, geolevel):
-    date = requestedOrLastWithData(date)
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     locations = [
         location.code for location in tuples2objects(parse_tsv(locationContent))

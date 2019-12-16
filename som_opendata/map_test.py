@@ -9,8 +9,6 @@ from .map import (
     fillMap,
     renderMap,
     percentRegion,
-    lastDateWithData,
-    requestedOrLastWithData
     )
 from .colorscale import Gradient
 from .csvSource import loadCsvSource, CsvSource
@@ -286,25 +284,6 @@ class Map_Test(unittest.TestCase):
         return CsvSource(content)
 
 
-    def test_lastDateWithData_(self):
-        result = lastDateWithData()
-        self.assertEqual(result, '2019-11-01')
-
-    def test_requestedOrLastWithData_requested(self):
-        requested = Date('2018-01-01')
-        self.assertEqual(requestedOrLastWithData(requested), '2018-01-01')
-
-    def test_requestedOrLastWithData_noDataYet(self):
-        requested = Date('2020-01-01')
-        self.assertEqual(requestedOrLastWithData(requested), '2019-11-01')
-
-    def test_requestedOrLastWithData_equals(self):
-        requested = Date('2019-11-01')
-        self.assertEqual(requestedOrLastWithData(requested), '2019-11-01')
-
-    def test_requestedOrLastWithData_None(self):
-        self.assertEqual(requestedOrLastWithData(None), lastDateWithData())
-
     def test_renderMap_dummyAllLocations(self):
         self.maxDiff = None
         source = self.createSource(
@@ -362,12 +341,6 @@ class Map_Test(unittest.TestCase):
         source = loadCsvSource()
         result = renderMap(source, 'members', '2019-01-01', geolevel='ccaa')
         self.assertB2BEqual(result)
-
-    def test_renderMap_members_defaultDate(self):
-        source = loadCsvSource()
-        result = renderMap(source, 'members', None, geolevel='ccaa')
-        expected = renderMap(source, 'members', '2019-11-01', 'ccaa')
-        self.assertMultiLineEqual(result, expected)
 
     def test_renderMap_contracts(self):
         source = loadCsvSource()
