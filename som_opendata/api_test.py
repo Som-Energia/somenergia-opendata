@@ -286,5 +286,15 @@ class Api_Test(unittest.TestCase):
             """)
         self.assertEqual(r.mimetype, 'application/json')
 
+    def test__map__geolevelNotImplemented(self):
+        r = self.get('/wipmap/members/by/city')
+        self.assertEqual(r.status_code, 400)
+        self.assertYamlResponse(r, """\
+            parameter: geolevel
+            valueRequest: city
+            possibleValues: ['ccaa', 'state']
+            message: Not implemented geolevel 'city' try with ['ccaa', 'state']
+            """)
+        self.assertEqual(r.mimetype, 'application/json')
 
 # vim: et ts=4 sw=4
