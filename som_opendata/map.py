@@ -10,12 +10,32 @@ months = (
         "Julio Agosto Septiembre Octubre Noviembre Diciembre"
         ).split()
 
+
+geolevels=[
+    ('ccaa', 'ccaas'),
+    ('state','states'),
+    ('city', 'cities'),
+    ]
 def percentRegion(value, total):
     if not total:
         return '0,0%'
     return '{:.1f}%'.format(value * 100. / total).replace('.',',')
 
-def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa'):
+def maxValue(data, geolevel):
+
+    def processLevelMax(parentRegion, level):
+        maxVal = 0
+        singular, plural = geolevels[level]
+        for code, region in parentRegion[plural].items():
+            if singular != geolevel:
+                processLevelMax(region, level+1)
+                continue
+            if region["values"][0] > maxVal:
+                maxVal = region["values"][0]
+        return maxVal
+    return processLevelMax(data.countries.ES, 0)
+
+def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa', maxValue=None):
     date = data.dates[0]
     result = ns(
             title = title,
@@ -28,7 +48,7 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
         Linear = LinearScale,
         Log = LogScale,
     )
-    totalValue = data["values"][0]
+    totalValue = maxValue or data["values"][0]
 
     scale = scales[colorScale](higher=totalValue or 1)
 
@@ -39,11 +59,6 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
                 'color_' + code: colors(scale(value)),
                 })
 
-    geolevels=[
-        ('ccaa', 'ccaas'),
-        ('state','states'),
-        ('city', 'cities'),
-        ]
     # TODO: just for tests 
     if geolevel == 'dummy':
         geolevel = 'ccaa'

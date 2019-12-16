@@ -9,6 +9,7 @@ from .map import (
     fillMap,
     renderMap,
     percentRegion,
+    maxValue,
     )
 from .colorscale import Gradient
 from .csvSource import loadCsvSource, CsvSource
@@ -66,7 +67,7 @@ class Map_Test(unittest.TestCase):
                 ccaas: {}
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color,maxValue=123)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -92,7 +93,7 @@ class Map_Test(unittest.TestCase):
                     values: [123]
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color,maxValue=123)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -127,7 +128,7 @@ class Map_Test(unittest.TestCase):
                     values: [20]
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, maxValue=143)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -159,7 +160,7 @@ class Map_Test(unittest.TestCase):
                     values: [123]
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, maxValue=126)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -191,7 +192,7 @@ class Map_Test(unittest.TestCase):
                     values: [20]
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colorScale='Linear', colors=color)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colorScale='Linear', colors=color, maxValue=143)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -367,7 +368,7 @@ class Map_Test(unittest.TestCase):
                           - 1969
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state')
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state', maxValue=1969)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -398,7 +399,7 @@ class Map_Test(unittest.TestCase):
                     states: {}
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state')
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state',maxValue=1969)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -434,7 +435,7 @@ class Map_Test(unittest.TestCase):
                           - 250
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state')
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state',maxValue=750)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -480,7 +481,7 @@ class Map_Test(unittest.TestCase):
                             - 250
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state')
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state', maxValue=750)
 
         self.assertNsEqual(result, """\
             title: un títol
