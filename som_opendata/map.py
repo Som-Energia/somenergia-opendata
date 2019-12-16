@@ -3,7 +3,6 @@ from .scale import LinearScale, LogScale
 from .colorscale import Gradient
 from .distribution import aggregate, parse_tsv, tuples2objects
 from pathlib2 import Path
-from datetime import date, timedelta
 
 
 months = (
@@ -33,35 +32,41 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
 
 
     scale = scales[colorScale](higher=totalValue or 1)
-    for code, ccaa in data.countries.ES.ccaas.items():
-        if geolevel == 'state':
-            for stateCode, state in ccaa.states.items():
-                value = state["values"][0]
-                result.update({
-                    'number_' + stateCode: value,
-                    'color_' + stateCode: colors(scale(value)),
-                })
-        else:
-            value = ccaa["values"][0]
-            result.update({
+
+    def updateDict(code, value):
+        result.update({
                 'number_' + code: value,
                 'percent_' + code: percentRegion(value, totalValue),
                 'color_' + code: colors(scale(value)),
                 })
 
+    geolevels=[
+        ('ccaa', 'ccaas'),
+        ('state','states'),
+        ('city', 'cities'),
+        ]
+    # TODO: just for tests 
+    if geolevel == 'dummy':
+        geolevel = 'ccaa'
+
+    def processLevel(parentRegion, level):
+        singular, plural = geolevels[level]
+        for code, region in parentRegion[plural].items():
+            if singular != geolevel:
+                processLevel(region, level+1)
+                continue
+            value = region["values"][0]
+            updateDict(code, value)
+
+    processLevel(data.countries.ES, 0)
+
     restWorld = data["values"][0] - data.countries.ES["values"][0]
-    result.update({
-        'number_00': restWorld,
-        'percent_00': percentRegion(restWorld,totalValue),
-        })
+    updateDict('00',restWorld)
+
     for code in locations:
-        if result.get('number_{}'.format(code)):
+        if 'number_{}'.format(code) in result:
             continue
-        result.update({
-        'number_' + code: 0,
-        'percent_' + code: percentRegion(0, totalValue),
-        'color_' + code: colors(scale(0)),
-        })
+        updateDict(code, 0)
     return result
 
 
@@ -74,27 +79,12 @@ def fillMap(data, template, geolevel, title, subtitle='', scale='Log', locations
 
     return template.format(**dataDict)
 
-def lastDateWithData():
-    today = date.today()
-    endLastMonth = today - timedelta(days=today.day)
-    return str(endLastMonth.replace(day=1).isoformat())
-
-def requestedOrLastWithData(date):
-    lastWithData = lastDateWithData()
-    if not date:
-        return lastWithData
-    requested = str(date)
-    if lastWithData < requested:
-        return lastWithData
-    return requested
-
 def renderMap(source, metric, date, geolevel):
-    date = requestedOrLastWithData(date)
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     locations = [
         location.code for location in tuples2objects(parse_tsv(locationContent))
     ]
-    filtered_objects = source.get(metric, [date], [])
+    filtered_objects = source.get(metric, date, [])
     data = aggregate(filtered_objects, geolevel)
     template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
     return fillMap(data=data, template=template, title=metric.title(), locations=locations, geolevel=geolevel)

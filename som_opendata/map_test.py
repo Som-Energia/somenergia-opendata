@@ -9,8 +9,6 @@ from .map import (
     fillMap,
     renderMap,
     percentRegion,
-    lastDateWithData,
-    requestedOrLastWithData
     )
 from .colorscale import Gradient
 from .csvSource import loadCsvSource, CsvSource
@@ -166,6 +164,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
         """)
 
     def test_dataToTemplateDict_singleRegion(self):
@@ -191,6 +190,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
             number_01: 123
             percent_01: 100,0%
             color_01: '#384413'
@@ -225,6 +225,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
             number_01: 123
             percent_01: 86,0%
             color_01: '#3f4c15'
@@ -256,6 +257,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 3
             percent_00: 2,4%
+            color_00: '#c5db7f'
             number_01: 123
             percent_01: 97,6%
             color_01: '#394513'
@@ -287,6 +289,7 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
             number_01: 123
             percent_01: 86,0%
             color_01: '#56691d'
@@ -370,25 +373,7 @@ class Map_Test(unittest.TestCase):
         return CsvSource(content)
 
 
-    def test_lastDateWithData_(self):
-        result = lastDateWithData()
-        self.assertEqual(result, '2019-11-01')
-
-    def test_requestedOrLastWithData_requested(self):
-        requested = Date('2018-01-01')
-        self.assertEqual(requestedOrLastWithData(requested), '2018-01-01')
-
-    def test_requestedOrLastWithData_noDataYet(self):
-        requested = Date('2020-01-01')
-        self.assertEqual(requestedOrLastWithData(requested), '2019-11-01')
-
-    def test_requestedOrLastWithData_equals(self):
-        requested = Date('2019-11-01')
-        self.assertEqual(requestedOrLastWithData(requested), '2019-11-01')
-
-    def test_requestedOrLastWithData_None(self):
-        self.assertEqual(requestedOrLastWithData(None), lastDateWithData())
-    def test_renderMap_(self):
+    def test_renderMap_dummyAllLocations(self):
         self.maxDiff = None
         source = self.createSource(
             ns(members=[
@@ -398,7 +383,7 @@ class Map_Test(unittest.TestCase):
                 ])
             )
 
-        result = renderMap(source, 'members', '2018-01-01', geolevel='dummy')
+        result = renderMap(source, 'members', ['2018-01-01'], geolevel='dummy')
 
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -415,7 +400,7 @@ class Map_Test(unittest.TestCase):
 </svg>
 """)
 
-    def test_renderMap_missingLocation(self):
+    def test_renderMap_dummyMissingLocation(self):
         self.maxDiff = None
         source = self.createSource(
             ns(members=[
@@ -424,7 +409,7 @@ class Map_Test(unittest.TestCase):
                 ])
             )
 
-        result = renderMap(source, 'members', '2018-01-01', geolevel='dummy')
+        result = renderMap(source, 'members', ['2018-01-01'], geolevel='dummy')
 
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -443,21 +428,15 @@ class Map_Test(unittest.TestCase):
 
     def test_renderMap_members(self):
         source = loadCsvSource()
-        result = renderMap(source, 'members', '2019-01-01', geolevel='ccaa')
+        result = renderMap(source, 'members', ['2019-01-01'], geolevel='ccaa')
         self.assertB2BEqual(result)
-
-    def test_renderMap_members_defaultDate(self):
-        source = loadCsvSource()
-        result = renderMap(source, 'members', None, geolevel='ccaa')
-        expected = renderMap(source, 'members', '2019-11-01', 'ccaa')
-        self.assertMultiLineEqual(result, expected)
 
     def test_renderMap_contracts(self):
         source = loadCsvSource()
-        result = renderMap(source, 'contracts', '2019-01-01', geolevel='ccaa')
+        result = renderMap(source, 'contracts', ['2019-01-01'], geolevel='ccaa')
         self.assertB2BEqual(result)
 
-    def test_dataToTemplateDict_singleCounty(self):
+    def test_dataToTemplateDict_singleState(self):
         data = ns.loads("""\
             dates: [2019-01-01]
             values: [1969]
@@ -486,11 +465,13 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
             number_11: 1969
+            percent_11: 100,0%
             color_11: '#384413'
         """)
 
-    def test_dataToTemplateDict_noCounty(self):
+    def test_dataToTemplateDict_noState(self):
         data = ns.loads("""\
             dates: [2019-01-01]
             values: [1969]
@@ -515,9 +496,10 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
         """)
 
-    def test_dataToTemplateDict_twoCounties(self):
+    def test_dataToTemplateDict_twoStates(self):
         data = ns.loads("""\
             dates: [2019-01-01]
             values: [750]
@@ -550,13 +532,16 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
             number_11: 500
+            percent_11: 66,7%
             color_11: '#455417'
             number_14: 250
+            percent_14: 33,3%
             color_14: '#5c701f'
         """)
 
-    def test_dataToTemplateDict_twoCountiesDifCCAA(self):
+    def test_dataToTemplateDict_twoStatesDifCCAA(self):
         data = ns.loads("""\
             dates: [2019-01-01]
             values: [750]
@@ -593,13 +578,16 @@ class Map_Test(unittest.TestCase):
             month: Enero
             number_00: 0
             percent_00: 0,0%
+            color_00: '#e0ecbb'
             number_11: 500
+            percent_11: 66,7%
             color_11: '#455417'
             number_43: 250
+            percent_43: 33,3%
             color_43: '#5c701f'
         """)
 
     def test_renderMap_members_byState(self):
         source = loadCsvSource()
-        result = renderMap(source, 'members', '2019-11-01', geolevel='state')
+        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state')
         self.assertB2BEqual(result)
