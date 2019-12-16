@@ -388,6 +388,14 @@ def version():
 @api.route('/wipmap/<string:metric>/by/<string:geolevel>')
 @api.route('/wipmap/<string:metric>/by/<string:geolevel>/on/<isodate:ondate>')
 def map(metric=None, ondate=None, geolevel='ccaa'):
+
+    relation_paramField_param = [
+        ['metric', metric],
+        ['geolevel', geolevel],
+      ]
+    for paramField, param in relation_paramField_param:
+        validateParams(paramField, param)
+
     request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=None, to=None, periodicity=None)
     result = renderMap(source=api.source, metric=metric, date=request_dates, geolevel=geolevel)
     response = make_response(result)

@@ -270,4 +270,21 @@ class Api_Test(unittest.TestCase):
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
 
+    def test__map__onDateMissing(self):
+        r = self.get('/wipmap/members/on/2038-01-01')
+        self.assertEqual(r.status_code, 500)
+        self.assertEqual(r.mimetype, 'application/json')
+
+    def test__map__wrongMetric(self):
+        r = self.get('/wipmap/wrong')
+        self.assertEqual(r.status_code, 400)
+        self.assertYamlResponse(r, """\
+            parameter: metric
+            valueRequest: wrong
+            possibleValues: ['members', 'contracts']
+            message: Incorrect metric 'wrong' try with ['members', 'contracts']
+            """)
+        self.assertEqual(r.mimetype, 'application/json')
+
+
 # vim: et ts=4 sw=4
