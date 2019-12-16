@@ -630,3 +630,32 @@ class Map_Test(unittest.TestCase):
                           - 250
             """)
         self.assertEqual(maxValue(data, 'state'), 500)
+
+    def test_maxValue_twoStatesDifferentCCAA(self):
+        data = ns.loads("""\
+            dates: [2019-01-01]
+            values: [750]
+            countries:
+                ES:
+                  name: España
+                  values:
+                  - 750
+                  ccaas:
+                    '01':
+                      name: Andalucia
+                      values: [500]
+                      states:
+                        '11':
+                          name: Cádiz
+                          values:
+                          - 500
+                    '09':
+                      name: Catalunya
+                      values: [250]
+                      states:
+                        '43':
+                          name: Tarragona
+                          values:
+                            - 250
+            """)
+        self.assertEqual(maxValue(data, 'state'), 500)
