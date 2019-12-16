@@ -27,10 +27,11 @@ def maxValue(data, geolevel):
         singular, plural = geolevels[level]
         for code, region in parentRegion[plural].items():
             if singular != geolevel:
-                processLevelMax(region, level+1, currentMax)
+                currentMax = processLevelMax(region, level+1, currentMax)
                 continue
-            if region["values"][0] > currentMax:
-                currentMax = region["values"][0]
+            value = region["values"][0]
+            if value > currentMax:
+                currentMax = value
         return currentMax
 
     return processLevelMax(data.countries.ES, 0, 0)
