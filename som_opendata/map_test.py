@@ -555,3 +555,32 @@ class Map_Test(unittest.TestCase):
             """)
         self.assertEqual(maxValue(data, 'ccaa'), 123)
 
+    def test_maxValue_twoCCAA(self):
+        data = ns.loads("""\
+            dates: [2019-01-01]
+            values: [143]
+            countries:
+              ES:
+                name: España
+                values: [143]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [123]
+                  '09':
+                    name: Catalunya
+                    values: [20]
+            """)
+        self.assertEqual(maxValue(data, 'ccaa'), 123)
+
+    def test_maxValue_noCCAA(self):
+        data = ns.loads("""\
+            dates: [2019-01-01]
+            values: [143]
+            countries:
+              ES:
+                name: España
+                values: [143]
+                ccaas: {}
+            """)
+        self.assertEqual(maxValue(data, 'ccaa'), 0)

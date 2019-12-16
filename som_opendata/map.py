@@ -23,17 +23,17 @@ def percentRegion(value, total):
 
 def maxValue(data, geolevel):
 
-    def processLevelMax(parentRegion, level):
-        maxVal = 0
+    def processLevelMax(parentRegion, level, currentMax):
         singular, plural = geolevels[level]
         for code, region in parentRegion[plural].items():
             if singular != geolevel:
-                processLevelMax(region, level+1)
+                processLevelMax(region, level+1, currentMax)
                 continue
-            if region["values"][0] > maxVal:
-                maxVal = region["values"][0]
-        return maxVal
-    return processLevelMax(data.countries.ES, 0)
+            if region["values"][0] > currentMax:
+                currentMax = region["values"][0]
+        return currentMax
+
+    return processLevelMax(data.countries.ES, 0, 0)
 
 def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa', maxValue=None):
     date = data.dates[0]
