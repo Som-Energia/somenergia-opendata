@@ -3,7 +3,6 @@ from .scale import LinearScale, LogScale
 from .colorscale import Gradient
 from .distribution import aggregate, parse_tsv, tuples2objects
 from pathlib2 import Path
-from datetime import date, timedelta
 
 
 months = (
@@ -84,7 +83,7 @@ def renderMap(source, metric, date, geolevel):
     locations = [
         location.code for location in tuples2objects(parse_tsv(locationContent))
     ]
-    filtered_objects = source.get(metric, [date], [])
+    filtered_objects = source.get(metric, date, [])
     data = aggregate(filtered_objects, geolevel)
     template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
     return fillMap(data=data, template=template, title=metric.title(), locations=locations, geolevel=geolevel)

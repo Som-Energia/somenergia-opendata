@@ -294,7 +294,7 @@ class Map_Test(unittest.TestCase):
                 ])
             )
 
-        result = renderMap(source, 'members', '2018-01-01', geolevel='dummy')
+        result = renderMap(source, 'members', ['2018-01-01'], geolevel='dummy')
 
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -320,7 +320,7 @@ class Map_Test(unittest.TestCase):
                 ])
             )
 
-        result = renderMap(source, 'members', '2018-01-01', geolevel='dummy')
+        result = renderMap(source, 'members', ['2018-01-01'], geolevel='dummy')
 
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -339,12 +339,12 @@ class Map_Test(unittest.TestCase):
 
     def test_renderMap_members(self):
         source = loadCsvSource()
-        result = renderMap(source, 'members', '2019-01-01', geolevel='ccaa')
+        result = renderMap(source, 'members', ['2019-01-01'], geolevel='ccaa')
         self.assertB2BEqual(result)
 
     def test_renderMap_contracts(self):
         source = loadCsvSource()
-        result = renderMap(source, 'contracts', '2019-01-01', geolevel='ccaa')
+        result = renderMap(source, 'contracts', ['2019-01-01'], geolevel='ccaa')
         self.assertB2BEqual(result)
 
     def test_dataToTemplateDict_singleCounty(self):
@@ -500,5 +500,5 @@ class Map_Test(unittest.TestCase):
 
     def test_renderMap_members_byState(self):
         source = loadCsvSource()
-        result = renderMap(source, 'members', '2019-11-01', geolevel='state')
+        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state')
         self.assertB2BEqual(result)
