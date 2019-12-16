@@ -605,3 +605,28 @@ class Map_Test(unittest.TestCase):
                           - 1969
             """)
         self.assertEqual(maxValue(data, 'state'), 1969)
+
+    def test_maxValue_twoStates(self):
+        data = ns.loads("""\
+            dates: [2019-01-01]
+            values: [1969]
+            countries:
+              ES:
+                name: España
+                values: [1969]
+                ccaas:
+                  '01':
+                    name: Andalucia
+                    values:
+                      - 750
+                    states:
+                      '11':
+                        name: Cádiz
+                        values:
+                          - 500
+                      '14':
+                        name: Córdoba
+                        values:
+                          - 250
+            """)
+        self.assertEqual(maxValue(data, 'state'), 500)
