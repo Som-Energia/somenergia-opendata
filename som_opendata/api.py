@@ -383,10 +383,10 @@ def version():
 
 
 
-@api.route('/map/<string:metric>')
-@api.route('/map/<string:metric>/on/<isodate:ondate>')
-@api.route('/map/<string:metric>/by/<string:geolevel>')
-@api.route('/map/<string:metric>/by/<string:geolevel>/on/<isodate:ondate>')
+@api.route('/wipmap/<string:metric>')
+@api.route('/wipmap/<string:metric>/on/<isodate:ondate>')
+@api.route('/wipmap/<string:metric>/by/<string:geolevel>')
+@api.route('/wipmap/<string:metric>/by/<string:geolevel>/on/<isodate:ondate>')
 def map(metric=None, ondate=None, geolevel='ccaa'):
     request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=None, to=None, periodicity=None)
     result = renderMap(source=api.source, metric=metric, date=request_dates, geolevel=geolevel)

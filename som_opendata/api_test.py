@@ -253,19 +253,19 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__map__ccaaMembers(self):
-        r = self.get('/map/members')
+        r = self.get('/wipmap/members')
         self.assertEqual(r.status, '200 OK')
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
 
     def test__map__ccaaMembersDateSet(self):
-        r = self.get('/map/members/on/2018-01-01')
+        r = self.get('/wipmap/members/on/2018-01-01')
         self.assertEqual(r.status, '200 OK')
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
 
     def test__map__statesMembers(self):
-        r = self.get('/map/members/by/state/on/2018-01-01')
+        r = self.get('/wipmap/members/by/state/on/2018-01-01')
         self.assertEqual(r.status, '200 OK')
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
