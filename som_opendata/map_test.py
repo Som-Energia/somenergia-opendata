@@ -347,7 +347,7 @@ class Map_Test(unittest.TestCase):
         result = renderMap(source, 'contracts', ['2019-01-01'], geolevel='ccaa')
         self.assertB2BEqual(result)
 
-    def test_dataToTemplateDict_singleCounty(self):
+    def test_dataToTemplateDict_singleState(self):
         data = ns.loads("""\
             dates: [2019-01-01]
             values: [1969]
@@ -382,7 +382,7 @@ class Map_Test(unittest.TestCase):
             color_11: '#384413'
         """)
 
-    def test_dataToTemplateDict_noCounty(self):
+    def test_dataToTemplateDict_noState(self):
         data = ns.loads("""\
             dates: [2019-01-01]
             values: [1969]
@@ -410,7 +410,7 @@ class Map_Test(unittest.TestCase):
             color_00: '#e0ecbb'
         """)
 
-    def test_dataToTemplateDict_twoCounties(self):
+    def test_dataToTemplateDict_twoStates(self):
         data = ns.loads("""\
             dates: [2019-01-01]
             values: [750]
@@ -452,7 +452,7 @@ class Map_Test(unittest.TestCase):
             color_14: '#5c701f'
         """)
 
-    def test_dataToTemplateDict_twoCountiesDifCCAA(self):
+    def test_dataToTemplateDict_twoStatesDifCCAA(self):
         data = ns.loads("""\
             dates: [2019-01-01]
             values: [750]
