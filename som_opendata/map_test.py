@@ -682,3 +682,41 @@ class Map_Test(unittest.TestCase):
                           values:
                             - 3.1541005199219296
         """))
+
+    def test__toPopulationRelative_singleRegionManyFrames(self):
+
+        data = ns.loads("""\
+            dates: [2019-01-01, 2018-01-01]
+            values: [143, 500]
+            countries:
+              ES:
+                name: España
+                values: [143, 500]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [123, 500]
+                  '09':
+                    name: Catalunya
+                    values: [20, 0]
+            """)
+
+        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
+        populationData = tuples2objects(parse_tsv(populationContent))
+        toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
+
+        self.assertNsEqual(data, ns.loads("""\
+            dates: [2019-01-01, 2018-01-01]
+            values: [143, 500]
+            countries:
+              ES:
+                name: España
+                values: [143, 500]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [0.14662275930920415, 0.5960274768666836]
+                  '09':
+                    name: Catalunya
+                    values: [0.02696785445233209, 0.0]
+        """))
