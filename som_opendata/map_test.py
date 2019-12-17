@@ -602,3 +602,83 @@ class Map_Test(unittest.TestCase):
                     name: Catalunya
                     values: [0.02696785445233209]
         """))
+
+    def test__toPopulationRelative_noRegion(self):
+
+        data = ns.loads(noRegion.dump())
+
+        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
+        populationData = tuples2objects(parse_tsv(populationContent))
+        toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
+
+        self.assertNsEqual(data, ns.loads("""\
+            dates: [2019-01-01]
+            values: [123]
+            countries:
+              ES:
+                name: España
+                values: [123]
+                ccaas: {}
+        """))
+
+    def test__toPopulationRelative_singleState(self):
+
+        data = ns.loads(singleState.dump())
+
+        populationContent = Path('maps/population_state.tsv').read_text(encoding='utf8')
+        populationData = tuples2objects(parse_tsv(populationContent))
+        toPopulationRelative(data=data, geolevel='state', population=populationData)
+
+        self.assertNsEqual(data, ns.loads("""\
+            dates: [2019-01-01]
+            values: [1969]
+            countries:
+              ES:
+                name: España
+                values: [1969]
+                ccaas:
+                  '01':
+                    name: Andalucia
+                    values:
+                      - 1969
+                    states:
+                      '11':
+                        name: Cádiz
+                        values:
+                          - 15.769346280909
+        """))
+
+    def test__toPopulationRelative_manyStatesDifferentCCAA(self):
+
+        data = ns.loads(manyStatesDifferentCCAA.dump())
+
+        populationContent = Path('maps/population_state.tsv').read_text(encoding='utf8')
+        populationData = tuples2objects(parse_tsv(populationContent))
+        toPopulationRelative(data=data, geolevel='state', population=populationData)
+
+        self.assertNsEqual(data, ns.loads("""\
+            dates: [2019-01-01]
+            values: [750]
+            countries:
+                ES:
+                  name: España
+                  values:
+                  - 750
+                  ccaas:
+                    '01':
+                      name: Andalucia
+                      values: [500]
+                      states:
+                        '11':
+                          name: Cádiz
+                          values:
+                          - 4.004404845329863
+                    '09':
+                      name: Catalunya
+                      values: [250]
+                      states:
+                        '43':
+                          name: Tarragona
+                          values:
+                            - 3.1541005199219296
+        """))
