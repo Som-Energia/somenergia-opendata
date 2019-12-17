@@ -36,7 +36,7 @@ def maxValue(data, geolevel):
 
     return processLevelMax(data.countries.ES, 0, 0)
 
-def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa', maxValue=None):
+def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa', maxVal=None):
     date = data.dates[0]
     result = ns(
             title = title,
@@ -49,9 +49,12 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
         Linear = LinearScale,
         Log = LogScale,
     )
-    totalValue = maxValue or data["values"][0]
+    if geolevel == 'dummy':
+        geolevel = 'ccaa'
+    totalValue = data["values"][0]
+    maxColor = maxVal or maxValue(data, geolevel)
 
-    scale = scales[colorScale](higher=totalValue or 1)
+    scale = scales[colorScale](higher=maxColor or 1)
 
     def updateDict(code, value):
         result.update({
@@ -61,8 +64,6 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
                 })
 
     # TODO: just for tests 
-    if geolevel == 'dummy':
-        geolevel = 'ccaa'
 
     def processLevel(parentRegion, level):
         singular, plural = geolevels[level]
@@ -85,11 +86,11 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
     return result
 
 
-def fillMap(data, template, geolevel, title, subtitle='', scale='Log', locations=[]):
+def fillMap(data, template, geolevel, title, subtitle='', scale='Log', locations=[], maxVal=None):
     gradient = Gradient('#e0ecbb','#384413')
     dataDict = dataToTemplateDict(
         data=data, colors=gradient,
-        colorScale=scale, title=title, subtitle=subtitle, locations=locations, geolevel=geolevel
+        colorScale=scale, title=title, subtitle=subtitle, locations=locations, geolevel=geolevel, maxVal=maxVal
     )
 
     return template.format(**dataDict)
