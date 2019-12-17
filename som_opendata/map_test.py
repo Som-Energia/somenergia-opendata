@@ -10,11 +10,14 @@ from .map import (
     renderMap,
     percentRegion,
     maxValue,
+    toPopulationRelative,
     )
 from .colorscale import Gradient
 from .csvSource import loadCsvSource, CsvSource
 from future.utils import iteritems
 from pathlib2 import Path
+from .distribution import parse_tsv, tuples2objects
+
 
 dummyTemplate=u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -553,13 +556,38 @@ class Map_Test(unittest.TestCase):
             color_09: '#e0ecbb'
         """)
 
+
     def test__toPopulationRelative_singleRegion(self):
 
-        populationData = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
+        data = ns.loads(singleRegion.dump())
 
-        result = toPopulationRelative(data=singleRegion, geolevel='ccaa', population=populationData)
+        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
+        populationData = tuples2objects(parse_tsv(populationContent))
+        toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
 
-        self.assertNsEqual(result, ns.loads("""\
+        self.assertNsEqual(data, ns.loads("""\
+            dates: [2019-01-01]
+            values: [123]
+            countries:
+              ES:
+                name: España
+                values: [123]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [0.14662275930920415]
+        """))
+
+
+    def test__toPopulationRelative_manyRegions(self):
+
+        data = ns.loads(manyRegions.dump())
+
+        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
+        populationData = tuples2objects(parse_tsv(populationContent))
+        toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
+
+        self.assertNsEqual(data, ns.loads("""\
             dates: [2019-01-01]
             values: [143]
             countries:
@@ -569,5 +597,8 @@ class Map_Test(unittest.TestCase):
                 ccaas:
                   '01':
                     name: Andalucía
-                    values: [123]
+                    values: [0.14662275930920415]
+                  '09':
+                    name: Catalunya
+                    values: [0.02696785445233209]
         """))

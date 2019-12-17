@@ -96,6 +96,25 @@ def fillMap(data, template, geolevel, title, subtitle='', scale='Log', locations
 
     return template.format(**dataDict)
 
+
+def toPopulationRelative(data, geolevel, population):
+
+    def processLevelPopulation(parentRegion, level, frame):
+        singular, plural = geolevels[level]
+        for code, region in parentRegion[plural].items():
+            if singular != geolevel:
+                processLevelPopulation(region, level+1, frame)
+                continue
+            region["values"][frame] = region["values"][frame]*10000 / populationDict[code]
+
+    populationDict = dict()
+    for location in population:
+        populationDict.update({location.code: int(location.population)})
+
+    for index in range(len(data.dates)):
+        processLevelPopulation(data.countries.ES, 0, index)
+
+
 def renderMap(source, metric, date, geolevel):
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     populationPerLocation = tuples2objects(parse_tsv(locationContent))
@@ -103,6 +122,7 @@ def renderMap(source, metric, date, geolevel):
     locations = [
         location.code for location in populationPerLocation
     ]
+
     filtered_objects = source.get(metric, date, [])
     data = aggregate(filtered_objects, geolevel)
     template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
