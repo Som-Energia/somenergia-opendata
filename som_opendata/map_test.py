@@ -552,7 +552,7 @@ class Map_Test(unittest.TestCase):
                     name: Andalucía
                     values: [123]
             """)
-        self.assertEqual(maxValue(data, 'ccaa'), 123)
+        self.assertEqual(maxValue(data, 'ccaa', frame=0), 123)
 
     def test_maxValue_twoCCAA(self):
         data = ns.loads("""\
@@ -570,7 +570,7 @@ class Map_Test(unittest.TestCase):
                     name: Catalunya
                     values: [20]
             """)
-        self.assertEqual(maxValue(data, 'ccaa'), 123)
+        self.assertEqual(maxValue(data, 'ccaa', frame=0), 123)
 
     def test_maxValue_noCCAA(self):
         data = ns.loads("""\
@@ -582,7 +582,7 @@ class Map_Test(unittest.TestCase):
                 values: [143]
                 ccaas: {}
             """)
-        self.assertEqual(maxValue(data, 'ccaa'), 0)
+        self.assertEqual(maxValue(data, 'ccaa', frame=0), 0)
 
     def test_maxValue_singleState(self):
         data = ns.loads("""\
@@ -603,7 +603,7 @@ class Map_Test(unittest.TestCase):
                         values:
                           - 1969
             """)
-        self.assertEqual(maxValue(data, 'state'), 1969)
+        self.assertEqual(maxValue(data, 'state', frame=0), 1969)
 
     def test_maxValue_twoStates(self):
         data = ns.loads("""\
@@ -628,7 +628,7 @@ class Map_Test(unittest.TestCase):
                         values:
                           - 250
             """)
-        self.assertEqual(maxValue(data, 'state'), 500)
+        self.assertEqual(maxValue(data, 'state', frame=0), 500)
 
     def test_maxValue_twoStatesDifferentCCAA(self):
         data = ns.loads("""\
@@ -657,4 +657,4 @@ class Map_Test(unittest.TestCase):
                           values:
                             - 250
             """)
-        self.assertEqual(maxValue(data, 'state'), 500)
+        self.assertEqual(maxValue(data, 'state', frame=0), 500)

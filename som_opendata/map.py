@@ -21,23 +21,23 @@ def percentRegion(value, total):
         return '0,0%'
     return '{:.1f}%'.format(value * 100. / total).replace('.',',')
 
-def maxValue(data, geolevel):
+def maxValue(data, geolevel, frame):
 
-    def processLevelMax(parentRegion, level, currentMax):
+    def processLevelMax(parentRegion, level, currentMax, frame):
         singular, plural = geolevels[level]
         for code, region in parentRegion[plural].items():
             if singular != geolevel:
-                currentMax = processLevelMax(region, level+1, currentMax)
+                currentMax = processLevelMax(region, level+1, currentMax, frame)
                 continue
-            value = region["values"][0]
+            value = region["values"][frame]
             if value > currentMax:
                 currentMax = value
         return currentMax
 
-    return processLevelMax(data.countries.ES, 0, 0)
+    return processLevelMax(data.countries.ES, 0, 0, frame)
 
-def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa', maxVal=None):
-    date = data.dates[0]
+def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa', maxVal=None, frame=0):
+    date = data.dates[frame]
     result = ns(
             title = title,
             subtitle = subtitle,
@@ -49,10 +49,13 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
         Linear = LinearScale,
         Log = LogScale,
     )
+
+    # TODO: just for tests
     if geolevel == 'dummy':
         geolevel = 'ccaa'
-    totalValue = data["values"][0]
-    maxColor = maxVal or maxValue(data, geolevel)
+
+    totalValue = data["values"][frame]
+    maxColor = maxVal or maxValue(data, geolevel, frame)
 
     scale = scales[colorScale](higher=maxColor or 1)
 
@@ -63,20 +66,18 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
                 'color_' + code: colors(scale(value)),
                 })
 
-    # TODO: just for tests 
-
     def processLevel(parentRegion, level):
         singular, plural = geolevels[level]
         for code, region in parentRegion[plural].items():
             if singular != geolevel:
                 processLevel(region, level+1)
                 continue
-            value = region["values"][0]
+            value = region["values"][frame]
             updateDict(code, value)
 
     processLevel(data.countries.ES, 0)
 
-    restWorld = data["values"][0] - data.countries.ES["values"][0]
+    restWorld = data["values"][frame] - data.countries.ES["values"][frame]
     updateDict('00',restWorld)
 
     for code in locations:
