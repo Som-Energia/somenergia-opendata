@@ -37,6 +37,124 @@ data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
 data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
 data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
+noRegion = ns.loads("""\
+    dates: [2019-01-01]
+    values: [123]
+    countries:
+      ES:
+        name: España
+        values: [123]
+        ccaas: {}
+    """)
+
+singleRegion = ns.loads("""\
+            dates: [2019-01-01]
+            values: [123]
+            countries:
+              ES:
+                name: España
+                values: [123]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [123]
+            """)
+
+manyRegions = ns.loads("""\
+        dates: [2019-01-01]
+        values: [143]
+        countries:
+          ES:
+            name: España
+            values: [143]
+            ccaas:
+              '01':
+                name: Andalucía
+                values: [123]
+              '09':
+                name: Catalunya
+                values: [20]
+    """)
+singleState = ns.loads("""\
+    dates: [2019-01-01]
+    values: [1969]
+    countries:
+      ES:
+        name: España
+        values: [1969]
+        ccaas:
+          '01':
+            name: Andalucia
+            values:
+              - 1969
+            states:
+              '11':
+                name: Cádiz
+                values:
+                  - 1969
+    """)
+noState = ns.loads("""\
+    dates: [2019-01-01]
+    values: [1969]
+    countries:
+      ES:
+        name: España
+        values: [1969]
+        ccaas:
+          '01':
+            name: Andalucia
+            values:
+              - 1969
+            states: {}
+    """)
+manyStates = ns.loads("""\
+    dates: [2019-01-01]
+    values: [750]
+    countries:
+      ES:
+        name: España
+        values: [750]
+        ccaas:
+          '01':
+            name: Andalucia
+            values:
+              - 750
+            states:
+              '11':
+                name: Cádiz
+                values:
+                  - 500
+              '14':
+                name: Córdoba
+                values:
+                  - 250
+    """)
+manyStatesDifferentCCAA = ns.loads("""\
+    dates: [2019-01-01]
+    values: [750]
+    countries:
+        ES:
+          name: España
+          values:
+          - 750
+          ccaas:
+            '01':
+              name: Andalucia
+              values: [500]
+              states:
+                '11':
+                  name: Cádiz
+                  values:
+                  - 500
+            '09':
+              name: Catalunya
+              values: [250]
+              states:
+                '43':
+                  name: Tarragona
+                  values:
+                    - 250
+    """)
 
 class Map_Test(unittest.TestCase):
 
@@ -57,17 +175,9 @@ class Map_Test(unittest.TestCase):
     from somutils.testutils import assertNsEqual
 
     def test_dataToTemplateDict_noRegion(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [123]
-            countries:
-              ES:
-                name: España
-                values: [123]
-                ccaas: {}
-            """)
+
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color,maxVal=123)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=noRegion, colors=color,maxVal=123)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -80,20 +190,9 @@ class Map_Test(unittest.TestCase):
         """)
 
     def test_dataToTemplateDict_singleRegion(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [123]
-            countries:
-              ES:
-                name: España
-                values: [123]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    values: [123]
-            """)
+
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color,maxVal=123)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=singleRegion, colors=color,maxVal=123)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -112,23 +211,9 @@ class Map_Test(unittest.TestCase):
         self.assertEqual(percentRegion(0,0), '0,0%')
 
     def test_dataToTemplateDict_manyRegions(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [143]
-            countries:
-              ES:
-                name: España
-                values: [143]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    values: [123]
-                  '09':
-                    name: Catalunya
-                    values: [20]
-            """)
+
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, maxVal=143)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyRegions, colors=color, maxVal=143)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -176,23 +261,9 @@ class Map_Test(unittest.TestCase):
         """)
 
     def test_dataToTemplateDict_LinearColorScale(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [143]
-            countries:
-              ES:
-                name: España
-                values: [143]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    values: [123]
-                  '09':
-                    name: Catalunya
-                    values: [20]
-            """)
+
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colorScale='Linear', colors=color, maxVal=143)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyRegions, colorScale='Linear', colors=color, maxVal=143)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -210,24 +281,10 @@ class Map_Test(unittest.TestCase):
             color_09: '#cfe296'
         """)
 
-    def test_fillMap_twoRegions(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [143]
-            countries:
-              ES:
-                name: España
-                values: [143]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    values: [123]
-                  '09':
-                    name: Catalunya
-                    values: [20]
-            """)
+    def test_fillMap_manyRegions(self):
+
         self.maxDiff = None
-        result = fillMap(data=data, template=dummyTemplate,
+        result = fillMap(data=manyRegions, template=dummyTemplate,
                 title="un títol", subtitle="un subtítol", geolevel='ccaa', maxVal=143)
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -245,20 +302,9 @@ class Map_Test(unittest.TestCase):
 """)
 
     def test_fillMap_withLocationList(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [143]
-            countries:
-              ES:
-                name: España
-                values: [143]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    values: [123]
-            """)
+
         self.maxDiff = None
-        result = fillMap(data=data, template=dummyTemplate,
+        result = fillMap(data=singleRegion, template=dummyTemplate,
                 title="un títol", subtitle="un subtítol", locations=['01','09'], geolevel='ccaa', maxVal=143)
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -268,7 +314,7 @@ class Map_Test(unittest.TestCase):
   <text y="100" x="170" style="text-anchor:middle">Month: Enero</text>
   <circle cy="180" cx="100" r="60" fill="#3f4c15"/>
   <text y="180" x="100" style="text-anchor:middle">123</text>
-  <text y="200" x="100" style="text-anchor:middle">86,0%</text>
+  <text y="200" x="100" style="text-anchor:middle">100,0%</text>
   <circle cy="180" cx="240" r="60" fill="#e0ecbb"/>
   <text y="180" x="240" style="text-anchor:middle">0</text>
   <text y="200" x="240" style="text-anchor:middle">0,0%</text>
@@ -349,26 +395,9 @@ class Map_Test(unittest.TestCase):
         self.assertB2BEqual(result)
 
     def test_dataToTemplateDict_singleState(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [1969]
-            countries:
-              ES:
-                name: España
-                values: [1969]
-                ccaas:
-                  '01':
-                    name: Andalucia
-                    values:
-                      - 1969
-                    states:
-                      '11':
-                        name: Cádiz
-                        values:
-                          - 1969
-            """)
+
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state', maxVal=1969)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=singleState, colors=color, geolevel='state', maxVal=1969)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -384,22 +413,8 @@ class Map_Test(unittest.TestCase):
         """)
 
     def test_dataToTemplateDict_noState(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [1969]
-            countries:
-              ES:
-                name: España
-                values: [1969]
-                ccaas:
-                  '01':
-                    name: Andalucia
-                    values:
-                      - 1969
-                    states: {}
-            """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state',maxVal=1969)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=noState, colors=color, geolevel='state',maxVal=1969)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -411,31 +426,10 @@ class Map_Test(unittest.TestCase):
             color_00: '#e0ecbb'
         """)
 
-    def test_dataToTemplateDict_twoStates(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [750]
-            countries:
-              ES:
-                name: España
-                values: [750]
-                ccaas:
-                  '01':
-                    name: Andalucia
-                    values:
-                      - 750
-                    states:
-                      '11':
-                        name: Cádiz
-                        values:
-                          - 500
-                      '14':
-                        name: Córdoba
-                        values:
-                          - 250
-            """)
+    def test_dataToTemplateDict_manyStates(self):
+
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state',maxVal=750)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyStates, colors=color, geolevel='state',maxVal=750)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -454,34 +448,9 @@ class Map_Test(unittest.TestCase):
         """)
 
     def test_dataToTemplateDict_twoStatesDifCCAA(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [750]
-            countries:
-                ES:
-                  name: España
-                  values:
-                  - 750
-                  ccaas:
-                    '01':
-                      name: Andalucia
-                      values: [500]
-                      states:
-                        '11':
-                          name: Cádiz
-                          values:
-                          - 500
-                    '09':
-                      name: Catalunya
-                      values: [250]
-                      states:
-                        '43':
-                          name: Tarragona
-                          values:
-                            - 250
-            """)
+
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, geolevel='state', maxVal=750)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyStatesDifferentCCAA, colors=color, geolevel='state', maxVal=750)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -505,23 +474,9 @@ class Map_Test(unittest.TestCase):
         self.assertB2BEqual(result)
 
     def test_dataToTemplateDict_manyRegionsGivenWithoutMaxValue(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [143]
-            countries:
-              ES:
-                name: España
-                values: [143]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    values: [123]
-                  '09':
-                    name: Catalunya
-                    values: [20]
-            """)
+
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyRegions, colors=color)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -540,124 +495,28 @@ class Map_Test(unittest.TestCase):
         """)
 
     def test_maxValue_oneCCAA(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [150]
-            countries:
-              ES:
-                name: España
-                values: [123]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    values: [123]
-            """)
-        self.assertEqual(maxValue(data, 'ccaa', frame=0), 123)
 
-    def test_maxValue_twoCCAA(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [143]
-            countries:
-              ES:
-                name: España
-                values: [143]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    values: [123]
-                  '09':
-                    name: Catalunya
-                    values: [20]
-            """)
-        self.assertEqual(maxValue(data, 'ccaa', frame=0), 123)
+        self.assertEqual(maxValue(singleRegion, 'ccaa', frame=0), 123)
+
+    def test_maxValue_manyCCAA(self):
+
+        self.assertEqual(maxValue(manyRegions, 'ccaa', frame=0), 123)
 
     def test_maxValue_noCCAA(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [143]
-            countries:
-              ES:
-                name: España
-                values: [143]
-                ccaas: {}
-            """)
-        self.assertEqual(maxValue(data, 'ccaa', frame=0), 0)
+
+        self.assertEqual(maxValue(noRegion, 'ccaa', frame=0), 0)
 
     def test_maxValue_singleState(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [1969]
-            countries:
-              ES:
-                name: España
-                values: [1969]
-                ccaas:
-                  '01':
-                    name: Andalucia
-                    values:
-                      - 1969
-                    states:
-                      '11':
-                        name: Cádiz
-                        values:
-                          - 1969
-            """)
-        self.assertEqual(maxValue(data, 'state', frame=0), 1969)
 
-    def test_maxValue_twoStates(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [1969]
-            countries:
-              ES:
-                name: España
-                values: [1969]
-                ccaas:
-                  '01':
-                    name: Andalucia
-                    values:
-                      - 750
-                    states:
-                      '11':
-                        name: Cádiz
-                        values:
-                          - 500
-                      '14':
-                        name: Córdoba
-                        values:
-                          - 250
-            """)
-        self.assertEqual(maxValue(data, 'state', frame=0), 500)
+        self.assertEqual(maxValue(singleState, 'state', frame=0), 1969)
 
-    def test_maxValue_twoStatesDifferentCCAA(self):
-        data = ns.loads("""\
-            dates: [2019-01-01]
-            values: [750]
-            countries:
-                ES:
-                  name: España
-                  values:
-                  - 750
-                  ccaas:
-                    '01':
-                      name: Andalucia
-                      values: [500]
-                      states:
-                        '11':
-                          name: Cádiz
-                          values:
-                          - 500
-                    '09':
-                      name: Catalunya
-                      values: [250]
-                      states:
-                        '43':
-                          name: Tarragona
-                          values:
-                            - 250
-            """)
-        self.assertEqual(maxValue(data, 'state', frame=0), 500)
+    def test_maxValue_manyStates(self):
+
+        self.assertEqual(maxValue(manyStates, 'state', frame=0), 500)
+
+    def test_maxValue_manyStatesDifferentCCAA(self):
+
+        self.assertEqual(maxValue(manyStatesDifferentCCAA, 'state', frame=0), 500)
 
     def test__dataToTemplateDict_frameSet(self):
         data = ns.loads("""\
@@ -693,4 +552,3 @@ class Map_Test(unittest.TestCase):
             percent_09: 0,0%
             color_09: '#e0ecbb'
         """)
-
