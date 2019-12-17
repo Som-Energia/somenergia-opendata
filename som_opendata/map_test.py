@@ -658,3 +658,39 @@ class Map_Test(unittest.TestCase):
                             - 250
             """)
         self.assertEqual(maxValue(data, 'state', frame=0), 500)
+
+    def test__dataToTemplateDict_frameSet(self):
+        data = ns.loads("""\
+            dates: [2019-01-01, 2018-01-01]
+            values: [143, 500]
+            countries:
+              ES:
+                name: España
+                values: [143, 500]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [123, 500]
+                  '09':
+                    name: Catalunya
+                    values: [20, 0]
+            """)
+        color = Gradient('#e0ecbb','#384413')
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, frame=1)
+
+        self.assertNsEqual(result, """\
+            title: un títol
+            subtitle: un subtítol
+            year: 2018
+            month: Enero
+            number_00: 0
+            percent_00: 0,0%
+            color_00: '#e0ecbb'
+            number_01: 500
+            percent_01: 100,0%
+            color_01: '#384413'
+            number_09: 0
+            percent_09: 0,0%
+            color_09: '#e0ecbb'
+        """)
+
