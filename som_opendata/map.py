@@ -88,7 +88,7 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
 
 
 def fillMap(data, template, geolevel, title, subtitle='', scale='Log', locations=[], maxVal=None):
-    gradient = Gradient('#e0ecbb','#384413')
+    gradient = Gradient('#e0ecbb', '#384413')
     dataDict = dataToTemplateDict(
         data=data, colors=gradient,
         colorScale=scale, title=title, subtitle=subtitle, locations=locations, geolevel=geolevel, maxVal=maxVal
@@ -98,8 +98,10 @@ def fillMap(data, template, geolevel, title, subtitle='', scale='Log', locations
 
 def renderMap(source, metric, date, geolevel):
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
+    populationPerLocation = tuples2objects(parse_tsv(locationContent))
+
     locations = [
-        location.code for location in tuples2objects(parse_tsv(locationContent))
+        location.code for location in populationPerLocation
     ]
     filtered_objects = source.get(metric, date, [])
     data = aggregate(filtered_objects, geolevel)
