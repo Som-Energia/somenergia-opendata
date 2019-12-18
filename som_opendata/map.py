@@ -11,31 +11,10 @@ months = (
         ).split()
 
 
-geolevels=[
-    ('ccaa', 'ccaas'),
-    ('state','states'),
-    ('city', 'cities'),
-    ]
 def percentRegion(value, total):
     if not total:
         return '0,0%'
     return '{:.1f}%'.format(value * 100. / total).replace('.',',')
-
-def maxValue(data, geolevel, frame):
-
-    def processLevelMax(parentRegion, level, currentMax, frame):
-        singular, plural = geolevels[level]
-        for code, region in parentRegion[plural].items():
-            if singular != geolevel:
-                currentMax = processLevelMax(region, level+1, currentMax, frame)
-                continue
-            value = region["values"][frame]
-            if value > currentMax:
-                currentMax = value
-        return currentMax
-
-    return processLevelMax(data.countries.ES, 0, 0, frame)
-
 
 def iterateLevel(data, geolevel):
     geolevels = [
@@ -54,6 +33,15 @@ def iterateLevel(data, geolevel):
 
     yield from processLevel(data.countries.ES, 0)
 
+def maxValue(data, geolevel, frame):
+
+    currentMax = 0
+    for code, region in iterateLevel(data, geolevel):
+        value = region["values"][frame]
+        if value > currentMax:
+            currentMax = value
+
+    return currentMax
 
 
 def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa', maxVal=None, frame=0):
@@ -111,23 +99,16 @@ def fillMap(data, template, geolevel, title, subtitle='', scale='Log', locations
 
 def toPopulationRelative(data, geolevel, population):
 
-    def processLevelPopulation(parentRegion, level, frame):
-        singular, plural = geolevels[level]
-        for code, region in parentRegion[plural].items():
-            if singular != geolevel:
-                processLevelPopulation(region, level+1, frame)
-                continue
-            region["values"][frame] = region["values"][frame]*10000 / populationDict[code]
-
     populationDict = dict()
     for location in population:
         populationDict.update({location.code: int(location.population)})
 
     for index in range(len(data.dates)):
-        processLevelPopulation(data.countries.ES, 0, index)
+        for code, region in iterateLevel(data, geolevel):
+            region["values"][index] = region["values"][index]*10000 / populationDict[code]
 
 
-def renderMap(source, metric, date, geolevel):
+def renderMap(source, metric, date, geolevel, isRelative=False):
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     populationPerLocation = tuples2objects(parse_tsv(locationContent))
 
