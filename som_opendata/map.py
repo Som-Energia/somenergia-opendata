@@ -106,6 +106,10 @@ def fillMap(data, template, geolevel, title, subtitle='', scale='Log', locations
 
 def toPopulationRelative(data, geolevel, population):
 
+      # TODO: just for tests
+    if geolevel == 'dummy':
+        geolevel = 'ccaa'
+
     populationDict = dict()
     for location in population:
         populationDict.update({location.code: int(location.population)})
@@ -125,8 +129,12 @@ def renderMap(source, metric, date, geolevel, isRelative=False):
 
     filtered_objects = source.get(metric, date, [])
     data = aggregate(filtered_objects, geolevel)
+
+    if isRelative:
+        toPopulationRelative(data, geolevel, populationPerLocation)
+
     template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
-    return fillMap(data=data, template=template, title=metric.title(), locations=locations, geolevel=geolevel)
+    return fillMap(data=data, template=template, title=metric.title(), locations=locations, geolevel=geolevel, isRelative=isRelative)
 
 
 # map{Country}{ES}by{States}.svg

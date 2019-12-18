@@ -769,4 +769,29 @@ class Map_Test(unittest.TestCase):
 """)
 
 
+    def test_renderMap_dummyAllLocationsRelativePopulation(self):
+        self.maxDiff = None
+        source = self.createSource(
+            ns(members=[
+                headers,
+                data_Girona,
+                data_Adra,
+                ])
+            )
 
+        result = renderMap(source, 'members', ['2018-01-01'], geolevel='dummy', isRelative=True)
+
+        self.assertMultiLineEqual(result, """\
+<svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
+  <text y="40" x="170" style="text-anchor:middle">Title: Members</text>
+  <text y="60" x="170" style="text-anchor:middle">Subtitle: </text>
+  <text y="80" x="170" style="text-anchor:middle">Year: 2018</text>
+  <text y="100" x="170" style="text-anchor:middle">Month: Enero</text>
+  <circle cy="180" cx="100" r="60" fill="#bcd66c"/>
+  <text y="180" x="100" style="text-anchor:middle">2,0</text>
+  <text y="200" x="100" style="text-anchor:middle"></text>
+  <circle cy="180" cx="240" r="60" fill="#384413"/>
+  <text y="180" x="240" style="text-anchor:middle">10,0</text>
+  <text y="200" x="240" style="text-anchor:middle"></text>
+</svg>
+""")
