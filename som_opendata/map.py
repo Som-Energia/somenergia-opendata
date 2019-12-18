@@ -44,7 +44,7 @@ def maxValue(data, geolevel, frame):
     return currentMax
 
 
-def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa', maxVal=None, frame=0):
+def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa', maxVal=None, frame=0, isRelative=False):
     date = data.dates[frame]
     result = ns(
             title = title,
@@ -68,7 +68,14 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
     scale = scales[colorScale](higher=maxColor or 1)
 
     def updateDict(code, value):
-        result.update({
+        if (isRelative):
+            result.update({
+                'number_' + code: '{:.1f}'.format(value).replace('.',','),
+                'percent_' + code: '',
+                'color_' + code: colors(scale(value)),
+                })
+        else:
+            result.update({
                 'number_' + code: value,
                 'percent_' + code: percentRegion(value, totalValue),
                 'color_' + code: colors(scale(value)),
