@@ -743,7 +743,6 @@ class Map_Test(unittest.TestCase):
                 """)
 
 
-    @unittest.skip("Not implemented. Decisions about relative map to make")
     def test_fillMap_relativeDataLinearColors(self):
 
         self.maxDiff = None
@@ -753,19 +752,19 @@ class Map_Test(unittest.TestCase):
         toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
 
         result = fillMap(data=data, template=dummyTemplate,
-                title="un títol", subtitle="un subtítol", geolevel='ccaa', scale='Linear')
+                title="un títol", subtitle="un subtítol", geolevel='ccaa', scale='Linear', isRelative=True)
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: un títol</text>
   <text y="60" x="170" style="text-anchor:middle">Subtitle: un subtítol</text>
   <text y="80" x="170" style="text-anchor:middle">Year: 2019</text>
   <text y="100" x="170" style="text-anchor:middle">Month: Enero</text>
-  <circle cy="180" cx="100" r="60" fill="#3f4c15"/>
-  <text y="180" x="100" style="text-anchor:middle">123</text>
-  <text y="200" x="100" style="text-anchor:middle">86,0%</text>
-  <circle cy="180" cx="240" r="60" fill="#8eac30"/>
-  <text y="180" x="240" style="text-anchor:middle">20</text>
-  <text y="200" x="240" style="text-anchor:middle">14,0%</text>
+  <circle cy="180" cx="100" r="60" fill="#384413"/>
+  <text y="180" x="100" style="text-anchor:middle">0,1</text>
+  <text y="200" x="100" style="text-anchor:middle"></text>
+  <circle cy="180" cx="240" r="60" fill="#cadf8b"/>
+  <text y="180" x="240" style="text-anchor:middle">0,0</text>
+  <text y="200" x="240" style="text-anchor:middle"></text>
 </svg>
 """)
 
