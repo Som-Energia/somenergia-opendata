@@ -784,7 +784,7 @@ class Map_Test(unittest.TestCase):
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: Members</text>
-  <text y="60" x="170" style="text-anchor:middle">Subtitle: </text>
+  <text y="60" x="170" style="text-anchor:middle">Subtitle: /10.000 hab</text>
   <text y="80" x="170" style="text-anchor:middle">Year: 2018</text>
   <text y="100" x="170" style="text-anchor:middle">Month: Enero</text>
   <circle cy="180" cx="100" r="60" fill="#bcd66c"/>

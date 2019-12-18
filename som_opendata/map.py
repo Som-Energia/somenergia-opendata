@@ -129,12 +129,14 @@ def renderMap(source, metric, date, geolevel, isRelative=False):
 
     filtered_objects = source.get(metric, date, [])
     data = aggregate(filtered_objects, geolevel)
+    subtitle = ''
 
     if isRelative:
         toPopulationRelative(data, geolevel, populationPerLocation)
+        subtitle = "/10.000 hab"
 
     template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
-    return fillMap(data=data, template=template, title=metric.title(), locations=locations, geolevel=geolevel, isRelative=isRelative)
+    return fillMap(data=data, template=template, title=metric.title(), subtitle=subtitle, locations=locations, geolevel=geolevel, isRelative=isRelative)
 
 
 # map{Country}{ES}by{States}.svg

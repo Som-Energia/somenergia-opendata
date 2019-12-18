@@ -396,6 +396,7 @@ def map(metric=None, ondate=None, geolevel='ccaa'):
       ]
     for paramField, param in relation_paramField_param:
         validateParams(paramField, param)
+
     validateImplementation(relation_paramField_param)
     request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=None, to=None, periodicity=None)
     result = renderMap(source=api.source, metric=metric, date=request_dates, geolevel=geolevel)
