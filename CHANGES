@@ -1,3 +1,7 @@
+# v0.2.4 2019-12-16
+
+- Display data in svg map (work in progress)
+
 # v0.2.4 2019-11-19
 
 - Support for Python3 (Python2.7 still supported) 

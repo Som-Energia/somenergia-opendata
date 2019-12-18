@@ -33,6 +33,95 @@ dummyTemplate=u"""\
   <text y="200" x="240" style="text-anchor:middle">{percent_09}</text>
 </svg>
 """
+
+fullData = ns.loads("""\
+    dates:
+    - 2019-11-01
+    values:
+    - 3208
+    countries:
+      ES:
+        name: España
+        values:
+        - 3208
+        ccaas:
+          '01':
+            name: Andalucia
+            values:
+            - 48
+          '02':
+            name: Aragón
+            values:
+            - 124
+          '03':
+            name: Asturias, Principado de
+            values:
+            - 13
+          '04':
+            name: Baleares, Islas
+            values:
+            - 235
+          '05':
+            name: Canarias
+            values:
+            - 0
+          '06':
+            name: Cantabria
+            values:
+            - 12
+          08:
+            name: Castilla - La Mancha
+            values:
+            - 28
+          '07':
+            name: Castilla y León
+            values:
+            - 24
+          09:
+            name: Cataluña
+            values:
+            - 2054
+          '10':
+            name: Comunidad Valenciana
+            values:
+            - 224
+          '11':
+            name: Extremadura
+            values:
+            - 14
+          '12':
+            name: Galicia
+            values:
+            - 24
+          '13':
+            name: Madrid, Comunidad de
+            values:
+            - 145
+          '14':
+            name: Murcia, Región de
+            values:
+            - 11
+          '15':
+            name: Navarra, Comunidad Foral de
+            values:
+            - 151
+          '16':
+            name: País Vasco
+            values:
+            - 53
+          '17':
+            name: Rioja, La
+            values:
+            - 37
+          '18':
+            name: Ceuta
+            values:
+            - 5
+          '19':
+            name: Melilla
+            values:
+            - 5
+""")
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
 data_Perignan = u"FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
