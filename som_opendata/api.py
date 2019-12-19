@@ -388,7 +388,10 @@ def version():
 @api.route('/map/<string:metric>/on/<isodate:ondate>')
 @api.route('/map/<string:metric>/by/<string:geolevel>')
 @api.route('/map/<string:metric>/by/<string:geolevel>/on/<isodate:ondate>')
-def map(metric=None, ondate=None, geolevel='ccaa'):
+@api.route('/map/<string:metric>/per/<string:indicator>')
+@api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>')
+@api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>/on/<isodate:ondate>')
+def map(metric=None, ondate=None, geolevel='ccaa', indicator=None):
 
     relation_paramField_param = [
         ['metric', metric],
@@ -397,9 +400,10 @@ def map(metric=None, ondate=None, geolevel='ccaa'):
     for paramField, param in relation_paramField_param:
         validateParams(paramField, param)
 
+    relation_paramField_param += [['indicator',indicator]]
     validateImplementation(relation_paramField_param)
     request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=None, to=None, periodicity=None)
-    result = renderMap(source=api.source, metric=metric, date=request_dates, geolevel=geolevel)
+    result = renderMap(source=api.source, metric=metric, date=request_dates, geolevel=geolevel, isRelative=indicator)
     response = make_response(result)
     response.mimetype = 'image/svg+xml'
     return response

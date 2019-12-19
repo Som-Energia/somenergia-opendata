@@ -116,10 +116,12 @@ def toPopulationRelative(data, geolevel, population):
 
     for index in range(len(data.dates)):
         for code, region in iterateLevel(data, geolevel):
+            if code == 'None':
+                continue
             region["values"][index] = region["values"][index]*10000 / populationDict[code]
 
 
-def renderMap(source, metric, date, geolevel, isRelative=False):
+def renderMap(source, metric, date, geolevel, isRelative=None):
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     populationPerLocation = tuples2objects(parse_tsv(locationContent))
 

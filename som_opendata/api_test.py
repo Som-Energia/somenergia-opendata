@@ -297,4 +297,11 @@ class Api_Test(unittest.TestCase):
             """)
         self.assertEqual(r.mimetype, 'application/json')
 
+    def test__map__ccaaMembersPerPopulation(self):
+        r = self.get('/map/members/per/population')
+        self.assertEqual(r.status, '200 OK')
+        self.assertEqual(r.mimetype, 'image/svg+xml')
+        self.assertB2BEqual(r.data)
+
+
 # vim: et ts=4 sw=4
