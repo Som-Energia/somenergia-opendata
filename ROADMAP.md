@@ -47,7 +47,7 @@ Maps:
 Esdeveniments
 - ???
 
-Widgets 
+Widgets
 Webapps
 
 /members/by/state/monthly/from/2019-10-01/to/2019-11-01?format=json
