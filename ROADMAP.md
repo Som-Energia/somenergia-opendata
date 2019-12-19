@@ -1,5 +1,64 @@
 # ROADMAP 
 
+## API 1.0
+
+We want to be able to express:
+
+Introspeccio:
+- Quines metriques estan suportades
+- Quins geolevels estan suportats (ccaa, state...)
+- Quins codis y noms hi ha a un determinat geolevel amb possible filtre
+- Quins formats disponibles per un tipus de query (mapa, distribution)
+- Quins filtres s'apliquen als tags
+
+/discover/metric
+/discover/geolevel  [ccaa, city, state, country, county, localgrup...]
+/discover/geolevel/country?continent=Europe    {ES:España,...}
+/discover/geolevel/city?ccaa=09    {0808: barcelona, :}
+/discover/geolevel/localgroup
+/discover/geolevel/city?localgroup=BaixMontseny
+/discover/format/distribution
+/discover/format/map
+/discover/aspect/production  {tecnology, }
+/discover/metric/
+
+
+tecnology=biogas
+financedby=generationkwh
+financedby=aportacions
+
+
+Metriques relatives (poblacio)
+
+Distributions:
+- Format (csv, yaml, json...)
+- Distribucions relatives (members/poblacio)
+- Diferencial
+- Integral
+- Filtres per tag associats a la metrica
+
+Maps:
+- Format (svg, gif, png, mng...)
+- Distribucions relatives
+- Diferencial
+- Integral
+- Filtres per tag associats a la metrica
+
+Esdeveniments
+- ???
+
+Widgets 
+Webapps
+
+/members/by/state/monthly/from/2019-10-01/to/2019-11-01?format=json
+
+/map/members/by/state/monthly/from/2019-10-01/to/2019-11-01?format=png&diff=1
+
+/map/members/per/population/by/state/monthly/from/2019-10-01/to/2019-11-01?format=png&diff=1
+
+/production/by/state/monthly/from/2019-10-01/to/2019-11-01?tag=biogas
+
+
 ## El de hoy hoy
 
 
