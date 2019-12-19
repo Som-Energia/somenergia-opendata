@@ -384,10 +384,10 @@ def version():
 
 
 
-@api.route('/wipmap/<string:metric>')
-@api.route('/wipmap/<string:metric>/on/<isodate:ondate>')
-@api.route('/wipmap/<string:metric>/by/<string:geolevel>')
-@api.route('/wipmap/<string:metric>/by/<string:geolevel>/on/<isodate:ondate>')
+@api.route('/map/<string:metric>')
+@api.route('/map/<string:metric>/on/<isodate:ondate>')
+@api.route('/map/<string:metric>/by/<string:geolevel>')
+@api.route('/map/<string:metric>/by/<string:geolevel>/on/<isodate:ondate>')
 def map(metric=None, ondate=None, geolevel='ccaa'):
 
     relation_paramField_param = [

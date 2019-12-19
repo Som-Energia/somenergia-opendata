@@ -253,30 +253,30 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test__map__ccaaMembers(self):
-        r = self.get('/wipmap/members')
+        r = self.get('/map/members')
         self.assertEqual(r.status, '200 OK')
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
 
     def test__map__ccaaMembersDateSet(self):
-        r = self.get('/wipmap/members/on/2018-01-01')
+        r = self.get('/map/members/on/2018-01-01')
         self.assertEqual(r.status, '200 OK')
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
 
     def test__map__statesMembers(self):
-        r = self.get('/wipmap/members/by/state/on/2018-01-01')
+        r = self.get('/map/members/by/state/on/2018-01-01')
         self.assertEqual(r.status, '200 OK')
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
 
     def test__map__onDateMissing(self):
-        r = self.get('/wipmap/members/on/2038-01-01')
+        r = self.get('/map/members/on/2038-01-01')
         self.assertEqual(r.status_code, 500)
         self.assertEqual(r.mimetype, 'application/json')
 
     def test__map__wrongMetric(self):
-        r = self.get('/wipmap/wrong')
+        r = self.get('/map/wrong')
         self.assertEqual(r.status_code, 400)
         self.assertYamlResponse(r, """\
             parameter: metric
@@ -287,7 +287,7 @@ class Api_Test(unittest.TestCase):
         self.assertEqual(r.mimetype, 'application/json')
 
     def test__map__geolevelNotImplemented(self):
-        r = self.get('/wipmap/members/by/city')
+        r = self.get('/map/members/by/city')
         self.assertEqual(r.status_code, 400)
         self.assertYamlResponse(r, """\
             parameter: geolevel
