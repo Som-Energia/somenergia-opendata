@@ -53,7 +53,9 @@ def fillLegend(result, scale, colors):
         })
 
 
-def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa', maxVal=None, frame=0, isRelative=False):
+def dataToTemplateDict(data, colors, title, subtitle,
+        colorScale='Log', locations=[], geolevel='ccaa',
+        maxVal=None, frame=0, isRelative=False):
     date = data.dates[frame]
     result = ns(
             title = title,
@@ -105,11 +107,19 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
     return result
 
 
-def fillMap(data, template, geolevel, title, subtitle='', scale='Log', locations=[], maxVal=None, isRelative=False):
+def fillMap(data, template, geolevel, title,
+        subtitle='', scale='Log', locations=[], maxVal=None, isRelative=False):
     gradient = Gradient('#e0ecbb', '#384413')
     dataDict = dataToTemplateDict(
-        data=data, colors=gradient,
-        colorScale=scale, title=title, subtitle=subtitle, locations=locations, geolevel=geolevel, maxVal=maxVal, isRelative=isRelative
+        data=data,
+        colors=gradient,
+        colorScale=scale,
+        title=title,
+        subtitle=subtitle,
+        locations=locations,
+        geolevel=geolevel,
+        maxVal=maxVal,
+        isRelative=isRelative,
     )
 
     return template.format(**dataDict)
@@ -149,7 +159,15 @@ def renderMap(source, metric, date, geolevel, isRelative=None):
         subtitle = "/10.000 hab"
 
     template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
-    return fillMap(data=data, template=template, title=metric.title(), subtitle=subtitle, locations=locations, geolevel=geolevel, isRelative=isRelative)
+    return fillMap(
+        data=data,
+        template=template,
+        title=metric.title(),
+        subtitle=subtitle,
+        locations=locations,
+        geolevel=geolevel,
+        isRelative=isRelative,
+    )
 
 
 # map{Country}{ES}by{States}.svg
