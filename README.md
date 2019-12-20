@@ -60,5 +60,10 @@ Public API to access open data information about the cooperative
 
 ### Response format
 
+### External sources
 
+- 
+
+- https://analisi.transparenciacatalunya.cat/Sector-P-blic/Caps-de-municipi-de-Catalunya-georeferenciats/wpyq-we8x
+	- wget https://analisi.transparenciacatalunya.cat/resource/wpyq-we8x.csv -O Caps_de_municipi_de_Catalunya_georeferenciats.csv
 
