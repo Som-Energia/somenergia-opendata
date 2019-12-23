@@ -44,6 +44,15 @@ def maxValue(data, geolevel, frame):
     return currentMax
 
 
+def fillLegend(result, scale, colors):
+
+    for num in [0, 25, 50, 75, 100]:
+        result.update({
+            'legendNumber_{}'.format(num): int(scale.inverse(num / 100)),
+            'legendColor_{}'.format(num): colors(num / 100)
+        })
+
+
 def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa', maxVal=None, frame=0, isRelative=False):
     date = data.dates[frame]
     result = ns(
@@ -91,6 +100,8 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
         if 'number_{}'.format(code) in result:
             continue
         updateDict(code, 0)
+    fillLegend(result, scale, colors)
+
     return result
 
 

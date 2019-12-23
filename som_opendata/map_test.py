@@ -11,8 +11,10 @@ from .map import (
     percentRegion,
     maxValue,
     toPopulationRelative,
+    fillLegend,
     )
 from .colorscale import Gradient
+from .scale import LogScale, LinearScale
 from .csvSource import loadCsvSource, CsvSource
 from future.utils import iteritems
 from pathlib2 import Path
@@ -279,6 +281,16 @@ class Map_Test(unittest.TestCase):
             number_00: 0
             percent_00: 0,0%
             color_00: '#e0ecbb'
+            legendColor_0: '#e0ecbb'
+            legendColor_100: '#384413'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendNumber_0: 1
+            legendNumber_100: 123
+            legendNumber_25: 3
+            legendNumber_50: 11
+            legendNumber_75: 36
         """)
 
     def test_dataToTemplateDict_singleRegion(self):
@@ -297,6 +309,16 @@ class Map_Test(unittest.TestCase):
             number_01: 123
             percent_01: 100,0%
             color_01: '#384413'
+            legendColor_0: '#e0ecbb'
+            legendColor_100: '#384413'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendNumber_0: 1
+            legendNumber_100: 123
+            legendNumber_25: 3
+            legendNumber_50: 11
+            legendNumber_75: 36
         """)
 
     def test_percentRegion_totalZero(self):
@@ -321,6 +343,16 @@ class Map_Test(unittest.TestCase):
             number_09: 20
             percent_09: 14,0%
             color_09: '#8eac30'
+            legendColor_0: '#e0ecbb'
+            legendColor_100: '#384413'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendNumber_0: 1
+            legendNumber_100: 143
+            legendNumber_25: 3
+            legendNumber_50: 11
+            legendNumber_75: 41
         """)
 
     def test_dataToTemplateDict_restWorldHasValue(self):
@@ -350,6 +382,17 @@ class Map_Test(unittest.TestCase):
             number_01: 123
             percent_01: 97,6%
             color_01: '#394513'
+            legendColor_0: '#e0ecbb'
+            legendColor_100: '#384413'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendNumber_0: 1
+            legendNumber_100: 126
+            legendNumber_25: 3
+            legendNumber_50: 11
+            legendNumber_75: 37
+
         """)
 
     def test_dataToTemplateDict_LinearColorScale(self):
@@ -371,6 +414,16 @@ class Map_Test(unittest.TestCase):
             number_09: 20
             percent_09: 14,0%
             color_09: '#cfe296'
+            legendColor_0: '#e0ecbb'
+            legendColor_100: '#384413'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendNumber_0: 0
+            legendNumber_100: 143
+            legendNumber_25: 35
+            legendNumber_50: 71
+            legendNumber_75: 107
         """)
 
     def test_fillMap_manyRegions(self):
@@ -502,6 +555,16 @@ class Map_Test(unittest.TestCase):
             number_11: 1969
             percent_11: 100,0%
             color_11: '#384413'
+            legendColor_0: '#e0ecbb'
+            legendColor_100: '#384413'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendNumber_0: 1
+            legendNumber_100: 1969
+            legendNumber_25: 6
+            legendNumber_50: 44
+            legendNumber_75: 295
         """)
 
     def test_dataToTemplateDict_noState(self):
@@ -516,6 +579,16 @@ class Map_Test(unittest.TestCase):
             number_00: 0
             percent_00: 0,0%
             color_00: '#e0ecbb'
+            legendColor_0: '#e0ecbb'
+            legendColor_100: '#384413'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendNumber_0: 1
+            legendNumber_100: 1969
+            legendNumber_25: 6
+            legendNumber_50: 44
+            legendNumber_75: 295
         """)
 
     def test_dataToTemplateDict_manyStates(self):
@@ -537,6 +610,16 @@ class Map_Test(unittest.TestCase):
             number_14: 250
             percent_14: 33,3%
             color_14: '#5c701f'
+            legendColor_0: '#e0ecbb'
+            legendColor_100: '#384413'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendNumber_0: 1
+            legendNumber_100: 750
+            legendNumber_25: 5
+            legendNumber_50: 27
+            legendNumber_75: 143
         """)
 
     def test_dataToTemplateDict_twoStatesDifCCAA(self):
@@ -558,6 +641,16 @@ class Map_Test(unittest.TestCase):
             number_43: 250
             percent_43: 33,3%
             color_43: '#5c701f'
+            legendColor_0: '#e0ecbb'
+            legendColor_100: '#384413'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendNumber_0: 1
+            legendNumber_100: 750
+            legendNumber_25: 5
+            legendNumber_50: 27
+            legendNumber_75: 143
         """)
 
     def test_renderMap_members_byState(self):
@@ -584,6 +677,16 @@ class Map_Test(unittest.TestCase):
             number_09: 20
             percent_09: 14,0%
             color_09: '#8aa72f'
+            legendColor_0: '#e0ecbb'
+            legendColor_100: '#384413'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendNumber_0: 1
+            legendNumber_100: 123
+            legendNumber_25: 3
+            legendNumber_50: 11
+            legendNumber_75: 36
         """)
 
     def test_maxValue_oneCCAA(self):
@@ -643,6 +746,16 @@ class Map_Test(unittest.TestCase):
             number_09: 0
             percent_09: 0,0%
             color_09: '#e0ecbb'
+            legendColor_0: '#e0ecbb'
+            legendColor_100: '#384413'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendNumber_0: 1
+            legendNumber_100: 500
+            legendNumber_25: 4
+            legendNumber_50: 22
+            legendNumber_75: 105
         """)
 
 
@@ -829,6 +942,16 @@ class Map_Test(unittest.TestCase):
                     number_01: 0,1
                     percent_01: ''
                     color_01: '#384413'
+                    legendColor_0: '#e0ecbb'
+                    legendColor_100: '#384413'
+                    legendColor_25: '#c2da79'
+                    legendColor_50: '#a4c738'
+                    legendColor_75: '#6e8625'
+                    legendNumber_0: 0
+                    legendNumber_100: 0
+                    legendNumber_25: 0
+                    legendNumber_50: 0
+                    legendNumber_75: 0
                 """)
 
 
@@ -884,3 +1007,21 @@ class Map_Test(unittest.TestCase):
   <text y="200" x="240" style="text-anchor:middle"></text>
 </svg>
 """)
+
+    def test_fillLegend_(self):
+        scale = LogScale(higher=1000)
+        gradient = Gradient('#e0ecbb', '#384413')
+        result = dict()
+        fillLegend(result=result, scale=scale, colors=gradient)
+        self.assertNsEqual(result, """\
+            legendNumber_0: 1
+            legendNumber_25: 5
+            legendNumber_50: 31
+            legendNumber_75: 177
+            legendNumber_100: 1000
+            legendColor_0: '#e0ecbb'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendColor_100: '#384413'
+        """)

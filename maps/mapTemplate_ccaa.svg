@@ -110,7 +110,7 @@
         <tspan font-family="Sans" font-weight="600" x="369.263" y="87.853">{percent_16}</tspan>
       </text>
       <text font-size="7" style="text-align:center" x="105.354" y="28.826">
-        <tspan font-family="Sans" font-size="12" font-weight="600" x="105.354" y="28.826">{title}, {month} {year}</tspan>
+        <tspan font-family="Sans" font-size="12" font-weight="600" x="105.354" y="28.826">{title}, {year} {month}</tspan>
         <tspan font-family="Sans" font-size="10" font-weight="400" x="105.354" y="40.826">{subtitle}</tspan>        
       </text>
       <text font-size="7" style="text-align:center" x="281" y="362.2">
