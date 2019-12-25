@@ -27,11 +27,13 @@ def iterateLevel(data, geolevel):
         singular, plural = geolevels[level]
         for code, region in parentRegion[plural].items():
             if singular != geolevel:
-                yield from processLevel(region, level + 1)
+                for l in processLevel(region, level + 1):
+                    yield l
                 continue
             yield code, region
 
-    yield from processLevel(data.countries.ES, 0)
+    for l in processLevel(data.countries.ES, 0):
+        yield l
 
 def maxValue(data, geolevel, frame):
 
