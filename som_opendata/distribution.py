@@ -99,7 +99,7 @@ def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
 
 def locationFilter(objectList, typeFilter):
     if not typeFilter: return objectList
-    
+
     return [
         entry
         for entry in objectList
