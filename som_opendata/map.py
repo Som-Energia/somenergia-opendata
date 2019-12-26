@@ -1,3 +1,4 @@
+from __future__ import division
 from yamlns import namespace as ns
 from .scale import LinearScale, LogScale
 from .colorscale import Gradient
