@@ -63,13 +63,14 @@ class LinearScale_Test(unittest.TestCase):
         self.assertEqual(scale(scale.inverse(-0.25)), -0.25)
         self.assertEqual(scale(scale.inverse(1.25)), 1.25)
 
-    def test_call_minGreaterMax(self):
-        with self.assertRaises(ValueError) as context:
-            LinearScale(lower=1000, higher=10)
-        self.assertEqual(
-            "Lower value is greater than higher value",
-            str(context.exception)
-        )
+    def test_call_wayDown(self):
+        scale = LinearScale(lower=100, higher=0)
+        self.assertEqual(scale(75), .25)
+
+    def test_inverse_wayDown(self):
+        scale = LinearScale(lower=100, higher=0)
+        self.assertEqual(scale.inverse(.25), 75)
+
 
 class LogScale_Test(unittest.TestCase):
 
