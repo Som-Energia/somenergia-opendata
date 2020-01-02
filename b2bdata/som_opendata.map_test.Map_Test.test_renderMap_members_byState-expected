@@ -496,19 +496,19 @@
     <tspan style="text-align:center" text-anchor="middle" x="294.778" y="183.902">48</tspan>
   </text>
   <path d="M589.573 366.473h20.167v72.707h-20.167z" fill="url(#b)" opacity=".97"/>
-  <text font-family="sans-serif" font-size="8" font-weight="400" letter-spacing="0" style="line-height:1.25;text-align:center" text-anchor="middle" word-spacing="0" x="585.407" y="370.071">
-    <tspan x="585.407" y="370.071">1</tspan>
+  <text font-family="sans-serif" font-size="8" font-weight="400" letter-spacing="0" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="624.691" y="372.327">
+    <tspan style="text-align:end" x="586.326" y="372.327">0</tspan>
   </text>
-  <text font-family="sans-serif" font-size="8" font-weight="400" letter-spacing="0" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="587.428" y="441.587">
-    <tspan x="587.428" y="441.587">32352</tspan>
+  <text font-family="sans-serif" font-size="8" font-weight="400" letter-spacing="0" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="585.428" y="437.597">
+    <tspan x="585.428" y="437.597">32350</tspan>
   </text>
-  <text font-family="sans-serif" font-size="8" font-weight="400" letter-spacing="0" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="587.855" y="424.092">
-    <tspan x="587.855" y="424.092">2412</tspan>
+  <text font-family="sans-serif" font-size="8" font-weight="400" letter-spacing="0" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="585.855" y="422.092">
+    <tspan x="585.855" y="422.092">2410</tspan>
   </text>
-  <text font-family="sans-serif" font-size="8" font-weight="400" letter-spacing="0" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="587.855" y="406.092">
-    <tspan x="587.855" y="406.092">179</tspan>
+  <text font-family="sans-serif" font-size="8" font-weight="400" letter-spacing="0" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="585.855" y="404.092">
+    <tspan x="585.855" y="404.092">180</tspan>
   </text>
-  <text font-family="sans-serif" font-size="8" font-weight="400" letter-spacing="0" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="587.855" y="386.092">
-    <tspan x="587.855" y="387.092">13</tspan>
+  <text font-family="sans-serif" font-size="8" font-weight="400" letter-spacing="0" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="585.855" y="386.092">
+    <tspan x="585.855" y="387.092">10</tspan>
   </text>
 </svg>

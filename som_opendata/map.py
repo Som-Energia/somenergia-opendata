@@ -48,7 +48,7 @@ def fillLegend(result, scale, colors):
 
     for num in [0, 25, 50, 75, 100]:
         result.update({
-            'legendNumber_{}'.format(num): int(scale.inverse(num / 100)),
+            'legendNumber_{}'.format(num): round(int(scale.inverse(num / 100)),-1),
             'legendColor_{}'.format(num): colors(num / 100)
         })
 
