@@ -115,8 +115,10 @@ def dataToTemplateDict(data, colors, title, subtitle,
 
 
 def fillMap(data, template, geolevel, title,
-        subtitle='', scale='Log', locations=[], maxVal=None, isRelative=False):
+        subtitle='', scale='Log', locations=[], maxVal=None,
+        isRelative=False, frame=0):
     gradient = Gradient('#e0ecbb', '#384413')
+
     dataDict = dataToTemplateDict(
         data=data,
         colors=gradient,
@@ -127,6 +129,7 @@ def fillMap(data, template, geolevel, title,
         geolevel=geolevel,
         maxVal=maxVal,
         isRelative=isRelative,
+        frame=frame
     )
     return template.format(**dataDict)
 
@@ -148,6 +151,36 @@ def toPopulationRelative(data, geolevel, population):
             region["values"][index] = region["values"][index]*10000 / populationDict[code]
 
 
+def createGif(filename, frameQuantity, data, template, geolevel, title,
+            subtitle='', scale='Log', locations=[],
+            isRelative=False, frame=0):
+
+    from wand.image import Image
+
+    maxVal = maxValue(data=data, geolevel=geolevel, frame=frameQuantity - 1)
+    with Image() as gif:
+        for frame in range(frameQuantity):
+            try:
+                svg = fillMap(
+                    data=data,
+                    template=template,
+                    title=title,
+                    subtitle=subtitle,
+                    locations=locations,
+                    geolevel=geolevel,
+                    isRelative=isRelative,
+                    frame=frame,
+                    maxVal=maxVal
+                )
+            except:
+                continue
+            with Image(blob=svg.encode('utf8'), format='svg', width=500, height=400) as frame:
+                gif.sequence.append(frame)
+                with gif.sequence[-1] as frame:
+                    frame.delay = 50 # centiseconds
+        gif.type = 'optimize'
+        gif.save(filename=filename)
+
 def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None):
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     populationPerLocation = tuples2objects(parse_tsv(locationContent))
@@ -164,6 +197,20 @@ def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None):
         toPopulationRelative(data, geolevel, populationPerLocation)
         subtitle = "/10.000 hab"
     template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
+
+    if len(date) > 1:
+        filename="map-{}-{}-{}-{}.gif".format(metric, geolevel, date[0], date[-1])
+        createGif(filename=filename,
+            frameQuantity=len(date),
+            data=data,
+            template=template,
+            title=metric.title(),
+            subtitle=subtitle,
+            locations=locations,
+            geolevel=geolevel,
+            isRelative=isRelative,
+        )
+        return Path('{}.gif'.format(filename)))
 
     return fillMap(
         data=data,
