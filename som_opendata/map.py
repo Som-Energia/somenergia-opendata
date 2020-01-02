@@ -1,3 +1,4 @@
+from __future__ import division
 from yamlns import namespace as ns
 from .scale import LinearScale, LogScale
 from .colorscale import Gradient
@@ -27,11 +28,13 @@ def iterateLevel(data, geolevel):
         singular, plural = geolevels[level]
         for code, region in parentRegion[plural].items():
             if singular != geolevel:
-                yield from processLevel(region, level + 1)
+                for l in processLevel(region, level + 1):
+                    yield l
                 continue
             yield code, region
 
-    yield from processLevel(data.countries.ES, 0)
+    for l in processLevel(data.countries.ES, 0):
+        yield l
 
 def maxValue(data, geolevel, frame):
 
@@ -57,7 +60,9 @@ def fillLegend(result, scale, colors, isRelative):
         })
 
 
-def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', locations=[], geolevel='ccaa', maxVal=None, frame=0, isRelative=False):
+def dataToTemplateDict(data, colors, title, subtitle,
+        colorScale='Log', locations=[], geolevel='ccaa',
+        maxVal=None, frame=0, isRelative=False):
     date = data.dates[frame]
     result = ns(
             title = title,
@@ -109,11 +114,19 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
     return result
 
 
-def fillMap(data, template, geolevel, title, subtitle='', scale='Log', locations=[], maxVal=None, isRelative=False):
+def fillMap(data, template, geolevel, title,
+        subtitle='', scale='Log', locations=[], maxVal=None, isRelative=False):
     gradient = Gradient('#e0ecbb', '#384413')
     dataDict = dataToTemplateDict(
-        data=data, colors=gradient,
-        colorScale=scale, title=title, subtitle=subtitle, locations=locations, geolevel=geolevel, maxVal=maxVal, isRelative=isRelative
+        data=data,
+        colors=gradient,
+        colorScale=scale,
+        title=title,
+        subtitle=subtitle,
+        locations=locations,
+        geolevel=geolevel,
+        maxVal=maxVal,
+        isRelative=isRelative,
     )
     return template.format(**dataDict)
 
@@ -151,8 +164,16 @@ def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None):
         toPopulationRelative(data, geolevel, populationPerLocation)
         subtitle = "/10.000 hab"
     template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
-    return fillMap(data=data, template=template, title=metric.title(), subtitle=subtitle, locations=locations, geolevel=geolevel, isRelative=isRelative, maxVal=maxValue)
 
+    return fillMap(
+        data=data,
+        template=template,
+        title=metric.title(),
+        subtitle=subtitle,
+        locations=locations,
+        geolevel=geolevel,
+        isRelative=isRelative,
+    )
 
 # map{Country}{ES}by{States}.svg
 # map{Province}{01}by{Counties}.svg

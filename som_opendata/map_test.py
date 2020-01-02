@@ -1,4 +1,4 @@
-# -*- encoding: utf8 -*-
+# -*- coding: utf8 -*-
 
 import b2btest
 import unittest
@@ -256,9 +256,9 @@ class Map_Test(unittest.TestCase):
         self.b2bdatapath = 'b2bdata'
         Path('maps/mapTemplate_dummy.svg').write_text(dummyTemplate, encoding='utf8')
         population = (u''
-                'code\tname\tpopulation\n'
-                '01\tAndalucía\t10000\n'
-                '09\tCatalunya\t20000\n'
+                u'code\tname\tpopulation\n'
+                u'01\tAndalucía\t10000\n'
+                u'09\tCatalunya\t20000\n'
             )
         Path('maps/population_dummy.tsv').write_text(population,encoding='utf8')
         self.maxDiff = None
@@ -400,7 +400,7 @@ class Map_Test(unittest.TestCase):
         color = Gradient('#e0ecbb','#384413')
         result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyRegions, colorScale='Linear', colors=color, maxVal=143)
 
-        self.assertNsEqual(result, """\
+        self.assertNsEqual(result, u"""\
             title: un títol
             subtitle: un subtítol
             year: 2019
@@ -430,8 +430,8 @@ class Map_Test(unittest.TestCase):
 
         self.maxDiff = None
         result = fillMap(data=manyRegions, template=dummyTemplate,
-                title="un títol", subtitle="un subtítol", geolevel='ccaa', maxVal=143)
-        self.assertMultiLineEqual(result, """\
+                title=u"un títol", subtitle=u"un subtítol", geolevel='ccaa', maxVal=143)
+        self.assertMultiLineEqual(result, u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: un títol</text>
   <text y="60" x="170" style="text-anchor:middle">Subtitle: un subtítol</text>
@@ -450,8 +450,8 @@ class Map_Test(unittest.TestCase):
 
         self.maxDiff = None
         result = fillMap(data=singleRegion, template=dummyTemplate,
-                title="un títol", subtitle="un subtítol", locations=['01','09'], geolevel='ccaa', maxVal=143)
-        self.assertMultiLineEqual(result, """\
+                title=u"un títol", subtitle=u"un subtítol", locations=['01','09'], geolevel='ccaa', maxVal=143)
+        self.assertMultiLineEqual(result, u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: un títol</text>
   <text y="60" x="170" style="text-anchor:middle">Subtitle: un subtítol</text>
@@ -964,8 +964,8 @@ class Map_Test(unittest.TestCase):
         toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
 
         result = fillMap(data=data, template=dummyTemplate,
-                title="un títol", subtitle="un subtítol", geolevel='ccaa', scale='Linear', isRelative=True)
-        self.assertMultiLineEqual(result, """\
+                title=u"un títol", subtitle=u"un subtítol", geolevel='ccaa', scale='Linear', isRelative=True)
+        self.assertMultiLineEqual(result, u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: un títol</text>
   <text y="60" x="170" style="text-anchor:middle">Subtitle: un subtítol</text>
