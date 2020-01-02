@@ -326,10 +326,10 @@
   <text font-family="Sans" font-size="8" font-weight="600" letter-spacing="0" style="line-height:1.25" word-spacing="0" x="512.862" y="208.512">
     <tspan x="512.862" y="208.512">Islas Baleares</tspan>
   </text>
-  <text font-family="Sans" font-size="8" font-weight="600" letter-spacing="0" style="line-height:1.25;text-align:center" text-anchor="middle" word-spacing="0" x="96.726" y="33.94">
-    <tspan font-size="12" style="text-align:center" x="105.354" y="28.826">Members, 2018 Enero</tspan>
-    <tspan font-size="10" style="text-align:center" x="105.354" y="40.826"></tspan>
-  </text>
+        <text font-size="7" x="80.354" y="28.826">
+      <tspan font-family="Sans" style="text-align:left" font-size="12" font-weight="600" x="20" y="28.826">Members, 2018 Enero</tspan>
+      <tspan font-family="Sans" style="text-align:center" font-size="10" font-weight="400" x="60" y="40.826"></tspan>
+    </text>
   <text font-family="Sans" font-size="8" font-weight="600" letter-spacing="0" style="line-height:1.25" word-spacing="0" x="353.263" y="106.391">
     <tspan x="353.263" y="106.391">La Rioja</tspan>
   </text>

@@ -44,11 +44,15 @@ def maxValue(data, geolevel, frame):
     return currentMax
 
 
-def fillLegend(result, scale, colors):
-
+def fillLegend(result, scale, colors, isRelative):
     for num in [0, 25, 50, 75, 100]:
+        value = int(scale.inverse(num / 100))
+        if not isRelative:
+            value = round(value, -1)
+        if isRelative and (num == 25 or num == 75):
+            value = ''
         result.update({
-            'legendNumber_{}'.format(num): round(int(scale.inverse(num / 100)),-1),
+            'legendNumber_{}'.format(num): value,
             'legendColor_{}'.format(num): colors(num / 100)
         })
 
@@ -100,7 +104,7 @@ def dataToTemplateDict(data, colors, title, subtitle, colorScale='Log', location
         if 'number_{}'.format(code) in result:
             continue
         updateDict(code, 0)
-    fillLegend(result, scale, colors)
+    fillLegend(result, scale, colors, isRelative)
 
     return result
 
@@ -111,7 +115,6 @@ def fillMap(data, template, geolevel, title, subtitle='', scale='Log', locations
         data=data, colors=gradient,
         colorScale=scale, title=title, subtitle=subtitle, locations=locations, geolevel=geolevel, maxVal=maxVal, isRelative=isRelative
     )
-
     return template.format(**dataDict)
 
 
@@ -132,7 +135,7 @@ def toPopulationRelative(data, geolevel, population):
             region["values"][index] = region["values"][index]*10000 / populationDict[code]
 
 
-def renderMap(source, metric, date, geolevel, isRelative=None):
+def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None):
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     populationPerLocation = tuples2objects(parse_tsv(locationContent))
 
@@ -147,9 +150,8 @@ def renderMap(source, metric, date, geolevel, isRelative=None):
     if isRelative:
         toPopulationRelative(data, geolevel, populationPerLocation)
         subtitle = "/10.000 hab"
-
     template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
-    return fillMap(data=data, template=template, title=metric.title(), subtitle=subtitle, locations=locations, geolevel=geolevel, isRelative=isRelative)
+    return fillMap(data=data, template=template, title=metric.title(), subtitle=subtitle, locations=locations, geolevel=geolevel, isRelative=isRelative, maxVal=maxValue)
 
 
 # map{Country}{ES}by{States}.svg

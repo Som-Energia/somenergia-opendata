@@ -390,6 +390,7 @@ def version():
 @api.route('/map/<string:metric>/by/<string:geolevel>/on/<isodate:ondate>')
 @api.route('/map/<string:metric>/per/<string:indicator>')
 @api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>')
+@api.route('/map/<string:metric>/per/<string:indicator>/on/<isodate:ondate>')
 @api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>/on/<isodate:ondate>')
 def map(metric=None, ondate=None, geolevel='ccaa', indicator=None):
 

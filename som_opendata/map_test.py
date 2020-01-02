@@ -949,9 +949,9 @@ class Map_Test(unittest.TestCase):
                     legendColor_75: '#6e8625'
                     legendNumber_0: 0
                     legendNumber_100: 0
-                    legendNumber_25: 0
+                    legendNumber_25: ''
                     legendNumber_50: 0
-                    legendNumber_75: 0
+                    legendNumber_75: ''
                 """)
 
 
@@ -1008,16 +1008,34 @@ class Map_Test(unittest.TestCase):
 </svg>
 """)
 
-    def test_fillLegend_(self):
+    def test_fillLegend_default(self):
         scale = LogScale(higher=1000)
         gradient = Gradient('#e0ecbb', '#384413')
         result = dict()
-        fillLegend(result=result, scale=scale, colors=gradient)
+        fillLegend(result=result, scale=scale, colors=gradient, isRelative=None)
         self.assertNsEqual(result, """\
             legendNumber_0: 0
             legendNumber_25: 0
             legendNumber_50: 30
             legendNumber_75: 180
+            legendNumber_100: 1000
+            legendColor_0: '#e0ecbb'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendColor_100: '#384413'
+        """)
+
+    def test_fillLegend_relativeData(self):
+        scale = LogScale(higher=1000)
+        gradient = Gradient('#e0ecbb', '#384413')
+        result = dict()
+        fillLegend(result=result, scale=scale, colors=gradient, isRelative='population')
+        self.assertNsEqual(result, """\
+            legendNumber_0: 1
+            legendNumber_25: ''
+            legendNumber_50: 31
+            legendNumber_75: ''
             legendNumber_100: 1000
             legendColor_0: '#e0ecbb'
             legendColor_25: '#c2da79'
