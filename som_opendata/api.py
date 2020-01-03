@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, request, current_app, make_response
+from flask import Blueprint, request, current_app, make_response, send_file
 from yamlns import namespace as ns
 from .common import (
         yaml_response,
@@ -392,7 +392,13 @@ def version():
 @api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>')
 @api.route('/map/<string:metric>/per/<string:indicator>/on/<isodate:ondate>')
 @api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>/on/<isodate:ondate>')
-def map(metric=None, ondate=None, geolevel='ccaa', indicator=None):
+@api.route('/map/<string:metric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@api.route('/map/<string:metric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>')
+@api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>')
+@api.route('/map/<string:metric>/by/<string:geolevel>/<string:frequency>/to/<isodate:todate>')
+@api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>/<string:frequency>/to/<isodate:todate>')
+def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None, todate=None, indicator=None):
 
     relation_paramField_param = [
         ['metric', metric],
@@ -403,8 +409,11 @@ def map(metric=None, ondate=None, geolevel='ccaa', indicator=None):
 
     relation_paramField_param += [['indicator',indicator]]
     validateImplementation(relation_paramField_param)
-    request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=None, to=None, periodicity=None)
+    request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=fromdate, to=todate, periodicity=frequency)
+
     result = renderMap(source=api.source, metric=metric, date=request_dates, geolevel=geolevel, isRelative=indicator)
+    if len(request_dates) > 1:
+        return send_file('../{}'.format(result), mimetype='image/gif')
     response = make_response(result)
     response.mimetype = 'image/svg+xml'
     return response

@@ -160,20 +160,17 @@ def createGif(filename, frameQuantity, data, template, geolevel, title,
     maxVal = maxValue(data=data, geolevel=geolevel, frame=frameQuantity - 1)
     with Image() as gif:
         for frame in range(frameQuantity):
-            try:
-                svg = fillMap(
-                    data=data,
-                    template=template,
-                    title=title,
-                    subtitle=subtitle,
-                    locations=locations,
-                    geolevel=geolevel,
-                    isRelative=isRelative,
-                    frame=frame,
-                    maxVal=maxVal
-                )
-            except:
-                continue
+            svg = fillMap(
+                data=data,
+                template=template,
+                title=title,
+                subtitle=subtitle,
+                locations=locations,
+                geolevel=geolevel,
+                isRelative=isRelative,
+                frame=frame,
+                maxVal=maxVal
+            )
             with Image(blob=svg.encode('utf8'), format='svg', width=500, height=400) as frame:
                 gif.sequence.append(frame)
                 with gif.sequence[-1] as frame:
@@ -210,7 +207,7 @@ def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None):
             geolevel=geolevel,
             isRelative=isRelative,
         )
-        return Path('{}.gif'.format(filename)))
+        return Path(filename)
 
     return fillMap(
         data=data,

@@ -303,5 +303,10 @@ class Api_Test(unittest.TestCase):
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
 
+    def test__map__ccaaMembersRangeDates__gif(self):
+        r = self.get('/map/members/by/ccaa/monthly/from/2018-10-01/to/2019-01-01')
+        self.assertEqual(r.status, '200 OK')
+        self.assertEqual(r.mimetype, 'image/gif')
+        #self.assertB2BEqual(r.data)
 
 # vim: et ts=4 sw=4
