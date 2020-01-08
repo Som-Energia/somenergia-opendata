@@ -1044,7 +1044,7 @@ class Map_Test(unittest.TestCase):
             legendColor_100: '#384413'
         """)
 
-    #@unittest.skip("NI yet")
+    @unittest.skip("NI yet")
     def test_renderMap_membersRangeDates(self):
         source = loadCsvSource()
         result = renderMap(source, 'members', ['2019-01-01','2019-02-01'], geolevel='ccaa')
