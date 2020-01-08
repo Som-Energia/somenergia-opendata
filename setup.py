@@ -36,6 +36,7 @@ setup(
 		'tablib',
 		'somutils',
 		'colour',
+		'Wand', #make gifs
 		'future', # Py2 backward compat
 		'pathlib2', # Py2 backward compat
 	],
