@@ -42,82 +42,82 @@
   <path d="M1 1h641v456H1V1z" fill="none" stroke="#eee" stroke-miterlimit="3.864" stroke-width="2"/>
   <g style="text-align:center" text-anchor="middle">
     <text font-size="7" style="text-align:center" x="359.303" y="384.886">
-      <tspan font-family="Sans" font-weight="600" x="359.303" y="384.886">Melilla</tspan>
+      <tspan font-family="Sans" font-weight="600" x="359.303" y="384.886">{{ _('Melilla') }}</tspan>
       <tspan font-family="Sans" font-weight="600" x="359.303" y="393.636">{number_19}</tspan>
       <tspan font-family="Sans" font-size="6" font-weight="600" x="359.303" y="401.389">{percent_19}</tspan>
     </text>
     <text font-size="7" style="text-align:center" x="298.287" y="298.483">
-      <tspan font-family="Sans" font-size="8" font-weight="600" x="298.287" y="298.483">Andalucía</tspan>
+      <tspan font-family="Sans" font-size="8" font-weight="600" x="298.287" y="298.483">{{ _('Andalusia') }}</tspan>
       <tspan font-family="Sans" font-size="9" font-weight="600" x="298.287" y="309.48">{number_01}</tspan>
       <tspan font-family="Sans" font-size="8" font-weight="600" x="298.287" y="319.733">{percent_01}</tspan>
     </text>
     <text font-size="7" style="text-align:center" x="427.26" y="221.391">
-      <tspan font-family="Sans" font-size="8" font-weight="600" x="427.26" y="221.391">País Valencià</tspan>
+      <tspan font-family="Sans" font-size="8" font-weight="600" x="427.26" y="221.391">{{ _('Region of Valencia') }}</tspan>
       <tspan font-family="Sans" font-size="9" font-weight="600" x="427.26" y="232.388">{number_10}</tspan>
       <tspan font-family="Sans" font-size="8" font-weight="600" x="427.26" y="242.641">{percent_10}</tspan>
     </text>
     <text font-size="7" style="text-align:center" x="539.02" y="203.708">
-      <tspan font-family="Sans" font-size="8" font-weight="600" x="539.02" y="203.708">Illes Balears</tspan>
+      <tspan font-family="Sans" font-size="8" font-weight="600" x="539.02" y="203.708">{{ _('Balearic Islands') }}</tspan>
       <tspan font-family="Sans" font-size="9" font-weight="600" x="539.02" y="214.705">{number_04}</tspan>
       <tspan font-family="Sans" font-size="8" font-weight="600" x="539.02" y="224.958">{percent_04}</tspan>
     </text>
     <text font-size="7" style="text-align:center" x="494.092" y="116.414">
-      <tspan font-family="Sans" font-size="8" font-weight="600" x="494.092" y="116.414">Catalunya</tspan>
+      <tspan font-family="Sans" font-size="8" font-weight="600" x="494.092" y="116.414">{{ _('Catalonia') }}</tspan>
       <tspan font-family="Sans" font-size="10" font-weight="600" x="494.092" y="128.408">{number_09}</tspan>
       <tspan font-family="Sans" font-size="8" font-weight="600" x="494.092" y="138.914">{percent_09}</tspan>
     </text>
     <text font-size="7" style="text-align:center" x="423.741" y="139.299">
-      <tspan font-family="Sans" font-size="8" font-weight="600" x="423.741" y="139.299">Aragón</tspan>
+      <tspan font-family="Sans" font-size="8" font-weight="600" x="423.741" y="139.299">{{ _('Aragon') }}</tspan>
       <tspan font-family="Sans" font-size="9" font-weight="600" x="423.741" y="150.296">{number_02}</tspan>
       <tspan font-family="Sans" font-weight="600" x="423.741" y="159.553">{percent_02}</tspan>
     </text>
     <text font-size="7" style="text-align:center" x="397.863" y="83.747">
-      <tspan font-family="Sans" font-weight="600" x="397.863" y="83.747">Navarra</tspan>
+      <tspan font-family="Sans" font-weight="600" x="397.863" y="83.747">{{ _('Navarre') }}</tspan>
       <tspan font-family="Sans" font-size="9" font-weight="600" x="397.863" y="94.491">{number_15}</tspan>
       <tspan font-family="Sans" font-weight="600" x="397.863" y="103.747">{percent_15}</tspan>
     </text>
     <text font-size="7" style="text-align:center" x="333.594" y="174.388">
-      <tspan font-family="Sans" font-size="8" font-weight="600" x="333.594" y="174.388">Madrid</tspan>
+      <tspan font-family="Sans" font-size="8" font-weight="600" x="333.594" y="174.388">{{ _('Madrid Region') }}</tspan>
       <tspan font-family="Sans" font-size="9" font-weight="600" x="333.594" y="185.384">{number_13}</tspan>
       <tspan font-family="Sans" font-size="8" font-weight="600" x="333.594" y="195.638">{percent_13}</tspan>
     </text>
     <text font-family="Sans" font-size="8" font-weight="600" letter-spacing="0" style="line-height:125%" word-spacing="0" x="365.564" y="105.503">
-      <tspan font-size="7" x="365.564" y="105.503">La Rioja</tspan>
+      <tspan font-size="7" x="365.564" y="105.503">{{ _('La Rioja') }}</tspan>
       <tspan x="365.564" y="115.25">{number_17}</tspan>
       <tspan font-size="7" x="365.564" y="124.253">{percent_17}</tspan>
     </text>
     <text font-size="7" style="text-align:center" x="351.66" y="233.219">
-      <tspan font-family="Sans" font-size="8" font-weight="600" x="351.66" y="233.219">Castilla La Mancha</tspan>
+      <tspan font-family="Sans" font-size="8" font-weight="600" x="351.66" y="233.219">{{ _('Castile-La Mancha')}}</tspan>
       <tspan font-family="Sans" font-size="8" font-weight="600" x="351.66" y="243.219">{number_08}</tspan>
       <tspan font-family="Sans" font-weight="600" x="351.66" y="252.222">{percent_08}</tspan>
     </text>
     <text font-size="7" style="text-align:center" x="404.341" y="278.952">
-      <tspan font-family="Sans" font-weight="600" x="404.341" y="278.952">Murcia</tspan>
+      <tspan font-family="Sans" font-weight="600" x="404.341" y="278.952">{{ _('Region of Murcia') }}</tspan>
       <tspan font-family="Sans" font-size="8" font-weight="600" x="404.341" y="288.699">{number_14}</tspan>
       <tspan font-family="Sans" font-weight="600" x="404.341" y="297.702">{percent_14}</tspan>
     </text>
     <text font-size="7" style="text-align:center" x="208.471" y="80.948">
-      <tspan font-family="Sans" font-size="8" font-weight="600" x="208.471" y="80.948">Galiza</tspan>
+      <tspan font-family="Sans" font-size="8" font-weight="600" x="208.471" y="80.948">{{ _('Galicia') }}</tspan>
       <tspan font-family="Sans" font-size="8" font-weight="600" x="208.471" y="90.948">{number_12}</tspan>
       <tspan font-family="Sans" font-weight="600" x="208.471" y="99.952">{percent_12}</tspan>
     </text>
-    <text font-size="7" style="text-align:center" x="266.845" y="59.723">
-      <tspan font-family="Sans" font-weight="600" x="266.845" y="59.723">Asturies</tspan>
-      <tspan font-family="Sans" font-size="8" font-weight="600" x="266.845" y="69.47">{number_03}</tspan>
-      <tspan font-family="Sans" font-weight="600" x="266.845" y="78.473">{percent_03}</tspan>
+    <text font-size="7" style="text-align:center" x="266.845" y="57.723">
+      <tspan font-family="Sans" font-weight="600" x="266.845" y="57.723">{{ _('Principality of Asturias') }}</tspan>
+      <tspan font-family="Sans" font-size="8" font-weight="600" x="266.845" y="67.47">{number_03}</tspan>
+      <tspan font-family="Sans" font-weight="600" x="266.845" y="76.473">{percent_03}</tspan>
     </text>
-    <text font-size="7" style="text-align:center" x="325.409" y="66.52">
-      <tspan font-family="Sans" font-weight="600" x="325.409" y="66.52">Cantabria</tspan>
-      <tspan font-family="Sans" font-size="8" font-weight="600" x="325.409" y="76.266">{number_06}</tspan>
-      <tspan font-family="Sans" font-weight="600" x="325.409" y="85.27">{percent_06}</tspan>
+    <text font-size="7" style="text-align:center" x="325.409" y="64.52">
+      <tspan font-family="Sans" font-weight="600" x="325.409" y="64.52">{{ _('Cantabria') }}</tspan>
+      <tspan font-family="Sans" font-size="8" font-weight="600" x="325.409" y="74.266">{number_06}</tspan>
+      <tspan font-family="Sans" font-weight="600" x="325.409" y="83.27">{percent_06}</tspan>
     </text>
-    <text font-size="7" style="text-align:center" x="369.263" y="69.103">
-      <tspan font-family="Sans" font-weight="600" x="369.263" y="69.103">Euskadi</tspan>
-      <tspan font-family="Sans" font-size="8" font-weight="600" x="369.263" y="78.85">{number_16}</tspan>
+    <text font-size="7" style="text-align:center" x="371.263" y="71.103">
+      <tspan font-family="Sans" font-weight="600" x="371.263" y="71.103">{{ _('Basque Country') }}</tspan>
+      <tspan font-family="Sans" font-size="8" font-weight="600" x="369.263" y="79.85">{number_16}</tspan>
       <tspan font-family="Sans" font-weight="600" x="369.263" y="87.853">{percent_16}</tspan>
     </text>
     <text font-size="7" style="text-align:center" x="281" y="362.2">
-      <tspan font-family="Sans" font-weight="600" x="281" y="362.2">Ceuta</tspan>
+      <tspan font-family="Sans" font-weight="600" x="281" y="362.2">{{ _('Ceuta') }}</tspan>
       <tspan font-family="Sans" font-weight="600" x="281" y="370.95">{number_18}</tspan>
       <tspan font-family="Sans" font-size="6" font-weight="600" x="281" y="378.703">{percent_18}</tspan>
     </text>
@@ -129,22 +129,22 @@
   <path d="M222.814 333.135l-.25.25-.469.5.25.47v.25h.219l.25-.25.25.25.719-.97-.72-.5h-.25zm.25 5.063l-.25.219v.5l-.25.25v.468l-.219.25.219.22-.219.25-.5.25-.219.218.22.25h.25v.25l.25-.25h.218l.5-.25h.219l.25-.219.25-.5v-.219l.218-.25v-.25l.25.25v-.468l-.25-.5h-.468l-.47-.47zm1.437 2.156l-.25.469-.718.25v.469l-.25.25-.47.968-.25.47v.968l-.218.219-.25.5-.719.468-.968-.718-.47-.25-.5.5h-.218l-.5.468h-.219v-.218h-.718v.218l-.25.25-.47.25v.47h-.718l-.25.468-.469-.219-.25.219-.968.25-.25.25-.47.219-1.187.968-.25.25-.468.938v3.375l-.25.25-.25.219-.22.25-.25.25v.218l-.468.25-.25.25.25.47v.718l.469-.25h.469l.25.25.25-.25H212l.5.25.47-.25.25.5.218.469.5-.47v-.25l.469-.468.25-.25v-.469l.468-.718 1.22-.72h2.155l.22-.25.968-.468.25-.25.219-.25.5-.219h.468l.25-.25h.47l.5-.468h.218v-.25h.25l.25-.25.719-.47H224v-.25h.25v-.467h.47v-.5l-.22-.469.22-.468v-.25l.25-.25.25-.938v-.719h-.25v-.25l-.25-.25v-.718l.718-.72.5-.25.219-.468h-.22l.22-.719v-.968h-.47v-.22h-.25l-.468-.5h-.25l-.219-.468zM66.564 354.76v.47h-.219l-.5.25-.469.468h-.468l.218.25h-.218v.25l-.25.219v.25l-.47.25h-.25v.218l-.25.25v.97l-.218.218.469.719.25.25.219.25v.218l.25.5v.22l.25 1.218v.25l.218.219.25.5.25.218.72 1.22v.718l.218.219.25.25v.468h.469l.25.97h.25v.467l.218.5h-.218l.218.25v.937l.25.5-.25.22.25.25.25.468h.22v.25l.5.25.25-.25.468-1.688.469-.218.25-.5h.25l.218-.97.97-1.187v-.468l.25-.25v-.97l.218-.218-.219-.5v-.719l-.25-.218.25-.25h-.25v-.25l-.25-.47.25-.25v.25l.25-.5v-.218l.219-.5.719-.469v-.468l.25-.25v-.25h-.25v-.72h-.47l-.25-.468v-.469l-.218-.25v-.468l-.25-.5v-.47h-.25v-.5l-.469-.218h-.718l-.25.219H69.22l-.25.25-.25-.25-.719-.219h-.218l-.5-.25v-.25l-.47-.219v.22l-.25-.22zm143.281 5.282l-.969.468-.218-.25h-.25l-.25.5-.22-.25-.5.25-.218.22-.25-.22v.22h-.469l-.25.25h-.25v.25l-.218.468-.25-.25h-.25v.75l.25.219-.25.25.25.25-.25 1.187h-.22v.469l-.25.25-.25.719.25.718-.25.47-.218.25-.5.468v.5h-.219v.469h-.25v.718l-.5.72v.5l-.468.718-1.688 1.437v.72l-.219.468-.25.25h.25v.469h-.25v.968l-.25.25-.218.72-.97.468v.25l-.25.719v.468l-.218.47.219.75v.718l-.219.937-.25.72-1.437 1.218-1.22.937-.218.25-1.219.72-.718.25-.47.468-1.937.5h-1.906l-.469-.25v.25h-.25l.25.219v.5l-.25.218-.25.25-.218.25H188l.25-.25.72-.25.468.25 1.937.72h.47l.718.25.25-.25 1.437.468.47-.219.5-.969.718-.468.719-1.22.218-.218.25-.25.25-.5h.25l.22-.469.25-.468.25-.25h.468l.25-.25h1.437v-.47l.47.25.25-.25.218-.25h.719l.5-.218v.219l.718-.219v-.25l.25.25.22-.25h.718l.719-.25.25-.219v.22l.718-.47.25-.25h1.188l.469-.218.718-.72.25-.968.25-.25.25.25v-1.219l.22-.468v-.47h.25v-.25l.25-.25v-.718l.468-.469.25-.968v-.22l.219.22v-1.188l-.22-.25-.25-.25v-.219l.25-.25v-.718l-.5-.72.5-.718h.22l.25-.25v-.219l.25-.718v-.5l.468-.47-.25-.25v-.718l.25-.719-.25-.468.25-.25-.25-.97-.218-1.655.218-.72-.218-.5v-.25l-.25-.468h-.47l-.25-.25-.25-.219.25-.25-.25-.25-.218.25v-.25l-.5-.218zm-81.125 6.718l-.469.47-1.437.468-.719-.219h-.469l-.5-.5v.25h-.468l-.25.25v-.25l-.22.25-.25-.25-.5.25v-.5h-.218l-.25.25-.25.719-.469.25h-.25l-.218.25-.72-.25-.5.469v.25l-.468.25-.25.218v.5l-.219.22-.25.5-.468.468v.25l-.25-.25v.25h-.25v.469h-.22v.25h-.25v.468l-.5.25-.218-.25h-.25l-.25.72-.719.25h-.468l-.25-.25v.25h-.22l-.25.25h-.467v.218h-.25l-.25.25h-.469l-.25.25-.718-.25-.47.25-.25-.25h-.25l-.218-.25-.25.25v-.25l-.25.25v-.25l-.219.5h-.5v.219h-.938l-.25.25h-.25v-.25l-.218.25-.5.25-.469-.25v.25h-.968l-.47-.25h-.25l-.468-.47h-.719l-.5.47h-.218l-.25.25-.25.218-.22-.218-.25.218h-.468l-.25.25-.25.25v.47h.25l.25.25.469.218v.25l.469.469v.5h.25l.468.468-.218.25.218.22.25.25.47.25v.468l-.22.25v.469l.22.25v.968l.25.22v.25h.25l.218.468h.25l.25.25v.719l.969 1.687h.218v.25h.25v.219h.25v.25l.47.469h.25v1.438h.466l.25.25.219.468v.969l.25.25.25.218h.468l.25-.218h.22l.25-.25.25.25h.468v-.25h.25l.25-.25.937-.47h1.438l.5.25.219-.25v-.467h.25v-.25h.25l.218-.469h.25v-.25h.25l.22-.468h.25l.25-.5.218-.22.25-.5.5-.218v-.25l.219-.25.25-.25h.25v-.469h.218l.25-.25-.25-.218v-.25h.25v-.97l.25-.218v-.5l.47-.719v-.468l.968-1.438v-.5l.719-.937v-.97l-.25-.468v-.719h.25v-.718l.468-.25.47-.47.25-.25h.25l.468-.25.5-.468.219-.25.5-.469.218-.5.72-.218.25-.5h-.25v-.22l.5-.5.468-.218v.219l.25-.219.469-.25-.25.25.5-.25.218-.469h.5v-.25l.72-.25h.468v-.468h.5v-.47l.219-.25v-.718l-.22-.25h-.25l.25-.25-.968-.219h-.5zm-39.594 14.407l-.218.218h-.72l-.25.25h-.25l-.25.25v.22l-.218.25-.25.468v.5l-.25.219-.219.25v.25l.22.468-.22.47v.75l.22.218v.5h.25l.468.219v.718l.25.5h.719v.47h.718v.468h.5l.47.25.468-.25h.5l.719.25v-.25h.468l.25-.469.22.25v-.25h.25l.468-.469h.25v-.25l.5-.468.469-.25.25-.47h.218l.25-.25-.25-.25v-.468h.25l-.25-.5v-.219l-.218-.25v-.25h-.25v-.468h-.25l-.47-.25-.5-.22v-.25h-.468v-.467l-.25.219h-.219l-.25-.219v-.25l-.25-.25v-.219h-.718l-.47-.25-.25.25v-.25l-.218.25-.25-.25-.469-.468h-.5zm66.25 2.156l-.468.469h-.25v.25l.25.218v.5l-.5.47-.72.25-.468-.5-.25.25-.25-.47h-.219l-.5-.25v.25l-.468-.5h-.25v.25h-.22l-.25.25h-1.905l-.25-.25-.25.25v-.5h-.47l.22-.218-.22-.25h-.25v-.25l-.468.5-.25-.25-.469.468-.5-.218v-.25h-.218l-.25.25h-.25l-.22-.25v.25l.47.468-.25.25v.47l-.22.5h.22l-.22.218v.25l-.25.25.25.219v.5l-.5.468-.468.25v.47l-.469.25-.718.218v.25l-.25.25-.72.469h-.718l-.25.25.25.218-.25.72h-.25v.25l-.219.5.22.937-.22 1.218v.22l.47.718.718 1.437.469.97.25.25.25.25.25.218h.468v.25l.25.25.22.219h.25l.25.25h.218l-.219.25.469.218.469.25v.25l.25-.25v.25l.468.47.25.25.25-.25h.22l.5.25.718.218h.219l.5.5h.968l.22-.25.25-.719.25-.25.937-.219.5-.5h.468l.47-.468 1.687-.25.718-.22.25-.5-.25-.218.25-.719.25-.25h.22l.25-.25h.25l.218-.25v-.468l.25-.25h-.469v-.47l.219-.468v-1.219l.5-.218.469.218-.25-.218v-.25l-.47-.25v-.72h-.25v-.218l.25-.25v-.25l.47-.25-.22-.219v-.25l-.25-.25h.25l-.5-.218v-.5l-.218-.22-.719-.25v-.718l-.25-.25.25-.469-.25-.468.25-.72-.25-.718h-.25v-.969h.25v.72l.25-.72v-.25l.22-.25v-.718l-.47-.22zm-90.25 12.219l-.218.25h-.72l-.25.468h-.468l-.25.25h-.25l.25.5v.47h-.25l-.469.468-.5.5-.468.469h-.47l-.718.25h-.5l-1.187-.25-.25-.25v-.22h-.22l-.5.22-.218.25-.25.25v.718l-.25.22v.5l.5.468h.719l2.625.469.719.718.25.25.218.25v.25l.25.47h.47l.25.468h.5l.218-.469v-.969l.25-.25v-.468h.25v-1.188l.469-.25h.468l.25-.25v-.219l.72-.968-.25-.25.25-.22.25-.5h.218l.5-.718v-.219l-.5-.5h.25l-.25-.25-.219-.218v-.25h-.5v-.25h-.719z" fill="{color_05}" stroke="#ccc" stroke-linecap="square" stroke-miterlimit="10" stroke-width=".48"/>
   <path d="M202 346v111H1V346h0z" fill="none" stroke="#999" stroke-miterlimit="3.864" transform="matrix(.91158 0 0 .80236 50.596 43.146)"/>
   <text font-size="7" style="text-align:center" text-anchor="middle" x="165.742" y="360.353">
-    <tspan font-family="Sans" font-weight="600" x="165.742" y="360.353">Islas Canarias</tspan>
+    <tspan font-family="Sans" font-weight="600" x="165.742" y="360.353">{{ _('Canary Islands') }}</tspan>
     <tspan font-family="Sans" font-size="8" font-weight="600" x="165.742" y="370.1">{number_05}</tspan>
     <tspan font-family="Sans" font-weight="600" x="165.742" y="379.103">{percent_05}</tspan>
   </text>
   <text font-size="7" style="text-align:center" text-anchor="middle" x="300.277" y="123.645">
-    <tspan font-family="Sans" font-size="8" font-weight="600" x="300.277" y="123.645">Castilla y León</tspan>
+    <tspan font-family="Sans" font-size="8" font-weight="600" x="300.277" y="123.645">{{ _('Castile-Leon') }}</tspan>
     <tspan font-family="Sans" font-size="8" font-weight="600" x="300.277" y="133.645">{number_07}</tspan>
     <tspan font-family="Sans" font-weight="600" x="300.277" y="142.648">{percent_07}</tspan>
   </text>
   <text font-size="7" style="text-align:center" text-anchor="middle" x="256.076" y="226.52">
-    <tspan font-family="Sans" font-weight="600" x="256.076" y="226.52">Extremadura</tspan>
+    <tspan font-family="Sans" font-weight="600" x="256.076" y="226.52">{{ _('Extremadura') }}</tspan>
     <tspan font-family="Sans" font-size="8" font-weight="600" x="256.076" y="236.266">{number_11}</tspan>
     <tspan font-family="Sans" font-weight="600" x="256.076" y="245.27">{percent_11}</tspan>
   </text>
   <text font-family="Arial" font-size="4" font-weight="400" letter-spacing="0" style="line-height:125%;-inkscape-font-specification:Arial;text-align:center" text-anchor="middle" word-spacing="0" x="456.779" y="400.797">
-    <tspan font-family="Sans" font-size="8" font-weight="600" x="456.779" y="400.797">Otros</tspan>
+    <tspan font-family="Sans" font-size="8" font-weight="600" x="456.779" y="400.797">{{ _('Others') }}</tspan>
     <tspan font-family="Sans" font-size="8" font-weight="600" x="456.779" y="410.797">{number_00}</tspan>
     <tspan font-family="Sans" font-size="7" font-weight="600" x="456.779" y="419.8">{percent_00}</tspan>
   </text>
