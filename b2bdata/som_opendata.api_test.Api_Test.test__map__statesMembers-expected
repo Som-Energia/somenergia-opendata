@@ -219,7 +219,7 @@
       <tspan x="421.145" y="261.4">Alicante</tspan>
     </text>
     <text font-family="Sans" font-size="8" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0" x="428.73" y="271.856">
-      <tspan id="number03" style="text-align:center" text-anchor="middle" x="428.73" y="271.856">617</tspan>
+      <tspan id="number03" style="text-align:left" text-anchor="middle" x="430.73" y="271.856">617</tspan>
     </text>
   </g>
     <g id="provincia30">

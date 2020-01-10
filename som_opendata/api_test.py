@@ -5,7 +5,7 @@ from yamlns.dateutils import Date
 from yamlns import namespace as ns
 import b2btest
 from .api import api, validateInputDates
-from flask import Flask
+from flask import Flask, request
 from .common import (
     register_converters,
     register_handlers,
@@ -13,6 +13,7 @@ from .common import (
 
 from .csvSource import loadCsvSource
 from . import __version__
+from flask_babel import _, Babel, get_locale
 
 source = loadCsvSource()
 
@@ -62,6 +63,7 @@ class Api_Test(unittest.TestCase):
         register_handlers(app)
         app.register_blueprint(api, url_prefix='')
         app.config['TESTING']=True
+        app.config['LANGUAGES'] = ['en', 'es', 'ca', 'eu', 'gl']
 
     def setUp(self):
         self.client = self.app.test_client()
@@ -69,6 +71,12 @@ class Api_Test(unittest.TestCase):
         self.oldsource = api.source
         api.source = source
         api.firstDate = '2010-01-01'
+        self.babel = Babel()
+        self.babel.init_app(self.app)
+
+        @self.babel.localeselector
+        def get_locale():
+            return request.accept_languages.best_match(self.app.config['LANGUAGES'])
 
     def tearDown(self):
         api.source = self.oldsource
@@ -309,4 +317,15 @@ class Api_Test(unittest.TestCase):
         self.assertEqual(r.mimetype, 'image/gif')
         #self.assertB2BEqual(r.data)
 
+    def test__map__ccaaMembersCaLanguage(self):
+        r = self.get('/map/members/on/2015-01-01', headers=[("Accept-Language", "ca")])
+        self.assertEqual(r.status, '200 OK')
+        self.assertEqual(r.mimetype, 'image/svg+xml')
+        self.assertB2BEqual(r.data)
+
+    def test__map__ccaaStateCaLanguage(self):
+        r = self.get('/map/members/by/state/on/2015-01-01', headers=[("Accept-Language", "ca")])
+        self.assertEqual(r.status, '200 OK')
+        self.assertEqual(r.mimetype, 'image/svg+xml')
+        self.assertB2BEqual(r.data)
 # vim: et ts=4 sw=4

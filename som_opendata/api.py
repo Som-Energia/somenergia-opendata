@@ -14,8 +14,10 @@ from .errors import MissingDateError
 from . import __version__
 from .map import renderMap
 from .map_utils import validateImplementation
+from flask_babel import lazy_gettext as _l
+from flask_babel import _, Babel
 
-api = Blueprint(name=__name__, import_name=__name__)
+api = Blueprint(name=__name__, import_name=__name__, template_folder='../')
 api.firstDate = '2010-01-01'
 
 def validateInputDates(ondate = None, since = None, todate = None):
@@ -419,5 +421,6 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
     return response
 
 api.source = None
+
 
 # vim: et ts=4 sw=4

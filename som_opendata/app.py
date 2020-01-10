@@ -8,6 +8,8 @@ from .common import (
     register_converters,
     enable_cors,
     )
+from flask_babel import Babel
+from flask import request
 
 
 def create_app():
@@ -21,9 +23,15 @@ def create_app():
     api.source = loadCsvSource()
     api.firstDate = '2010-01-01'
     app.errors = None
-
+    app.config['LANGUAGES'] = ['en', 'es', 'ca', 'eu', 'gl']
+    babel = Babel()
+    babel.init_app(app)
     for rule in app.url_map.iter_rules():
         print(rule)
+
+    @babel.localeselector
+    def get_locale():
+        return request.accept_languages.best_match(app.config['LANGUAGES'])
 
     return app
 

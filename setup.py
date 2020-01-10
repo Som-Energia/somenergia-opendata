@@ -37,6 +37,7 @@ setup(
 		'somutils',
 		'colour',
 		'Wand', #make gifs
+		'flask-babel',
 		'future', # Py2 backward compat
 		'pathlib2', # Py2 backward compat
 	],

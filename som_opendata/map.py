@@ -4,13 +4,12 @@ from .scale import LinearScale, LogScale
 from .colorscale import Gradient
 from .distribution import aggregate, parse_tsv, tuples2objects
 from pathlib2 import Path
+from flask_babel import _
+from flask import render_template
 
-
-months = (
-        "Enero Febrero Marzo Abril Mayo Junio "
-        "Julio Agosto Septiembre Octubre Noviembre Diciembre"
-        ).split()
-
+months = ["January", "February", "March", "April",
+            "May", "June", "July", "August",
+            "September", "October", "November", "December"]
 
 def percentRegion(value, total):
     if not total:
@@ -65,12 +64,11 @@ def dataToTemplateDict(data, colors, title, subtitle,
         maxVal=None, frame=0, isRelative=False):
     date = data.dates[frame]
     result = ns(
-            title = title,
+            title = _(title),
             subtitle = subtitle,
             year = date.year,
-            month = months[date.month-1],
+            month = _(months[date.month-1]),
         )
-
     scales = dict(
         Linear = LinearScale,
         Log = LogScale,
@@ -178,6 +176,7 @@ def createGif(filename, frameQuantity, data, template, geolevel, title,
         gif.type = 'optimize'
         gif.save(filename=filename)
 
+
 def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None):
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     populationPerLocation = tuples2objects(parse_tsv(locationContent))
@@ -193,7 +192,7 @@ def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None):
     if isRelative:
         toPopulationRelative(data, geolevel, populationPerLocation)
         subtitle = "/10.000 hab"
-    template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
+    template = render_template('maps/mapTemplate_{}.svg'.format(geolevel))
 
     if len(date) > 1:
         filename="map-{}-{}-{}-{}.gif".format(metric, geolevel, date[0], date[-1])
