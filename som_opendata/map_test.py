@@ -12,6 +12,7 @@ from .map import (
     maxValue,
     toPopulationRelative,
     fillLegend,
+    createGif,
     )
 from .colorscale import Gradient
 from .scale import LogScale, LinearScale
@@ -250,6 +251,22 @@ manyStatesDifferentCCAA = ns.loads("""\
                     - 250
     """)
 
+
+def getBlobInfo(binaryBlob):
+    from wand.image import Image
+
+    result = ns()
+    with Image(blob=binaryBlob) as img:
+        result.update({
+            'format': img.format,
+            'isAnimation': img.animation,
+            'numFrames': len(img.sequence),
+            'height': img.height,
+            'width': img.width,
+            })
+
+    return result
+
 class Map_Test(unittest.TestCase):
 
     def setUp(self):
@@ -262,6 +279,7 @@ class Map_Test(unittest.TestCase):
             )
         Path('maps/population_dummy.tsv').write_text(population,encoding='utf8')
         self.maxDiff = None
+
     def tearDown(self):
         Path('maps/mapTemplate_dummy.svg').unlink()
         Path('maps/population_dummy.tsv').unlink()
@@ -485,7 +503,6 @@ class Map_Test(unittest.TestCase):
                 data_Adra,
                 ])
             )
-
         result = renderMap(source, 'members', ['2018-01-01'], geolevel='dummy')
 
         self.assertMultiLineEqual(result, """\
@@ -511,7 +528,6 @@ class Map_Test(unittest.TestCase):
                 data_Adra,
                 ])
             )
-
         result = renderMap(source, 'members', ['2018-01-01'], geolevel='dummy')
 
         self.assertMultiLineEqual(result, """\
@@ -996,7 +1012,7 @@ class Map_Test(unittest.TestCase):
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: Members</text>
-  <text y="60" x="170" style="text-anchor:middle">Subtitle: /10.000 hab</text>
+  <text y="60" x="170" style="text-anchor:middle">Subtitle: per 10,000 population</text>
   <text y="80" x="170" style="text-anchor:middle">Year: 2018</text>
   <text y="100" x="170" style="text-anchor:middle">Month: January</text>
   <circle cy="180" cx="100" r="60" fill="#bcd66c"/>
@@ -1044,8 +1060,61 @@ class Map_Test(unittest.TestCase):
             legendColor_100: '#384413'
         """)
 
-    @unittest.skip("NI yet")
+    def test_renderMap_members_givenTemplate(self):
+        source = loadCsvSource()
+        template = Path('maps/mapTemplate_dummy.svg').read_text(encoding='utf8')
+        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', template=template)
+        self.assertB2BEqual(result)
+
+    def test_createGif_manyFrames(self):
+        data = ns.loads("""\
+            dates: [2019-01-01, 2018-01-01]
+            values: [143, 500]
+            countries:
+              ES:
+                name: España
+                values: [143, 500]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [123, 500]
+                  '09':
+                    name: Catalunya
+                    values: [20, 0]
+            """)
+        template = Path('maps/mapTemplate_dummy.svg').read_text(encoding='utf8')
+        img = createGif(
+            frameQuantity=2, data=data, template=template,
+            geolevel='ccaa',title='One')
+        self.assertNsEqual(getBlobInfo(img), """\
+            format: GIF
+            isAnimation: true
+            width: 455
+            height: 284
+            numFrames: 2
+        """)
+
+    def test_createGif_oneFrame(self):
+        template = Path('maps/mapTemplate_dummy.svg').read_text(encoding='utf8')
+        img = createGif(
+            frameQuantity=1, data=manyRegions, template=template,
+            geolevel='ccaa',title='One')
+        self.assertNsEqual(getBlobInfo(img), """\
+            format: GIF
+            isAnimation: false
+            width: 455
+            height: 284
+            numFrames: 1
+        """)
+
     def test_renderMap_membersRangeDates(self):
         source = loadCsvSource()
-        result = renderMap(source, 'members', ['2019-01-01','2019-02-01'], geolevel='ccaa')
-        self.assertB2BEqual(result)
+        img = renderMap(source, 'members', ['2019-01-01','2019-02-01'], geolevel='ccaa')
+        result = getBlobInfo(img)
+        self.assertNsEqual(result, """\
+            format: GIF
+            isAnimation: true
+            width: 609
+            height: 434
+            numFrames: 2
+        """)

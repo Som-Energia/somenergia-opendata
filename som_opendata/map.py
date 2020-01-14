@@ -5,7 +5,6 @@ from .colorscale import Gradient
 from .distribution import aggregate, parse_tsv, tuples2objects
 from pathlib2 import Path
 from flask_babel import _
-from flask import render_template
 
 months = ["January", "February", "March", "April",
             "May", "June", "July", "August",
@@ -149,7 +148,7 @@ def toPopulationRelative(data, geolevel, population):
             region["values"][index] = region["values"][index]*10000 / populationDict[code]
 
 
-def createGif(filename, frameQuantity, data, template, geolevel, title,
+def createGif(frameQuantity, data, template, geolevel, title,
             subtitle='', scale='Log', locations=[],
             isRelative=False, frame=0):
 
@@ -174,10 +173,14 @@ def createGif(filename, frameQuantity, data, template, geolevel, title,
                 with gif.sequence[-1] as frame:
                     frame.delay = 50 # centiseconds
         gif.type = 'optimize'
-        gif.save(filename=filename)
+        gif.format = 'gif'
+        return gif.make_blob()
 
 
-def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None):
+def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None, template=None):
+    filtered_objects = source.get(metric, date, [])
+    data = aggregate(filtered_objects, geolevel)
+
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     populationPerLocation = tuples2objects(parse_tsv(locationContent))
 
@@ -185,18 +188,17 @@ def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None):
         location.code for location in populationPerLocation
     ]
 
-    filtered_objects = source.get(metric, date, [])
-    data = aggregate(filtered_objects, geolevel)
     subtitle = ''
 
     if isRelative:
         toPopulationRelative(data, geolevel, populationPerLocation)
-        subtitle = "/10.000 hab"
-    template = render_template('maps/mapTemplate_{}.svg'.format(geolevel))
+        subtitle = _("per 10,000 population")
+
+    if not template:
+        template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
 
     if len(date) > 1:
-        filename="map-{}-{}-{}-{}.gif".format(metric, geolevel, date[0], date[-1])
-        createGif(filename=filename,
+        return createGif(
             frameQuantity=len(date),
             data=data,
             template=template,
@@ -206,7 +208,6 @@ def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None):
             geolevel=geolevel,
             isRelative=isRelative,
         )
-        return Path(filename)
 
     return fillMap(
         data=data,

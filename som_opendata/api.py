@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, request, current_app, make_response, send_file
+from flask import Blueprint, request, current_app, make_response, send_file, render_template
 from yamlns import namespace as ns
 from .common import (
         yaml_response,
@@ -405,6 +405,7 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
     relation_paramField_param = [
         ['metric', metric],
         ['geolevel', geolevel],
+        ['frequency', frequency],
       ]
     for paramField, param in relation_paramField_param:
         validateParams(paramField, param)
@@ -412,13 +413,18 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
     relation_paramField_param += [['indicator',indicator]]
     validateImplementation(relation_paramField_param)
     request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=fromdate, to=todate, periodicity=frequency)
+    template = render_template('maps/mapTemplate_{}.svg'.format(geolevel))
 
-    result = renderMap(source=api.source, metric=metric, date=request_dates, geolevel=geolevel, isRelative=indicator)
-    if len(request_dates) > 1:
-        return send_file('../{}'.format(result), mimetype='image/gif')
+    result = renderMap(source=api.source, template=template,metric=metric, date=request_dates, geolevel=geolevel, isRelative=indicator)
     response = make_response(result)
+
+    if len(request_dates) > 1:
+        response.mimetype = 'image/gif'
+        return response
+
     response.mimetype = 'image/svg+xml'
     return response
+
 
 api.source = None
 

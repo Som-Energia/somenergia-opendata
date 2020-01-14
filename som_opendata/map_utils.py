@@ -14,8 +14,9 @@ implemented = ns(
 
 def validateImplementation(data):
     for field, value in data:
-        if value not in implemented[field]:
-            raise ValidateImplementationMap(field=field, value=value)
+        if field != 'frequency':
+            if value not in implemented[field]:
+                raise ValidateImplementationMap(field=field, value=value)
 
 
 class ValidateImplementationMap(ValidateError):

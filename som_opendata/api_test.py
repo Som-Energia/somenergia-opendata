@@ -14,6 +14,7 @@ from .common import (
 from .csvSource import loadCsvSource
 from . import __version__
 from flask_babel import _, Babel, get_locale
+from .map_test import getBlobInfo
 
 source = loadCsvSource()
 
@@ -315,7 +316,13 @@ class Api_Test(unittest.TestCase):
         r = self.get('/map/members/by/ccaa/monthly/from/2018-10-01/to/2019-01-01')
         self.assertEqual(r.status, '200 OK')
         self.assertEqual(r.mimetype, 'image/gif')
-        #self.assertB2BEqual(r.data)
+        self.assertNsEqual(getBlobInfo(r.data), """\
+            format: GIF
+            isAnimation: true
+            width: 609
+            height: 434
+            numFrames: 4
+        """)
 
     def test__map__ccaaMembersCaLanguage(self):
         r = self.get('/map/members/on/2015-01-01', headers=[("Accept-Language", "ca")])
