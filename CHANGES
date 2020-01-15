@@ -1,4 +1,11 @@
-# v0.2.4 2019-12-16
+# v0.2.6 2020-01-14
+
+- Contracts and members maps, by state and by ccaa. Absolutes or relative to population.
+- Gif creation for monthly and yearly series.
+- Added map translations to Catalan, Spanish, Galician and Euskara.
+- New style to maps. 
+
+# v0.2.5 2019-12-16
 
 - Display data in svg map (work in progress)
 
