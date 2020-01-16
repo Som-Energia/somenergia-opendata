@@ -5,10 +5,10 @@ Public API to access open data information about the cooperative
 - API UI: https://opendata.somenergia.coop/ui/
 - API Documentation: https://opendata.somenergia.coop/docs/
 
-## Geographical distributions
+## Example queries
 
 
-### Example queries
+### Geographical distributions
 
 
 - `/contracts`
@@ -45,7 +45,7 @@ Public API to access open data information about the cooperative
     Contracts aggregated by city every week until a date
 
 
-### Using filters
+#### Using filters
 
 
 - `/contracts/by/city?city=23423&city=89545`
@@ -57,62 +57,69 @@ Public API to access open data information about the cooperative
 - `/contracts/by/city?state=004`
     Include just cities in state 004
 
-### Visualize data in map
+#### Response format
 
-- `v0.2/map/contracts`
+TODO
+
+### Maps
+
+- `/map/contracts`
     All current contracts by ccaa
 
-- `v0.2/map/members`
+- `/map/contracts?lang=es`
+    All current contracts by ccaa in Spanish
+
+- `/map/members`
     All current members by ccaa
 
-- `v0.2/map/contracts/on/2018-02-03`
+- `/map/contracts/on/2018-02-03`
     Contracts on a given date
 
-- `v0.2/map/contracts/by/state`
+- `/map/contracts/by/state`
     Current contracts aggregated by state
 
-- `v0.2/map/contracts/per/population/by/state`
+- `/map/contracts/per/population/by/state`
     Current contracts relatives to population aggregated by state
 
-- `v0.2/map/contracts/by/state/on/2018-02-03`
+- `/map/contracts/by/state/on/2018-02-03`
     Contracts aggregated by state at a given date
 
-- `v0.2/map/contracts/by/state/monthly`
-    Contracts aggregated by state every available month
+- `/map/contracts/by/state/monthly`
+    Gif animation with contracts by state every available month
 
-- `v0.2/map/contracts/by/ccaa/yearly`
-    Contracts aggregated by CCAA every available year
+- `/map/contracts/by/ccaa/yearly`
+    Gif animation with contracts aggregated by CCAA every available year
 
-- `v0.2/map/contracts/by/state/monthly/from/2018-02-01`
-    Contracts aggregated by state every month from a date
+- `/map/contracts/by/state/monthly/from/2018-02-01`
+    Gif animation with contracts aggregated by state every month from a date
 
-- `v0.2/map/contracts/by/state/monthly/from/2018-02-03/to/2018-05-01`
-    Contracts aggregated by state every month from a date until a date
+- `/map/contracts/by/state/monthly/from/2018-02-03/to/2018-05-01`
+    Gif animation with contracts aggregated by state every month from a date until a date
 
-- `v0.2/map/contracts/by/state/monthly/to/2018-05-01`
-    Contracts aggregated by state every month until a date
-
-### Response format
+- `/map/contracts/by/state/monthly/to/2018-05-01`
+    Gif animation with contracts aggregated by state every month until a date
 
 ### External sources
 
-- 
 
 - https://analisi.transparenciacatalunya.cat/Sector-P-blic/Caps-de-municipi-de-Catalunya-georeferenciats/wpyq-we8x
 	- wget https://analisi.transparenciacatalunya.cat/resource/wpyq-we8x.csv -O Caps_de_municipi_de_Catalunya_georeferenciats.csv
 
+
 ## Requirements
 
-### MagickWand library
-
-- libmagickwand-dev for APT on Debian/Ubuntu
-- imagemagick for MacPorts/Homebrew on Mac
-- ImageMagick-devel for Yum on CentOS
+```bash
+sudo apt install libmagickwand-dev inkscape
+```
 
 ## Translations
 
 ### Languages supported
-- ca, es, eu, gl
+
+- Catalan (ca)
+- Spanish (es)
+- Euskara (eu)
+- Galician (gl)
 
 ### To Compile Language Translations
 
