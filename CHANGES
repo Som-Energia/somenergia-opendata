@@ -1,3 +1,9 @@
+#v0.2.7 2020-01-15
+
+- Fix errors in svg templates
+- Chose map language with query parameter
+- Fix translation errors
+
 # v0.2.6 2020-01-14
 
 - Contracts and members maps, by state and by ccaa. Absolutes or relative to population.
