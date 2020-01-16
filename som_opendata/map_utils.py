@@ -24,6 +24,6 @@ class ValidateImplementationMap(ValidateError):
         self.parameter = field
         self.value = value
         self.possibleValues = implemented[field]
-        super(ValidateError, self).__init__("Not implemented "+field+" \'"+value+
-            "\' try with "+u(self.possibleValues)
-            )
+        super(ValidateError, self).__init__(
+            u"Not implemented {} '{}' try with {}"
+            .format(field, value, self.possibleValues))
