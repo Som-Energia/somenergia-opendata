@@ -735,9 +735,11 @@ class Distribution_Test(unittest.TestCase):
             count_2018_01_01='1000',
             count_2018_02_01='201',
             )
+        expected = ns(_object)
+        del expected['count_2018_01_01']
+
         result = removeCounts(_object, ['count_2018_01_01'])
-        del _object['count_2018_01_01']
-        self.assertEquals(result, _object)
+        self.assertEquals(result, expected)
 
 
     # removeDates
