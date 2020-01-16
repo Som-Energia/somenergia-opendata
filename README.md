@@ -57,6 +57,40 @@ Public API to access open data information about the cooperative
 - `/contracts/by/city?state=004`
     Include just cities in state 004
 
+### Visualize data in map
+
+- `v0.2/map/contracts`
+    All current contracts by ccaa
+
+- `v0.2/map/members`
+    All current members by ccaa
+
+- `v0.2/map/contracts/on/2018-02-03`
+    Contracts on a given date
+
+- `v0.2/map/contracts/by/state`
+    Current contracts aggregated by state
+
+- `v0.2/map/contracts/per/population/by/state`
+    Current contracts relatives to population aggregated by state
+
+- `v0.2/map/contracts/by/state/on/2018-02-03`
+    Contracts aggregated by state at a given date
+
+- `v0.2/map/contracts/by/state/monthly`
+    Contracts aggregated by state every available month
+
+- `v0.2/map/contracts/by/ccaa/yearly`
+    Contracts aggregated by CCAA every available year
+
+- `v0.2/map/contracts/by/state/monthly/from/2018-02-01`
+    Contracts aggregated by state every month from a date
+
+- `v0.2/map/contracts/by/state/monthly/from/2018-02-03/to/2018-05-01`
+    Contracts aggregated by state every month from a date until a date
+
+- `v0.2/map/contracts/by/state/monthly/to/2018-05-01`
+    Contracts aggregated by state every month until a date
 
 ### Response format
 
@@ -69,8 +103,17 @@ Public API to access open data information about the cooperative
 
 ## Requirements
 
-## MagickWand library
+### MagickWand library
 
 - libmagickwand-dev for APT on Debian/Ubuntu
 - imagemagick for MacPorts/Homebrew on Mac
 - ImageMagick-devel for Yum on CentOS
+
+## Translations
+
+### Languages supported
+- ca, es, eu, gl
+
+### To Compile Language Translations
+
+- `pybabel compile -f -d som_opendata/translations` 
