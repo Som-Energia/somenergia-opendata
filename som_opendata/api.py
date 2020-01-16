@@ -390,17 +390,17 @@ def version():
 @api.route('/map/<string:metric>/on/<isodate:ondate>')
 @api.route('/map/<string:metric>/by/<string:geolevel>')
 @api.route('/map/<string:metric>/by/<string:geolevel>/on/<isodate:ondate>')
-@api.route('/map/<string:metric>/per/<string:indicator>')
-@api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>')
-@api.route('/map/<string:metric>/per/<string:indicator>/on/<isodate:ondate>')
-@api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>/on/<isodate:ondate>')
+@api.route('/map/<string:metric>/per/<string:relativemetric>')
+@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>')
+@api.route('/map/<string:metric>/per/<string:relativemetric>/on/<isodate:ondate>')
+@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/on/<isodate:ondate>')
 @api.route('/map/<string:metric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
-@api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
 @api.route('/map/<string:metric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>')
-@api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>')
+@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>')
 @api.route('/map/<string:metric>/by/<string:geolevel>/<string:frequency>/to/<isodate:todate>')
-@api.route('/map/<string:metric>/per/<string:indicator>/by/<string:geolevel>/<string:frequency>/to/<isodate:todate>')
-def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None, todate=None, indicator=None):
+@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/to/<isodate:todate>')
+def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None, todate=None, relativemetric=None):
 
     relation_paramField_param = [
         ['metric', metric],
@@ -410,12 +410,12 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
     for paramField, param in relation_paramField_param:
         validateParams(paramField, param)
 
-    relation_paramField_param += [['indicator',indicator]]
+    relation_paramField_param += [['relativemetric',relativemetric]]
     validateImplementation(relation_paramField_param)
     request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=fromdate, to=todate, periodicity=frequency)
     template = render_template('maps/mapTemplate_{}.svg'.format(geolevel))
 
-    result = renderMap(source=api.source, template=template,metric=metric, date=request_dates, geolevel=geolevel, isRelative=indicator)
+    result = renderMap(source=api.source, template=template,metric=metric, date=request_dates, geolevel=geolevel, isRelative=relativemetric)
     response = make_response(result)
 
     if len(request_dates) > 1:

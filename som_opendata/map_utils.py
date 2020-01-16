@@ -8,7 +8,7 @@ from yamlns import namespace as ns
 implemented = ns(
     metric=['members', 'contracts'],
     geolevel=['ccaa','state'],
-    indicator=['population', None],
+    relativemetric=['population', None],
     )
 
 

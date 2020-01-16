@@ -16,6 +16,7 @@ from . import __version__
 from flask_babel import _, Babel, get_locale
 from .map_test import getBlobInfo
 
+
 source = loadCsvSource()
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -77,6 +78,9 @@ class Api_Test(unittest.TestCase):
 
         @self.babel.localeselector
         def get_locale():
+            lang = request.args.get('lang')
+            if lang in self.app.config['LANGUAGES']:
+                return lang
             return request.accept_languages.best_match(self.app.config['LANGUAGES'])
 
     def tearDown(self):
@@ -330,8 +334,8 @@ class Api_Test(unittest.TestCase):
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
 
-    def test__map__ccaaStateCaLanguage(self):
-        r = self.get('/map/members/by/state/on/2015-01-01', headers=[("Accept-Language", "ca")])
+    def test__map__ccaaState_CaLanguageByParam(self):
+        r = self.get('/map/members/by/state/on/2015-01-01?lang=ca')
         self.assertEqual(r.status, '200 OK')
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
