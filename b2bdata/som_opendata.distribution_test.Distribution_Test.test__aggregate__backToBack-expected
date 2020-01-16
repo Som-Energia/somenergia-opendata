@@ -123,6 +123,11 @@ countries:
                 values:
                 - 4
                 - 4
+              '04067':
+                name: Ohanes
+                values:
+                - 0
+                - 0
               04069:
                 name: Olula del Río
                 values:
@@ -165,6 +170,11 @@ countries:
                 - 0
               04098:
                 name: Vélez-Blanco
+                values:
+                - 0
+                - 0
+              04099:
+                name: Vélez-Rubio
                 values:
                 - 0
                 - 0
@@ -495,6 +505,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '14054':
+                name: Pozoblanco
+                values:
+                - 0
+                - 0
               '14055':
                 name: Priego de Córdoba
                 values:
@@ -530,6 +545,11 @@ countries:
                 values:
                 - 1
                 - 1
+              '14071':
+                name: Villanueva del Rey
+                values:
+                - 0
+                - 0
               '14073':
                 name: Villaviciosa de Córdoba
                 values:
@@ -661,6 +681,11 @@ countries:
                 values:
                 - 2
                 - 2
+              '18048':
+                name: Cijuela
+                values:
+                - 0
+                - 0
               '18912':
                 name: Cuevas del Campo
                 values:
@@ -708,6 +733,11 @@ countries:
                 - 0
               '18905':
                 name: Gabias, Las
+                values:
+                - 0
+                - 0
+              '18082':
+                name: Galera
                 values:
                 - 0
                 - 0
@@ -766,6 +796,11 @@ countries:
                 values:
                 - 4
                 - 5
+              '18103':
+                name: Itrabo
+                values:
+                - 0
+                - 0
               '18105':
                 name: Iznalloz
                 values:
@@ -1054,6 +1089,11 @@ countries:
                 - 0
               '21038':
                 name: Higuera de la Sierra
+                values:
+                - 0
+                - 0
+              '21039':
+                name: Hinojales
                 values:
                 - 0
                 - 0
@@ -1389,6 +1429,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '29030':
+                name: Borge, El
+                values:
+                - 0
+                - 0
               '29033':
                 name: Canillas de Aceituno
                 values:
@@ -1640,6 +1685,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '41022':
+                name: Campana, La
+                values:
+                - 0
+                - 0
               '41901':
                 name: Cañada Rosal
                 values:
@@ -1712,6 +1762,11 @@ countries:
                 - 2
               '41041':
                 name: Estepa
+                values:
+                - 0
+                - 0
+              '41042':
+                name: Fuentes de Andalucía
                 values:
                 - 0
                 - 0
@@ -1812,6 +1867,11 @@ countries:
                 - 0
               '41073':
                 name: Pedroso, El
+                values:
+                - 0
+                - 0
+              '41075':
+                name: Pilas
                 values:
                 - 0
                 - 0
@@ -2949,6 +3009,11 @@ countries:
             - 500
             - 526
             cities:
+              '50004':
+                name: Aguarón
+                values:
+                - 0
+                - 0
               '50005':
                 name: Aguilón
                 values:
@@ -3651,6 +3716,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '33071':
+                name: Taramundi
+                values:
+                - 0
+                - 0
               '33072':
                 name: Teverga
                 values:
@@ -4241,6 +4311,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '38015':
+                name: Garachico
+                values:
+                - 0
+                - 0
               '38016':
                 name: Garafía
                 values:
@@ -4368,6 +4443,11 @@ countries:
                 - 0
               '38041':
                 name: Sauzal, El
+                values:
+                - 0
+                - 0
+              '38042':
+                name: Silos, Los
                 values:
                 - 0
                 - 0
@@ -4926,6 +5006,11 @@ countries:
                 values:
                 - 1
                 - 1
+              '13006':
+                name: Alcoba
+                values:
+                - 0
+                - 0
               '13007':
                 name: Alcolea de Calatrava
                 values:
@@ -5159,6 +5244,11 @@ countries:
                 - 0
               '16060':
                 name: Casas de Benítez
+                values:
+                - 0
+                - 0
+              '16064':
+                name: Casas de Haro
                 values:
                 - 0
                 - 0
@@ -5909,6 +5999,11 @@ countries:
                 values:
                 - 1
                 - 1
+              '45123':
+                name: Ontígola
+                values:
+                - 0
+                - 0
               '45125':
                 name: Oropesa
                 values:
@@ -6216,6 +6311,16 @@ countries:
                 values:
                 - 1
                 - 1
+              '05102':
+                name: Hoyo de Pinares, El
+                values:
+                - 0
+                - 0
+              '05103':
+                name: Hoyorredondo
+                values:
+                - 0
+                - 0
               '05124':
                 name: Medinilla
                 values:
@@ -7063,6 +7168,11 @@ countries:
                 values:
                 - 2
                 - 2
+              '24063':
+                name: Cubillas de Rueda
+                values:
+                - 0
+                - 0
               '24068':
                 name: Ercina, La
                 values:
@@ -7334,6 +7444,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '34010':
+                name: Ampudia
+                values:
+                - 0
+                - 0
               '34018':
                 name: Autilla del Pino
                 values:
@@ -7449,6 +7564,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '34123':
+                name: Paredes de Nava
+                values:
+                - 0
+                - 0
               '34124':
                 name: Payo de Ojeda
                 values:
@@ -7551,6 +7671,11 @@ countries:
                 - 0
               '34237':
                 name: Villaumbrales
+                values:
+                - 0
+                - 0
+              '34240':
+                name: Villerías de Campos
                 values:
                 - 0
                 - 0
@@ -7867,6 +7992,11 @@ countries:
                 - 0
               '37373':
                 name: Villavieja de Yeltes
+                values:
+                - 0
+                - 0
+              '37377':
+                name: Yecla de Yeltes
                 values:
                 - 0
                 - 0
@@ -8208,6 +8338,11 @@ countries:
                 - 0
               '40208':
                 name: Turégano
+                values:
+                - 0
+                - 0
+              '40218':
+                name: Valle de Tabladillo
                 values:
                 - 0
                 - 0
@@ -8678,6 +8813,11 @@ countries:
                 values:
                 - 1
                 - 1
+              '47144':
+                name: San Martín de Valvení
+                values:
+                - 0
+                - 0
               '47145':
                 name: San Miguel del Arroyo
                 values:
@@ -10001,6 +10141,11 @@ countries:
                 values:
                 - 3
                 - 4
+              08255:
+                name: Santa Maria de Merlès
+                values:
+                - 0
+                - 0
               08257:
                 name: Santa Maria de Miralles
                 values:
@@ -10712,6 +10857,11 @@ countries:
                 values:
                 - 16
                 - 19
+              '17046':
+                name: Castellfollit de la Roca
+                values:
+                - 0
+                - 0
               '17047':
                 name: Castelló d'Empúries
                 values:
@@ -11938,6 +12088,11 @@ countries:
                 values:
                 - 4
                 - 4
+              '25087':
+                name: Esterri de Cardós
+                values:
+                - 0
+                - 0
               '25089':
                 name: Farrera
                 values:
@@ -12288,6 +12443,11 @@ countries:
                 values:
                 - 4
                 - 4
+              '25174':
+                name: Portella, La
+                values:
+                - 0
+                - 0
               '25175':
                 name: Prats i Sansor
                 values:
@@ -12793,7 +12953,7 @@ countries:
                 name: Bisbal del Penedès, La
                 values:
                 - 2
-                - 3
+                - 4
               '43029':
                 name: Blancafort
                 values:
@@ -13184,6 +13344,11 @@ countries:
                 values:
                 - 3
                 - 3
+              '43110':
+                name: Pobla de Massaluca, La
+                values:
+                - 0
+                - 0
               '43111':
                 name: Pobla de Montornès, La
                 values:
@@ -13378,7 +13543,7 @@ countries:
                 name: Tarragona
                 values:
                 - 125
-                - 131
+                - 130
               '43149':
                 name: Tivenys
                 values:
@@ -14419,6 +14584,11 @@ countries:
                 - 1
               '12105':
                 name: Sierra Engarcerán
+                values:
+                - 0
+                - 0
+              '12106':
+                name: Soneja
                 values:
                 - 0
                 - 0
@@ -15751,6 +15921,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '10004':
+                name: Acehúche
+                values:
+                - 0
+                - 0
               '10008':
                 name: Alcántara
                 values:
@@ -15811,6 +15986,11 @@ countries:
                 values:
                 - 8
                 - 8
+              '10043':
+                name: Campo Lugar
+                values:
+                - 0
+                - 0
               '10044':
                 name: Cañamero
                 values:
@@ -16459,6 +16639,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '27056':
+                name: Rábade
+                values:
+                - 0
+                - 0
               '27051':
                 name: Ribadeo
                 values:
@@ -16510,6 +16695,11 @@ countries:
                 values:
                 - 2
                 - 2
+              '32006':
+                name: Bande
+                values:
+                - 0
+                - 0
               '32008':
                 name: Barbadás
                 values:
@@ -16615,6 +16805,11 @@ countries:
                 values:
                 - 1
                 - 1
+              '32082':
+                name: Trasmiras
+                values:
+                - 0
+                - 0
               '32085':
                 name: Verín
                 values:
@@ -17548,6 +17743,11 @@ countries:
                 values:
                 - 2
                 - 2
+              '28174':
+                name: Villamanta
+                values:
+                - 0
+                - 0
               '28175':
                 name: Villamantilla
                 values:
@@ -18162,6 +18362,11 @@ countries:
                 values:
                 - 1
                 - 1
+              '31102':
+                name: Ezkurra
+                values:
+                - 0
+                - 0
               '31104':
                 name: Falces
                 values:
@@ -18950,6 +19155,11 @@ countries:
                 values:
                 - 2
                 - 2
+              '48051':
+                name: Lanestosa
+                values:
+                - 0
+                - 0
               '48052':
                 name: Larrabetzu
                 values:
@@ -19465,6 +19675,11 @@ countries:
                 - 2
               '26074':
                 name: Hervías
+                values:
+                - 0
+                - 0
+              '26078':
+                name: Hornos de Moncalvillo
                 values:
                 - 0
                 - 0
