@@ -1,4 +1,5 @@
 # -*- coding: utf8 -*-
+from __future__ import unicode_literals
 
 import b2btest
 import unittest
@@ -22,7 +23,7 @@ from pathlib2 import Path
 from .distribution import parse_tsv, tuples2objects
 
 
-dummyTemplate=u"""\
+dummyTemplate="""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: {title}</text>
   <text y="60" x="170" style="text-anchor:middle">Subtitle: {subtitle}</text>
@@ -125,12 +126,12 @@ fullData = ns.loads("""\
             values:
             - 5
 """)
-headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
-data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
-data_Perignan = u"FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
-data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
-data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
-data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
+headers = "codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
+data_Adra = "ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
+data_Perignan = "FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
+data_Girona = "ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
+data_SantJoan = "ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
+data_Amer = "ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
 noRegion = ns.loads("""\
     dates: [2019-01-01]
@@ -272,10 +273,10 @@ class Map_Test(unittest.TestCase):
     def setUp(self):
         self.b2bdatapath = 'b2bdata'
         Path('maps/mapTemplate_dummy.svg').write_text(dummyTemplate, encoding='utf8')
-        population = (u''
-                u'code\tname\tpopulation\n'
-                u'01\tAndalucía\t10000\n'
-                u'09\tCatalunya\t20000\n'
+        population = (
+                'code\tname\tpopulation\n'
+                '01\tAndalucía\t10000\n'
+                '09\tCatalunya\t20000\n'
             )
         Path('maps/population_dummy.tsv').write_text(population,encoding='utf8')
         self.maxDiff = None
