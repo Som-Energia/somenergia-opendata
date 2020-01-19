@@ -49,7 +49,7 @@ def fillLegend(result, scale, colors, isRelative):
     for num in [0, 25, 50, 75, 100]:
         value = int(scale.inverse(num / 100))
         if not isRelative:
-            value = round(value, -1)
+            value = int(round(value, -1))
         if isRelative and (num == 25 or num == 75):
             value = ''
         result.update({
