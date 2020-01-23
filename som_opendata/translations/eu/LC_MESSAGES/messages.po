@@ -337,5 +337,5 @@ msgid "Araba"
 msgstr "Araba"
 
 msgid "per 10,000 population"
-msgstr "por 10.000 biztanle"
+msgstr "10.000 biztanleko"
 
