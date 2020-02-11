@@ -131,7 +131,7 @@ def fillMap(data, template, geolevel, title,
     return template.format(**dataDict)
 
 
-def toPopulationRelative(data, geolevel, population):
+def toPopulationRelative(data, geolevel, population, perValue=10000):
 
       # TODO: just for tests
     if geolevel == 'dummy':
@@ -145,7 +145,7 @@ def toPopulationRelative(data, geolevel, population):
         for code, region in iterateLevel(data, geolevel):
             if code == 'None':
                 continue
-            region["values"][index] = region["values"][index]*10000 / populationDict[code]
+            region["values"][index] = region["values"][index]*perValue / populationDict[code]
 
 
 def createGif(frameQuantity, data, template, geolevel, title,
@@ -191,8 +191,9 @@ def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None, te
     subtitle = ''
 
     if isRelative:
-        toPopulationRelative(data, geolevel, populationPerLocation)
-        subtitle = _("per 10,000 population")
+        perValue = 10000
+        toPopulationRelative(data, geolevel, populationPerLocation, perValue)
+        subtitle = _("per {:,} population".format(perValue).replace(',', '.'))
 
     if not template:
         template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')

@@ -797,6 +797,26 @@ class Map_Test(unittest.TestCase):
                     values: [0.14662275930920415]
         """))
 
+    def test__toPopulationRelative_givenPerValue(self):
+
+        data = ns.loads(singleRegion.dump())
+
+        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
+        populationData = tuples2objects(parse_tsv(populationContent))
+        toPopulationRelative(data=data, geolevel='ccaa', population=populationData, perValue=100000)
+
+        self.assertNsEqual(data, ns.loads("""\
+            dates: [2019-01-01]
+            values: [123]
+            countries:
+              ES:
+                name: España
+                values: [123]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [1.4662275930920416]
+        """))
 
     def test__toPopulationRelative_manyRegions(self):
 
@@ -1013,7 +1033,7 @@ class Map_Test(unittest.TestCase):
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: Members</text>
-  <text y="60" x="170" style="text-anchor:middle">Subtitle: per 10,000 population</text>
+  <text y="60" x="170" style="text-anchor:middle">Subtitle: per 10.000 population</text>
   <text y="80" x="170" style="text-anchor:middle">Year: 2018</text>
   <text y="100" x="170" style="text-anchor:middle">Month: January</text>
   <circle cy="180" cx="100" r="60" fill="#bcd66c"/>
