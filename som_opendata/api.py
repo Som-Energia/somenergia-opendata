@@ -394,6 +394,7 @@ def version():
 @api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>')
 @api.route('/map/<string:metric>/per/<string:relativemetric>/on/<isodate:ondate>')
 @api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/on/<isodate:ondate>')
+@api.route('/map/<string:metric>/by/<string:geolevel>/<string:frequency>')
 @api.route('/map/<string:metric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
 @api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
 @api.route('/map/<string:metric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>')
