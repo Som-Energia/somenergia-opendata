@@ -11,6 +11,7 @@ from .map import (
     renderMap,
     percentRegion,
     maxValue,
+    getNiceDivisor,
     toPopulationRelative,
     fillLegend,
     createGif,
@@ -1139,3 +1140,11 @@ class Map_Test(unittest.TestCase):
             height: 434
             numFrames: 2
         """)
+
+    def test_getNiceDivisor_(self):
+        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
+        populationData = tuples2objects(parse_tsv(populationContent))
+
+        result = getNiceDivisor(populationData)
+
+        self.assertEqual(result, 50000)

@@ -4,6 +4,7 @@ from .scale import LinearScale, LogScale
 from .colorscale import Gradient
 from .distribution import aggregate, parse_tsv, tuples2objects
 from pathlib2 import Path
+from math import log10, floor
 from flask_babel import _
 
 months = ["January", "February", "March", "April",
@@ -177,6 +178,26 @@ def createGif(frameQuantity, data, template, geolevel, title,
         return gif.make_blob()
 
 
+def getNiceDivisor(population):
+
+    currentMin = None
+    for location in population:
+        value = int(location.population)
+        if not currentMin or value < currentMin:
+            currentMin = value
+
+    logMin = log10(currentMin)
+    niceDiv = 10**floor(logMin)
+
+    if currentMin / niceDiv > 5:
+        return 5 * niceDiv
+
+    if currentMin / niceDiv > 2:
+        return 2 * niceDiv
+
+    return niceDiv
+
+
 def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None, template=None):
     filtered_objects = source.get(metric, date, [])
     data = aggregate(filtered_objects, geolevel)
@@ -191,7 +212,7 @@ def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None, te
     subtitle = ''
 
     if isRelative:
-        perValue = 10000
+        perValue = getNiceDivisor(populationPerLocation)
         toPopulationRelative(data, geolevel, populationPerLocation, perValue)
         subtitle = _("per {:,} population".format(perValue).replace(',', '.'))
 
