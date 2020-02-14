@@ -81,10 +81,10 @@ class LinearScale_Test(unittest.TestCase):
         scale.nice()
         self.assertEqual(scale.high, 1000)
 
-    def test_nice_nicerHighAdjustmentTo25(self):
+    def test_nice_nicerHighAdjustmentTo20(self):
         scale = LinearScale(higher=101)
         scale.nice()
-        self.assertEqual(scale.high, 250)
+        self.assertEqual(scale.high, 200)
 
     def test_nice_nicerHighAdjustmentTo50(self):
         scale = LinearScale(higher=499)
@@ -96,10 +96,10 @@ class LinearScale_Test(unittest.TestCase):
         scale.nice()
         self.assertEqual(scale.low, 10)
 
-    def test_nice_nicerLowAdjustmentTo25(self):
+    def test_nice_nicerLowAdjustmentTo20(self):
         scale = LinearScale(lower=255, higher=1000)
         scale.nice()
-        self.assertEqual(scale.low, 250)
+        self.assertEqual(scale.low, 200)
 
     def test_nice_nicerLowAdjustmentTo50(self):
         scale = LinearScale(lower=550, higher=1000)

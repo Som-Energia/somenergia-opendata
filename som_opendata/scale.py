@@ -17,19 +17,19 @@ class LinearScale(object):
 
     def nice(self):
         niceHigh = 10 ** ceil(log10(self.high))
-        if niceHigh / 4 > self.high:
-            self.high = niceHigh / 4
+        if niceHigh / 5 > self.high:
+            self.high = int(niceHigh / 5)
         elif niceHigh / 2 > self.high:
-            self.high = niceHigh / 2
+            self.high = int(niceHigh / 2)
         else:
-            self.high = niceHigh
+            self.high = int(niceHigh)
 
         if self.low != 0:
-            niceLow = 10 ** floor(log10(self.low))
+            niceLow = int(10 ** floor(log10(self.low)))
             if niceLow * 5 < self.low:
                 self.low = niceLow * 5
-            elif niceLow * 2.5 < self.low:
-                self.low = niceLow * 2.5
+            elif niceLow * 2 < self.low:
+                self.low = niceLow * 2
             else:
                 self.low = niceLow
 
