@@ -33,6 +33,12 @@ class LinearScale(object):
             else:
                 self.low = niceLow
 
+    def ticks(self, count=4):
+        ticks = []
+        for step in range(count + 1):
+            ticks.append(self.low + int((self.high-self.low) * (step * 1/count)))
+        return ticks
+
 
 class LogScale(object):
 
