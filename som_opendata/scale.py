@@ -1,5 +1,5 @@
 from __future__ import division
-from math import log10
+from math import log10, ceil, floor
 
 class LinearScale(object):
 
@@ -14,6 +14,24 @@ class LinearScale(object):
 
     def inverse(self, val):
         return self.low + val * (self.high - self.low)
+
+    def nice(self):
+        niceHigh = 10 ** ceil(log10(self.high))
+        if niceHigh / 4 > self.high:
+            self.high = niceHigh / 4
+        elif niceHigh / 2 > self.high:
+            self.high = niceHigh / 2
+        else:
+            self.high = niceHigh
+
+        if self.low != 0:
+            niceLow = 10 ** floor(log10(self.low))
+            if niceLow * 5 < self.low:
+                self.low = niceLow * 5
+            elif niceLow * 2.5 < self.low:
+                self.low = niceLow * 2.5
+            else:
+                self.low = niceLow
 
 
 class LogScale(object):

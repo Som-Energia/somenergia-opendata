@@ -71,6 +71,41 @@ class LinearScale_Test(unittest.TestCase):
         scale = LinearScale(lower=100, higher=0)
         self.assertEqual(scale.inverse(.25), 75)
 
+    def test_nice_noChange(self):
+        scale = LinearScale(higher=10000)
+        scale.nice()
+        self.assertEqual(scale.high, 10000)
+
+    def test_nice_nicerHighNoAdjustment(self):
+        scale = LinearScale(higher=999)
+        scale.nice()
+        self.assertEqual(scale.high, 1000)
+
+    def test_nice_nicerHighAdjustmentTo25(self):
+        scale = LinearScale(higher=101)
+        scale.nice()
+        self.assertEqual(scale.high, 250)
+
+    def test_nice_nicerHighAdjustmentTo50(self):
+        scale = LinearScale(higher=499)
+        scale.nice()
+        self.assertEqual(scale.high, 500)
+
+    def test_nice_nicerLowNoAdjustment(self):
+        scale = LinearScale(lower=11, higher=1000)
+        scale.nice()
+        self.assertEqual(scale.low, 10)
+
+    def test_nice_nicerLowAdjustmentTo25(self):
+        scale = LinearScale(lower=255, higher=1000)
+        scale.nice()
+        self.assertEqual(scale.low, 250)
+
+    def test_nice_nicerLowAdjustmentTo50(self):
+        scale = LinearScale(lower=550, higher=1000)
+        scale.nice()
+        self.assertEqual(scale.low, 500)
+
 
 class LogScale_Test(unittest.TestCase):
 
@@ -143,5 +178,4 @@ class LogScale_Test(unittest.TestCase):
 # TODO: Fail on diferent sign log
 # TODO: Inverted limits log
 # TODO: Inverted limits linear
-
 
