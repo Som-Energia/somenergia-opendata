@@ -82,3 +82,15 @@ class LogScale(object):
     def nice(self):
         self.low = niceFloorValue(self.low)
         self.high = niceCeilValue(self.high)
+
+    def ticks(self, count=4):
+        lastPower = floor(log10(self.high))
+        stepValue = lastPower / count
+        multipleOf = self.high / 10**lastPower
+
+        ticks = {self.low, self.high}
+        for step in range(2, count+1):
+            nextTick =int(pow(10, step*stepValue)*multipleOf)
+            if nextTick <= self.high:
+                ticks.add(nextTick)
+        return sorted(list(ticks))

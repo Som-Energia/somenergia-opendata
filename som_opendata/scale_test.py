@@ -205,6 +205,13 @@ class LogScale_Test(unittest.TestCase):
         self.assertEqual(scale.low, 20)
         self.assertEqual(scale.high, 1000)
 
+    def test_ticks_defaultCount10power(self):
+        scale = LogScale(lower=10, higher=10000)
+        self.assertEqual(scale.ticks(), [10, 100, 1000, 10000])
+
+    def test_ticks_defaultCount2x10power(self):
+        scale = LogScale(lower=10, higher=20000)
+        self.assertEqual(scale.ticks(), [10, 200, 2000, 20000])
 
 # TODO: Negative max and min in log
 # TODO: Fail on diferent sign log
