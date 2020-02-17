@@ -77,4 +77,8 @@ class LogScale(object):
         return log10(val / self.low) / log10(self.high / self.low)
 
     def inverse(self, val):
-        return self.low * (self.high /self.low) ** val
+        return self.low * (self.high / self.low) ** val
+
+    def nice(self):
+        self.low = niceFloorValue(self.low)
+        self.high = niceCeilValue(self.high)

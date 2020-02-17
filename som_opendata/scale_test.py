@@ -194,8 +194,19 @@ class LogScale_Test(unittest.TestCase):
             str(context.exception)
         )
 
+    def test_nice_noChange(self):
+        scale = LogScale(higher=10000)
+        scale.nice()
+        self.assertEqual(scale.high, 10000)
+
+    def test_nice_lowHighAdjustment(self):
+        scale = LogScale(lower=23, higher=835)
+        scale.nice()
+        self.assertEqual(scale.low, 20)
+        self.assertEqual(scale.high, 1000)
+
+
 # TODO: Negative max and min in log
 # TODO: Fail on diferent sign log
 # TODO: Inverted limits log
 # TODO: Inverted limits linear
-
