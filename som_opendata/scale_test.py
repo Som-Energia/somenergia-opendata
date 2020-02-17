@@ -100,6 +100,12 @@ class LinearScale_Test(unittest.TestCase):
         self.assertEqual(scale.low, 20)
         self.assertEqual(scale.high, 1000)
 
+    def test_niceFloorValue_withAllowedMultiples(self):
+        self.assertEqual(niceFloorValue(80, allowedMultiples=[1, 2.5, 5, 7.5]), 75)
+
+    def test_niceCeilValue_withAllowedDivisors(self):
+        self.assertEqual(niceCeilValue(23, allowedDivisors=[1, 2, 4, 5]), 25)
+
     def test_ticks_defaultCount(self):
         scale = LinearScale(higher=1000)
         self.assertEqual(scale.ticks(), [0, 250, 500, 750, 1000])

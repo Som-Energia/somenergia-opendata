@@ -2,26 +2,23 @@ from __future__ import division
 from math import log10, ceil, floor
 
 
-def niceFloorValue(value):
+def niceFloorValue(value, allowedMultiples=[1, 2, 5]):
     if value == 0:
         return value
 
     niceLow = int(10 ** floor(log10(value)))
-    if niceLow * 5 < value:
-        return niceLow * 5
+    for val in sorted(allowedMultiples, reverse=True):
+        if niceLow * val <= value:
+            return int(niceLow * val)
 
-    if niceLow * 2 < value:
-        return niceLow * 2
 
     return niceLow
 
-def niceCeilValue(value):
+def niceCeilValue(value, allowedDivisors=[1, 2, 5]):
     niceHigh = 10 ** ceil(log10(value))
-    if niceHigh / 5 > value:
-        return int(niceHigh / 5)
-    if niceHigh / 2 > value:
-        return int(niceHigh / 2)
-    return int(niceHigh)
+    for val in sorted(allowedDivisors, reverse=True):
+        if niceHigh / val >= value:
+            return int(niceHigh / val)
 
 class LinearScale(object):
 
