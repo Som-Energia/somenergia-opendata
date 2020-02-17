@@ -1,6 +1,28 @@
 from __future__ import division
 from math import log10, ceil, floor
 
+
+def niceFloorValue(value):
+    if value == 0:
+        return value
+
+    niceLow = int(10 ** floor(log10(value)))
+    if niceLow * 5 < value:
+        return niceLow * 5
+
+    if niceLow * 2 < value:
+        return niceLow * 2
+
+    return niceLow
+
+def niceCeilValue(value):
+    niceHigh = 10 ** ceil(log10(value))
+    if niceHigh / 5 > value:
+        return int(niceHigh / 5)
+    if niceHigh / 2 > value:
+        return int(niceHigh / 2)
+    return int(niceHigh)
+
 class LinearScale(object):
 
     def __init__(self, lower=0, higher=100):
@@ -16,22 +38,8 @@ class LinearScale(object):
         return self.low + val * (self.high - self.low)
 
     def nice(self):
-        niceHigh = 10 ** ceil(log10(self.high))
-        if niceHigh / 5 > self.high:
-            self.high = int(niceHigh / 5)
-        elif niceHigh / 2 > self.high:
-            self.high = int(niceHigh / 2)
-        else:
-            self.high = int(niceHigh)
-
-        if self.low != 0:
-            niceLow = int(10 ** floor(log10(self.low)))
-            if niceLow * 5 < self.low:
-                self.low = niceLow * 5
-            elif niceLow * 2 < self.low:
-                self.low = niceLow * 2
-            else:
-                self.low = niceLow
+        self.high = niceCeilValue(self.high)
+        self.low = niceFloorValue(self.low)
 
     def ticks(self, count=4):
         ticks = []

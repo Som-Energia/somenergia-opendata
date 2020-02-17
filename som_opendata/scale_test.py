@@ -1,5 +1,5 @@
 import unittest
-from .scale import LinearScale, LogScale
+from .scale import LinearScale, LogScale, niceCeilValue, niceFloorValue
 from somutils import testutils
 
 
@@ -71,40 +71,34 @@ class LinearScale_Test(unittest.TestCase):
         scale = LinearScale(lower=100, higher=0)
         self.assertEqual(scale.inverse(.25), 75)
 
+    def test_niceCeilValue_adjustmentTo10n(self):
+        self.assertEqual(niceCeilValue(999), 1000)
+
+    def test_niceCeilValue_adjustmentTo2x10n(self):
+        self.assertEqual(niceCeilValue(101), 200)
+
+    def test_niceCeilValue_adjustmentTo5x10n(self):
+        self.assertEqual(niceCeilValue(499), 500)
+
+    def test_niceFloorValue_adjustmentTo10n(self):
+        self.assertEqual(niceFloorValue(11), 10)
+
+    def test_niceFloorValue_adjustmentTo2x10n(self):
+        self.assertEqual(niceFloorValue(255), 200)
+
+    def test_niceFloorValue_adjustmentTo5x10n(self):
+        self.assertEqual(niceFloorValue(550), 500)
+
     def test_nice_noChange(self):
         scale = LinearScale(higher=10000)
         scale.nice()
         self.assertEqual(scale.high, 10000)
 
-    def test_nice_nicerHighNoAdjustment(self):
-        scale = LinearScale(higher=999)
+    def test_nice_lowHighAdjustment(self):
+        scale = LinearScale(lower=23, higher=835)
         scale.nice()
+        self.assertEqual(scale.low, 20)
         self.assertEqual(scale.high, 1000)
-
-    def test_nice_nicerHighAdjustmentTo20(self):
-        scale = LinearScale(higher=101)
-        scale.nice()
-        self.assertEqual(scale.high, 200)
-
-    def test_nice_nicerHighAdjustmentTo50(self):
-        scale = LinearScale(higher=499)
-        scale.nice()
-        self.assertEqual(scale.high, 500)
-
-    def test_nice_nicerLowNoAdjustment(self):
-        scale = LinearScale(lower=11, higher=1000)
-        scale.nice()
-        self.assertEqual(scale.low, 10)
-
-    def test_nice_nicerLowAdjustmentTo20(self):
-        scale = LinearScale(lower=255, higher=1000)
-        scale.nice()
-        self.assertEqual(scale.low, 200)
-
-    def test_nice_nicerLowAdjustmentTo50(self):
-        scale = LinearScale(lower=550, higher=1000)
-        scale.nice()
-        self.assertEqual(scale.low, 500)
 
     def test_ticks_defaultCount(self):
         scale = LinearScale(higher=1000)
