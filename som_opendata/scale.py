@@ -39,10 +39,25 @@ class LinearScale(object):
         self.low = niceFloorValue(self.low)
 
     def ticks(self, count=4):
-        ticks = []
-        for step in range(count + 1):
-            ticks.append(self.low + int((self.high-self.low) * (step * 1/count)))
-        return ticks
+
+        stepValue = int((self.high - self.low) / count)
+        niceStepFloor = niceFloorValue(stepValue, allowedMultiples=[1, 2, 2.5, 5, 7.5])
+        niceStepCeil = niceCeilValue(stepValue, allowedDivisors=[1, 2, 4, 5])
+
+        if abs(stepValue - niceStepFloor) < abs(stepValue - niceStepCeil):
+            stepValue = niceStepFloor
+        else:
+            stepValue = niceStepCeil
+
+        ticks = {self.low, self.high}
+        nextTick = self.low + stepValue
+        for step in range(count):
+            if nextTick > self.high:
+                break
+            ticks.add(nextTick)
+            nextTick = nextTick + stepValue
+        result = list(ticks)
+        return sorted(result)
 
 
 class LogScale(object):

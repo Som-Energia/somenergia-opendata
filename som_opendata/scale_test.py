@@ -118,6 +118,14 @@ class LinearScale_Test(unittest.TestCase):
         scale = LinearScale(higher=2000)
         self.assertEqual(scale.ticks(8), [0, 250, 500, 750, 1000, 1250, 1500, 1750, 2000])
 
+    def test_ticks_2count(self):
+        scale = LinearScale(higher=2000)
+        self.assertEqual(scale.ticks(2), [0, 1000, 2000])
+
+    def test_ticks_1count(self):
+        scale = LinearScale(lower=300,higher=2000)
+        self.assertEqual(scale.ticks(1), [300, 2000])
+
 
 class LogScale_Test(unittest.TestCase):
 
