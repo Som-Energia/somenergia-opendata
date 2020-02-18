@@ -143,11 +143,12 @@ class LogScale_Test(unittest.TestCase):
 
     def test_call_outRangeLow(self):
         scale = LogScale(lower=100, higher=10000)
-        self.assertEqual(scale(-1), 0)
+        self.assertEqual(scale(10), -0.5)
 
     def test_call_outRangeHigh(self):
         scale = LogScale(lower=100, higher=10000)
         self.assertEqual(scale(100000), 1.5)
+
     def test_inverse_min(self):
         scale = LogScale(higher=1000)
         self.assertEqual(scale(scale.inverse(0)), 0)
@@ -178,19 +179,36 @@ class LogScale_Test(unittest.TestCase):
         self.assertEqual(scale(scale.inverse(-0.25)), -0.25)
         self.assertEqual(scale(scale.inverse(1.25)), 1.25)
 
-    def test_call_minGreaterMax(self):
+    def test_init_differentSignLowerHigher(self):
         with self.assertRaises(ValueError) as context:
-            LogScale(lower=1000, higher=10)
+            LogScale(lower=-100, higher=100)
         self.assertEqual(
-            "Lower value is greater than higher value",
+            "Lower and higher must have same sign",
             str(context.exception)
         )
 
-    def test_call_scaleStartNotValid(self):
+    def test_init_scaleStartNotValid(self):
         with self.assertRaises(ValueError) as context:
             LogScale(lower=0, higher=10)
         self.assertEqual(
-            "Log not defined for values <= 0",
+            "Math domain error: Log(0) not defined",
+            str(context.exception)
+        )
+
+    def test_init_scaleHigherNotValid(self):
+        with self.assertRaises(ValueError) as context:
+            LogScale(lower=100, higher=0)
+        self.assertEqual(
+            "Math domain error: Log(0) not defined",
+            str(context.exception)
+        )
+
+    def test_call_valueNotValid(self):
+        scale = LogScale(lower=100, higher=1000)
+        with self.assertRaises(ValueError) as context:
+            scale(-1)
+        self.assertEqual(
+            "Value must have same sign as lower and higher",
             str(context.exception)
         )
 
@@ -213,7 +231,5 @@ class LogScale_Test(unittest.TestCase):
         scale = LogScale(lower=10, higher=20000)
         self.assertEqual(scale.ticks(count=3), [10, 100, 1000, 20000])
 
-# TODO: Negative max and min in log
-# TODO: Fail on diferent sign log
 # TODO: Inverted limits log
 # TODO: Inverted limits linear

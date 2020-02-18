@@ -63,16 +63,21 @@ class LinearScale(object):
 class LogScale(object):
 
     def __init__(self, higher, lower=1):
-        if higher < lower:
-            raise ValueError("Lower value is greater than higher value")
-        if lower <= 0:
-            raise ValueError("Log not defined for values <= 0")
+        if higher * lower < 0:
+            raise ValueError("Lower and higher must have same sign")
+
+        if higher * lower == 0:
+            raise ValueError("Math domain error: Log(0) not defined")
+
         self.low = lower
         self.high = higher
 
     def __call__(self, val):
-        if val <= 0:
-            return 0
+        if val * self.high < 0:
+            raise ValueError("Value must have same sign as lower and higher")
+
+        if val == 0:
+            raise ValueError("Math domain error: Log(0) not defined")
 
         return log10(val / self.low) / log10(self.high / self.low)
 
