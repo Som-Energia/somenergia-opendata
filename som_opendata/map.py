@@ -179,23 +179,14 @@ def createGif(frameQuantity, data, template, geolevel, title,
 
 
 def getNiceDivisor(population):
-
+    from .scale import niceFloorValue
     currentMin = None
     for location in population:
         value = int(location.population)
         if not currentMin or value < currentMin:
             currentMin = value
 
-    logMin = log10(currentMin)
-    niceDiv = 10**floor(logMin)
-
-    if currentMin / niceDiv > 5:
-        return 5 * niceDiv
-
-    if currentMin / niceDiv > 2:
-        return 2 * niceDiv
-
-    return niceDiv
+    return niceFloorValue(currentMin)
 
 
 def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None, template=None):
