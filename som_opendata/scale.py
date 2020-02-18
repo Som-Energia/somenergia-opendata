@@ -77,7 +77,9 @@ class LogScale(object):
             raise ValueError("Value must have same sign as lower and higher")
 
         if val == 0:
-            raise ValueError("Math domain error: Log(0) not defined")
+            val = 10**(-10)
+            if val * self.low < 0:
+                val *= -1
 
         return log10(val / self.low) / log10(self.high / self.low)
 

@@ -141,6 +141,12 @@ class LogScale_Test(unittest.TestCase):
         scale = LogScale(lower=100, higher=10000)
         self.assertEqual(scale(1000), 0.5)
 
+    def test_call_zero(self):
+        scale = LogScale(lower=100, higher=10000)
+        scaleNegative = LogScale(lower=-1000, higher=-10)
+        self.assertEqual(scale(0), -6)
+        self.assertEqual(scaleNegative(0), 6.5)
+
     def test_call_outRangeLow(self):
         scale = LogScale(lower=100, higher=10000)
         self.assertEqual(scale(10), -0.5)
