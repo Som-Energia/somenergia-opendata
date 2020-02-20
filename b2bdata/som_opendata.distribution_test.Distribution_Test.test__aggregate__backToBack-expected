@@ -68,6 +68,11 @@ countries:
                 values:
                 - 6
                 - 6
+              '04045':
+                name: Fiñana
+                values:
+                - 0
+                - 0
               '04047':
                 name: Gádor
                 values:
@@ -891,6 +896,11 @@ countries:
                 values:
                 - 5
                 - 5
+              '18152':
+                name: Pedro Martínez
+                values:
+                - 0
+                - 0
               '18153':
                 name: Peligros
                 values:
@@ -1112,6 +1122,11 @@ countries:
                 values:
                 - 0
                 - 1
+              '21043':
+                name: Jabugo
+                values:
+                - 0
+                - 0
               '21044':
                 name: Lepe
                 values:
@@ -3359,6 +3374,11 @@ countries:
                 values:
                 - 1
                 - 1
+              '50237':
+                name: Santa Cruz de Moncayo
+                values:
+                - 0
+                - 0
               '50240':
                 name: Sástago
                 values:
@@ -5242,6 +5262,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '16055':
+                name: Carboneras de Guadazaón
+                values:
+                - 0
+                - 0
               '16060':
                 name: Casas de Benítez
                 values:
@@ -7047,6 +7072,11 @@ countries:
                 values:
                 - 2
                 - 2
+              09460:
+                name: Villasandino
+                values:
+                - 0
+                - 0
               09463:
                 name: Villasur de Herreros
                 values:
@@ -7549,6 +7579,11 @@ countries:
                 values:
                 - 1
                 - 1
+              '34108':
+                name: Monzón de Campos
+                values:
+                - 0
+                - 0
               '34110':
                 name: Mudá
                 values:
@@ -8113,6 +8148,11 @@ countries:
                 - 0
               '40080':
                 name: Fresno de la Fuente
+                values:
+                - 0
+                - 0
+              '40084':
+                name: Fuente el Olmo de Íscar
                 values:
                 - 0
                 - 0
@@ -8708,6 +8748,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '47088':
+                name: Melgar de Abajo
+                values:
+                - 0
+                - 0
               '47090':
                 name: Mojados
                 values:
@@ -8925,6 +8970,11 @@ countries:
                 - 0
               '47198':
                 name: Villacarralón
+                values:
+                - 0
+                - 0
+              '47207':
+                name: Villagarcía de Campos
                 values:
                 - 0
                 - 0
@@ -12758,6 +12808,11 @@ countries:
                 values:
                 - 3
                 - 3
+              '25247':
+                name: Vilamòs
+                values:
+                - 0
+                - 0
               '25248':
                 name: Vilanova de Bellpuig
                 values:
@@ -14319,6 +14374,11 @@ countries:
                 - 0
               '12024':
                 name: Benafer
+                values:
+                - 0
+                - 0
+              '12025':
+                name: Benafigos
                 values:
                 - 0
                 - 0
@@ -16041,6 +16101,11 @@ countries:
                 values:
                 - 1
                 - 1
+              '10078':
+                name: Garganta, La
+                values:
+                - 0
+                - 0
               '10079':
                 name: Garganta la Olla
                 values:
@@ -16148,6 +16213,11 @@ countries:
                 - 0
               '10139':
                 name: Pedroso de Acim
+                values:
+                - 0
+                - 0
+              '10147':
+                name: Piornal
                 values:
                 - 0
                 - 0
@@ -19110,6 +19180,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '48029':
+                name: Etxebarri
+                values:
+                - 0
+                - 0
               '48906':
                 name: Forua
                 values:
@@ -19733,6 +19808,11 @@ countries:
                 values:
                 - 1
                 - 1
+              '26117':
+                name: Pradejón
+                values:
+                - 0
+                - 0
               '26122':
                 name: Rasillo de Cameros, El
                 values:

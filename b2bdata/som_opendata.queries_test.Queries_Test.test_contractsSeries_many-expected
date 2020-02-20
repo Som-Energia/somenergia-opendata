@@ -8,6 +8,7 @@ ES	España	01	Andalucia	04	Almería	04036	Chercos	0	0
 ES	España	01	Andalucia	04	Almería	04037	Chirivel	1	1
 ES	España	01	Andalucia	04	Almería	04035	Cuevas del Almanzora	0	0
 ES	España	01	Andalucia	04	Almería	04902	Ejido, El	6	6
+ES	España	01	Andalucia	04	Almería	04045	Fiñana	0	0
 ES	España	01	Andalucia	04	Almería	04047	Gádor	1	1
 ES	España	01	Andalucia	04	Almería	04048	Gallardos, Los	1	1
 ES	España	01	Andalucia	04	Almería	04049	Garrucha	2	2
@@ -169,6 +170,7 @@ ES	España	01	Andalucia	18	Granada	18145	Ogíjares	0	0
 ES	España	01	Andalucia	18	Granada	18147	Órgiva	0	0
 ES	España	01	Andalucia	18	Granada	18149	Otura	0	0
 ES	España	01	Andalucia	18	Granada	18150	Padul	5	5
+ES	España	01	Andalucia	18	Granada	18152	Pedro Martínez	0	0
 ES	España	01	Andalucia	18	Granada	18153	Peligros	1	1
 ES	España	01	Andalucia	18	Granada	18159	Píñar	0	0
 ES	España	01	Andalucia	18	Granada	18910	Pinar, El	0	0
@@ -212,6 +214,7 @@ ES	España	01	Andalucia	21	Huelva	21039	Hinojales	0	0
 ES	España	01	Andalucia	21	Huelva	21040	Hinojos	0	0
 ES	España	01	Andalucia	21	Huelva	21041	Huelva	6	7
 ES	España	01	Andalucia	21	Huelva	21042	Isla Cristina	0	1
+ES	España	01	Andalucia	21	Huelva	21043	Jabugo	0	0
 ES	España	01	Andalucia	21	Huelva	21044	Lepe	3	4
 ES	España	01	Andalucia	21	Huelva	21049	Minas de Riotinto	0	0
 ES	España	01	Andalucia	21	Huelva	21050	Moguer	0	0
@@ -654,6 +657,7 @@ ES	España	02	Aragón	50	Zaragoza	50230	Sádaba	0	0
 ES	España	02	Aragón	50	Zaragoza	50232	Salvatierra de Esca	0	0
 ES	España	02	Aragón	50	Zaragoza	50234	San Martín de la Virgen de Moncayo	0	0
 ES	España	02	Aragón	50	Zaragoza	50235	San Mateo de Gállego	1	1
+ES	España	02	Aragón	50	Zaragoza	50237	Santa Cruz de Moncayo	0	0
 ES	España	02	Aragón	50	Zaragoza	50240	Sástago	0	0
 ES	España	02	Aragón	50	Zaragoza	50242	Sediles	1	1
 ES	España	02	Aragón	50	Zaragoza	50250	Talamantes	0	0
@@ -1015,6 +1019,7 @@ ES	España	08	Castilla - La Mancha	16	Cuenca	16901	Campos del Paraíso	1	1
 ES	España	08	Castilla - La Mancha	16	Cuenca	16050	Cañaveras	1	1
 ES	España	08	Castilla - La Mancha	16	Cuenca	16052	Cañete	1	1
 ES	España	08	Castilla - La Mancha	16	Cuenca	16053	Cañizares	0	0
+ES	España	08	Castilla - La Mancha	16	Cuenca	16055	Carboneras de Guadazaón	0	0
 ES	España	08	Castilla - La Mancha	16	Cuenca	16060	Casas de Benítez	0	0
 ES	España	08	Castilla - La Mancha	16	Cuenca	16064	Casas de Haro	0	0
 ES	España	08	Castilla - La Mancha	16	Cuenca	16066	Casasimarro	1	1
@@ -1370,6 +1375,7 @@ ES	España	07	Castilla y León	09	Burgos	09454	Villanueva de Teba	0	0
 ES	España	07	Castilla y León	09	Burgos	09456	Villaquirán de los Infantes	0	0
 ES	España	07	Castilla y León	09	Burgos	09903	Villarcayo de Merindad de Castilla la Vieja	2	2
 ES	España	07	Castilla y León	09	Burgos	09458	Villariezo	2	2
+ES	España	07	Castilla y León	09	Burgos	09460	Villasandino	0	0
 ES	España	07	Castilla y León	09	Burgos	09463	Villasur de Herreros	2	2
 ES	España	07	Castilla y León	09	Burgos	09471	Villayerno Morquillas	0	0
 ES	España	07	Castilla y León	09	Burgos	09425	Vilviestre del Pinar	0	0
@@ -1468,6 +1474,7 @@ ES	España	07	Castilla y León	34	Palencia	34086	Hontoria de Cerrato	0	0
 ES	España	07	Castilla y León	34	Palencia	34088	Husillos	0	0
 ES	España	07	Castilla y León	34	Palencia	34089	Itero de la Vega	0	0
 ES	España	07	Castilla y León	34	Palencia	34098	Magaz de Pisuerga	1	1
+ES	España	07	Castilla y León	34	Palencia	34108	Monzón de Campos	0	0
 ES	España	07	Castilla y León	34	Palencia	34110	Mudá	0	0
 ES	España	07	Castilla y León	34	Palencia	34120	Palencia	15	15
 ES	España	07	Castilla y León	34	Palencia	34121	Palenzuela	0	0
@@ -1579,6 +1586,7 @@ ES	España	07	Castilla y León	40	Segovia	40076	Espinar, El	3	3
 ES	España	07	Castilla y León	40	Segovia	40077	Espirdo	0	0
 ES	España	07	Castilla y León	40	Segovia	40079	Fresno de Cantespino	0	0
 ES	España	07	Castilla y León	40	Segovia	40080	Fresno de la Fuente	0	0
+ES	España	07	Castilla y León	40	Segovia	40084	Fuente el Olmo de Íscar	0	0
 ES	España	07	Castilla y León	40	Segovia	40091	Fuentesoto	0	0
 ES	España	07	Castilla y León	40	Segovia	40097	Grajera	0	0
 ES	España	07	Castilla y León	40	Segovia	40100	Hontalbilla	0	0
@@ -1695,6 +1703,7 @@ ES	España	07	Castilla y León	47	Valladolid	47082	Matapozuelos	0	0
 ES	España	07	Castilla y León	47	Valladolid	47085	Medina del Campo	0	0
 ES	España	07	Castilla y León	47	Valladolid	47086	Medina de Rioseco	0	0
 ES	España	07	Castilla y León	47	Valladolid	47087	Megeces	0	0
+ES	España	07	Castilla y León	47	Valladolid	47088	Melgar de Abajo	0	0
 ES	España	07	Castilla y León	47	Valladolid	47090	Mojados	1	1
 ES	España	07	Castilla y León	47	Valladolid	47093	Montemayor de Pililla	1	1
 ES	España	07	Castilla y León	47	Valladolid	47094	Moral de la Reina	0	0
@@ -1739,6 +1748,7 @@ ES	España	07	Castilla y León	47	Valladolid	47191	Velliza	0	0
 ES	España	07	Castilla y León	47	Valladolid	47193	Viana de Cega	0	0
 ES	España	07	Castilla y León	47	Valladolid	47195	Villabáñez	0	0
 ES	España	07	Castilla y León	47	Valladolid	47198	Villacarralón	0	0
+ES	España	07	Castilla y León	47	Valladolid	47207	Villagarcía de Campos	0	0
 ES	España	07	Castilla y León	47	Valladolid	47214	Villalón de Campos	0	0
 ES	España	07	Castilla y León	47	Valladolid	47217	Villanubla	0	0
 ES	España	07	Castilla y León	47	Valladolid	47218	Villanueva de Duero	0	0
@@ -2500,6 +2510,7 @@ ES	España	09	Cataluña	25	Lleida	25242	Verdú	2	3
 ES	España	09	Cataluña	25	Lleida	25243	Vielha e Mijaran	3	3
 ES	España	09	Cataluña	25	Lleida	25244	Vilagrassa	1	1
 ES	España	09	Cataluña	25	Lleida	25245	Vilaller	3	3
+ES	España	09	Cataluña	25	Lleida	25247	Vilamòs	0	0
 ES	España	09	Cataluña	25	Lleida	25248	Vilanova de Bellpuig	3	3
 ES	España	09	Cataluña	25	Lleida	25254	Vilanova de la Barca	0	0
 ES	España	09	Cataluña	25	Lleida	25249	Vilanova de l'Aguda	0	0
@@ -2808,6 +2819,7 @@ ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12001	Atzeneta del Ma
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12018	Azuébar	2	2
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12022	Bejís	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12024	Benafer	0	0
+ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12025	Benafigos	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12026	Benasal	1	1
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12027	Benicarló	16	16
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12028	Benicasim/Benicàssim	18	18
@@ -3147,6 +3159,7 @@ ES	España	11	Extremadura	10	Cáceres	10067	Coria	0	1
 ES	España	11	Extremadura	10	Cáceres	10068	Cuacos de Yuste	0	0
 ES	España	11	Extremadura	10	Cáceres	10069	Cumbre, La	0	0
 ES	España	11	Extremadura	10	Cáceres	10076	Galisteo	1	1
+ES	España	11	Extremadura	10	Cáceres	10078	Garganta, La	0	0
 ES	España	11	Extremadura	10	Cáceres	10079	Garganta la Olla	4	4
 ES	España	11	Extremadura	10	Cáceres	10082	Garrovillas de Alconétar	1	1
 ES	España	11	Extremadura	10	Cáceres	10084	Gata	0	0
@@ -3169,6 +3182,7 @@ ES	España	11	Extremadura	10	Cáceres	10130	Navaconcejo	1	1
 ES	España	11	Extremadura	10	Cáceres	10131	Navalmoral de la Mata	0	0
 ES	España	11	Extremadura	10	Cáceres	10138	Pasarón de la Vera	0	0
 ES	España	11	Extremadura	10	Cáceres	10139	Pedroso de Acim	0	0
+ES	España	11	Extremadura	10	Cáceres	10147	Piornal	0	0
 ES	España	11	Extremadura	10	Cáceres	10148	Plasencia	0	0
 ES	España	11	Extremadura	10	Cáceres	10149	Plasenzuela	0	0
 ES	España	11	Extremadura	10	Cáceres	10154	Rebollar	0	0
@@ -3744,6 +3758,7 @@ ES	España	16	País Vasco	48	Bizkaia	48027	Durango	8	8
 ES	España	16	País Vasco	48	Bizkaia	48032	Elorrio	1	1
 ES	España	16	País Vasco	48	Bizkaia	48902	Erandio	6	7
 ES	España	16	País Vasco	48	Bizkaia	48034	Ermua	0	0
+ES	España	16	País Vasco	48	Bizkaia	48029	Etxebarri	0	0
 ES	España	16	País Vasco	48	Bizkaia	48906	Forua	1	1
 ES	España	16	País Vasco	48	Bizkaia	48036	Galdakao	4	4
 ES	España	16	País Vasco	48	Bizkaia	48038	Gamiz-Fika	0	0
@@ -3865,6 +3880,7 @@ ES	España	17	Rioja, La	26	Rioja, La	26099	Murillo de Río Leza	1	1
 ES	España	17	Rioja, La	26	Rioja, La	26102	Nájera	0	0
 ES	España	17	Rioja, La	26	Rioja, La	26103	Nalda	1	1
 ES	España	17	Rioja, La	26	Rioja, La	26108	Ocón	1	1
+ES	España	17	Rioja, La	26	Rioja, La	26117	Pradejón	0	0
 ES	España	17	Rioja, La	26	Rioja, La	26122	Rasillo de Cameros, El	0	0
 ES	España	17	Rioja, La	26	Rioja, La	26124	Ribafrecha	0	0
 ES	España	17	Rioja, La	26	Rioja, La	26129	San Asensio	0	0

@@ -3,10 +3,10 @@
   <text y="60" x="170" style="text-anchor:middle">Subtitle: </text>
   <text y="80" x="170" style="text-anchor:middle">Year: 2019</text>
   <text y="100" x="170" style="text-anchor:middle">Month: November</text>
-  <circle cy="180" cx="100" r="60" fill="#a8c93f"/>
+  <circle cy="180" cx="100" r="60" fill="#aacb44"/>
   <text y="180" x="100" style="text-anchor:middle">134</text>
   <text y="200" x="100" style="text-anchor:middle">0,2%</text>
-  <circle cy="180" cx="240" r="60" fill="#a7c93e"/>
+  <circle cy="180" cx="240" r="60" fill="#a9cb43"/>
   <text y="180" x="240" style="text-anchor:middle">139</text>
   <text y="200" x="240" style="text-anchor:middle">0,2%</text>
 </svg>

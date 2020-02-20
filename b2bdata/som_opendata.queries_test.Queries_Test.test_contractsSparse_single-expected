@@ -8,6 +8,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	04	Almería	04037	Chirivel	1	28680
 2015-01-01	ES	España	01	Andalucia	04	Almería	04035	Cuevas del Almanzora	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04902	Ejido, El	6	10250,20715,44477,44479,44483,44485
+2015-01-01	ES	España	01	Andalucia	04	Almería	04045	Fiñana	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04047	Gádor	1	13252
 2015-01-01	ES	España	01	Andalucia	04	Almería	04048	Gallardos, Los	1	42388
 2015-01-01	ES	España	01	Andalucia	04	Almería	04049	Garrucha	2	42383,42914
@@ -169,6 +170,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	18	Granada	18147	Órgiva	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18149	Otura	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18150	Padul	5	12224,23963,27008,32789,37390
+2015-01-01	ES	España	01	Andalucia	18	Granada	18152	Pedro Martínez	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18153	Peligros	1	30508
 2015-01-01	ES	España	01	Andalucia	18	Granada	18159	Píñar	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18910	Pinar, El	0	None
@@ -212,6 +214,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21040	Hinojos	0	None
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21041	Huelva	6	11423,21659,21795,22618,27276,39457
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21042	Isla Cristina	0	None
+2015-01-01	ES	España	01	Andalucia	21	Huelva	21043	Jabugo	0	None
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21044	Lepe	3	40442,40444,42114
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21049	Minas de Riotinto	0	None
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21050	Moguer	0	None
@@ -654,6 +657,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50232	Salvatierra de Esca	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50234	San Martín de la Virgen de Moncayo	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50235	San Mateo de Gállego	1	30506
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50237	Santa Cruz de Moncayo	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50240	Sástago	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50242	Sediles	1	35407
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50250	Talamantes	0	None
@@ -1015,6 +1019,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16050	Cañaveras	1	16156
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16052	Cañete	1	10998
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16053	Cañizares	0	None
+2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16055	Carboneras de Guadazaón	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16060	Casas de Benítez	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16064	Casas de Haro	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16066	Casasimarro	1	16736
@@ -1370,6 +1375,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09456	Villaquirán de los Infantes	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09903	Villarcayo de Merindad de Castilla la Vieja	2	6346,31418
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09458	Villariezo	2	30913,43333
+2015-01-01	ES	España	07	Castilla y León	09	Burgos	09460	Villasandino	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09463	Villasur de Herreros	2	3718,3720
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09471	Villayerno Morquillas	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09425	Vilviestre del Pinar	0	None
@@ -1468,6 +1474,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34088	Husillos	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34089	Itero de la Vega	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34098	Magaz de Pisuerga	1	3716
+2015-01-01	ES	España	07	Castilla y León	34	Palencia	34108	Monzón de Campos	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34110	Mudá	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34120	Palencia	15	2859,9359,12694,16431,16822,17354,22742,23262,23871,25279,25331,34614,37209,40749,40872
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34121	Palenzuela	0	None
@@ -1579,6 +1586,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40077	Espirdo	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40079	Fresno de Cantespino	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40080	Fresno de la Fuente	0	None
+2015-01-01	ES	España	07	Castilla y León	40	Segovia	40084	Fuente el Olmo de Íscar	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40091	Fuentesoto	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40097	Grajera	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40100	Hontalbilla	0	None
@@ -1695,6 +1703,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47085	Medina del Campo	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47086	Medina de Rioseco	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47087	Megeces	0	None
+2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47088	Melgar de Abajo	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47090	Mojados	1	30952
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47093	Montemayor de Pililla	1	13388
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47094	Moral de la Reina	0	None
@@ -1739,6 +1748,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47193	Viana de Cega	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47195	Villabáñez	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47198	Villacarralón	0	None
+2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47207	Villagarcía de Campos	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47214	Villalón de Campos	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47217	Villanubla	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47218	Villanueva de Duero	0	None
@@ -2500,6 +2510,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25243	Vielha e Mijaran	3	509,5822,31834
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25244	Vilagrassa	1	22191
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25245	Vilaller	3	4754,11002,25824
+2015-01-01	ES	España	09	Cataluña	25	Lleida	25247	Vilamòs	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25248	Vilanova de Bellpuig	3	155,21072,43214
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25254	Vilanova de la Barca	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25249	Vilanova de l'Aguda	0	None
@@ -2808,6 +2819,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12018	Azuébar	2	24100,39109
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12022	Bejís	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12024	Benafer	0	None
+2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12025	Benafigos	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12026	Benasal	1	12976
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12027	Benicarló	16	10782,12186,13036,14017,14575,22930,23101,25402,27083,29183,31515,32947,36051,37589,39542,39959
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12028	Benicasim/Benicàssim	18	2246,9347,12627,12958,13934,13983,15316,16022,18587,24205,31763,31859,35431,36435,36494,37169,38053,44424
@@ -3147,6 +3159,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10068	Cuacos de Yuste	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10069	Cumbre, La	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10076	Galisteo	1	26832
+2015-01-01	ES	España	11	Extremadura	10	Cáceres	10078	Garganta, La	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10079	Garganta la Olla	4	1254,2373,2500,6770
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10082	Garrovillas de Alconétar	1	26829
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10084	Gata	0	None
@@ -3169,6 +3182,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10131	Navalmoral de la Mata	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10138	Pasarón de la Vera	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10139	Pedroso de Acim	0	None
+2015-01-01	ES	España	11	Extremadura	10	Cáceres	10147	Piornal	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10148	Plasencia	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10149	Plasenzuela	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10154	Rebollar	0	None
@@ -3744,6 +3758,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48032	Elorrio	1	1302
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48902	Erandio	6	22258,25435,26845,40711,41411,41804
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48034	Ermua	0	None
+2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48029	Etxebarri	0	None
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48906	Forua	1	5965
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48036	Galdakao	4	26803,26906,34780,42280
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48038	Gamiz-Fika	0	None
@@ -3865,6 +3880,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26102	Nájera	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26103	Nalda	1	13723
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26108	Ocón	1	4075
+2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26117	Pradejón	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26122	Rasillo de Cameros, El	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26124	Ribafrecha	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26129	San Asensio	0	None
