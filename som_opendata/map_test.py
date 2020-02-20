@@ -491,10 +491,10 @@ class Map_Test(unittest.TestCase):
   <text y="60" x="170" style="text-anchor:middle">Subtitle: un subtítol</text>
   <text y="80" x="170" style="text-anchor:middle">Year: 2019</text>
   <text y="100" x="170" style="text-anchor:middle">Month: January</text>
-  <circle cy="180" cx="100" r="60" fill="#3f4c15"/>
+  <circle cy="180" cx="100" r="60" fill="#4c5c1a"/>
   <text y="180" x="100" style="text-anchor:middle">123</text>
   <text y="200" x="100" style="text-anchor:middle">86,0%</text>
-  <circle cy="180" cx="240" r="60" fill="#8eac30"/>
+  <circle cy="180" cx="240" r="60" fill="#96b633"/>
   <text y="180" x="240" style="text-anchor:middle">20</text>
   <text y="200" x="240" style="text-anchor:middle">14,0%</text>
 </svg>
@@ -512,10 +512,10 @@ class Map_Test(unittest.TestCase):
   <text y="60" x="170" style="text-anchor:middle">Subtitle: un subtítol</text>
   <text y="80" x="170" style="text-anchor:middle">Year: 2019</text>
   <text y="100" x="170" style="text-anchor:middle">Month: January</text>
-  <circle cy="180" cx="100" r="60" fill="#384413"/>
+  <circle cy="180" cx="100" r="60" fill="#4c5c1a"/>
   <text y="180" x="100" style="text-anchor:middle">123</text>
   <text y="200" x="100" style="text-anchor:middle">86,0%</text>
-  <circle cy="180" cx="240" r="60" fill="#8aa72f"/>
+  <circle cy="180" cx="240" r="60" fill="#96b633"/>
   <text y="180" x="240" style="text-anchor:middle">20</text>
   <text y="200" x="240" style="text-anchor:middle">14,0%</text>
 </svg>
@@ -532,7 +532,7 @@ class Map_Test(unittest.TestCase):
   <text y="60" x="170" style="text-anchor:middle">Subtitle: un subtítol</text>
   <text y="80" x="170" style="text-anchor:middle">Year: 2019</text>
   <text y="100" x="170" style="text-anchor:middle">Month: January</text>
-  <circle cy="180" cx="100" r="60" fill="#3f4c15"/>
+  <circle cy="180" cx="100" r="60" fill="#4c5c1a"/>
   <text y="180" x="100" style="text-anchor:middle">123</text>
   <text y="200" x="100" style="text-anchor:middle">100,0%</text>
   <circle cy="180" cx="240" r="60" fill="#e0ecbb"/>
@@ -1042,7 +1042,7 @@ class Map_Test(unittest.TestCase):
   <circle cy="180" cx="100" r="60" fill="#384413"/>
   <text y="180" x="100" style="text-anchor:middle">0,1</text>
   <text y="200" x="100" style="text-anchor:middle"></text>
-  <circle cy="180" cx="240" r="60" fill="#cadf8b"/>
+  <circle cy="180" cx="240" r="60" fill="#384413"/>
   <text y="180" x="240" style="text-anchor:middle">0,0</text>
   <text y="200" x="240" style="text-anchor:middle"></text>
 </svg>

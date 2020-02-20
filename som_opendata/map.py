@@ -113,7 +113,7 @@ def fillMap(data, template, geolevel, title,
         Log=LogScale,
     )
     scaleHigher = maxVal or maxValue(data, geolevel, frame)
-    scale = scales[scale](higher=scaleHigher or 1)
+    scale = scales[scale](higher=scaleHigher or 1).nice()
     gradient = Gradient('#e0ecbb', '#384413')
     dataDict = dataToTemplateDict(
         data=data,
