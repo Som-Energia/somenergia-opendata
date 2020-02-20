@@ -37,6 +37,7 @@ class LinearScale(object):
     def nice(self):
         self.high = niceCeilValue(self.high)
         self.low = niceFloorValue(self.low)
+        return self
 
     def ticks(self, count=4):
 
@@ -89,6 +90,7 @@ class LogScale(object):
     def nice(self):
         self.low = niceFloorValue(self.low)
         self.high = niceCeilValue(self.high)
+        return self
 
     def ticks(self, count=4):
         ticks = {self.low, self.high}
