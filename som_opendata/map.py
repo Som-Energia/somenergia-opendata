@@ -46,7 +46,8 @@ def maxValue(data, geolevel, frame):
     return currentMax
 
 
-def fillLegend(result, scale, colors, isRelative):
+def fillLegend(scale, colors, isRelative):
+    result = dict()
     for num in [0, 25, 50, 75, 100]:
         value = int(scale.inverse(num / 100))
         if not isRelative:
@@ -57,6 +58,7 @@ def fillLegend(result, scale, colors, isRelative):
             'legendNumber_{}'.format(num): value,
             'legendColor_{}'.format(num): colors(num / 100)
         })
+    return result
 
 
 def dataToTemplateDict(data, colors, scale, title, subtitle,
@@ -95,7 +97,6 @@ def dataToTemplateDict(data, colors, scale, title, subtitle,
         if 'number_{}'.format(code) in result:
             continue
         updateDict(code, 0)
-    fillLegend(result, scale, colors, isRelative)
 
     return result
 
@@ -126,7 +127,8 @@ def fillMap(data, template, geolevel, title,
         frame=frame,
         scale=scale
     )
-    return template.format(**dataDict)
+    legend = fillLegend(scale, gradient, isRelative)
+    return template.format(**dataDict, **legend)
 
 
 def toPopulationRelative(data, geolevel, population, perValue=10000):
