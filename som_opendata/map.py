@@ -59,9 +59,8 @@ def fillLegend(result, scale, colors, isRelative):
         })
 
 
-def dataToTemplateDict(data, colors, title, subtitle,
-        colorScale='Log', locations=[], geolevel='ccaa',
-        maxVal=None, frame=0, isRelative=False):
+def dataToTemplateDict(data, colors, scale, title, subtitle,
+        locations=[], geolevel='ccaa', frame=0, isRelative=False):
     date = data.dates[frame]
     result = ns(
             title = _(title),
@@ -69,19 +68,8 @@ def dataToTemplateDict(data, colors, title, subtitle,
             year = date.year,
             month = _(months[date.month-1]),
         )
-    scales = dict(
-        Linear = LinearScale,
-        Log = LogScale,
-    )
-
-    # TODO: just for tests
-    if geolevel == 'dummy':
-        geolevel = 'ccaa'
 
     totalValue = data["values"][frame]
-    maxColor = maxVal or maxValue(data, geolevel, frame)
-
-    scale = scales[colorScale](higher=maxColor or 1)
 
     def updateDict(code, value):
         if (isRelative):
@@ -115,19 +103,28 @@ def dataToTemplateDict(data, colors, title, subtitle,
 def fillMap(data, template, geolevel, title,
         subtitle='', scale='Log', locations=[], maxVal=None,
         isRelative=False, frame=0):
-    gradient = Gradient('#e0ecbb', '#384413')
 
+    # TODO: just for tests
+    if geolevel == 'dummy':
+        geolevel = 'ccaa'
+
+    scales = dict(
+        Linear=LinearScale,
+        Log=LogScale,
+    )
+    scaleHigher = maxVal or maxValue(data, geolevel, frame)
+    scale = scales[scale](higher=scaleHigher or 1)
+    gradient = Gradient('#e0ecbb', '#384413')
     dataDict = dataToTemplateDict(
         data=data,
         colors=gradient,
-        colorScale=scale,
         title=title,
         subtitle=subtitle,
         locations=locations,
         geolevel=geolevel,
-        maxVal=maxVal,
         isRelative=isRelative,
-        frame=frame
+        frame=frame,
+        scale=scale
     )
     return template.format(**dataDict)
 

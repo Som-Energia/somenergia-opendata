@@ -289,9 +289,9 @@ class Map_Test(unittest.TestCase):
     from somutils.testutils import assertNsEqual
 
     def test_dataToTemplateDict_noRegion(self):
-
+        scale = LogScale(higher=123)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=noRegion, colors=color,maxVal=123)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=noRegion, colors=color,scale=scale)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -316,7 +316,8 @@ class Map_Test(unittest.TestCase):
     def test_dataToTemplateDict_singleRegion(self):
 
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=singleRegion, colors=color,maxVal=123)
+        scale = LogScale(higher=123)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=singleRegion, colors=color,scale=scale)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -345,9 +346,41 @@ class Map_Test(unittest.TestCase):
         self.assertEqual(percentRegion(0,0), '0,0%')
 
     def test_dataToTemplateDict_manyRegions(self):
+        scale = LogScale(higher=143)
+        color = Gradient('#e0ecbb','#384413')
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyRegions, colors=color, scale=scale)
+
+        self.assertNsEqual(result, """\
+            title: un títol
+            subtitle: un subtítol
+            year: 2019
+            month: January
+            number_00: 0
+            percent_00: 0,0%
+            color_00: '#e0ecbb'
+            number_01: 123
+            percent_01: 86,0%
+            color_01: '#3f4c15'
+            number_09: 20
+            percent_09: 14,0%
+            color_09: '#8eac30'
+            legendColor_0: '#e0ecbb'
+            legendColor_100: '#384413'
+            legendColor_25: '#c2da79'
+            legendColor_50: '#a4c738'
+            legendColor_75: '#6e8625'
+            legendNumber_0: 0
+            legendNumber_100: 140
+            legendNumber_25: 0
+            legendNumber_50: 10
+            legendNumber_75: 40
+        """)
+
+    def test_dataToTemplateDict_manyRegionsGivenScale(self):
 
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyRegions, colors=color, maxVal=143)
+        scale = LogScale(higher=143)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyRegions, colors=color, scale=scale)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -389,7 +422,8 @@ class Map_Test(unittest.TestCase):
                     values: [123]
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, maxVal=126)
+        scale = LogScale(higher=126)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, scale=scale)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -418,7 +452,7 @@ class Map_Test(unittest.TestCase):
     def test_dataToTemplateDict_LinearColorScale(self):
 
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyRegions, colorScale='Linear', colors=color, maxVal=143)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyRegions, colors=color, scale= LinearScale(higher=143))
 
         self.assertNsEqual(result, u"""\
             title: un títol
@@ -461,6 +495,27 @@ class Map_Test(unittest.TestCase):
   <text y="180" x="100" style="text-anchor:middle">123</text>
   <text y="200" x="100" style="text-anchor:middle">86,0%</text>
   <circle cy="180" cx="240" r="60" fill="#8eac30"/>
+  <text y="180" x="240" style="text-anchor:middle">20</text>
+  <text y="200" x="240" style="text-anchor:middle">14,0%</text>
+</svg>
+""")
+
+
+    def test_fillMap_manyRegionsWithoutMaxVal(self):
+
+        self.maxDiff = None
+        result = fillMap(data=manyRegions, template=dummyTemplate,
+                title=u"un títol", subtitle=u"un subtítol", geolevel='ccaa')
+        self.assertMultiLineEqual(result, u"""\
+<svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
+  <text y="40" x="170" style="text-anchor:middle">Title: un títol</text>
+  <text y="60" x="170" style="text-anchor:middle">Subtitle: un subtítol</text>
+  <text y="80" x="170" style="text-anchor:middle">Year: 2019</text>
+  <text y="100" x="170" style="text-anchor:middle">Month: January</text>
+  <circle cy="180" cx="100" r="60" fill="#384413"/>
+  <text y="180" x="100" style="text-anchor:middle">123</text>
+  <text y="200" x="100" style="text-anchor:middle">86,0%</text>
+  <circle cy="180" cx="240" r="60" fill="#8aa72f"/>
   <text y="180" x="240" style="text-anchor:middle">20</text>
   <text y="200" x="240" style="text-anchor:middle">14,0%</text>
 </svg>
@@ -560,7 +615,8 @@ class Map_Test(unittest.TestCase):
     def test_dataToTemplateDict_singleState(self):
 
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=singleState, colors=color, geolevel='state', maxVal=1969)
+        scale = LogScale(higher=1969)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=singleState, colors=color, geolevel='state', scale=scale)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -587,7 +643,8 @@ class Map_Test(unittest.TestCase):
 
     def test_dataToTemplateDict_noState(self):
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=noState, colors=color, geolevel='state',maxVal=1969)
+        scale = LogScale(higher=1969)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=noState, colors=color, geolevel='state', scale=scale)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -612,7 +669,8 @@ class Map_Test(unittest.TestCase):
     def test_dataToTemplateDict_manyStates(self):
 
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyStates, colors=color, geolevel='state',maxVal=750)
+        scale = LogScale(higher=750)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyStates, colors=color, geolevel='state', scale=scale)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -642,8 +700,9 @@ class Map_Test(unittest.TestCase):
 
     def test_dataToTemplateDict_twoStatesDifCCAA(self):
 
+        scale = LogScale(higher=750)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyStatesDifferentCCAA, colors=color, geolevel='state', maxVal=750)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyStatesDifferentCCAA, colors=color, geolevel='state', scale=scale)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -675,37 +734,6 @@ class Map_Test(unittest.TestCase):
         source = loadCsvSource()
         result = renderMap(source, 'members', ['2019-11-01'], geolevel='state')
         self.assertB2BEqual(result)
-
-    def test_dataToTemplateDict_manyRegionsGivenWithoutMaxValue(self):
-
-        color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=manyRegions, colors=color)
-
-        self.assertNsEqual(result, """\
-            title: un títol
-            subtitle: un subtítol
-            year: 2019
-            month: January
-            number_00: 0
-            percent_00: 0,0%
-            color_00: '#e0ecbb'
-            number_01: 123
-            percent_01: 86,0%
-            color_01: '#384413'
-            number_09: 20
-            percent_09: 14,0%
-            color_09: '#8aa72f'
-            legendColor_0: '#e0ecbb'
-            legendColor_100: '#384413'
-            legendColor_25: '#c2da79'
-            legendColor_50: '#a4c738'
-            legendColor_75: '#6e8625'
-            legendNumber_0: 0
-            legendNumber_100: 120
-            legendNumber_25: 0
-            legendNumber_50: 10
-            legendNumber_75: 40
-        """)
 
     def test_maxValue_oneCCAA(self):
 
@@ -748,7 +776,8 @@ class Map_Test(unittest.TestCase):
                     values: [20, 0]
             """)
         color = Gradient('#e0ecbb','#384413')
-        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, frame=1)
+        scale = LogScale(higher=500)
+        result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, frame=1, scale=scale)
 
         self.assertNsEqual(result, """\
             title: un títol
@@ -966,9 +995,10 @@ class Map_Test(unittest.TestCase):
         populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
         populationData = tuples2objects(parse_tsv(populationContent))
         toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
+        scale = LinearScale(higher=1)
 
         result = dataToTemplateDict(data=data, colors=Gradient('#e0ecbb', '#384413'),
-            title="relative", subtitle='subtitle', colorScale='Linear', isRelative=True)
+            title="relative", subtitle='subtitle', isRelative=True, scale=scale)
         self.assertNsEqual(result, """\
                     title: relative
                     subtitle: subtitle
@@ -979,14 +1009,14 @@ class Map_Test(unittest.TestCase):
                     color_00: '#e0ecbb'
                     number_01: 0,1
                     percent_01: ''
-                    color_01: '#384413'
+                    color_01: '#cee194'
                     legendColor_0: '#e0ecbb'
                     legendColor_100: '#384413'
                     legendColor_25: '#c2da79'
                     legendColor_50: '#a4c738'
                     legendColor_75: '#6e8625'
                     legendNumber_0: 0
-                    legendNumber_100: 0
+                    legendNumber_100: 1
                     legendNumber_25: ''
                     legendNumber_50: 0
                     legendNumber_75: ''
