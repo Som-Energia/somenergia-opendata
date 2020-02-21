@@ -206,7 +206,7 @@ def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None, te
     if isRelative:
         perValue = getNiceDivisor(populationPerLocation)
         toPopulationRelative(data, geolevel, populationPerLocation, perValue)
-        subtitle = _("per {:,} population".format(perValue).replace(',', '.'))
+        subtitle = _("per %(num)s population",num="{:,}".format(perValue).replace(',','.'))
 
     if not template:
         template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')

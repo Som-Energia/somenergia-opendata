@@ -336,5 +336,7 @@ msgstr "Huelva"
 msgid "Araba"
 msgstr "Áraba"
 
-msgid "per 10,000 population"
-msgstr "por cada 10.000 hab"
+#: som_opendata/map.py:209
+#, python-format
+msgid "per %(num)s population"
+msgstr "por cada %(num)s hab"
