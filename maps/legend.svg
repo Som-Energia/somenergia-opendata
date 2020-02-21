@@ -1,0 +1,26 @@
+  <defs>
+    <linearGradient gradientTransform="matrix(1.00156 0 0 1.00156 6.893 6.086)" gradientUnits="userSpaceOnUse" id="b" x1="607.126" x2="607.656" xlink:href="#a" y1="362.738" y2="435.04"/>
+    <linearGradient id="a">
+      <stop offset="0" stop-color="{legendColor_0}"/>
+      <stop offset=".25" stop-color="{legendColor_25}"/>
+      <stop offset=".5" stop-color="{legendColor_50}"/>
+      <stop offset=".75" stop-color="{legendColor_75}"/>
+      <stop offset="1" stop-color="{legendColor_100}"/>
+    </linearGradient>
+  </defs>
+    <path d="M605.395 369.123h20.199v72.82h-20.199z" fill="url(#b)" opacity=".97"/>
+  <text font-family="sans-serif" font-size="8.012" font-weight="400" letter-spacing="0" stroke-width="1.002" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="643.231" y="376.057">
+    <tspan style="text-align:end" x="604.806" y="376.057">{legendNumber_0}</tspan>
+  </text>
+  <text font-family="sans-serif" font-size="8.012" font-weight="400" letter-spacing="0" stroke-width="1.002" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="603.906" y="441.429">
+    <tspan x="603.906" y="441.429">{legendNumber_100}</tspan>
+  </text>
+  <text font-family="sans-serif" font-size="8.012" font-weight="400" letter-spacing="0" stroke-width="1.002" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="604.334" y="425.9">
+    <tspan x="604.334" y="425.9">{legendNumber_75}</tspan>
+  </text>
+  <text font-family="sans-serif" font-size="8.012" font-weight="400" letter-spacing="0" stroke-width="1.002" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="604.334" y="407.872">
+    <tspan x="604.334" y="407.872">{legendNumber_50}</tspan>
+  </text>
+  <text font-family="sans-serif" font-size="8.012" font-weight="400" letter-spacing="0" stroke-width="1.002" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="604.334" y="389.844">
+    <tspan x="604.334" y="390.846">{legendNumber_25}</tspan>
+  </text>

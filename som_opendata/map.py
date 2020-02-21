@@ -46,7 +46,7 @@ def maxValue(data, geolevel, frame):
     return currentMax
 
 
-def fillLegend(scale, colors, isRelative):
+def fillLegend(legendTemplate, scale, colors, isRelative):
     result = dict()
     for num in [0, 25, 50, 75, 100]:
         value = int(scale.inverse(num / 100))
@@ -58,7 +58,8 @@ def fillLegend(scale, colors, isRelative):
             'legendNumber_{}'.format(num): value,
             'legendColor_{}'.format(num): colors(num / 100)
         })
-    return result
+
+    return legendTemplate.format(**result)
 
 
 def dataToTemplateDict(data, colors, scale, title, subtitle,
@@ -101,7 +102,7 @@ def dataToTemplateDict(data, colors, scale, title, subtitle,
     return result
 
 
-def fillMap(data, template, geolevel, title,
+def fillMap(data, template, legendTemplate, geolevel, title,
         subtitle='', scale='Log', locations=[], maxVal=None,
         isRelative=False, frame=0):
 
@@ -127,8 +128,8 @@ def fillMap(data, template, geolevel, title,
         frame=frame,
         scale=scale
     )
-    legend = fillLegend(scale, gradient, isRelative)
-    return template.format(**dataDict, **legend)
+    legend = fillLegend(legendTemplate, scale, gradient, isRelative)
+    return template.format(**dataDict, legend=legend)
 
 
 def toPopulationRelative(data, geolevel, population, perValue=10000):
@@ -148,7 +149,7 @@ def toPopulationRelative(data, geolevel, population, perValue=10000):
             region["values"][index] = region["values"][index]*perValue / populationDict[code]
 
 
-def createGif(frameQuantity, data, template, geolevel, title,
+def createGif(frameQuantity, data, template, legendTemplate, geolevel, title,
             subtitle='', scale='Log', locations=[],
             isRelative=False, frame=0):
 
@@ -160,6 +161,7 @@ def createGif(frameQuantity, data, template, geolevel, title,
             svg = fillMap(
                 data=data,
                 template=template,
+                legendTemplate=legendTemplate,
                 title=title,
                 subtitle=subtitle,
                 locations=locations,
@@ -208,12 +210,15 @@ def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None, te
 
     if not template:
         template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
+    
+    legendTemplate = Path('maps/legend.svg').read_text(encoding='utf8')
 
     if len(date) > 1:
         return createGif(
             frameQuantity=len(date),
             data=data,
             template=template,
+            legendTemplate=legendTemplate,
             title=metric.title(),
             subtitle=subtitle,
             locations=locations,
@@ -224,6 +229,7 @@ def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None, te
     return fillMap(
         data=data,
         template=template,
+        legendTemplate=legendTemplate,
         title=metric.title(),
         subtitle=subtitle,
         locations=locations,

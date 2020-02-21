@@ -253,6 +253,7 @@ manyStatesDifferentCCAA = ns.loads("""\
                     - 250
     """)
 
+legendTemplate = Path('maps/legend.svg').read_text(encoding='utf8')
 
 def getBlobInfo(binaryBlob):
     from wand.image import Image
@@ -422,7 +423,7 @@ class Map_Test(unittest.TestCase):
     def test_fillMap_manyRegions(self):
 
         self.maxDiff = None
-        result = fillMap(data=manyRegions, template=dummyTemplate,
+        result = fillMap(data=manyRegions, template=dummyTemplate, legendTemplate="",
                 title=u"un títol", subtitle=u"un subtítol", geolevel='ccaa', maxVal=143)
         self.assertMultiLineEqual(result, u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -443,7 +444,7 @@ class Map_Test(unittest.TestCase):
     def test_fillMap_manyRegionsWithoutMaxVal(self):
 
         self.maxDiff = None
-        result = fillMap(data=manyRegions, template=dummyTemplate,
+        result = fillMap(data=manyRegions, template=dummyTemplate,legendTemplate="",
                 title=u"un títol", subtitle=u"un subtítol", geolevel='ccaa')
         self.assertMultiLineEqual(result, u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -463,7 +464,7 @@ class Map_Test(unittest.TestCase):
     def test_fillMap_withLocationList(self):
 
         self.maxDiff = None
-        result = fillMap(data=singleRegion, template=dummyTemplate,
+        result = fillMap(data=singleRegion, template=dummyTemplate, legendTemplate="",
                 title=u"un títol", subtitle=u"un subtítol", locations=['01','09'], geolevel='ccaa', maxVal=143)
         self.assertMultiLineEqual(result, u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -910,7 +911,7 @@ class Map_Test(unittest.TestCase):
         populationData = tuples2objects(parse_tsv(populationContent))
         toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
 
-        result = fillMap(data=data, template=dummyTemplate,
+        result = fillMap(data=data, template=dummyTemplate, legendTemplate="",
                 title=u"un títol", subtitle=u"un subtítol", geolevel='ccaa', scale='Linear', isRelative=True)
         self.assertMultiLineEqual(result, u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -959,36 +960,36 @@ class Map_Test(unittest.TestCase):
         scale = LogScale(higher=1000)
         gradient = Gradient('#e0ecbb', '#384413')
         result = dict()
-        result = fillLegend(scale=scale, colors=gradient, isRelative=None)
-        self.assertNsEqual(result, """\
-            legendNumber_0: 0
-            legendNumber_25: 0
-            legendNumber_50: 30
-            legendNumber_75: 180
-            legendNumber_100: 1000
-            legendColor_0: '#e0ecbb'
-            legendColor_25: '#c2da79'
-            legendColor_50: '#a4c738'
-            legendColor_75: '#6e8625'
-            legendColor_100: '#384413'
-        """)
+        result = fillLegend(legendTemplate=legendTemplate,scale=scale, colors=gradient, isRelative=None)
+        self.assertEqual(result, legendTemplate.format(
+            legendNumber_0= 0,
+            legendNumber_25= 0,
+            legendNumber_50= 30,
+            legendNumber_75= 180,
+            legendNumber_100= 1000,
+            legendColor_0= '#e0ecbb',
+            legendColor_25= '#c2da79',
+            legendColor_50='#a4c738',
+            legendColor_75= '#6e8625',
+            legendColor_100= '#384413'
+        ))
 
     def test_fillLegend_relativeData(self):
         scale = LogScale(higher=1000)
         gradient = Gradient('#e0ecbb', '#384413')
-        result = fillLegend(scale=scale, colors=gradient, isRelative='population')
-        self.assertNsEqual(result, """\
-            legendNumber_0: 1
-            legendNumber_25: ''
-            legendNumber_50: 31
-            legendNumber_75: ''
-            legendNumber_100: 1000
-            legendColor_0: '#e0ecbb'
-            legendColor_25: '#c2da79'
-            legendColor_50: '#a4c738'
-            legendColor_75: '#6e8625'
-            legendColor_100: '#384413'
-        """)
+        result = fillLegend(legendTemplate=legendTemplate,scale=scale, colors=gradient, isRelative='population')
+        self.assertEqual(result, legendTemplate.format(
+            legendNumber_0=1,
+            legendNumber_25='',
+            legendNumber_50=31,
+            legendNumber_75='',
+            legendNumber_100=1000,
+            legendColor_0='#e0ecbb',
+            legendColor_25='#c2da79',
+            legendColor_50='#a4c738',
+            legendColor_75='#6e8625',
+            legendColor_100='#384413',
+        ))
 
     def test_renderMap_members_givenTemplate(self):
         source = loadCsvSource()
@@ -1014,7 +1015,7 @@ class Map_Test(unittest.TestCase):
             """)
         template = Path('maps/mapTemplate_dummy.svg').read_text(encoding='utf8')
         img = createGif(
-            frameQuantity=2, data=data, template=template,
+            frameQuantity=2, data=data, template=template, legendTemplate=legendTemplate,
             geolevel='ccaa',title='One')
         self.assertNsEqual(getBlobInfo(img), """\
             format: GIF
@@ -1027,7 +1028,7 @@ class Map_Test(unittest.TestCase):
     def test_createGif_oneFrame(self):
         template = Path('maps/mapTemplate_dummy.svg').read_text(encoding='utf8')
         img = createGif(
-            frameQuantity=1, data=manyRegions, template=template,
+            frameQuantity=1, data=manyRegions, template=template, legendTemplate=legendTemplate,
             geolevel='ccaa',title='One')
         self.assertNsEqual(getBlobInfo(img), """\
             format: GIF
