@@ -29,11 +29,23 @@ class CsvSource(object):
             datum : tuples2objects(parse_tsv(data))
             for datum, data in iteritems(self.data)
         }
+        fieldNames = dict()
+        for key, value in iteritems(self._objects):
+            fieldNames.update({
+                key: [field for field in value[0].keys() if isField(field)]
+                })
+        self.lastDay= ns()
+        self.countLength = ns()
+        for key, value in fieldNames.items():
+            self.countLength.update({key: len(value)})
+            self.lastDay.update({
+                key: field2date(sorted(fieldNames[key])[self.countLength[key]-1])
+            })
+
 
     # TODO: Change name datum -> metric
     def getLastDay(self, datum):
-        d = parse_tsv(self.data[datum])
-        return field2date(d[0][len(d[0])-1])
+        return self.lastDay[datum]
 
     def get(self, datum, dates, filters):
 
@@ -43,7 +55,7 @@ class CsvSource(object):
             raise MissingDateError(missing_dates)
 
         filtered_tuples = locationFilter(objects, filters)
-        if len(dates) < self.countLength / 2:
+        if len(dates) < self.countLength[datum] / 2:
             requested_dates = getDates(filtered_tuples, dates)
         else:
             unnecessaryDates = missingDates(dates, includedDatesObject(objects))
