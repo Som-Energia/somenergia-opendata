@@ -30,7 +30,6 @@ class CsvSource_Test(unittest.TestCase):
         content = ns()
         for datum, lines in iteritems(datums):
             content[datum] = '\n'.join(lines)
-
         return CsvSource(content)
 
     def raisesAssertion(self, source, datum, dates, missingDates):

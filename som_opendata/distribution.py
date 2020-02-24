@@ -152,7 +152,7 @@ def isField(field):
 def missingDates(datesExist, datesRequest):
     return list(set(datesRequest) - set(datesExist))
 
-def requestedDates(objects, dates):
+def getDates(objects, dates):
     return [
         getCounts(o, [date2field(d) for d in dates])
         for o in objects

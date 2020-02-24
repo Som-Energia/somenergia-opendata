@@ -21,7 +21,7 @@ from .distribution import (
     includedDatesObject,
     findObject,
     addObjects,
-    requestedDates,
+    getDates,
     )
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -778,9 +778,9 @@ class Distribution_Test(unittest.TestCase):
         del _object['count_2018_01_01']
         self.assertEquals(result, [_object])
 
-    # requestedDates
+    # getDates
 
-    def test__requestedDates__notFound(self):
+    def test__getDates__notFound(self):
         _object = ns(
             codi_pais='ES',
             pais='España',
@@ -793,10 +793,10 @@ class Distribution_Test(unittest.TestCase):
             count_2018_01_01='1000',
             count_2018_02_01='201',
             )
-        result = requestedDates([_object], ['2018-01-01', '2018-02-01'])
+        result = getDates([_object], ['2018-01-01', '2018-02-01'])
         self.assertEquals(result, [_object])
 
-    def test__requestedDates__oneDate(self):
+    def test__getDates__oneDate(self):
         _object = ns(
             codi_pais='ES',
             pais='España',
@@ -809,7 +809,7 @@ class Distribution_Test(unittest.TestCase):
             count_2018_01_01='1000',
             count_2018_02_01='201',
             )
-        result = requestedDates([_object], ['2018-02-01'])
+        result = getDates([_object], ['2018-02-01'])
         del _object['count_2018_01_01']
         self.assertEquals(result, [_object])
 
