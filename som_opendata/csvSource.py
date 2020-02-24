@@ -12,6 +12,7 @@ from .distribution import (
     date2field,
     addObjects,
     field2date,
+    requestedDates,
     )
 from .errors import MissingDateError
 from future.utils import iteritems
@@ -40,11 +41,10 @@ class CsvSource(object):
         if missing_dates:
             raise MissingDateError(missing_dates)
 
-        unnecessaryDates = missingDates(dates, includedDatesObject(objects))
-        filtered_dates = removeDates(objects, unnecessaryDates)
-        filtered_tuples = locationFilter(filtered_dates, filters)
+        filtered_tuples = locationFilter(objects, filters)
+        requested_dates = requestedDates(filtered_tuples, dates)
 
-        return filtered_tuples
+        return requested_dates
 
 
     def update(self, datum, content):

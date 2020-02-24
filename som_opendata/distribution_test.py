@@ -21,6 +21,7 @@ from .distribution import (
     includedDatesObject,
     findObject,
     addObjects,
+    requestedDates,
     )
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
@@ -777,6 +778,40 @@ class Distribution_Test(unittest.TestCase):
         del _object['count_2018_01_01']
         self.assertEquals(result, [_object])
 
+    # requestedDates
+
+    def test__requestedDates__notFound(self):
+        _object = ns(
+            codi_pais='ES',
+            pais='España',
+            codi_ccaa='09',
+            comunitat_autonoma='Catalunya',
+            codi_provincia='08',
+            provincia='Barcelona',
+            codi_ine='08217',
+            municipi='Sant Joan Despí',
+            count_2018_01_01='1000',
+            count_2018_02_01='201',
+            )
+        result = requestedDates([_object], ['2018-01-01', '2018-02-01'])
+        self.assertEquals(result, [_object])
+
+    def test__requestedDates__oneDate(self):
+        _object = ns(
+            codi_pais='ES',
+            pais='España',
+            codi_ccaa='09',
+            comunitat_autonoma='Catalunya',
+            codi_provincia='08',
+            provincia='Barcelona',
+            codi_ine='08217',
+            municipi='Sant Joan Despí',
+            count_2018_01_01='1000',
+            count_2018_02_01='201',
+            )
+        result = requestedDates([_object], ['2018-02-01'])
+        del _object['count_2018_01_01']
+        self.assertEquals(result, [_object])
 
     # finsObject
 
