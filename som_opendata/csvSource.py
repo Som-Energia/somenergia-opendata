@@ -65,7 +65,9 @@ class CsvSource(object):
         _data.dict = self._objects[datum]
         _content = tablib.Dataset()
         _content.dict = content
-
+        addedDates = sorted(includedDates(content), reverse=True)
+        if addedDates and addedDates[0] > self.lastDay[datum]:
+            self.lastDay[datum] = addedDates[0]
         addObjects(self._objects[datum], content)
 
 import dbconfig as config

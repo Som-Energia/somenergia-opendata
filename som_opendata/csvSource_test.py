@@ -142,6 +142,7 @@ class CsvSource_Test(unittest.TestCase):
               count_2018_01_01: '1000'
               count_2018_02_01: '201'
         """)
+        self.assertEqual(source.getLastDay('members'), '2018-02-01')
 
     def test__set__oneDateWithNewCity(self):
         source = self.createSource(
@@ -191,6 +192,46 @@ class CsvSource_Test(unittest.TestCase):
               count_2018_02_01: '2001'
               count_2018_01_01: '0'
         """)
+        self.assertEqual(source.getLastDay('members'), '2018-02-01')
+
+    def test_update_unmodifiedLastDay(self):
+        source = self.createSource(
+            ns(members=[headers,
+            data_SantJoan])
+            )
+        source.update('members',
+            [ns(codi_pais=u'ES',
+                pais=u'España',
+                codi_ccaa=u'09',
+                comunitat_autonoma=u'Catalunya',
+                codi_provincia=u'17',
+                provincia=u'Girona',
+                codi_ine=u'17007',
+                municipi=u'Amer')]
+        )
+        self.assertNsEqual(ns(data=source._objects['members']), """
+            data:
+            - codi_pais: ES
+              pais: 'España'
+              codi_ccaa: '09'
+              comunitat_autonoma: Catalunya
+              codi_provincia: '08'
+              provincia: Barcelona
+              codi_ine: '08217'
+              municipi: Sant Joan Despí
+              count_2018_01_01: '1000'
+            - municipi: Amer
+              codi_ccaa: '09'
+              provincia: Girona
+              codi_pais: ES
+              codi_ine: '17007'
+              comunitat_autonoma: Catalunya
+              codi_provincia: '17'
+              pais: 'España'
+              count_2018_01_01: '0'
+        """)
+        self.assertEqual(source.getLastDay('members'), '2018-01-01')
+
 
     def test__get__readCsvFile(self):
         rows = []
