@@ -215,14 +215,12 @@ class CsvSource_Test(unittest.TestCase):
               municipi: Figueres
               count_2015_01_01: '31'
             """)
-        
+
+
     def test__getLastDay(self):
         source = self.createSource(
             ns(members=[headers+'\tcount_2018_02_01',
-            data_SantJoan+'10'])
+            data_SantJoan+'\t10'])
             )
         r = source.getLastDay('members')
         self.assertEqual(r, '2018-02-01')
-
-
-
