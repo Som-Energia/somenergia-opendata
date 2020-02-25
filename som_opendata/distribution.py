@@ -56,15 +56,15 @@ def aggregate(entries, detail='world', requestedDates=None):
         Country, CCAA, state, city.
     """
     if not entries: return []
-    entry = entries[0]
     if requestedDates:
         dates = [isoDate(d) for d in requestedDates]
     else:
+        entry = entries[0]
         dates = state_dates(entry)
 
     result = ns ()
     result.dates = dates
-    result['values'] = [0 for e in dates]
+    result['values'] = [0] * len(dates)
 
     for entry in entries:
 
