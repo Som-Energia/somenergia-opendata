@@ -214,6 +214,9 @@ class CsvSource_Test(unittest.TestCase):
               codi_ine: '17066'
               municipi: Figueres
               count_2015_01_01: '31'
+              count_2015_02_01: '30'
+              count_2015_03_01: '32'
+              count_2015_04_01: '32'
             """)
 
 

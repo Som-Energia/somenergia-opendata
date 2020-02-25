@@ -339,6 +339,37 @@ class Distribution_Test(unittest.TestCase):
                             values: [2000]
             """)
 
+
+    def test__aggregate__1line_requestedDates(self):
+        data = u'\n'.join([
+            headers+'\tcount_2018_02_01',
+            data_Adra+'\t3',
+        ])
+        objectList = tuples2objects(parse_tsv(data))
+        r = aggregate(objectList, 'city', requestedDates=['2018-01-01'])
+        self.assertNsEqual(r,"""\
+            dates:
+            - 2018-01-01
+            values: [2]
+            countries:
+              ES:
+                name: España
+                values: [2]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [2]
+                    states:
+                      '04':
+                        name: Almería
+                        values: [2]
+                        cities:
+                          '04003':
+                            name: Adra
+                            values: [2]
+            """)
+
+
     def test_state_dates_1date(self):
         data = u'\n'.join([
             headers+'\tcount_2018_02_01',

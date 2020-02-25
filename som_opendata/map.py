@@ -192,7 +192,7 @@ def getNiceDivisor(population):
 
 def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None, template=None):
     filtered_objects = source.get(metric, date, [])
-    data = aggregate(filtered_objects, geolevel)
+    data = aggregate(filtered_objects, geolevel, date)
 
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     populationPerLocation = tuples2objects(parse_tsv(locationContent))

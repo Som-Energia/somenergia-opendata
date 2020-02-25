@@ -55,13 +55,8 @@ class CsvSource(object):
             raise MissingDateError(missing_dates)
 
         filtered_tuples = locationFilter(objects, filters)
-        if len(dates) < self.countLength[datum] / 2:
-            requested_dates = getDates(filtered_tuples, dates)
-        else:
-            unnecessaryDates = missingDates(dates, includedDatesObject(objects))
-            requested_dates = removeDates(filtered_tuples, unnecessaryDates)
 
-        return requested_dates
+        return filtered_tuples
 
 
     def update(self, datum, content):
@@ -70,7 +65,7 @@ class CsvSource(object):
         _data.dict = self._objects[datum]
         _content = tablib.Dataset()
         _content.dict = content
-        
+
         addObjects(self._objects[datum], content)
 
 import dbconfig as config

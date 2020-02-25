@@ -50,15 +50,17 @@ def state_dates(entry):
         ]
 
 
-def aggregate(entries, detail = 'world'):
+def aggregate(entries, detail='world', requestedDates=None):
     """
         Aggregates a list of entries by geographical scopes:
         Country, CCAA, state, city.
     """
     if not entries: return []
-
     entry = entries[0]
-    dates = state_dates(entry)
+    if requestedDates:
+        dates = [isoDate(d) for d in requestedDates]
+    else:
+        dates = state_dates(entry)
 
     result = ns ()
     result.dates = dates
@@ -68,12 +70,12 @@ def aggregate(entries, detail = 'world'):
 
         entry.count = [
             int(entry[date2field(date.isoDate)])
-            for date in dates ]
+            for date in dates]
 
         result['values'] = [a+b for a,b in zip(result['values'], entry.count)]
         if detail == 'world': continue
         current = result
-        
+
         for level_name, level_single, codi, name in aggregation_levels:
             current = aggregate_level(
                 entry, current, level_name, codi, name)

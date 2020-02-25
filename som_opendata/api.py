@@ -359,7 +359,7 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
         extractQueryParam(location_filter_req, *locationLevel_id)
 
     filtered_objects = content.get(metric, request_dates, location_filter_req)
-    if len(filtered_objects) > 0: return aggregate(filtered_objects, geolevel)
+    if len(filtered_objects) > 0: return aggregate(filtered_objects, geolevel, request_dates)
     else: return ns()
 
 
