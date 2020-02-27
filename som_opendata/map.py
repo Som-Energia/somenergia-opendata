@@ -189,6 +189,12 @@ def getNiceDivisor(population):
 
     return niceFloorValue(currentMin)
 
+def preFillTemplate_legendNames(template, names, legend):
+    class Default(dict):
+        def __missing__(self, key):
+            return '{'+key+'}'
+
+    return template.format_map(Default(legend=legend, **names))
 
 def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None, template=None):
     filtered_objects = source.get(metric, date, [])

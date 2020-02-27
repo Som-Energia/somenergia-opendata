@@ -15,6 +15,7 @@ from .map import (
     toPopulationRelative,
     fillLegend,
     createGif,
+    preFillTemplate_legendNames,
     )
 from .colorscale import Gradient
 from .scale import LogScale, LinearScale
@@ -37,6 +38,24 @@ dummyTemplate="""\
   <circle cy="180" cx="240" r="60" fill="{color_09}"/>
   <text y="180" x="240" style="text-anchor:middle">{number_09}</text>
   <text y="200" x="240" style="text-anchor:middle">{percent_09}</text>
+</svg>
+"""
+
+dummyTemplateNamesLegend="""\
+<svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
+  <text y="40" x="170" style="text-anchor:middle">Title: {title}</text>
+  <text y="60" x="170" style="text-anchor:middle">Subtitle: {subtitle}</text>
+  <text y="80" x="170" style="text-anchor:middle">Year: {year}</text>
+  <text y="100" x="170" style="text-anchor:middle">Month: {month}</text>
+  <text y="110" x="50" style="text-anchor:middle">{Andalusia}</text>
+  <text y="110" x="320" style="text-anchor:middle">{Catalonia}</text>
+  <circle cy="180" cx="100" r="60" fill="{color_01}"/>
+  <text y="180" x="100" style="text-anchor:middle">{number_01}</text>
+  <text y="200" x="100" style="text-anchor:middle">{percent_01}</text>
+  <circle cy="180" cx="240" r="60" fill="{color_09}"/>
+  <text y="180" x="240" style="text-anchor:middle">{number_09}</text>
+  <text y="200" x="240" style="text-anchor:middle">{percent_09}</text>
+  <text y="280" x="260" style="text-anchor:middle">{legend}</text>
 </svg>
 """
 
@@ -1045,3 +1064,25 @@ class Map_Test(unittest.TestCase):
         result = getNiceDivisor(populationData)
 
         self.assertEqual(result, 50000)
+
+    def test_preFillTemplate_legendNames(self):
+
+        legend = "Legend for test"
+        result = preFillTemplate_legendNames(template=dummyTemplateNamesLegend, legend=legend, names=ns({'Andalusia':'Andalusia', 'Catalonia':'Catalunya'}))
+        self.assertMultiLineEqual(result, u"""\
+<svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
+  <text y="40" x="170" style="text-anchor:middle">Title: {title}</text>
+  <text y="60" x="170" style="text-anchor:middle">Subtitle: {subtitle}</text>
+  <text y="80" x="170" style="text-anchor:middle">Year: {year}</text>
+  <text y="100" x="170" style="text-anchor:middle">Month: {month}</text>
+  <text y="110" x="50" style="text-anchor:middle">Andalusia</text>
+  <text y="110" x="320" style="text-anchor:middle">Catalunya</text>
+  <circle cy="180" cx="100" r="60" fill="{color_01}"/>
+  <text y="180" x="100" style="text-anchor:middle">{number_01}</text>
+  <text y="200" x="100" style="text-anchor:middle">{percent_01}</text>
+  <circle cy="180" cx="240" r="60" fill="{color_09}"/>
+  <text y="180" x="240" style="text-anchor:middle">{number_09}</text>
+  <text y="200" x="240" style="text-anchor:middle">{percent_09}</text>
+  <text y="280" x="260" style="text-anchor:middle">Legend for test</text>
+</svg>
+""")
