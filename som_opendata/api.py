@@ -15,7 +15,7 @@ from . import __version__
 from .map import renderMap
 from .map_utils import validateImplementation
 from flask_babel import lazy_gettext as _l
-from flask_babel import _, Babel
+from flask_babel import _, Babel, get_locale
 
 api = Blueprint(name=__name__, import_name=__name__, template_folder='../')
 api.firstDate = '2010-01-01'
@@ -415,9 +415,8 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
     relation_paramField_param += [['relativemetric',relativemetric]]
     validateImplementation(relation_paramField_param)
     request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=fromdate, to=todate, periodicity=frequency)
-    template = render_template('maps/mapTemplate_{}.svg'.format(geolevel))
 
-    result = renderMap(source=api.source, template=template,metric=metric, date=request_dates, geolevel=geolevel, isRelative=relativemetric)
+    result = renderMap(source=api.source,metric=metric, date=request_dates, geolevel=geolevel, isRelative=relativemetric, lang=get_locale())
     response = make_response(result)
 
     if len(request_dates) > 1:

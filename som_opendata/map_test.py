@@ -1028,8 +1028,10 @@ class Map_Test(unittest.TestCase):
                     values: [20, 0]
             """)
         template = Path('maps/mapTemplate_dummy.svg').read_text(encoding='utf8')
+        gradient = Gradient('#e0ecbb', '#384413')
+        scale = LogScale(higher=500).nice()
         img = createGif(
-            frameQuantity=2, data=data, template=template, legendTemplate=legendTemplate,
+            frameQuantity=2, data=data, template=template, colors=gradient, scale=scale,
             geolevel='ccaa',title='One')
         self.assertNsEqual(getBlobInfo(img), """\
             format: GIF
@@ -1039,8 +1041,10 @@ class Map_Test(unittest.TestCase):
 
     def test_createGif_oneFrame(self):
         template = Path('maps/mapTemplate_dummy.svg').read_text(encoding='utf8')
+        gradient = Gradient('#e0ecbb', '#384413')
+        scale = LogScale(higher=143).nice()
         img = createGif(
-            frameQuantity=1, data=manyRegions, template=template, legendTemplate=legendTemplate,
+            frameQuantity=1, data=manyRegions, template=template, colors=gradient, scale=scale,
             geolevel='ccaa',title='One')
         self.assertNsEqual(getBlobInfo(img), """\
             format: GIF

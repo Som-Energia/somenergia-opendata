@@ -37,6 +37,10 @@ def iterateLevel(data, geolevel):
 
 def maxValue(data, geolevel, frame):
 
+      # TODO: just for tests
+    if geolevel == 'dummy':
+        geolevel = 'ccaa'
+
     currentMax = 0
     for code, region in iterateLevel(data, geolevel):
         value = region["values"][frame]
@@ -103,8 +107,8 @@ def dataToTemplateDict(data, colors, scale, title, subtitle,
 
 
 def fillMap(data, template, legendTemplate, geolevel, title,
-        subtitle='', scale='Log', locations=[], maxVal=None,
-        isRelative=False, frame=0):
+        subtitle='', locations=[], maxVal=None,
+        isRelative=False, scale='Log', style="", frameQuantity=1, lang='en'):
 
     # TODO: just for tests
     if geolevel == 'dummy':
@@ -114,22 +118,36 @@ def fillMap(data, template, legendTemplate, geolevel, title,
         Linear=LinearScale,
         Log=LogScale,
     )
-    scaleHigher = maxVal or maxValue(data, geolevel, frame)
+    scaleHigher = maxVal or maxValue(data, geolevel, frame=frameQuantity-1)
     scale = scales[scale](higher=scaleHigher or 1).nice()
     gradient = Gradient('#e0ecbb', '#384413')
-    dataDict = dataToTemplateDict(
-        data=data,
-        colors=gradient,
-        title=title,
-        subtitle=subtitle,
-        locations=locations,
-        geolevel=geolevel,
-        isRelative=isRelative,
-        frame=frame,
-        scale=scale
-    )
     legend = fillLegend(legendTemplate, scale, gradient, isRelative)
-    return template.format(**dataDict, legend=legend)
+    names = ns.loads(Path('translations/{}'.format(lang)).read_text(encoding='utf8'))
+    if frameQuantity > 1:
+        template = preFillTemplate_legendNames(template=template, names=names, legend=legend)
+        return createGif(frameQuantity=frameQuantity,
+                    data=data,
+                    template=template,
+                    geolevel=geolevel,
+                    title=title,
+                    colors=gradient,
+                    scale=scale,
+                    locations=locations,
+                )
+    else:
+        dataDict = dataToTemplateDict(
+            data=data,
+            colors=gradient,
+            title=title,
+            subtitle=subtitle,
+            locations=locations,
+            geolevel=geolevel,
+            isRelative=isRelative,
+            frame=0,
+            scale=scale
+        )
+        return template.format(**dataDict, legend=legend, style=style, **names)
+
 
 
 def toPopulationRelative(data, geolevel, population, perValue=10000):
@@ -149,27 +167,24 @@ def toPopulationRelative(data, geolevel, population, perValue=10000):
             region["values"][index] = region["values"][index]*perValue / populationDict[code]
 
 
-def createGif(frameQuantity, data, template, legendTemplate, geolevel, title,
-            subtitle='', scale='Log', locations=[],
-            isRelative=False, frame=0):
+def createGif(frameQuantity, data, template, geolevel, title, colors, scale, subtitle='', locations=[], isRelative=False):
 
     from wand.image import Image
 
-    maxVal = maxValue(data=data, geolevel=geolevel, frame=frameQuantity - 1)
     with Image() as gif:
         for frame in range(frameQuantity):
-            svg = fillMap(
+            dataDict = dataToTemplateDict(
                 data=data,
-                template=template,
-                legendTemplate=legendTemplate,
+                colors=colors,
                 title=title,
                 subtitle=subtitle,
                 locations=locations,
                 geolevel=geolevel,
                 isRelative=isRelative,
                 frame=frame,
-                maxVal=maxVal
+                scale=scale
             )
+            svg = template.format(**dataDict)
             with Image(blob=svg.encode('utf8'), format='svg', width=500, height=400) as frame:
                 gif.sequence.append(frame)
                 with gif.sequence[-1] as frame:
@@ -196,16 +211,15 @@ def preFillTemplate_legendNames(template, names, legend):
 
     return template.format_map(Default(legend=legend, **names))
 
-def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None, template=None):
+
+def renderMap(source, metric, date, geolevel, isRelative=None, template=None, legendTemplate='', lang='en'):
     filtered_objects = source.get(metric, date, [])
     data = aggregate(filtered_objects, geolevel, date)
 
     locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
     populationPerLocation = tuples2objects(parse_tsv(locationContent))
 
-    locations = [
-        location.code for location in populationPerLocation
-    ]
+    locations = [location.code for location in populationPerLocation]
 
     subtitle = ''
 
@@ -214,23 +228,14 @@ def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None, te
         toPopulationRelative(data, geolevel, populationPerLocation, perValue)
         subtitle = _("per %(num)s population",num="{:,}".format(perValue).replace(',','.'))
 
-    if not template:
-        template = Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
-    
-    legendTemplate = Path('maps/legend.svg').read_text(encoding='utf8')
+    template = template or Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
 
-    if len(date) > 1:
-        return createGif(
-            frameQuantity=len(date),
-            data=data,
-            template=template,
-            legendTemplate=legendTemplate,
-            title=metric.title(),
-            subtitle=subtitle,
-            locations=locations,
-            geolevel=geolevel,
-            isRelative=isRelative,
-        )
+    legendTemplate = legendTemplate or Path('maps/legend.svg').read_text(encoding='utf8')
+
+    if geolevel == 'state':
+        style = Path('maps/style_{}.svg'.format(geolevel)).read_text(encoding='utf8')
+    else:
+        style = ""
 
     return fillMap(
         data=data,
@@ -241,6 +246,9 @@ def renderMap(source, metric, date, geolevel, isRelative=None, maxValue=None, te
         locations=locations,
         geolevel=geolevel,
         isRelative=isRelative,
+        style=style,
+        frameQuantity=len(date),
+        lang=lang,
     )
 
 # map{Country}{ES}by{States}.svg
