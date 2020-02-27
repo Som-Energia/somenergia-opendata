@@ -122,7 +122,7 @@ def fillMap(data, template, legendTemplate, geolevel, title,
     scale = scales[scale](higher=scaleHigher or 1).nice()
     gradient = Gradient('#e0ecbb', '#384413')
     legend = fillLegend(legendTemplate, scale, gradient, isRelative)
-    names = ns.loads(Path('translations/{}'.format(lang)).read_text(encoding='utf8'))
+    names = ns.loads(Path('maps/translations/{}'.format(lang)).read_text(encoding='utf8'))
     if frameQuantity > 1:
         template = preFillTemplate_legendNames(template=template, names=names, legend=legend)
         return createGif(frameQuantity=frameQuantity,

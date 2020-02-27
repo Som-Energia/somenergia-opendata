@@ -458,6 +458,27 @@ class Map_Test(unittest.TestCase):
 </svg>
 """)
 
+    def test_fillMap_caLanguage(self):
+        self.maxDiff=None
+        result = fillMap(data=manyRegions, template=dummyTemplateNamesLegend, legendTemplate="",
+                title=u"un títol", subtitle=u"un subtítol", geolevel='ccaa', maxVal=143, lang='ca')
+        self.assertMultiLineEqual(result, u"""\
+<svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
+  <text y="40" x="170" style="text-anchor:middle">Title: un títol</text>
+  <text y="60" x="170" style="text-anchor:middle">Subtitle: un subtítol</text>
+  <text y="80" x="170" style="text-anchor:middle">Year: 2019</text>
+  <text y="100" x="170" style="text-anchor:middle">Month: January</text>
+  <text y="110" x="50" style="text-anchor:middle">Andalusia</text>
+  <text y="110" x="320" style="text-anchor:middle">Catalunya</text>
+  <circle cy="180" cx="100" r="60" fill="#4c5c1a"/>
+  <text y="180" x="100" style="text-anchor:middle">123</text>
+  <text y="200" x="100" style="text-anchor:middle">86,0%</text>
+  <circle cy="180" cx="240" r="60" fill="#96b633"/>
+  <text y="180" x="240" style="text-anchor:middle">20</text>
+  <text y="200" x="240" style="text-anchor:middle">14,0%</text>
+  <text y="280" x="260" style="text-anchor:middle"></text>
+</svg>
+""")
 
     def test_fillMap_manyRegionsWithoutMaxVal(self):
 
