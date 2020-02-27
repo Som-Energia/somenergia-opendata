@@ -1,0 +1,17 @@
+<style>
+  @media screen and (min-device-width : 1025px) {
+      [id^='number'] {
+        opacity:0;
+        font-weight:600;
+      }
+      [id^='provincia'] text {
+        fill:#242423;
+      }
+    }
+    [id^='provincia']:hover [id^='number']{
+      opacity:1;
+    }
+    [id^='provincia']:hover text{
+      fill:black;
+    }
+</style>
