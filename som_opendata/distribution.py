@@ -61,16 +61,15 @@ def aggregate(entries, detail='world', requestedDates=None):
     else:
         entry = entries[0]
         dates = state_dates(entry)
-
     result = ns ()
     result.dates = dates
+    dateFields = [date2field(date.isoDate) for date in result.dates]
     result['values'] = [0] * len(dates)
 
     for entry in entries:
-
         entry.count = [
-            int(entry[date2field(date.isoDate)])
-            for date in dates]
+            int(entry[field])
+            for field in dateFields]
 
         result['values'] = [a+b for a,b in zip(result['values'], entry.count)]
         if detail == 'world': continue
