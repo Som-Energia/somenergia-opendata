@@ -415,8 +415,8 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
     relation_paramField_param += [['relativemetric',relativemetric]]
     validateImplementation(relation_paramField_param)
     request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=fromdate, to=todate, periodicity=frequency)
-
-    result = renderMap(source=api.source,metric=metric, date=request_dates, geolevel=geolevel, isRelative=relativemetric, lang=get_locale())
+    translations = api.mapData.translations[str(get_locale())]
+    result = renderMap(source=api.source,metric=metric, date=request_dates, geolevel=geolevel, isRelative=relativemetric, translations=translations)
     response = make_response(result)
 
     if len(request_dates) > 1:
@@ -428,6 +428,6 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
 
 
 api.source = None
-
+api.mapData = None
 
 # vim: et ts=4 sw=4

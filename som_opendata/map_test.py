@@ -25,6 +25,7 @@ from pathlib2 import Path
 from .distribution import parse_tsv, tuples2objects
 
 source = loadCsvSource(relativePath='../tests/data')
+translations = ns.loads(Path('maps/translations/en').read_text(encoding='utf8'))
 
 dummyTemplate="""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -441,7 +442,7 @@ class Map_Test(unittest.TestCase):
     def test_fillMap_manyRegions(self):
 
         self.maxDiff = None
-        result = fillMap(data=manyRegions, template=dummyTemplate, legendTemplate="",
+        result = fillMap(data=manyRegions, template=dummyTemplate, translations=translations, legendTemplate="",
                 title=u"un títol", subtitle=u"un subtítol", geolevel='ccaa', maxVal=143)
         self.assertMultiLineEqual(result, u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -458,32 +459,11 @@ class Map_Test(unittest.TestCase):
 </svg>
 """)
 
-    def test_fillMap_caLanguage(self):
-        self.maxDiff=None
-        result = fillMap(data=manyRegions, template=dummyTemplateNamesLegend, legendTemplate="",
-                title=u"un títol", subtitle=u"un subtítol", geolevel='ccaa', maxVal=143, lang='ca')
-        self.assertMultiLineEqual(result, u"""\
-<svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
-  <text y="40" x="170" style="text-anchor:middle">Title: un títol</text>
-  <text y="60" x="170" style="text-anchor:middle">Subtitle: un subtítol</text>
-  <text y="80" x="170" style="text-anchor:middle">Year: 2019</text>
-  <text y="100" x="170" style="text-anchor:middle">Month: January</text>
-  <text y="110" x="50" style="text-anchor:middle">Andalusia</text>
-  <text y="110" x="320" style="text-anchor:middle">Catalunya</text>
-  <circle cy="180" cx="100" r="60" fill="#4c5c1a"/>
-  <text y="180" x="100" style="text-anchor:middle">123</text>
-  <text y="200" x="100" style="text-anchor:middle">86,0%</text>
-  <circle cy="180" cx="240" r="60" fill="#96b633"/>
-  <text y="180" x="240" style="text-anchor:middle">20</text>
-  <text y="200" x="240" style="text-anchor:middle">14,0%</text>
-  <text y="280" x="260" style="text-anchor:middle"></text>
-</svg>
-""")
 
     def test_fillMap_manyRegionsWithoutMaxVal(self):
 
         self.maxDiff = None
-        result = fillMap(data=manyRegions, template=dummyTemplate,legendTemplate="",
+        result = fillMap(data=manyRegions, template=dummyTemplate , translations=translations, legendTemplate="",
                 title=u"un títol", subtitle=u"un subtítol", geolevel='ccaa')
         self.assertMultiLineEqual(result, u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -503,7 +483,7 @@ class Map_Test(unittest.TestCase):
     def test_fillMap_withLocationList(self):
 
         self.maxDiff = None
-        result = fillMap(data=singleRegion, template=dummyTemplate, legendTemplate="",
+        result = fillMap(data=singleRegion, template=dummyTemplate, translations=translations, legendTemplate="",
                 title=u"un títol", subtitle=u"un subtítol", locations=['01','09'], geolevel='ccaa', maxVal=143)
         self.assertMultiLineEqual(result, u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -539,7 +519,7 @@ class Map_Test(unittest.TestCase):
                 data_Adra,
                 ])
             )
-        result = renderMap(source, 'members', ['2018-01-01'], geolevel='dummy')
+        result = renderMap(source, 'members', ['2018-01-01'], geolevel='dummy', translations=translations)
 
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -564,7 +544,7 @@ class Map_Test(unittest.TestCase):
                 data_Adra,
                 ])
             )
-        result = renderMap(source, 'members', ['2018-01-01'], geolevel='dummy')
+        result = renderMap(source, 'members', ['2018-01-01'], geolevel='dummy', translations=translations)
 
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -582,11 +562,11 @@ class Map_Test(unittest.TestCase):
 """)
 
     def test_renderMap_members(self):
-        result = renderMap(source, 'members', ['2019-01-01'], geolevel='ccaa')
+        result = renderMap(source, 'members', ['2019-01-01'], geolevel='ccaa', translations=translations)
         self.assertB2BEqual(result)
 
     def test_renderMap_contracts(self):
-        result = renderMap(source, 'contracts', ['2019-01-01'], geolevel='ccaa')
+        result = renderMap(source, 'contracts', ['2019-01-01'], geolevel='ccaa', translations=translations)
         self.assertB2BEqual(result)
 
     def test_dataToTemplateDict_singleState(self):
@@ -668,7 +648,7 @@ class Map_Test(unittest.TestCase):
         """)
 
     def test_renderMap_members_byState(self):
-        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state')
+        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', translations=translations)
         self.assertB2BEqual(result)
 
     def test_maxValue_oneCCAA(self):
@@ -947,7 +927,7 @@ class Map_Test(unittest.TestCase):
         populationData = tuples2objects(parse_tsv(populationContent))
         toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
 
-        result = fillMap(data=data, template=dummyTemplate, legendTemplate="",
+        result = fillMap(data=data, template=dummyTemplate, translations=translations, legendTemplate="",
                 title=u"un títol", subtitle=u"un subtítol", geolevel='ccaa', scale='Linear', isRelative=True)
         self.assertMultiLineEqual(result, u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -975,7 +955,7 @@ class Map_Test(unittest.TestCase):
                 ])
             )
 
-        result = renderMap(source, 'members', ['2018-01-01'], geolevel='dummy', isRelative=True)
+        result = renderMap(source, 'members', ['2018-01-01'], geolevel='dummy', isRelative=True, translations=translations) 
 
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -1029,7 +1009,7 @@ class Map_Test(unittest.TestCase):
 
     def test_renderMap_members_givenTemplate(self):
         template = Path('maps/mapTemplate_dummy.svg').read_text(encoding='utf8')
-        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', template=template)
+        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', template=template, translations=translations)
         self.assertB2BEqual(result)
 
     def test_createGif_manyFrames(self):
@@ -1074,7 +1054,7 @@ class Map_Test(unittest.TestCase):
         """)
 
     def test_renderMap_membersRangeDates(self):
-        img = renderMap(source, 'members', ['2019-01-01','2019-02-01'], geolevel='ccaa')
+        img = renderMap(source, 'members', ['2019-01-01','2019-02-01'], geolevel='ccaa', translations=translations)
         result = getBlobInfo(img)
         self.assertNsEqual(result, """\
             format: GIF
@@ -1093,7 +1073,7 @@ class Map_Test(unittest.TestCase):
     def test_preFillTemplate_legendNames(self):
 
         legend = "Legend for test"
-        result = preFillTemplate_legendNames(template=dummyTemplateNamesLegend, legend=legend, names=ns({'Andalusia':'Andalusia', 'Catalonia':'Catalunya'}))
+        result = preFillTemplate_legendNames(template=dummyTemplateNamesLegend, legend=legend, translations=ns({'Andalusia':'Andalusia', 'Catalonia':'Catalunya'}))
         self.assertMultiLineEqual(result, u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: {title}</text>
