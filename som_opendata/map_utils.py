@@ -27,3 +27,28 @@ class ValidateImplementationMap(ValidateError):
         super(ValidateError, self).__init__(
             u"Not implemented {} '{}' try with {}"
             .format(field, value, self.possibleValues))
+
+
+import os.path
+from pathlib2 import Path
+
+def loadMapData(folderName='maps'):
+    dataPath = Path('./{}'.format(folderName))
+    mapData = ns()
+    templateFolder = Path(dataPath / "mapTemplates")
+    for datafile in os.listdir(templateFolder):
+        geolevel = datafile.replace('.svg','')
+        mapData[geolevel] = ns()
+        mapData[geolevel].template = Path(templateFolder /'{}'.format(datafile)).read_text(encoding='utf8')
+        styleFile = Path(dataPath / 'style_{}.svg'.format(geolevel))
+        if styleFile.is_file():
+            mapData[geolevel].style = styleFile.read_text(encoding='utf8')
+        else:
+            mapData[geolevel].style =''
+    mapData['legend'] = Path(dataPath/'legend.svg').read_text(encoding='utf8')
+    translationsFolder = Path(dataPath/'translations')
+    mapData.translations = ns()
+    for datafile in os.listdir(translationsFolder):
+        mapData.translations[datafile] = ns.loads(Path(translationsFolder /'{}'.format(datafile)).read_text(encoding='utf8'))
+
+    return mapData

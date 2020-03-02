@@ -10,7 +10,7 @@ from .common import (
     register_converters,
     register_handlers,
     )
-
+from .map_utils import loadMapData
 from .csvSource import loadCsvSource
 from . import __version__
 from flask_babel import _, Babel, get_locale
@@ -18,6 +18,7 @@ from .map_test import getBlobInfo
 
 
 source = loadCsvSource(relativePath='../tests/data')
+mapData = loadMapData()
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
@@ -72,6 +73,7 @@ class Api_Test(unittest.TestCase):
         self.b2bdatapath = 'b2bdata'
         self.oldsource = api.source
         api.source = source
+        api.mapData = mapData
         api.firstDate = '2010-01-01'
         self.babel = Babel()
         self.babel.init_app(self.app)
