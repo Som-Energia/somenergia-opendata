@@ -60,9 +60,9 @@ import dbconfig as config
 import os.path
 import glob
 
-def loadCsvSource():
+def loadCsvSource(relativePath='../data'):
     myPath = os.path.abspath(os.path.dirname(__file__))
-    dataPath = os.path.join(myPath, '..','data')
+    dataPath = os.path.join(myPath, relativePath)
     datums = ns()
     for datafile in glob.glob(os.path.join(dataPath,'*.tsv')):
         datum = os.path.splitext(os.path.basename(datafile))[0]

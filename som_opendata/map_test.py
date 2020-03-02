@@ -23,6 +23,7 @@ from future.utils import iteritems
 from pathlib2 import Path
 from .distribution import parse_tsv, tuples2objects
 
+source = loadCsvSource(relativePath='../tests/data')
 
 dummyTemplate="""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -543,12 +544,10 @@ class Map_Test(unittest.TestCase):
 """)
 
     def test_renderMap_members(self):
-        source = loadCsvSource()
         result = renderMap(source, 'members', ['2019-01-01'], geolevel='ccaa')
         self.assertB2BEqual(result)
 
     def test_renderMap_contracts(self):
-        source = loadCsvSource()
         result = renderMap(source, 'contracts', ['2019-01-01'], geolevel='ccaa')
         self.assertB2BEqual(result)
 
@@ -631,7 +630,6 @@ class Map_Test(unittest.TestCase):
         """)
 
     def test_renderMap_members_byState(self):
-        source = loadCsvSource()
         result = renderMap(source, 'members', ['2019-11-01'], geolevel='state')
         self.assertB2BEqual(result)
 
@@ -992,7 +990,6 @@ class Map_Test(unittest.TestCase):
         ))
 
     def test_renderMap_members_givenTemplate(self):
-        source = loadCsvSource()
         template = Path('maps/mapTemplate_dummy.svg').read_text(encoding='utf8')
         result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', template=template)
         self.assertB2BEqual(result)
@@ -1039,7 +1036,6 @@ class Map_Test(unittest.TestCase):
         """)
 
     def test_renderMap_membersRangeDates(self):
-        source = loadCsvSource()
         img = renderMap(source, 'members', ['2019-01-01','2019-02-01'], geolevel='ccaa')
         result = getBlobInfo(img)
         self.assertNsEqual(result, """\

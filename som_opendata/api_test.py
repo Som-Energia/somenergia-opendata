@@ -17,7 +17,7 @@ from flask_babel import _, Babel, get_locale
 from .map_test import getBlobInfo
 
 
-source = loadCsvSource()
+source = loadCsvSource(relativePath='../tests/data')
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
