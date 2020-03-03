@@ -5,6 +5,7 @@ import b2btest
 from flask import Flask
 from .oldapi import blueprint
 from .common import register_converters
+import os
 
 app = None
 
