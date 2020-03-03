@@ -8,6 +8,7 @@ from .common import register_converters
 
 app = None
 
+@unittest.skipIf("TRAVIS" in os.environ, "requires acces to db")
 class BaseApi_Test(unittest.TestCase):
 
     @staticmethod
