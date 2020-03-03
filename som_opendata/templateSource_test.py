@@ -14,3 +14,9 @@ class TemplateSource_Test(unittest.TestCase):
         result = loadMapData()
         self.assertNotEqual(len(result.getStyle('state')),0)
         self.assertEqual(len(result.getStyle('ccaa')),0)
+
+    def test_loadMapData_translations(self):
+        data = loadMapData()
+        translations = data.translations['ca']
+        self.assertEqual(len(translations),68)
+        self.assertEqual(translations['Catalonia'], 'Catalunya')
