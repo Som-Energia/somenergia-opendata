@@ -8,6 +8,6 @@ install:
 - ./setup.py develop
 - pip install coveralls
 script:
-- coverage run --source som_opendata ./setup.py test
+- nosetests
 after_success:
 - coveralls
