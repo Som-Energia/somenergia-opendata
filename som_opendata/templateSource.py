@@ -26,20 +26,18 @@ from pathlib2 import Path
 def loadMapData(relativePath='../maps'):
     myPath = os.path.abspath(os.path.dirname(__file__))
     dataPath = os.path.join(myPath, relativePath)
-    mapTemplates = ns()
-    for datafile in glob.glob(os.path.join(dataPath, 'mapTemplate_*.svg')):
-        geolevel = os.path.basename(datafile).replace('.svg','').replace('mapTemplate_', '')
-        mapTemplates[geolevel] = Path(datafile).read_text(encoding='utf8')
-
-    mapStyles = ns()
-    for datafile in glob.glob(os.path.join(dataPath, 'style_*.svg')):
-        geolevel = os.path.basename(datafile).replace('.svg','').replace('style_', '')
-        mapStyles[geolevel] = Path(datafile).read_text(encoding='utf8')
+    fileNames = ['template', 'style']
+    mapData = ns()
+    for name in fileNames:
+        mapData[name] = ns()
+        for datafile in glob.glob(os.path.join(dataPath, name+'_*.svg')):
+            geolevel = os.path.basename(datafile).replace('.svg', '').replace(name+'_', '')
+            mapData[name][geolevel] = Path(datafile).read_text(encoding='utf8')
 
     translations = ns()
     for datafile in glob.glob(os.path.join(dataPath, 'translations/*')):
         lang = os.path.basename(datafile)
         translations[lang] = ns.loads(Path(datafile).read_text(encoding='utf8'))
 
-    legend = Path(dataPath+'/legend.svg').read_text(encoding='utf8')
-    return TemplateSource(templates=mapTemplates, styles=mapStyles, translations=translations, legend=legend)
+    legend = Path(dataPath + '/legend.svg').read_text(encoding='utf8')
+    return TemplateSource(templates=mapData.template, styles=mapData.style, translations=translations, legend=legend)
