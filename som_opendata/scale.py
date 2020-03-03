@@ -11,14 +11,15 @@ def niceFloorValue(value, allowedMultiples=[1, 2, 5]):
         if niceLow * val <= value:
             return int(niceLow * val)
 
-
     return niceLow
+
 
 def niceCeilValue(value, allowedDivisors=[1, 2, 5]):
     niceHigh = 10 ** ceil(log10(value))
     for val in sorted(allowedDivisors, reverse=True):
         if niceHigh / val >= value:
             return int(niceHigh / val)
+
 
 class LinearScale(object):
 
