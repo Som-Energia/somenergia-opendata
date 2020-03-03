@@ -2,11 +2,15 @@ from yamlns import namespace as ns
 
 class TemplateSource(object):
 
-    def __init__(self, templates):
+    def __init__(self, templates, styles):
         self.templates = templates
+        self.styles = styles
 
     def getTemplate(self, geolevel):
         return self.templates[geolevel]
+
+    def getStyle(self, geolevel):
+        return self.styles.get(geolevel, '')
 
 
 import os.path
@@ -22,4 +26,9 @@ def loadMapData(relativePath='../maps'):
         geolevel = os.path.basename(datafile).replace('.svg','').replace('mapTemplate_', '')
         mapTemplates[geolevel] = Path(datafile).read_text(encoding='utf8')
 
-    return TemplateSource(mapTemplates)
+    mapStyles = ns()
+    for datafile in glob.glob(os.path.join(dataPath, 'style_*.svg')):
+        geolevel = os.path.basename(datafile).replace('.svg','').replace('style_', '')
+        mapStyles[geolevel] = Path(datafile).read_text(encoding='utf8')
+
+    return TemplateSource(mapTemplates, styles=mapStyles)
