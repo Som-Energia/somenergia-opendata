@@ -1,4 +1,5 @@
 from yamlns import namespace as ns
+from future.utils import iteritems
 
 class TemplateSource(object):
 
@@ -16,6 +17,15 @@ class TemplateSource(object):
 
     def getLegend(self):
         return self.legend
+
+    def getTemplate(self, geolevel, lang='en'):
+        #TODO: change to format_map() with a default that overrides __missing__ 
+        result = self.templates[geolevel]
+        for en_name, new_name in iteritems(self.translations[lang]):
+            result = result.replace('{'+en_name+'}', new_name, 1)
+        result = result.replace('{style}', self.styles.get(geolevel,''))
+        return result
+
 
 
 import os.path
