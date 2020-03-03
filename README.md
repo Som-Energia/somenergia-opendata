@@ -1,5 +1,7 @@
 # somenergia-opendata
 
+[![Build Status](https://travis-ci.org/Som-Energia/somenergia-opendata.svg?branch=master)](https://travis-ci.org/Som-Energia/somenergia-opendata)
+
 Public API to access open data information about the cooperative
 
 - API UI: https://opendata.somenergia.coop/ui/
