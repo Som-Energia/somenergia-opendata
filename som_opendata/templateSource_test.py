@@ -3,7 +3,7 @@ import unittest
 from yamlns import namespace as ns
 from .templateSource import TemplateSource, loadMapData
 
-dummyTemplate = """\
+dummyTemplate = u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: {title}</text>
   <text y="60" x="170" style="text-anchor:middle">Subtitle: {subtitle}</text>
@@ -19,28 +19,28 @@ dummyTemplate = """\
   <text y="200" x="240" style="text-anchor:middle">{percent_09}</text>
   <text y="280" x="260" style="text-anchor:middle">{legend}</text>
 </svg>"""
+
+data = loadMapData()
+
 class TemplateSource_Test(unittest.TestCase):
     maxDiff = None
 
-    def test_getTemplate_geolevel(self):
-        result = loadMapData()
-        self.assertNotEqual(len(result.getTemplate('ccaa')),0)
-        self.assertNotEqual(len(result.getTemplate('state')),0)
-        self.assertEqual(result.getTemplate('dummy'), dummyTemplate)
+    def test_getRawTemplate_geolevel(self):
+        self.maxDiff = None
+        self.assertNotEqual(len(data.getRawTemplate('ccaa')),0)
+        self.assertNotEqual(len(data.getRawTemplate('state')),0)
+        self.assertMultiLineEqual(data.getRawTemplate('dummy'), dummyTemplate)
 
     def test_getStyle_geolevel(self):
-        result = loadMapData()
-        self.assertNotEqual(len(result.getStyle('state')),0)
-        self.assertEqual(len(result.getStyle('ccaa')),0)
+        self.assertNotEqual(len(data.getStyle('state')),0)
+        self.assertEqual(len(data.getStyle('ccaa')),0)
 
     def test_loadMapData_translations(self):
-        data = loadMapData()
         translations = data.translations['ca']
         self.assertEqual(len(translations),68)
         self.assertEqual(translations['Catalonia'], 'Catalunya')
 
     def test_getLegend(self):
-        data = loadMapData()
         self.assertNotEqual(len(data.getLegend()), '')
 
     def test_getTemplate_dummyCa(self):

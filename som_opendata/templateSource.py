@@ -8,7 +8,7 @@ class TemplateSource(object):
         self.translations = translations
         self.legend = legend
 
-    def getTemplate(self, geolevel):
+    def getRawTemplate(self, geolevel):
         return self.templates[geolevel]
 
     def getStyle(self, geolevel):
