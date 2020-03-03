@@ -20,3 +20,7 @@ class TemplateSource_Test(unittest.TestCase):
         translations = data.translations['ca']
         self.assertEqual(len(translations),68)
         self.assertEqual(translations['Catalonia'], 'Catalunya')
+
+    def test_getLegend(self):
+        data = loadMapData()
+        self.assertNotEqual(len(data.getLegend()), '')
