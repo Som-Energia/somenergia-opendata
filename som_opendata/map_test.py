@@ -265,8 +265,6 @@ def getBlobInfo(binaryBlob):
             'format': img.format,
             'isAnimation': img.animation,
             'numFrames': len(img.sequence),
-            'height': img.height,
-            'width': img.width,
             })
 
     return result
@@ -1017,8 +1015,6 @@ class Map_Test(unittest.TestCase):
         self.assertNsEqual(getBlobInfo(img), """\
             format: GIF
             isAnimation: true
-            width: 455
-            height: 284
             numFrames: 2
         """)
 
@@ -1030,8 +1026,6 @@ class Map_Test(unittest.TestCase):
         self.assertNsEqual(getBlobInfo(img), """\
             format: GIF
             isAnimation: false
-            width: 455
-            height: 284
             numFrames: 1
         """)
 
@@ -1041,8 +1035,6 @@ class Map_Test(unittest.TestCase):
         self.assertNsEqual(result, """\
             format: GIF
             isAnimation: true
-            width: 609
-            height: 434
             numFrames: 2
         """)
 
