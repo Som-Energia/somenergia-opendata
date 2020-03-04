@@ -18,7 +18,7 @@ from .map_test import getBlobInfo
 
 
 source = loadCsvSource(relativePath='../testData/data')
-mapData = loadMapData()
+mapTemplateSource = loadMapData()
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
@@ -72,8 +72,9 @@ class Api_Test(unittest.TestCase):
         self.client = self.app.test_client()
         self.b2bdatapath = 'b2bdata'
         self.oldsource = api.source
+        self.oldMapSource = api.mapTemplateSource
         api.source = source
-        api.mapData = mapData
+        api.mapTemplateSource = mapTemplateSource
         api.firstDate = '2010-01-01'
         self.babel = Babel()
         self.babel.init_app(self.app)
