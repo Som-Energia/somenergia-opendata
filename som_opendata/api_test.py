@@ -323,8 +323,6 @@ class Api_Test(unittest.TestCase):
         self.assertNsEqual(getBlobInfo(r.data), """\
             format: GIF
             isAnimation: true
-            width: 609
-            height: 434
             numFrames: 4
         """)
 
