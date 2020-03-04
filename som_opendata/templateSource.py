@@ -17,6 +17,9 @@ class TemplateSource(object):
         if geolevel not in self.templates.keys():
             raise ValueError("Template for geolevel {} not found".format(geolevel))
 
+        if lang not in self.templates[geolevel].keys():
+            raise ValueError("Template in {} not found".format(lang))
+
         return self.templates[geolevel][lang]
 
 
