@@ -7,6 +7,7 @@ install:
 - touch dbconfig.py
 - ./setup.py develop
 - pip install coveralls
+- pybabel compile -f -d som_opendata/translations
 script:
 - nosetests
 after_success:
