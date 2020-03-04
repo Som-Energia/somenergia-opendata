@@ -11,7 +11,9 @@ class TemplateSource(object):
     def getLegend(self):
         return self.legend
 
-    def getTemplate(self, geolevel, lang='en'):
+    def getTemplate(self, geolevel, lang='en', fake=False):
+        if fake:
+            geolevel = 'dummy'
         return self.templates[geolevel][lang]
 
 
