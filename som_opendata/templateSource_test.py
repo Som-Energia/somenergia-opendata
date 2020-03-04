@@ -76,3 +76,10 @@ u"""<svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="30
         self.assertTrue(en)
         self.assertTrue(ca)
         self.assertNotEqual(en, ca)
+
+    def test_getTemplate_wrongGeolevel(self):
+        with self.assertRaises(ValueError) as context:
+            data.getTemplate('jupiter')
+        self.assertEqual("Template for geolevel jupiter not found",
+            str(context.exception)
+        )

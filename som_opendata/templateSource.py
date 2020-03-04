@@ -14,6 +14,9 @@ class TemplateSource(object):
     def getTemplate(self, geolevel, lang='en', fake=False):
         if fake:
             geolevel = 'dummy'
+        if geolevel not in self.templates.keys():
+            raise ValueError("Template for geolevel {} not found".format(geolevel))
+
         return self.templates[geolevel][lang]
 
 
