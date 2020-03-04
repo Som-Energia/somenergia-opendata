@@ -24,7 +24,7 @@ from future.utils import iteritems
 from pathlib2 import Path
 from .distribution import parse_tsv, tuples2objects
 
-source = loadCsvSource(relativePath='../tests/data')
+source = loadCsvSource(relativePath='../testData/data')
 translations = ns.loads(Path('maps/translations/en').read_text(encoding='utf8'))
 
 dummyTemplate="""\

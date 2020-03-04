@@ -10,14 +10,14 @@ from .common import (
     register_converters,
     register_handlers,
     )
-from .map_utils import loadMapData
+from .templateSource import loadMapData
 from .csvSource import loadCsvSource
 from . import __version__
 from flask_babel import _, Babel, get_locale
 from .map_test import getBlobInfo
 
 
-source = loadCsvSource(relativePath='../tests/data')
+source = loadCsvSource(relativePath='../testData/data')
 mapData = loadMapData()
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
