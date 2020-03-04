@@ -2,7 +2,6 @@ import unittest
 from .map_utils import (
     validateImplementation,
     ValidateImplementationMap,
-    loadMapData,
 )
 from yamlns import namespace as ns
 
@@ -33,14 +32,3 @@ class MapUtils_Test(unittest.TestCase):
         self.assertEqual(ctx.exception.code, 400)
         self.assertEqual(ctx.exception.description,
             'Not implemented relativemetric \'dogs\' try with [\'population\', None]')
-
-
-    def test_loadMapData(self):
-        result = loadMapData()
-        self.assertTrue(result.ccaa.template)
-        self.assertTrue(result.state.template)
-        self.assertTrue(result.legend)
-        self.assertTrue(result.state.style)
-        self.assertFalse(result.ccaa.style)
-        self.assertEqual(len(result.translations), 5)
-        self.assertTrue(result.translations.ca)
