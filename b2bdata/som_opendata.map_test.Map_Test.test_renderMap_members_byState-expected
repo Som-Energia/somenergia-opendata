@@ -1,5 +1,5 @@
 <svg height="458" version="1.0" viewBox="0 0 644 458" width="644" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <style>
+  {<style>
   @media screen and (min-device-width : 1025px) {
       [id^='number'] {
         opacity:0;
@@ -15,7 +15,7 @@
     [id^='provincia']:hover text{
       fill:black;
     }
-</style>
+</style>}
   <path d="M1 1h641v456H1V1z" fill="#cacaca" opacity=".97"/>
   <path d="M324.587 115.069l.241.481v.48l-.241.24.241-.48v-.24h-.241v-.24z" fill="#ccc"/>
   <path d="M290.508 296.762v-.72l-.48.241.24-.721-.24-.239-1.2-.481v-.24l.96.24.24.241v.24l.24-.24h.24v-.241l.24.241-.24.24v.719l.24.72h.24v.24l-.24-.24h0z" fill="none" stroke="#ccc" stroke-linecap="square" stroke-miterlimit="10" stroke-width=".48"/>
