@@ -11,8 +11,11 @@ from .oldapi import (
     contractsSeries,
     membersSparse,
     )
+import os
+
 
 #@unittest.skipIf(True, "No database connection")
+@unittest.skipIf("TRAVIS" in os.environ, "requires acces to db")
 class Queries_Test(unittest.TestCase):
 
     def setUp(self):
