@@ -16,6 +16,8 @@ ccaaData = '\n'.join([headers,catalunya,andalusia])
 
 class TsvRelativeMetricSource_Test(unittest.TestCase):
 
+    from somutils.testutils import assertNsEqual
+
     def test_getFieldBy_nameByCode(self):
         data= tuples2objects(parse_tsv(ccaaData))
         result = getFieldBy(data=data, field='name', by='code')
@@ -34,5 +36,5 @@ class TsvRelativeMetricSource_Test(unittest.TestCase):
     def test_getNamesByCode(self):
         data = ns(population=ns(ccaa=ccaaData))
         result = TsvRelativeMetricSource(data)
-        self.assertEqual(result.getNamesByCode(),
-            ns(population=ns(ccaa={'01': 'Andalucia', '09': 'Catalunya'})))
+        self.assertNsEqual(result.getNamesByCode('population', 'ccaa'),
+            ns({'01': 'Andalucia', '09': 'Catalunya'}))

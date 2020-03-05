@@ -18,8 +18,9 @@ class TsvRelativeMetricSource(object):
             for geolevel, item in iteritems(data):
                 self.names[metric][geolevel] = getFieldBy(data=dataToObjects[metric][geolevel], field='name', by='code')
 
-    def getNamesByCode(self):
-        return self.names
+    def getNamesByCode(self, metric, geolevel):
+        return self.names[metric][geolevel]
+
 
 import os.path
 import glob
