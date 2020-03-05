@@ -3,7 +3,23 @@ from .distribution import parse_tsv, tuples2objects
 from future.utils import iteritems
 
 class TsvRelativeMetricSource(object):
-    pass
+
+    def __init__(self, data):
+        self.metrics = [metric for metric in data.keys()]
+        dataToObjects= ns()
+        for metric in self.metrics:
+            dataToObjects[metric] = ns()
+            for geolevel in data[metric]:
+                dataToObjects[metric][geolevel]= tuples2objects(parse_tsv(data[metric][geolevel]))
+
+        self.names = ns()
+        for metric, data in iteritems(dataToObjects):
+            self.names[metric]=ns()
+            for geolevel, item in iteritems(data):
+                self.names[metric][geolevel] = getFieldBy(data=dataToObjects[metric][geolevel], field='name', by='code')
+
+    def getNamesByCode(self):
+        return self.names
 
 import os.path
 import glob
