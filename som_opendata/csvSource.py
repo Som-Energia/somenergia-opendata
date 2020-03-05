@@ -35,11 +35,9 @@ class CsvSource(object):
                 key: [field for field in value[0].keys() if isField(field)]
                 })
         self.lastDay= ns()
-        self.countLength = ns()
         for key, value in fieldNames.items():
-            self.countLength.update({key: len(value)})
             self.lastDay.update({
-                key: field2date(sorted(fieldNames[key])[self.countLength[key]-1])
+                key: field2date(sorted(fieldNames[key])[-1])
             })
 
 
