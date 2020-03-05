@@ -1,6 +1,5 @@
 from yamlns import namespace as ns
-from future.utils import iteritems
-from collections import defaultdict
+
 
 class TemplateSource(object):
 
