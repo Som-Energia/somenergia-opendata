@@ -53,16 +53,16 @@ def maxValue(data, geolevel, frame):
 def fillLegend(legendTemplate, scale, colors, isRelative):
     result = dict()
     for num in [0, 25, 50, 75, 100]:
-        value = int(scale.inverse(num / 100))
+        value = int(scale.inverse(num / 100.))
         if not isRelative:
-            value = int(round(value, -1))
+            #TODO: remove - 0.001 when breaking up with python2
+            value = int(round((value - 0.001), -1))
         if isRelative and (num == 25 or num == 75):
             value = ''
         result.update({
             'legendNumber_{}'.format(num): value,
-            'legendColor_{}'.format(num): colors(num / 100)
+            'legendColor_{}'.format(num): colors(num / 100.)
         })
-
     return legendTemplate.format(**result)
 
 
@@ -146,7 +146,7 @@ def fillMap(data, template, legendTemplate, geolevel, title,
             frame=0,
             scale=scale
         )
-        return template.format(**dataDict, legend=legend)
+        return template.format(**dict(dataDict, legend=legend))
 
 
 
@@ -164,7 +164,7 @@ def toPopulationRelative(data, geolevel, population, perValue=10000):
         for code, region in iterateLevel(data, geolevel):
             if code == 'None':
                 continue
-            region["values"][index] = region["values"][index]*perValue / populationDict[code]
+            region["values"][index] = region["values"][index]*float(perValue) / populationDict[code]
 
 
 def createGif(frameQuantity, data, template, legend, geolevel, title, colors, scale, subtitle='', locations=[], isRelative=False):
@@ -184,7 +184,7 @@ def createGif(frameQuantity, data, template, legend, geolevel, title, colors, sc
                 frame=frame,
                 scale=scale
             )
-            svg = template.format(**dataDict, legend=legend)
+            svg = template.format(**dict(dataDict, legend=legend))
             with Image(blob=svg.encode('utf8'), format='svg', width=500, height=400) as frame:
                 gif.sequence.append(frame)
                 with gif.sequence[-1] as frame:
