@@ -73,6 +73,7 @@ class Api_Test(unittest.TestCase):
         self.b2bdatapath = 'b2bdata'
         self.oldsource = api.source
         self.oldMapSource = api.mapTemplateSource
+        self.oldFirstDate = api.firstDate
         api.source = source
         api.mapTemplateSource = mapTemplateSource
         api.firstDate = '2010-01-01'
@@ -88,6 +89,8 @@ class Api_Test(unittest.TestCase):
 
     def tearDown(self):
         api.source = self.oldsource
+        api.mapTemplateSource = self.oldMapSource
+        api.firstDate = self.oldFirstDate
 
     def get(self, uri, *args, **kwds):
         return self.client.get(uri,*args,**kwds)
