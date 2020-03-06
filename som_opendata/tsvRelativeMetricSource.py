@@ -2,27 +2,33 @@ from yamlns import namespace as ns
 from .distribution import parse_tsv, tuples2objects
 from future.utils import iteritems
 
+
 class TsvRelativeMetricSource(object):
 
     def __init__(self, data):
         self.metrics = [metric for metric in data.keys()]
-        dataToObjects= ns()
+        dataToObjects = ns()
         for metric in self.metrics:
             dataToObjects[metric] = ns()
             for geolevel in data[metric]:
-                dataToObjects[metric][geolevel]= tuples2objects(parse_tsv(data[metric][geolevel]))
+                dataToObjects[metric][geolevel] = \
+                    tuples2objects(parse_tsv(data[metric][geolevel]))
 
         self.values = ns()
         for metric, data in iteritems(dataToObjects):
-            self.values[metric]=ns()
+            self.values[metric] = ns()
             for geolevel, item in iteritems(data):
-                self.values[metric][geolevel] = getFieldBy(data=dataToObjects[metric][geolevel], field='value', by='code')
+                self.values[metric][geolevel] = \
+                    getFieldBy(
+                        field='value',
+                        by='code',
+                        data=dataToObjects[metric][geolevel]
+                    )
         self.dataObjects = dataToObjects
-
 
     def getValuesByCode(self, metric, geolevel):
 
-        self.validateMetricGeolevel(metric,geolevel)
+        self.validateMetricGeolevel(metric, geolevel)
         return self.values[metric][geolevel]
 
     def getDataObjects(self, metric, geolevel):
@@ -35,15 +41,16 @@ class TsvRelativeMetricSource(object):
             raise ValueError("Geolevel {} not found for {}".format(geolevel, metric))
 
 
-import os.path
-import glob
-from pathlib2 import Path
-
 def getFieldBy(field, by, data):
     result = ns()
     for item in data:
         result.update({item[by]: item[field]})
     return result
+
+
+import os.path
+import glob
+from pathlib2 import Path
 
 
 def loadTsvRelativeMetric(relativePath='../data/relativeMetrics'):
