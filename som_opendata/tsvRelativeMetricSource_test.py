@@ -46,17 +46,22 @@ class TsvRelativeMetricSource_Test(unittest.TestCase):
 
     def test_getDataObjects(self):
         data = ns(population=ns(ccaa='\n'.join([headers, catalunya])))
-        result = TsvRelativeMetricSource(data).getDataObjects('population', 'ccaa')
+        result = TsvRelativeMetricSource(data).getDataObjects(metric='population', geolevel='ccaa')
         self.assertEqual(
             result,
             [ns(code='09', name='Catalunya', population='7416237')]
         )
 
+    def test_getCodesByGeolevel(self):
+        data = ns(population=ns(ccaa=ccaaData))
+        result = TsvRelativeMetricSource(data).getCodesByGeolevel(geolevel='ccaa')
+        self.assertListEqual(sorted(result), ['01', '09'])
+
     def test_validateMetricGeolevel_missingMetric(self):
         src = ns(population=ns(ccaa='\n'.join([headers, catalunya])))
         data = TsvRelativeMetricSource(src)
         with self.assertRaises(ValueError) as context:
-            data.validateMetricGeolevel('cows', 'ccaa')
+            data.validateMetricGeolevel(metric='cows', geolevel='ccaa')
         self.assertEqual("Relative metric cows not found",
             str(context.exception)
         )
@@ -65,7 +70,7 @@ class TsvRelativeMetricSource_Test(unittest.TestCase):
         src = ns(population=ns(ccaa='\n'.join([headers, catalunya])))
         data = TsvRelativeMetricSource(src)
         with self.assertRaises(ValueError) as context:
-            data.validateMetricGeolevel('population', 'jupiter')
+            data.validateMetricGeolevel(metric='population', geolevel='jupiter')
         self.assertEqual("Geolevel jupiter not found for population",
             str(context.exception)
         )
@@ -73,5 +78,5 @@ class TsvRelativeMetricSource_Test(unittest.TestCase):
     def test_loadTsvRelativeMetric(self):
         result = loadTsvRelativeMetric()
         self.assertTrue(result)
-        self.assertEqual(len(result.getDataObjects('population', 'ccaa')), 20)
+        self.assertEqual(len(result.getDataObjects(metric='population', geolevel='ccaa')), 20)
         self.assertEqual(len(result.getDataObjects('population', 'state')), 53)

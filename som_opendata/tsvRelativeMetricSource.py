@@ -28,13 +28,17 @@ class TsvRelativeMetricSource(object):
 
     def getValuesByCode(self, geolevel, metric='population'):
 
-        self.validateMetricGeolevel(metric, geolevel)
+        self.validateMetricGeolevel(metric=metric, geolevel=geolevel)
         return self.values[metric][geolevel]
 
     def getDataObjects(self, metric, geolevel):
         return self.dataObjects[metric][geolevel]
 
-    def validateMetricGeolevel(self, metric, geolevel):
+    def getCodesByGeolevel(self, geolevel):
+        self.validateMetricGeolevel(geolevel=geolevel)
+        return list(self.values['population'][geolevel].keys())
+
+    def validateMetricGeolevel(self, geolevel, metric='population'):
         if not self.values.get(metric):
             raise ValueError("Relative metric {} not found".format(metric))
         if not self.values[metric].get(geolevel):
