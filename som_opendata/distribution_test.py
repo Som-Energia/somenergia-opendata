@@ -8,7 +8,7 @@ from .distribution import (
     parse_tsv,
     tuples2objects,
     aggregate,
-    state_dates,
+    headerDates,
     locationFilter,
     validateStringDate,
     includedDates,
@@ -340,13 +340,13 @@ class Distribution_Test(unittest.TestCase):
             """)
 
 
-    def test__aggregate__1line_requestedDates(self):
+    def test__aggregate__1line_dates(self):
         data = u'\n'.join([
             headers+'\tcount_2018_02_01',
             data_Adra+'\t3',
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList, 'city', requestedDates=['2018-01-01'])
+        r = aggregate(objectList, 'city', dates=['2018-01-01'])
         self.assertNsEqual(r,"""\
             dates:
             - 2018-01-01
@@ -370,16 +370,16 @@ class Distribution_Test(unittest.TestCase):
             """)
 
 
-    def test_state_dates_1date(self):
+    def test_headerDates_severalDates(self):
         data = u'\n'.join([
             headers+'\tcount_2018_02_01',
             data_Adra+'\t3',
         ])
         data = tuples2objects(parse_tsv(data))
-        r = state_dates(data[0])
+        r = headerDates(data[0])
         self.assertEqual(r, [
-            isoDate("20180101"),
-            isoDate("20180201"),
+            "2018-01-01",
+            "2018-02-01",
         ])
 
     @unittest.skipIf(skipSlow, 'test lent')

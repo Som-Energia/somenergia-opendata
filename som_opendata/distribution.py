@@ -39,31 +39,30 @@ def tuples2objects(tuples):
         ]
 
 
-def state_dates(entry):
+def headerDates(entry):
     """
         Returns the dates included in the entry
     """
     return [
-        isoDate(field2date(k))
+        field2date(k)
         for k in entry.keys()
         if isField(k)
         ]
 
 
-def aggregate(entries, detail='world', requestedDates=None):
+def aggregate(entries, detail='world', dates=None):
     """
         Aggregates a list of entries by geographical scopes:
         Country, CCAA, state, city.
     """
     if not entries: return []
-    if requestedDates:
-        dates = [isoDate(d) for d in requestedDates]
-    else:
-        entry = entries[0]
-        dates = state_dates(entry)
+
+    if not dates:
+        dates = headerDates(entries[0])
+
     result = ns ()
-    result.dates = dates
-    dateFields = [date2field(date.isoDate) for date in result.dates]
+    result.dates = [isoDate(d) for d in dates]
+    dateFields = [date2field(date) for date in dates]
     result['values'] = [0] * len(dates)
 
     for entry in entries:
