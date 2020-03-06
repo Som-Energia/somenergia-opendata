@@ -203,20 +203,15 @@ def getNiceDivisor(population):
     return niceFloorValue(currentMin)
 
 
-def renderMap(source, metric, date, geolevel, template, isRelative=None, legendTemplate=''):
+def renderMap(source, metric, date, geolevel, template, locationsCodes, relativeMetricValues={}, legendTemplate=''):
     filtered_objects = source.get(metric, date, [])
     data = aggregate(filtered_objects, geolevel, date)
 
-    locationContent = Path('maps/population_{}.tsv'.format(geolevel)).read_text(encoding='utf8')
-    populationPerLocation = tuples2objects(parse_tsv(locationContent))
-
-    locations = [location.code for location in populationPerLocation]
-
     subtitle = ''
 
-    if isRelative:
-        perValue = getNiceDivisor(populationPerLocation)
-        toPopulationRelative(data, geolevel, populationPerLocation, perValue)
+    if relativeMetricValues:
+        perValue = getNiceDivisor(relativeMetricValues)
+        toPopulationRelative(data=data, geolevel=geolevel, perValue=perValue, values=relativeMetricValues)
         subtitle = _("per %(num)s population",num="{:,}".format(perValue).replace(',','.'))
 
     template = template or Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
@@ -229,9 +224,9 @@ def renderMap(source, metric, date, geolevel, template, isRelative=None, legendT
         legendTemplate=legendTemplate,
         title=metric.title(),
         subtitle=subtitle,
-        locations=locations,
+        locations=locationsCodes,
         geolevel=geolevel,
-        isRelative=isRelative,
+        isRelative=bool(relativeMetricValues),
         frameQuantity=len(date),
     )
 

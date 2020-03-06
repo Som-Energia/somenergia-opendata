@@ -521,7 +521,7 @@ class Map_Test(unittest.TestCase):
                 data_Adra,
                 ])
             )
-        result = renderMap(source, 'members', ['2018-01-01'], template=dummyTemplate, geolevel='dummy')
+        result = renderMap(source, 'members', ['2018-01-01'], template=dummyTemplate, geolevel='dummy', locationsCodes=['01','09'])
 
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -546,7 +546,7 @@ class Map_Test(unittest.TestCase):
                 data_Adra,
                 ])
             )
-        result = renderMap(source, 'members', ['2018-01-01'], template=dummyTemplate, geolevel='dummy')
+        result = renderMap(source, 'members', ['2018-01-01'], template=dummyTemplate, geolevel='dummy', locationsCodes=['01','09'])
 
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -564,13 +564,15 @@ class Map_Test(unittest.TestCase):
 """)
 
     def test_renderMap_members(self):
+        locations = relativeData.getCodesByGeolevel('ccaa')
         template = mapTemplateSource.getTemplate(geolevel='ccaa', lang='en')
-        result = renderMap(source, 'members', ['2019-01-01'], template=template, geolevel='ccaa')
+        result = renderMap(source, 'members', ['2019-01-01'], template=template, geolevel='ccaa', locationsCodes=locations)
         self.assertB2BEqual(result)
 
     def test_renderMap_contracts(self):
+        locations = relativeData.getCodesByGeolevel('ccaa')
         template = mapTemplateSource.getTemplate(geolevel='ccaa', lang='en')
-        result = renderMap(source, 'contracts', ['2019-01-01'], geolevel='ccaa', template=template)
+        result = renderMap(source, 'contracts', ['2019-01-01'], geolevel='ccaa', template=template, locationsCodes=locations)
         self.assertB2BEqual(result)
 
     def test_dataToTemplateDict_singleState(self):
@@ -652,8 +654,9 @@ class Map_Test(unittest.TestCase):
         """)
 
     def test_renderMap_members_byState(self):
+        locations = relativeData.getCodesByGeolevel('state')
         template = mapTemplateSource.getTemplate(geolevel='state', lang='en')
-        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', template=template)
+        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', template=template, locationsCodes=locations)
         self.assertB2BEqual(result)
 
     def test_maxValue_oneCCAA(self):
@@ -696,7 +699,7 @@ class Map_Test(unittest.TestCase):
                     name: Catalunya
                     values: [20, 0]
             """)
-        color = Gradient('#e0ecbb','#384413')
+        color = Gradient('#e0ecbb', '#384413')
         scale = LogScale(higher=500)
         result = dataToTemplateDict(title="un títol", subtitle="un subtítol", data=data, colors=color, frame=1, scale=scale)
 
@@ -950,20 +953,22 @@ class Map_Test(unittest.TestCase):
                 data_Adra,
                 ])
             )
-
-        result = renderMap(source, 'members', ['2018-01-01'], template=dummyTemplate, geolevel='dummy', isRelative=True) 
+        populationValues = {'01': 8388875, '09': 7416237}
+        result = renderMap(source, 'members', ['2018-01-01'],
+                template=dummyTemplate, geolevel='dummy',
+                locationsCodes=['01','09'], relativeMetricValues=populationValues)
 
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: Members</text>
-  <text y="60" x="170" style="text-anchor:middle">Subtitle: per 10.000 population</text>
+  <text y="60" x="170" style="text-anchor:middle">Subtitle: per 5.000.000 population</text>
   <text y="80" x="170" style="text-anchor:middle">Year: 2018</text>
   <text y="100" x="170" style="text-anchor:middle">Month: January</text>
-  <circle cy="180" cx="100" r="60" fill="#bcd66c"/>
-  <text y="180" x="100" style="text-anchor:middle">2,0</text>
+  <circle cy="180" cx="100" r="60" fill="#d9e8ac"/>
+  <text y="180" x="100" style="text-anchor:middle">1,2</text>
   <text y="200" x="100" style="text-anchor:middle"></text>
-  <circle cy="180" cx="240" r="60" fill="#384413"/>
-  <text y="180" x="240" style="text-anchor:middle">10,0</text>
+  <circle cy="180" cx="240" r="60" fill="#54671d"/>
+  <text y="180" x="240" style="text-anchor:middle">13,5</text>
   <text y="200" x="240" style="text-anchor:middle"></text>
 </svg>
 """)
@@ -1005,7 +1010,7 @@ class Map_Test(unittest.TestCase):
 
     def test_renderMap_members_givenTemplate(self):
         template = Path('maps/mapTemplate_dummy.svg').read_text(encoding='utf8')
-        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', template=template)
+        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', template=template, locationsCodes=['01','09'])
         self.assertB2BEqual(result)
 
     def test_createGif_manyFrames(self):
@@ -1051,7 +1056,8 @@ class Map_Test(unittest.TestCase):
 
     def test_renderMap_membersRangeDates(self):
         template = mapTemplateSource.getTemplate(geolevel='ccaa', lang='en')
-        img = renderMap(source, 'members', ['2019-01-01','2019-02-01'], geolevel='ccaa', template=template)
+        locations = relativeData.getCodesByGeolevel('ccaa')
+        img = renderMap(source, 'members', ['2019-01-01','2019-02-01'], geolevel='ccaa', template=template, locationsCodes=locations)
         result = getBlobInfo(img)
         self.assertNsEqual(result, """\
             format: GIF
