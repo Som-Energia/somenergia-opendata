@@ -41,10 +41,13 @@ class TsvRelativeMetricSource(object):
             raise ValueError("Geolevel {} not found for {}".format(geolevel, metric))
 
 
-def getFieldBy(field, by, data):
+def getFieldBy(field, by, data, numeric=True):
     result = ns()
     for item in data:
-        result.update({item[by]: item[field]})
+        value = item[field]
+        if numeric:
+            value = int(value)
+        result.update({item[by]: value})
     return result
 
 
