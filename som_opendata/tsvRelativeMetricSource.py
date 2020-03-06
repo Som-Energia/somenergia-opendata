@@ -20,7 +20,7 @@ class TsvRelativeMetricSource(object):
             for geolevel, item in iteritems(data):
                 self.values[metric][geolevel] = \
                     getFieldBy(
-                        field='value',
+                        field=metric,
                         by='code',
                         data=dataToObjects[metric][geolevel]
                     )

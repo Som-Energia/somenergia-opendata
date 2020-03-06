@@ -8,7 +8,7 @@ from .tsvRelativeMetricSource import (
     getFieldBy,
 )
 
-headers = u"code\tname\tvalue"
+headers = u"code\tname\tpopulation"
 catalunya = u"09\tCatalunya\t7416237"
 andalusia = u"01\tAndalucia\t8388875"
 
@@ -26,7 +26,7 @@ class TsvRelativeMetricSource_Test(unittest.TestCase):
 
     def test_getFieldBy_valueByCode(self):
         data = tuples2objects(parse_tsv(ccaaData))
-        result = getFieldBy(data=data, field='value', by='code')
+        result = getFieldBy(data=data, field='population', by='code')
         self.assertEqual(result, {'01': '8388875', '09': '7416237'})
 
     def test_TsvRelativeMetric_metrics(self):
@@ -44,7 +44,7 @@ class TsvRelativeMetricSource_Test(unittest.TestCase):
         result = TsvRelativeMetricSource(data).getDataObjects('population', 'ccaa')
         self.assertEqual(
             result,
-            [ns(code='09', name='Catalunya', value='7416237')]
+            [ns(code='09', name='Catalunya', population='7416237')]
         )
 
     def test_validateMetricGeolevel_missingMetric(self):
@@ -64,3 +64,9 @@ class TsvRelativeMetricSource_Test(unittest.TestCase):
         self.assertEqual("Geolevel jupiter not found for population",
             str(context.exception)
         )
+
+    def test_loadTsvRelativeMetric(self):
+        result = loadTsvRelativeMetric()
+        self.assertTrue(result)
+        self.assertEqual(len(result.getDataObjects('population', 'ccaa')), 20)
+        self.assertEqual(len(result.getDataObjects('population', 'state')), 53)
