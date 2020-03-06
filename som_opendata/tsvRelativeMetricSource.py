@@ -26,7 +26,7 @@ class TsvRelativeMetricSource(object):
                     )
         self.dataObjects = dataToObjects
 
-    def getValuesByCode(self, metric, geolevel):
+    def getValuesByCode(self, geolevel, metric='population'):
 
         self.validateMetricGeolevel(metric, geolevel)
         return self.values[metric][geolevel]
