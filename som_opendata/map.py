@@ -6,6 +6,8 @@ from .distribution import aggregate, parse_tsv, tuples2objects
 from pathlib2 import Path
 from math import log10, floor
 from flask_babel import _
+from wand.image import Image
+
 
 months = ["January", "February", "March", "April",
             "May", "June", "July", "August",
@@ -168,8 +170,6 @@ def toPopulationRelative(data, geolevel, population, perValue=10000):
 
 
 def createGif(frameQuantity, data, template, legend, geolevel, title, colors, scale, subtitle='', locations=[], isRelative=False):
-
-    from wand.image import Image
 
     with Image() as gif:
         for frame in range(frameQuantity):
