@@ -46,3 +46,21 @@ class TsvRelativeMetricSource_Test(unittest.TestCase):
                 result,
                 [ns(code='09', name='Catalunya', value='7416237')]
             )
+
+    def test_validateMetricGeolevel_missingMetric(self):
+        src = ns(population=ns(ccaa='\n'.join([headers, catalunya])))
+        data = TsvRelativeMetricSource(src)
+        with self.assertRaises(ValueError) as context:
+            data.validateMetricGeolevel('cows', 'ccaa')
+        self.assertEqual("Relative metric cows not found",
+            str(context.exception)
+        )
+
+    def test_validateMetricGeolevel_missingGeolevel(self):
+        src = ns(population=ns(ccaa='\n'.join([headers, catalunya])))
+        data = TsvRelativeMetricSource(src)
+        with self.assertRaises(ValueError) as context:
+            data.validateMetricGeolevel('population', 'jupiter')
+        self.assertEqual("Geolevel jupiter not found for population",
+            str(context.exception)
+        )

@@ -21,10 +21,18 @@ class TsvRelativeMetricSource(object):
 
 
     def getValuesByCode(self, metric, geolevel):
+
+        self.validateMetricGeolevel(metric,geolevel)
         return self.values[metric][geolevel]
 
     def getDataObjects(self, metric, geolevel):
         return self.dataObjects[metric][geolevel]
+
+    def validateMetricGeolevel(self, metric, geolevel):
+        if not self.values.get(metric):
+            raise ValueError("Relative metric {} not found".format(metric))
+        if not self.values[metric].get(geolevel):
+            raise ValueError("Geolevel {} not found for {}".format(geolevel, metric))
 
 
 import os.path
