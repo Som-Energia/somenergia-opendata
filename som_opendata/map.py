@@ -1,4 +1,5 @@
 from __future__ import division
+from future.utils import iteritems
 from yamlns import namespace as ns
 from .scale import LinearScale, LogScale
 from .colorscale import Gradient
@@ -164,6 +165,7 @@ def toPopulationRelative(data, geolevel, values=ns(), perValue=10000):
             if code == 'None':
                 continue
             region["values"][index] = region["values"][index]*float(perValue) / populationDict[code]
+
 
 
 def createGif(frameQuantity, data, template, legend, geolevel, title, colors, scale, subtitle='', locations=[], isRelative=False):

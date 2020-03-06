@@ -721,7 +721,7 @@ class Map_Test(unittest.TestCase):
 
         data = ns.loads(singleRegion.dump())
 
-        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        populationValues = relativeData.getValuesByCode(metric='population', geolevel='ccaa')
         toPopulationRelative(data=data, geolevel='ccaa', values=populationValues)
 
         self.assertNsEqual(data, ns.loads("""\
@@ -740,7 +740,7 @@ class Map_Test(unittest.TestCase):
     def test__toPopulationRelative_givenPerValue(self):
 
         data = ns.loads(singleRegion.dump())
-        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        populationValues = relativeData.getValuesByCode(metric='population', geolevel='ccaa')
         toPopulationRelative(data=data, geolevel='ccaa', values=populationValues, perValue=100000)
 
         self.assertNsEqual(data, ns.loads("""\
@@ -759,7 +759,7 @@ class Map_Test(unittest.TestCase):
     def test__toPopulationRelative_manyRegions(self):
 
         data = ns.loads(manyRegions.dump())
-        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        populationValues = relativeData.getValuesByCode(metric='population', geolevel='ccaa')
         toPopulationRelative(data=data, geolevel='ccaa', values=populationValues)
 
         self.assertNsEqual(data, ns.loads("""\
@@ -782,7 +782,7 @@ class Map_Test(unittest.TestCase):
 
         data = ns.loads(noRegion.dump())
 
-        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        populationValues = relativeData.getValuesByCode(metric='population', geolevel='ccaa')
         toPopulationRelative(data=data, geolevel='ccaa', values=populationValues)
 
         self.assertNsEqual(data, ns.loads("""\
@@ -799,7 +799,7 @@ class Map_Test(unittest.TestCase):
 
         data = ns.loads(singleState.dump())
 
-        populationValues = relativeData.getValuesByCode('population', 'state')
+        populationValues = relativeData.getValuesByCode(metric='population', geolevel='state')
         toPopulationRelative(data=data, geolevel='state', values=populationValues)
 
 
@@ -826,7 +826,7 @@ class Map_Test(unittest.TestCase):
 
         data = ns.loads(manyStatesDifferentCCAA.dump())
 
-        populationValues = relativeData.getValuesByCode('population', 'state')
+        populationValues = relativeData.getValuesByCode(metric='population', geolevel='state')
         toPopulationRelative(data=data, geolevel='state', values=populationValues)
 
 
@@ -875,7 +875,7 @@ class Map_Test(unittest.TestCase):
                     values: [20, 0]
             """)
 
-        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        populationValues = relativeData.getValuesByCode(metric='population', geolevel='ccaa')
         toPopulationRelative(data=data, geolevel='ccaa', values=populationValues)
 
         self.assertNsEqual(data, ns.loads("""\
@@ -896,7 +896,7 @@ class Map_Test(unittest.TestCase):
 
     def test_dataToTemplateDict_relativeData(self):
         data = ns.loads(singleRegion.dump())
-        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        populationValues = relativeData.getValuesByCode(metric='population', geolevel='ccaa')
         toPopulationRelative(data=data, geolevel='ccaa', values=populationValues)
         scale = LinearScale(higher=1)
 
@@ -920,7 +920,7 @@ class Map_Test(unittest.TestCase):
 
         self.maxDiff = None
         data = ns.loads(manyRegions.dump())
-        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        populationValues = relativeData.getValuesByCode(metric='population', geolevel='ccaa')
         toPopulationRelative(data=data, geolevel='ccaa', values=populationValues)
 
         result = fillMap(data=data, template=dummyTemplate, legendTemplate="",
@@ -1060,9 +1060,7 @@ class Map_Test(unittest.TestCase):
         """)
 
     def test_getNiceDivisor_(self):
-        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
-        populationData = tuples2objects(parse_tsv(populationContent))
-
-        result = getNiceDivisor(populationData)
+        relativeValues = relativeData.getValuesByCode(geolevel='ccaa')
+        result = getNiceDivisor(relativeValues)
 
         self.assertEqual(result, 50000)
