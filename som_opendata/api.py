@@ -420,7 +420,7 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
     result = renderMap(
         source=api.source,
         metric=metric,
-        date=request_dates,
+        dates=request_dates,
         geolevel=geolevel,
         template=api.mapTemplateSource.getTemplate(geolevel=geolevel, lang=str(get_locale())),
         legendTemplate=api.mapTemplateSource.getLegend(),
