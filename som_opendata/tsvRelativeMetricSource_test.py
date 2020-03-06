@@ -33,8 +33,16 @@ class TsvRelativeMetricSource_Test(unittest.TestCase):
         result = TsvRelativeMetricSource(data)
         self.assertEqual(result.metrics, ['population'])
 
-    def test_getNamesByCode(self):
+    def test_getValuesByCode(self):
         data = ns(population=ns(ccaa=ccaaData))
-        result = TsvRelativeMetricSource(data)
-        self.assertNsEqual(result.getNamesByCode('population', 'ccaa'),
-            ns({'01': 'Andalucia', '09': 'Catalunya'}))
+        result = TsvRelativeMetricSource(data).getValuesByCode('population', 'ccaa')
+        self.assertNsEqual(result,
+            ns({'01': '8388875', '09': '7416237'}))
+
+    def test_getDataObjects(self):
+        data = ns(population=ns(ccaa='\n'.join([headers, catalunya])))
+        result = TsvRelativeMetricSource(data).getDataObjects('population', 'ccaa')
+        self.assertEqual(
+                result,
+                [ns(code='09', name='Catalunya', value='7416237')]
+            )

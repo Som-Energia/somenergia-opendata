@@ -12,14 +12,19 @@ class TsvRelativeMetricSource(object):
             for geolevel in data[metric]:
                 dataToObjects[metric][geolevel]= tuples2objects(parse_tsv(data[metric][geolevel]))
 
-        self.names = ns()
+        self.values = ns()
         for metric, data in iteritems(dataToObjects):
-            self.names[metric]=ns()
+            self.values[metric]=ns()
             for geolevel, item in iteritems(data):
-                self.names[metric][geolevel] = getFieldBy(data=dataToObjects[metric][geolevel], field='name', by='code')
+                self.values[metric][geolevel] = getFieldBy(data=dataToObjects[metric][geolevel], field='value', by='code')
+        self.dataObjects = dataToObjects
 
-    def getNamesByCode(self, metric, geolevel):
-        return self.names[metric][geolevel]
+
+    def getValuesByCode(self, metric, geolevel):
+        return self.values[metric][geolevel]
+
+    def getDataObjects(self, metric, geolevel):
+        return self.dataObjects[metric][geolevel]
 
 
 import os.path
