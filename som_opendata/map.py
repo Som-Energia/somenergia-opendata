@@ -194,8 +194,7 @@ def createGif(frameQuantity, data, template, legend, geolevel, title, colors, sc
 def getNiceDivisor(population):
     from .scale import niceFloorValue
     currentMin = None
-    for location in population:
-        value = int(location.population)
+    for code, value in iteritems(population):
         if not currentMin or value < currentMin:
             currentMin = value
 
