@@ -152,16 +152,13 @@ def fillMap(data, template, legendTemplate, geolevel, title,
 
 
 
-def toPopulationRelative(data, geolevel, population, perValue=10000):
+def toPopulationRelative(data, geolevel, values=ns(), perValue=10000):
 
       # TODO: just for tests
     if geolevel == 'dummy':
         geolevel = 'ccaa'
 
-    populationDict = dict()
-    for location in population:
-        populationDict.update({location.code: int(location.population)})
-
+    populationDict = values
     for index in range(len(data.dates)):
         for code, region in iterateLevel(data, geolevel):
             if code == 'None':

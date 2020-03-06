@@ -23,10 +23,11 @@ from future.utils import iteritems
 from pathlib2 import Path
 from .distribution import parse_tsv, tuples2objects
 from .templateSource import loadMapData
-
+from .tsvRelativeMetricSource import loadTsvRelativeMetric
 
 source = loadCsvSource(relativePath='../testData/data')
 mapTemplateSource = loadMapData()
+relativeData = loadTsvRelativeMetric()
 
 dummyTemplate="""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -720,9 +721,8 @@ class Map_Test(unittest.TestCase):
 
         data = ns.loads(singleRegion.dump())
 
-        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
-        populationData = tuples2objects(parse_tsv(populationContent))
-        toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
+        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        toPopulationRelative(data=data, geolevel='ccaa', values=populationValues)
 
         self.assertNsEqual(data, ns.loads("""\
             dates: [2019-01-01]
@@ -740,10 +740,8 @@ class Map_Test(unittest.TestCase):
     def test__toPopulationRelative_givenPerValue(self):
 
         data = ns.loads(singleRegion.dump())
-
-        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
-        populationData = tuples2objects(parse_tsv(populationContent))
-        toPopulationRelative(data=data, geolevel='ccaa', population=populationData, perValue=100000)
+        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        toPopulationRelative(data=data, geolevel='ccaa', values=populationValues, perValue=100000)
 
         self.assertNsEqual(data, ns.loads("""\
             dates: [2019-01-01]
@@ -761,10 +759,8 @@ class Map_Test(unittest.TestCase):
     def test__toPopulationRelative_manyRegions(self):
 
         data = ns.loads(manyRegions.dump())
-
-        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
-        populationData = tuples2objects(parse_tsv(populationContent))
-        toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
+        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        toPopulationRelative(data=data, geolevel='ccaa', values=populationValues)
 
         self.assertNsEqual(data, ns.loads("""\
             dates: [2019-01-01]
@@ -786,9 +782,8 @@ class Map_Test(unittest.TestCase):
 
         data = ns.loads(noRegion.dump())
 
-        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
-        populationData = tuples2objects(parse_tsv(populationContent))
-        toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
+        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        toPopulationRelative(data=data, geolevel='ccaa', values=populationValues)
 
         self.assertNsEqual(data, ns.loads("""\
             dates: [2019-01-01]
@@ -804,9 +799,9 @@ class Map_Test(unittest.TestCase):
 
         data = ns.loads(singleState.dump())
 
-        populationContent = Path('maps/population_state.tsv').read_text(encoding='utf8')
-        populationData = tuples2objects(parse_tsv(populationContent))
-        toPopulationRelative(data=data, geolevel='state', population=populationData)
+        populationValues = relativeData.getValuesByCode('population', 'state')
+        toPopulationRelative(data=data, geolevel='state', values=populationValues)
+
 
         self.assertNsEqual(data, ns.loads("""\
             dates: [2019-01-01]
@@ -831,9 +826,9 @@ class Map_Test(unittest.TestCase):
 
         data = ns.loads(manyStatesDifferentCCAA.dump())
 
-        populationContent = Path('maps/population_state.tsv').read_text(encoding='utf8')
-        populationData = tuples2objects(parse_tsv(populationContent))
-        toPopulationRelative(data=data, geolevel='state', population=populationData)
+        populationValues = relativeData.getValuesByCode('population', 'state')
+        toPopulationRelative(data=data, geolevel='state', values=populationValues)
+
 
         self.assertNsEqual(data, ns.loads("""\
             dates: [2019-01-01]
@@ -880,9 +875,8 @@ class Map_Test(unittest.TestCase):
                     values: [20, 0]
             """)
 
-        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
-        populationData = tuples2objects(parse_tsv(populationContent))
-        toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
+        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        toPopulationRelative(data=data, geolevel='ccaa', values=populationValues)
 
         self.assertNsEqual(data, ns.loads("""\
             dates: [2019-01-01, 2018-01-01]
@@ -902,9 +896,8 @@ class Map_Test(unittest.TestCase):
 
     def test_dataToTemplateDict_relativeData(self):
         data = ns.loads(singleRegion.dump())
-        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
-        populationData = tuples2objects(parse_tsv(populationContent))
-        toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
+        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        toPopulationRelative(data=data, geolevel='ccaa', values=populationValues)
         scale = LinearScale(higher=1)
 
         result = dataToTemplateDict(data=data, colors=Gradient('#e0ecbb', '#384413'),
@@ -927,9 +920,8 @@ class Map_Test(unittest.TestCase):
 
         self.maxDiff = None
         data = ns.loads(manyRegions.dump())
-        populationContent = Path('maps/population_ccaa.tsv').read_text(encoding='utf8')
-        populationData = tuples2objects(parse_tsv(populationContent))
-        toPopulationRelative(data=data, geolevel='ccaa', population=populationData)
+        populationValues = relativeData.getValuesByCode('population', 'ccaa')
+        toPopulationRelative(data=data, geolevel='ccaa', values=populationValues)
 
         result = fillMap(data=data, template=dummyTemplate, legendTemplate="",
                 title=u"un títol", subtitle=u"un subtítol", geolevel='ccaa', scale='Linear', isRelative=True)
