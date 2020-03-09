@@ -276,7 +276,7 @@ manyStatesDifferentCCAA = ns.loads("""\
                     - 250
     """)
 
-legendTemplate = Path('maps/legend.svg').read_text(encoding='utf8')
+legendTemplate = Path('data/maps/legend.svg').read_text(encoding='utf8')
 
 def getBlobInfo(binaryBlob):
     from wand.image import Image
@@ -295,18 +295,12 @@ class Map_Test(unittest.TestCase):
 
     def setUp(self):
         self.b2bdatapath = 'b2bdata'
-        Path('maps/mapTemplate_dummy.svg').write_text(dummyTemplate, encoding='utf8')
-        population = (
-                'code\tname\tpopulation\n'
-                '01\tAndalucía\t10000\n'
-                '09\tCatalunya\t20000\n'
-            )
-        Path('maps/population_dummy.tsv').write_text(population,encoding='utf8')
+        Path('data/maps/mapTemplates/mapTemplate_dummy.svg').write_text(dummyTemplate, encoding='utf8')
+
         self.maxDiff = None
 
     def tearDown(self):
-        Path('maps/mapTemplate_dummy.svg').unlink()
-        Path('maps/population_dummy.tsv').unlink()
+        Path('data/maps/mapTemplates/mapTemplate_dummy.svg').unlink()
 
     from somutils.testutils import assertNsEqual
 
@@ -566,13 +560,13 @@ class Map_Test(unittest.TestCase):
     def test_renderMap_members(self):
         locations = relativeData.getCodesByGeolevel('ccaa')
         template = mapTemplateSource.getTemplate(geolevel='ccaa', lang='en')
-        result = renderMap(source, 'members', ['2019-01-01'], template=template, geolevel='ccaa', locationsCodes=locations)
+        result = renderMap(source, 'members', ['2019-01-01'], template=template, geolevel='ccaa', locationsCodes=locations, legendTemplate=legendTemplate)
         self.assertB2BEqual(result)
 
     def test_renderMap_contracts(self):
         locations = relativeData.getCodesByGeolevel('ccaa')
         template = mapTemplateSource.getTemplate(geolevel='ccaa', lang='en')
-        result = renderMap(source, 'contracts', ['2019-01-01'], geolevel='ccaa', template=template, locationsCodes=locations)
+        result = renderMap(source, 'contracts', ['2019-01-01'], geolevel='ccaa', template=template, locationsCodes=locations, legendTemplate=legendTemplate)
         self.assertB2BEqual(result)
 
     def test_dataToTemplateDict_singleState(self):
@@ -656,7 +650,7 @@ class Map_Test(unittest.TestCase):
     def test_renderMap_members_byState(self):
         locations = relativeData.getCodesByGeolevel('state')
         template = mapTemplateSource.getTemplate(geolevel='state', lang='en')
-        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', template=template, locationsCodes=locations)
+        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', template=template, locationsCodes=locations, legendTemplate=legendTemplate)
         self.assertB2BEqual(result)
 
     def test_maxValue_oneCCAA(self):
@@ -1009,7 +1003,7 @@ class Map_Test(unittest.TestCase):
         ))
 
     def test_renderMap_members_givenTemplate(self):
-        template = Path('maps/mapTemplate_dummy.svg').read_text(encoding='utf8')
+        template = Path('data/maps/mapTemplates/mapTemplate_dummy.svg').read_text(encoding='utf8')
         result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', template=template, locationsCodes=['01','09'])
         self.assertB2BEqual(result)
 
@@ -1029,7 +1023,7 @@ class Map_Test(unittest.TestCase):
                     name: Catalunya
                     values: [20, 0]
             """)
-        template = Path('maps/mapTemplate_dummy.svg').read_text(encoding='utf8')
+        template = Path('data/maps/mapTemplates/mapTemplate_dummy.svg').read_text(encoding='utf8')
         gradient = Gradient('#e0ecbb', '#384413')
         scale = LogScale(higher=500).nice()
         img = createGif(
@@ -1042,7 +1036,7 @@ class Map_Test(unittest.TestCase):
         """)
 
     def test_createGif_oneFrame(self):
-        template = Path('maps/mapTemplate_dummy.svg').read_text(encoding='utf8')
+        template = Path('data/maps/mapTemplates/mapTemplate_dummy.svg').read_text(encoding='utf8')
         gradient = Gradient('#e0ecbb', '#384413')
         scale = LogScale(higher=143).nice()
         img = createGif(

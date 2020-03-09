@@ -217,7 +217,7 @@ def renderMap(source, metric, date, geolevel, template, locationsCodes, relative
 
     template = template or Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
 
-    legendTemplate = legendTemplate or Path('maps/legend.svg').read_text(encoding='utf8')
+    legendTemplate = legendTemplate
 
     return fillMap(
         data=data,
