@@ -9,6 +9,7 @@ from .common import (
     enable_cors,
     )
 from .templateSource import loadMapData
+from .tsvRelativeMetricSource import loadTsvRelativeMetric
 from flask_babel import Babel
 from flask import request
 
@@ -23,6 +24,7 @@ def create_app():
     app.register_blueprint(api, url_prefix='/v0.2')
     api.source = loadCsvSource()
     api.mapTemplateSource = loadMapData()
+    api.relativeMetricSource = loadTsvRelativeMetric()
     api.firstDate = '2010-01-01'
     app.errors = None
     app.config['LANGUAGES'] = ['en', 'es', 'ca', 'eu', 'gl']
