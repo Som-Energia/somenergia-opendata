@@ -215,10 +215,6 @@ def renderMap(source, metric, date, geolevel, template, locationsCodes, relative
         toPopulationRelative(data=data, geolevel=geolevel, perValue=perValue, values=relativeMetricValues)
         subtitle = _("per %(num)s population",num="{:,}".format(perValue).replace(',','.'))
 
-    template = template or Path('maps/mapTemplate_{}.svg'.format(geolevel)).read_text(encoding='utf8')
-
-    legendTemplate = legendTemplate
-
     return fillMap(
         data=data,
         template=template,
