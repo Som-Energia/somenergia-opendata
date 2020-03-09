@@ -25,7 +25,7 @@ from .distribution import parse_tsv, tuples2objects
 from .templateSource import loadMapData
 from .tsvRelativeMetricSource import loadTsvRelativeMetric
 
-source = loadCsvSource(relativePath='../testData/data')
+source = loadCsvSource(relativePath='../testData/metrics')
 mapTemplateSource = loadMapData()
 relativeData = loadTsvRelativeMetric()
 
