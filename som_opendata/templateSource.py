@@ -28,7 +28,7 @@ import glob
 from pathlib2 import Path
 
 
-def loadMapData(relativePath='../maps'):
+def loadMapData(relativePath='../data/maps'):
     myPath = os.path.abspath(os.path.dirname(__file__))
     dataPath = os.path.join(myPath, relativePath)
     templates = ns()
