@@ -18,7 +18,7 @@ from flask_babel import _, Babel, get_locale
 from .map_test import getBlobInfo
 
 
-source = loadCsvSource(relativePath='../testData/data')
+source = loadCsvSource(relativePath='../testData/metrics')
 mapTemplateSource = loadMapData()
 relativeMetricSource = loadTsvRelativeMetric()
 

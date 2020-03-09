@@ -72,7 +72,7 @@ import dbconfig as config
 import os.path
 import glob
 
-def loadCsvSource(relativePath='../data'):
+def loadCsvSource(relativePath='../data/metrics'):
     myPath = os.path.abspath(os.path.dirname(__file__))
     dataPath = os.path.join(myPath, relativePath)
     datums = ns()
