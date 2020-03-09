@@ -128,15 +128,16 @@ def fillMap(data, template, legendTemplate, geolevel, title,
 
     if frameQuantity > 1:
         return createGif(frameQuantity=frameQuantity,
-                    data=data,
-                    template=template,
-                    geolevel=geolevel,
-                    title=title,
-                    colors=gradient,
-                    scale=scale,
-                    locations=locations,
-                    legend=legend,
-                )
+            data=data,
+            template=template,
+            geolevel=geolevel,
+            title=title,
+            colors=gradient,
+            scale=scale,
+            locations=locations,
+            legend=legend,
+            isRelative=isRelative,
+        )
     else:
         dataDict = dataToTemplateDict(
             data=data,
