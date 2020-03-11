@@ -170,22 +170,24 @@ def toPopulationRelative(data, geolevel, values=ns(), perValue=10000):
 
 
 def createGif(frameQuantity, data, template, legend, geolevel, title, colors, scale, subtitle='', locations=[], isRelative=False):
-
+    svgFrames = []
+    for frame in range(frameQuantity):
+        dataDict = dataToTemplateDict(
+            data=data,
+            colors=colors,
+            title=title,
+            subtitle=subtitle,
+            locations=locations,
+            geolevel=geolevel,
+            isRelative=isRelative,
+            frame=frame,
+            scale=scale
+        )
+        svg = template.format(**dict(dataDict, legend=legend)).encode('utf8')
+        svgFrames.append(svg)
     with Image() as gif:
-        for frame in range(frameQuantity):
-            dataDict = dataToTemplateDict(
-                data=data,
-                colors=colors,
-                title=title,
-                subtitle=subtitle,
-                locations=locations,
-                geolevel=geolevel,
-                isRelative=isRelative,
-                frame=frame,
-                scale=scale
-            )
-            svg = template.format(**dict(dataDict, legend=legend))
-            with Image(blob=svg.encode('utf8'), format='svg', width=500, height=400) as frame:
+        for svg in svgFrames:
+            with Image(blob=svg, format='svg', width=500, height=400) as frame:
                 gif.sequence.append(frame)
                 with gif.sequence[-1] as frame:
                     frame.delay = 50 # centiseconds
