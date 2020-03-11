@@ -384,7 +384,137 @@ def version():
         compat = '0.2.1',
         )
 
+"""
+@apiDefine MapDistribution
 
+
+"""
+
+"""
+@api {get} /v0.2/map/:metric/by/:geolevel/on/:ondate
+
+@apiVersion 0.2.7
+@apiGroup Map
+@apiName Map
+@apiDescription Returns a map that represents the geographical distribution at a given date.
+
+Use the geolevel choose the map detail (ccaa, state).
+Use the filters in the query string to choose the language.
+If no language is specified, the language is chosen using the request headers.
+
+@apiExample Current contracts by CCAA
+    /v0.2/map/contracts/by/ccaa
+@apiExample Members by state on 2018-02-01
+    /v0.2/map/members/by/state/on/2018-02-01
+@apiExample Members by ccaa in Galician
+    /v0.2/map/members/by/ccaa?lang=gl
+
+@apiParam {String="contracts","members"} metric Quantity to aggregate
+@apiParam {String="ccaa","state"} geolevel Geographical detail level
+@apiParam {Date} [ondate=today]  Single date, in iso format
+@apiParam {String="en", "es", "ca", "gl", "eu"} [lang=en] Response language
+
+@apiSuccess {svg} Response Map that represents the geographical distribution at a given date
+
+"""
+
+"""
+@api {get} /v0.2/map/:metric/per/:relativemetric/by/:geolevel/on/:ondate
+
+@apiVersion 0.2.7
+@apiGroup RelativeMap
+@apiName RelativeMap
+@apiDescription Returns a map that represents the relative geographical distribution at a given date.
+
+Use the geolevel choose the map detail (ccaa, state).
+Use the relativemetric to specify the metric to relativize the values by.
+Use the filters in the query string to choose the language.
+If no language is specified, the language is chosen using the request headers.
+
+@apiExample Current contracts per population by CCAA
+    /v0.2/map/contracts/per/population/by/ccaa
+@apiExample Current members per population by state
+    /v0.2/map/members/per/population/by/state
+@apiExample Members per population by CCAA on 2018-02-01
+    /v0.2/map/members/per/population/by/ccaa/on/2018-02-01
+@apiExample Members per population by ccaa in Galician
+    /v0.2/map/members/per/population/by/ccaa?lang=gl
+
+@apiParam {String="contracts","members"} metric Quantity to aggregate
+@apiParam {String="population"} relativemetric Metric to relativize the values by
+@apiParam {String="ccaa","state"} geolevel Geographical detail level
+@apiParam {Date} [ondate=today]  Single date, in iso format
+@apiParam {String="en", "es", "ca", "gl", "eu"} [lang=en] Response language
+
+@apiSuccess {svg} Response Map that represents the relative geographical distribution at a given date
+
+"""
+
+"""
+@api {get} /v0.2/map/:metric/by/:geolevel/:frequency/from/:fromdate/to/:todate
+
+@apiVersion 0.2.2
+@apiGroup MapSeries
+@apiName MapSeries
+@apiDescription Returns a map animation that represents the temporal evolution of the geographical distribution.
+
+Use the geolevel choose the map detail (ccaa, state).
+Use the filters in the query string to choose the language.
+If no language is specified, the language is chosen using the request headers.
+
+@apiExample Evolution of all contracts by CCAA every year
+    /v0.2/map/contracts/by/ccaa/yearly
+@apiExample Monthly evolution of members by state on 2018
+    /v0.2/map/members/by/state/monthly/from/2018-01-01/to/2019-01-01
+@apiExample Monthly evolution of members by CCAA from 2018-01-01
+    /v0.2/map/members/by/ccaa/monthly/from/2018-01-01
+@apiExample Members by ccaa every year in Galician
+    /v0.2/map/members/by/ccaa/yearly?lang=gl
+
+
+@apiParam {String="contracts","members"} metric Quantity to aggregate
+@apiParam {String="ccaa","state"} geolevel Geographical detail level
+@apiParam {String="yearly","monthly"} frequency  Indicate a date series (only first day of the month, year...)
+@apiParam {Date} [fromdate=2012-01-01]  Earlier date to show, in iso format
+@apiParam {Date} [todate=2020-02-01]  Later date to show, in iso format
+@apiParam {String="en", "es", "ca", "gl", "eu"} [lang=en] Response language
+
+@apiSuccess {GIF} Response Map animation that represents the temporal evolution of the geographical distribution
+
+"""
+"""
+@api {get} /v0.2/map/:metric/per/:relativemetric/by/:geolevel/:frequency/from/:fromdate/to/:todate
+
+@apiVersion 0.2.2
+@apiGroup RelativeMapSeries
+@apiName RelativeMapSeries
+@apiDescription Returns a map animation that represents the temporal evolution of the relative geographical distribution.
+
+Use the geolevel choose the map detail (ccaa, state).
+Use the relativemetric to specify the metric to relativize the values by.
+Use the filters in the query string to choose the language.
+If no language is specified, the language is chosen using the request headers.
+
+@apiExample Evolution of all contracts per population by CCAA every year
+    /v0.2/map/contracts/per/population/by/ccaa/yearly
+@apiExample Monthly evolution of members per population by state on 2018
+    /v0.2/map/members/per/population/by/state/monthly/from/2018-01-01/to/2019-01-01
+@apiExample Monthly evolution of members per population by CCAA from 2018-01-01
+    /v0.2/map/members/per/population/by/ccaa/monthly/from/2018-01-01
+@apiExample Members per population by ccaa every year in Galician
+    /v0.2/map/members/per/population/by/ccaa/yearly?lang=gl
+
+
+@apiParam {String="contracts","members"} metric Quantity to aggregate
+@apiParam {String="ccaa","state"} geolevel Geographical detail level
+@apiParam {String="yearly","monthly"} frequency  Indicate a date series (only first day of the month, year...)
+@apiParam {Date} [fromdate=2012-01-01]  Earlier date to show, in iso format
+@apiParam {Date} [todate=2020-02-01]  Later date to show, in iso format
+@apiParam {String="en", "es", "ca", "gl", "eu"} [lang=en] Response language
+
+@apiSuccess {GIF} Response Map animation that represents the temporal evolution of the geographical distribution
+
+"""
 
 @api.route('/map/<string:metric>')
 @api.route('/map/<string:metric>/on/<isodate:ondate>')
