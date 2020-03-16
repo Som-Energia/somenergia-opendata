@@ -320,6 +320,457 @@
   },
   {
     "type": "get",
+    "url": "/v0.2/map/:metric/by/:geolevel/on/:ondate",
+    "title": "",
+    "version": "0.2.7",
+    "group": "Map",
+    "name": "Map",
+    "description": "<p>Returns a map that represents the geographical distribution at a given date.</p> <p>Use the geolevel choose the map detail (ccaa, state). Use the filters in the query string to choose the language. If no language is specified, the language is chosen using the request headers.</p>",
+    "examples": [
+      {
+        "title": "Current contracts by CCAA",
+        "content": "/v0.2/map/contracts/by/ccaa",
+        "type": "json"
+      },
+      {
+        "title": "Members by state on 2018-02-01",
+        "content": "/v0.2/map/members/by/state/on/2018-02-01",
+        "type": "json"
+      },
+      {
+        "title": "Members by ccaa in Galician",
+        "content": "/v0.2/map/members/by/ccaa?lang=gl",
+        "type": "json"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"contracts\"",
+              "\"members\""
+            ],
+            "optional": false,
+            "field": "metric",
+            "description": "<p>Quantity to aggregate</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"ccaa\"",
+              "\"state\""
+            ],
+            "optional": false,
+            "field": "geolevel",
+            "description": "<p>Geographical detail level</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": true,
+            "field": "ondate",
+            "defaultValue": "today",
+            "description": "<p>Single date, in iso format</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"en\"",
+              "\"es\"",
+              "\"ca\"",
+              "\"gl\"",
+              "\"eu\""
+            ],
+            "optional": true,
+            "field": "lang",
+            "defaultValue": "en",
+            "description": "<p>Response language</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "svg",
+            "optional": false,
+            "field": "Response",
+            "description": "<p>Map that represents the geographical distribution at a given date</p>"
+          }
+        ]
+      }
+    },
+    "filename": "som_opendata/api.py",
+    "groupTitle": "Map",
+    "sampleRequest": [
+      {
+        "url": "https://opendata.somenergia.coop/v0.2/map/:metric/by/:geolevel/on/:ondate"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v0.2/map/:metric/by/:geolevel/:frequency/from/:fromdate/to/:todate",
+    "title": "",
+    "version": "0.2.2",
+    "group": "MapSeries",
+    "name": "MapSeries",
+    "description": "<p>Returns a map animation that represents the temporal evolution of the geographical distribution.</p> <p>Use the geolevel choose the map detail (ccaa, state). Use the filters in the query string to choose the language. If no language is specified, the language is chosen using the request headers.</p>",
+    "examples": [
+      {
+        "title": "Evolution of all contracts by CCAA every year",
+        "content": "/v0.2/map/contracts/by/ccaa/yearly",
+        "type": "json"
+      },
+      {
+        "title": "Monthly evolution of members by state on 2018",
+        "content": "/v0.2/map/members/by/state/monthly/from/2018-01-01/to/2019-01-01",
+        "type": "json"
+      },
+      {
+        "title": "Monthly evolution of members by CCAA from 2018-01-01",
+        "content": "/v0.2/map/members/by/ccaa/monthly/from/2018-01-01",
+        "type": "json"
+      },
+      {
+        "title": "Members by ccaa every year in Galician",
+        "content": "/v0.2/map/members/by/ccaa/yearly?lang=gl",
+        "type": "json"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"contracts\"",
+              "\"members\""
+            ],
+            "optional": false,
+            "field": "metric",
+            "description": "<p>Quantity to aggregate</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"ccaa\"",
+              "\"state\""
+            ],
+            "optional": false,
+            "field": "geolevel",
+            "description": "<p>Geographical detail level</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"yearly\"",
+              "\"monthly\""
+            ],
+            "optional": false,
+            "field": "frequency",
+            "description": "<p>Indicate a date series (only first day of the month, year...)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": true,
+            "field": "fromdate",
+            "defaultValue": "2012-01-01",
+            "description": "<p>Earlier date to show, in iso format</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": true,
+            "field": "todate",
+            "defaultValue": "2020-02-01",
+            "description": "<p>Later date to show, in iso format</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"en\"",
+              "\"es\"",
+              "\"ca\"",
+              "\"gl\"",
+              "\"eu\""
+            ],
+            "optional": true,
+            "field": "lang",
+            "defaultValue": "en",
+            "description": "<p>Response language</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "GIF",
+            "optional": false,
+            "field": "Response",
+            "description": "<p>Map animation that represents the temporal evolution of the geographical distribution</p>"
+          }
+        ]
+      }
+    },
+    "filename": "som_opendata/api.py",
+    "groupTitle": "MapSeries",
+    "sampleRequest": [
+      {
+        "url": "https://opendata.somenergia.coop/v0.2/map/:metric/by/:geolevel/:frequency/from/:fromdate/to/:todate"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v0.2/map/:metric/per/:relativemetric/by/:geolevel/on/:ondate",
+    "title": "",
+    "version": "0.2.7",
+    "group": "RelativeMap",
+    "name": "RelativeMap",
+    "description": "<p>Returns a map that represents the relative geographical distribution at a given date.</p> <p>Use the geolevel choose the map detail (ccaa, state). Use the relativemetric to specify the metric to relativize the values by. Use the filters in the query string to choose the language. If no language is specified, the language is chosen using the request headers.</p>",
+    "examples": [
+      {
+        "title": "Current contracts per population by CCAA",
+        "content": "/v0.2/map/contracts/per/population/by/ccaa",
+        "type": "json"
+      },
+      {
+        "title": "Current members per population by state",
+        "content": "/v0.2/map/members/per/population/by/state",
+        "type": "json"
+      },
+      {
+        "title": "Members per population by CCAA on 2018-02-01",
+        "content": "/v0.2/map/members/per/population/by/ccaa/on/2018-02-01",
+        "type": "json"
+      },
+      {
+        "title": "Members per population by ccaa in Galician",
+        "content": "/v0.2/map/members/per/population/by/ccaa?lang=gl",
+        "type": "json"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"contracts\"",
+              "\"members\""
+            ],
+            "optional": false,
+            "field": "metric",
+            "description": "<p>Quantity to aggregate</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"population\""
+            ],
+            "optional": false,
+            "field": "relativemetric",
+            "description": "<p>Metric to relativize the values by</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"ccaa\"",
+              "\"state\""
+            ],
+            "optional": false,
+            "field": "geolevel",
+            "description": "<p>Geographical detail level</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": true,
+            "field": "ondate",
+            "defaultValue": "today",
+            "description": "<p>Single date, in iso format</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"en\"",
+              "\"es\"",
+              "\"ca\"",
+              "\"gl\"",
+              "\"eu\""
+            ],
+            "optional": true,
+            "field": "lang",
+            "defaultValue": "en",
+            "description": "<p>Response language</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "svg",
+            "optional": false,
+            "field": "Response",
+            "description": "<p>Map that represents the relative geographical distribution at a given date</p>"
+          }
+        ]
+      }
+    },
+    "filename": "som_opendata/api.py",
+    "groupTitle": "RelativeMap",
+    "sampleRequest": [
+      {
+        "url": "https://opendata.somenergia.coop/v0.2/map/:metric/per/:relativemetric/by/:geolevel/on/:ondate"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v0.2/map/:metric/per/:relativemetric/by/:geolevel/:frequency/from/:fromdate/to/:todate",
+    "title": "",
+    "version": "0.2.2",
+    "group": "RelativeMapSeries",
+    "name": "RelativeMapSeries",
+    "description": "<p>Returns a map animation that represents the temporal evolution of the relative geographical distribution.</p> <p>Use the geolevel choose the map detail (ccaa, state). Use the relativemetric to specify the metric to relativize the values by. Use the filters in the query string to choose the language. If no language is specified, the language is chosen using the request headers.</p>",
+    "examples": [
+      {
+        "title": "Evolution of all contracts per population by CCAA every year",
+        "content": "/v0.2/map/contracts/per/population/by/ccaa/yearly",
+        "type": "json"
+      },
+      {
+        "title": "Monthly evolution of members per population by state on 2018",
+        "content": "/v0.2/map/members/per/population/by/state/monthly/from/2018-01-01/to/2019-01-01",
+        "type": "json"
+      },
+      {
+        "title": "Monthly evolution of members per population by CCAA from 2018-01-01",
+        "content": "/v0.2/map/members/per/population/by/ccaa/monthly/from/2018-01-01",
+        "type": "json"
+      },
+      {
+        "title": "Members per population by ccaa every year in Galician",
+        "content": "/v0.2/map/members/per/population/by/ccaa/yearly?lang=gl",
+        "type": "json"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"contracts\"",
+              "\"members\""
+            ],
+            "optional": false,
+            "field": "metric",
+            "description": "<p>Quantity to aggregate</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"ccaa\"",
+              "\"state\""
+            ],
+            "optional": false,
+            "field": "geolevel",
+            "description": "<p>Geographical detail level</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"yearly\"",
+              "\"monthly\""
+            ],
+            "optional": false,
+            "field": "frequency",
+            "description": "<p>Indicate a date series (only first day of the month, year...)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": true,
+            "field": "fromdate",
+            "defaultValue": "2012-01-01",
+            "description": "<p>Earlier date to show, in iso format</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": true,
+            "field": "todate",
+            "defaultValue": "2020-02-01",
+            "description": "<p>Later date to show, in iso format</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"en\"",
+              "\"es\"",
+              "\"ca\"",
+              "\"gl\"",
+              "\"eu\""
+            ],
+            "optional": true,
+            "field": "lang",
+            "defaultValue": "en",
+            "description": "<p>Response language</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "GIF",
+            "optional": false,
+            "field": "Response",
+            "description": "<p>Map animation that represents the temporal evolution of the geographical distribution</p>"
+          }
+        ]
+      }
+    },
+    "filename": "som_opendata/api.py",
+    "groupTitle": "RelativeMapSeries",
+    "sampleRequest": [
+      {
+        "url": "https://opendata.somenergia.coop/v0.2/map/:metric/per/:relativemetric/by/:geolevel/:frequency/from/:fromdate/to/:todate"
+      }
+    ]
+  },
+  {
+    "type": "get",
     "url": "/v0.2/version",
     "title": "",
     "version": "0.2.2",
