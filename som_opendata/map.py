@@ -207,9 +207,8 @@ def getNiceDivisor(population):
 
 
 def renderMap(source, metric, dates, geolevel, template, locationsCodes, relativeMetricValues={}, legendTemplate=''):
-    filtered_objects = source.get(metric, dates, [])
-    data = aggregate(filtered_objects, geolevel, dates)
 
+    data = getAggregated(source, metric, dates, [], geolevel)
     subtitle = ''
 
     if relativeMetricValues:
