@@ -3,12 +3,12 @@ from future.utils import iteritems
 from yamlns import namespace as ns
 from .scale import LinearScale, LogScale
 from .colorscale import Gradient
-from .distribution import aggregate, parse_tsv, tuples2objects
+from .distribution import parse_tsv, tuples2objects, getAggregated
 from pathlib2 import Path
 from math import log10, floor
 from flask_babel import _
 from wand.image import Image
-
+from functools import lru_cache
 
 months = ["January", "February", "March", "April",
             "May", "June", "July", "August",
@@ -167,7 +167,10 @@ def toPopulationRelative(data, geolevel, values=ns(), perValue=10000):
                 continue
             region["values"][index] = region["values"][index]*float(perValue) / populationDict[code]
 
-
+@lru_cache(maxsize=100)
+def pngFromSvg(svg):
+    with Image(blob=svg, format='svg', width=500, height=400).convert('png') as img:
+        return img.make_blob()
 
 def createGif(frameQuantity, data, template, legend, geolevel, title, colors, scale, subtitle='', locations=[], isRelative=False):
     svgFrames = []
@@ -187,7 +190,8 @@ def createGif(frameQuantity, data, template, legend, geolevel, title, colors, sc
         svgFrames.append(svg)
     with Image() as gif:
         for svg in svgFrames:
-            with Image(blob=svg, format='svg', width=500, height=400) as frame:
+            pngFrame = pngFromSvg(svg)
+            with Image(blob=pngFrame, format='png') as frame:
                 gif.sequence.append(frame)
                 with gif.sequence[-1] as frame:
                     frame.delay = 50 # centiseconds
