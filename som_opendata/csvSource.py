@@ -14,10 +14,10 @@ from .distribution import (
     field2date,
     getDates,
     isField,
+    cachedGetAggregated,
     )
 from .errors import MissingDateError
 from future.utils import iteritems
-
 
 class CsvSource(object):
     
@@ -58,6 +58,7 @@ class CsvSource(object):
 
 
     def update(self, datum, content):
+        cachedGetAggregated.cache_clear()
 
         _data = tablib.Dataset()
         _data.dict = self._objects[datum]
