@@ -40,6 +40,7 @@ setup(
 		'flask-babel',
 		'future', # Py2 backward compat
 		'pathlib2', # Py2 backward compat
+		'frozendict', #use cache
 	],
 	include_package_data = True,
 	test_suite = 'som_opendata',
