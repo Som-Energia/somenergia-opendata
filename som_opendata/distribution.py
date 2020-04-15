@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from yamlns.dateutils import Date as isoDate
 from yamlns import namespace as ns
+from functools import lru_cache
+from frozendict import frozendict
 
 
 aggregation_levels = [
@@ -49,13 +51,12 @@ def headerDates(entry):
         if isField(k)
         ]
 
-
 def aggregate(entries, detail='world', dates=None):
     """
         Aggregates a list of entries by geographical scopes:
         Country, CCAA, state, city.
     """
-    if not entries: return []
+    if not entries: return ns()
 
     if not dates:
         dates = headerDates(entries[0])
@@ -203,5 +204,14 @@ def addCounts(dictionary, newElements):
     for (key, value) in newElements:
         dictionary[key] = value
 
+
+@lru_cache()
+def cachedGetAggregated(source, metric, request_dates, location_filter_req, geolevel):
+    filtered_objects = source.get(metric, request_dates, location_filter_req)
+    return aggregate(filtered_objects, geolevel, request_dates)
+
+
+def getAggregated(source, metric, request_dates, location_filter_req, geolevel):
+    return cachedGetAggregated(source, metric, tuple(request_dates), frozendict(location_filter_req), geolevel)
 
 # vim: et sw=4 ts=4

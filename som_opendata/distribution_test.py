@@ -22,7 +22,11 @@ from .distribution import (
     findObject,
     addObjects,
     getDates,
+    getAggregated,
+    cachedGetAggregated,
     )
+from .csvSource import loadCsvSource
+from functools import lru_cache
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
@@ -1042,5 +1046,58 @@ class Distribution_Test(unittest.TestCase):
               pais: 'España'
               count_2018_02_01: '0'
         """)
+
+    def test__getAggregated_cached(self):
+        cachedGetAggregated.cache_clear()
+        source = loadCsvSource(relativePath='../testData/metrics')
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
+        cache_info = cachedGetAggregated.cache_info()
+        self.assertEqual([cache_info.hits, cache_info.misses], [1,1])
+
+    def test__getAggregated_notCachedMetric(self):
+        cachedGetAggregated.cache_clear()
+        source = loadCsvSource(relativePath='../testData/metrics')
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
+        getAggregated(source, 'contracts', ['2019-01-01'], [], 'ccaa')
+        cache_info = cachedGetAggregated.cache_info()
+        self.assertEqual([cache_info.hits, cache_info.misses], [0,2])
+
+    def test__getAggregated_notCachedGeolevel(self):
+        cachedGetAggregated.cache_clear()
+        source = loadCsvSource(relativePath='../testData/metrics')
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
+        getAggregated(source, 'members', ['2019-01-01'], [], 'state')
+        cache_info = cachedGetAggregated.cache_info()
+        self.assertEqual([cache_info.hits, cache_info.misses], [0,2])
+
+    def test__getAggregated_notCachedDates(self):
+        cachedGetAggregated.cache_clear()
+        source = loadCsvSource(relativePath='../testData/metrics')
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
+        getAggregated(source, 'members', ['2019-01-01', '2019-02-01'], [], 'ccaa')
+        cache_info = cachedGetAggregated.cache_info()
+        self.assertEqual([cache_info.hits, cache_info.misses], [0,2])
+
+    def test__getAggregated_updatingSource(self):
+        cachedGetAggregated.cache_clear()
+        source = loadCsvSource(relativePath='../testData/metrics')
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
+
+        #source.update clears cache
+        source.update('members',
+            [ns(codi_pais=u'NC',
+                pais=u'New Country',
+                codi_ccaa=u'09',
+                comunitat_autonoma=u'Catalunya',
+                codi_provincia=u'08',
+                provincia=u'Barcelona',
+                codi_ine=u'08217',
+                municipi=u'Sant Joan Despí',
+                count_2018_02_01=u'201')]
+        )
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
+        cache_info = cachedGetAggregated.cache_info()
+        self.assertEqual([cache_info.hits, cache_info.misses], [0,1])
 
 # vim: et sw=4 ts=4
