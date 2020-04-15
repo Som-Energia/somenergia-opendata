@@ -9,7 +9,7 @@ from .common import (
         requestDates,
         validateParams,
     )
-from .distribution import aggregate
+from .distribution import getAggregated
 from .errors import MissingDateError
 from . import __version__
 from .map import renderMap
@@ -17,18 +17,19 @@ from .map_utils import validateImplementation
 from flask_babel import lazy_gettext as _l
 from flask_babel import _, Babel, get_locale
 
+
 api = Blueprint(name=__name__, import_name=__name__, template_folder='../')
 api.firstDate = '2010-01-01'
 
 def validateInputDates(ondate = None, since = None, todate = None):
     return not (not ondate is None and (not since is None or not todate is None))
 
-
-
 def extractQueryParam(location_filter_req, queryName, objectName):
     queryParam = request.args.getlist(queryName)
     if len(queryParam) != 0:
-        location_filter_req[objectName] = queryParam
+        location_filter_req[objectName] = tuple(queryParam)
+
+
 
 """
 @apiDefine CommonDistribution
@@ -358,9 +359,7 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
     for locationLevel_id in relation_locationLevel_id:
         extractQueryParam(location_filter_req, *locationLevel_id)
 
-    filtered_objects = content.get(metric, request_dates, location_filter_req)
-    if len(filtered_objects) > 0: return aggregate(filtered_objects, geolevel, request_dates)
-    else: return ns()
+    return getAggregated(content, metric, request_dates, location_filter_req, geolevel)
 
 
 @api.route('/version')
@@ -545,6 +544,7 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
     relation_paramField_param += [['relativemetric',relativemetric]]
     validateImplementation(relation_paramField_param)
     request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=fromdate, to=todate, periodicity=frequency)
+
     locationCodes = api.relativeMetricSource.getCodesByGeolevel(geolevel=geolevel)
     relativeMValues = api.relativeMetricSource.getValuesByCode(metric=relativemetric, geolevel=geolevel) if relativemetric else dict()
     result = renderMap(
