@@ -1,3 +1,7 @@
+#v0.2.8 2020-04-16
+
+- Improve API performance
+
 #v0.2.7 2020-01-15
 
 - Fix errors in svg templates
