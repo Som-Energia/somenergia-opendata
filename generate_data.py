@@ -40,7 +40,7 @@ for metric, generator in metricGenerators.items():
     with io.open(filename,'w') as f:
         f.write(utf8(result))
 
-    linkname = 'data/{}.tsv'.format(metric)
+    linkname = 'data/metrics/{}.tsv'.format(metric)
 
     with io.open(linkname,'w') as f:
         f.write(utf8(result))
