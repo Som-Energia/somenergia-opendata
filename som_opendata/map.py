@@ -132,6 +132,7 @@ def fillMap(data, template, legendTemplate, geolevel, title,
             template=template,
             geolevel=geolevel,
             title=title,
+            subtitle=subtitle,
             colors=gradient,
             scale=scale,
             locations=locations,
@@ -212,7 +213,7 @@ def getNiceDivisor(population):
 
 def renderMap(source, metric, dates, geolevel, template, locationsCodes, relativeMetricValues={}, legendTemplate=''):
 
-    data = getAggregated(source, metric, dates, [], geolevel)
+    data = getAggregated(source, metric, dates, [], geolevel, mutable=bool(relativeMetricValues))
     subtitle = ''
 
     if relativeMetricValues:

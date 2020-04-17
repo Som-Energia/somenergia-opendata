@@ -359,7 +359,7 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
     for locationLevel_id in relation_locationLevel_id:
         extractQueryParam(location_filter_req, *locationLevel_id)
 
-    return getAggregated(content, metric, request_dates, location_filter_req, geolevel)
+    return getAggregated(content, metric, request_dates, location_filter_req, geolevel, mutable=False)
 
 
 @api.route('/version')

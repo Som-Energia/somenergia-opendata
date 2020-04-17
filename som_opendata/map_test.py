@@ -26,6 +26,7 @@ from .distribution import parse_tsv, tuples2objects
 from .templateSource import loadMapData
 from .tsvRelativeMetricSource import loadTsvRelativeMetric
 
+
 source = loadCsvSource(relativePath='../testData/metrics')
 mapTemplateSource = loadMapData()
 relativeData = loadTsvRelativeMetric()
@@ -1131,3 +1132,14 @@ class Map_Test(unittest.TestCase):
                 [cache_info.hits, cache_info.misses],
                 [0,4]
             )
+
+    def test_renderMap_members_cachedAfterChangedValues(self):
+        locations = relativeData.getCodesByGeolevel('ccaa')
+        template = mapTemplateSource.getTemplate(geolevel='ccaa', lang='en')
+        resultBefore = renderMap(source, 'members', ['2019-01-01'], template=template, geolevel='ccaa', locationsCodes=locations, legendTemplate="")
+        populationValues = relativeData.getValuesByCode(metric='population', geolevel='ccaa')
+        renderMap(source, 'members', ['2019-01-01'], template=template, geolevel='ccaa', relativeMetricValues=populationValues, locationsCodes=locations, legendTemplate="")
+        resultAfter = renderMap(source, 'members', ['2019-01-01'], template=template, geolevel='ccaa', locationsCodes=locations, legendTemplate="")
+        self.assertEqual(resultBefore, resultAfter)
+
+# vim: et sw=4 ts=4

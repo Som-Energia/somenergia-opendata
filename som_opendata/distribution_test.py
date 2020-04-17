@@ -1050,39 +1050,39 @@ class Distribution_Test(unittest.TestCase):
     def test__getAggregated_cached(self):
         cachedGetAggregated.cache_clear()
         source = loadCsvSource(relativePath='../testData/metrics')
-        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
-        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa', mutable=False)
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa', mutable=False)
         cache_info = cachedGetAggregated.cache_info()
         self.assertEqual([cache_info.hits, cache_info.misses], [1,1])
 
     def test__getAggregated_notCachedMetric(self):
         cachedGetAggregated.cache_clear()
         source = loadCsvSource(relativePath='../testData/metrics')
-        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
-        getAggregated(source, 'contracts', ['2019-01-01'], [], 'ccaa')
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa', mutable=False)
+        getAggregated(source, 'contracts', ['2019-01-01'], [], 'ccaa', mutable=False)
         cache_info = cachedGetAggregated.cache_info()
         self.assertEqual([cache_info.hits, cache_info.misses], [0,2])
 
     def test__getAggregated_notCachedGeolevel(self):
         cachedGetAggregated.cache_clear()
         source = loadCsvSource(relativePath='../testData/metrics')
-        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
-        getAggregated(source, 'members', ['2019-01-01'], [], 'state')
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa', mutable=False)
+        getAggregated(source, 'members', ['2019-01-01'], [], 'state', mutable=False)
         cache_info = cachedGetAggregated.cache_info()
         self.assertEqual([cache_info.hits, cache_info.misses], [0,2])
 
     def test__getAggregated_notCachedDates(self):
         cachedGetAggregated.cache_clear()
         source = loadCsvSource(relativePath='../testData/metrics')
-        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
-        getAggregated(source, 'members', ['2019-01-01', '2019-02-01'], [], 'ccaa')
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa', mutable=False)
+        getAggregated(source, 'members', ['2019-01-01', '2019-02-01'], [], 'ccaa', mutable=False)
         cache_info = cachedGetAggregated.cache_info()
         self.assertEqual([cache_info.hits, cache_info.misses], [0,2])
 
     def test__getAggregated_updatingSource(self):
         cachedGetAggregated.cache_clear()
         source = loadCsvSource(relativePath='../testData/metrics')
-        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa', mutable=False)
 
         #source.update clears cache
         source.update('members',
@@ -1096,8 +1096,16 @@ class Distribution_Test(unittest.TestCase):
                 municipi=u'Sant Joan Despí',
                 count_2018_02_01=u'201')]
         )
-        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa')
+        getAggregated(source, 'members', ['2019-01-01'], [], 'ccaa', mutable=False)
         cache_info = cachedGetAggregated.cache_info()
         self.assertEqual([cache_info.hits, cache_info.misses], [0,1])
+
+    def test_getAggregated_cachedAfterChangedValues(self):
+        cachedGetAggregated.cache_clear()
+        source = loadCsvSource(relativePath='../testData/metrics')
+        resultBefore = getAggregated(source, 'members', ['2019-01-01'], [], 'state', mutable=True)
+        resultBefore['dates']=10
+        resultAfter = getAggregated(source, 'members', ['2019-01-01'], [], 'state', mutable=True)
+        self.assertNotEqual(resultBefore['dates'], resultAfter['dates'])
 
 # vim: et sw=4 ts=4

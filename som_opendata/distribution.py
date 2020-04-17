@@ -211,7 +211,11 @@ def cachedGetAggregated(source, metric, request_dates, location_filter_req, geol
     return aggregate(filtered_objects, geolevel, request_dates)
 
 
-def getAggregated(source, metric, request_dates, location_filter_req, geolevel):
+def getAggregated(source, metric, request_dates, location_filter_req, geolevel, mutable):
+
+    if (mutable):
+        filtered_objects = source.get(metric, request_dates, location_filter_req)
+        return aggregate(filtered_objects, geolevel, request_dates)
     return cachedGetAggregated(source, metric, tuple(request_dates), frozendict(location_filter_req), geolevel)
 
 # vim: et sw=4 ts=4
