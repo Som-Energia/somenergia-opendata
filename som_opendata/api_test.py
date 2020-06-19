@@ -12,6 +12,7 @@ from .common import (
     )
 from .templateSource import loadMapData
 from .tsvRelativeMetricSource import loadTsvRelativeMetric
+from .local_groups import loadYamlLocalGroups
 from .csvSource import loadCsvSource
 from . import __version__
 from flask_babel import _, Babel, get_locale
@@ -19,6 +20,7 @@ from .map_test import getBlobInfo
 
 
 source = loadCsvSource(relativePath='../testData/metrics')
+localgroups = loadYamlLocalGroups(relativeFile='../testData/alias/gl.yaml')
 mapTemplateSource = loadMapData()
 relativeMetricSource = loadTsvRelativeMetric()
 
@@ -78,6 +80,7 @@ class Api_Test(unittest.TestCase):
         self.oldFirstDate = api.firstDate
         self.oldRelativeData = api.relativeMetricSource
         api.source = source
+        api.localGroups = localgroups
         api.mapTemplateSource = mapTemplateSource
         api.relativeMetricSource = relativeMetricSource
         api.firstDate = '2010-01-01'
@@ -260,6 +263,20 @@ class Api_Test(unittest.TestCase):
     def test__printerError__incorrectFormatDates(self):
         r = self.get('/members/by/city/on/2018-01-01/from/2018-02-02')
         self.assertEqual(r.status_code, 404)
+
+    def test__printerError__queryLocalGroupNotExist(self):
+        r = self.get('/members/by/city/on/2018-01-01?localgroup=9999999')
+        self.assertYamlResponse(r, ns())
+
+    def test__printerError__queryOneLocalGroup(self):
+        r = self.get('/members/by/city/on/2018-01-01?localgroup=1')
+        expected = ns.loads("""\
+        1:
+            name: Girona
+            geolevel: city
+            codes: ['1700asdf10', '170031', '170118', '170123', '170160', '172348', '170293']
+        """)
+        self.assertYamlResponse(r, expected)
 
     def test__printerError_frequency_toDate__exist_NoExactFirstDate(self):
         r = self.get('/members/monthly/from/2018-03-15/to/2018-04-15')

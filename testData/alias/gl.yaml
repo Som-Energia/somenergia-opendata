@@ -1,15 +1,15 @@
 1:
-    name: Vitoria-Gasteiz
-    geolevel: state
-    codes: [21]
-2:
     name: Girona
     geolevel: city
-    codes: [170010, 170031, 170118, 170123, 170160, 172348, 170293]
+    codes: ['170010', '170031', '170118', '170123', '170160', '172348', '170293']
+2:
+    name: Vitoria-Gasteiz
+    geolevel: state
+    codes: ['21']
 3:
     name: Asturias
     geolevel: ccaa
-    codes: 33
+    codes: '33'
 4:
     name: Andorra
     geolevel: country
@@ -17,4 +17,4 @@
 5:
     name: Grup de Fitipaldis
     geolevel: city
-    codes: [430017, 430056, 430108, 430347]
+    codes: ['430017', '430056', '430108', '430347']

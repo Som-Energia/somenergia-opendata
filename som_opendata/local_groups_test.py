@@ -6,48 +6,48 @@ gl_list_oneState = ns.loads("""\
 1:
     name: Vitoria-Gasteiz
     geolevel: state
-    codes: [21]
+    codes: ['21']
 """)
 gl_list_manyStates = ns.loads("""\
 1:
     name: Vitoria-Gasteiz
     geolevel: state
-    codes: [21, 22]
+    codes: ['21', '22']
 """)
 
 gl_list_manyCities = ns.loads("""\
 1:
     name: La xocolata de Girona
     geolevel: city
-    codes: [170010, 170031]
+    codes: ['170010', '170031']
 """)
 
 gl_list_oneCity = ns.loads("""\
 1:
     name: Pardals de Cabanelles
     geolevel: city
-    codes: [170031]
+    codes: ['170031']
 """)
 
 gl_list_oneCCAA = ns.loads("""\
 1:
     name: Asturias
     geolevel: ccaa
-    codes: [33]
+    codes: ['33']
 """)
 
 gl_list_manyCCAA = ns.loads("""\
 1:
     name: Provincies agermanades Girona-Asturias
     geolevel: ccaa
-    codes: [17, 33]
+    codes: ['17', '33']
 """)
 
 gl_list_getLocalGroups = ns.loads("""\
 1:
     name: La xocolata de Girona
     geolevel: city
-    codes: [170010, 170031]
+    codes: ['170010', '170031']
 """)
 
 class LocalGroups_Test(unittest.TestCase):
@@ -61,12 +61,12 @@ class LocalGroups_Test(unittest.TestCase):
 
     def test__aliasFilters__oneState(self):
         localGroups = LocalGroups(gl_list_oneState)
-        expected = [('state', 21)]
+        expected = [('state', '21')]
         self.assertEqual(localGroups.aliasFilters(1), expected)
 
     def test__aliasFilters__manyStates(self):
         localGroups = LocalGroups(gl_list_manyStates)
-        expected = [('state', 21), ('state', 22)]
+        expected = [('state', '21'), ('state', '22')]
         self.assertEqual(localGroups.aliasFilters(1), expected)
 
     def test__aliasFilters__NonExistant(self):
@@ -76,22 +76,22 @@ class LocalGroups_Test(unittest.TestCase):
 
     def test__aliasFilters__oneCity(self):
         localGroups = LocalGroups(gl_list_oneCity)
-        expected = [('city', 170031)]
+        expected = [('city', '170031')]
         self.assertEqual(localGroups.aliasFilters(1), expected)
 
     def test__aliasFilters__manyCities(self):
         localGroups = LocalGroups(gl_list_manyCities)
-        expected = [('city', 170010), ('city', 170031)]
+        expected = [('city', '170010'), ('city', '170031')]
         self.assertEqual(localGroups.aliasFilters(1), expected)
 
     def test__aliasFilters__oneCCAA(self):
         localGroups = LocalGroups(gl_list_oneCCAA)
-        expected = [('ccaa', 33)]
+        expected = [('ccaa', '33')]
         self.assertEqual(localGroups.aliasFilters(1), expected)
 
     def test__aliasFilters__manyCCAA(self):
         localGroups = LocalGroups(gl_list_manyCCAA)
-        expected = [('ccaa', 17), ('ccaa', 33)]
+        expected = [('ccaa', '17'), ('ccaa', '33')]
         self.assertEqual(localGroups.aliasFilters(1), expected)
 
     def test__aliasFilters__getLocalGroups(self):

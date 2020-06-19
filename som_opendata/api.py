@@ -353,11 +353,17 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
             ['country', 'codi_pais'],
             ['ccaa', 'codi_ccaa'],
             ['state', 'codi_provincia'],
-            ['city', 'codi_ine']
+            ['city', 'codi_ine'],
+            #['localgroup', 'codi_localgroup'],
           ]
 
     for locationLevel_id in relation_locationLevel_id:
         extractQueryParam(location_filter_req, *locationLevel_id)
+
+    # if localGroup in location_filter_req
+    # getall cities from LocalGroup localGroup
+    # r = getAggregated(metric, location_filter_req=cities...)
+    # return sum(r)
 
     return getAggregated(content, metric, request_dates, location_filter_req, geolevel, mutable=False)
 
