@@ -264,17 +264,19 @@ class Api_Test(unittest.TestCase):
         r = self.get('/members/by/city/on/2018-01-01/from/2018-02-02')
         self.assertEqual(r.status_code, 404)
 
+    @unittest.skip("Not implemented yet")
     def test__printerError__queryLocalGroupNotExist(self):
         r = self.get('/members/by/city/on/2018-01-01?localgroup=9999999')
         self.assertYamlResponse(r, ns())
 
+    @unittest.skip("Not implemented yet")
     def test__printerError__queryOneLocalGroup(self):
         r = self.get('/members/by/city/on/2018-01-01?localgroup=1')
         expected = ns.loads("""\
         1:
             name: Girona
             geolevel: city
-            codes: ['1700asdf10', '170031', '170118', '170123', '170160', '172348', '170293']
+            codes: ['170010', '170031', '170118', '170123', '170160', '172348', '170293']
         """)
         self.assertYamlResponse(r, expected)
 
