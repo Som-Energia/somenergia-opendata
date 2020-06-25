@@ -242,7 +242,7 @@ class LocalGroups_Test(unittest.TestCase):
                 name: La xocolata de Girona
                 values: [32]
     """))
-    
+
     def test__lgComputeValues_manyLocalGroups(self):
         localGroups = LocalGroups(gl_list_manyLocalGroups)
         data = ns.loads("""\
@@ -347,6 +347,228 @@ class LocalGroups_Test(unittest.TestCase):
                 name: Vitoria-Gasteiz
                 values: [500]
     """))
+
+    def test_lgHierarchicalResponse_dataIntegrityTest(self):
+        localGroups = LocalGroups(gl_list_oneCity)
+        data = ns.loads("""\
+        dates: [2020-05-01]
+        values:
+          - 32
+        countries:
+          ES:
+            name: España
+            values:
+              - 32
+            ccaas:
+              '09':
+                name: Cataluña
+                values:
+                  - 32
+                states:
+                  '17':
+                    name: Girona
+                    values:
+                      - 32
+                    cities:
+                      '170010':
+                        name: Agullana
+                        values:
+                          - 16
+        """)
+        expected = ns.loads("""\
+        dates: [2020-05-01]
+        values:
+          - 32
+        countries:
+          ES:
+            name: España
+            values:
+              - 32
+            ccaas:
+              '09':
+                name: Cataluña
+                values:
+                  - 32
+                states:
+                  '17':
+                    name: Girona
+                    values:
+                      - 32
+                    cities:
+                      '170010':
+                        name: Agullana
+                        values:
+                          - 16
+        """)
+        lg = ns.loads("""\
+              '1':
+                name: La xocolata de Girona
+                values: [32]
+        """)
+
+        localGroups.lgHierarchicalResponse(lgs=[lg], hierarchicalData=data)
+        self.assertNsEqual(data, expected)
+
+    #TODO deprecate this for a better response
+    def test_lgHierarchicalResponse(self):
+        self.maxDiff = None
+        localGroups = LocalGroups(gl_list_oneCity)
+        data = ns.loads("""\
+        dates: [2020-05-01]
+        values:
+          - 20
+        countries:
+          ES:
+            name: España
+            values:
+              - 20
+            ccaas:
+              09:
+                name: Cataluña
+                values:
+                  - 20
+                states:
+                  '17':
+                    name: Girona
+                    values:
+                      - 20
+                    cities:
+                      '170010':
+                        name: Agullana
+                        values:
+                          - 20
+        """)
+
+        lgs = ns.loads("""\
+              '1':
+                name: La xocolata de Girona
+                values: [20]
+        """)
+
+        expected = ns.loads("""\
+              '1':
+                name: La xocolata de Girona
+                values: [20]
+        """)
+
+        result = localGroups.lgHierarchicalResponse(lgs=lgs, hierarchicalData=data)
+        self.assertNsEqual(result, expected)
+
+    #TODO lgHierarchicalResponse definition awaiting a proper definition to
+    # set its tests accordingly
+    def _test_lgHierarchicalResponse_cities(self):
+        self.maxDiff = None
+        localGroups = LocalGroups(gl_list_oneCity)
+        data = ns.loads("""\
+        dates: [2020-05-01]
+        values:
+          - 20
+        countries:
+          ES:
+            name: España
+            values:
+              - 20
+            ccaas:
+              09:
+                name: Cataluña
+                values:
+                  - 20
+                states:
+                  '17':
+                    name: Girona
+                    values:
+                      - 20
+                    cities:
+                      '170010':
+                        name: Agullana
+                        values:
+                          - 20
+        """)
+
+        lgs = ns.loads("""\
+              '1':
+                name: La xocolata de Girona
+                values: [20]
+        """)
+
+        expected = ns.loads("""\
+          dates: [2020-05-01]
+          values: [20]
+          countries:
+            ES:
+              name: España
+              values: [20]
+              ccaas:
+                09:
+                  name: Cataluña
+                  values:
+                    - 20
+                  localgroups:
+                    '1':
+                      name: La xocolata de Girona
+                      values:
+                        - 20
+        """)
+
+        result = localGroups.lgHierarchicalResponse(lgs=lgs, hierarchicalData=data)
+        self.assertNsEqual(result, expected)
+
+    def _test_lgHierarchicalResponse_cities(self):
+        self.maxDiff = None
+        localGroups = LocalGroups(gl_list_oneCity)
+        data = ns.loads("""\
+        dates: [2020-05-01]
+        values:
+          - 20
+        countries:
+          ES:
+            name: España
+            values:
+              - 20
+            ccaas:
+              09:
+                name: Cataluña
+                values:
+                  - 20
+                states:
+                  '17':
+                    name: Girona
+                    values:
+                      - 20
+                    cities:
+                      '170010':
+                        name: Agullana
+                        values:
+                          - 20
+        """)
+
+        lgs = ns.loads("""\
+              '1':
+                name: La xocolata de Girona
+                values: [20]
+        """)
+
+        expected = ns.loads("""\
+          dates: [2020-05-01]
+          values: [20]
+          countries:
+            ES:
+              name: España
+              values: [20]
+              ccaas:
+                09:
+                  name: Cataluña
+                  values:
+                    - 20
+                  localgroups:
+                    '1':
+                      name: La xocolata de Girona
+                      values:
+                        - 20
+        """)
+
+        result = localGroups.lgHierarchicalResponse(lgs=lgs, hierarchicalData=data)
+        self.assertNsEqual(result, expected)
 
     def _test__aggregateAlias_(self):
         localGroups = LocalGroups(gl_list_oneState)

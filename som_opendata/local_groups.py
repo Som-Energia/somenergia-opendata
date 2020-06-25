@@ -22,7 +22,7 @@ class LocalGroups(object):
 
     def aggregateAlias(self, code, hierarchicalData):
         lgs = self.lgComputeValues(code, hierarchicalData)
-        return self.lgHierarchicalResponse(lgs)
+        return self.lgHierarchicalResponse(lgs, hierarchicalData)
 
     def lgComputeValues(self, codes, hierarchicalData):
 
@@ -37,10 +37,59 @@ class LocalGroups(object):
             result[code] = lg
         return result
 
-    def lgHierarchicalResponse(self, lgs):
+    # def replaceHierarchy(self, hierarchy, level, targetlevel, replacement):
+    #     geolevels = [
+    #         ('country', 'countries'),
+    #         ('ccaa', 'ccaas'),
+    #         ('state', 'states'),
+    #         ('city', 'cities'),
+    #     ]
+    #
+    #     if level >= len(geolevels):
+    #         return
+    #
+    #     singular, plural = geolevels[level]
+    #
+    #     for code, region in hierarchy[plural].items():
+    #         if plural != code:
+    #             self.replaceHierarchy(region, level + 1, targetlevel, replacement)
+    #         else:
+    #             hierarchy[plural] = replacement
+
+    def lgHierarchicalResponse(self, lgs, hierarchicalData):
         # rebuild minimum common hierarchy
         # place the localgroups in the appropiate place in the hierarchy
-        pass
+
+        # Approach 0 return localgroups directly
+        return lgs
+
+        # Approach 1 rebuild hierarchy from scratch
+        # r = ns()
+        # r['dates']     = hierarchicalData['dates']
+        # r['values']    = hierarchicalData['values']
+        # hcountry = hierarchicalData['country']
+        # country = ns()
+        # country['ES'] =
+        # r['countries'] = country
+        # response = hierarchicalData
+
+        # Approach 2 replace at hierarchy
+        # #deepcopy
+        # lg_r = ns.loads(hierarchicalData.dump())
+        #
+        # for ccaa, ccaa_data in lg_r.countries['ES'].ccaas.items():
+        #     ccaa_data['localgroups'] = lgs
+        #     del ccaa_data['states']
+
+        # Approach 3 guess hierarchy and replace
+        # for lg_pack in lgs:
+        #     for lg_code, lg in lg_pack.items():
+        #         print(lg_code)
+        #         lg_info = self.data[int(lg_code)]
+        #         target_level = lg_info.geolevel
+        #         self.replaceHierarchy(lg_r, 0, target_level, lg)
+
+        return lg_r
 
 def loadYamlLocalGroups(relativeFile='../data/alias/gl.yaml'):
     myPath = os.path.abspath(os.path.dirname(__file__))
