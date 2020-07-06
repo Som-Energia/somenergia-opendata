@@ -576,5 +576,6 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
 api.source = None
 api.mapTemplateSource = None
 api.relativeMetricSource = None
+api.localGroups = None
 
 # vim: et ts=4 sw=4

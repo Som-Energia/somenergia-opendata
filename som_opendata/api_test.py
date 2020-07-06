@@ -79,6 +79,7 @@ class Api_Test(unittest.TestCase):
         self.oldMapSource = api.mapTemplateSource
         self.oldFirstDate = api.firstDate
         self.oldRelativeData = api.relativeMetricSource
+        self.oldLocalGroups = api.localGroups
         api.source = source
         api.localGroups = localgroups
         api.mapTemplateSource = mapTemplateSource
@@ -99,6 +100,7 @@ class Api_Test(unittest.TestCase):
         api.mapTemplateSource = self.oldMapSource
         api.relativeMetricSource = self.oldRelativeData
         api.firstDate = self.oldFirstDate
+        api.localgroups = self.oldLocalGroups
 
     def get(self, uri, *args, **kwds):
         return self.client.get(uri,*args,**kwds)
