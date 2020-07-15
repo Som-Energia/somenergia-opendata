@@ -1,5 +1,12 @@
-1:
-    name: Vitoria-Gasteiz
-    geolevel: state
-    codes:
-        - '21'
+Alacant:
+  name: Alacant
+  alias:
+    state:
+      - '03'
+
+AlmeriaCadiz:
+  name: Almería y Cádiz
+  alias:
+    state:
+      - '04'
+      - '11'

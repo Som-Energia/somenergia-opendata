@@ -11,7 +11,7 @@ class LocalGroups(object):
         lg = self.data.get(code, None)
         if not lg:
             return None
-        return [(lg.geolevel, code) for code in lg.codes]
+        return lg.alias
 
     def getLocalGroups(self):
         return [(k, lg.name) for k, lg in self.data.items()]
