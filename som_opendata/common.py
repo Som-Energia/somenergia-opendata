@@ -10,6 +10,7 @@ from yamlns import namespace as ns
 from .errors import (
     MissingDateError,
     ValidateError,
+    AliasNotFoundError,
 )
 from consolemsg import u
 
@@ -203,12 +204,18 @@ def handle_missingDatesError(error):
         jsonify(ns(message=error.description)), error.code
     )
 
+@yaml_response
+def handle_aliasNotFoundError(error):
+    return make_response(
+        jsonify(ns(message=error.description)), error.code
+    )
+
 def register_handlers(app):
     app.register_error_handler(404, handle_request_not_found)
     app.register_error_handler(400, handle_bad_request)
     app.register_error_handler(MissingDateError, handle_missingDatesError)
     app.register_error_handler(ValidateError, handle_customErrorValidation)
-
+    app.register_error_handler(AliasNotFoundError, handle_aliasNotFoundError)
 
 def enable_cors(app):
     # In production and testing servers, CORS is managed by the server,
