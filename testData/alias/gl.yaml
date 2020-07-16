@@ -24,13 +24,6 @@ GironaSalt:
       - '17079'
       - '17155'
 
-GironaSalt:
-  name: Gl de Girona i Salt
-  alias:
-    city:
-      - '17079'
-      - '17155'
-
 CatalunyaMadrid:
   name: Gl de Catalunya i Madrid ciutat
   alias:
