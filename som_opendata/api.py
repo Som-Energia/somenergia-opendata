@@ -24,12 +24,15 @@ api.firstDate = '2010-01-01'
 def validateInputDates(ondate = None, since = None, todate = None):
     return not (not ondate is None and (not since is None or not todate is None))
 
-def extractQueryParam(location_filter_req, queryName, objectName):
+def extractQueryParam(location_filter_req, alias_filters, queryName, objectName):
     queryParam = request.args.getlist(queryName)
+    queryParam += alias_filters.get(queryName, [])
     if len(queryParam) != 0:
         location_filter_req[objectName] = tuple(queryParam)
 
-
+def extractAlias():
+    localgroups = request.args.getlist('localgroup')
+    return api.localGroups.aliasFilters(localgroups) if localgroups else ns()
 
 """
 @apiDefine CommonDistribution
@@ -354,18 +357,14 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
             ['ccaa', 'codi_ccaa'],
             ['state', 'codi_provincia'],
             ['city', 'codi_ine'],
-            #['localgroup', 'codi_localgroup'],
           ]
 
+    alias_filters = extractAlias()
     for locationLevel_id in relation_locationLevel_id:
-        extractQueryParam(location_filter_req, *locationLevel_id)
-
-    # if localGroup in location_filter_req
-    # getall cities from LocalGroup localGroup
-    # r = getAggregated(metric, location_filter_req=cities...)
-    # return sum(r)
+        extractQueryParam(location_filter_req, alias_filters, *locationLevel_id)
 
     return getAggregated(content, metric, request_dates, location_filter_req, geolevel, mutable=False)
+
 
 
 @api.route('/version')

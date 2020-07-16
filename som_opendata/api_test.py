@@ -266,21 +266,21 @@ class Api_Test(unittest.TestCase):
         r = self.get('/members/by/city/on/2018-01-01/from/2018-02-02')
         self.assertEqual(r.status_code, 404)
 
-    @unittest.skip("Not implemented yet")
-    def test__printerError__queryLocalGroupNotExist(self):
-        r = self.get('/members/by/city/on/2018-01-01?localgroup=9999999')
-        self.assertYamlResponse(r, ns())
-
-    @unittest.skip("Not implemented yet")
-    def test__printerError__queryOneLocalGroup(self):
-        r = self.get('/members/by/city/on/2018-01-01?localgroup=1')
-        expected = ns.loads("""\
-        1:
-            name: Girona
-            geolevel: city
-            codes: ['170010', '170031', '170118', '170123', '170160', '172348', '170293']
+    def test__localGroups__queryLocalGroupNotExist(self):
+        r = self.get('/members/by/city/on/2018-01-01?localgroup=Unknown')
+        self.assertYamlResponse(r, """\
+            message: localgroup 'Unknown' not found\n
         """)
-        self.assertYamlResponse(r, expected)
+
+    def test__localGroups__queryOneLocalGroup(self):
+        expected = self.get('/members/by/state/on/2018-01-01?state=03')
+        r = self.get('/members/by/state/on/2018-01-01?localgroup=Alacant')
+        self.assertEqual(r.data, expected.data)
+
+    def test__localGroups__queryManyLocalGroups(self):
+        expected = self.get('/members/by/state/on/2018-01-01?state=03&ccaa=09&city=28079')
+        r = self.get('/members/by/state/on/2018-01-01?localgroup=Alacant&localgroup=CatalunyaMadrid')
+        self.assertEqual(r.data, expected.data)
 
     def test__printerError_frequency_toDate__exist_NoExactFirstDate(self):
         r = self.get('/members/monthly/from/2018-03-15/to/2018-04-15')
