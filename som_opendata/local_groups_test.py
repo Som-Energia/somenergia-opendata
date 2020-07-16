@@ -29,35 +29,35 @@ class LocalGroups_Test(unittest.TestCase):
         self.assertNsEqual(minimalLocalGroups.data, expected_localGroups.data)
 
     def test__aliasFilters__oneState(self):
-        expected = ns(state=('03',))
-        self.assertNsEqual(localGroups.aliasFilters('Alacant'), expected)
+        self.assertNsEqual(localGroups.aliasFilters(['Alacant']), ns(state=['03']))
 
     def test__aliasFilters__manyStates(self):
         expected = ns(state=['04','11'])
-        self.assertEqual(localGroups.aliasFilters('AlmeriaCadiz'), expected)
+        self.assertEqual(localGroups.aliasFilters(['AlmeriaCadiz']), expected)
 
     def test__aliasFilters__NonExistant(self):
+        with self.assertRaises(AliasNotFoundError) as ctx:
+            localGroups.aliasFilters(['NonExistant'])
 
-        self.assertEqual(localGroups.aliasFilters('NonExistant'), None)
+    def test__aliasFilters__noCodes(self):
+        self.assertEqual(localGroups.aliasFilters([]), ns())
 
-    def test__aliasFilters__oneCity(self):
-        expected = ns(city=['17079'])
-        self.assertEqual(localGroups.aliasFilters('GironaCiutat'), expected)
-
-    def test__aliasFilters__manyCities(self):
-        expected = ns(city=['17079', '17155'])
-        self.assertEqual(localGroups.aliasFilters('GironaSalt'), expected)
-
-    def test__aliasFilters__mixedGeolevels(self):
+    def test__aliasFilters__manyGeolevels(self):
         expected = ns(ccaa=['09'],city=['28079'])
-        self.assertEqual(localGroups.aliasFilters('CatalunyaMadrid'), expected)
+        self.assertEqual(localGroups.aliasFilters(['CatalunyaMadrid']), expected)
 
     def test__getLocalGroups(self):
         expected = [('Alacant', 'Alacant'), ('AlmeriaCadiz', 'Almería y Cádiz')]
         self.assertEqual(minimalLocalGroups.getLocalGroups(), expected)
 
+    def test__aliasFilters__manyAliasDifferentGeolevel(self):
+        expected = ns(state=['03'], city=['17079', '17155'])
+        result = localGroups.aliasFilters(['Alacant', 'GironaSalt'])
         self.assertNsEqual(result, expected)
 
+    def test__aliasFilters__manyAliasSharedGeolevel(self):
+        expected = ns(ccaa=['09'],city=['28079','17079','17155'])
+        result = localGroups.aliasFilters(['CatalunyaMadrid', 'GironaSalt'])
         self.assertNsEqual(result, expected)
 
     def test__get__ensureImmutable(self):

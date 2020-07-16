@@ -5,7 +5,7 @@ from .errors import AliasNotFoundError
 
 class LocalGroups(object):
     def __init__(self, dump):
-        self.geolevel = 'lg'
+        self.alias = 'lg'
         self.data = dump
 
     def get(self, code):
@@ -14,17 +14,19 @@ class LocalGroups(object):
         except:
             raise AliasNotFoundError('localgroup', code)
 
+    def aliasFilters(self, codes):
         result = ns()
         for code in codes:
-            lg_info = self.data[code]
-            level = lg_info.geolevel
-            lg = ns(name=lg_info.name,values=[0]*len(hierarchicalData['dates']))
-            for level_code, entry in iterateLevel(hierarchicalData, level):
-                if level_code in lg_info.codes:
-                    lg['values'] = [x + y for x, y in zip(lg['values'], entry['values'])]
-            result[code] = lg
+            lg = self.get(code)
+            for key, value in lg.alias.items():
+                if result.get(key, False):
+                    result[key] += value
+                else:
+                    result[key] = value
         return result
 
+    def getLocalGroups(self):
+        return [(k, lg.name) for k, lg in self.data.items()]
 
 
 def loadYamlLocalGroups(relativeFile='../data/alias/gl.yaml'):
