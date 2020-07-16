@@ -1,6 +1,7 @@
 import unittest
 from yamlns import namespace as ns
 from .local_groups import LocalGroups, loadYamlLocalGroups
+from .errors import AliasNotFoundError
 
 gl_minimal = ns.loads("""\
 Alacant:
@@ -58,3 +59,11 @@ class LocalGroups_Test(unittest.TestCase):
         self.assertNsEqual(result, expected)
 
         self.assertNsEqual(result, expected)
+
+    def test__get__ensureImmutable(self):
+        before = localGroups.get('Alacant')
+        before.update({'temp':'temp'})
+        self.assertEqual(
+            localGroups.get('Alacant'),
+            ns(name='Alacant', alias=ns(state=['03']))
+        )
