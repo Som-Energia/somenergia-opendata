@@ -92,6 +92,13 @@ define({ "api": [
             "optional": true,
             "field": "city",
             "description": "<p>INE codes of cities to be included</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "localgroup",
+            "description": "<p>Code of the Local Group to be included. It represents an alias of one or more filters.</p>"
           }
         ]
       }
@@ -297,6 +304,13 @@ define({ "api": [
             "optional": true,
             "field": "city",
             "description": "<p>INE codes of cities to be included</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "localgroup",
+            "description": "<p>Code of the Local Group to be included. It represents an alias of one or more filters.</p>"
           }
         ]
       }
