@@ -42,6 +42,7 @@ def extractAlias():
 @apiParam {String} [ccaa] INE codes of the CCAA's to be included
 @apiParam {String} [state] INE codes of the states to be included
 @apiParam {String} [city] INE codes of cities to be included
+@apiParam {String} [localgroup] Code of the Local Group to be included. It represents an alias of one or more filters.
 """
 
 """
