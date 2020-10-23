@@ -132,6 +132,29 @@ class Api_Test(unittest.TestCase):
               text: 'Contracts'
             """)
 
+    def test_geolevel(self):
+        r = self.get('/introspection/geolevels')
+        self.assertYamlResponse(r, """\
+            geolevels:
+            - id: country
+              text: 'Country'
+            - id: ccaa
+              text: 'CCAA'
+              parent: country
+            - id: state
+              text: 'State'
+              parent: 
+            - id: city
+              text: 'City'
+              parent: state
+            - id: localgroup
+              text: 'Local Group'
+              count: False
+            - id: county
+              text: 'County'
+              parent: CCAA
+            """)
+
 
     def test__onDate__exists(self):
         r = self.get('/members/on/2018-01-01')
