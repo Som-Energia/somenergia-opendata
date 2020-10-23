@@ -43,6 +43,36 @@ def version():
         compat = '0.2.1',
         )
 
+@api.route('/introspection/metrics')
+@yaml_response
+def instrospectionMetrics():
+    """
+    @api {get} /v0.2/introspection/metrics
+    @apiVersion 0.2.2
+    @apiName Metrics
+    @apiGroup Introspection
+    @apiDescription Returns the metrics that can be queried
+
+    @apiSampleRequest /v0.2/introspection/metrics
+    @apiSuccessExample {yaml} Success-Response:
+        HTTP/1.1 200OK
+        metrics:
+        - id: members
+          text: 'Members'
+        - id: contracts
+          text: 'Contracts'
+    """
+    return ns.loads("""\
+            metrics:
+            - id: members
+              text: 'Members'
+            - id: contracts
+              text: 'Contracts'
+            """)
+
+
+
+
 def validateInputDates(ondate = None, since = None, todate = None):
     return not (not ondate is None and (not since is None or not todate is None))
 

@@ -122,6 +122,17 @@ class Api_Test(unittest.TestCase):
             """.format(__version__))
 
 
+    def test__metrics(self):
+        r = self.get('/introspection/metrics')
+        self.assertYamlResponse(r, """\
+            metrics:
+            - id: members
+              text: 'Members'
+            - id: contracts
+              text: 'Contracts'
+            """)
+
+
     def test__onDate__exists(self):
         r = self.get('/members/on/2018-01-01')
         self.assertTsvResponse(r)
