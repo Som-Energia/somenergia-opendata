@@ -21,6 +21,28 @@ from flask_babel import _, Babel, get_locale
 api = Blueprint(name=__name__, import_name=__name__, template_folder='../')
 api.firstDate = '2010-01-01'
 
+
+@api.route('/version')
+@yaml_response
+def version():
+    """
+    @api {get} /v0.2/version
+    @apiVersion 0.2.2
+    @apiName Version
+    @apiGroup Version
+    @apiDescription Response version API
+
+    @apiSampleRequest /v0.2/version
+    @apiSuccessExample {yaml} Success-Response:
+        HTTP/1.1 200OK
+        version: 0.2.2
+        compat: 0.2.1
+    """
+    return ns(
+        version = __version__,
+        compat = '0.2.1',
+        )
+
 def validateInputDates(ondate = None, since = None, todate = None):
     return not (not ondate is None and (not since is None or not todate is None))
 
@@ -367,27 +389,6 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
     return getAggregated(content, metric, request_dates, location_filter_req, geolevel, mutable=False)
 
 
-
-@api.route('/version')
-@yaml_response
-def version():
-    """
-    @api {get} /v0.2/version
-    @apiVersion 0.2.2
-    @apiName Version
-    @apiGroup Version
-    @apiDescription Response version API
-
-    @apiSampleRequest /v0.2/version
-    @apiSuccessExample {yaml} Success-Response:
-        HTTP/1.1 200OK
-        version: 0.2.2
-        compat: 0.2.1
-    """
-    return ns(
-        version = __version__,
-        compat = '0.2.1',
-        )
 
 """
 @apiDefine MapDistribution
