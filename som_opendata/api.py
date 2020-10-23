@@ -9,6 +9,7 @@ from .common import (
         requestDates,
         validateParams,
     )
+from . import common
 from .distribution import getAggregated
 from .errors import MissingDateError
 from . import __version__
@@ -62,14 +63,13 @@ def instrospectionMetrics():
         - id: contracts
           text: 'Contracts'
     """
-    return ns.loads("""\
-            metrics:
-            - id: members
-              text: 'Members'
-            - id: contracts
-              text: 'Contracts'
-            """)
-
+    return ns(metrics=[
+        ns(
+            id = key,
+            text = value,
+        )
+        for key,value in common.metrics.items()
+    ])
 
 
 
