@@ -29,8 +29,8 @@ countries:
       '04':
         name: Baleares, Islas
         values:
-        - 1031
-        - 1099
+        - 1032
+        - 1100
       '05':
         name: Canarias
         values:
@@ -54,8 +54,13 @@ countries:
       09:
         name: Cataluña
         values:
-        - 11150
-        - 11626
+        - 11149
+        - 11625
+      '18':
+        name: Ceuta
+        values:
+        - 0
+        - 0
       '10':
         name: Comunidad Valenciana
         values:
