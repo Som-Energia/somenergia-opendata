@@ -12,21 +12,18 @@ Introspeccio:
 - Quins filtres s'apliquen als tags
 
 /discover/metric
+/discover/relativemetric  {population, area, marketcontracts...)
 /discover/geolevel  [ccaa, city, state, country, county, localgrup...]
 /discover/geolevel/country?continent=Europe    {ES:España,...}
 /discover/geolevel/city?ccaa=09    {0808: barcelona, :}
 /discover/geolevel/localgroup
 /discover/geolevel/city?localgroup=BaixMontseny
-/discover/format/distribution
-/discover/format/map
-/discover/aspect/production  {tecnology, }
-/discover/metric/
-
-
-tecnology=biogas
-financedby=generationkwh
-financedby=aportacions
-
+/discover/format/distribution  {csv, yaml, xml, json, html}
+/discover/format/map  {svg, png, html}
+/discover/aspect/production  {tecnology, financedby}
+	tecnology=biogas
+	financedby=generationkwh
+	financedby=aportacions
 
 Metriques relatives (poblacio)
 
