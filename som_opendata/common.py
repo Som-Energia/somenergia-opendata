@@ -154,10 +154,14 @@ class IsoDateConverter(BaseConverter):
     def to_url(self, value):
         return str(value)
 
+metrics = ns(
+    members="Members",
+    contracts="Contracts",
+)
 
 # None i world son valors por defecto de los parametros
 valorsAptes = ns(
-    metric=['members', 'contracts'],
+    metric=metrics.keys(),
     frequency=['monthly', 'yearly', None],
     geolevel=['country', 'ccaa', 'state', 'city', 'world']
 )
