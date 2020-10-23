@@ -1,8 +1,10 @@
 thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	codi_ine	municipi	quants	ids
 2015-01-01	ES	España	01	Andalucia	04	Almería	04003	Adra	4	17466,17472,38868,43170
 2015-01-01	ES	España	01	Andalucia	04	Almería	04006	Albox	1	2240
+2015-01-01	ES	España	01	Andalucia	04	Almería	04010	Alhabia	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04013	Almería	30	1781,3384,3385,6560,8006,8596,11160,12499,12501,12505,13564,15206,15723,16589,18416,19166,20136,21976,23420,23895,23899,28767,29247,37892,38121,38356,40516,41528,41530,41866
 2015-01-01	ES	España	01	Andalucia	04	Almería	04017	Arboleas	0	None
+2015-01-01	ES	España	01	Andalucia	04	Almería	04029	Berja	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04032	Carboneras	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04036	Chercos	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04037	Chirivel	1	28680
@@ -21,12 +23,14 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	04	Almería	04064	Mojácar	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04066	Níjar	4	16114,19473,23540,36841
 2015-01-01	ES	España	01	Andalucia	04	Almería	04067	Ohanes	0	None
+2015-01-01	ES	España	01	Andalucia	04	Almería	04068	Olula de Castro	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04069	Olula del Río	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04071	Padules	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04075	Pulpí	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04079	Roquetas de Mar	5	6734,15166,29261,37386,38665
 2015-01-01	ES	España	01	Andalucia	04	Almería	04083	Serón	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04085	Somontín	0	None
+2015-01-01	ES	España	01	Andalucia	04	Almería	04090	Tahal	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04092	Tíjola	1	39041
 2015-01-01	ES	España	01	Andalucia	04	Almería	04093	Turre	0	None
 2015-01-01	ES	España	01	Andalucia	04	Almería	04098	Vélez-Blanco	0	None
@@ -65,6 +69,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	11	Cádiz	11037	Trebujena	3	24524,37255,38778
 2015-01-01	ES	España	01	Andalucia	11	Cádiz	11038	Ubrique	0	None
 2015-01-01	ES	España	01	Andalucia	11	Cádiz	11039	Vejer de la Frontera	1	24156
+2015-01-01	ES	España	01	Andalucia	11	Cádiz	11041	Villamartín	0	None
 2015-01-01	ES	España	01	Andalucia	11	Cádiz	11042	Zahara	0	None
 2015-01-01	ES	España	01	Andalucia	14	Córdoba	14001	Adamuz	1	28423
 2015-01-01	ES	España	01	Andalucia	14	Córdoba	14005	Almodóvar del Río	0	None
@@ -93,6 +98,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	14	Córdoba	14044	Monturque	0	None
 2015-01-01	ES	España	01	Andalucia	14	Córdoba	14047	Obejo	0	None
 2015-01-01	ES	España	01	Andalucia	14	Córdoba	14049	Palma del Río	0	None
+2015-01-01	ES	España	01	Andalucia	14	Córdoba	14052	Peñarroya-Pueblonuevo	0	None
 2015-01-01	ES	España	01	Andalucia	14	Córdoba	14053	Posadas	0	None
 2015-01-01	ES	España	01	Andalucia	14	Córdoba	14054	Pozoblanco	0	None
 2015-01-01	ES	España	01	Andalucia	14	Córdoba	14055	Priego de Córdoba	3	36370,37044,37045
@@ -129,6 +135,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	18	Granada	18059	Chauchina	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18062	Churriana de la Vega	2	21219,22088
 2015-01-01	ES	España	01	Andalucia	18	Granada	18048	Cijuela	0	None
+2015-01-01	ES	España	01	Andalucia	18	Granada	18050	Cogollos de la Vega	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18912	Cuevas del Campo	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18056	Cúllar	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18057	Cúllar Vega	1	21375
@@ -157,6 +164,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	18	Granada	18115	Láchar	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18116	Lanjarón	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18117	Lanteira	1	3812
+2015-01-01	ES	España	01	Andalucia	18	Granada	18120	Lentegí	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18124	Lújar	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18127	Maracena	1	33810
 2015-01-01	ES	España	01	Andalucia	18	Granada	18132	Moclín	1	20171
@@ -182,6 +190,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	18	Granada	18175	Santa Fe	2	6303,25749
 2015-01-01	ES	España	01	Andalucia	18	Granada	18177	Sorvilán	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18901	Taha, La	0	None
+2015-01-01	ES	España	01	Andalucia	18	Granada	18182	Ugíjar	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18902	Valle, El	0	None
 2015-01-01	ES	España	01	Andalucia	18	Granada	18911	Vegas del Genil	1	10194
 2015-01-01	ES	España	01	Andalucia	18	Granada	18184	Vélez de Benaudalla	0	None
@@ -201,6 +210,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21012	Berrocal	0	None
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21013	Bollullos Par del Condado	0	None
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21016	Cala	0	None
+2015-01-01	ES	España	01	Andalucia	21	Huelva	21018	Campillo, El	0	None
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21021	Cartaya	0	None
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21030	Chucena	1	19449
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21024	Corteconcepción	0	None
@@ -244,15 +254,18 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23028	Cazorla	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23033	Frailes	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23044	Huelma	1	6687
+2015-01-01	ES	España	01	Andalucia	23	Jaén	23047	Iruela, La	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23050	Jaén	9	4197,4198,4343,7832,10855,20661,24365,30665,39227
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23055	Linares	3	7676,11612,25248
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23058	Mancha Real	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23060	Martos	1	16658
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23067	Pegalajar	4	30656,30669,36693,42076
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23069	Porcuna	1	18661
+2015-01-01	ES	España	01	Andalucia	23	Jaén	23070	Pozo Alcón	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23076	Santa Elena	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23904	Santiago-Pontones	1	16752
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23081	Segura de la Sierra	0	None
+2015-01-01	ES	España	01	Andalucia	23	Jaén	23082	Siles	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23086	Torre del Campo	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23088	Torreperogil	0	None
 2015-01-01	ES	España	01	Andalucia	23	Jaén	23090	Torres	0	None
@@ -277,6 +290,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29027	Benamocarra	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29029	Benarrabá	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29030	Borge, El	0	None
+2015-01-01	ES	España	01	Andalucia	29	Málaga	29031	Burgo, El	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29033	Canillas de Aceituno	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29037	Cartajima	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29038	Cártama	2	13503,37015
@@ -291,12 +305,15 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29054	Fuengirola	11	8892,8894,8896,8898,8900,10235,10283,10284,12613,24620,37885
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29055	Fuente de Piedra	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29059	Humilladero	0	None
+2015-01-01	ES	España	01	Andalucia	29	Málaga	29060	Igualeja	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29067	Málaga	30	4820,10557,11356,11677,12609,14211,14862,15129,16568,18158,19248,19823,20391,20685,23528,24969,30958,31096,31372,31648,31779,34276,35317,36205,37480,37637,37877,38625,41233,42985
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29068	Manilva	1	37598
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29069	Marbella	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29070	Mijas	0	None
+2015-01-01	ES	España	01	Andalucia	29	Málaga	29072	Mollina	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29074	Montejaque	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29075	Nerja	2	21036,37464
+2015-01-01	ES	España	01	Andalucia	29	Málaga	29077	Parauta	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29079	Periana	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29080	Pizarra	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29082	Rincón de la Victoria	3	25609,28176,36079
@@ -307,6 +324,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29091	Torrox	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29092	Totalán	1	1342
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29094	Vélez-Málaga	7	13874,25558,28313,28315,29592,34995,37883
+2015-01-01	ES	España	01	Andalucia	29	Málaga	29902	Villanueva de la Concepción	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29097	Villanueva del Trabuco	0	None
 2015-01-01	ES	España	01	Andalucia	29	Málaga	29100	Yunquera	1	21116
 2015-01-01	ES	España	01	Andalucia	41	Sevilla	41001	Aguadulce	0	None
@@ -337,6 +355,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	41	Sevilla	41032	Cazalla de la Sierra	0	None
 2015-01-01	ES	España	01	Andalucia	41	Sevilla	41034	Coria del Río	0	None
 2015-01-01	ES	España	01	Andalucia	41	Sevilla	41035	Coripe	0	None
+2015-01-01	ES	España	01	Andalucia	41	Sevilla	41036	Coronil, El	0	None
 2015-01-01	ES	España	01	Andalucia	41	Sevilla	41903	Cuervo de Sevilla, El	0	None
 2015-01-01	ES	España	01	Andalucia	41	Sevilla	41038	Dos Hermanas	13	2486,3191,3589,4406,10581,11114,18063,18140,22181,28218,29348,33976,39773
 2015-01-01	ES	España	01	Andalucia	41	Sevilla	41039	Écija	2	11518,12426
@@ -355,6 +374,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	01	Andalucia	41	Sevilla	41058	Mairena del Alcor	1	10962
 2015-01-01	ES	España	01	Andalucia	41	Sevilla	41059	Mairena del Aljarafe	6	12650,23133,24419,26030,32601,33948
 2015-01-01	ES	España	01	Andalucia	41	Sevilla	41060	Marchena	5	31736,34742,36910,37027,39855
+2015-01-01	ES	España	01	Andalucia	41	Sevilla	41061	Marinaleda	0	None
+2015-01-01	ES	España	01	Andalucia	41	Sevilla	41062	Martín de la Jara	0	None
 2015-01-01	ES	España	01	Andalucia	41	Sevilla	41064	Montellano	0	None
 2015-01-01	ES	España	01	Andalucia	41	Sevilla	41065	Morón de la Frontera	0	None
 2015-01-01	ES	España	01	Andalucia	41	Sevilla	41067	Olivares	0	None
@@ -395,6 +416,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	22	Huesca	22014	Alcalá de Gurrea	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22016	Alcampell	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22017	Alcolea de Cinca	0	None
+2015-01-01	ES	España	02	Aragón	22	Huesca	22018	Alcubierre	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22019	Alerre	1	14491
 2015-01-01	ES	España	02	Aragón	22	Huesca	22021	Almudévar	2	3768,5176
 2015-01-01	ES	España	02	Aragón	22	Huesca	22022	Almunia de San Juan	1	36892
@@ -407,6 +429,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	22	Huesca	22040	Azanuy-Alins	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22041	Azara	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22043	Baélls	0	None
+2015-01-01	ES	España	02	Aragón	22	Huesca	22045	Baldellou	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22046	Ballobar	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22048	Barbastro	3	8488,11924,42106
 2015-01-01	ES	España	02	Aragón	22	Huesca	22051	Bárcabo	1	3898
@@ -427,14 +450,17 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	22	Huesca	22069	Broto	2	1022,43691
 2015-01-01	ES	España	02	Aragón	22	Huesca	22072	Caldearenas	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22074	Campo	0	None
+2015-01-01	ES	España	02	Aragón	22	Huesca	22075	Camporrélls	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22078	Canfranc	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22081	Casbas de Huesca	1	12656
 2015-01-01	ES	España	02	Aragón	22	Huesca	22083	Castejón de Monegros	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22084	Castejón de Sos	3	13229,13231,13234
 2015-01-01	ES	España	02	Aragón	22	Huesca	22086	Castiello de Jaca	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22087	Castigaleu	0	None
+2015-01-01	ES	España	02	Aragón	22	Huesca	22089	Castillonroy	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22095	Chía	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22096	Chimillas	1	1552
+2015-01-01	ES	España	02	Aragón	22	Huesca	22099	Esplús	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22102	Estada	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22103	Estadilla	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22109	Fiscal	1	37241
@@ -469,6 +495,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	22	Huesca	22174	Peralta de Alcofea	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22176	Peraltilla	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22187	Puebla de Castro, La	1	15974
+2015-01-01	ES	España	02	Aragón	22	Huesca	22188	Puente de Montañana	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22902	Puente la Reina de Jaca	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22189	Puértolas	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22195	Quicena	0	None
@@ -487,6 +514,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	22	Huesca	22223	Sopeira	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22904	Sotonera, La	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22225	Tamarite de Litera	0	None
+2015-01-01	ES	España	02	Aragón	22	Huesca	22227	Tella-Sin	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22229	Tolva	1	15617
 2015-01-01	ES	España	02	Aragón	22	Huesca	22230	Torla	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22233	Torre la Ribera	0	None
@@ -498,6 +526,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	22	Huesca	22251	Villanueva de Sigena	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22254	Zaidín	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44001	Ababuj	0	None
+2015-01-01	ES	España	02	Aragón	44	Teruel	44002	Abejuela	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44004	Aguaviva	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44008	Albalate del Arzobispo	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44009	Albarracín	0	None
@@ -540,9 +569,11 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	44	Teruel	44122	Híjar	1	31765
 2015-01-01	ES	España	02	Aragón	44	Teruel	44124	Hoz de la Vieja, La	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44126	Iglesuela del Cid, La	0	None
+2015-01-01	ES	España	02	Aragón	44	Teruel	44128	Jarque de la Val	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44130	Jorcas	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44137	Linares de Mora	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44143	Manzanera	1	12290
+2015-01-01	ES	España	02	Aragón	44	Teruel	44144	Martín del Río	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44145	Mas de las Matas	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44147	Mazaleón	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44151	Molinos	0	None
@@ -556,6 +587,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	44	Teruel	44171	Olba	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44172	Oliete	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44179	Peñarroya de Tastavins	3	19720,19722,41704
+2015-01-01	ES	España	02	Aragón	44	Teruel	44183	Pitarque	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44187	Portellada, La	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44189	Pozondón	0	None
 2015-01-01	ES	España	02	Aragón	44	Teruel	44190	Pozuel del Campo	0	None
@@ -597,10 +629,12 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50024	Almonacid de la Sierra	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50025	Almunia de Doña Godina, La	6	2665,2666,15576,30426,30449,30545
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50030	Añón de Moncayo	1	2488
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50031	Aranda de Moncayo	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50035	Artieda	1	40557
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50038	Ateca	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50039	Azuara	1	10924
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50043	Bárboles	1	4938
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50045	Belchite	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50050	Bijuesca	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50055	Borja	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50059	Bujaraloz	0	None
@@ -619,7 +653,9 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50095	Ejea de los Caballeros	2	38916,42690
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50099	Épila	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50100	Erla	0	None
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50101	Escatrón	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50102	Fabara	0	None
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50111	Fréscano	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50115	Fuentes de Ebro	3	818,3997,43421
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50118	Gallur	1	3484
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50121	Gotor	0	None
@@ -632,12 +668,15 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50148	Luesia	1	8284
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50152	Maella	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50153	Magallón	1	42411
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50155	Malanquilla	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50156	Maleján	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50157	Malón	1	31338
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50163	María de Huerva	3	2778,26260,26262
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50165	Mequinenza	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50168	Mianos	1	2498
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50175	Morata de Jalón	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50177	Morés	0	None
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50180	Mozota	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50181	Muel	1	36038
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50182	Muela, La	1	44690
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50183	Munébrega	0	None
@@ -646,6 +685,9 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50189	Nonaspe	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50190	Novallas	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50193	Nuez de Ebro	2	697,38432
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50195	Orcajo	0	None
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50201	Paracuellos de Jiloca	0	None
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50202	Paracuellos de la Ribera	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50203	Pastriz	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50206	Perdiguera	1	35952
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50209	Pinseque	3	15942,19051,41128
@@ -665,12 +707,15 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50252	Tauste	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50257	Torralba de Ribota	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50261	Torrellas	2	4166,22395
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50262	Torres de Berrellén	0	None
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50264	Tosos	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50265	Trasmoz	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50266	Trasobares	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50267	Uncastillo	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50270	Urriés	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50272	Utebo	2	10747,43760
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50278	Velilla de Ebro	0	None
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50280	Vera de Moncayo	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50903	Villamayor de Gállego	2	29825,39391
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50288	Villanueva de Gállego	1	2078
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50297	Zaragoza	423	42,488,554,631,655,660,666,733,740,755,756,781,791,853,877,961,969,1005,1036,1044,1117,1123,1194,1211,1252,1296,1297,1316,1375,1391,1439,1452,1470,1510,1511,1539,1618,1653,1673,1687,1765,1782,1842,1893,1937,1997,1999,2115,2120,2282,2336,2379,2430,2479,2487,2499,2609,2637,2650,2694,2701,2743,2781,2838,3000,3234,3252,3268,3334,3342,3343,3366,3401,3465,3532,3576,3605,3634,3723,3778,3860,3875,3903,3938,3974,3975,4007,4035,4133,4138,4144,4169,4172,4218,4230,4232,4233,4244,4257,4286,4465,4545,4748,5089,5194,5360,5525,5655,5943,5977,5991,6161,6299,6390,6587,6764,6838,7137,7306,7776,7884,8082,8170,8282,8536,8738,8742,8836,8849,8904,8908,8950,9010,9020,9241,9498,9575,9663,9985,10551,10658,10716,11014,11220,11222,11382,11723,11929,11941,11996,12232,12246,12308,12312,12519,12711,13034,13042,13056,13114,13312,13433,13558,13600,13805,13884,13902,14023,14033,14107,14374,14499,14601,14680,14839,14879,15039,15148,15201,15335,15532,15635,15856,15864,15952,16038,16058,16126,16529,16551,16879,17300,17342,17448,17516,17612,17649,17717,17785,17881,18043,18098,18221,18242,18301,18359,18509,18607,18665,19013,19025,19157,19374,19634,19666,19798,19802,20010,20083,20139,20193,20205,20215,20254,20359,20367,20693,20963,21215,21317,21327,21623,21818,21820,21826,21897,21953,22187,22266,22452,22462,22590,22646,22791,23154,23166,23218,23244,23679,23821,23898,23914,23965,24049,24166,24173,24303,24314,24398,24474,24624,24745,24793,25065,25141,25183,25214,25216,25219,25343,25450,25734,25886,25896,25909,26416,26422,26945,26949,27028,27035,27153,27293,27301,27352,27378,27430,27432,27475,27845,28012,28031,28035,28043,28531,28581,28674,28721,28801,28909,28915,28929,28958,29039,29225,29321,29510,29768,29787,29941,30010,30502,31468,31938,31964,32197,32199,32217,32309,32351,32367,32430,32469,32626,32912,32918,33434,33671,33730,33746,33871,33997,34256,34286,34292,34307,34314,34383,34385,34417,34506,34714,34999,35220,35907,35990,36131,36149,36187,36262,36516,36853,36868,37110,37211,37430,37486,37578,37992,38213,38221,38254,38434,38448,38556,38610,38735,38752,38762,38820,38858,38874,38903,38928,39019,39025,39045,39083,39205,39233,39251,39286,39385,39389,39405,39407,39413,39427,39441,39475,39490,39853,39879,39953,39963,40001,40086,40121,40269,40506,40518,41596,41612,41728,41870,42012,42030,42054,42150,42232,42574,42608,42708,42718,43379,43415,43557,43844,44021,44061,44067,44099,44145
@@ -754,11 +799,12 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	04	Baleares, Islas	07	Balears, Illes	07017	Costitx	2	1693,2514
 2015-01-01	ES	España	04	Baleares, Islas	07	Balears, Illes	07018	Deyá	4	3236,3754,22966,23181
 2015-01-01	ES	España	04	Baleares, Islas	07	Balears, Illes	07026	Eivissa	34	2418,3010,3064,3124,3250,3428,3563,4082,5515,5959,6532,8259,9337,9500,9601,9898,10517,15377,16925,18729,20181,20187,24484,24832,25262,26367,26762,27077,30637,33368,38615,40199,40372,43854
+2015-01-01	ES	España	04	Baleares, Islas	07	Balears, Illes	07019	Escorca	0	None
 2015-01-01	ES	España	04	Baleares, Islas	07	Balears, Illes	07020	Esporles	17	568,833,1428,1923,2481,3552,4636,5961,7123,8798,9016,10595,15191,23139,27686,33516,39334
 2015-01-01	ES	España	04	Baleares, Islas	07	Balears, Illes	07021	Estellencs	2	4987,35081
 2015-01-01	ES	España	04	Baleares, Islas	07	Balears, Illes	07022	Felanitx	9	1396,1820,7459,13339,29468,36838,38248,39791,43495
 2015-01-01	ES	España	04	Baleares, Islas	07	Balears, Illes	07023	Ferreries	14	10359,11016,11018,11020,20917,20919,25714,25718,29041,29860,29882,37572,37574,39453
-2015-01-01	ES	España	04	Baleares, Islas	07	Balears, Illes	07024	Formentera	3	6248,25493,37702
+2015-01-01	ES	España	04	Baleares, Islas	07	Balears, Illes	07024	Formentera	4	6248,25493,25499,37702
 2015-01-01	ES	España	04	Baleares, Islas	07	Balears, Illes	07027	Inca	29	1406,1436,1445,1492,1565,1725,1862,1869,1887,2377,3312,4790,6868,9782,10470,13429,16481,18625,21257,23282,23514,26277,33239,38119,39805,39809,41152,41209,41954
 2015-01-01	ES	España	04	Baleares, Islas	07	Balears, Illes	07028	Lloret de Vistalegre	5	114,1450,1835,12513,17430
 2015-01-01	ES	España	04	Baleares, Islas	07	Balears, Illes	07029	Lloseta	4	3215,4327,14384,29450
@@ -840,6 +886,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38010	Buenavista del Norte	0	None
 2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38011	Candelaria	0	None
 2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38012	Fasnia	0	None
+2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38013	Frontera	0	None
 2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38015	Garachico	0	None
 2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38016	Garafía	0	None
 2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38017	Granadilla de Abona	0	None
@@ -873,12 +920,14 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38046	Tegueste	0	None
 2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38047	Tijarafe	0	None
 2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38049	Valle Gran Rey	0	None
+2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38050	Vallehermoso	0	None
 2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38048	Valverde	0	None
 2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38051	Victoria de Acentejo, La	0	None
 2015-01-01	ES	España	05	Canarias	38	Santa Cruz de Tenerife	38053	Villa de Mazo	0	None
 2015-01-01	ES	España	06	Cantabria	39	Cantabria	39001	Alfoz de Lloredo	1	2029
 2015-01-01	ES	España	06	Cantabria	39	Cantabria	39002	Ampuero	2	5800,5804
 2015-01-01	ES	España	06	Cantabria	39	Cantabria	39005	Argoños	0	None
+2015-01-01	ES	España	06	Cantabria	39	Cantabria	39006	Arnuero	0	None
 2015-01-01	ES	España	06	Cantabria	39	Cantabria	39008	Astillero, El	1	26116
 2015-01-01	ES	España	06	Cantabria	39	Cantabria	39009	Bárcena de Cicero	1	12555
 2015-01-01	ES	España	06	Cantabria	39	Cantabria	39011	Bareyo	1	42395
@@ -892,6 +941,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	06	Cantabria	39	Cantabria	39023	Colindres	3	12515,12517,12705
 2015-01-01	ES	España	06	Cantabria	39	Cantabria	39024	Comillas	0	None
 2015-01-01	ES	España	06	Cantabria	39	Cantabria	39025	Corrales de Buelna, Los	0	None
+2015-01-01	ES	España	06	Cantabria	39	Cantabria	39026	Corvera de Toranzo	0	None
 2015-01-01	ES	España	06	Cantabria	39	Cantabria	39028	Entrambasaguas	0	None
 2015-01-01	ES	España	06	Cantabria	39	Cantabria	39032	Hermandad de Campoo de Suso	1	4045
 2015-01-01	ES	España	06	Cantabria	39	Cantabria	39035	Laredo	2	12020,35873
@@ -939,6 +989,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	06	Cantabria	39	Cantabria	39102	Voto	2	3135,31078
 2015-01-01	ES	España	08	Castilla - La Mancha	02	Albacete	02002	Alatoz	2	24353,24361
 2015-01-01	ES	España	08	Castilla - La Mancha	02	Albacete	02003	Albacete	40	2922,4624,11459,12242,12244,12284,15239,15445,16282,17154,17410,17528,17811,21753,22694,22698,25556,26747,26755,27376,27520,28877,30057,30374,32254,34123,35105,35115,35117,35123,36109,36420,37846,38382,40017,41502,42528,43220,43373,43499
+2015-01-01	ES	España	08	Castilla - La Mancha	02	Albacete	02004	Albatana	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	02	Albacete	02007	Alcalá del Júcar	1	33160
 2015-01-01	ES	España	08	Castilla - La Mancha	02	Albacete	02009	Almansa	1	19960
 2015-01-01	ES	España	08	Castilla - La Mancha	02	Albacete	02019	Bonillo, El	0	None
@@ -972,6 +1023,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	08	Castilla - La Mancha	02	Albacete	02080	Villapalacios	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	02	Albacete	02081	Villarrobledo	3	11675,24142,40953
 2015-01-01	ES	España	08	Castilla - La Mancha	02	Albacete	02082	Villatoya	0	None
+2015-01-01	ES	España	08	Castilla - La Mancha	02	Albacete	02086	Yeste	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	13	Ciudad Real	13005	Alcázar de San Juan	1	24743
 2015-01-01	ES	España	08	Castilla - La Mancha	13	Ciudad Real	13006	Alcoba	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	13	Ciudad Real	13007	Alcolea de Calatrava	0	None
@@ -994,6 +1046,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	08	Castilla - La Mancha	13	Ciudad Real	13055	Mestanza	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	13	Ciudad Real	13056	Miguelturra	2	2888,19326
 2015-01-01	ES	España	08	Castilla - La Mancha	13	Ciudad Real	13061	Pedro Muñoz	2	22050,24480
+2015-01-01	ES	España	08	Castilla - La Mancha	13	Ciudad Real	13062	Picón	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	13	Ciudad Real	13064	Poblete	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	13	Ciudad Real	13071	Puertollano	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	13	Ciudad Real	13072	Retuerta del Bullaque	0	None
@@ -1016,6 +1069,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16033	Belmonte	1	27708
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16035	Beteta	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16901	Campos del Paraíso	1	30376
+2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16048	Cañamares	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16050	Cañaveras	1	16156
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16052	Cañete	1	10998
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16053	Cañizares	0	None
@@ -1071,6 +1125,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19020	Almadrones	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19024	Alovera	1	17438
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19037	Arbancón	0	None
+2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19039	Argecilla	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19044	Atienza	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19046	Azuqueca de Henares	3	2386,10691,12099
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19053	Brihuega	1	6234
@@ -1096,6 +1151,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19152	Illana	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19160	Loranca de Tajuña	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19165	Majaelrayo	1	12154
+2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19168	Mandayona	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19170	Maranchón	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19171	Marchamalo	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19179	Membrillera	0	None
@@ -1108,6 +1164,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19223	Poveda de la Sierra	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19225	Pozo de Guadalajara	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19232	Recuenco, El	0	None
+2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19233	Renera	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19237	Rillo de Gallo	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19245	Sacedón	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	19	Guadalajara	19257	Sigüenza	1	35174
@@ -1163,14 +1220,17 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45106	Mora	1	40745
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45107	Nambroca	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45109	Navahermosa	0	None
+2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45110	Navalcán	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45112	Navalmorales, Los	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45114	Navamorcuende	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45115	Noblejas	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45118	Novés	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45119	Numancia de la Sagra	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45121	Ocaña	1	11987
+2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45122	Olías del Rey	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45123	Ontígola	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45125	Oropesa	0	None
+2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45129	Paredes de Escalona	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45132	Pepino	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45135	Puebla de Almoradiel, La	1	14477
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45136	Puebla de Montalbán, La	0	None
@@ -1178,7 +1238,9 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45140	Pulgar	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45142	Quintanar de la Orden	1	24464
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45144	Real de San Vicente, El	0	None
+2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45146	Retamoso de la Jara	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45147	Rielves	0	None
+2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45148	Robledo del Mazo	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45150	San Bartolomé de las Abiertas	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45154	San Román de los Montes	2	764,38388
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45155	Santa Ana de Pusa	0	None
@@ -1204,6 +1266,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45197	Villasequilla	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45198	Villatobas	1	33012
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45199	Viso de San Juan, El	0	None
+2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45200	Yébenes, Los	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45201	Yeles	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45202	Yepes	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	45	Toledo	45203	Yuncler	0	None
@@ -1224,11 +1287,14 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05054	Casavieja	3	17380,31149,42892
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05055	Casillas	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05057	Cebreros	1	34422
+2015-01-01	ES	España	07	Castilla y León	05	Ávila	05058	Cepeda la Mora	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05059	Cillán	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05066	Cuevas del Valle	1	10564
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05903	Diego del Carpio	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05074	Fontiveros	0	None
+2015-01-01	ES	España	07	Castilla y León	05	Ávila	05075	Fresnedilla	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05093	Herradón de Pinares	1	32075
+2015-01-01	ES	España	07	Castilla y León	05	Ávila	05101	Hoyocasero	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05102	Hoyo de Pinares, El	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05103	Hoyorredondo	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05124	Medinilla	0	None
@@ -1250,6 +1316,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05186	Piedrahíta	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05187	Piedralaves	1	25722
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05189	Poyales del Hoyo	1	39231
+2015-01-01	ES	España	07	Castilla y León	05	Ávila	05204	Sanchidrián	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05901	San Juan de Gredos	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05212	San Juan del Molinillo	0	None
 2015-01-01	ES	España	07	Castilla y León	05	Ávila	05221	Santa Cruz del Valle	0	None
@@ -1276,12 +1343,14 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09059	Burgos	38	2250,2544,2652,2794,2914,3315,4826,5105,5208,5460,5995,7716,9264,10900,10910,13835,15015,15485,15602,15774,19020,19886,20147,20616,21571,21744,22038,22074,22159,22943,23987,25526,26106,26624,26770,35267,40876,43082
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09064	Caleruega	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09065	Campillo de Aranda	0	None
+2015-01-01	ES	España	07	Castilla y León	09	Burgos	09066	Campolara	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09067	Canicosa de la Sierra	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09073	Cardeñadijo	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09074	Cardeñajimeno	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09084	Castrillo de la Reina	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09085	Castrillo de la Vega	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09086	Castrillo del Val	0	None
+2015-01-01	ES	España	07	Castilla y León	09	Burgos	09094	Cebrecos	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09095	Celada del Camino	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09098	Cerezo de Río Tirón	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09105	Ciruelos de Cervera	0	None
@@ -1295,7 +1364,9 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09133	Fresno de Rodilla	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09134	Frías	2	2788,21098
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09137	Fuentelcésped	0	None
+2015-01-01	ES	España	07	Castilla y León	09	Burgos	09138	Fuentelisendo	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09139	Fuentemolinos	0	None
+2015-01-01	ES	España	07	Castilla y León	09	Burgos	09148	Grijalba	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09149	Grisaleña	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09151	Gumiel de Izán	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09152	Gumiel de Mercado	0	None
@@ -1346,6 +1417,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09338	San Mamés de Burgos	1	25884
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09339	San Martín de Rubiales	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09348	Santa Inés	0	None
+2015-01-01	ES	España	07	Castilla y León	09	Burgos	09353	Santa María Rivarredonda	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09358	Santo Domingo de Silos	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09362	Sarracín	0	None
 2015-01-01	ES	España	07	Castilla y León	09	Burgos	09363	Sasamón	0	None
@@ -1385,6 +1457,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	24	León	24010	Bañeza, La	1	33952
 2015-01-01	ES	España	07	Castilla y León	24	León	24014	Bembibre	1	28559
 2015-01-01	ES	España	07	Castilla y León	24	León	24015	Benavides	1	41425
+2015-01-01	ES	España	07	Castilla y León	24	León	24017	Bercianos del Páramo	0	None
 2015-01-01	ES	España	07	Castilla y León	24	León	24021	Boñar	0	None
 2015-01-01	ES	España	07	Castilla y León	24	León	24023	Brazuelo	1	15247
 2015-01-01	ES	España	07	Castilla y León	24	León	24026	Bustillo del Páramo	0	None
@@ -1398,8 +1471,10 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	24	León	24047	Castrocontrigo	0	None
 2015-01-01	ES	España	07	Castilla y León	24	León	24065	Chozas de Abajo	1	3063
 2015-01-01	ES	España	07	Castilla y León	24	León	24056	Cistierna	0	None
+2015-01-01	ES	España	07	Castilla y León	24	León	24059	Corullón	0	None
 2015-01-01	ES	España	07	Castilla y León	24	León	24061	Cuadros	2	35956,36169
 2015-01-01	ES	España	07	Castilla y León	24	León	24063	Cubillas de Rueda	0	None
+2015-01-01	ES	España	07	Castilla y León	24	León	24064	Cubillos del Sil	0	None
 2015-01-01	ES	España	07	Castilla y León	24	León	24068	Ercina, La	0	None
 2015-01-01	ES	España	07	Castilla y León	24	León	24070	Fabero	0	None
 2015-01-01	ES	España	07	Castilla y León	24	León	24076	Garrafe de Torío	1	19882
@@ -1443,8 +1518,10 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	24	León	24201	Vegas del Condado	1	29919
 2015-01-01	ES	España	07	Castilla y León	24	León	24202	Villablino	3	3976,15986,15988
 2015-01-01	ES	España	07	Castilla y León	24	León	24203	Villabraz	0	None
+2015-01-01	ES	España	07	Castilla y León	24	León	24207	Villademor de la Vega	0	None
 2015-01-01	ES	España	07	Castilla y León	24	León	24209	Villafranca del Bierzo	0	None
 2015-01-01	ES	España	07	Castilla y León	24	León	24214	Villamejil	0	None
+2015-01-01	ES	España	07	Castilla y León	24	León	24215	Villamol	0	None
 2015-01-01	ES	España	07	Castilla y León	24	León	24222	Villaquilambre	1	16397
 2015-01-01	ES	España	07	Castilla y León	24	León	24223	Villarejo de Órbigo	0	None
 2015-01-01	ES	España	07	Castilla y León	24	León	24227	Villaturiel	1	23353
@@ -1459,6 +1536,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34027	Barruelo de Santullán	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34029	Becerril de Campos	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34034	Boadilla del Camino	0	None
+2015-01-01	ES	España	07	Castilla y León	34	Palencia	34035	Boadilla de Rioseco	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34037	Buenavista de Valdavia	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34047	Carrión de los Condes	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34056	Cervera de Pisuerga	0	None
@@ -1491,16 +1569,20 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34160	San Cebrián de Mudá	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34163	San Mamés de Campos	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34169	Santervás de la Vega	0	None
+2015-01-01	ES	España	07	Castilla y León	34	Palencia	34171	Santibáñez de la Peña	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34178	Tabanera de Cerrato	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34190	Valderrábano	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34199	Velilla del Río Carrión	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34023	Venta de Baños	1	34800
+2015-01-01	ES	España	07	Castilla y León	34	Palencia	34093	Vid de Ojeda, La	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34217	Villalobón	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34225	Villamuriel de Cerrato	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34228	Villanuño de Valdavia	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34231	Villarrabé	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34237	Villaumbrales	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34240	Villerías de Campos	0	None
+2015-01-01	ES	España	07	Castilla y León	34	Palencia	34243	Villoldo	0	None
+2015-01-01	ES	España	07	Castilla y León	34	Palencia	34245	Villota del Páramo	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37007	Alaraz	1	41007
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37008	Alba de Tormes	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37009	Alba de Yeltes	0	None
@@ -1524,6 +1606,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37121	Encinas de Abajo	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37129	Florida de Liébana	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37133	Fresnedoso	0	None
+2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37136	Fuenteguinaldo	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37139	Fuentes de Béjar	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37147	Garcibuey	1	32369
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37148	Garcihernández	0	None
@@ -1552,6 +1635,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37278	San Cristóbal de la Cuesta	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37284	San Esteban de la Sierra	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37294	Santa Marta de Tormes	1	13807
+2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37296	Santiago de la Puebla	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37302	Saucelle	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37312	Sorihuela	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37322	Terradillos	0	None
@@ -1568,6 +1652,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40009	Aldeanueva de la Serrezuela	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40015	Aldehuela del Codonal	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40020	Arcones	0	None
+2015-01-01	ES	España	07	Castilla y León	40	Segovia	40034	Caballar	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40035	Cabañas de Polendos	1	32920
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40039	Campo de San Pedro	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40040	Cantalejo	0	None
@@ -1580,6 +1665,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40059	Collado Hermoso	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40060	Condado de Castilnovo	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40061	Corral de Ayllón	0	None
+2015-01-01	ES	España	07	Castilla y León	40	Segovia	40902	Cozuelos de Fuentidueña	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40063	Cuéllar	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40072	Encinillas	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40076	Espinar, El	3	3622,32928,35648
@@ -1635,6 +1721,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40218	Valle de Tabladillo	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40215	Valtiendas	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40223	Vegas de Matute	0	None
+2015-01-01	ES	España	07	Castilla y León	40	Segovia	40225	Villacastín	0	None
 2015-01-01	ES	España	07	Castilla y León	42	Soria	42004	Ágreda	0	None
 2015-01-01	ES	España	07	Castilla y León	42	Soria	42019	Almarza	1	34324
 2015-01-01	ES	España	07	Castilla y León	42	Soria	42020	Almazán	1	21066
@@ -1689,6 +1776,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47050	Cigales	1	16618
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47051	Ciguñuela	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47052	Cistérniga	0	None
+2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47053	Cogeces de Íscar	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47054	Cogeces del Monte	1	14349
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47055	Corcos	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47057	Cubillas de Santa Marta	0	None
@@ -1696,6 +1784,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47064	Fontihoyuelo	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47068	Fuente-Olmedo	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47071	Geria	0	None
+2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47074	Hornillos de Eresma	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47075	Íscar	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47076	Laguna de Duero	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47080	Manzanillo	1	40304
@@ -1713,6 +1802,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47104	Olmedo	2	13626,17026
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47105	Olmos de Esgueva	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47111	Pedraja de Portillo, La	0	None
+2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47112	Pedrajas de San Esteban	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47114	Peñafiel	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47115	Peñaflor de Hornija	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47117	Piña de Esgueva	1	40078
@@ -1766,6 +1856,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49081	Fuentesaúco	1	27653
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49085	Galende	0	None
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49094	Hermisende	0	None
+2015-01-01	ES	España	07	Castilla y León	49	Zamora	49101	Luelmo	0	None
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49103	Madridanos	0	None
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49104	Mahide	0	None
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49117	Micereces de Tera	0	None
@@ -1804,7 +1895,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08017	Balenyà	3	181,14481,25420
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08018	Balsareny	5	4891,17502,19507,30265,37055
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08252	Barberà del Vallès	34	739,1046,1149,1809,2097,4068,7210,7473,7569,7959,8433,10422,11840,14697,15249,16096,19760,20604,22866,22945,22949,22951,23292,24927,31381,33752,35682,37613,38548,38952,40811,41902,42132,44598
-2015-01-01	ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3294	4,8,9,33,41,44,45,47,53,58,59,61,64,76,86,93,94,105,111,113,117,120,126,127,132,136,138,146,150,156,163,165,166,190,194,201,203,205,206,213,217,218,222,225,228,230,232,233,234,239,242,244,246,250,258,280,282,288,290,293,294,303,305,311,313,315,318,326,334,335,337,342,343,344,346,347,351,361,362,364,366,370,373,381,387,389,390,397,398,399,400,417,432,440,441,457,465,466,468,478,480,492,494,498,502,505,513,514,517,519,524,528,538,539,543,548,555,561,563,573,574,575,578,585,591,594,624,633,634,636,641,643,645,653,661,684,688,694,696,709,715,724,727,729,730,731,732,744,745,758,763,766,767,770,783,788,795,803,805,812,813,825,865,868,869,874,887,891,903,905,906,910,911,926,934,938,944,945,947,954,970,971,985,989,1014,1017,1034,1041,1049,1081,1089,1093,1094,1110,1125,1134,1135,1151,1153,1155,1157,1163,1172,1174,1189,1190,1192,1198,1208,1209,1210,1212,1220,1223,1224,1225,1231,1234,1235,1241,1257,1258,1259,1261,1263,1270,1271,1275,1280,1281,1304,1308,1314,1317,1318,1319,1324,1327,1338,1341,1344,1369,1371,1378,1381,1384,1390,1392,1394,1410,1412,1419,1420,1426,1432,1434,1438,1447,1454,1461,1478,1485,1493,1494,1508,1515,1523,1524,1529,1530,1533,1555,1558,1566,1576,1580,1584,1590,1604,1614,1621,1622,1634,1636,1638,1643,1664,1683,1695,1696,1710,1720,1726,1776,1777,1780,1792,1794,1813,1817,1819,1829,1845,1865,1867,1885,1902,1905,1906,1926,1940,1955,1976,1977,1998,2003,2036,2038,2082,2083,2090,2100,2119,2129,2144,2145,2154,2161,2168,2169,2190,2194,2196,2211,2224,2239,2256,2258,2270,2271,2272,2273,2277,2285,2289,2305,2310,2319,2321,2322,2323,2328,2329,2331,2334,2335,2342,2344,2350,2354,2355,2358,2359,2360,2374,2383,2385,2387,2411,2414,2422,2427,2439,2442,2444,2456,2469,2470,2471,2477,2493,2516,2522,2523,2530,2531,2547,2551,2576,2577,2582,2593,2598,2600,2602,2610,2617,2622,2625,2629,2661,2670,2677,2681,2682,2687,2699,2703,2711,2714,2723,2727,2731,2737,2738,2740,2744,2745,2746,2751,2752,2768,2771,2772,2776,2777,2780,2783,2789,2796,2804,2811,2816,2819,2823,2855,2879,2884,2892,2893,2894,2899,2903,2910,2915,2917,2920,2928,2937,2938,2939,2940,2945,2948,2949,2952,2953,2955,2957,2959,2960,2963,2969,2995,2996,3006,3045,3052,3068,3082,3086,3116,3131,3133,3134,3138,3148,3149,3150,3156,3157,3161,3168,3169,3172,3184,3185,3187,3192,3197,3201,3219,3221,3227,3235,3237,3242,3286,3298,3299,3311,3313,3320,3324,3327,3329,3330,3332,3333,3382,3383,3389,3391,3398,3405,3406,3413,3417,3430,3433,3439,3457,3474,3475,3485,3495,3505,3508,3510,3514,3531,3536,3538,3547,3550,3557,3569,3585,3596,3604,3611,3618,3632,3648,3660,3669,3673,3688,3700,3706,3729,3761,3765,3767,3789,3794,3813,3814,3818,3821,3827,3828,3831,3835,3843,3846,3868,3893,3895,3922,3925,3926,3928,3936,3978,3979,3981,3993,4019,4026,4027,4030,4043,4054,4059,4061,4063,4072,4079,4087,4103,4111,4115,4127,4142,4145,4150,4158,4160,4175,4176,4190,4202,4209,4211,4212,4213,4223,4234,4236,4238,4240,4259,4260,4264,4268,4273,4282,4284,4285,4295,4299,4309,4312,4321,4323,4333,4334,4339,4344,4345,4346,4357,4359,4379,4381,4385,4386,4388,4390,4400,4412,4430,4445,4449,4471,4473,4501,4511,4558,4561,4612,4626,4630,4638,4646,4648,4667,4670,4690,4732,4738,4768,4778,4792,4798,4813,4814,4899,4932,4963,4989,5017,5051,5085,5097,5113,5116,5134,5178,5190,5196,5198,5204,5215,5248,5272,5294,5319,5328,5330,5348,5350,5378,5416,5418,5420,5422,5428,5430,5432,5444,5446,5498,5511,5519,5545,5563,5577,5582,5600,5627,5633,5647,5661,5664,5678,5680,5692,5696,5727,5752,5756,5774,5776,5780,5841,5847,5854,5868,5870,5886,5888,5890,5892,5898,5905,5911,5913,5921,5925,5989,6033,6055,6090,6094,6102,6104,6108,6124,6136,6138,6157,6182,6184,6232,6240,6245,6255,6265,6267,6279,6285,6287,6291,6311,6327,6331,6338,6352,6370,6385,6402,6404,6414,6427,6435,6451,6453,6497,6506,6508,6521,6522,6540,6554,6581,6595,6619,6629,6668,6682,6693,6705,6720,6724,6730,6732,6772,6794,6800,6806,6810,6830,6832,6842,6849,6862,6904,6928,6942,6968,6984,7014,7048,7052,7064,7080,7082,7117,7129,7165,7190,7222,7226,7236,7242,7260,7266,7280,7283,7287,7321,7325,7351,7353,7362,7368,7390,7398,7447,7486,7524,7527,7529,7535,7557,7561,7567,7571,7575,7579,7607,7621,7662,7664,7680,7682,7686,7690,7692,7700,7704,7710,7727,7746,7760,7783,7792,7796,7798,7848,7852,7867,7870,7872,7876,7890,7914,7918,7931,7935,7957,7981,7983,7995,8023,8024,8026,8062,8066,8070,8090,8099,8109,8140,8182,8184,8196,8204,8243,8268,8273,8290,8304,8344,8356,8384,8386,8396,8398,8424,8427,8450,8462,8466,8468,8473,8490,8501,8502,8504,8514,8520,8522,8544,8548,8558,8562,8576,8606,8626,8667,8701,8727,8750,8754,8762,8774,8784,8806,8814,8816,8818,8838,8850,8858,8860,8884,8932,8934,8940,8942,8952,8964,8982,8996,9014,9022,9049,9052,9062,9066,9091,9109,9117,9124,9125,9129,9170,9189,9199,9216,9219,9237,9253,9256,9297,9313,9361,9383,9406,9414,9416,9446,9462,9470,9476,9502,9533,9537,9541,9554,9585,9613,9617,9621,9633,9635,9637,9641,9643,9649,9674,9706,9712,9725,9763,9788,9872,9894,9896,9913,9917,9931,9955,9969,9973,9989,10021,10055,10065,10083,10123,10139,10156,10158,10190,10202,10218,10246,10253,10280,10334,10363,10367,10371,10396,10406,10492,10500,10528,10554,10567,10573,10608,10620,10629,10639,10641,10643,10645,10649,10651,10660,10670,10686,10710,10728,10735,10739,10802,10844,10846,10866,10890,10940,10946,10952,10964,10986,10988,11041,11063,11083,11085,11093,11095,11099,11106,11116,11124,11156,11158,11229,11254,11278,11290,11302,11341,11360,11364,11405,11407,11421,11425,11455,11465,11467,11469,11479,11483,11497,11511,11516,11540,11552,11556,11558,11580,11586,11679,11687,11725,11742,11744,11758,11766,11786,11810,11816,11820,11826,11836,11861,11869,11871,11875,11893,11903,11955,11973,11979,11990,12000,12006,12024,12030,12036,12046,12052,12062,12071,12079,12083,12136,12142,12146,12168,12180,12202,12228,12254,12268,12282,12314,12338,12342,12354,12358,12364,12366,12381,12396,12412,12416,12442,12445,12453,12489,12495,12563,12565,12567,12573,12583,12623,12625,12640,12648,12685,12717,12725,12729,12731,12746,12768,12782,12794,12803,12810,12837,12860,12862,12874,12890,12902,12936,12970,13007,13013,13046,13058,13092,13117,13146,13150,13170,13203,13217,13221,13262,13286,13288,13294,13302,13335,13349,13351,13370,13384,13392,13423,13426,13431,13435,13437,13481,13483,13496,13499,13538,13550,13554,13566,13586,13624,13630,13662,13670,13714,13738,13742,13746,13748,13757,13817,13819,13833,13841,13845,13849,13922,13942,13944,13952,13957,13978,13997,14057,14089,14093,14099,14136,14144,14225,14254,14267,14298,14316,14320,14331,14333,14341,14345,14355,14357,14361,14416,14436,14438,14466,14468,14503,14505,14514,14519,14563,14569,14599,14626,14643,14645,14652,14660,14662,14700,14706,14718,14724,14726,14728,14730,14737,14744,14748,14773,14785,14793,14796,14798,14799,14815,14873,14897,14927,14933,14947,14953,14958,15030,15032,15048,15063,15071,15081,15154,15171,15199,15222,15224,15228,15241,15291,15303,15313,15349,15361,15394,15397,15401,15453,15455,15465,15473,15520,15524,15556,15562,15619,15625,15627,15679,15717,15736,15740,15758,15766,15809,15825,15838,15870,15872,15897,15994,16030,16050,16079,16107,16180,16212,16227,16230,16232,16284,16291,16360,16364,16366,16380,16381,16389,16391,16407,16433,16443,16445,16459,16521,16527,16538,16546,16580,16587,16614,16616,16630,16632,16634,16652,16666,16676,16680,16690,16692,16734,16771,16783,16834,16848,16881,16887,16901,16927,16940,16948,16950,16952,16960,16962,16984,16986,17052,17064,17072,17089,17121,17133,17174,17193,17211,17221,17234,17242,17304,17338,17344,17386,17434,17457,17458,17486,17496,17508,17510,17518,17526,17530,17540,17562,17584,17586,17590,17597,17701,17703,17726,17736,17744,17773,17783,17831,17833,17849,17871,17888,17913,17917,17953,17969,17979,17994,18031,18037,18094,18122,18136,18163,18167,18169,18171,18236,18246,18254,18281,18307,18313,18320,18326,18346,18354,18356,18414,18432,18442,18485,18487,18505,18545,18547,18567,18573,18589,18595,18615,18627,18677,18713,18747,18759,18797,18799,18821,18825,18833,18843,18855,18866,18870,18884,18892,18894,18920,18937,18939,18969,18973,18979,18981,19007,19050,19069,19077,19079,19083,19085,19121,19131,19133,19137,19141,19143,19190,19194,19198,19200,19208,19232,19252,19291,19314,19339,19359,19363,19376,19389,19394,19399,19401,19411,19413,19424,19434,19447,19471,19503,19505,19517,19529,19535,19550,19562,19582,19584,19586,19588,19610,19612,19618,19622,19626,19632,19656,19664,19704,19706,19738,19746,19756,19768,19769,19777,19790,19827,19847,19853,19870,19890,19907,19917,19920,19928,19936,19946,19992,20004,20008,20014,20028,20034,20050,20058,20114,20116,20118,20155,20201,20226,20230,20252,20299,20313,20315,20321,20363,20377,20379,20383,20385,20409,20488,20512,20534,20556,20568,20572,20584,20586,20606,20649,20653,20670,20697,20705,20707,20725,20731,20749,20755,20761,20787,20803,20805,20811,20813,20830,20846,20853,20870,20893,20897,20899,20905,20921,20923,20929,20931,20944,20970,21003,21007,21029,21056,21082,21103,21107,21108,21112,21168,21196,21200,21201,21244,21281,21285,21299,21341,21355,21405,21411,21413,21455,21457,21459,21479,21499,21503,21507,21532,21542,21544,21561,21576,21578,21614,21637,21639,21651,21656,21667,21669,21681,21705,21713,21717,21730,21738,21742,21772,21773,21801,21805,21846,21858,21907,21909,21933,21951,21978,21992,22016,22068,22135,22145,22173,22179,22183,22193,22220,22282,22288,22300,22306,22308,22326,22334,22358,22379,22391,22401,22412,22419,22444,22466,22502,22550,22593,22600,22606,22608,22610,22612,22628,22688,22706,22710,22732,22754,22775,22779,22785,22797,22811,22829,22837,22849,22875,22879,22906,22922,22953,22960,22962,22974,22978,22984,23013,23027,23038,23040,23051,23065,23067,23077,23097,23111,23123,23141,23158,23189,23199,23201,23203,23209,23214,23220,23232,23254,23256,23321,23325,23343,23357,23380,23412,23422,23432,23436,23439,23445,23461,23532,23538,23548,23552,23558,23622,23643,23683,23713,23717,23719,23761,23765,23769,23778,23781,23784,23786,23790,23796,23814,23827,23835,23837,23845,23847,23863,23867,23875,23878,23883,23904,23926,23932,23948,23977,23994,24022,24040,24044,24056,24066,24069,24081,24102,24108,24124,24132,24160,24189,24197,24211,24223,24233,24243,24244,24255,24259,24263,24271,24291,24307,24311,24327,24331,24337,24339,24347,24350,24374,24384,24415,24417,24428,24444,24450,24472,24518,24522,24539,24543,24551,24553,24591,24603,24636,24640,24651,24664,24703,24726,24749,24756,24789,24800,24807,24808,24830,24836,24838,24862,24866,24905,24923,24938,24940,24981,24987,25009,25105,25125,25139,25155,25163,25177,25198,25202,25228,25231,25270,25283,25292,25298,25304,25320,25329,25339,25347,25398,25404,25429,25431,25437,25455,25470,25475,25479,25484,25487,25489,25495,25499,25509,25530,25590,25592,25596,25608,25611,25615,25617,25627,25655,25659,25677,25689,25693,25703,25705,25707,25711,25720,25743,25755,25759,25761,25769,25775,25779,25783,25787,25789,25803,25809,25844,25852,25864,25882,25888,25900,25902,25913,25920,25921,25929,25937,25942,25944,25974,25999,26011,26016,26047,26096,26098,26110,26164,26174,26190,26191,26242,26256,26279,26285,26297,26301,26313,26320,26322,26324,26381,26401,26412,26431,26436,26443,26459,26549,26563,26577,26622,26648,26650,26656,26661,26675,26682,26725,26730,26745,26778,26799,26841,26852,26858,26880,26888,26930,26934,26938,26947,26989,27012,27029,27041,27045,27047,27069,27085,27143,27173,27175,27199,27211,27223,27229,27242,27247,27248,27256,27289,27291,27297,27303,27307,27311,27319,27344,27348,27356,27374,27392,27424,27467,27473,27495,27501,27516,27580,27582,27623,27633,27647,27651,27682,27688,27692,27700,27718,27720,27724,27726,27758,27772,27826,27840,27842,27854,27904,27910,27918,27930,27958,27965,27976,28008,28079,28087,28092,28096,28123,28131,28133,28172,28178,28224,28287,28291,28295,28322,28334,28371,28383,28393,28413,28427,28439,28465,28478,28500,28507,28510,28518,28523,28595,28604,28607,28611,28615,28621,28633,28649,28656,28672,28700,28711,28729,28820,28826,28847,28849,28853,28859,28885,28889,28905,28917,28925,28935,28945,28948,28976,29003,29028,29047,29096,29129,29133,29163,29169,29233,29277,29285,29301,29307,29317,29344,29370,29380,29404,29442,29448,29456,29467,29491,29504,29506,29536,29553,29598,29665,29672,29686,29696,29748,29773,29797,29800,29813,29819,29831,29833,29835,29842,29852,29888,29913,29931,29960,29976,29978,29989,30001,30002,30006,30008,30012,30016,30031,30071,30073,30077,30087,30091,30122,30125,30171,30178,30182,30227,30240,30246,30252,30258,30272,30284,30317,30321,30331,30354,30364,30368,30392,30396,30400,30408,30410,30429,30433,30441,30463,30492,30514,30553,30563,30578,30582,30588,30594,30601,30605,30609,30615,30633,30686,30742,30754,30797,30800,30872,30874,30922,30931,30933,30944,31001,31009,31038,31080,31141,31163,31175,31186,31193,31194,31227,31228,31230,31243,31277,31301,31359,31363,31380,31386,31393,31398,31400,31414,31428,31432,31436,31444,31454,31486,31495,31511,31523,31527,31533,31542,31588,31605,31609,31627,31654,31661,31671,31679,31681,31686,31700,31757,31771,31783,31789,31793,31799,31813,31817,31848,31865,31872,31884,31894,31900,31910,31973,31976,31987,32007,32017,32025,32038,32059,32083,32085,32097,32114,32121,32147,32183,32195,32201,32203,32207,32209,32227,32268,32272,32276,32286,32304,32307,32325,32333,32343,32410,32426,32428,32451,32453,32461,32467,32483,32487,32528,32530,32557,32563,32567,32583,32585,32595,32611,32616,32618,32620,32625,32638,32654,32673,32746,32759,32767,32769,32772,32805,32817,32829,32838,32849,32853,32863,32875,32893,32904,32914,32916,32932,32940,32945,32957,32963,32979,32981,32991,33006,33022,33024,33030,33051,33055,33057,33059,33061,33079,33084,33088,33098,33100,33108,33112,33117,33120,33144,33151,33189,33224,33235,33237,33245,33295,33309,33323,33325,33327,33343,33345,33349,33378,33382,33386,33414,33424,33448,33450,33454,33456,33458,33486,33488,33497,33503,33505,33507,33509,33514,33525,33540,33550,33585,33589,33603,33609,33619,33631,33647,33675,33681,33699,33716,33725,33729,33748,33760,33765,33775,33785,33787,33800,33802,33808,33859,33867,33877,33891,33895,33896,33925,33936,33944,33972,34006,34009,34013,34019,34025,34033,34035,34039,34043,34053,34061,34071,34090,34101,34103,34104,34106,34115,34117,34119,34137,34139,34144,34158,34166,34176,34186,34211,34218,34222,34226,34244,34248,34298,34338,34352,34354,34367,34373,34403,34470,34484,34486,34514,34547,34561,34579,34585,34597,34682,34719,34740,34760,34785,34793,34794,34846,34863,34872,34874,34899,34939,34961,34963,34977,34981,35005,35009,35011,35027,35029,35049,35055,35059,35063,35072,35074,35083,35102,35148,35183,35193,35257,35289,35309,35315,35319,35338,35340,35342,35352,35354,35375,35425,35437,35446,35450,35452,35486,35508,35516,35518,35529,35531,35544,35549,35560,35562,35564,35580,35586,35596,35660,35662,35677,35680,35686,35692,35707,35714,35721,35729,35748,35754,35772,35774,35776,35788,35790,35810,35812,35832,35834,35853,35880,35887,35891,35895,35916,35958,35975,35978,35980,36012,36032,36034,36050,36067,36075,36077,36097,36099,36103,36121,36125,36127,36129,36180,36182,36199,36231,36243,36248,36256,36269,36281,36319,36328,36356,36394,36414,36426,36428,36432,36439,36441,36445,36447,36481,36506,36550,36554,36562,36569,36574,36588,36598,36600,36620,36630,36658,36695,36717,36741,36751,36767,36782,36785,36795,36797,36812,36814,36816,36828,36860,36870,36878,36898,36914,36917,36943,36979,36981,37013,37021,37067,37069,37135,37193,37215,37221,37225,37245,37251,37253,37275,37285,37303,37318,37326,37411,37449,37490,37503,37519,37550,37552,37576,37584,37602,37625,37649,37663,37700,37706,37739,37764,37788,37794,37802,37806,37828,37889,37914,37936,37944,37963,37970,37978,37986,38021,38036,38044,38073,38103,38115,38123,38127,38131,38155,38159,38161,38191,38205,38223,38234,38260,38285,38287,38291,38310,38320,38324,38328,38348,38368,38410,38412,38418,38424,38426,38452,38470,38472,38476,38480,38482,38488,38492,38510,38532,38544,38546,38570,38580,38586,38592,38602,38604,38643,38647,38663,38673,38695,38703,38705,38725,38737,38740,38760,38780,38808,38824,38832,38862,38876,38880,38884,38895,38897,38900,38906,38930,38946,38966,38970,38976,38982,39011,39021,39023,39031,39049,39059,39065,39071,39077,39079,39115,39139,39161,39165,39167,39181,39191,39213,39221,39243,39255,39282,39292,39302,39312,39344,39377,39409,39415,39417,39447,39465,39467,39496,39514,39524,39534,39548,39555,39565,39573,39575,39577,39589,39599,39605,39607,39609,39615,39631,39659,39667,39671,39679,39683,39689,39711,39715,39751,39759,39785,39789,39799,39801,39803,39807,39811,39819,39823,39829,39841,39859,39863,39871,39877,39901,39903,39905,39907,39913,39935,39937,39941,39945,39961,39993,40027,40039,40080,40093,40110,40119,40131,40137,40145,40151,40181,40183,40187,40189,40195,40203,40213,40215,40223,40241,40290,40297,40306,40316,40328,40350,40360,40362,40386,40396,40430,40466,40474,40478,40490,40504,40537,40571,40583,40593,40621,40632,40634,40664,40690,40701,40708,40709,40717,40719,40735,40765,40777,40817,40849,40851,40863,40874,40884,40903,40928,40938,40940,40961,40971,40977,40979,40981,41068,41086,41088,41104,41110,41146,41170,41172,41177,41193,41197,41205,41207,41315,41319,41341,41349,41353,41359,41371,41385,41393,41401,41409,41413,41429,41453,41461,41526,41534,41554,41558,41562,41570,41590,41592,41606,41614,41632,41636,41638,41656,41674,41682,41684,41688,41690,41710,41712,41722,41732,41742,41750,41761,41779,41801,41852,41854,41858,41878,41882,41896,41900,41926,41934,41938,41940,41960,42014,42022,42028,42032,42044,42058,42066,42094,42110,42120,42134,42140,42152,42156,42186,42188,42190,42192,42200,42214,42246,42274,42282,42343,42377,42409,42439,42466,42470,42504,42546,42556,42560,42566,42572,42584,42590,42592,42604,42626,42634,42640,42660,42702,42712,42745,42755,42764,42770,42786,42808,42812,42834,42846,42856,42858,42860,42868,42910,42931,42949,42977,42983,43001,43005,43025,43035,43043,43066,43070,43080,43086,43102,43108,43126,43128,43136,43140,43180,43208,43212,43218,43238,43246,43266,43268,43274,43285,43291,43315,43355,43363,43365,43391,43403,43413,43429,43433,43463,43501,43539,43590,43594,43604,43606,43621,43637,43641,43643,43649,43663,43667,43685,43689,43693,43729,43733,43742,43744,43754,43756,43758,43780,43802,43806,43818,43834,43874,43912,43920,43942,43954,43958,43966,43983,43989,43991,44008,44010,44031,44049,44135,44159,44164,44165,44174,44192,44202,44214,44216,44228,44238,44242,44260,44272,44294,44320,44389,44401,44455,44475,44487,44518,44578,44582,44590,44656,44664,44680,44717,44788,44814,44816,44832,44862,44928,44995,45000,45045,45067,45107,45109,45119,45125,45676,46137,46144,46285,46657,46791,46996,46998,47000,47216,47276,47559,48612,48802,49006,49008,50119,50250,50287,50824,51463,52655,57270,57278,61615,121003
+2015-01-01	ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3292	4,8,9,33,41,44,45,47,53,58,59,61,64,76,86,93,94,105,111,113,117,120,126,127,132,136,138,146,150,156,163,165,166,190,194,201,203,205,206,213,217,218,222,225,228,230,232,233,234,239,242,244,246,250,258,280,282,288,290,293,294,303,305,311,313,315,318,326,334,335,337,342,343,344,346,347,351,361,362,364,366,370,373,381,387,389,390,397,398,399,400,417,432,440,441,457,465,466,468,478,480,492,494,498,502,505,513,514,517,519,524,528,538,539,543,548,555,561,563,573,574,575,578,585,591,594,624,633,634,636,641,643,645,653,661,684,688,694,696,709,715,724,727,729,730,731,732,744,745,758,763,766,767,770,783,788,795,803,805,812,813,825,865,868,869,874,887,891,903,905,906,910,911,926,934,938,944,945,947,954,970,971,985,989,1014,1017,1034,1041,1049,1081,1089,1093,1094,1110,1125,1134,1135,1151,1153,1155,1157,1163,1172,1174,1189,1190,1192,1198,1208,1209,1210,1212,1220,1223,1224,1225,1231,1234,1235,1241,1257,1258,1259,1261,1263,1270,1271,1275,1280,1281,1304,1308,1314,1317,1318,1319,1324,1327,1338,1341,1344,1369,1371,1378,1381,1384,1390,1392,1394,1410,1412,1419,1420,1426,1432,1434,1438,1447,1454,1461,1478,1485,1493,1494,1508,1515,1523,1524,1529,1530,1533,1555,1558,1566,1576,1580,1584,1590,1604,1614,1621,1622,1634,1636,1638,1643,1664,1683,1695,1696,1710,1720,1726,1776,1777,1780,1792,1794,1813,1817,1819,1829,1845,1865,1867,1885,1902,1905,1906,1926,1940,1955,1976,1977,1998,2003,2036,2038,2082,2083,2090,2100,2119,2129,2144,2145,2154,2161,2168,2169,2190,2194,2196,2211,2224,2239,2256,2258,2270,2271,2272,2273,2277,2285,2289,2305,2310,2319,2321,2322,2323,2328,2329,2331,2334,2335,2342,2344,2350,2354,2355,2358,2359,2360,2374,2383,2385,2387,2411,2414,2422,2427,2439,2442,2444,2456,2469,2470,2471,2477,2493,2516,2522,2523,2530,2531,2547,2551,2576,2577,2582,2593,2598,2600,2602,2610,2617,2622,2625,2629,2661,2670,2677,2681,2682,2687,2699,2703,2711,2714,2723,2727,2731,2737,2738,2740,2744,2745,2746,2751,2752,2768,2771,2772,2776,2777,2780,2783,2789,2796,2804,2811,2816,2819,2823,2855,2879,2884,2892,2893,2894,2899,2903,2910,2915,2917,2920,2928,2937,2938,2939,2940,2945,2948,2949,2952,2953,2955,2957,2959,2960,2963,2969,2995,2996,3006,3045,3052,3068,3082,3086,3116,3131,3133,3134,3138,3148,3149,3150,3156,3157,3161,3168,3169,3172,3184,3185,3187,3192,3197,3201,3219,3221,3227,3235,3237,3242,3286,3298,3299,3311,3313,3320,3324,3327,3329,3330,3332,3333,3382,3383,3389,3391,3398,3405,3406,3413,3417,3430,3433,3439,3457,3474,3475,3485,3495,3505,3508,3510,3514,3531,3536,3538,3547,3550,3557,3569,3585,3596,3604,3611,3618,3632,3648,3660,3669,3673,3688,3700,3706,3729,3761,3765,3767,3789,3794,3813,3814,3818,3821,3827,3828,3831,3835,3843,3846,3868,3893,3895,3922,3925,3926,3928,3936,3978,3979,3981,3993,4019,4026,4027,4030,4043,4054,4059,4061,4063,4072,4079,4087,4103,4111,4115,4127,4142,4145,4150,4158,4160,4175,4176,4190,4202,4209,4211,4212,4213,4223,4234,4236,4238,4240,4259,4260,4264,4268,4273,4282,4284,4285,4295,4299,4309,4312,4321,4323,4333,4334,4339,4344,4345,4346,4357,4359,4379,4381,4385,4386,4388,4390,4400,4412,4430,4445,4449,4471,4473,4501,4511,4558,4561,4612,4626,4630,4638,4646,4648,4667,4670,4690,4732,4738,4768,4778,4792,4798,4813,4814,4899,4932,4963,4989,5017,5051,5085,5097,5113,5116,5134,5178,5190,5196,5198,5204,5215,5248,5272,5294,5319,5328,5330,5348,5350,5378,5416,5418,5420,5422,5428,5430,5432,5444,5446,5498,5511,5519,5545,5563,5577,5582,5600,5627,5633,5647,5661,5664,5678,5680,5692,5696,5727,5752,5756,5774,5776,5780,5841,5847,5854,5868,5870,5886,5888,5890,5892,5898,5905,5911,5913,5921,5925,5989,6033,6055,6090,6094,6102,6104,6108,6124,6136,6138,6157,6182,6184,6232,6240,6245,6255,6265,6267,6279,6285,6287,6291,6311,6327,6331,6338,6352,6370,6385,6402,6404,6414,6427,6435,6451,6453,6497,6506,6508,6521,6522,6540,6554,6581,6595,6619,6629,6668,6682,6693,6705,6720,6724,6730,6732,6772,6794,6800,6806,6810,6830,6832,6842,6849,6862,6904,6928,6942,6968,6984,7014,7048,7052,7064,7080,7082,7117,7129,7165,7190,7222,7226,7236,7242,7260,7266,7280,7283,7287,7321,7325,7351,7353,7362,7368,7390,7398,7447,7486,7524,7527,7529,7535,7557,7561,7567,7571,7575,7579,7607,7621,7662,7664,7680,7682,7686,7690,7692,7700,7704,7710,7727,7746,7760,7783,7792,7796,7798,7848,7852,7867,7870,7872,7876,7890,7914,7918,7931,7935,7957,7981,7983,7995,8023,8024,8026,8062,8066,8070,8090,8099,8109,8140,8182,8184,8196,8204,8243,8268,8273,8290,8304,8344,8356,8384,8386,8396,8398,8424,8427,8450,8462,8466,8468,8473,8490,8501,8502,8504,8514,8520,8522,8544,8548,8558,8562,8576,8606,8626,8667,8701,8727,8750,8754,8762,8774,8784,8806,8814,8816,8818,8838,8850,8858,8860,8884,8932,8934,8940,8942,8952,8964,8982,8996,9014,9022,9049,9052,9062,9066,9091,9109,9117,9124,9125,9129,9170,9189,9199,9216,9219,9237,9253,9256,9297,9313,9361,9383,9406,9414,9416,9446,9462,9470,9476,9502,9533,9537,9541,9554,9585,9613,9617,9621,9635,9637,9641,9643,9649,9674,9706,9712,9725,9763,9788,9872,9894,9896,9913,9917,9931,9955,9969,9973,9989,10021,10055,10065,10083,10123,10139,10156,10158,10190,10202,10218,10246,10253,10280,10334,10363,10367,10371,10396,10406,10492,10500,10528,10554,10567,10573,10608,10620,10629,10639,10641,10643,10645,10649,10651,10660,10670,10686,10710,10728,10735,10739,10802,10844,10846,10866,10890,10940,10946,10952,10964,10986,10988,11041,11063,11083,11085,11093,11095,11099,11106,11116,11124,11156,11158,11229,11254,11278,11290,11302,11341,11360,11364,11405,11407,11421,11425,11455,11465,11467,11469,11479,11483,11497,11511,11516,11540,11552,11556,11558,11580,11586,11679,11687,11725,11742,11744,11758,11766,11786,11810,11816,11820,11826,11836,11861,11869,11871,11875,11893,11903,11955,11973,11979,11990,12000,12006,12024,12030,12036,12046,12052,12062,12071,12079,12083,12136,12142,12146,12168,12180,12202,12228,12254,12268,12282,12314,12338,12342,12354,12358,12364,12366,12381,12396,12412,12416,12442,12445,12453,12489,12495,12563,12565,12567,12573,12583,12623,12625,12640,12648,12685,12717,12725,12729,12731,12746,12768,12782,12794,12803,12810,12837,12860,12862,12874,12890,12902,12936,12970,13007,13013,13046,13058,13092,13117,13146,13150,13170,13203,13217,13221,13262,13286,13288,13294,13302,13335,13349,13351,13370,13384,13392,13423,13426,13431,13435,13437,13481,13483,13496,13499,13538,13550,13554,13566,13586,13624,13630,13662,13670,13714,13738,13742,13746,13748,13757,13817,13819,13833,13841,13845,13849,13922,13942,13944,13952,13957,13978,13997,14057,14089,14093,14099,14136,14144,14225,14254,14267,14298,14316,14320,14331,14333,14341,14345,14355,14357,14361,14416,14436,14438,14466,14468,14503,14505,14514,14519,14563,14569,14599,14626,14643,14645,14652,14660,14662,14700,14706,14718,14724,14726,14728,14730,14737,14744,14748,14773,14785,14793,14796,14798,14799,14815,14873,14897,14927,14933,14947,14953,14958,15030,15032,15048,15063,15071,15081,15154,15171,15199,15222,15224,15228,15241,15291,15303,15313,15349,15361,15394,15397,15401,15453,15455,15465,15473,15520,15524,15556,15562,15619,15625,15627,15679,15717,15736,15740,15758,15766,15809,15825,15838,15870,15872,15897,15994,16030,16050,16079,16107,16180,16212,16227,16230,16232,16284,16291,16360,16364,16366,16380,16381,16389,16391,16407,16433,16443,16445,16459,16521,16527,16538,16546,16580,16587,16614,16616,16630,16632,16634,16652,16666,16676,16680,16690,16692,16734,16771,16783,16834,16848,16881,16887,16901,16927,16940,16948,16950,16952,16960,16962,16984,16986,17052,17064,17072,17089,17121,17133,17174,17193,17211,17221,17234,17242,17304,17338,17344,17386,17434,17457,17458,17486,17496,17508,17510,17518,17526,17530,17540,17562,17584,17586,17590,17597,17701,17703,17726,17736,17744,17773,17783,17831,17833,17849,17871,17888,17913,17917,17953,17969,17979,17994,18031,18037,18094,18122,18136,18163,18167,18169,18171,18236,18246,18254,18281,18307,18313,18320,18326,18346,18354,18356,18414,18432,18442,18485,18487,18505,18545,18547,18567,18573,18589,18595,18615,18627,18677,18713,18747,18759,18797,18799,18821,18825,18833,18843,18855,18866,18870,18884,18892,18894,18920,18937,18939,18969,18973,18979,18981,19007,19050,19069,19077,19079,19083,19085,19121,19131,19133,19137,19141,19143,19190,19194,19198,19200,19208,19232,19252,19291,19314,19339,19359,19363,19376,19389,19394,19399,19401,19411,19413,19424,19434,19447,19471,19503,19505,19517,19529,19535,19550,19562,19582,19584,19586,19588,19610,19612,19618,19622,19626,19632,19656,19664,19704,19706,19738,19746,19756,19768,19769,19777,19790,19827,19847,19853,19870,19890,19907,19917,19920,19928,19936,19946,19992,20004,20008,20014,20028,20034,20050,20058,20114,20116,20118,20155,20201,20226,20230,20252,20299,20313,20315,20321,20363,20377,20379,20383,20385,20409,20488,20512,20534,20556,20568,20572,20584,20586,20606,20649,20653,20670,20697,20705,20707,20725,20731,20749,20755,20761,20787,20803,20805,20811,20813,20830,20846,20853,20870,20893,20897,20899,20905,20921,20923,20929,20931,20944,20970,21003,21007,21029,21056,21082,21103,21107,21108,21112,21168,21196,21200,21201,21244,21281,21285,21299,21341,21355,21405,21411,21413,21455,21457,21459,21479,21499,21503,21507,21532,21542,21544,21561,21576,21578,21614,21637,21639,21651,21656,21667,21669,21681,21705,21713,21717,21730,21738,21742,21772,21773,21801,21805,21846,21858,21907,21909,21933,21951,21978,21992,22016,22068,22135,22145,22173,22179,22183,22193,22220,22282,22288,22300,22306,22308,22326,22334,22358,22379,22391,22401,22412,22419,22444,22466,22502,22550,22593,22600,22606,22608,22610,22612,22628,22688,22706,22710,22732,22754,22775,22779,22785,22797,22811,22829,22837,22849,22875,22879,22906,22922,22953,22960,22962,22974,22978,22984,23013,23027,23038,23040,23051,23065,23067,23077,23097,23111,23123,23141,23158,23189,23199,23201,23203,23209,23214,23220,23232,23254,23256,23321,23325,23343,23357,23380,23412,23422,23432,23436,23439,23445,23461,23532,23538,23548,23552,23558,23622,23643,23683,23713,23717,23719,23761,23765,23769,23778,23781,23784,23786,23790,23796,23814,23827,23835,23837,23845,23847,23863,23867,23875,23878,23883,23904,23926,23932,23948,23977,23994,24022,24040,24044,24056,24066,24069,24081,24102,24108,24124,24132,24160,24189,24197,24211,24223,24233,24243,24244,24255,24259,24263,24271,24291,24307,24311,24327,24331,24337,24339,24347,24350,24374,24384,24415,24417,24428,24444,24450,24472,24518,24522,24539,24543,24551,24553,24591,24603,24636,24640,24651,24664,24703,24726,24749,24756,24789,24800,24807,24808,24830,24836,24838,24862,24866,24905,24923,24938,24940,24981,24987,25009,25105,25125,25139,25155,25163,25177,25198,25202,25228,25231,25270,25283,25292,25298,25304,25320,25329,25339,25347,25398,25404,25429,25431,25437,25455,25470,25475,25479,25484,25487,25489,25495,25509,25530,25590,25592,25596,25608,25611,25615,25617,25627,25655,25659,25677,25689,25693,25703,25705,25707,25711,25720,25743,25755,25759,25761,25769,25775,25779,25783,25787,25789,25803,25809,25844,25852,25864,25882,25888,25900,25902,25913,25920,25921,25929,25937,25942,25944,25974,25999,26011,26016,26047,26096,26098,26110,26164,26174,26190,26191,26242,26256,26279,26285,26297,26301,26313,26320,26322,26324,26381,26401,26412,26431,26436,26443,26459,26549,26563,26577,26622,26648,26650,26656,26661,26675,26682,26725,26730,26745,26778,26799,26841,26852,26858,26880,26888,26930,26934,26938,26947,26989,27012,27029,27041,27045,27047,27069,27085,27143,27173,27175,27199,27211,27223,27229,27242,27247,27248,27256,27289,27291,27297,27303,27307,27311,27319,27344,27348,27356,27374,27392,27424,27467,27473,27495,27501,27516,27580,27582,27623,27633,27647,27651,27682,27688,27692,27700,27718,27720,27724,27726,27758,27772,27826,27840,27842,27854,27904,27910,27918,27930,27958,27965,27976,28008,28079,28087,28092,28096,28123,28131,28133,28172,28178,28224,28287,28291,28295,28322,28334,28371,28383,28393,28413,28427,28439,28465,28478,28500,28507,28510,28518,28523,28595,28604,28607,28611,28615,28621,28633,28649,28656,28672,28700,28711,28729,28820,28826,28847,28849,28853,28859,28885,28889,28905,28917,28925,28935,28945,28948,28976,29003,29028,29047,29096,29129,29133,29163,29169,29233,29277,29285,29301,29307,29317,29344,29370,29380,29404,29442,29448,29456,29467,29491,29504,29506,29536,29553,29598,29665,29672,29686,29696,29748,29773,29797,29800,29813,29819,29831,29833,29835,29842,29852,29888,29913,29931,29960,29976,29978,29989,30001,30002,30006,30008,30012,30016,30031,30071,30073,30077,30087,30091,30122,30125,30171,30178,30182,30227,30240,30246,30252,30258,30272,30284,30317,30321,30331,30354,30364,30368,30392,30396,30400,30408,30410,30429,30433,30441,30463,30492,30514,30553,30563,30578,30582,30588,30594,30601,30605,30609,30615,30633,30686,30742,30754,30797,30800,30872,30874,30922,30931,30933,30944,31001,31009,31038,31080,31141,31163,31175,31186,31193,31194,31227,31228,31230,31243,31277,31301,31359,31363,31380,31386,31393,31398,31400,31414,31428,31432,31436,31444,31454,31486,31495,31511,31523,31527,31533,31542,31588,31605,31609,31627,31654,31661,31671,31679,31681,31686,31700,31757,31771,31783,31789,31793,31799,31813,31817,31848,31865,31872,31884,31894,31900,31910,31973,31976,31987,32007,32017,32025,32038,32059,32083,32085,32097,32114,32121,32147,32183,32195,32201,32203,32207,32209,32227,32268,32272,32276,32286,32304,32307,32325,32333,32343,32410,32426,32428,32451,32453,32461,32467,32483,32487,32528,32530,32557,32563,32567,32583,32585,32595,32611,32616,32618,32620,32625,32638,32654,32673,32746,32759,32767,32769,32772,32805,32817,32829,32838,32849,32853,32863,32875,32893,32904,32914,32916,32932,32940,32945,32957,32963,32979,32981,32991,33006,33022,33024,33030,33051,33055,33057,33059,33061,33079,33084,33088,33098,33100,33108,33112,33117,33120,33144,33151,33189,33224,33235,33237,33245,33295,33309,33323,33325,33327,33343,33345,33349,33378,33382,33386,33414,33424,33448,33450,33454,33456,33458,33486,33488,33497,33503,33505,33507,33509,33514,33525,33540,33550,33585,33589,33603,33609,33619,33631,33647,33675,33681,33699,33716,33725,33729,33748,33760,33765,33775,33785,33787,33800,33802,33808,33859,33867,33877,33891,33895,33896,33925,33936,33944,33972,34006,34009,34013,34019,34025,34033,34035,34039,34043,34053,34061,34071,34090,34101,34103,34104,34106,34115,34117,34119,34137,34139,34144,34158,34166,34176,34186,34211,34218,34222,34226,34244,34248,34298,34338,34352,34354,34367,34373,34403,34470,34484,34486,34514,34547,34561,34579,34585,34597,34682,34719,34740,34760,34785,34793,34794,34846,34863,34872,34874,34899,34939,34961,34963,34977,34981,35005,35009,35011,35027,35029,35049,35055,35059,35063,35072,35074,35083,35102,35148,35183,35193,35257,35289,35309,35315,35319,35338,35340,35342,35352,35354,35375,35425,35437,35446,35450,35452,35486,35508,35516,35518,35529,35531,35544,35549,35560,35562,35564,35580,35586,35596,35660,35662,35677,35680,35686,35692,35707,35714,35721,35729,35748,35754,35772,35774,35776,35788,35790,35810,35812,35832,35834,35853,35880,35887,35891,35895,35916,35958,35975,35978,35980,36012,36032,36034,36050,36067,36075,36077,36097,36099,36103,36121,36125,36127,36129,36180,36182,36199,36231,36243,36248,36256,36269,36281,36319,36328,36356,36394,36414,36426,36428,36432,36439,36441,36445,36447,36481,36506,36550,36554,36562,36569,36574,36588,36598,36600,36620,36630,36658,36695,36717,36741,36751,36767,36782,36785,36795,36797,36812,36814,36816,36828,36860,36870,36878,36898,36914,36917,36943,36979,36981,37013,37021,37067,37069,37135,37193,37215,37221,37225,37245,37251,37253,37275,37285,37303,37318,37326,37411,37449,37490,37503,37519,37550,37552,37576,37584,37602,37625,37649,37663,37700,37706,37739,37764,37788,37794,37802,37806,37828,37889,37914,37936,37944,37963,37970,37978,37986,38021,38036,38044,38073,38103,38115,38123,38127,38131,38155,38159,38161,38191,38205,38223,38234,38260,38285,38287,38291,38310,38320,38324,38328,38348,38368,38410,38412,38418,38424,38426,38452,38470,38472,38476,38480,38482,38488,38492,38510,38532,38544,38546,38570,38580,38586,38592,38602,38604,38643,38647,38663,38673,38695,38703,38705,38725,38737,38740,38760,38780,38808,38824,38832,38862,38876,38880,38884,38895,38897,38900,38906,38930,38946,38966,38970,38976,38982,39011,39021,39023,39031,39049,39059,39065,39071,39077,39079,39115,39139,39161,39165,39167,39181,39191,39213,39221,39243,39255,39282,39292,39302,39312,39344,39377,39409,39415,39417,39447,39465,39467,39496,39514,39524,39534,39548,39555,39565,39573,39575,39577,39589,39599,39605,39607,39609,39615,39631,39659,39667,39671,39679,39683,39689,39711,39715,39751,39759,39785,39789,39799,39801,39803,39807,39811,39819,39823,39829,39841,39859,39863,39871,39877,39901,39903,39905,39907,39913,39935,39937,39941,39945,39961,39993,40027,40039,40080,40093,40110,40119,40131,40137,40145,40151,40181,40183,40187,40189,40195,40203,40213,40215,40223,40241,40290,40297,40306,40316,40328,40350,40360,40362,40386,40396,40430,40466,40474,40478,40490,40504,40537,40571,40583,40593,40621,40632,40634,40664,40690,40701,40708,40709,40717,40719,40735,40765,40777,40817,40849,40851,40863,40874,40884,40903,40928,40938,40940,40961,40971,40977,40979,40981,41068,41086,41088,41104,41110,41146,41170,41172,41177,41193,41197,41205,41207,41315,41319,41341,41349,41353,41359,41371,41385,41393,41401,41409,41413,41429,41453,41461,41526,41534,41554,41558,41562,41570,41590,41592,41606,41614,41632,41636,41638,41656,41674,41682,41684,41688,41690,41710,41712,41722,41732,41742,41750,41761,41779,41801,41852,41854,41858,41878,41882,41896,41900,41926,41934,41938,41940,41960,42014,42022,42028,42032,42044,42058,42066,42094,42110,42120,42134,42140,42152,42156,42186,42188,42190,42192,42200,42214,42246,42274,42282,42343,42377,42409,42439,42466,42470,42504,42546,42556,42560,42566,42572,42584,42590,42592,42604,42626,42634,42640,42660,42702,42712,42745,42755,42764,42770,42786,42808,42812,42834,42846,42856,42858,42860,42868,42910,42931,42949,42977,42983,43001,43005,43025,43035,43043,43066,43070,43080,43086,43102,43108,43126,43128,43136,43140,43180,43208,43212,43218,43238,43246,43266,43268,43274,43285,43291,43315,43355,43363,43365,43391,43403,43413,43429,43433,43463,43501,43539,43590,43594,43604,43606,43621,43637,43641,43643,43649,43663,43667,43685,43689,43693,43729,43733,43742,43744,43754,43756,43758,43780,43802,43806,43818,43834,43874,43912,43920,43942,43954,43958,43966,43983,43989,43991,44008,44010,44031,44049,44135,44159,44164,44165,44174,44192,44202,44214,44216,44228,44238,44242,44260,44272,44294,44320,44389,44401,44455,44475,44487,44518,44578,44582,44590,44656,44664,44680,44717,44788,44814,44816,44832,44862,44928,44995,45000,45045,45067,45107,45109,45119,45125,45676,46137,46144,46285,46657,46791,46996,46998,47000,47216,47276,47559,48612,48802,49006,49008,50119,50250,50287,50824,51463,52655,57270,57278,61615,121003
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08020	Begues	19	368,678,4961,5234,6019,9647,9925,10345,11501,17428,17775,20012,20679,22720,23803,24430,27037,37592,39195
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08021	Bellprat	1	24949
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08022	Berga	40	216,1440,2349,2709,2710,4837,5880,9708,9862,9993,10597,10733,10956,11233,11701,13866,14311,17336,17476,18080,18240,18521,19129,19234,22496,24116,26151,29059,29954,31562,33092,36061,38962,39185,40005,40007,40238,41471,42004,43389
@@ -1842,6 +1933,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08054	Castellbisbal	15	1090,3296,8097,8408,9107,9959,9963,12716,12888,20444,27055,29972,31464,36525,37629
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08055	Castellcir	1	7484
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08056	Castelldefels	59	54,414,885,1121,1854,3410,3796,4272,5015,5081,5567,5738,7708,7752,8496,8709,9432,9454,9494,9675,11918,12533,13372,13843,14224,14905,15233,15405,15998,19501,20973,21391,21699,21701,23085,23238,24187,24805,25364,25418,27241,28240,29201,32728,32865,33649,33920,34623,34901,38157,39763,40287,41011,41630,41777,41982,42180,44548,46786
+2015-01-01	ES	España	09	Cataluña	08	Barcelona	08057	Castell de l'Areny	0	None
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08058	Castellet i la Gornal	8	175,1013,1632,2815,6076,7503,8134,19642
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08059	Castellfollit del Boix	0	None
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08060	Castellfollit de Riubregós	0	None
@@ -1959,11 +2051,12 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08169	Prat de Llobregat, El	41	172,1193,3696,4132,5166,5168,5810,5894,8064,8406,10408,11370,11560,13094,13096,14071,14124,18717,23339,23478,25621,26070,26072,26075,26612,27621,28422,31062,31908,32560,33683,34195,34397,35701,37405,37407,37623,40761,40957,42052,42242
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08171	Prats de Lluçanès	8	2613,7214,12438,16485,21128,25814,27031,35664
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08170	Prats de Rei, Els	1	7997
-2015-01-01	ES	España	09	Cataluña	08	Barcelona	08230	Premià de Dalt	15	51,1886,4663,11838,11963,13394,15768,18916,20104,26451,28168,32021,39931,42018,44828
-2015-01-01	ES	España	09	Cataluña	08	Barcelona	08172	Premià de Mar	44	188,354,607,2807,3619,4481,6670,7380,7543,9719,10421,10468,11162,11912,13084,13225,14283,14347,15801,16000,16370,16718,17044,17659,18238,18291,18781,20416,20633,24438,25635,25870,29211,29635,30029,30709,34555,34967,35283,36380,36755,38189,40098,41816
+2015-01-01	ES	España	09	Cataluña	08	Barcelona	08230	Premià de Dalt	14	51,1886,4663,11838,11963,13394,15768,18916,20104,26451,28168,32021,39931,42018
+2015-01-01	ES	España	09	Cataluña	08	Barcelona	08172	Premià de Mar	45	188,354,607,2807,3619,4481,6670,7380,7543,9719,10421,10468,11162,11912,13084,13225,14283,14347,15801,16000,16370,16718,17044,17659,18238,18291,18781,20416,20633,24438,25635,25870,29211,29635,30029,30709,34555,34967,35283,36380,36755,38189,40098,41816,44828
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08174	Puigdàlber	1	29991
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08175	Puig-reig	5	327,2429,10097,29346,39923
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08176	Pujalt	2	16686,32015
+2015-01-01	ES	España	09	Cataluña	08	Barcelona	08177	Quar, La	0	None
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08178	Rajadell	2	36488,41313
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08179	Rellinars	2	21558,40967
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08180	Ripollet	31	522,2088,2685,3137,3867,4192,4764,6007,7019,7149,13038,15321,16802,17278,18727,20999,21807,22414,22700,23337,23564,28002,28332,28666,30306,31443,33903,38934,39897,39899,40164
@@ -2059,7 +2152,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08275	Tavèrnoles	3	1472,1943,19771
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08280	Tavertet	0	None
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08281	Teià	13	185,638,2306,13143,17651,18187,23602,24563,25441,26026,28579,30169,40259
-2015-01-01	ES	España	09	Cataluña	08	Barcelona	08279	Terrassa	310	20,31,142,161,231,255,283,289,333,360,446,450,743,754,760,779,784,993,1176,1205,1256,1272,1299,1360,1377,1437,1509,1518,1544,1847,1945,2077,2292,2405,2438,2491,2586,2588,2621,2639,2697,2717,2725,2993,2997,3162,3205,3494,3615,3641,3995,4018,4039,4102,4455,4885,4895,4910,5101,5368,5393,5426,5651,5764,6261,6524,6568,6664,6938,7224,7358,7370,7522,7583,7738,7762,7788,7844,7882,7979,8054,8226,8498,8524,8697,8990,9245,9522,9651,9659,9665,9919,9971,10206,10790,10958,11193,11212,11244,11246,11374,11378,11439,11546,11574,11664,12134,12420,12531,12750,13403,13556,13851,13882,14011,14077,14103,14236,14322,14380,14388,14557,14685,14688,14690,14692,14694,14821,15073,15220,15283,15285,15514,15637,15641,15653,15655,15803,15962,16312,16584,16648,17013,17062,17176,17310,17560,17665,17853,18092,18527,19065,19081,19658,20431,20647,20925,20990,21046,21078,21144,21279,21351,21409,21584,21697,21740,21842,22139,22622,22980,23468,23733,24047,24084,24110,24112,24261,24265,24530,24967,25035,25244,25462,25467,25477,25532,25534,25695,25771,25836,25934,26002,26341,26530,26663,27156,27382,27675,27702,28494,28740,29032,29123,29458,29653,29677,29807,29868,30179,30298,30386,30406,30465,30549,30621,30658,30730,30915,31032,31581,31842,32057,32129,32131,32840,32884,33420,33476,33615,33643,33887,33978,33988,34178,34587,34672,34818,35007,35160,35423,35804,35818,35822,35984,36145,36155,36184,36192,36372,36713,36894,37079,37083,37133,37231,37233,37235,37237,37239,37537,37562,37606,37643,37662,37664,37790,37964,38133,38334,38458,38538,38701,38784,38972,39009,39563,39618,39885,40082,40219,40364,40414,40420,40464,40949,41251,41574,41620,41628,41678,41797,41806,41930,42078,42128,42302,42347,42407,42508,42733,42920,43254,43335,43828,43862,45057,45059,45065,57280
+2015-01-01	ES	España	09	Cataluña	08	Barcelona	08279	Terrassa	311	20,31,142,161,231,255,283,289,333,360,446,450,743,754,760,779,784,993,1176,1205,1256,1272,1299,1360,1377,1437,1509,1518,1544,1847,1945,2077,2292,2405,2438,2491,2586,2588,2621,2639,2697,2717,2725,2993,2997,3162,3205,3494,3615,3641,3995,4018,4039,4102,4455,4885,4895,4910,5101,5368,5393,5426,5651,5764,6261,6524,6568,6664,6938,7224,7358,7370,7522,7583,7738,7762,7788,7844,7882,7979,8054,8226,8498,8524,8697,8990,9245,9522,9633,9651,9659,9665,9919,9971,10206,10790,10958,11193,11212,11244,11246,11374,11378,11439,11546,11574,11664,12134,12420,12531,12750,13403,13556,13851,13882,14011,14077,14103,14236,14322,14380,14388,14557,14685,14688,14690,14692,14694,14821,15073,15220,15283,15285,15514,15637,15641,15653,15655,15803,15962,16312,16584,16648,17013,17062,17176,17310,17560,17665,17853,18092,18527,19065,19081,19658,20431,20647,20925,20990,21046,21078,21144,21279,21351,21409,21584,21697,21740,21842,22139,22622,22980,23468,23733,24047,24084,24110,24112,24261,24265,24530,24967,25035,25244,25462,25467,25477,25532,25534,25695,25771,25836,25934,26002,26341,26530,26663,27156,27382,27675,27702,28494,28740,29032,29123,29458,29653,29677,29807,29868,30179,30298,30386,30406,30465,30549,30621,30658,30730,30915,31032,31581,31842,32057,32129,32131,32840,32884,33420,33476,33615,33643,33887,33978,33988,34178,34587,34672,34818,35007,35160,35423,35804,35818,35822,35984,36145,36155,36184,36192,36372,36713,36894,37079,37083,37133,37231,37233,37235,37237,37239,37537,37562,37606,37643,37662,37664,37790,37964,38133,38334,38458,38538,38701,38784,38972,39009,39563,39618,39885,40082,40219,40364,40414,40420,40464,40949,41251,41574,41620,41628,41678,41797,41806,41930,42078,42128,42302,42347,42407,42508,42733,42920,43254,43335,43828,43862,45057,45059,45065,57280
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08282	Tiana	20	600,1132,3118,3349,3396,6986,8960,11891,12105,12923,12947,14803,15582,16828,22163,28943,40334,41162,41317,41447
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08283	Tona	6	6944,16081,24016,29618,31539,82866
 2015-01-01	ES	España	09	Cataluña	08	Barcelona	08284	Tordera	9	6009,7477,8622,27852,29215,30308,36789,36791,37472
@@ -2291,6 +2384,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	17	Girona	17209	Vall-llobrega	0	None
 2015-01-01	ES	España	09	Cataluña	17	Girona	17210	Ventalló	1	38030
 2015-01-01	ES	España	09	Cataluña	17	Girona	17211	Verges	1	23667
+2015-01-01	ES	España	09	Cataluña	17	Girona	17212	Vidrà	0	None
 2015-01-01	ES	España	09	Cataluña	17	Girona	17213	Vidreres	5	13,1343,1913,7623,19270
 2015-01-01	ES	España	09	Cataluña	17	Girona	17214	Vilabertran	1	24448
 2015-01-01	ES	España	09	Cataluña	17	Girona	17215	Vilablareix	6	799,3625,9953,12906,26842,28391
@@ -2325,12 +2419,14 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25014	Alfés	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25015	Algerri	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25016	Alguaire	5	7547,15383,30598,31236,31855
+2015-01-01	ES	España	09	Cataluña	25	Lleida	25017	Alins	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25019	Almacelles	4	26343,26348,38898,41648
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25022	Alòs de Balaguer	2	42250,42258
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25023	Alpicat	4	3680,6728,19748,39488
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25024	Alt Àneu	3	32843,37741,39881
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25027	Anglesola	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25029	Arbeca	0	None
+2015-01-01	ES	España	09	Cataluña	25	Lleida	25031	Arres	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25033	Artesa de Lleida	1	16558
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25034	Artesa de Segre	1	17967
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25036	Aspa	0	None
@@ -2384,6 +2480,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25094	Foradada	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25096	Fuliola, La	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25097	Fulleda	1	12990
+2015-01-01	ES	España	09	Cataluña	25	Lleida	25098	Gavet de la Conca	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25912	Gimenells i el Pla de la Font	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25099	Golmés	1	28824
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25100	Gósol	1	545
@@ -2424,6 +2521,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25140	Montferrer i Castellbò	1	15365
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25138	Montgai	1	41439
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25141	Montoliu de Segarra	2	5981,42317
+2015-01-01	ES	España	09	Cataluña	25	Lleida	25143	Montornès de Segarra	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25145	Nalec	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25025	Naut Aran	2	35637,35639
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25146	Navès	1	6164
@@ -2461,6 +2559,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25186	Riner	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25913	Riu de Cerdanya	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25189	Rosselló	3	27317,28146,28150
+2015-01-01	ES	España	09	Cataluña	25	Lleida	25190	Salàs de Pallars	0	None
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25191	Sanaüja	1	11079
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25196	Sant Esteve de la Sarga	1	2092
 2015-01-01	ES	España	09	Cataluña	25	Lleida	25192	Sant Guim de Freixenet	8	867,1262,7408,8009,10741,10743,10745,36919
@@ -2581,6 +2680,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43058	Figuera, La	0	None
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43059	Figuerola del Camp	0	None
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43060	Flix	5	1864,1875,3707,7058,7074
+2015-01-01	ES	España	09	Cataluña	43	Tarragona	43061	Forès	0	None
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43062	Freginals	0	None
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43063	Galera, La	5	14369,26589,35792,42648,43387
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43064	Gandesa	2	22632,30382
@@ -2631,6 +2731,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43111	Pobla de Montornès, La	3	17621,21709,42484
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43112	Poboleda	0	None
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43113	Pont d'Armentera, El	1	24576
+2015-01-01	ES	España	09	Cataluña	43	Tarragona	43141	Pontils	0	None
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43114	Porrera	1	30045
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43115	Pradell de la Teixeta	4	41245,41247,41986,41988
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43116	Prades	1	41301
@@ -2641,6 +2742,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43121	Rasquera	1	31490
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43122	Renau	0	None
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43123	Reus	99	212,780,975,1589,1631,2266,2352,2370,2480,3136,3422,3466,3468,3810,5043,5262,5610,5983,6689,6701,6916,6918,7202,7449,8173,8316,9089,9327,11671,11772,13241,13411,13471,13773,14501,14593,15203,15273,15289,15326,15413,15649,17545,18886,19896,20341,20500,20524,21771,21931,22000,22332,22473,22552,22714,23031,23147,23572,24225,24764,24778,25003,25047,25049,25143,26139,28138,28162,28248,28252,28389,28435,28437,28472,30128,30693,31603,32000,32258,32722,32967,33114,36360,36581,36644,36787,36964,37247,38117,38406,40332,40629,40829,41443,41680,41757,43465,43543,44436
+2015-01-01	ES	España	09	Cataluña	43	Tarragona	43124	Riba, La	0	None
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43125	Riba-roja d'Ebre	0	None
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43126	Riera de Gaià, La	4	22014,24915,24947,30838
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43127	Riudecanyes	1	38984
@@ -2697,6 +2799,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43177	Vinebre	1	8552
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43178	Vinyols i els Arcs	1	32680
 2015-01-01	ES	España	09	Cataluña	43	Tarragona	43052	Xerta	1	21594
+2015-01-01	ES	España	18	Ceuta	51	Ceuta	51001	Ceuta	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03001	Adsubia	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03002	Agost	3	3130,27608,43768
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03003	Agres	0	None
@@ -2712,6 +2815,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03015	Almoradí	1	9581
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03018	Altea	5	2398,3461,20040,23614,32859
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03019	Aspe	4	14120,14122,14404,28637
+2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03020	Balones	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03021	Banyeres de Mariola	5	963,4012,8936,27946,27948
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03022	Benasau	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03023	Beneixama	0	None
@@ -2724,6 +2828,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03029	Benigembla	1	29938
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03035	Benilloba	1	5618
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03037	Benimantell	0	None
+2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03038	Benimarfull	0	None
+2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03040	Benimeli	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03041	Benissa	12	5573,15319,22230,23490,31521,31584,31613,34723,35494,36018,36498,41914
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03042	Benitachell/Poble Nou de Benitatxell, el	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03043	Biar	0	None
@@ -2744,6 +2850,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03066	Elda	8	4215,10151,18749,19462,22616,23081,27934,35715
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03069	Finestrat	2	32047,35369
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03077	Fondó de les Neus, el/Hondón de las Nieves	0	None
+2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03070	Formentera del Segura	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03072	Gaianes	1	10526
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03071	Gata de Gorgos	2	122,18193
 2015-01-01	ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03074	Granja de Rocamora	0	None
@@ -2847,6 +2954,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12060	Figueroles	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12064	Fuentes de Ayódar	1	11806
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12068	Herbés	0	None
+2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12069	Higueras	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12070	Jana, la	2	5951,31034
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12071	Jérica	1	34627
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12074	Llosa, la	0	None
@@ -2860,12 +2968,14 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12082	Nules	10	4143,7141,13306,17158,23916,27024,33028,34573,36141,39769
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12084	Onda	14	11693,11774,13308,14163,21941,23113,29057,31985,33164,33466,38635,43852,44808,51927
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12085	Oropesa del Mar/Orpesa	7	622,9838,16098,16818,20141,27177,38026
+2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12088	Pavías	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12089	Peníscola/Peñíscola	6	10780,13706,14779,21824,38199,39265
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12090	Pina de Montalgrao	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12093	Pobla de Benifassà, la	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12094	Pobla Tornesa, la	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12092	Puebla de Arenoso	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12096	Rossell	0	None
+2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12097	Sacañet	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12098	Salzadella, la	1	11294
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12101	San Rafael del Río	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12902	Sant Joan de Moró	2	31064,35490
@@ -2875,6 +2985,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12105	Sierra Engarcerán	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12106	Soneja	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12107	Sot de Ferrer	0	None
+2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12109	Tales	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12110	Teresa	1	41818
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12111	Tírig	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12112	Todolella	0	None
@@ -2973,6 +3084,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46111	Chiva	3	13467,28920,30114
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46112	Chulilla	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46098	Corbera	1	16853
+2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46099	Cortes de Pallás	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46105	Cullera	12	1424,4324,19357,21272,25637,32079,32996,33036,35156,41078,42754,44620
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46113	Daimús	1	22280
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46116	Eliana, l'	7	5286,10228,16016,17320,17399,18872,20851
@@ -3034,6 +3146,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46194	Picassent	9	2802,3524,10092,13888,14085,14367,20985,21869,40400
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46195	Piles	2	16787,39259
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46199	Pobla de Farnals, la	3	15701,30480,34362
+2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46200	Pobla del Duc, la	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46202	Pobla de Vallbona, la	7	2579,4243,5949,20667,31161,33460,35301
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46203	Pobla Llarga, la	1	26287
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46197	Polinyà de Xúquer	1	12735
@@ -3065,6 +3178,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46231	Simat de la Valldigna	1	25552
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46233	Sollana	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46235	Sueca	20	115,1055,5622,8494,8693,9733,13178,13485,14308,14396,14399,15734,19458,20112,20891,24436,27204,27916,37950,38494
+2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46236	Sumacàrcer	0	None
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46237	Tavernes Blanques	4	2135,25075,29894,33679
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46238	Tavernes de la Valldigna	7	21429,21463,24818,25737,30173,30690,41552
 2015-01-01	ES	España	10	Comunidad Valenciana	46	Valencia/València	46239	Teresa de Cofrentes	1	21949
@@ -3112,15 +3226,18 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06059	Granja de Torrehermosa	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06060	Guareña	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06063	Herrera del Duque	1	24369
+2015-01-01	ES	España	11	Extremadura	06	Badajoz	06070	Jerez de los Caballeros	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06074	Llerena	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06075	Magacela	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06083	Mérida	12	2199,3448,9468,9512,13009,16168,21399,22062,30146,36111,36847,38386
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06085	Monesterio	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06087	Monterrubio de la Serena	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06088	Montijo	0	None
+2015-01-01	ES	España	11	Extremadura	06	Badajoz	06093	Oliva de la Frontera	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06095	Olivenza	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06097	Orellana la Vieja	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06100	Peñalsordo	0	None
+2015-01-01	ES	España	11	Extremadura	06	Badajoz	06105	Puebla del Maestre	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06109	Quintana de la Serena	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06116	Salvaleón	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06122	Santos de Maimona, Los	0	None
@@ -3129,6 +3246,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06125	Siruela	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06127	Talarrubias	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06901	Valdelacalzada	0	None
+2015-01-01	ES	España	11	Extremadura	06	Badajoz	06138	Valdetorres	0	None
+2015-01-01	ES	España	11	Extremadura	06	Badajoz	06146	Valle de la Serena	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06149	Villafranca de los Barros	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06153	Villanueva de la Serena	2	11926,22682
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06156	Villar de Rena	1	34696
@@ -3136,6 +3255,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06162	Zarza, La	2	3697,3698
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10003	Acebo	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10004	Acehúche	0	None
+2015-01-01	ES	España	11	Extremadura	10	Cáceres	10006	Ahigal	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10008	Alcántara	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10014	Aldeanueva de la Vera	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10015	Aldeanueva del Camino	0	None
@@ -3143,6 +3263,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10020	Almoharín	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10021	Arroyo de la Luz	1	28405
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10030	Bohonal de Ibor	1	13648
+2015-01-01	ES	España	11	Extremadura	10	Cáceres	10032	Brozas	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10033	Cabañas del Castillo	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10034	Cabezabellosa	1	2926
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10035	Cabezuela del Valle	2	5705,5709
@@ -3152,6 +3273,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10044	Cañamero	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10047	Carcaboso	1	3152
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10054	Casas del Castañar	0	None
+2015-01-01	ES	España	11	Extremadura	10	Cáceres	10057	Casas de Miravete	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10060	Castañar de Ibor	1	32141
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10064	Cilleros	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10066	Conquista de la Sierra	1	8257
@@ -3186,6 +3308,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10148	Plasencia	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10149	Plasenzuela	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10154	Rebollar	0	None
+2015-01-01	ES	España	11	Extremadura	10	Cáceres	10158	Robledillo de Trujillo	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10167	Santa Cruz de Paniagua	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10170	Santiago del Campo	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10179	Talaveruela de la Vera	0	None
@@ -3197,6 +3320,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10203	Valencia de Alcántara	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10902	Vegaviana	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10212	Villanueva de la Vera	0	None
+2015-01-01	ES	España	11	Extremadura	10	Cáceres	10216	Zarza de Granadilla	0	None
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15001	Abegondo	0	None
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15002	Ames	5	3216,3996,11331,27556,38600
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15003	Aranga	1	32422
@@ -3239,6 +3363,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15068	Ponteceso	0	None
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15069	Pontedeume	2	31704,31708
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15070	Pontes de García Rodríguez, As	0	None
+2015-01-01	ES	España	12	Galicia	15	Coruña, A	15071	Porto do Son	0	None
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15072	Rianxo	1	4149
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15073	Ribeira	12	2141,3537,5690,11045,25465,25472,26912,26914,26916,26918,26920,38836
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15074	Rois	1	32125
@@ -3247,10 +3372,12 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15078	Santiago de Compostela	23	1964,3356,3570,3902,3930,6069,7648,13158,15385,19421,19710,21435,21497,21631,24922,28246,28600,30352,30793,32906,35401,41175,41190
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15082	Teo	1	40209
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15083	Toques	0	None
+2015-01-01	ES	España	12	Galicia	15	Coruña, A	15087	Valdoviño	0	None
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15089	Vedra	0	None
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15093	Zas	0	None
 2015-01-01	ES	España	12	Galicia	27	Lugo	27001	Abadín	0	None
 2015-01-01	ES	España	12	Galicia	27	Lugo	27003	Antas de Ulla	0	None
+2015-01-01	ES	España	12	Galicia	27	Lugo	27901	Baralla	0	None
 2015-01-01	ES	España	12	Galicia	27	Lugo	27005	Barreiros	1	4786
 2015-01-01	ES	España	12	Galicia	27	Lugo	27006	Becerreá	1	21345
 2015-01-01	ES	España	12	Galicia	27	Lugo	27007	Begonte	1	4519
@@ -3260,6 +3387,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	12	Galicia	27	Lugo	27013	Cervo	0	None
 2015-01-01	ES	España	12	Galicia	27	Lugo	27016	Chantada	0	None
 2015-01-01	ES	España	12	Galicia	27	Lugo	27015	Cospeito	0	None
+2015-01-01	ES	España	12	Galicia	27	Lugo	27017	Folgoso do Courel	0	None
 2015-01-01	ES	España	12	Galicia	27	Lugo	27019	Foz	5	1572,30079,34608,38840,43383
 2015-01-01	ES	España	12	Galicia	27	Lugo	27020	Friol	0	None
 2015-01-01	ES	España	12	Galicia	27	Lugo	27022	Guitiriz	1	4494
@@ -3279,6 +3407,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	12	Galicia	27	Lugo	27050	Quiroga	0	None
 2015-01-01	ES	España	12	Galicia	27	Lugo	27056	Rábade	0	None
 2015-01-01	ES	España	12	Galicia	27	Lugo	27051	Ribadeo	5	11027,12377,28786,28790,34850
+2015-01-01	ES	España	12	Galicia	27	Lugo	27052	Ribas de Sil	0	None
 2015-01-01	ES	España	12	Galicia	27	Lugo	27055	Samos	0	None
 2015-01-01	ES	España	12	Galicia	27	Lugo	27057	Sarria	0	None
 2015-01-01	ES	España	12	Galicia	27	Lugo	27059	Sober	0	None
@@ -3289,6 +3418,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	12	Galicia	32	Ourense	32001	Allariz	2	17565,41467
 2015-01-01	ES	España	12	Galicia	32	Ourense	32006	Bande	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32008	Barbadás	0	None
+2015-01-01	ES	España	12	Galicia	32	Ourense	32009	Barco de Valdeorras, O	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32017	Carballeda de Valdeorras	4	37832,37836,37838,37842
 2015-01-01	ES	España	12	Galicia	32	Ourense	32019	Carballiño, O	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32020	Cartelle	2	29549,42415
@@ -3312,6 +3442,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	12	Galicia	32	Ourense	32082	Trasmiras	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32085	Verín	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32086	Viana do Bolo	0	None
+2015-01-01	ES	España	12	Galicia	32	Ourense	32087	Vilamarín	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32089	Vilar de Barrio	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32092	Vilariño de Conso	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32032	Xinzo de Limia	3	4788,37019,37077
@@ -3381,6 +3512,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28034	Canencia	0	None
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28035	Carabaña	0	None
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28036	Casarrubuelos	1	12276
+2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28037	Cenicientos	0	None
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28038	Cercedilla	1	18389
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28039	Cervera de Buitrago	1	3785
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28051	Chapinería	0	None
@@ -3429,6 +3561,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28088	Montejo de la Sierra	0	None
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28089	Moraleja de Enmedio	0	None
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28090	Moralzarzal	6	2774,21835,22638,24666,27879,30290
+2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28091	Morata de Tajuña	0	None
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28092	Móstoles	44	2054,2114,2510,4731,5758,6144,6740,6884,8804,12436,15006,15381,17178,17799,18801,20719,20785,20827,21158,21823,22101,22199,22212,22216,22658,23981,24032,25316,25665,25667,25876,26060,26964,27577,28054,28235,30209,30584,31844,35047,36882,37980,39972,41114
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28093	Navacerrada	1	38641
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28094	Navalafuente	0	None
@@ -3450,6 +3583,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28114	Piñuécar-Gandullas	0	None
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28115	Pozuelo de Alarcón	13	2396,4562,8512,15125,29793,31352,34905,35602,38800,38912,41962,42292,44932
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28116	Pozuelo del Rey	0	None
+2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28117	Prádena del Rincón	0	None
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28118	Puebla de la Sierra	0	None
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28902	Puentes Viejas	0	None
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28119	Quijorna	0	None
@@ -3588,12 +3722,14 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31060	Burlada/Burlata	31	357,407,1042,1376,2769,3290,3659,9975,10610,11822,12951,15738,16674,18328,18368,18370,18689,20548,22469,24852,28431,30422,32724,33653,34971,35570,35572,40175,41880,41984,42002
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31062	Cabanillas	0	None
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31065	Caparroso	4	3610,26591,29475,29588
+2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31067	Carcastillo	0	None
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31068	Cascante	2	23075,40841
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31069	Cáseda	2	31318,48071
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31070	Castejón	0	None
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31193	Cendea de Olza/Oltza Zendea	2	28682,40011
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31072	Cintruénigo	3	12178,31396,39314
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31074	Cirauqui/Zirauki	0	None
+2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31075	Ciriza/Ziritza	0	None
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31076	Cizur	2	625,3727
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31078	Cortes	1	14666
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31081	Donamaria	0	None
@@ -3649,6 +3785,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31153	Lesaka	2	3403,3423
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31154	Lezáun	0	None
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31156	Lizoáin-Arriasgoiti	0	None
+2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31158	Lónguida/Longida	0	None
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31159	Lumbier	0	None
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31160	Luquin	0	None
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31161	Mañeru	0	None
@@ -3732,6 +3869,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	16	País Vasco	01	Araba/Álava	01053	San Millán/Donemiliaga	0	None
 2015-01-01	ES	España	16	País Vasco	01	Araba/Álava	01054	Urkabustaiz	1	18232
 2015-01-01	ES	España	16	País Vasco	01	Araba/Álava	01059	Vitoria-Gasteiz	33	902,1040,2367,2695,3009,3558,3643,4178,4924,5099,5154,7585,10436,10518,10520,12266,12667,15886,18035,18077,24846,27160,27273,33617,34027,34309,34664,35227,37320,37960,40412,44200,44284
+2015-01-01	ES	España	16	País Vasco	01	Araba/Álava	01060	Yécora/Iekora	0	None
 2015-01-01	ES	España	16	País Vasco	01	Araba/Álava	01061	Zalduondo	0	None
 2015-01-01	ES	España	16	País Vasco	01	Araba/Álava	01018	Zigoitia	0	None
 2015-01-01	ES	España	16	País Vasco	01	Araba/Álava	01063	Zuia	0	None
@@ -3768,6 +3906,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48045	Güeñes	1	31074
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48094	Igorre	0	None
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48049	Ispaster	2	13853,29115
+2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48050	Izurtza	0	None
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48051	Lanestosa	0	None
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48052	Larrabetzu	1	39653
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48053	Laukiz	0	None
@@ -3776,6 +3915,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48055	Lemoa	0	None
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48056	Lemoiz	0	None
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48081	Lezama	1	20747
+2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48903	Loiu	0	None
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48060	Markina-Xemein	0	None
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48066	Morga	1	39695
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48068	Mundaka	1	40712
@@ -3798,6 +3938,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48024	Zeanuri	0	None
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48025	Zeberio	0	None
 2015-01-01	ES	España	16	País Vasco	48	Bizkaia	48913	Zierbena	2	2341,22991
+2015-01-01	ES	España	16	País Vasco	20	Gipuzkoa	20016	Aia	0	None
 2015-01-01	ES	España	16	País Vasco	20	Gipuzkoa	20003	Aizarnazabal	0	None
 2015-01-01	ES	España	16	País Vasco	20	Gipuzkoa	20007	Altzo	1	36805
 2015-01-01	ES	España	16	País Vasco	20	Gipuzkoa	20013	Aretxabaleta	2	3747,5238
@@ -3854,6 +3995,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26022	Azofra	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26023	Badarán	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26026	Baños de Río Tobía	0	None
+2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26027	Berceo	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26028	Bergasa	2	16513,16515
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26034	Briones	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26036	Calahorra	1	2463
@@ -3864,6 +4006,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26057	Daroca de Rioja	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26058	Enciso	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26061	Ezcaray	1	17643
+2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26063	Fonzaleche	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26064	Fuenmayor	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26066	Galilea	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26071	Haro	3	3877,27221,34407
@@ -3880,6 +4023,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26102	Nájera	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26103	Nalda	1	13723
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26108	Ocón	1	4075
+2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26110	Ojacastro	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26117	Pradejón	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26122	Rasillo de Cameros, El	0	None
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26124	Ribafrecha	0	None
@@ -3899,3 +4043,4 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26168	Villamediana de Iregua	6	12824,22471,24382,29524,30750,36153
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26177	Villoslada de Cameros	3	4375,4416,22987
 2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26178	Viniegra de Abajo	1	12756
+2015-01-01	ES	España	17	Rioja, La	26	Rioja, La	26180	Zarratón	0	None
