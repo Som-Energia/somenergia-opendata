@@ -111,6 +111,59 @@ def introspectionGeoLevel():
         for key, data in common.geolevels.items()
     ])
 
+@api.route('/introspection/geolevels/<geolevel>')
+@yaml_response
+def introspectionGeoLevelOptions(geolevel):
+    """
+    @api {get} /v0.2/introspection/metrics
+    @apiVersion 0.2.2
+    @apiName Metrics
+    @apiGroup Introspection
+    @apiDescription Returns the metrics that can be queried
+
+    @apiSampleRequest /v0.2/introspection/geolevels
+    @apiSuccessExample {yaml} Success-Response:
+        HTTP/1.1 200OK
+        options:
+          '01': Andalucia
+          '02': Aragón
+          '03': Asturias, Principado de
+          '04': Baleares, Islas
+          '05': Canarias
+          '06': Cantabria
+          '07': Castilla y León
+          '08': Castilla - La Mancha
+          '09': Cataluña
+          '10': Comunidad Valenciana
+          '11': Extremadura
+          '12': Galicia
+          '13': Madrid, Comunidad de
+          '14': Murcia, Región de
+          '15': Navarra, Comunidad Foral de
+          '16': País Vasco
+          '17': Rioja, La
+    """
+    return ns.loads("""\
+        options:
+          '01': Andalucia
+          '02': Aragón
+          '03': Asturias, Principado de
+          '04': Baleares, Islas
+          '05': Canarias
+          '06': Cantabria
+          '07': Castilla y León
+          '08': Castilla - La Mancha
+          '09': Cataluña
+          '10': Comunidad Valenciana
+          '11': Extremadura
+          '12': Galicia
+          '13': Madrid, Comunidad de
+          '14': Murcia, Región de
+          '15': Navarra, Comunidad Foral de
+          '16': País Vasco
+          '17': Rioja, La
+    """)
+
 
 def validateInputDates(ondate = None, since = None, todate = None):
     return not (not ondate is None and (not since is None or not todate is None))
