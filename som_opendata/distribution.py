@@ -3,14 +3,7 @@ from yamlns.dateutils import Date as isoDate
 from yamlns import namespace as ns
 from functools import lru_cache
 from frozendict import frozendict
-
-
-aggregation_levels = [
-    ('countries', 'country', 'codi_pais', 'pais'),
-    ('ccaas', 'ccaa', 'codi_ccaa', 'comunitat_autonoma'),
-    ('states', 'state', 'codi_provincia', 'provincia'),
-    ('cities', 'city', 'codi_ine', 'municipi'),
-    ]
+from . import common
 
 def parse_tsv(tsv_data):
     """
@@ -75,7 +68,7 @@ def aggregate(entries, detail='world', dates=None):
         if detail == 'world': continue
         current = result
 
-        for level_name, level_single, codi, name in aggregation_levels:
+        for level_name, level_single, codi, name in common.aggregation_levels:
             current = aggregate_level(
                 entry, current, level_name, codi, name)
             if detail == level_single: break

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import tablib
 from yamlns import namespace as ns
+from future.utils import iteritems
+
 from .distribution import (
     parse_tsv,
     tuples2objects,
@@ -15,10 +17,9 @@ from .distribution import (
     getDates,
     isField,
     cachedGetAggregated,
-    aggregation_levels,
     )
 from .errors import MissingDateError
-from future.utils import iteritems
+from . import common
 
 class CsvSource(object):
     
@@ -71,9 +72,10 @@ class CsvSource(object):
         addObjects(self._objects[datum], content)
 
     def geolevelOptions(self, geolevel):
-        for plural, singular, codefield, namefield in aggregation_levels:
+        for plural, singular, codefield, namefield in common.aggregation_levels:
             if singular == geolevel: break
-        else return ns()
+        else:
+            return ns()
 
         return ns(
             (line[codefield], line[namefield])

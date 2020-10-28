@@ -159,6 +159,13 @@ metrics = ns(
     contracts="Contracts",
 )
 
+aggregation_levels = [
+    ('countries', 'country', 'codi_pais', 'pais'),
+    ('ccaas', 'ccaa', 'codi_ccaa', 'comunitat_autonoma'),
+    ('states', 'state', 'codi_provincia', 'provincia'),
+    ('cities', 'city', 'codi_ine', 'municipi'),
+    ]
+
 geolevels = ns([
     ('world', ns(
         text = 'World',
