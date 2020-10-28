@@ -15,6 +15,7 @@ from .distribution import (
     getDates,
     isField,
     cachedGetAggregated,
+    aggregation_levels,
     )
 from .errors import MissingDateError
 from future.utils import iteritems
@@ -69,6 +70,18 @@ class CsvSource(object):
             self.lastDay[datum] = addedDates[0]
         addObjects(self._objects[datum], content)
 
+    def geolevelOptions(self, geolevel):
+        for plural, singular, codefield, namefield in aggregation_levels:
+            if singular == geolevel: break
+
+        return ns(
+            (line[codefield], line[namefield])
+            for tuples in self._objects.values()
+            for line in tuples
+        )
+
+
+
 import dbconfig as config
 import os.path
 import glob
@@ -85,3 +98,4 @@ def loadCsvSource(relativePath='../data/metrics'):
     return CsvSource(datums)
 
 
+# vim: et sw=4 ts=4

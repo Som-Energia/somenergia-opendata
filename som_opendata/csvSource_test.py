@@ -268,3 +268,65 @@ class CsvSource_Test(unittest.TestCase):
             )
         r = source.getLastDay('members')
         self.assertEqual(r, '2018-02-01')
+
+    def test__geolevelOptions_single(self):
+        source = self.createSource(
+            ns(contracts=[headers,
+                data_SantJoan])
+            )
+        self.assertNsEqual(source.geolevelOptions('ccaa'),"""
+            '09': Catalunya
+        """)
+
+    def test__geolevelOptions_many(self):
+        source = self.createSource(
+            ns(contracts=[headers,
+                data_SantJoan,
+                data_Adra,
+                ])
+            )
+        self.assertNsEqual(source.geolevelOptions('ccaa'),"""
+            '01': Andalucía
+            '09': Catalunya
+        """)
+
+    def test__geolevelOptions_repeated(self):
+        source = self.createSource(
+            ns(contracts=[headers,
+                data_SantJoan,
+                data_Girona,
+                ])
+            )
+        self.assertNsEqual(source.geolevelOptions('ccaa'),"""
+            '09': Catalunya
+        """)
+
+    def test__geolevelOptions_mergesSources(self):
+        source = self.createSource(ns(
+            contracts=[headers,
+                data_SantJoan,
+            ],
+            members=[headers,
+                data_Adra,
+            ],
+        ))
+        self.assertNsEqual(source.geolevelOptions('ccaa'),"""
+            '01': Andalucía
+            '09': Catalunya
+        """)
+
+
+    def test__geolevelOptions_differentGeolevel(self):
+        source = self.createSource(ns(
+            contracts=[headers,
+                data_SantJoan,
+                data_Adra,
+            ],
+        ))
+        self.assertNsEqual(source.geolevelOptions('state'),"""
+            '04': Almería
+            '08': Barcelona
+        """)
+
+
+# vim: et sw=4 ts=4
