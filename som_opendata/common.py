@@ -189,7 +189,7 @@ geolevels = ns([
 valorsAptes = ns(
     metric=metrics.keys(),
     frequency=['monthly', 'yearly', None],
-    geolevel=['country', 'ccaa', 'state', 'city', 'world']
+    geolevel=[k for k,v in geolevels.items() if v.get('aggregation', True) ]
 )
 
 def validateParams(field, value):
