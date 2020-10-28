@@ -478,16 +478,9 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
     request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=fromdate, to=todate, periodicity=frequency)
     location_filter_req = ns()
 
-    relation_locationLevel_id = [
-            ['country', 'codi_pais'],
-            ['ccaa', 'codi_ccaa'],
-            ['state', 'codi_provincia'],
-            ['city', 'codi_ine'],
-          ]
-
     alias_filters = extractAlias()
-    for locationLevel_id in relation_locationLevel_id:
-        extractQueryParam(location_filter_req, alias_filters, *locationLevel_id)
+    for plural, level, codefield, namefield in common.aggregation_levels:
+        extractQueryParam(location_filter_req, alias_filters, level, codefield)
 
     return getAggregated(content, metric, request_dates, location_filter_req, geolevel, mutable=False)
 
