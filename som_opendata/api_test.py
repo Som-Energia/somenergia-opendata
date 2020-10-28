@@ -136,23 +136,24 @@ class Api_Test(unittest.TestCase):
         r = self.get('/introspection/geolevels')
         self.assertYamlResponse(r, """\
             geolevels:
+            - id: world
+              text: 'World'
             - id: country
               text: 'Country'
+              parent: world
             - id: ccaa
               text: 'CCAA'
               parent: country
             - id: state
               text: 'State'
-              parent: 
+              parent: ccaa 
             - id: city
               text: 'City'
               parent: state
             - id: localgroup
               text: 'Local Group'
-              count: False
-            - id: county
-              text: 'County'
-              parent: CCAA
+              parent: world
+              aggregation: False
             """)
 
 

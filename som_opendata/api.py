@@ -71,6 +71,71 @@ def introspectionMetrics():
         for key,value in common.metrics.items()
     ])
 
+geolevels = ns([
+    ('world', ns(
+        text = 'World',
+    )),
+    ('country', ns(
+          text = 'Country',
+          parent = 'world',
+    )),
+    ('ccaa', ns(
+          text = 'CCAA',
+          parent = 'country',
+    )),
+    ('state', ns(
+          text = 'State',
+          parent = 'ccaa',
+    )),
+    ('city', ns(
+          text = 'City',
+          parent = 'state',
+    )),
+    ('localgroup', ns(
+          text = 'Local Group',
+          parent = 'world',
+          aggregation = False,
+    )),
+])
+
+@api.route('/introspection/geolevels')
+@yaml_response
+def introspectionGeoLevel():
+    """
+    @api {get} /v0.2/introspection/metrics
+    @apiVersion 0.2.2
+    @apiName Metrics
+    @apiGroup Introspection
+    @apiDescription Returns the metrics that can be queried
+
+    @apiSampleRequest /v0.2/introspection/geolevels
+    @apiSuccessExample {yaml} Success-Response:
+        HTTP/1.1 200OK
+        geolevels:
+        - id: world
+          text: 'World'
+        - id: country
+          text: 'Country'
+          parent: world
+        - id: ccaa
+          text: 'CCAA'
+          parent: country
+        - id: state
+          text: 'State'
+          parent: ccaa 
+        - id: city
+          text: 'City'
+          parent: state
+        - id: localgroup
+          text: 'Local Group'
+          parent: world
+          aggregation: False
+    """
+    return ns(
+        geolevels = [
+        ns(**data, id=key)
+        for key, data in geolevels.items()
+    ])
 
 
 def validateInputDates(ondate = None, since = None, todate = None):
