@@ -71,32 +71,6 @@ def introspectionMetrics():
         for key,value in common.metrics.items()
     ])
 
-geolevels = ns([
-    ('world', ns(
-        text = 'World',
-    )),
-    ('country', ns(
-          text = 'Country',
-          parent = 'world',
-    )),
-    ('ccaa', ns(
-          text = 'CCAA',
-          parent = 'country',
-    )),
-    ('state', ns(
-          text = 'State',
-          parent = 'ccaa',
-    )),
-    ('city', ns(
-          text = 'City',
-          parent = 'state',
-    )),
-    ('localgroup', ns(
-          text = 'Local Group',
-          parent = 'world',
-          aggregation = False,
-    )),
-])
 
 @api.route('/introspection/geolevels')
 @yaml_response
@@ -134,7 +108,7 @@ def introspectionGeoLevel():
     return ns(
         geolevels = [
         ns(**data, id=key)
-        for key, data in geolevels.items()
+        for key, data in common.geolevels.items()
     ])
 
 

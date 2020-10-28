@@ -159,6 +159,32 @@ metrics = ns(
     contracts="Contracts",
 )
 
+geolevels = ns([
+    ('world', ns(
+        text = 'World',
+    )),
+    ('country', ns(
+          text = 'Country',
+          parent = 'world',
+    )),
+    ('ccaa', ns(
+          text = 'CCAA',
+          parent = 'country',
+    )),
+    ('state', ns(
+          text = 'State',
+          parent = 'ccaa',
+    )),
+    ('city', ns(
+          text = 'City',
+          parent = 'state',
+    )),
+    ('localgroup', ns(
+          text = 'Local Group',
+          parent = 'world',
+          aggregation = False,
+    )),
+])
 # None i world son valors por defecto de los parametros
 valorsAptes = ns(
     metric=metrics.keys(),
