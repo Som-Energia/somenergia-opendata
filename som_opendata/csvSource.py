@@ -73,6 +73,7 @@ class CsvSource(object):
     def geolevelOptions(self, geolevel):
         for plural, singular, codefield, namefield in aggregation_levels:
             if singular == geolevel: break
+        else return ns()
 
         return ns(
             (line[codefield], line[namefield])

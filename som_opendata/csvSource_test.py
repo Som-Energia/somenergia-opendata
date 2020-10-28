@@ -329,4 +329,18 @@ class CsvSource_Test(unittest.TestCase):
         """)
 
 
+    def test__geolevelOptions_badLevel(self):
+        source = self.createSource(ns(
+            contracts=[headers,
+                data_SantJoan,
+                data_Adra,
+            ],
+        ))
+        self.assertNsEqual(source.geolevelOptions('bad_geolevel_name'),"""
+            {}
+        """)
+
+
+
+
 # vim: et sw=4 ts=4
