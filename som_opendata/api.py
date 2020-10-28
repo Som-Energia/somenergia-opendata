@@ -149,11 +149,11 @@ def introspectionGeoLevelOptions(geolevel):
 def validateInputDates(ondate = None, since = None, todate = None):
     return not (not ondate is None and (not since is None or not todate is None))
 
-def extractQueryParam(location_filter_req, alias_filters, queryName, objectName):
-    queryParam = request.args.getlist(queryName)
-    queryParam += alias_filters.get(queryName, [])
-    if len(queryParam) != 0:
-        location_filter_req[objectName] = tuple(queryParam)
+def extractQueryParam(location_filter_req, alias_filters, queryName, geolevel):
+    filterValues = request.args.getlist(queryName)
+    filterValues += alias_filters.get(queryName, [])
+    if len(filterValues) != 0:
+        location_filter_req[geolevel] = tuple(filterValues)
 
 def extractAlias():
     localgroups = request.args.getlist('localgroup')
@@ -475,9 +475,16 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
 
     content = api.source
 
-    request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=fromdate, to=todate, periodicity=frequency)
-    location_filter_req = ns()
+    request_dates = requestDates(
+        first=api.firstDate,
+        last=api.source.getLastDay(metric),
+        on=ondate,
+        since=fromdate,
+        to=todate,
+        periodicity=frequency,
+    )
 
+    location_filter_req = ns()
     alias_filters = extractAlias()
     for plural, level, codefield, namefield in common.aggregation_levels:
         extractQueryParam(location_filter_req, alias_filters, level, codefield)

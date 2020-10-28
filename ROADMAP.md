@@ -11,9 +11,9 @@ Introspeccio:
 - Quins formats disponibles per un tipus de query (mapa, distribution)
 - Quins filtres s'apliquen als tags
 
-/discover/metric
+[x] /discover/metric
 /discover/relativemetric  {population, area, marketcontracts...)
-/discover/geolevel  [ccaa, city, state, country, county, localgrup...]
+[x] /discover/geolevel  [ccaa, city, state, country, county, localgrup...]
 /discover/geolevel/country?continent=Europe    {ES:España,...}
 /discover/geolevel/city?ccaa=09    {0808: barcelona, :}
 /discover/geolevel/localgroup
