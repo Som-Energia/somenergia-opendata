@@ -141,20 +141,26 @@ class Api_Test(unittest.TestCase):
             - id: country
               text: 'Country'
               parent: world
+              plural: countries
             - id: ccaa
               text: 'CCAA'
               parent: country
+              plural: ccaas
             - id: state
               text: 'State'
               parent: ccaa 
+              plural: states
             - id: city
               text: 'City'
               parent: state
+              plural: cities
             - id: localgroup
               text: 'Local Group'
               parent: world
+              plural: localgroups
               aggregation: False
             """)
+
 
     def test_geolevelOptions_unfiltered(self):
         r = self.get('/introspection/geolevels/ccaa')
@@ -177,6 +183,8 @@ class Api_Test(unittest.TestCase):
               '15': Navarra, Comunidad Foral de
               '16': País Vasco
               '17': Rioja, La
+              '19': Melilla
+              None: None
             """)
 
 

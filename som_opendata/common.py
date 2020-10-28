@@ -172,26 +172,33 @@ geolevels = ns([
     )),
     ('country', ns(
           text = 'Country',
+          plural = 'countries',
           parent = 'world',
     )),
     ('ccaa', ns(
           text = 'CCAA',
+          plural = 'ccaas',
           parent = 'country',
     )),
     ('state', ns(
           text = 'State',
+          plural = 'states',
           parent = 'ccaa',
     )),
     ('city', ns(
           text = 'City',
+          plural = 'cities',
           parent = 'state',
     )),
     ('localgroup', ns(
           text = 'Local Group',
+          plural = 'localgroups',
           parent = 'world',
           aggregation = False,
     )),
 ])
+
+
 # None i world son valors por defecto de los parametros
 valorsAptes = ns(
     metric=metrics.keys(),
