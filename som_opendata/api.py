@@ -46,7 +46,7 @@ def version():
 
 @api.route('/introspection/metrics')
 @yaml_response
-def instrospectionMetrics():
+def introspectionMetrics():
     """
     @api {get} /v0.2/introspection/metrics
     @apiVersion 0.2.2
