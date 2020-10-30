@@ -655,89 +655,89 @@ class Distribution_Test(unittest.TestCase):
 
     def test__validateStringDate__existDate(self):
         result = validateStringDate('2018-01-01')
-        self.assertEquals(result, True)
+        self.assertEqual(result, True)
 
     def test__validateStringDate__noExistDate(self):
         result = validateStringDate('2018-21-01')
-        self.assertEquals(result, False)
+        self.assertEqual(result, False)
 
 
     # includedDates
 
     def test__includedDates__empty(self):
         result = includedDates([])
-        self.assertEquals(result, [])
+        self.assertEqual(result, [])
 
     def test__includedDates__emptyHeaders(self):
         result = includedDates([[],[]])
-        self.assertEquals(result, [])
+        self.assertEqual(result, [])
 
     def test__includedDates__correctDates(self):
         result = includedDates([['blah', 'blah', 'count_2018_01_01']])
-        self.assertEquals(result, ['2018-01-01'])
+        self.assertEqual(result, ['2018-01-01'])
 
     def test__includedDates__incorrectDates(self):
         result = includedDates([['blah', 'count_2018_20_54', 'count_2018_01_01']])
-        self.assertEquals(result, ['2018-01-01'])
+        self.assertEqual(result, ['2018-01-01'])
 
 
     # includedDatesObjects
 
     def test__includedDatesObject__empty(self):
         result = includedDatesObject([])
-        self.assertEquals(result, [])
+        self.assertEqual(result, [])
 
     def test__includedDatesObject__emptyHeaders(self):
         result = includedDatesObject([ns(),ns()])
-        self.assertEquals(result, [])
+        self.assertEqual(result, [])
 
     def test__includedDatesObject__correctDates(self):
         result = includedDatesObject([ns(codi_pais='ES', count_2018_01_01='1000')])
-        self.assertEquals(result, ['2018-01-01'])
+        self.assertEqual(result, ['2018-01-01'])
 
     def test__includedDatesObject__incorrectDates(self):
         result = includedDatesObject([ns(codi_pais='ES', count_2018_41_01='1000', count_2018_01_01='1000')])
-        self.assertEquals(result, ['2018-01-01'])
+        self.assertEqual(result, ['2018-01-01'])
 
 
     # field2date
 
     def test__field2date__correctDate(self):
         result = field2date('count_2018_01_01')
-        self.assertEquals(result, '2018-01-01')
+        self.assertEqual(result, '2018-01-01')
 
 
     # date2field
 
     def test__date2field__correctDate(self):
         result = date2field('2018-01-01')
-        self.assertEquals(result, 'count_2018_01_01')
+        self.assertEqual(result, 'count_2018_01_01')
 
 
     # isField
 
     def test__isField__correctField(self):
         result = isField('count_2018_01_01')
-        self.assertEquals(result, True)
+        self.assertEqual(result, True)
 
     def test__isField__incorrectField(self):
         result = isField('codi_pais')
-        self.assertEquals(result, False)
+        self.assertEqual(result, False)
 
 
     # missingDates
 
     def test__missingDates__existAllDates(self):
         result = missingDates(['2018-01-01'], ['2018-01-01'])
-        self.assertEquals(result, [])
+        self.assertEqual(result, [])
 
     def test__missingDates__moreRequestThatExist(self):
         result = missingDates(['2018-01-01'], ['2018-01-01', '2018-02-01'])
-        self.assertEquals(result, ['2018-02-01'])
+        self.assertEqual(result, ['2018-02-01'])
 
     def test__missingDates__moreExistThatRequest(self):
         result = missingDates(['2018-01-01','2018-02-01'], ['2018-01-01'])
-        self.assertEquals(result, [])
+        self.assertEqual(result, [])
 
 
     # removeCounts
@@ -756,7 +756,7 @@ class Distribution_Test(unittest.TestCase):
             count_2018_02_01='201',
             )
         result = removeCounts(_object, ['count_2018_03_01'])
-        self.assertEquals(result, _object)
+        self.assertEqual(result, _object)
 
     def test__removeCounts__oneCount(self):
         _object = ns(
@@ -775,7 +775,7 @@ class Distribution_Test(unittest.TestCase):
         del expected['count_2018_01_01']
 
         result = removeCounts(_object, ['count_2018_01_01'])
-        self.assertEquals(result, expected)
+        self.assertEqual(result, expected)
 
 
     # removeDates
@@ -794,7 +794,7 @@ class Distribution_Test(unittest.TestCase):
             count_2018_02_01='201',
             )
         result = removeDates([_object], ['2018-03-01'])
-        self.assertEquals(result, [_object])
+        self.assertEqual(result, [_object])
 
     def test__removeDates__oneDate(self):
         _object = ns(
@@ -811,7 +811,7 @@ class Distribution_Test(unittest.TestCase):
             )
         result = removeDates([_object], ['2018-01-01'])
         del _object['count_2018_01_01']
-        self.assertEquals(result, [_object])
+        self.assertEqual(result, [_object])
 
     # getDates
 
@@ -829,7 +829,7 @@ class Distribution_Test(unittest.TestCase):
             count_2018_02_01='201',
             )
         result = getDates([_object], ['2018-01-01', '2018-02-01'])
-        self.assertEquals(result, [_object])
+        self.assertEqual(result, [_object])
 
     def test__getDates__oneDate(self):
         _object = ns(
@@ -846,7 +846,7 @@ class Distribution_Test(unittest.TestCase):
             )
         result = getDates([_object], ['2018-02-01'])
         del _object['count_2018_01_01']
-        self.assertEquals(result, [_object])
+        self.assertEqual(result, [_object])
 
     # finsObject
 
@@ -856,7 +856,7 @@ class Distribution_Test(unittest.TestCase):
             ns(key1='value3', key2='value4')
         ]
         result = findObject(objectList, 'key1', 'value5')
-        self.assertEquals(result, None)
+        self.assertEqual(result, None)
 
     def test__findObject__existObject(self):
         objectList = [
@@ -864,7 +864,7 @@ class Distribution_Test(unittest.TestCase):
             ns(key1='value3', key2='value4')
         ]
         result = findObject(objectList, 'key1', 'value3')
-        self.assertEquals(result, ns(key1='value3', key2='value4'))
+        self.assertEqual(result, ns(key1='value3', key2='value4'))
 
 
     # addObjects
@@ -895,7 +895,7 @@ class Distribution_Test(unittest.TestCase):
                 )
             ]
         addObjects(data, data)
-        self.assertEquals(data, [
+        self.assertEqual(data, [
                 ns(
                     codi_pais=u'ES',
                     pais=u'España',
@@ -959,7 +959,7 @@ class Distribution_Test(unittest.TestCase):
                 ),
             ]
         addObjects(data, content)
-        self.assertEquals(data, [
+        self.assertEqual(data, [
                 ns(
                     codi_pais=u'ES',
                     pais=u'España',

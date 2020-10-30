@@ -36,7 +36,7 @@ class CsvSource_Test(unittest.TestCase):
         with self.assertRaises(MissingDateError) as ctx:
             source.get(datum=datum, dates=dates, filters=ns())
 
-        self. assertEquals(ctx.exception.missingDates, missingDates)
+        self. assertEqual(ctx.exception.missingDates, missingDates)
 
 
     def test__get__oneDateRequestExist(self):
