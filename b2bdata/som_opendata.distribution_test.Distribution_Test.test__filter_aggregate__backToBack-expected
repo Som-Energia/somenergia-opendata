@@ -2572,6 +2572,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '22190':
+                name: Pueyo de Araguás, El
+                values:
+                - 0
+                - 0
               '22195':
                 name: Quicena
                 values:
@@ -5853,6 +5858,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '19082':
+                name: Centenera
+                values:
+                - 0
+                - 0
               '19103':
                 name: Checa
                 values:
@@ -6131,6 +6141,11 @@ countries:
                 - 1
               '45029':
                 name: Caleruela
+                values:
+                - 0
+                - 0
+              '45031':
+                name: Camarena
                 values:
                 - 0
                 - 0
@@ -6673,6 +6688,11 @@ countries:
                 - 0
               '05103':
                 name: Hoyorredondo
+                values:
+                - 0
+                - 0
+              '05114':
+                name: Madrigal de las Altas Torres
                 values:
                 - 0
                 - 0
@@ -8385,6 +8405,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '37287':
+                name: San Miguel de Valero
+                values:
+                - 0
+                - 0
               '37294':
                 name: Santa Marta de Tormes
                 values:
@@ -8653,6 +8678,11 @@ countries:
                 - 0
               '40141':
                 name: Navalmanzano
+                values:
+                - 0
+                - 0
+              '40143':
+                name: Navares de Enmedio
                 values:
                 - 0
                 - 0
@@ -9073,6 +9103,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '47033':
+                name: Canalejas de Peñafiel
+                values:
+                - 0
+                - 0
               '47035':
                 name: Carpio
                 values:
@@ -9283,6 +9318,11 @@ countries:
                 values:
                 - 1
                 - 1
+              '47127':
+                name: Quintanilla de Arriba
+                values:
+                - 0
+                - 0
               '47129':
                 name: Quintanilla de Onésimo
                 values:
@@ -10166,6 +10206,11 @@ countries:
                 values:
                 - 1
                 - 1
+              '17258':
+                name: L'Estartit
+                values:
+                - 0
+                - 0
               08104:
                 name: Llacuna, La
                 values:
@@ -12363,6 +12408,11 @@ countries:
                 values:
                 - 4
                 - 4
+              '25021':
+                name: Almenar
+                values:
+                - 0
+                - 0
               '25022':
                 name: Alòs de Balaguer
                 values:
@@ -16251,7 +16301,7 @@ countries:
                 - 2
                 - 2
               '46250':
-                name: Valencia
+                name: Valencia/València
                 values:
                 - 558
                 - 582
@@ -17213,6 +17263,11 @@ countries:
             cities:
               '27001':
                 name: Abadín
+                values:
+                - 0
+                - 0
+              '27002':
+                name: Alfoz
                 values:
                 - 0
                 - 0

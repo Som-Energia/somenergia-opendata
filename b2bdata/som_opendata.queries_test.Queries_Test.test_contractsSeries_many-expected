@@ -498,6 +498,7 @@ ES	España	02	Aragón	22	Huesca	22187	Puebla de Castro, La	1	1
 ES	España	02	Aragón	22	Huesca	22188	Puente de Montañana	0	0
 ES	España	02	Aragón	22	Huesca	22902	Puente la Reina de Jaca	0	0
 ES	España	02	Aragón	22	Huesca	22189	Puértolas	0	0
+ES	España	02	Aragón	22	Huesca	22190	Pueyo de Araguás, El	0	0
 ES	España	02	Aragón	22	Huesca	22195	Quicena	0	0
 ES	España	02	Aragón	22	Huesca	22199	Sabiñánigo	8	8
 ES	España	02	Aragón	22	Huesca	22200	Sahún	1	1
@@ -1136,6 +1137,7 @@ ES	España	08	Castilla - La Mancha	19	Guadalajara	19067	Cardoso de la Sierra, El
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19070	Casa de Uceda	1	1
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19071	Casar, El	5	5
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19079	Castilnuevo	0	0
+ES	España	08	Castilla - La Mancha	19	Guadalajara	19082	Centenera	0	0
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19103	Checa	1	1
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19106	Chillarón del Rey	1	2
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19105	Chiloeches	3	3
@@ -1191,6 +1193,7 @@ ES	España	08	Castilla - La Mancha	45	Toledo	45020	Belvís de la Jara	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45023	Burguillos de Toledo	2	3
 ES	España	08	Castilla - La Mancha	45	Toledo	45028	Calera y Chozas	1	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45029	Caleruela	0	0
+ES	España	08	Castilla - La Mancha	45	Toledo	45031	Camarena	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45034	Camuñas	1	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45035	Cardiel de los Montes	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45037	Carpio de Tajo, El	1	1
@@ -1297,6 +1300,7 @@ ES	España	07	Castilla y León	05	Ávila	05093	Herradón de Pinares	1	1
 ES	España	07	Castilla y León	05	Ávila	05101	Hoyocasero	0	0
 ES	España	07	Castilla y León	05	Ávila	05102	Hoyo de Pinares, El	0	0
 ES	España	07	Castilla y León	05	Ávila	05103	Hoyorredondo	0	0
+ES	España	07	Castilla y León	05	Ávila	05114	Madrigal de las Altas Torres	0	0
 ES	España	07	Castilla y León	05	Ávila	05124	Medinilla	0	0
 ES	España	07	Castilla y León	05	Ávila	05127	Mijares	0	0
 ES	España	07	Castilla y León	05	Ávila	05128	Mingorría	1	1
@@ -1634,6 +1638,7 @@ ES	España	07	Castilla y León	37	Salamanca	37274	Salamanca	28	29
 ES	España	07	Castilla y León	37	Salamanca	37277	Salvatierra de Tormes	0	0
 ES	España	07	Castilla y León	37	Salamanca	37278	San Cristóbal de la Cuesta	0	0
 ES	España	07	Castilla y León	37	Salamanca	37284	San Esteban de la Sierra	0	0
+ES	España	07	Castilla y León	37	Salamanca	37287	San Miguel de Valero	0	0
 ES	España	07	Castilla y León	37	Salamanca	37294	Santa Marta de Tormes	1	1
 ES	España	07	Castilla y León	37	Salamanca	37296	Santiago de la Puebla	0	0
 ES	España	07	Castilla y León	37	Salamanca	37302	Saucelle	0	0
@@ -1687,6 +1692,7 @@ ES	España	07	Castilla y León	40	Segovia	40138	Nava de la Asunción	0	0
 ES	España	07	Castilla y León	40	Segovia	40139	Navafría	0	0
 ES	España	07	Castilla y León	40	Segovia	40140	Navalilla	0	0
 ES	España	07	Castilla y León	40	Segovia	40141	Navalmanzano	0	0
+ES	España	07	Castilla y León	40	Segovia	40143	Navares de Enmedio	0	0
 ES	España	07	Castilla y León	40	Segovia	40904	Navas de Riofrío	0	0
 ES	España	07	Castilla y León	40	Segovia	40148	Nieva	1	1
 ES	España	07	Castilla y León	40	Segovia	40149	Olombrada	0	0
@@ -1768,6 +1774,7 @@ ES	España	07	Castilla y León	47	Valladolid	47010	Arroyo de la Encomienda	1	1
 ES	España	07	Castilla y León	47	Valladolid	47015	Becilla de Valderaduey	1	1
 ES	España	07	Castilla y León	47	Valladolid	47023	Boecillo	0	0
 ES	España	07	Castilla y León	47	Valladolid	47027	Cabezón de Pisuerga	0	0
+ES	España	07	Castilla y León	47	Valladolid	47033	Canalejas de Peñafiel	0	0
 ES	España	07	Castilla y León	47	Valladolid	47035	Carpio	0	0
 ES	España	07	Castilla y León	47	Valladolid	47036	Casasola de Arión	0	0
 ES	España	07	Castilla y León	47	Valladolid	47038	Castrillo de Duero	1	1
@@ -1810,6 +1817,7 @@ ES	España	07	Castilla y León	47	Valladolid	47118	Piñel de Abajo	0	0
 ES	España	07	Castilla y León	47	Valladolid	47122	Portillo	0	0
 ES	España	07	Castilla y León	47	Valladolid	47123	Pozal de Gallinas	0	0
 ES	España	07	Castilla y León	47	Valladolid	47124	Pozaldez	1	1
+ES	España	07	Castilla y León	47	Valladolid	47127	Quintanilla de Arriba	0	0
 ES	España	07	Castilla y León	47	Valladolid	47129	Quintanilla de Onésimo	0	0
 ES	España	07	Castilla y León	47	Valladolid	47130	Quintanilla de Trigueros	0	0
 ES	España	07	Castilla y León	47	Valladolid	47131	Rábano	0	0
@@ -1983,6 +1991,7 @@ ES	España	09	Cataluña	08	Barcelona	08101	Hospitalet de Llobregat, L'	132	139
 ES	España	09	Cataluña	08	Barcelona	08162	Hostalets de Pierola, Els	5	5
 ES	España	09	Cataluña	08	Barcelona	08102	Igualada	55	57
 ES	España	09	Cataluña	08	Barcelona	08103	Jorba	1	1
+ES	España	09	Cataluña	08	Barcelona	17258	L'Estartit	0	0
 ES	España	09	Cataluña	08	Barcelona	08104	Llacuna, La	10	10
 ES	España	09	Cataluña	08	Barcelona	08105	Llagosta, La	3	3
 ES	España	09	Cataluña	08	Barcelona	08107	Lliçà d'Amunt	12	12
@@ -2421,6 +2430,7 @@ ES	España	09	Cataluña	25	Lleida	25015	Algerri	0	0
 ES	España	09	Cataluña	25	Lleida	25016	Alguaire	5	5
 ES	España	09	Cataluña	25	Lleida	25017	Alins	0	0
 ES	España	09	Cataluña	25	Lleida	25019	Almacelles	4	4
+ES	España	09	Cataluña	25	Lleida	25021	Almenar	0	0
 ES	España	09	Cataluña	25	Lleida	25022	Alòs de Balaguer	2	2
 ES	España	09	Cataluña	25	Lleida	25023	Alpicat	4	4
 ES	España	09	Cataluña	25	Lleida	25024	Alt Àneu	3	3
@@ -3190,7 +3200,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46246	Tous	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46247	Tuéjar	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46248	Turís	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46249	Utiel	2	2
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46250	Valencia	558	582
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46250	Valencia/València	558	582
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46251	Vallada	1	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46252	Vallanca	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46254	Venta del Moro	2	2
@@ -3376,6 +3386,7 @@ ES	España	12	Galicia	15	Coruña, A	15087	Valdoviño	0	0
 ES	España	12	Galicia	15	Coruña, A	15089	Vedra	0	0
 ES	España	12	Galicia	15	Coruña, A	15093	Zas	0	0
 ES	España	12	Galicia	27	Lugo	27001	Abadín	0	0
+ES	España	12	Galicia	27	Lugo	27002	Alfoz	0	0
 ES	España	12	Galicia	27	Lugo	27003	Antas de Ulla	0	0
 ES	España	12	Galicia	27	Lugo	27901	Baralla	0	0
 ES	España	12	Galicia	27	Lugo	27005	Barreiros	1	1
