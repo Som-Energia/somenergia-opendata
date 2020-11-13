@@ -25,7 +25,8 @@ class CsvSource(object):
     
     data = None
 
-    def __init__(self, content):
+    def __init__(self, content, aliases=[]):
+        self.aliases = aliases
         self.data = content
         self._objects = {
             datum : tuples2objects(parse_tsv(data))
@@ -72,6 +73,8 @@ class CsvSource(object):
         addObjects(self._objects[datum], content)
 
     def geolevelOptions(self, geolevel, **filters):
+        if geolevel in self.aliases:
+            return ns((k,v.name) for k,v in self.aliases[geolevel].items())
         for plural, singular, codefield, namefield in common.aggregation_levels:
             if singular == geolevel: break
         else:

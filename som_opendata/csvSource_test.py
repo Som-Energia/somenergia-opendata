@@ -25,12 +25,12 @@ class CsvSource_Test(unittest.TestCase):
         self.maxDiff=None
         self.b2bdatapath = 'b2bdata'
 
-    def createSource(self, datums):
+    def createSource(self, datums, aliases=[]):
 
         content = ns()
         for datum, lines in iteritems(datums):
             content[datum] = '\n'.join(lines)
-        return CsvSource(content)
+        return CsvSource(content, aliases)
 
     def raisesAssertion(self, source, datum, dates, missingDates):
         with self.assertRaises(MissingDateError) as ctx:
@@ -351,6 +351,31 @@ class CsvSource_Test(unittest.TestCase):
             '08': Barcelona
         """)
 
+
+    def test__geolevelOptions_alias(self):
+        source = self.createSource(
+            ns(
+                contracts=[headers,
+                    data_SantJoan,
+                    data_Adra,
+            ]),
+            aliases=ns(
+                localgroup=ns(
+                    BaixLlobregat = ns(
+                        name = "Baix Llobregat",
+                        alias = ns(
+                            city = [
+                                '08217', # Sant Joan Despi
+                                '17027', # Breda
+                            ],
+                        ),
+                    )
+                )
+            )
+        )
+        self.assertNsEqual(source.geolevelOptions('localgroup'),"""
+            BaixLlobregat: Baix Llobregat
+        """)
 
 
 
