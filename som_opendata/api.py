@@ -143,6 +143,10 @@ def introspectionGeoLevelOptions(geolevel):
           '16': País Vasco
           '17': Rioja, La
     """
+    if geolevel == 'localgroup':
+        return ns(
+            options=ns(api.localGroups.getLocalGroups())
+        )
     return ns(options=api.source.geolevelOptions(geolevel))
 
 

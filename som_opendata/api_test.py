@@ -187,6 +187,18 @@ class Api_Test(unittest.TestCase):
               None: None
             """)
 
+    def test_geolevelOptions_alias(self):
+        r = self.get('/introspection/geolevels/localgroup')
+        self.assertYamlResponse(r, """\
+            options:
+                Alacant: Alacant
+                AlmeriaCadiz: Almería y Cádiz
+                CatalunyaMadrid: Gl de Catalunya i Madrid ciutat
+                GironaCiutat: Gl de Girona
+                GironaSalt: Gl de Girona i Salt
+            """)
+
+
 
     def test__onDate__exists(self):
         r = self.get('/members/on/2018-01-01')

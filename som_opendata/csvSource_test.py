@@ -328,7 +328,7 @@ class CsvSource_Test(unittest.TestCase):
             '08': Barcelona
         """)
 
-
+    # TODO: launch error
     def test__geolevelOptions_badLevel(self):
         source = self.createSource(ns(
             contracts=[headers,
