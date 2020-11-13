@@ -163,6 +163,15 @@ def extractAlias():
     localgroups = request.args.getlist('localgroup')
     return api.localGroups.aliasFilters(localgroups) if localgroups else ns()
 
+# TODO: Untested
+def extractFilters():
+    result = ns()
+    alias_filters = extractAlias()
+    for plural, level, codefield, namefield in common.aggregation_levels:
+        extractQueryParam(result, alias_filters, level, codefield)
+    return result
+
+
 """
 @apiDefine CommonDistribution
 
@@ -487,13 +496,10 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
         to=todate,
         periodicity=frequency,
     )
+    location_filter = extractFilters()
 
-    location_filter_req = ns()
-    alias_filters = extractAlias()
-    for plural, level, codefield, namefield in common.aggregation_levels:
-        extractQueryParam(location_filter_req, alias_filters, level, codefield)
+    return getAggregated(content, metric, request_dates, location_filter, geolevel, mutable=False)
 
-    return getAggregated(content, metric, request_dates, location_filter_req, geolevel, mutable=False)
 
 
 
