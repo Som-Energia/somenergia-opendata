@@ -4,15 +4,15 @@ from .map import iterateLevel
 from .errors import AliasNotFoundError
 
 class LocalGroups(object):
-    def __init__(self, dump):
-        self.alias = 'lg'
+    def __init__(self, dump, name='localgroup'):
         self.data = dump
+        self.name = name
 
     def get(self, code):
         try:
             return self.data[code].deepcopy()
         except:
-            raise AliasNotFoundError('localgroup', code)
+            raise AliasNotFoundError(self.name, code)
 
     def aliasFilters(self, codes):
         result = ns()
@@ -33,4 +33,6 @@ def loadYamlLocalGroups(relativeFile='../data/alias/gl.yaml'):
     myPath = os.path.abspath(os.path.dirname(__file__))
     dataFile = os.path.join(myPath, relativeFile)
     content = ns.load(dataFile)
-    return LocalGroups(content)
+    return LocalGroups(content, name='localgroup')
+
+# vim: et sw=4 ts=4
