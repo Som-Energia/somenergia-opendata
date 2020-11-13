@@ -47,7 +47,7 @@ class CsvSource_Test(unittest.TestCase):
         self.maxDiff=None
         self.b2bdatapath = 'b2bdata'
 
-    def createSource(self, datums, aliases=[]):
+    def createSource(self, datums, aliases=ns()):
 
         content = ns()
         for datum, lines in iteritems(datums):

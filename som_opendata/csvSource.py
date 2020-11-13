@@ -18,6 +18,7 @@ from .distribution import (
     isField,
     cachedGetAggregated,
     )
+from .local_groups import LocalGroups
 from .errors import MissingDateError
 from . import common
 
@@ -25,8 +26,12 @@ class CsvSource(object):
     
     data = None
 
-    def __init__(self, content, aliases=[]):
-        self.aliases = aliases
+    def __init__(self, content, aliases=ns()):
+        self._oldaliases = aliases
+        self._aliases = ns(
+            (k, LocalGroups(v, k))
+            for k,v in aliases.items()
+        )
         self.data = content
         self._objects = {
             datum : tuples2objects(parse_tsv(data))
@@ -73,8 +78,9 @@ class CsvSource(object):
         addObjects(self._objects[datum], content)
 
     def geolevelOptions(self, geolevel, **filters):
-        if geolevel in self.aliases:
-            return ns((k,v.name) for k,v in self.aliases[geolevel].items())
+        if geolevel in self._aliases:
+            return ns(self._aliases[geolevel].getLocalGroups())
+
         for plural, singular, codefield, namefield in common.aggregation_levels:
             if singular == geolevel: break
         else:
