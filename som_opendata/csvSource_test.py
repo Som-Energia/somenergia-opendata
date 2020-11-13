@@ -15,6 +15,28 @@ data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
 data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
 data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
+data_BaixMontseny = (
+    'BaixMontseny', ns(
+        name = "Baix Montseny",
+        alias = ns(
+            city = [
+                '08097', # Gualba
+                '08217', # Sant Joan Despi
+                '17027', # Breda
+            ],
+        ),
+    )
+)
+data_BaixLlobregat = (
+    'BaixLlobregat', ns(
+        name = "Baix Llobregat",
+        alias = ns(
+            city = [
+                '08217', # Sant Joan Despi
+            ],
+        ),
+    )
+)
 
 
 class CsvSource_Test(unittest.TestCase):
@@ -359,22 +381,14 @@ class CsvSource_Test(unittest.TestCase):
                     data_SantJoan,
                     data_Adra,
             ]),
-            aliases=ns(
-                localgroup=ns(
-                    BaixLlobregat = ns(
-                        name = "Baix Llobregat",
-                        alias = ns(
-                            city = [
-                                '08217', # Sant Joan Despi
-                                '17027', # Breda
-                            ],
-                        ),
-                    )
-                )
-            )
+            aliases=ns(localgroup=ns([
+                data_BaixLlobregat,
+                data_BaixMontseny,
+            ])),
         )
         self.assertNsEqual(source.geolevelOptions('localgroup'),"""
             BaixLlobregat: Baix Llobregat
+            BaixMontseny: Baix Montseny
         """)
 
 
