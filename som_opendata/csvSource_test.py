@@ -340,6 +340,17 @@ class CsvSource_Test(unittest.TestCase):
             {}
         """)
 
+    def test__geolevelOptions_withFilter(self):
+        source = self.createSource(ns(
+            contracts=[headers,
+                data_SantJoan,
+                data_Adra,
+            ],
+        ))
+        self.assertNsEqual(source.geolevelOptions('state', codi_ccaa=['09']),"""
+            '08': Barcelona
+        """)
+
 
 
 

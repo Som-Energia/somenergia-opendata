@@ -71,7 +71,7 @@ class CsvSource(object):
             self.lastDay[datum] = addedDates[0]
         addObjects(self._objects[datum], content)
 
-    def geolevelOptions(self, geolevel):
+    def geolevelOptions(self, geolevel, **filters):
         for plural, singular, codefield, namefield in common.aggregation_levels:
             if singular == geolevel: break
         else:
@@ -80,7 +80,7 @@ class CsvSource(object):
         return ns(
             (line[codefield], line[namefield])
             for tuples in self._objects.values()
-            for line in tuples
+            for line in locationFilter(tuples, filters)
         )
 
 
