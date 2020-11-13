@@ -147,7 +147,8 @@ def introspectionGeoLevelOptions(geolevel):
         return ns(
             options=ns(api.localGroups.getLocalGroups())
         )
-    return ns(options=api.source.geolevelOptions(geolevel))
+    location_filter = extractFilters()
+    return ns(options=api.source.geolevelOptions(geolevel, **location_filter))
 
 
 def validateInputDates(ondate = None, since = None, todate = None):

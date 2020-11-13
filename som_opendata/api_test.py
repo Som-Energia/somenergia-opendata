@@ -198,7 +198,15 @@ class Api_Test(unittest.TestCase):
                 GironaSalt: Gl de Girona i Salt
             """)
 
-
+    def test_geolevelOptions_filtered(self):
+        r = self.get('/introspection/geolevels/state?ccaa=09')
+        self.assertYamlResponse(r, """\
+            options:
+                '08': Barcelona
+                '17': Girona
+                '25': Lleida
+                '43': Tarragona
+            """)
 
     def test__onDate__exists(self):
         r = self.get('/members/on/2018-01-01')
