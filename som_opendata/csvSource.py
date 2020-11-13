@@ -27,7 +27,6 @@ class CsvSource(object):
     data = None
 
     def __init__(self, content, aliases=ns()):
-        self._oldaliases = aliases
         self._aliases = ns(
             (k, LocalGroups(v, k))
             for k,v in aliases.items()
