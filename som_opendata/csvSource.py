@@ -96,15 +96,14 @@ class CsvSource(object):
 
     def translateFilter(self, **filters):
         """Transforms public filter keys such as state, country...
-        to the ones used to hold the fields in csv implementation."""
+        to the ones used to hold the fields in csv implementation
+        codi_provincia, codi_pais..."""
         translated=ns()
         untranslated = set(filters.keys())
         for plural, singular, codefield, namefield in common.aggregation_levels:
             if singular not in filters:
                 continue
-            # TODO
-            filtervalues = translated.setdefault(codefield, [])
-            filtervalues += filters[singular]
+            translated[codefield] = filters[singular]
             untranslated.remove(singular)
 
         for key in untranslated:
