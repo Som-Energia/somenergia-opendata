@@ -91,15 +91,15 @@ def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
     return result
 
 
-def locationFilter(objectList, typeFilter):
-    if not typeFilter: return objectList
+def locationFilter(entries, filters):
+    if not filters: return entries
 
     return [
         entry
-        for entry in objectList
+        for entry in entries
         if any(
-             entry[k] in v
-             for k,v in typeFilter.items()
+            entry[field] in allowedValues
+            for field, allowedValues in filters.items()
         )
     ]
 
