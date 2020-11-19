@@ -378,7 +378,7 @@ class CsvSource_Test(unittest.TestCase):
                 data_Adra,
             ],
         ))
-        self.assertNsEqual(source.geolevelOptions('state', codi_ccaa=['09']),"""
+        self.assertNsEqual(source.geolevelOptions('state', ccaa=['09']),"""
             '08': Barcelona
         """)
 

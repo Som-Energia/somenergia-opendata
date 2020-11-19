@@ -77,6 +77,7 @@ class CsvSource(object):
         addObjects(self._objects[datum], content)
 
     def geolevelOptions(self, geolevel, **filters):
+        filters = self.translateFilter(**filters)
         if geolevel in self._aliases:
             return ns(self._aliases[geolevel].getLocalGroups())
 
