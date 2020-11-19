@@ -180,18 +180,18 @@ def findObject(objectList, key, value):
              return o
 
 def addObjects(data, content):
-        for _object in content:
-            _d = findObject(data, 'codi_ine', _object['codi_ine'])
-            if not _d:
-                aux = ns(_object)
-                dates = missingDates(includedDatesObject(content), includedDatesObject(data))
-                for date in dates:
-                    aux[date2field(date)] = '0'
-                data.append(aux)
-            else:
-                addCounts(_d, ((key, value)
-                    for key, value in _object.items() if isField(key)
-                    ))
+    for _object in content:
+        _d = findObject(data, 'codi_ine', _object['codi_ine'])
+        if not _d:
+            aux = ns(_object)
+            dates = missingDates(includedDatesObject(content), includedDatesObject(data))
+            for date in dates:
+                aux[date2field(date)] = '0'
+            data.append(aux)
+        else:
+            addCounts(_d, ((key, value)
+                for key, value in _object.items() if isField(key)
+                ))
 
 def addCounts(dictionary, newElements):
     for (key, value) in newElements:
