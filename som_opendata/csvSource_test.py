@@ -359,7 +359,6 @@ class CsvSource_Test(unittest.TestCase):
             '08': Barcelona
         """)
 
-    # TODO: launch error
     def test__geolevelOptions_badLevel(self):
         source = self.createSource(ns(
             contracts=[headers,
@@ -367,9 +366,10 @@ class CsvSource_Test(unittest.TestCase):
                 data_Adra,
             ],
         ))
-        self.assertNsEqual(source.geolevelOptions('bad_geolevel_name'),"""
-            {}
-        """)
+        with self.assertRaises(Exception) as ctx:
+            source.geolevelOptions('bad_geolevel_name')
+        self.assertEqual(format(ctx.exception),
+            "Not such geolevel 'bad_geolevel_name'")
 
     def test__geolevelOptions_withFilter(self):
         source = self.createSource(ns(
@@ -414,17 +414,16 @@ class CsvSource_Test(unittest.TestCase):
             {}
         """)
 
-    # TODO: Should it fail?
     def test_translateFilter_unknownGeolevel(self):
         source = self.createSource(ns())
-        translated = source.translateFilter(
-            notageolevel=[
-                'value',
-                ]
-            )
-        self.assertNsEqual(translated, """
-            {}
-        """)
+        with self.assertRaises(Exception) as ctx:
+            source.translateFilter(
+                notageolevel=[
+                    'value',
+                    ]
+                )
+        self.assertEqual(format(ctx.exception), 
+            "Not such geolevel 'notageolevel'")
 
     def test_translateFilter_oneGeoLevel(self):
         source = self.createSource(ns())
