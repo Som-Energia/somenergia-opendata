@@ -119,7 +119,7 @@ class CsvSource_Test(unittest.TestCase):
             data_SantJoan])
             )
         self.assertNsEqual(
-            ns(data=source.get('members', ['2018-01-01'], ns(codi_pais=['ES']))), """\
+            ns(data=source.get('members', ['2018-01-01'], ns(country=['ES']))), """\
             data:
             - codi_pais: ES
               pais: 'España'
@@ -138,7 +138,7 @@ class CsvSource_Test(unittest.TestCase):
             data_SantJoan])
             )
         self.assertEqual(
-            source.get('members', ['2018-01-01'], ns(codi_pais=['PA'])),
+            source.get('members', ['2018-01-01'], ns(country=['PA'])),
                 []
             )
 
@@ -274,7 +274,7 @@ class CsvSource_Test(unittest.TestCase):
         source = self.createSource(
             ns(contracts=rows)
         )
-        result = source.get('contracts', ['2015-01-01'], ns(codi_ine='17066'))
+        result = source.get('contracts', ['2015-01-01'], ns(city=['17066']))
         self.assertNsEqual(ns(data=result), """
             data:
             - codi_pais: ES

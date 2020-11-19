@@ -59,6 +59,8 @@ class CsvSource(object):
         if missing_dates:
             raise MissingDateError(missing_dates)
 
+        filters = self.translateFilter(**filters)
+
         filtered_tuples = locationFilter(objects, filters)
 
         return filtered_tuples

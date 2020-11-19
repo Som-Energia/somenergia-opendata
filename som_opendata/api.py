@@ -169,7 +169,7 @@ def extractFilters():
     result = ns()
     alias_filters = extractAlias()
     for plural, level, codefield, namefield in common.aggregation_levels:
-        extractQueryParam(result, alias_filters, level, codefield)
+        extractQueryParam(result, alias_filters, level, level)
     return result
 
 
