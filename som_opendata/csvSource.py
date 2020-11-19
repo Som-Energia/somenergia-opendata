@@ -91,6 +91,18 @@ class CsvSource(object):
             for line in locationFilter(tuples, filters)
         )
 
+    def translateFilter(self, **filters):
+        """Transforms public filter keys such as state, country...
+        to the ones used to hold the fields in csv implementation."""
+        translated=ns()
+        for plural, singular, codefield, namefield in common.aggregation_levels:
+            if singular not in filters:
+                continue
+            # TODO
+            filtervalues = translated.setdefault(codefield, [])
+            filtervalues += filters[singular]
+
+        return translated
 
 
 import dbconfig as config
@@ -107,6 +119,5 @@ def loadCsvSource(relativePath='../data/metrics'):
             csvFile = f.read()
         datums[datum] = csvFile
     return CsvSource(datums)
-
 
 # vim: et sw=4 ts=4

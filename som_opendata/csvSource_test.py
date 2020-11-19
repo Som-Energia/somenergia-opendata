@@ -15,13 +15,22 @@ data_Girona = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
 data_SantJoan = u"ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
 data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 
+data_Andalucia = (
+    'Andalucia', ns(
+        name = "Andalucía",
+        alias = ns(
+            ccaa = [
+                '01', # Andalucía
+            ],
+        ),
+    )
+)
 data_BaixMontseny = (
     'BaixMontseny', ns(
         name = "Baix Montseny",
         alias = ns(
             city = [
                 '08097', # Gualba
-                '08217', # Sant Joan Despi
                 '17027', # Breda
             ],
         ),
@@ -391,6 +400,108 @@ class CsvSource_Test(unittest.TestCase):
             BaixMontseny: Baix Montseny
         """)
 
+
+    def test_translateFilter_whenEmpty(self):
+        source = self.createSource(
+            ns(
+                contracts=[headers,
+                    data_SantJoan,
+                    data_Adra,
+            ]),
+        )
+        translated = source.translateFilter()
+        self.assertNsEqual(translated, """
+            {}
+        """)
+
+    # TODO: Should it fail?
+    def test_translateFilter_unknownGeolevel(self):
+        source = self.createSource(ns())
+        translated = source.translateFilter(
+            notageolevel=[
+                'value',
+                ]
+            )
+        self.assertNsEqual(translated, """
+            {}
+        """)
+
+    def test_translateFilter_oneGeoLevel(self):
+        source = self.createSource(ns())
+        translated = source.translateFilter(
+            city=[
+                'city1',
+                'city2',
+                ],
+            )
+        self.assertNsEqual(translated, """
+            codi_ine:
+            - city1
+            - city2
+        """)
+
+    def test_translateFilter_state(self):
+        source = self.createSource(ns())
+        translated = source.translateFilter(
+            state=[
+                'state1',
+                'state2',
+                ],
+            )
+        self.assertNsEqual(translated, """
+            codi_provincia:
+            - state1
+            - state2
+        """)
+
+    def test_translateFilter_manyGeoLevel(self):
+        source = self.createSource(ns())
+        translated = source.translateFilter(
+            city=[
+                'city1',
+                'city2',
+                ],
+            state=[
+                'state1',
+                'state2',
+                ],
+            )
+        self.assertNsEqual(translated, """
+            codi_ine:
+            - city1
+            - city2
+            codi_provincia:
+            - state1
+            - state2
+        """)
+
+    def test_translateFilter_ccaa(self):
+        source = self.createSource(ns())
+        translated = source.translateFilter(
+            ccaa=[
+                'ccaa1',
+                'ccaa2',
+                ],
+            )
+        self.assertNsEqual(translated, """
+            codi_ccaa:
+            - ccaa1
+            - ccaa2
+        """)
+
+    def test_translateFilter_country(self):
+        source = self.createSource(ns())
+        translated = source.translateFilter(
+            country=[
+                'AA',
+                'BB',
+                ],
+            )
+        self.assertNsEqual(translated, """
+            codi_pais:
+            - AA
+            - BB
+        """)
 
 
 # vim: et sw=4 ts=4
