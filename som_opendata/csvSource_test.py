@@ -503,4 +503,60 @@ class CsvSource_Test(unittest.TestCase):
         """)
 
 
+
+    def test__geolevelOptions_alias_filteredByAliasedLevel(self):
+        # Sant Joan Despi is one of the aliases specified in the local group
+        source = self.createSource(
+            ns(
+                contracts=[headers,
+                    data_SantJoan,
+                    data_Adra,
+            ]),
+            aliases=ns(localgroup=ns([
+                data_Andalucia,
+                data_BaixLlobregat,
+            ])),
+        )
+        self.assertNsEqual(source.geolevelOptions('localgroup', city='08217'),"""
+            BaixLlobregat: Baix Llobregat
+        """)
+
+    def test__geolevelOptions_alias_filteredByContainingLevel(self):
+        # Catalunya contains the aliased levels in BaixMontseny and BaixLlobregat
+        source = self.createSource(
+            ns(
+                contracts=[headers,
+                    data_SantJoan,
+                    data_Adra,
+            ]),
+            aliases=ns(localgroup=ns([
+                data_Andalucia,
+                data_BaixLlobregat,
+                data_BaixMontseny,
+            ])),
+        )
+        self.assertNsEqual(source.geolevelOptions('localgroup', state='04'),"""
+            Andalucia: Andalucía
+        """)
+
+    def test__geolevelOptions_alias_filteredByContainedLevel(self):
+        # Adra is contained the aliased levels for Andalucia
+        source = self.createSource(
+            ns(
+                contracts=[headers,
+                    data_SantJoan,
+                    data_Adra,
+            ]),
+            aliases=ns(localgroup=ns([
+                data_Andalucia,
+                data_BaixLlobregat,
+                data_BaixMontseny,
+            ])),
+        )
+        self.assertNsEqual(source.geolevelOptions('localgroup', city='04003'),"""
+            Andalucia: Andalucía
+        """)
+
+
+
 # vim: et sw=4 ts=4

@@ -81,11 +81,23 @@ class CsvSource(object):
     def geolevelOptions(self, geolevel, **filters):
         filters = self.translateFilter(**filters)
         if geolevel in self._aliases:
-            return ns(self._aliases[geolevel].getLocalGroups())
+            alias=self._aliases[geolevel]
+            filteredCities = [
+                line
+                for metricLines in self._objects.values()
+                for line in locationFilter(metricLines, filters)
+                ]
+            return ns(
+                (aliascode, aliastext)
+                for aliascode, aliastext in alias.getLocalGroups()
+                if not filters or locationFilter(filteredCities,
+                    self.translateFilter(**alias.data[aliascode].alias))
+            )
 
         for plural, singular, codefield, namefield in common.aggregation_levels:
             if singular == geolevel: break
         else:
+            # TODO: proper exception
             raise Exception("Not such geolevel '{}'".format(geolevel))
 
         return ns(
@@ -107,6 +119,7 @@ class CsvSource(object):
             untranslated.remove(singular)
 
         for key in untranslated:
+            # TODO: proper exception
             raise Exception("Not such geolevel '{}'".format(key))
 
         return translated
