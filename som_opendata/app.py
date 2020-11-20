@@ -23,10 +23,10 @@ def create_app():
     enable_cors(app) # TODO: Config whether to call it, server may handle it
     app.register_blueprint(oldapi, url_prefix='/v0.1')
     app.register_blueprint(api, url_prefix='/v0.2')
-    api.source = loadCsvSource()
+    api.localGroups = loadYamlLocalGroups()
+    api.source = loadCsvSource(aliases=dict(localgroups=api.localGroups.data))
     api.mapTemplateSource = loadMapData()
     api.relativeMetricSource = loadTsvRelativeMetric()
-    api.localGroups = loadYamlLocalGroups()
     api.firstDate = '2010-01-01'
     app.errors = None
     app.config['LANGUAGES'] = ['en', 'es', 'ca', 'eu', 'gl']

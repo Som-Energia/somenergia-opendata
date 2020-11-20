@@ -19,8 +19,8 @@ from flask_babel import _, Babel, get_locale
 from .map_test import getBlobInfo
 
 
-source = loadCsvSource(relativePath='../testData/metrics')
 localgroups = loadYamlLocalGroups(relativeFile='../testData/alias/gl.yaml')
+source = loadCsvSource(relativePath='../testData/metrics', aliases=ns(localgroup=localgroups.data))
 mapTemplateSource = loadMapData()
 relativeMetricSource = loadTsvRelativeMetric()
 

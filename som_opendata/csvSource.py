@@ -145,7 +145,7 @@ import dbconfig as config
 import os.path
 import glob
 
-def loadCsvSource(relativePath='../data/metrics'):
+def loadCsvSource(relativePath='../data/metrics', aliases={}):
     myPath = os.path.abspath(os.path.dirname(__file__))
     dataPath = os.path.join(myPath, relativePath)
     datums = ns()
@@ -154,6 +154,6 @@ def loadCsvSource(relativePath='../data/metrics'):
         with open(datafile) as f:
             csvFile = f.read()
         datums[datum] = csvFile
-    return CsvSource(datums)
+    return CsvSource(datums, aliases=aliases)
 
 # vim: et sw=4 ts=4
