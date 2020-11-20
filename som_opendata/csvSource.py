@@ -125,10 +125,17 @@ class CsvSource(object):
         return translated
 
     def resolveAliases(self, **filters):
-        for field, acceptedValues in filters.items():
-            if field in self._aliases:
-                return self._aliases[field].data[acceptedValues[0]].alias
-        return filters
+        result = dict()
+        for originalField, orignalValues in filters.items():
+            if originalField not in self._aliases:
+                result.setdefault(originalField, orignalValues)
+                continue
+            alias = self._aliases[originalField].data
+            for originalValue in orignalValues:
+                for realField, realValues in alias[originalValue].alias.items():
+                    result.setdefault(realField, realValues)
+
+        return result
 
 
 import dbconfig as config
