@@ -581,6 +581,29 @@ class CsvSource_Test(unittest.TestCase):
             - '01'
             """)
 
+    def test__resolveAliases__nonAliasAsIs(self):
+        source = self.createSource(
+            ns(
+                contracts=[headers,
+                    data_SantJoan,
+                    data_Adra,
+            ]),
+            aliases=ns(localgroup=ns([
+                data_Andalucia,
+                data_BaixLlobregat,
+                data_BaixMontseny,
+            ])),
+        )
+        filters = source.resolveAliases(
+            country=[
+                'FR',
+            ],
+        )
+        self.assertNsEqual(filters,"""\
+            country:
+            - 'FR'
+            """)
+
 
     # TODO: test__resolveAliases__withRegularGeolevels
     # TODO: test__resolveAliases__mergesSeveralAlias

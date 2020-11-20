@@ -124,6 +124,12 @@ class CsvSource(object):
 
         return translated
 
+    def resolveAliases(self, **filters):
+        for field, acceptedValues in filters.items():
+            if field in self._aliases:
+                return self._aliases[field].data[acceptedValues[0]].alias
+        return filters
+
 
 import dbconfig as config
 import os.path
