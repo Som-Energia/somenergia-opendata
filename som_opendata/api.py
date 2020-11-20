@@ -152,7 +152,9 @@ def introspectionGeoLevelOptions(geolevel):
 
 
 def validateInputDates(ondate = None, since = None, todate = None):
-    return not (not ondate is None and (not since is None or not todate is None))
+    return ondate is None or (
+        since is None and todate is None
+    )
 
 def extractQueryParam(location_filter_req, alias_filters, geolevel):
     filterValues = request.args.getlist(geolevel)
