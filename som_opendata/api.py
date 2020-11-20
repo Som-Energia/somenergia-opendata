@@ -143,13 +143,19 @@ def introspectionGeoLevelOptions(geolevel):
           '16': País Vasco
           '17': Rioja, La
     """
-    if geolevel == 'localgroup':
-        return ns(
-            options=ns(api.localGroups.getLocalGroups())
-        )
-    location_filter = extractFilters()
-    return ns(options=api.source.geolevelOptions(geolevel, **location_filter))
-
+    filters = ns(
+        (key, request.args.getlist(key))
+        for key in [
+            # TODO: take list from source
+            'country',
+            'ccaa',
+            'state',
+            'city',
+            'localgroup',
+        ]
+        if key in request.args
+    )
+    return ns(options=api.source.geolevelOptions(geolevel, **filters))
 
 def validateInputDates(ondate = None, since = None, todate = None):
     return ondate is None or (
