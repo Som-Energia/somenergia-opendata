@@ -143,7 +143,13 @@ def introspectionGeoLevelOptions(geolevel):
           '16': País Vasco
           '17': Rioja, La
     """
-    filters = ns(
+    filters = locationFiltersFromQuery()
+    return ns(options=api.source.geolevelOptions(geolevel, **filters))
+
+def locationFiltersFromQuery():
+    """Extracts any relevant query parameter to build a filter.
+    """
+    return ns(
         (key, request.args.getlist(key))
         for key in [
             # TODO: take list from source
@@ -155,30 +161,11 @@ def introspectionGeoLevelOptions(geolevel):
         ]
         if key in request.args
     )
-    return ns(options=api.source.geolevelOptions(geolevel, **filters))
 
 def validateInputDates(ondate = None, since = None, todate = None):
     return ondate is None or (
         since is None and todate is None
     )
-
-def extractQueryParam(location_filter_req, alias_filters, geolevel):
-    filterValues = request.args.getlist(geolevel)
-    filterValues += alias_filters.get(geolevel, [])
-    if len(filterValues) != 0:
-        location_filter_req[geolevel] = tuple(filterValues)
-
-def extractAlias():
-    localgroups = request.args.getlist('localgroup')
-    return api.localGroups.aliasFilters(localgroups) if localgroups else ns()
-
-# TODO: Untested
-def extractFilters():
-    result = ns()
-    alias_filters = extractAlias()
-    for plural, level, codefield, namefield in common.aggregation_levels:
-        extractQueryParam(result, alias_filters, level)
-    return result
 
 
 """
@@ -505,9 +492,8 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
         to=todate,
         periodicity=frequency,
     )
-    location_filter = extractFilters()
-
-    return getAggregated(content, metric, request_dates, location_filter, geolevel, mutable=False)
+    filters = locationFiltersFromQuery()
+    return getAggregated(content, metric, request_dates, filters, geolevel, mutable=False)
 
 
 

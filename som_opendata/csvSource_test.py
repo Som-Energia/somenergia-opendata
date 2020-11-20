@@ -660,7 +660,6 @@ class CsvSource_Test(unittest.TestCase):
             - '01'
             """)
 
-
     def test__resolveAliases__manyAliases(self):
         source = self.createSource(
             ns(

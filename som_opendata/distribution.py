@@ -199,16 +199,20 @@ def addCounts(dictionary, newElements):
 
 
 @lru_cache()
-def cachedGetAggregated(source, metric, request_dates, location_filter_req, geolevel):
-    filtered_objects = source.get(metric, request_dates, location_filter_req)
+def cachedGetAggregated(source, metric, request_dates, location_filter, geolevel):
+    filtered_objects = source.get(metric, request_dates, location_filter)
     return aggregate(filtered_objects, geolevel, request_dates)
 
 
-def getAggregated(source, metric, request_dates, location_filter_req, geolevel, mutable):
+def getAggregated(source, metric, request_dates, location_filter, geolevel, mutable):
 
     if (mutable):
-        filtered_objects = source.get(metric, request_dates, location_filter_req)
+        filtered_objects = source.get(metric, request_dates, location_filter)
         return aggregate(filtered_objects, geolevel, request_dates)
-    return cachedGetAggregated(source, metric, tuple(request_dates), frozendict(location_filter_req), geolevel)
+    location_filter = frozendict(sorted(
+        (k,tuple(sorted(v)))
+        for k,v in location_filter.items()
+    ))
+    return cachedGetAggregated(source, metric, tuple(request_dates), location_filter, geolevel)
 
 # vim: et sw=4 ts=4

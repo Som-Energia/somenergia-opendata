@@ -59,8 +59,8 @@ class CsvSource(object):
         if missing_dates:
             raise MissingDateError(missing_dates)
 
+        filters = self.resolveAliases(**filters) # untested
         filters = self.translateFilter(**filters)
-
         filtered_tuples = locationFilter(objects, filters)
 
         return filtered_tuples
@@ -129,12 +129,12 @@ class CsvSource(object):
         into its equivalent in actual geolevels (country, ccaa, state, city...)
         """
         result = dict()
-        for originalField, orignalValues in filters.items():
+        for originalField, originalValues in filters.items():
             if originalField not in self._aliases:
-                result.setdefault(originalField, []).extend(orignalValues)
+                result.setdefault(originalField, []).extend(originalValues)
                 continue
             alias = self._aliases[originalField].data
-            for originalValue in orignalValues:
+            for originalValue in originalValues:
                 for realField, realValues in alias[originalValue].alias.items():
                     result.setdefault(realField, []).extend(realValues)
 
