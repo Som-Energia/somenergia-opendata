@@ -686,6 +686,29 @@ class CsvSource_Test(unittest.TestCase):
             - '08217'
             """)
 
+    def test__resolveAliases__aliasValueNotFound(self):
+        source = self.createSource(
+            ns(
+                contracts=[headers,
+                    data_SantJoan,
+                    data_Adra,
+            ]),
+            aliases=ns(localgroup=ns([
+                data_Andalucia,
+                data_BaixLlobregat,
+                data_BaixMontseny,
+            ])),
+        )
+        # TODO: expect concrete exception
+        with self.assertRaises(Exception) as ctx:
+            source.resolveAliases(
+                localgroup=[
+                    'NonExisting',
+                ],
+            )
+        self.assertEqual(format(ctx.exception),
+            "400 Bad Request: localgroup 'NonExisting' not found")
+
 
 
 # vim: et sw=4 ts=4

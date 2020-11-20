@@ -19,7 +19,10 @@ from .distribution import (
     cachedGetAggregated,
     )
 from .local_groups import LocalGroups
-from .errors import MissingDateError
+from .errors import (
+    MissingDateError,
+    AliasNotFoundError,
+    )
 from . import common
 
 class CsvSource(object):
@@ -135,6 +138,8 @@ class CsvSource(object):
                 continue
             alias = self._aliases[originalField].data
             for originalValue in originalValues:
+                if originalValue not in alias:
+                    raise AliasNotFoundError(originalField, originalValue)
                 for realField, realValues in alias[originalValue].alias.items():
                     result.setdefault(realField, []).extend(realValues)
 
