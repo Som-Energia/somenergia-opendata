@@ -40,3 +40,5 @@ class AliasNotFoundError(HTTPException):
         super(AliasNotFoundError, self).__init__(
             alias + " \'" + value + "\' not found"
             )
+
+

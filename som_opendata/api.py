@@ -154,9 +154,9 @@ def introspectionGeoLevelOptions(geolevel):
 def validateInputDates(ondate = None, since = None, todate = None):
     return not (not ondate is None and (not since is None or not todate is None))
 
-def extractQueryParam(location_filter_req, alias_filters, queryName, geolevel):
-    filterValues = request.args.getlist(queryName)
-    filterValues += alias_filters.get(queryName, [])
+def extractQueryParam(location_filter_req, alias_filters, geolevel):
+    filterValues = request.args.getlist(geolevel)
+    filterValues += alias_filters.get(geolevel, [])
     if len(filterValues) != 0:
         location_filter_req[geolevel] = tuple(filterValues)
 
@@ -169,7 +169,7 @@ def extractFilters():
     result = ns()
     alias_filters = extractAlias()
     for plural, level, codefield, namefield in common.aggregation_levels:
-        extractQueryParam(result, alias_filters, level, level)
+        extractQueryParam(result, alias_filters, level)
     return result
 
 
