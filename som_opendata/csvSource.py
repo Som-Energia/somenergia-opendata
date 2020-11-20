@@ -36,8 +36,8 @@ class CsvSource(object):
         )
         self.data = content
         self._objects = {
-            datum : tuples2objects(parse_tsv(data))
-            for datum, data in iteritems(self.data)
+            metric : tuples2objects(parse_tsv(data))
+            for metric, data in iteritems(self.data)
         }
         fieldNames = dict()
         for key, value in iteritems(self._objects):
@@ -51,13 +51,12 @@ class CsvSource(object):
             })
 
 
-    # TODO: Change name datum -> metric
-    def getLastDay(self, datum):
-        return self.lastDay[datum]
+    def getLastDay(self, metric):
+        return self.lastDay[metric]
 
-    def get(self, datum, dates, filters):
+    def get(self, metric, dates, filters):
 
-        objects = self._objects[datum]
+        objects = self._objects[metric]
         missing_dates = missingDates(includedDatesObject(objects), dates)
         if missing_dates:
             raise MissingDateError(missing_dates)
@@ -69,17 +68,17 @@ class CsvSource(object):
         return filtered_tuples
 
 
-    def update(self, datum, content):
+    def update(self, metric, content):
         cachedGetAggregated.cache_clear()
 
         _data = tablib.Dataset()
-        _data.dict = self._objects[datum]
+        _data.dict = self._objects[metric]
         _content = tablib.Dataset()
         _content.dict = content
         addedDates = sorted(includedDates(content), reverse=True)
-        if addedDates and addedDates[0] > self.lastDay[datum]:
-            self.lastDay[datum] = addedDates[0]
-        addObjects(self._objects[datum], content)
+        if addedDates and addedDates[0] > self.lastDay[metric]:
+            self.lastDay[metric] = addedDates[0]
+        addObjects(self._objects[metric], content)
 
     def geolevelOptions(self, geolevel, **filters):
         filters = self.translateFilter(**filters)
@@ -153,12 +152,12 @@ import glob
 def loadCsvSource(relativePath='../data/metrics', aliases={}):
     myPath = os.path.abspath(os.path.dirname(__file__))
     dataPath = os.path.join(myPath, relativePath)
-    datums = ns()
+    metrics = ns()
     for datafile in glob.glob(os.path.join(dataPath,'*.tsv')):
-        datum = os.path.splitext(os.path.basename(datafile))[0]
+        metric = os.path.splitext(os.path.basename(datafile))[0]
         with open(datafile) as f:
             csvFile = f.read()
-        datums[datum] = csvFile
-    return CsvSource(datums, aliases=aliases)
+        metrics[metric] = csvFile
+    return CsvSource(metrics, aliases=aliases)
 
 # vim: et sw=4 ts=4

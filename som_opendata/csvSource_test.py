@@ -56,16 +56,16 @@ class CsvSource_Test(unittest.TestCase):
         self.maxDiff=None
         self.b2bdatapath = 'b2bdata'
 
-    def createSource(self, datums, aliases=ns()):
+    def createSource(self, metrics, aliases=ns()):
 
         content = ns()
-        for datum, lines in iteritems(datums):
-            content[datum] = '\n'.join(lines)
+        for metric, lines in iteritems(metrics):
+            content[metric] = '\n'.join(lines)
         return CsvSource(content, aliases)
 
-    def raisesAssertion(self, source, datum, dates, missingDates):
+    def raisesAssertion(self, source, metric, dates, missingDates):
         with self.assertRaises(MissingDateError) as ctx:
-            source.get(datum=datum, dates=dates, filters=ns())
+            source.get(metric=metric, dates=dates, filters=ns())
 
         self. assertEqual(ctx.exception.missingDates, missingDates)
 
@@ -96,7 +96,7 @@ class CsvSource_Test(unittest.TestCase):
             )
         self.raisesAssertion(
             source=source,
-            datum='members',
+            metric='members',
             dates=['2018-02-01'],
             missingDates=['2018-02-01'],
             )
@@ -108,7 +108,7 @@ class CsvSource_Test(unittest.TestCase):
             )
         self.raisesAssertion(
             source=source,
-            datum='members',
+            metric='members',
             dates=['2018-01-01','2018-02-01'],
             missingDates=['2018-02-01'],
             )

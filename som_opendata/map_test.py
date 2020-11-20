@@ -499,11 +499,11 @@ class Map_Test(unittest.TestCase):
 """)
 
 
-    def createSource(self, datums):
+    def createSource(self, metrics):
 
         content = ns()
-        for datum, lines in iteritems(datums):
-            content[datum] = '\n'.join(lines)
+        for metric, lines in iteritems(metrics):
+            content[metric] = '\n'.join(lines)
 
         return CsvSource(content)
 
