@@ -208,6 +208,13 @@ class Api_Test(unittest.TestCase):
                 '43': Tarragona
             """)
 
+    def test_geolevelOptions_alias_filtered(self):
+        r = self.get('/introspection/geolevels/localgroup?ccaa=01')
+        self.assertYamlResponse(r, """\
+            options:
+                AlmeriaCadiz: Almería y Cádiz
+            """)
+
     def test__onDate__exists(self):
         r = self.get('/members/on/2018-01-01')
         self.assertTsvResponse(r)
