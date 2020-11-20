@@ -125,6 +125,9 @@ class CsvSource(object):
         return translated
 
     def resolveAliases(self, **filters):
+        """Rewrites filters turning alias fields (localgroups, county...)
+        into its equivalent in actual geolevels (country, ccaa, state, city...)
+        """
         result = dict()
         for originalField, orignalValues in filters.items():
             if originalField not in self._aliases:
