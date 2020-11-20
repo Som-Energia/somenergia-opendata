@@ -393,7 +393,7 @@ ES	España	02	Aragón	50	Zaragoza	50017	Alfajarín	0	0
 ES	España	02	Aragón	50	Zaragoza	50025	Almunia de Doña Godina, La	3	3
 ES	España	02	Aragón	50	Zaragoza	50035	Artieda	1	1
 ES	España	02	Aragón	50	Zaragoza	50039	Azuara	0	0
-ES	España	02	Aragón	50	Zaragoza	50043	Bárboles	2	2
+ES	España	02	Aragón	50	Zaragoza	50043	Bárboles	1	1
 ES	España	02	Aragón	50	Zaragoza	50055	Borja	0	0
 ES	España	02	Aragón	50	Zaragoza	50059	Bujaraloz	0	0
 ES	España	02	Aragón	50	Zaragoza	50060	Bulbuente	0	0
@@ -446,7 +446,7 @@ ES	España	02	Aragón	50	Zaragoza	50265	Trasmoz	0	0
 ES	España	02	Aragón	50	Zaragoza	50272	Utebo	2	2
 ES	España	02	Aragón	50	Zaragoza	50903	Villamayor de Gállego	1	1
 ES	España	02	Aragón	50	Zaragoza	50288	Villanueva de Gállego	1	1
-ES	España	02	Aragón	50	Zaragoza	50297	Zaragoza	398	409
+ES	España	02	Aragón	50	Zaragoza	50297	Zaragoza	399	410
 ES	España	02	Aragón	50	Zaragoza	50298	Zuera	3	4
 ES	España	03	Asturias, Principado de	33	Asturias	33001	Allande	1	1
 ES	España	03	Asturias, Principado de	33	Asturias	33002	Aller	0	0
@@ -1021,7 +1021,7 @@ ES	España	09	Cataluña	08	Barcelona	08016	Bagà	6	6
 ES	España	09	Cataluña	08	Barcelona	08017	Balenyà	0	0
 ES	España	09	Cataluña	08	Barcelona	08018	Balsareny	5	6
 ES	España	09	Cataluña	08	Barcelona	08252	Barberà del Vallès	29	29
-ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3207	3316
+ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3206	3315
 ES	España	09	Cataluña	08	Barcelona	08020	Begues	19	20
 ES	España	09	Cataluña	08	Barcelona	08021	Bellprat	0	0
 ES	España	09	Cataluña	08	Barcelona	08022	Berga	32	32
@@ -1376,7 +1376,7 @@ ES	España	09	Cataluña	17	Girona	17902	Forallac	4	4
 ES	España	09	Cataluña	17	Girona	17073	Fornells de la Selva	6	7
 ES	España	09	Cataluña	17	Girona	17074	Fortià	1	1
 ES	España	09	Cataluña	17	Girona	17075	Garrigàs	1	1
-ES	España	09	Cataluña	17	Girona	17076	Garrigoles	2	2
+ES	España	09	Cataluña	17	Girona	17076	Garrigoles	3	3
 ES	España	09	Cataluña	17	Girona	17077	Garriguella	5	5
 ES	España	09	Cataluña	17	Girona	17078	Ger	1	1
 ES	España	09	Cataluña	17	Girona	17079	Girona	356	361
@@ -1501,7 +1501,7 @@ ES	España	09	Cataluña	17	Girona	17207	Vall d'en Bas, La	7	7
 ES	España	09	Cataluña	17	Girona	17170	Vallfogona de Ripollès	2	2
 ES	España	09	Cataluña	17	Girona	17209	Vall-llobrega	1	1
 ES	España	09	Cataluña	17	Girona	17210	Ventalló	2	3
-ES	España	09	Cataluña	17	Girona	17211	Verges	2	2
+ES	España	09	Cataluña	17	Girona	17211	Verges	1	1
 ES	España	09	Cataluña	17	Girona	17212	Vidrà	0	0
 ES	España	09	Cataluña	17	Girona	17213	Vidreres	6	6
 ES	España	09	Cataluña	17	Girona	17214	Vilabertran	2	2
@@ -2366,7 +2366,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28013	Aranjuez	2	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28014	Arganda del Rey	2	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28015	Arroyomolinos	6	6
 ES	España	13	Madrid, Comunidad de	28	Madrid	28017	Batres	2	2
-ES	España	13	Madrid, Comunidad de	28	Madrid	28018	Becerril de la Sierra	0	1
+ES	España	13	Madrid, Comunidad de	28	Madrid	28018	Becerril de la Sierra	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28019	Belmonte de Tajo	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28021	Berrueco, El	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28020	Berzosa del Lozoya	0	1
@@ -2415,9 +2415,9 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28074	Leganés	21	24
 ES	España	13	Madrid, Comunidad de	28	Madrid	28075	Loeches	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28901	Lozoyuela-Navas-Sieteiglesias	2	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28078	Madarcos	0	0
-ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	953	986
+ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	954	987
 ES	España	13	Madrid, Comunidad de	28	Madrid	28080	Majadahonda	11	11
-ES	España	13	Madrid, Comunidad de	28	Madrid	28082	Manzanares el Real	13	13
+ES	España	13	Madrid, Comunidad de	28	Madrid	28082	Manzanares el Real	13	14
 ES	España	13	Madrid, Comunidad de	28	Madrid	28083	Meco	3	3
 ES	España	13	Madrid, Comunidad de	28	Madrid	28084	Mejorada del Campo	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28085	Miraflores de la Sierra	2	2

@@ -7884,6 +7884,11 @@ countries:
                 values:
                 - 0
                 - 0
+              '34011':
+                name: Amusco
+                values:
+                - 0
+                - 0
               '34018':
                 name: Autilla del Pino
                 values:
@@ -9591,6 +9596,11 @@ countries:
                 - 2
               '49145':
                 name: Pedralba de la Pradería
+                values:
+                - 0
+                - 0
+              '49152':
+                name: Pereruela
                 values:
                 - 0
                 - 0

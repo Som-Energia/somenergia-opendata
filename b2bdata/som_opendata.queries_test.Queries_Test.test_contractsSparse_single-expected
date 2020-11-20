@@ -1535,6 +1535,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34004	Aguilar de Campoo	2	36430,44684
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34009	Amayuelas de Arriba	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34010	Ampudia	0	None
+2015-01-01	ES	España	07	Castilla y León	34	Palencia	34011	Amusco	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34018	Autilla del Pino	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34022	Baltanás	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34027	Barruelo de Santullán	0	None
@@ -1871,6 +1872,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49123	Montamarta	0	None
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49127	Morales del Vino	2	20278,35871
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49145	Pedralba de la Pradería	0	None
+2015-01-01	ES	España	07	Castilla y León	49	Zamora	49152	Pereruela	0	None
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49154	Pías	0	None
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49156	Pinilla de Toro	2	2867,3179
 2015-01-01	ES	España	07	Castilla y León	49	Zamora	49175	Revellinos	0	None

@@ -388,7 +388,7 @@ class Distribution_Test(unittest.TestCase):
 
     @unittest.skipIf(skipSlow, 'test lent')
     def test__aggregate__backToBack(self):
-        with io.open('./b2bdata/som_opendata.queries_test.Queries_Test.test_contractsSeries_many-expected') as f:
+        with io.open('./b2bdata/som_opendata.contractSeries_many-input.tsv') as f:
             data = f.read()
 
         objectList = tuples2objects(parse_tsv(data))
@@ -572,7 +572,7 @@ class Distribution_Test(unittest.TestCase):
 
     @unittest.skipIf(skipSlow, 'test lent')
     def test__filter_aggregate__backToBack(self):
-        with io.open('./b2bdata/som_opendata.queries_test.Queries_Test.test_contractsSeries_many-expected') as f:
+        with io.open('./b2bdata/som_opendata.contractSeries_many-input.tsv') as f:
             data = f.read()
 
         objectList = tuples2objects(parse_tsv(data))
@@ -643,7 +643,7 @@ class Distribution_Test(unittest.TestCase):
 
     @unittest.skipIf(skipSlow, 'test lent')
     def test__filter_aggregate__withDetail_backToBack(self):
-        with io.open('./b2bdata/som_opendata.queries_test.Queries_Test.test_contractsSeries_many-expected') as f:
+        with io.open('./b2bdata/som_opendata.contractSeries_many-input.tsv') as f:
             data = f.read()
 
         objectList = tuples2objects(parse_tsv(data))
