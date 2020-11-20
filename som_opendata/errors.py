@@ -30,15 +30,15 @@ class ValidateError(HTTPException):
         self.parameter = field
         self.value = value
         self.possibleValues = self.valors[field]
-        super(ValidateError, self).__init__("Incorrect "+field+" \'"+value+
-            "\' try with "+u(self.possibleValues)
+        super(ValidateError, self).__init__(
+            "Incorrect {} '{}' try with {}".format(
+                field, value, u(self.possibleValues))
             )
 
 class AliasNotFoundError(HTTPException):
     code = 400
     def __init__(self, alias, value):
         super(AliasNotFoundError, self).__init__(
-            alias + " \'" + value + "\' not found"
-            )
+            "{} '{}' not found".format(alias, value))
 
 
