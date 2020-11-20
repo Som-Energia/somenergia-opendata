@@ -128,12 +128,12 @@ class CsvSource(object):
         result = dict()
         for originalField, orignalValues in filters.items():
             if originalField not in self._aliases:
-                result.setdefault(originalField, orignalValues)
+                result.setdefault(originalField, []).extend(orignalValues)
                 continue
             alias = self._aliases[originalField].data
             for originalValue in orignalValues:
                 for realField, realValues in alias[originalValue].alias.items():
-                    result.setdefault(realField, realValues)
+                    result.setdefault(realField, []).extend(realValues)
 
         return result
 

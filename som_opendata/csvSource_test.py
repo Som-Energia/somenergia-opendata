@@ -633,10 +633,60 @@ class CsvSource_Test(unittest.TestCase):
             - 'FR'
             """)
 
+    def test__resolveAliases__aliasAndNotAliases_blended(self):
+        source = self.createSource(
+            ns(
+                contracts=[headers,
+                    data_SantJoan,
+                    data_Adra,
+            ]),
+            aliases=ns(localgroup=ns([
+                data_Andalucia,
+                data_BaixLlobregat,
+                data_BaixMontseny,
+            ])),
+        )
+        filters = source.resolveAliases(
+            ccaa=[
+                '07',
+            ],
+            localgroup=[
+                'Andalucia',
+            ],
+        )
+        self.assertNsEqual(filters,"""\
+            ccaa:
+            - '07'
+            - '01'
+            """)
 
-    # TODO: test__resolveAliases__withRegularGeolevels
-    # TODO: test__resolveAliases__mergesSeveralAlias
-    # TODO: test__resolveAliases__extendsRegularGeolevels
+
+    def test__resolveAliases__manyAliases(self):
+        source = self.createSource(
+            ns(
+                contracts=[headers,
+                    data_SantJoan,
+                    data_Adra,
+            ]),
+            aliases=ns(localgroup=ns([
+                data_Andalucia,
+                data_BaixLlobregat,
+                data_BaixMontseny,
+            ])),
+        )
+        filters = source.resolveAliases(
+            localgroup=[
+                'Andalucia',
+                'BaixLlobregat',
+            ],
+        )
+        self.assertNsEqual(filters,"""\
+            ccaa:
+            - '01'
+            city:
+            - '08217'
+            """)
+
 
 
 # vim: et sw=4 ts=4
