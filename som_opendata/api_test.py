@@ -4,18 +4,19 @@ from dateutil.relativedelta import relativedelta as delta
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
 import b2btest
-from .api import api, validateInputDates
 from flask import Flask, request
+from flask_babel import _, Babel, get_locale
+
+from .api import api, validateInputDates
 from .common import (
     register_converters,
     register_handlers,
     )
+from . import __version__
 from .templateSource import loadMapData
 from .tsvRelativeMetricSource import loadTsvRelativeMetric
 from .local_groups import loadYamlLocalGroups
 from .csvSource import loadCsvSource
-from . import __version__
-from flask_babel import _, Babel, get_locale
 from .map_test import getBlobInfo
 
 
