@@ -149,7 +149,10 @@ def yaml_response(f):
 class IsoDateConverter(BaseConverter):
 
     def to_python(self, value):
-        return Date(value)
+        try:
+            return Date(value)
+        except ValueError:
+            raise ValidationError(value)
 
     def to_url(self, value):
         return str(value)

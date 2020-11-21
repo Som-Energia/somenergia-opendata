@@ -352,9 +352,9 @@ class Common_Test(unittest.TestCase):
 
     def test__DateConverter__invalid(self):
         dateConverter = IsoDateConverter({})
-        with self.assertRaises(ValueError) as ctx:
-            dateConverter.to_python('PEP 8')
-        self.assertEqual(format(ctx.exception), 'Invalid date initializator \'PEP 8\'')
+        with self.assertRaises(ValidationError) as ctx:
+            dateConverter.to_python('Thisisnotadate')
+        self.assertEqual(format(ctx.exception), 'Thisisnotadate')
 
 
     # validateParams 

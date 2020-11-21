@@ -108,11 +108,13 @@ class Api_Test(unittest.TestCase):
 
     from somutils.testutils import assertNsEqual
 
-    def assertYamlResponse(self, response, expected):
+    def assertYamlResponse(self, response, expected, status=200):
         self.assertNsEqual(response.data, expected)
+        self.assertEqual(response.status_code, status)
 
-    def assertTsvResponse(self, response):
+    def assertTsvResponse(self, response, status=200):
         self.assertB2BEqual(response.data)
+        self.assertEqual(response.status_code, status)
 
 
     def test__version(self):
@@ -216,23 +218,33 @@ class Api_Test(unittest.TestCase):
                 AlmeriaCadiz: Almería y Cádiz
             """)
 
-    def test__onDate__exists(self):
+    def test__metric_onDate(self):
         r = self.get('/members/on/2018-01-01')
         self.assertTsvResponse(r)
 
-    def test__onDate_aggregateLevel__exist(self):
+    def test__metric_level_onDate(self):
         r = self.get('/members/by/world/on/2018-01-01')
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertTsvResponse(r)
 
     @unittest.skip('NOT IMPLEMENTED YET')
-    def test__aggregateLevel__existToday(self):
+    def test__metric_today(self):
+        self.setupSource(
+            headers+'\tcount_'+str(Date.today()).replace('-','_'),
+            data_Adra+'\t123',
+            )
+        r = self.get('/members')
+        self.assertYamlResponse(r, """\
+            dates: ["""+str(Date.today())+"""]
+            values: [123]
+            """)
+
+    @unittest.skip('NOT IMPLEMENTED YET')
+    def test__metric_level__today(self):
         self.setupSource(
             headers+'\tcount_'+str(Date.today()).replace('-','_'),
             data_Adra+'\t123',
             )
         r = self.get('/members/by/city')
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertYamlResponse(r, """\
             dates: ["""+str(Date.today())+"""]
             values: [123]
@@ -254,42 +266,25 @@ class Api_Test(unittest.TestCase):
                             values: [123]
             """)
 
-    @unittest.skip('NOT IMPLEMENTED YET')
-    def test__basicUrl__exist(self):
-        self.setupSource(
-            headers+'\tcount_'+str(Date.today()).replace('-','_'),
-            data_Adra+'\t123',
-            )
-        r = self.get('/members')
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertYamlResponse(r, """\
-            dates: ["""+str(Date.today())+"""]
-            values: [123]
-            """)
-
-    def test__aggregateLevel_frequency__exist(self):
+    def test__metric_level_frequency(self):
         r = self.get('/members/by/country/yearly')
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertTsvResponse(r)
 
-    def test__aggregateLevel_frequency_fromDate__exist(self):
+    def test__metric_level_frequency_fromDate(self):
         r = self.get('/members/by/world/yearly/from/2017-01-01')
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertTsvResponse(r)
 
-    def test__aggregateLevel_frequency_fromDate_toDate__exist(self):
+    def test__metric_level_frequency_fromDate_toDate(self):
         r = self.get('/members/by/world/monthly/from/2018-01-01/to/2018-03-01')
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertTsvResponse(r)
 
-    def test__aggregateLevel_frequency_toDate__exist(self):
+    def test__metric_level_frequency_toDate(self):
         api.firstDate = '2018-02-01'
         r = self.get('/members/by/world/monthly/to/2018-03-01')
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertTsvResponse(r)
 
     @unittest.skip('NOT IMPLEMENTED YET')
-    def test__frequency_formDate__exist(self):
+    def test__metric_frequency_formDate(self):
         self.setupSource(
             headers+'\tcount_'+str(Date.today()-delta(weeks=1)).replace('-','_')+'\tcount_'+str(Date.today()).replace('-','_'),
             data_Adra+'\t123\t1234567',
@@ -301,95 +296,97 @@ class Api_Test(unittest.TestCase):
             values: [123, 1234567]
             """)
 
-    def test__frequency_fromDate_toDate__exist(self):
+    def test__metric_frequency_fromDate_toDate(self):
         r = self.get('/members/monthly/from/2018-01-01/to/2018-02-01')
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertTsvResponse(r)
 
-    def test__urlBaseFrequency__exist(self):
+    def test__metric_frequency(self):
         r = self.get('/members/yearly')
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertTsvResponse(r)
 
-    def test__onDate_aggregateLevel_queryParams__exist(self):
+    def test__metric_level_onDate_filter(self):
         r = self.get('/members/by/city/on/2018-01-01?city=17007')
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
         self.assertTsvResponse(r)
 
-    def test__urlBase(self):
+    def test__metric(self):
         r = self.get('/members')
         self.assertTsvResponse(r)
 
-    def test__printerError__datesNotExist(self):
+    def test__metric_onDate__oldDate(self):
         r = self.get('/members/on/1994-09-01')
-        self.assertEqual(r.status_code, 500)
         self.assertYamlResponse(r, """\
             message: Missing Dates ['1994-09-01']
-            """)
+            """, 500)
 
-    def test__printerError__URLparamsNotExist_piolin(self):
-        r = self.get('/members/by/piolin')
-        self.assertEqual(r.status_code, 400)
+    def test__metric_level__badGeolevel(self):
+        r = self.get('/members/by/badgeolevel')
         self.assertYamlResponse(r, """\
             parameter: geolevel
-            valueRequest: piolin
+            valueRequest: badgeolevel
             possibleValues: ['country', 'ccaa', 'state', 'city']
-            message: Incorrect geolevel 'piolin' try with ['country', 'ccaa', 'state', 'city']
-            """)
+            message: Incorrect geolevel 'badgeolevel' try with ['country', 'ccaa', 'state', 'city']
+            """, 400)
 
-    def test__printerError__URLparamsNotExist_frequency(self):
-        r = self.get('/members/piolin')
-        self.assertEqual(r.status_code, 400)
+    def test__metric_frequency__doesNotExist(self):
+        r = self.get('/members/badly')
         self.assertYamlResponse(r, """\
             parameter: frequency
-            valueRequest: piolin
+            valueRequest: badly
             possibleValues: ['monthly', 'yearly']
-            message: Incorrect frequency 'piolin' try with ['monthly', 'yearly']
-            """)
+            message: Incorrect frequency 'badly' try with ['monthly', 'yearly']
+            """, 400)
 
-    @unittest.skip("Not implemented yet | Caldria retocar el converter de Date")
-    def test__printerError__URLparamsNotExist_date(self):
-        r = self.get('/members/on/piolin')
+    # TODO: turn 404 in yaml messages
+    def test__metric_onDate__badDate(self):
+        r = self.get('/members/on/baddate')
+        self.assertEqual(r.data, b"Request not found!")
         self.assertEqual(r.status_code, 404)
 
-    def test__printerError__queryParamsNotExist(self):
+    def test__metric_level_onDate_filter__filterValueNotFound(self):
         r = self.get('/members/by/city/on/2018-01-01?city=9999999')
-        self.assertYamlResponse(r, ns())
+        self.assertYamlResponse(r, """\
+            {}
+        """, 200)
 
-    def test__printerError__incorrectFormatDates(self):
+
+    # TODO: turn 404 in yaml messages
+    def test__metric_level_onDate_fromDate__onAndFromIncompatible(self):
         r = self.get('/members/by/city/on/2018-01-01/from/2018-02-02')
+        self.assertEqual(r.data, b"Request not found!")
         self.assertEqual(r.status_code, 404)
 
-    def test__localGroups__queryLocalGroupNotExist(self):
+
+    def test__metric_level_onDate_filter__badLocalGroup(self):
         r = self.get('/members/by/city/on/2018-01-01?localgroup=Unknown')
         self.assertYamlResponse(r, """\
             message: localgroup 'Unknown' not found\n
-        """)
+        """, 400)
 
-    def test__localGroups__queryOneLocalGroup(self):
+    def test__metric_level_onDate_filter__oneLocalGroup_equivalence(self):
         expected = self.get('/members/by/state/on/2018-01-01?state=03')
         r = self.get('/members/by/state/on/2018-01-01?localgroup=Alacant')
         self.assertEqual(r.data, expected.data)
 
-    def test__localGroups__queryManyLocalGroups(self):
+    def test__metric_level_onDate_filter__manyLocalGroups_equivalence(self):
         expected = self.get('/members/by/state/on/2018-01-01?state=03&ccaa=09&city=28079')
         r = self.get('/members/by/state/on/2018-01-01?localgroup=Alacant&localgroup=CatalunyaMadrid')
         self.assertEqual(r.data, expected.data)
 
-    def test__printerError_frequency_toDate__exist_NoExactFirstDate(self):
+    def test__metric_frequency_fromDate_toDate__noExactFirstDate(self):
         r = self.get('/members/monthly/from/2018-03-15/to/2018-04-15')
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertTsvResponse(r)
+        self.assertTsvResponse(r, 200)
 
-    def test__printerError_incorrectMetric(self):
+    def test__metric__badMetric(self):
         r = self.get('/incorrectMetric')
-        self.assertEqual(r.status_code, 400)
         self.assertYamlResponse(r, """\
             parameter: metric
             valueRequest: incorrectMetric
             possibleValues: ['members', 'contracts']
             message: Incorrect metric 'incorrectMetric' try with ['members', 'contracts']
-            """)
+            """, 400)
+
+
+
 
     def test__map__ccaaMembers(self):
         r = self.get('/map/members')
@@ -415,25 +412,23 @@ class Api_Test(unittest.TestCase):
         self.assertEqual(r.mimetype, 'application/json')
 
     def test__map__wrongMetric(self):
-        r = self.get('/map/wrong')
-        self.assertEqual(r.status_code, 400)
+        r = self.get('/map/badmetric')
         self.assertYamlResponse(r, """\
             parameter: metric
-            valueRequest: wrong
+            valueRequest: badmetric
             possibleValues: ['members', 'contracts']
-            message: Incorrect metric 'wrong' try with ['members', 'contracts']
-            """)
+            message: Incorrect metric 'badmetric' try with ['members', 'contracts']
+            """,400)
         self.assertEqual(r.mimetype, 'application/json')
 
-    def test__map__geolevelNotImplemented(self):
+    def test__map__cityLevelNotYetImplemented(self):
         r = self.get('/map/members/by/city')
-        self.assertEqual(r.status_code, 400)
         self.assertYamlResponse(r, """\
             parameter: geolevel
             valueRequest: city
             possibleValues: ['ccaa', 'state']
             message: Not implemented geolevel 'city' try with ['ccaa', 'state']
-            """)
+            """, 400)
         self.assertEqual(r.mimetype, 'application/json')
 
     def test__map__ccaaMembersPerPopulation(self):
