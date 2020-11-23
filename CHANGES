@@ -1,13 +1,21 @@
-#v0.2.9 2020-07-17
+# v0.2.10 2020-11-23
 
-- Add localgroup alias
+- Discovery API
+  - `/discover/metrics` List of metrics
+  - `/discover/geolevel` List of geolevels
+  - `/discover/geolevel/<geolevel>` List of geolevel options (all cities, all countries...)
+  - `/discover/geolevel/<geolevel>?<filters>` You may filter it as you filter data
+- Fixed and refactorized localgroups filters
 
+# v0.2.9 2020-07-17
 
-#v0.2.8 2020-04-16
+- Add localgroup filter as alias filter
+
+# v0.2.8 2020-04-16
 
 - Improve API performance
 
-#v0.2.7 2020-01-15
+# v0.2.7 2020-01-15
 
 - Fix errors in svg templates
 - Chose map language with query parameter
