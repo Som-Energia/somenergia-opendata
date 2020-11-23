@@ -126,7 +126,7 @@ class Api_Test(unittest.TestCase):
 
 
     def test__metrics(self):
-        r = self.get('/introspection/metrics')
+        r = self.get('/discover/metrics')
         self.assertYamlResponse(r, """\
             metrics:
             - id: members
@@ -136,7 +136,7 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test_geolevel(self):
-        r = self.get('/introspection/geolevels')
+        r = self.get('/discover/geolevels')
         self.assertYamlResponse(r, """\
             geolevels:
             - id: world
@@ -166,7 +166,7 @@ class Api_Test(unittest.TestCase):
 
 
     def test_geolevelOptions_unfiltered(self):
-        r = self.get('/introspection/geolevels/ccaa')
+        r = self.get('/discover/geolevels/ccaa')
         self.assertYamlResponse(r, """\
             options:
               '01': Andalucia
@@ -191,7 +191,7 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test_geolevelOptions_alias(self):
-        r = self.get('/introspection/geolevels/localgroup')
+        r = self.get('/discover/geolevels/localgroup')
         self.assertYamlResponse(r, """\
             options:
                 Alacant: Alacant
@@ -202,7 +202,7 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test_geolevelOptions_filtered(self):
-        r = self.get('/introspection/geolevels/state?ccaa=09')
+        r = self.get('/discover/geolevels/state?ccaa=09')
         self.assertYamlResponse(r, """\
             options:
                 '08': Barcelona
@@ -212,7 +212,7 @@ class Api_Test(unittest.TestCase):
             """)
 
     def test_geolevelOptions_alias_filtered(self):
-        r = self.get('/introspection/geolevels/localgroup?ccaa=01')
+        r = self.get('/discover/geolevels/localgroup?ccaa=01')
         self.assertYamlResponse(r, """\
             options:
                 AlmeriaCadiz: Almería y Cádiz

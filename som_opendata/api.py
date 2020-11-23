@@ -44,17 +44,17 @@ def version():
         compat = '0.2.1',
         )
 
-@api.route('/introspection/metrics')
+@api.route('/discover/metrics')
 @yaml_response
-def introspectionMetrics():
+def discoverMetrics():
     """
-    @api {get} /v0.2/introspection/metrics
+    @api {get} /v0.2/discover/metrics
     @apiVersion 0.2.2
     @apiName Metrics
     @apiGroup Introspection
     @apiDescription Returns the metrics that can be queried
 
-    @apiSampleRequest /v0.2/introspection/metrics
+    @apiSampleRequest /v0.2/discover/metrics
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
         metrics:
@@ -72,17 +72,17 @@ def introspectionMetrics():
     ])
 
 
-@api.route('/introspection/geolevels')
+@api.route('/discover/geolevels')
 @yaml_response
-def introspectionGeoLevel():
+def discoverGeoLevel():
     """
-    @api {get} /v0.2/introspection/metrics
+    @api {get} /v0.2/discover/metrics
     @apiVersion 0.2.2
     @apiName Metrics
     @apiGroup Introspection
     @apiDescription Returns the metrics that can be queried
 
-    @apiSampleRequest /v0.2/introspection/geolevels
+    @apiSampleRequest /v0.2/discover/geolevels
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
         geolevels:
@@ -111,17 +111,17 @@ def introspectionGeoLevel():
         for key, data in common.geolevels.items()
     ])
 
-@api.route('/introspection/geolevels/<geolevel>')
+@api.route('/discover/geolevels/<geolevel>')
 @yaml_response
-def introspectionGeoLevelOptions(geolevel):
+def discoverGeoLevelOptions(geolevel):
     """
-    @api {get} /v0.2/introspection/metrics
+    @api {get} /v0.2/discover/metrics
     @apiVersion 0.2.2
     @apiName Metrics
     @apiGroup Introspection
     @apiDescription Returns the metrics that can be queried
 
-    @apiSampleRequest /v0.2/introspection/geolevels
+    @apiSampleRequest /v0.2/discover/geolevels
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
         options:
