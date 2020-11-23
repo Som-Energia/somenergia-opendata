@@ -658,16 +658,30 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
 
     relation_paramField_param += [['relativemetric',relativemetric]]
     validateImplementation(relation_paramField_param)
-    request_dates = requestDates(first=api.firstDate, last=api.source.getLastDay(metric), on=ondate, since=fromdate, to=todate, periodicity=frequency)
+    request_dates = requestDates(
+        first=api.firstDate,
+        last=api.source.getLastDay(metric),
+        on=ondate,
+        since=fromdate,
+        to=todate,
+        periodicity=frequency,
+    )
 
     locationCodes = api.relativeMetricSource.getCodesByGeolevel(geolevel=geolevel)
-    relativeMValues = api.relativeMetricSource.getValuesByCode(metric=relativemetric, geolevel=geolevel) if relativemetric else dict()
+    relativeMValues = api.relativeMetricSource.getValuesByCode(
+        metric=relativemetric,
+        geolevel=geolevel,
+    ) if relativemetric else dict()
+
     result = renderMap(
         source=api.source,
         metric=metric,
         dates=request_dates,
         geolevel=geolevel,
-        template=api.mapTemplateSource.getTemplate(geolevel=geolevel, lang=str(get_locale())),
+        template=api.mapTemplateSource.getTemplate(
+            geolevel=geolevel,
+            lang=str(get_locale()),
+        ),
         legendTemplate=api.mapTemplateSource.getLegend(),
         locationsCodes=locationCodes,
         relativeMetricValues=relativeMValues,
