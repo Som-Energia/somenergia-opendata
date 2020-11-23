@@ -105,7 +105,7 @@ TODO
 ### Discovery
 
 - `/discover/metrics`
-    Shows all suported metrics as a list named `metrics` of
+    Shows all suported metrics as a list named `metrics` with
     - `id` the id used to refer the metric
     - `text` the translated text to display users
 
@@ -129,11 +129,9 @@ TODO
 
 
 
-
-
 ### Language
 
-Whenever human readable strings are shown,
+Whenever human readable strings are returned,
 browser language is used by default (accept-language http header).
 Language can be forced by using `lang` query parameter.
 
