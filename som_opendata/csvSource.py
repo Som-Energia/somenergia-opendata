@@ -61,7 +61,7 @@ class CsvSource(object):
         if missing_dates:
             raise MissingDateError(missing_dates)
 
-        filters = self.resolveAliases(**filters) # untested
+        filters = self.resolveAliases(**filters)
         filters = self.translateFilter(**filters)
         filtered_tuples = locationFilter(objects, filters)
 
@@ -81,6 +81,7 @@ class CsvSource(object):
         addObjects(self._objects[metric], content)
 
     def geolevelOptions(self, geolevel, **filters):
+        filters = self.resolveAliases(**filters)
         filters = self.translateFilter(**filters)
         if geolevel in self._aliases:
             alias=self._aliases[geolevel]

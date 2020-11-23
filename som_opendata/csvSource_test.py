@@ -517,7 +517,7 @@ class CsvSource_Test(unittest.TestCase):
                 data_BaixLlobregat,
             ])),
         )
-        self.assertNsEqual(source.geolevelOptions('localgroup', city='08217'),"""
+        self.assertNsEqual(source.geolevelOptions('localgroup', city=['08217']),"""
             BaixLlobregat: Baix Llobregat
         """)
 
@@ -535,7 +535,7 @@ class CsvSource_Test(unittest.TestCase):
                 data_BaixMontseny,
             ])),
         )
-        self.assertNsEqual(source.geolevelOptions('localgroup', state='04'),"""
+        self.assertNsEqual(source.geolevelOptions('localgroup', state=['04']),"""
             Andalucia: Andalucía
         """)
 
@@ -553,8 +553,26 @@ class CsvSource_Test(unittest.TestCase):
                 data_BaixMontseny,
             ])),
         )
-        self.assertNsEqual(source.geolevelOptions('localgroup', city='04003'),"""
+        self.assertNsEqual(source.geolevelOptions('localgroup', city=['04003']),"""
             Andalucia: Andalucía
+        """)
+
+    def test__geolevelOptions_regular_filteredByAlias(self):
+        # Cities in a alias geolevel
+        source = self.createSource(
+            ns(
+                contracts=[headers,
+                    data_SantJoan,
+                    data_Adra,
+            ]),
+            aliases=ns(localgroup=ns([
+                data_Andalucia,
+                data_BaixLlobregat,
+                data_BaixMontseny,
+            ])),
+        )
+        self.assertNsEqual(source.geolevelOptions('city', localgroup=['BaixLlobregat']),"""
+            08217: Sant Joan Despí
         """)
 
 
