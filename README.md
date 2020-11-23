@@ -56,8 +56,8 @@ Public API to access open data information about the cooperative
 - `/contracts/by/city?city=23423&city=89545&ccaa=04`
     Include just cities with INE code 23423 and 89545 and also all cities from CCAA 04 (Catalonia)
 
-- `/contracts/by/city?state=004`
-    Include just cities in state 004
+- `/contracts/by/city?state=04`
+    Include just cities in state 04
 
 #### Response format
 
@@ -101,7 +101,48 @@ TODO
 - `/map/contracts/by/state/monthly/to/2018-05-01`
     Gif animation with contracts aggregated by state every month until a date
 
-### External sources
+
+### Discovery
+
+- `/discover/metrics`
+    Shows all suported metrics as a list named `metrics` of
+    - `id` the id used to refer the metric
+    - `text` the translated text to display users
+
+- `/discover/geolevel`
+    Returns a list `geolevels` with the supported geolevels and related info
+    - `id` is the id used to refer it (its a mnemonic id)
+    - `text` is the translated text to display users
+    - `plural` is the pluralization of id used in yaml's as key when many are given
+    - `parent` tells which other geolevel fully contains its subdivisions.
+    - `detailable: false` tells that a geolevel is not supported as statistics detail level
+    - `mapable: false` tells that a geolevel is not supported as map detail level
+
+- `/discover/geolevel/ccaa`
+    Returns a list of divisions at the `ccaa` level as a map `options` with id -> text
+
+- `/discover/geolevel/city?localgroup=BaixLlobregat`
+    Limits the list of cities to the ones included in the localgroup `BaixLlobregat`
+
+- `/discover/geolevel/localgroup?ccaa=09`
+    Lists all the localgroups working on areas covering cities in Catalonia (09)
+
+
+
+
+
+### Language
+
+Whenever human readable strings are shown,
+browser language is used by default (accept-language http header).
+Language can be forced by using `lang` query parameter.
+
+If the language is not specified in either form or the one selected is not supported, spanish is chosen.
+But that could be changed in the future to english.
+So, if you want spanish, please, specify it.
+
+
+## External sources
 
 
 - https://analisi.transparenciacatalunya.cat/Sector-P-blic/Caps-de-municipi-de-Catalunya-georeferenciats/wpyq-we8x

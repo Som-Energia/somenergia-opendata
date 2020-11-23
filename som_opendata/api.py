@@ -51,7 +51,7 @@ def discoverMetrics():
     @api {get} /v0.2/discover/metrics
     @apiVersion 0.2.2
     @apiName Metrics
-    @apiGroup Introspection
+    @apiGroup Discover
     @apiDescription Returns the metrics that can be queried
 
     @apiSampleRequest /v0.2/discover/metrics
@@ -76,11 +76,11 @@ def discoverMetrics():
 @yaml_response
 def discoverGeoLevel():
     """
-    @api {get} /v0.2/discover/metrics
+    @api {get} /v0.2/discover/geolevel
     @apiVersion 0.2.2
     @apiName Metrics
-    @apiGroup Introspection
-    @apiDescription Returns the metrics that can be queried
+    @apiGroup Discover
+    @apiDescription Returns the geolevel that can be queried
 
     @apiSampleRequest /v0.2/discover/geolevel
     @apiSuccessExample {yaml} Success-Response:
@@ -88,22 +88,31 @@ def discoverGeoLevel():
         geolevels:
         - id: world
           text: 'World'
+          mapable: False
         - id: country
           text: 'Country'
           parent: world
+          plural: countries
+          mapable: False
         - id: ccaa
           text: 'CCAA'
           parent: country
+          plural: ccaas
         - id: state
           text: 'State'
           parent: ccaa 
+          plural: states
         - id: city
           text: 'City'
           parent: state
+          plural: cities
+          mapable: False
         - id: localgroup
           text: 'Local Group'
           parent: world
+          plural: localgroups
           aggregation: False
+          mapable: False
     """
     return ns(
         geolevels = [
@@ -118,10 +127,10 @@ def discoverGeoLevelOptions(geolevel):
     @api {get} /v0.2/discover/metrics
     @apiVersion 0.2.2
     @apiName Metrics
-    @apiGroup Introspection
+    @apiGroup Discover
     @apiDescription Returns the metrics that can be queried
 
-    @apiSampleRequest /v0.2/discover/geolevel
+    @apiSampleRequest /v0.2/discover/geolevel/ccaa
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
         options:
@@ -142,6 +151,28 @@ def discoverGeoLevelOptions(geolevel):
           '15': Navarra, Comunidad Foral de
           '16': País Vasco
           '17': Rioja, La
+
+    @apiSampleRequest /v0.2/discover/geolevel/localgroups?ccaa=09
+    @apiSuccessExample {yaml} Success-Response:
+        HTTP/1.1 200OK
+        options:
+          AltPenedes: Alt Penedès
+          Anoia: Anoia
+          Badalona: Badalona
+          Bages: Bages
+          BaixLlobregat: Baix Llobregat
+          BaixMontseny: Baix Montseny
+          BaixValles: Baix Vallès
+          Barcelona: Barcelona
+          CastellarValles: Castellar del Vallès
+          CerdanyolaValles: Cerdanyola del Vallès
+          Maresme: Maresme
+          Osona: Osona
+          Rubi: Rubí
+          Sabadell: Sabadell
+          SantCugatValles: Sant Cugat del Vallès
+          SelvaMaritima: Selva Marítima
+          Terrassa: Terrassa
     """
     filters = locationFiltersFromQuery()
     return ns(options=api.source.geolevelOptions(geolevel, **filters))
