@@ -5,19 +5,20 @@
 We want to be able to express:
 
 Introspeccio:
-- Quines metriques estan suportades
-- Quins geolevels estan suportats (ccaa, state...)
-- Quins codis y noms hi ha a un determinat geolevel amb possible filtre
-- Quins formats disponibles per un tipus de query (mapa, distribution)
-- Quins filtres s'apliquen als tags
+- [x] Quines metriques estan suportades
+- [x] Quins geolevels estan suportats (ccaa, state...)
+- [x] Quins codis i noms hi ha a un determinat geolevel amb possible filtre
+- [ ] Quins formats disponibles per un tipus de query (mapa, distribution)
+- [ ] Quins filtres s'apliquen als tags
 
 [x] /discover/metric
 /discover/relativemetric  {population, area, marketcontracts...)
 [x] /discover/geolevel  [ccaa, city, state, country, county, localgrup...]
 /discover/geolevel/country?continent=Europe    {ES:España,...}
-/discover/geolevel/city?ccaa=09    {0808: barcelona, :}
-/discover/geolevel/localgroup
-/discover/geolevel/city?localgroup=BaixMontseny
+[x] /discover/geolevel/city?ccaa=09    {0808: barcelona, :}
+[x] /discover/geolevel/localgroup
+[x] /discover/geolevel/localgroup?state=08
+[x] /discover/geolevel/city?localgroup=BaixMontseny
 /discover/format/distribution  {csv, yaml, xml, json, html}
 /discover/format/map  {svg, png, html}
 /discover/aspect/production  {tecnology, financedby}

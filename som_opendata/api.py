@@ -72,7 +72,7 @@ def discoverMetrics():
     ])
 
 
-@api.route('/discover/geolevels')
+@api.route('/discover/geolevel')
 @yaml_response
 def discoverGeoLevel():
     """
@@ -82,7 +82,7 @@ def discoverGeoLevel():
     @apiGroup Introspection
     @apiDescription Returns the metrics that can be queried
 
-    @apiSampleRequest /v0.2/discover/geolevels
+    @apiSampleRequest /v0.2/discover/geolevel
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
         geolevels:
@@ -111,7 +111,7 @@ def discoverGeoLevel():
         for key, data in common.geolevels.items()
     ])
 
-@api.route('/discover/geolevels/<geolevel>')
+@api.route('/discover/geolevel/<geolevel>')
 @yaml_response
 def discoverGeoLevelOptions(geolevel):
     """
@@ -121,7 +121,7 @@ def discoverGeoLevelOptions(geolevel):
     @apiGroup Introspection
     @apiDescription Returns the metrics that can be queried
 
-    @apiSampleRequest /v0.2/discover/geolevels
+    @apiSampleRequest /v0.2/discover/geolevel
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
         options:
