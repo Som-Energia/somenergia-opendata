@@ -342,6 +342,7 @@ class Api_Test(unittest.TestCase):
         self.assertEqual(r.data, b"Request not found!")
         self.assertEqual(r.status_code, 404)
 
+    # TODO: Should it be an error
     def test__metric_level_onDate_filter__filterValueNotFound(self):
         r = self.get('/members/by/city/on/2018-01-01?city=9999999')
         self.assertYamlResponse(r, """\

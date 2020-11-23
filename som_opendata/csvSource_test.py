@@ -709,6 +709,32 @@ class CsvSource_Test(unittest.TestCase):
         self.assertEqual(format(ctx.exception),
             "400 Bad Request: localgroup 'NonExisting' not found")
 
+    def test__get__filteringByAlias(self):
+        source = self.createSource(
+            ns(members=[
+                headers,
+                data_SantJoan,
+                data_Girona,
+            ]),
+            aliases=ns(localgroup=ns([
+                data_BaixLlobregat,
+                data_BaixMontseny,
+            ])),
+            )
+        self.assertNsEqual(
+            ns(data=source.get('members', ['2018-01-01'], ns(localgroup=['BaixLlobregat']))), """\
+            data:
+            - codi_pais: ES
+              pais: 'España'
+              codi_ccaa: '09'
+              comunitat_autonoma: Catalunya
+              codi_provincia: '08'
+              provincia: Barcelona
+              codi_ine: '08217'
+              municipi: Sant Joan Despí
+              count_2018_01_01: '1000'
+        """)
+
 
 
 # vim: et sw=4 ts=4

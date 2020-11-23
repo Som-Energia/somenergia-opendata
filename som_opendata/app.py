@@ -24,7 +24,7 @@ def create_app():
     app.register_blueprint(oldapi, url_prefix='/v0.1')
     app.register_blueprint(api, url_prefix='/v0.2')
     api.localGroups = loadYamlLocalGroups()
-    api.source = loadCsvSource(aliases=dict(localgroups=api.localGroups.data))
+    api.source = loadCsvSource(aliases=dict(localgroup=api.localGroups.data))
     api.mapTemplateSource = loadMapData()
     api.relativeMetricSource = loadTsvRelativeMetric()
     api.firstDate = '2010-01-01'

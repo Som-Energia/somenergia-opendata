@@ -209,6 +209,7 @@ def getAggregated(source, metric, request_dates, location_filter, geolevel, muta
     if (mutable):
         filtered_objects = source.get(metric, request_dates, location_filter)
         return aggregate(filtered_objects, geolevel, request_dates)
+
     location_filter = frozendict(sorted(
         (k,tuple(sorted(v)))
         for k,v in location_filter.items()
