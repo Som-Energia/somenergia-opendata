@@ -141,10 +141,12 @@ class Api_Test(unittest.TestCase):
             geolevels:
             - id: world
               text: 'World'
+              mapable: False
             - id: country
               text: 'Country'
               parent: world
               plural: countries
+              mapable: False
             - id: ccaa
               text: 'CCAA'
               parent: country
@@ -157,11 +159,13 @@ class Api_Test(unittest.TestCase):
               text: 'City'
               parent: state
               plural: cities
+              mapable: False
             - id: localgroup
               text: 'Local Group'
               parent: world
               plural: localgroups
               aggregation: False
+              mapable: False
             """)
 
 

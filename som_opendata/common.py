@@ -172,32 +172,36 @@ aggregation_levels = [
 geolevels = ns([
     ('world', ns(
         text = 'World',
+        mapable = False,
     )),
     ('country', ns(
-          text = 'Country',
-          plural = 'countries',
-          parent = 'world',
+        text = 'Country',
+        plural = 'countries',
+        parent = 'world',
+        mapable = False,
     )),
     ('ccaa', ns(
-          text = 'CCAA',
-          plural = 'ccaas',
-          parent = 'country',
+        text = 'CCAA',
+        plural = 'ccaas',
+        parent = 'country',
     )),
     ('state', ns(
-          text = 'State',
-          plural = 'states',
-          parent = 'ccaa',
+        text = 'State',
+        plural = 'states',
+        parent = 'ccaa',
     )),
     ('city', ns(
-          text = 'City',
-          plural = 'cities',
-          parent = 'state',
+        text = 'City',
+        plural = 'cities',
+        parent = 'state',
+        mapable = False,
     )),
     ('localgroup', ns(
-          text = 'Local Group',
-          plural = 'localgroups',
-          parent = 'world',
-          aggregation = False,
+        text = 'Local Group',
+        plural = 'localgroups',
+        parent = 'world',
+        aggregation = False,
+        mapable = False,
     )),
 ])
 
