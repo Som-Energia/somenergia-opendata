@@ -110,7 +110,7 @@
       <tspan font-family="Sans" font-size="8" font-weight="600" x="369.263" y="79.85">341</tspan>
       <tspan font-family="Sans" font-weight="600" x="369.263" y="87.853">1,9%</tspan>
     </text>
-     <circle cx="276" cy="367" r="4" fill="#e0ecbb" stroke="#999" style="stroke-width:0.85" />
+    <circle id="path3971" cx="276" cy="367" r="4" fill="#e0ecbb" stroke="#999" style="stroke-width:0.85" />
     <text font-size="7" style="text-align:center" x="281" y="362.2">
       <tspan font-family="Sans" font-weight="600" x="281" y="362.2">Ceuta</tspan>
       <tspan font-family="Sans" font-weight="600" x="281" y="370.95">0</tspan>
