@@ -111,7 +111,7 @@ def discoverGeoLevel():
           text: 'Local Group'
           parent: world
           plural: localgroups
-          aggregation: False
+          detailed: False
           mapable: False
     """
     return ns(
@@ -683,7 +683,7 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
         ['metric', metric],
         ['geolevel', geolevel],
         ['frequency', frequency],
-      ]
+    ]
     for paramField, param in relation_paramField_param:
         validateParams(paramField, param)
 

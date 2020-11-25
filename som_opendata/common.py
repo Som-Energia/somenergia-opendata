@@ -200,7 +200,7 @@ geolevels = ns([
         text = 'Local Group',
         plural = 'localgroups',
         parent = 'world',
-        aggregation = False,
+        detailed = False,
         mapable = False,
     )),
 ])

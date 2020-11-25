@@ -164,7 +164,7 @@ class Api_Test(unittest.TestCase):
               text: 'Local Group'
               parent: world
               plural: localgroups
-              aggregation: False
+              detailed: False
               mapable: False
             """)
 
