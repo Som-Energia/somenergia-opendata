@@ -139,29 +139,43 @@ If the language is not specified in either form or the one selected is not suppo
 But that could be changed in the future to english.
 So, if you want spanish, please, specify it.
 
-
-## External sources
-
-
-- https://analisi.transparenciacatalunya.cat/Sector-P-blic/Caps-de-municipi-de-Catalunya-georeferenciats/wpyq-we8x
-	- wget https://analisi.transparenciacatalunya.cat/resource/wpyq-we8x.csv -O Caps_de_municipi_de_Catalunya_georeferenciats.csv
-
-
-## Requirements
-
-```bash
-sudo apt install libmagickwand-dev inkscape
-```
-
-## Translations
-
-### Languages supported
+Supported languages are:
 
 - Catalan (ca)
 - Spanish (es)
 - Euskara (eu)
 - Galician (gl)
 
-### To Compile Language Translations
+## Deploy
 
-- `pybabel compile -f -d som_opendata/translations` 
+### Requirements
+
+```bash
+sudo apt install libmagickwand-dev inkscape
+python setup.py develop
+```
+
+### Compile Language Translations
+
+```bash
+pybabel compile -f -d som_opendata/translations
+```
+
+### Generate documentation
+
+```bash
+npm install
+npm run docs
+```
+
+## External data sources
+
+### Could be used in the future
+
+- For counties (comarques) and city population in Catalonia
+        - https://analisi.transparenciacatalunya.cat/Sector-P-blic/Caps-de-municipi-de-Catalunya-georeferenciats/wpyq-we8x
+                        - wget https://analisi.transparenciacatalunya.cat/resource/wpyq-we8x.csv -O Caps_de_municipi_de_Catalunya_georeferenciats.csv
+
+
+
+
