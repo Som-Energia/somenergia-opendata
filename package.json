@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/Som-Energia/somenergia-api#readme",
   "dependencies": {
-    "apidoc": "^0.17.6"
+    "apidoc": "^0.17.7"
   }
 }

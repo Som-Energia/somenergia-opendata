@@ -22,21 +22,24 @@ from flask_babel import _, Babel, get_locale
 api = Blueprint(name=__name__, import_name=__name__, template_folder='../')
 api.firstDate = '2010-01-01'
 
-
 @api.route('/version')
 @yaml_response
 def version():
     """
-    @api {get} /v0.2/version
-    @apiVersion 0.2.2
+    @api {get} /v0.2/version Version information
+    @apiVersion 0.2.10
     @apiName Version
     @apiGroup Version
     @apiDescription Response version API
 
+    @apiSuccessResponse 200
+    @apiSuccess version Current api version
+    @apiSuccess compat Oldest backward compatible version
+
     @apiSampleRequest /v0.2/version
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
-        version: 0.2.2
+        version: 0.2.10
         compat: 0.2.1
     """
     return ns(
@@ -48,11 +51,16 @@ def version():
 @yaml_response
 def discoverMetrics():
     """
-    @api {get} /v0.2/discover/metrics
-    @apiVersion 0.2.2
-    @apiName Metrics
+    @api {get} /v0.2/discover/metrics Available metrics
+    @apiVersion 0.2.10
+    @apiName GetMetrics
     @apiGroup Discover
-    @apiDescription Returns the metrics that can be queried
+    @apiDescription Returns the metrics that can be queried.
+
+    @apiSuccessResponse 200
+    @apiSuccess {Object[]} metrics List of metrics
+    @apiSuccess {String} metrics.id The id to refer the metric
+    @apiSuccess {String} metrics.text Translated text to show users
 
     @apiSampleRequest /v0.2/discover/metrics
     @apiSuccessExample {yaml} Success-Response:
@@ -76,11 +84,20 @@ def discoverMetrics():
 @yaml_response
 def discoverGeoLevel():
     """
-    @api {get} /v0.2/discover/geolevel
-    @apiVersion 0.2.2
-    @apiName Metrics
+    @api {get} /v0.2/discover/geolevel Available Geolevels
+    @apiVersion 0.2.10
+    @apiName GetGeolevels lala
     @apiGroup Discover
-    @apiDescription Returns the geolevel that can be queried
+    @apiDescription Returns the geolevels (geographical levels) that can be used in queries, such as countries, states, cities
+
+    @apiSuccessResponse 200
+    @apiSuccess {Object[]} geolevels List of geolevels
+    @apiSuccess {String} geolevels.id The id to refer the geolevel
+    @apiSuccess {String} geolevels.text Translated text to show users
+    @apiSuccess {String} [geolevels.plural=id+"s"] Plural tag to use in structures
+    @apiSuccess {String} [geolevels.parent=null] The parent geolevel
+    @apiSuccess {Boolean} [geolevels.detailed=true] Set to false if it is not supported as level of detail for distributions
+    @apiSuccess {Boolean} [geolevels.mapable=true] Set to false if it is not supported as level of detail for map
 
     @apiSampleRequest /v0.2/discover/geolevel
     @apiSuccessExample {yaml} Success-Response:
@@ -124,14 +141,20 @@ def discoverGeoLevel():
 @yaml_response
 def discoverGeoLevelOptions(geolevel):
     """
-    @api {get} /v0.2/discover/metrics
-    @apiVersion 0.2.2
-    @apiName Metrics
+    @api {get} /v0.2/discover/geolevel/:geolevel Available Geolevel values
+    @apiVersion 0.2.10
+    @apiName Geolevels values
     @apiGroup Discover
-    @apiDescription Returns the metrics that can be queried
+    @apiDescription Returns the available values for a given geografical division
+    @apiUse PathGeolevelAndAlias
+    @apiUse QueryGeolevelAndAlias
 
-    @apiSampleRequest /v0.2/discover/geolevel/ccaa
-    @apiSuccessExample {yaml} Success-Response:
+    @apiSuccessResponse 200
+    @apiSuccess options {Object) Mapping of level codes to its translated display text
+
+
+    @apiSuccessExample {yaml} All Autonomous Comunities
+        /v0.2/discover/geolevel/ccaa
         HTTP/1.1 200OK
         options:
           '01': Andalucia
@@ -152,8 +175,8 @@ def discoverGeoLevelOptions(geolevel):
           '16': País Vasco
           '17': Rioja, La
 
-    @apiSampleRequest /v0.2/discover/geolevel/localgroups?ccaa=09
-    @apiSuccessExample {yaml} Success-Response:
+    @apiSuccessExample {yaml} All local grups in Catalonia
+        /v0.2/discover/geolevel/localgroups?ccaa=09
         HTTP/1.1 200OK
         options:
           AltPenedes: Alt Penedès
@@ -200,25 +223,12 @@ def validateInputDates(ondate = None, since = None, todate = None):
 
 
 """
-@apiDefine CommonDistribution
+@api {get} /v0.2/:metric/by/:geolevel/on/:ondate Metric Data on a Given Date
 
-@apiParam {String="country","ccaa","state","city"} [geolevel=world] Geographical detail level
-@apiParam {String} [country] ISO codes of the countries to be included
-@apiParam {String} [ccaa] INE codes of the CCAA's to be included
-@apiParam {String} [state] INE codes of the states to be included
-@apiParam {String} [city] INE codes of cities to be included
-@apiParam {String} [localgroup] Code of the Local Group to be included. It represents an alias of one or more filters.
-"""
-
-"""
-@api {get} /v0.2/:metric/by/:geolevel/on/:ondate
-
-@apiVersion 0.2.2
+@apiVersion 0.2.10
 @apiGroup Distribution
 @apiName Distribution
-@apiDescription Returns the geographical distribution of a quantity at a given date.
-
-Use the geolevel to get more geographical detail (country, ccaa, state, city).
+@apiDescription Returns the geographical distribution of a metric at a given date.
 
 Use the filters in the query string to restrict to a group of geographical entities.
 The filters are additive. That means that any city matching any of the specified values will be counted.
@@ -233,8 +243,12 @@ The filters are additive. That means that any city matching any of the specified
     /v0.2/members/by/city?state=01&state=20
 
 @apiParam {String="contracts","members"} metric Quantity to aggregate.
-@apiUse CommonDistribution
-@apiParam {Date} [ondate=today]  Single date, in iso format.
+@apiUse PathMetric
+@apiUse PathGeolevel
+@apiUse PathOnDate
+@apiUse QueryGeolevelAndAlias
+
+@apiUse ResponseNumbers
 
 @apiSuccessExample {yaml} Success-Response:
     HTTP/1.1 200OK
@@ -319,10 +333,10 @@ The filters are additive. That means that any city matching any of the specified
 """
 
 """
-@api {get} /v0.2/:metric/by/:geolevel/:frequency/from/:fromdate/to/:todate
+@api {get} /v0.2/:metric/by/:geolevel/:frequency/from/:fromdate/to/:todate Metric Data on a Temporal Serie
 
-@apiVersion 0.2.2
-@apiGroup DistributionSeries
+@apiVersion 0.2.10
+@apiGroup Distribution
 @apiName DistributionSeries
 @apiDescription Returns the geographical distribution and temporal evolution of a quantity.
 
@@ -341,11 +355,12 @@ The filters are additive. That means that any city matching any of the specified
     /v0.2/members/by/city/yearly?state=01&state=20
 
 
-@apiParam {String="contracts","members"} metric Quantity to aggregate.
-@apiUse CommonDistribution
-@apiParam {String="yearly","monthly"} frequency  Indicate a date series (only first day of the month, year...)
-@apiParam {Date} [fromdate=2012-01-01]  Earlier date to show, in iso format. 
-@apiParam {Date} [todate=2018-08-01]  Later date to show, in iso format. 
+@apiUse PathMetric
+@apiUse PathGeolevel
+@apiUse QueryGeolevelAndAlias
+@apiUse PathFromToDate
+
+@apiUse ResponseNumbers
 
 @apiSuccessExample {yaml} Success-Response:
     HTTP/1.1 200OK
@@ -530,17 +545,11 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
 
 
 """
-@apiDefine MapDistribution
+@api {get} /v0.2/map/:metric/by/:geolevel/on/:ondate Absolute Metrics Map
 
-
-"""
-
-"""
-@api {get} /v0.2/map/:metric/by/:geolevel/on/:ondate
-
-@apiVersion 0.2.7
-@apiGroup Map
-@apiName Map
+@apiVersion 0.2.10
+@apiGroup Maps
+@apiName Static Map
 @apiDescription Returns a map that represents the geographical distribution at a given date.
 
 Use the geolevel choose the map detail (ccaa, state).
@@ -554,9 +563,9 @@ If no language is specified, the language is chosen using the request headers.
 @apiExample Members by ccaa in Galician
     /v0.2/map/members/by/ccaa?lang=gl
 
-@apiParam {String="contracts","members"} metric Quantity to aggregate
+@apiUse PathMetric
 @apiParam {String="ccaa","state"} geolevel Geographical detail level
-@apiParam {Date} [ondate=today]  Single date, in iso format
+@apiUse PathOnDate
 @apiParam {String="en", "es", "ca", "gl", "eu"} [lang=en] Response language
 
 @apiSuccess {svg} Response Map that represents the geographical distribution at a given date
@@ -564,10 +573,10 @@ If no language is specified, the language is chosen using the request headers.
 """
 
 """
-@api {get} /v0.2/map/:metric/per/:relativemetric/by/:geolevel/on/:ondate
+@api {get} /v0.2/map/:metric/per/:relativemetric/by/:geolevel/on/:ondate Relative Metrics Map
 
 @apiVersion 0.2.7
-@apiGroup RelativeMap
+@apiGroup Maps
 @apiName RelativeMap
 @apiDescription Returns a map that represents the relative geographical distribution at a given date.
 
@@ -585,21 +594,21 @@ If no language is specified, the language is chosen using the request headers.
 @apiExample Members per population by ccaa in Galician
     /v0.2/map/members/per/population/by/ccaa?lang=gl
 
-@apiParam {String="contracts","members"} metric Quantity to aggregate
-@apiParam {String="population"} relativemetric Metric to relativize the values by
-@apiParam {String="ccaa","state"} geolevel Geographical detail level
-@apiParam {Date} [ondate=today]  Single date, in iso format
-@apiParam {String="en", "es", "ca", "gl", "eu"} [lang=en] Response language
+@apiUse PathMetric
+@apiUse PathRelativeMetric
+@apiUse PathMapGeolevel
+@apiUse PathOnDate
+@apiUse QueryLang
 
 @apiSuccess {svg} Response Map that represents the relative geographical distribution at a given date
 
 """
 
 """
-@api {get} /v0.2/map/:metric/by/:geolevel/:frequency/from/:fromdate/to/:todate
+@api {get} /v0.2/map/:metric/by/:geolevel/:frequency/from/:fromdate/to/:todate Absolute Metrics Map Animation
 
-@apiVersion 0.2.2
-@apiGroup MapSeries
+@apiVersion 0.2.10
+@apiGroup Maps
 @apiName MapSeries
 @apiDescription Returns a map animation that represents the temporal evolution of the geographical distribution.
 
@@ -617,21 +626,19 @@ If no language is specified, the language is chosen using the request headers.
     /v0.2/map/members/by/ccaa/yearly?lang=gl
 
 
-@apiParam {String="contracts","members"} metric Quantity to aggregate
-@apiParam {String="ccaa","state"} geolevel Geographical detail level
-@apiParam {String="yearly","monthly"} frequency  Indicate a date series (only first day of the month, year...)
-@apiParam {Date} [fromdate=2012-01-01]  Earlier date to show, in iso format
-@apiParam {Date} [todate=2020-02-01]  Later date to show, in iso format
-@apiParam {String="en", "es", "ca", "gl", "eu"} [lang=en] Response language
+@apiUse PathMetric
+@apiUse PathMapGeolevel
+@apiUse PathFromToDate
+@apiUse QueryLang
 
-@apiSuccess {GIF} Response Map animation that represents the temporal evolution of the geographical distribution
+@apiSuccess {image/gif} Response Map animation that represents the temporal evolution of the geographical distribution
 
 """
 """
-@api {get} /v0.2/map/:metric/per/:relativemetric/by/:geolevel/:frequency/from/:fromdate/to/:todate
+@api {get} /v0.2/map/:metric/per/:relativemetric/by/:geolevel/:frequency/from/:fromdate/to/:todate Relative Metrics Map Animation
 
-@apiVersion 0.2.2
-@apiGroup RelativeMapSeries
+@apiVersion 0.2.10
+@apiGroup Maps
 @apiName RelativeMapSeries
 @apiDescription Returns a map animation that represents the temporal evolution of the relative geographical distribution.
 
@@ -650,14 +657,13 @@ If no language is specified, the language is chosen using the request headers.
     /v0.2/map/members/per/population/by/ccaa/yearly?lang=gl
 
 
-@apiParam {String="contracts","members"} metric Quantity to aggregate
-@apiParam {String="ccaa","state"} geolevel Geographical detail level
-@apiParam {String="yearly","monthly"} frequency  Indicate a date series (only first day of the month, year...)
-@apiParam {Date} [fromdate=2012-01-01]  Earlier date to show, in iso format
-@apiParam {Date} [todate=2020-02-01]  Later date to show, in iso format
-@apiParam {String="en", "es", "ca", "gl", "eu"} [lang=en] Response language
+@apiUse PathMetric
+@apiUse PathMapGeolevel
+@apiUse PathRelativeMetric
+@apiUse PathFromToDate
+@apiUse QueryLang
 
-@apiSuccess {GIF} Response Map animation that represents the temporal evolution of the geographical distribution
+@apiSuccess {image/gif} Response Map animation that represents the temporal evolution of the geographical distribution
 
 """
 
@@ -726,10 +732,115 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
     response.mimetype = 'image/svg+xml'
     return response
 
-
 api.source = None
 api.mapTemplateSource = None
 api.relativeMetricSource = None
 api.localGroups = None
+
+"""
+@apiDefine PathMetric
+
+@apiParam {String="contracts","members"} metric Quantity to aggregate
+
+"""
+
+"""
+@apiDefine PathRelativeMetric
+
+@apiParam {String="population"} relativemetric Metric to relativize the values by
+
+"""
+
+"""
+@apiDefine PathGeolevel
+
+@apiParam {Enum=country,ccaa,state,city} [geolevel=world] Geographical detail level.
+Use the geolevel to get more geographical detail (country, ccaa, state, city).
+For just global numbers, remove the whole `/by/:geolevel` portion of the path.
+
+"""
+
+"""
+@apiDefine PathGeolevelAndAlias
+
+@apiParam {Enum="country","ccaa","state","city","localgroup"} geolevel Geographical detail level, including aliased geolevel alias, like localgroup.
+
+"""
+
+"""
+@apiDefine PathOnDate
+
+@apiParam {Date} [ondate]  Single date, in ISO format (YYYY-MM-DD).
+To obtain the last available data, remove the whole `/on/:onDate` portion of the path.
+
+"""
+
+"""
+@apiDefine PathMapGeolevel
+
+@apiParam {String="ccaa","state"} geolevel Geographical detail level
+
+"""
+"""
+@apiDefine QueryGeolevel
+
+@apiParam (Query Parameters) {String[]} [country] ISO codes of the countries to be included
+@apiParam (Query Parameters) {String[]} [ccaa] INE codes of the CCAAs to be included
+@apiParam (Query Parameters) {String[]} [state] INE codes of the states to be included
+@apiParam (Query Parameters) {String[]} [city] INE codes of cities to be included
+
+"""
+
+"""
+@apiDefine QueryGeolevelAndAlias
+
+@apiParam (Query Parameters) {String[]} [country] ISO codes of the countries to be included
+@apiParam (Query Parameters) {String[]} [ccaa] INE codes of the CCAAs to be included
+@apiParam (Query Parameters) {String[]} [state] INE codes of the states to be included
+@apiParam (Query Parameters) {String[]} [city] INE codes of cities to be included
+@apiParam (Query Parameters) {String[]} [localgroup] Code of the Local Group to be included. It represents an alias of one or more filters.
+
+"""
+
+"""
+@apiDefine QueryLang
+
+@apiParam (Query Parameters) {String="en", "es", "ca", "gl", "eu"} [lang=browser defined or en] Forced response language
+If no language is forced, the one in the browser (Accepted-Language header) is taken.
+If the languange is not one of the suppoerted, english is taken by default.
+
+"""
+
+"""
+@apiDefine PathFromToDate
+
+@apiParam {String="yearly","monthly"} frequency  Indicate a date series (only first day of the month, year...)
+@apiParam {Date} [fromdate=2012-01-01]  Earlier date to show, in iso format
+@apiParam {Date} [todate=2020-02-01]  Later date to show, in iso format
+
+"""
+
+"""
+@apiDefine ResponseNumbers
+
+@apiSuccessResponse 200
+@apiSuccess {Date[]}   dates Date sequence for all data
+@apiSuccess {int[]}    countries.values Values aggregated at this level for each date
+@apiSuccess {Object[]} countries Map indexed by country code
+@apiSuccess {String}   countries.name User visible translated text for CCAA
+@apiSuccess {int[]}    countries.values Values aggregated at this level for each date
+@apiSuccess {Object[]} countries.ccaas Map indexed by CCAA code
+@apiSuccess {String}   countries.ccaas.name User visible translated text for CCAA
+@apiSuccess {int[]}    countries.ccaas.values Values aggregated at this level for each date
+@apiSuccess {Object[]} countries.ccaas.states Map indexed by state code
+@apiSuccess {String}   countries.ccaas.states.name User visible translated text for state
+@apiSuccess {int[]}    countries.ccaas.states.values Values aggregated at this level for each date
+@apiSuccess {Object[]} countries.ccaas.states.cities Map indexed by city code
+@apiSuccess {String}   countries.ccaas.states.cities.name User visible translated text for city
+@apiSuccess {int[]}    countries.ccaas.states.cities.values Values aggregated at this level for each date
+
+"""
+
+
 
 # vim: et ts=4 sw=4
