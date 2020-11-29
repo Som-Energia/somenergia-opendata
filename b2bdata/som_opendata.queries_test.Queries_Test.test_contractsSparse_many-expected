@@ -453,6 +453,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	01	Andalucia	21	Huelva	21043	Jabugo	0	None
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21044	Lepe	3	40442,40444,42114
 2015-02-01	ES	España	01	Andalucia	21	Huelva	21044	Lepe	4	40442,40444,42114,46162
+2015-01-01	ES	España	01	Andalucia	21	Huelva	21045	Linares de la Sierra	0	None
+2015-02-01	ES	España	01	Andalucia	21	Huelva	21045	Linares de la Sierra	0	None
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21049	Minas de Riotinto	0	None
 2015-02-01	ES	España	01	Andalucia	21	Huelva	21049	Minas de Riotinto	0	None
 2015-01-01	ES	España	01	Andalucia	21	Huelva	21050	Moguer	0	None
@@ -1299,6 +1301,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	02	Aragón	50	Zaragoza	50079	Cervera de la Cañada	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50080	Cerveruela	3	14376,14382,19481
 2015-02-01	ES	España	02	Aragón	50	Zaragoza	50080	Cerveruela	3	14376,14382,19481
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50081	Cetina	0	None
+2015-02-01	ES	España	02	Aragón	50	Zaragoza	50081	Cetina	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50083	Cinco Olivas	1	43351
 2015-02-01	ES	España	02	Aragón	50	Zaragoza	50083	Cinco Olivas	1	43351
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50089	Cuarte de Huerva	6	2836,3257,4086,32443,37720,38768
@@ -3209,6 +3213,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	07	Castilla y León	37	Salamanca	37092	Castellanos de Moriscos	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37185	Castellanos de Villiquera	0	None
 2015-02-01	ES	España	07	Castilla y León	37	Salamanca	37185	Castellanos de Villiquera	0	None
+2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37100	Cerezal de Peñahorcada	0	None
+2015-02-01	ES	España	07	Castilla y León	37	Salamanca	37100	Cerezal de Peñahorcada	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37102	Cerro, El	0	None
 2015-02-01	ES	España	07	Castilla y León	37	Salamanca	37102	Cerro, El	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37103	Cespedosa de Tormes	0	None
@@ -6455,6 +6461,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	11	Extremadura	06	Badajoz	06022	Burguillos del Cerro	2	380,2972
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06023	Cabeza del Buey	0	None
 2015-02-01	ES	España	11	Extremadura	06	Badajoz	06023	Cabeza del Buey	0	None
+2015-01-01	ES	España	11	Extremadura	06	Badajoz	06024	Cabeza la Vaca	0	None
+2015-02-01	ES	España	11	Extremadura	06	Badajoz	06024	Cabeza la Vaca	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06028	Campanario	0	None
 2015-02-01	ES	España	11	Extremadura	06	Badajoz	06028	Campanario	0	None
 2015-01-01	ES	España	11	Extremadura	06	Badajoz	06037	Codosera, La	0	None
@@ -6643,6 +6651,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	11	Extremadura	10	Cáceres	10154	Rebollar	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10158	Robledillo de Trujillo	0	None
 2015-02-01	ES	España	11	Extremadura	10	Cáceres	10158	Robledillo de Trujillo	0	None
+2015-01-01	ES	España	11	Extremadura	10	Cáceres	10161	Ruanes	0	None
+2015-02-01	ES	España	11	Extremadura	10	Cáceres	10161	Ruanes	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10167	Santa Cruz de Paniagua	0	None
 2015-02-01	ES	España	11	Extremadura	10	Cáceres	10167	Santa Cruz de Paniagua	0	None
 2015-01-01	ES	España	11	Extremadura	10	Cáceres	10170	Santiago del Campo	0	None
@@ -6765,6 +6775,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	12	Galicia	15	Coruña, A	15076	San Sadurniño	0	None
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15078	Santiago de Compostela	23	1964,3356,3570,3902,3930,6069,7648,13158,15385,19421,19710,21435,21497,21631,24922,28246,28600,30352,30793,32906,35401,41175,41190
 2015-02-01	ES	España	12	Galicia	15	Coruña, A	15078	Santiago de Compostela	25	1964,3356,3570,3902,3930,6069,7648,13158,15385,19421,19710,21435,21497,21631,24922,28246,28600,30352,30793,32906,35401,41175,41190,43443,44440
+2015-01-01	ES	España	12	Galicia	15	Coruña, A	15080	Sobrado	0	None
+2015-02-01	ES	España	12	Galicia	15	Coruña, A	15080	Sobrado	0	None
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15082	Teo	1	40209
 2015-02-01	ES	España	12	Galicia	15	Coruña, A	15082	Teo	1	40209
 2015-01-01	ES	España	12	Galicia	15	Coruña, A	15083	Toques	0	None
@@ -6889,6 +6901,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	12	Galicia	32	Ourense	32057	Parada de Sil	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32058	Pereiro de Aguiar, O	0	None
 2015-02-01	ES	España	12	Galicia	32	Ourense	32058	Pereiro de Aguiar, O	0	None
+2015-01-01	ES	España	12	Galicia	32	Ourense	32059	Peroxa, A	0	None
+2015-02-01	ES	España	12	Galicia	32	Ourense	32059	Peroxa, A	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32060	Petín	0	None
 2015-02-01	ES	España	12	Galicia	32	Ourense	32060	Petín	0	None
 2015-01-01	ES	España	12	Galicia	32	Ourense	32062	Porqueira	1	6166
@@ -7247,6 +7261,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28149	Torrejón de la Calzada	0	None
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28150	Torrejón de Velasco	1	12599
 2015-02-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28150	Torrejón de Velasco	1	12599
+2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28151	Torrelaguna	0	None
+2015-02-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28151	Torrelaguna	0	None
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28152	Torrelodones	3	2835,17730,36799
 2015-02-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28152	Torrelodones	3	2835,17730,36799
 2015-01-01	ES	España	13	Madrid, Comunidad de	28	Madrid	28153	Torremocha de Jarama	2	628,8568
@@ -7713,6 +7729,8 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-02-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31258	Villava/Atarrabia	22	1851,3125,3599,8390,9144,15183,15788,17084,24295,28939,30887,33410,33538,37171,37173,37175,37267,40125,41021,41090,42224,43393
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31262	Zabalza/Zabaltza	2	1430,24067
 2015-02-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31262	Zabalza/Zabaltza	2	1430,24067
+2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31073	Ziordia	0	None
+2015-02-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31073	Ziordia	0	None
 2015-01-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31907	Zizur Mayor/Zizur Nagusia	27	475,871,1043,1126,1202,2366,2378,2412,3497,3752,5246,8946,9529,10005,11187,13959,17492,20414,21728,23173,23410,27187,27209,30531,38964,40009,40535
 2015-02-01	ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31907	Zizur Mayor/Zizur Nagusia	28	475,871,1043,1126,1202,2366,2378,2412,3497,3752,5246,8946,9529,10005,11187,13959,17492,20414,21728,23173,23410,27187,27209,30531,38964,40009,40535,45906
 2015-01-01	ES	España	16	País Vasco	01	Araba/Álava	01001	Alegría-Dulantzi	0	None

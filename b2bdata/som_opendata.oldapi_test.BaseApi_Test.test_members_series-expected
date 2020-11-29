@@ -150,6 +150,7 @@ ES	España	01	Andalucia	21	Huelva	21035	Gibraleón	0	0	0	0
 ES	España	01	Andalucia	21	Huelva	21038	Higuera de la Sierra	0	0	0	0
 ES	España	01	Andalucia	21	Huelva	21041	Huelva	4	5	6	6
 ES	España	01	Andalucia	21	Huelva	21044	Lepe	1	1	1	1
+ES	España	01	Andalucia	21	Huelva	21045	Linares de la Sierra	0	0	0	0
 ES	España	01	Andalucia	21	Huelva	21049	Minas de Riotinto	0	0	0	0
 ES	España	01	Andalucia	21	Huelva	21050	Moguer	0	0	0	0
 ES	España	01	Andalucia	21	Huelva	21054	Palma del Condado, La	1	1	1	1
@@ -407,6 +408,7 @@ ES	España	02	Aragón	50	Zaragoza	50073	Cariñena	2	2	2	2
 ES	España	02	Aragón	50	Zaragoza	50074	Caspe	0	0	0	0
 ES	España	02	Aragón	50	Zaragoza	50079	Cervera de la Cañada	0	0	0	0
 ES	España	02	Aragón	50	Zaragoza	50080	Cerveruela	1	1	1	1
+ES	España	02	Aragón	50	Zaragoza	50081	Cetina	0	0	0	0
 ES	España	02	Aragón	50	Zaragoza	50092	Chiprana	0	0	0	0
 ES	España	02	Aragón	50	Zaragoza	50089	Cuarte de Huerva	5	5	5	5
 ES	España	02	Aragón	50	Zaragoza	50095	Ejea de los Caballeros	1	1	1	1
@@ -466,12 +468,12 @@ ES	España	03	Asturias, Principado de	33	Asturias	33019	Colunga	0	0	0	0
 ES	España	03	Asturias, Principado de	33	Asturias	33020	Corvera de Asturias	1	1	1	1
 ES	España	03	Asturias, Principado de	33	Asturias	33021	Cudillero	0	0	0	0
 ES	España	03	Asturias, Principado de	33	Asturias	33023	Franco, El	1	1	1	1
-ES	España	03	Asturias, Principado de	33	Asturias	33024	Gijón	26	27	27	27
+ES	España	03	Asturias, Principado de	33	Asturias	33024	Gijón	27	28	28	28
 ES	España	03	Asturias, Principado de	33	Asturias	33025	Gozón	0	0	0	0
 ES	España	03	Asturias, Principado de	33	Asturias	33026	Grado	0	0	0	0
 ES	España	03	Asturias, Principado de	33	Asturias	33027	Grandas de Salime	0	0	0	0
 ES	España	03	Asturias, Principado de	33	Asturias	33030	Illas	1	1	1	1
-ES	España	03	Asturias, Principado de	33	Asturias	33031	Langreo	1	1	1	1
+ES	España	03	Asturias, Principado de	33	Asturias	33031	Langreo	0	0	0	0
 ES	España	03	Asturias, Principado de	33	Asturias	33033	Lena	0	1	1	1
 ES	España	03	Asturias, Principado de	33	Asturias	33035	Llanera	1	1	1	1
 ES	España	03	Asturias, Principado de	33	Asturias	33036	Llanes	3	3	3	3
@@ -493,7 +495,7 @@ ES	España	03	Asturias, Principado de	33	Asturias	33072	Teverga	1	1	1	1
 ES	España	03	Asturias, Principado de	33	Asturias	33034	Valdés	1	1	1	1
 ES	España	03	Asturias, Principado de	33	Asturias	33074	Vegadeo	0	0	0	1
 ES	España	03	Asturias, Principado de	33	Asturias	33076	Villaviciosa	3	3	3	3
-ES	España	04	Baleares, Islas	07	Balears, Illes	07002	Alaior	16	16	16	16
+ES	España	04	Baleares, Islas	07	Balears, Illes	07002	Alaior	17	17	17	17
 ES	España	04	Baleares, Islas	07	Balears, Illes	07001	Alaró	10	10	10	10
 ES	España	04	Baleares, Islas	07	Balears, Illes	07003	Alcúdia	3	3	3	3
 ES	España	04	Baleares, Islas	07	Balears, Illes	07004	Algaida	12	12	12	12
@@ -533,7 +535,7 @@ ES	España	04	Baleares, Islas	07	Balears, Illes	07037	Mercadal, Es	8	8	8	8
 ES	España	04	Baleares, Islas	07	Balears, Illes	07902	Migjorn Gran, Es	6	6	6	6
 ES	España	04	Baleares, Islas	07	Balears, Illes	07038	Montuïri	1	2	3	3
 ES	España	04	Baleares, Islas	07	Balears, Illes	07039	Muro	1	1	1	1
-ES	España	04	Baleares, Islas	07	Balears, Illes	07040	Palma	356	368	380	389
+ES	España	04	Baleares, Islas	07	Balears, Illes	07040	Palma	355	367	379	388
 ES	España	04	Baleares, Islas	07	Balears, Illes	07041	Petra	2	3	3	3
 ES	España	04	Baleares, Islas	07	Balears, Illes	07044	Pobla, Sa	7	7	7	7
 ES	España	04	Baleares, Islas	07	Balears, Illes	07042	Pollença	22	23	25	26
@@ -815,7 +817,7 @@ ES	España	08	Castilla - La Mancha	45	Toledo	45161	Seseña	1	1	1	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45163	Sonseca	0	0	0	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45165	Talavera de la Reina	8	8	8	9
 ES	España	08	Castilla - La Mancha	45	Toledo	45167	Toboso, El	2	2	2	2
-ES	España	08	Castilla - La Mancha	45	Toledo	45168	Toledo	26	26	27	28
+ES	España	08	Castilla - La Mancha	45	Toledo	45168	Toledo	25	25	26	27
 ES	España	08	Castilla - La Mancha	45	Toledo	45176	Ugena	1	1	1	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45180	Valmojado	0	0	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45185	Villacañas	0	0	0	0
@@ -1002,7 +1004,7 @@ ES	España	07	Castilla y León	49	Zamora	49104	Mahide	0	0	0	0
 ES	España	07	Castilla y León	49	Zamora	49127	Morales del Vino	1	1	1	1
 ES	España	07	Castilla y León	49	Zamora	49219	Toro	0	0	0	0
 ES	España	07	Castilla y León	49	Zamora	49275	Zamora	4	4	4	4
-ES	España	09	Cataluña	08	Barcelona	08001	Abrera	18	18	18	18
+ES	España	09	Cataluña	08	Barcelona	08001	Abrera	17	17	17	17
 ES	España	09	Cataluña	08	Barcelona	08002	Aguilar de Segarra	1	1	1	1
 ES	España	09	Cataluña	08	Barcelona	08014	Aiguafreda	8	8	8	8
 ES	España	09	Cataluña	08	Barcelona	08003	Alella	20	20	21	21
@@ -1016,7 +1018,7 @@ ES	España	09	Cataluña	08	Barcelona	08010	Artés	21	22	22	22
 ES	España	09	Cataluña	08	Barcelona	08011	Avià	9	9	9	9
 ES	España	09	Cataluña	08	Barcelona	08012	Avinyó	3	3	4	4
 ES	España	09	Cataluña	08	Barcelona	08013	Avinyonet del Penedès	2	2	2	2
-ES	España	09	Cataluña	08	Barcelona	08015	Badalona	177	178	180	185
+ES	España	09	Cataluña	08	Barcelona	08015	Badalona	178	179	181	186
 ES	España	09	Cataluña	08	Barcelona	08904	Badia del Vallès	10	10	10	10
 ES	España	09	Cataluña	08	Barcelona	08016	Bagà	6	6	6	6
 ES	España	09	Cataluña	08	Barcelona	08017	Balenyà	0	0	0	0
@@ -1223,7 +1225,7 @@ ES	España	09	Cataluña	08	Barcelona	08201	Sant Boi de Lluçanès	2	2	2	2
 ES	España	09	Cataluña	08	Barcelona	08203	Sant Cebrià de Vallalta	3	3	3	3
 ES	España	09	Cataluña	08	Barcelona	08202	Sant Celoni	62	63	68	70
 ES	España	09	Cataluña	08	Barcelona	08204	Sant Climent de Llobregat	6	6	6	6
-ES	España	09	Cataluña	08	Barcelona	08205	Sant Cugat del Vallès	240	249	256	264
+ES	España	09	Cataluña	08	Barcelona	08205	Sant Cugat del Vallès	239	248	255	263
 ES	España	09	Cataluña	08	Barcelona	08206	Sant Cugat Sesgarrigues	3	3	3	3
 ES	España	09	Cataluña	08	Barcelona	08207	Sant Esteve de Palautordera	16	16	16	22
 ES	España	09	Cataluña	08	Barcelona	08208	Sant Esteve Sesrovires	12	13	13	13
@@ -1266,7 +1268,7 @@ ES	España	09	Cataluña	08	Barcelona	08264	Sant Vicenç de Montalt	6	6	6	6
 ES	España	09	Cataluña	08	Barcelona	08265	Sant Vicenç de Torelló	0	2	3	3
 ES	España	09	Cataluña	08	Barcelona	08267	Sentmenat	11	12	12	12
 ES	España	09	Cataluña	08	Barcelona	08269	Seva	5	5	5	5
-ES	España	09	Cataluña	08	Barcelona	08270	Sitges	39	40	39	39
+ES	España	09	Cataluña	08	Barcelona	08270	Sitges	40	41	40	40
 ES	España	09	Cataluña	08	Barcelona	08271	Sobremunt	1	1	1	1
 ES	España	09	Cataluña	08	Barcelona	08272	Sora	0	0	0	0
 ES	España	09	Cataluña	08	Barcelona	08273	Subirats	8	8	8	8
@@ -1662,7 +1664,7 @@ ES	España	09	Cataluña	25	Lleida	25196	Sant Esteve de la Sarga	0	0	0	0
 ES	España	09	Cataluña	25	Lleida	25192	Sant Guim de Freixenet	7	7	6	6
 ES	España	09	Cataluña	25	Lleida	25193	Sant Llorenç de Morunys	1	1	1	1
 ES	España	09	Cataluña	25	Lleida	25902	Sant Martí de Riucorb	2	2	2	2
-ES	España	09	Cataluña	25	Lleida	25194	Sant Ramon	0	0	0	0
+ES	España	09	Cataluña	25	Lleida	25194	Sant Ramon	1	1	1	1
 ES	España	09	Cataluña	25	Lleida	25200	Sarroca de Lleida	0	0	0	0
 ES	España	09	Cataluña	25	Lleida	25202	Senterada	0	0	0	0
 ES	España	09	Cataluña	25	Lleida	25035	Sentiu de Sió, La	0	0	0	0
@@ -1837,7 +1839,7 @@ ES	España	09	Cataluña	43	Tarragona	43139	Santa Coloma de Queralt	3	3	3	3
 ES	España	09	Cataluña	43	Tarragona	43140	Santa Oliva	1	1	1	1
 ES	España	09	Cataluña	43	Tarragona	43136	Sant Carles de la Ràpita	3	3	3	3
 ES	España	09	Cataluña	43	Tarragona	43137	Sant Jaume dels Domenys	4	4	4	4
-ES	España	09	Cataluña	43	Tarragona	43902	Sant Jaume d'Enveja	0	0	0	0
+ES	España	09	Cataluña	43	Tarragona	43902	Sant Jaume d'Enveja	1	1	1	1
 ES	España	09	Cataluña	43	Tarragona	43142	Sarral	1	1	2	2
 ES	España	09	Cataluña	43	Tarragona	43143	Savallà del Comtat	0	0	0	0
 ES	España	09	Cataluña	43	Tarragona	43144	Secuita, La	3	5	5	5
@@ -2362,7 +2364,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28006	Alcobendas	19	19	20	22
 ES	España	13	Madrid, Comunidad de	28	Madrid	28007	Alcorcón	34	36	37	38
 ES	España	13	Madrid, Comunidad de	28	Madrid	28008	Aldea del Fresno	1	1	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28009	Algete	2	2	2	2
-ES	España	13	Madrid, Comunidad de	28	Madrid	28010	Alpedrete	8	8	9	9
+ES	España	13	Madrid, Comunidad de	28	Madrid	28010	Alpedrete	8	9	10	10
 ES	España	13	Madrid, Comunidad de	28	Madrid	28013	Aranjuez	2	2	2	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28014	Arganda del Rey	2	2	2	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28015	Arroyomolinos	6	6	6	6
@@ -2416,7 +2418,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28074	Leganés	21	24	26	26
 ES	España	13	Madrid, Comunidad de	28	Madrid	28075	Loeches	1	1	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28901	Lozoyuela-Navas-Sieteiglesias	2	2	2	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28078	Madarcos	0	0	0	0
-ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	954	987	1018	1044
+ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	955	987	1018	1044
 ES	España	13	Madrid, Comunidad de	28	Madrid	28080	Majadahonda	11	11	11	13
 ES	España	13	Madrid, Comunidad de	28	Madrid	28082	Manzanares el Real	13	14	14	14
 ES	España	13	Madrid, Comunidad de	28	Madrid	28083	Meco	3	3	3	3
@@ -2467,7 +2469,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28144	Soto del Real	1	1	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28145	Talamanca de Jarama	0	0	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28146	Tielmes	0	0	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28147	Titulcia	0	0	0	0
-ES	España	13	Madrid, Comunidad de	28	Madrid	28148	Torrejón de Ardoz	9	9	9	9
+ES	España	13	Madrid, Comunidad de	28	Madrid	28148	Torrejón de Ardoz	10	10	10	10
 ES	España	13	Madrid, Comunidad de	28	Madrid	28149	Torrejón de la Calzada	0	0	0	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28150	Torrejón de Velasco	1	1	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28152	Torrelodones	5	5	5	5
