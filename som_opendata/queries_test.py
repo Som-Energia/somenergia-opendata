@@ -6,7 +6,7 @@ from werkzeug.routing import ValidationError
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
 import b2btest
-from .oldapi import (
+from .queries import (
     contractsSparse,
     contractsSeries,
     membersSparse,
