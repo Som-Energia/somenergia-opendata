@@ -1,15 +1,19 @@
 # coding=utf-8
-import dbconfig as config
 import psycopg2
+import dbconfig as config
 from dbutils import csvTable
 from yamlns import namespace as ns
 from yamlns.dateutils import Date
-from .common import (
-    readQuery,
-    )
+from .common import readQuery
+
+"""
+This module contains functions to compute metrics.
+Metrics have to be computed aggregated by city and month.
+"""
+
 
 def activeContractCounter(adate):
-    # TODO: Unsafe substitution
+    # TODO: Unsafe substitution, use mogrify
     return """
     count(CASE
         WHEN polissa.data_alta IS NULL THEN NULL
@@ -21,7 +25,7 @@ def activeContractCounter(adate):
 """.format(adate=adate)
 
 def activeContractLister(adate):
-    # TODO: Unsafe substitution
+    # TODO: Unsafe substitution, use mogrify
     return """
     string_agg(CASE
         WHEN polissa.data_alta IS NULL THEN NULL
@@ -55,7 +59,7 @@ def contractsSeries(dates):
 
 
 def activeMembersCounter(adate):
-    # TODO: Unsafe substitution
+    # TODO: Unsafe substitution, use mogrify
     return """
     count(CASE
         WHEN create_date IS NULL THEN NULL
