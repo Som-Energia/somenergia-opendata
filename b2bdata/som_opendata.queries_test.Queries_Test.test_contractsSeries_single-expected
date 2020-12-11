@@ -453,6 +453,7 @@ ES	España	02	Aragón	22	Huesca	22072	Caldearenas	0
 ES	España	02	Aragón	22	Huesca	22074	Campo	0
 ES	España	02	Aragón	22	Huesca	22075	Camporrélls	0
 ES	España	02	Aragón	22	Huesca	22078	Canfranc	0
+ES	España	02	Aragón	22	Huesca	22080	Capella	0
 ES	España	02	Aragón	22	Huesca	22081	Casbas de Huesca	1
 ES	España	02	Aragón	22	Huesca	22083	Castejón de Monegros	0
 ES	España	02	Aragón	22	Huesca	22084	Castejón de Sos	3
@@ -632,6 +633,7 @@ ES	España	02	Aragón	50	Zaragoza	50024	Almonacid de la Sierra	0
 ES	España	02	Aragón	50	Zaragoza	50025	Almunia de Doña Godina, La	6
 ES	España	02	Aragón	50	Zaragoza	50030	Añón de Moncayo	1
 ES	España	02	Aragón	50	Zaragoza	50031	Aranda de Moncayo	0
+ES	España	02	Aragón	50	Zaragoza	50034	Ariza	0
 ES	España	02	Aragón	50	Zaragoza	50035	Artieda	1
 ES	España	02	Aragón	50	Zaragoza	50038	Ateca	0
 ES	España	02	Aragón	50	Zaragoza	50039	Azuara	1
@@ -705,6 +707,7 @@ ES	España	02	Aragón	50	Zaragoza	50235	San Mateo de Gállego	1
 ES	España	02	Aragón	50	Zaragoza	50237	Santa Cruz de Moncayo	0
 ES	España	02	Aragón	50	Zaragoza	50240	Sástago	0
 ES	España	02	Aragón	50	Zaragoza	50242	Sediles	1
+ES	España	02	Aragón	50	Zaragoza	50245	Sigüés	0
 ES	España	02	Aragón	50	Zaragoza	50250	Talamantes	0
 ES	España	02	Aragón	50	Zaragoza	50251	Tarazona	6
 ES	España	02	Aragón	50	Zaragoza	50252	Tauste	0
@@ -1071,6 +1074,7 @@ ES	España	08	Castilla - La Mancha	16	Cuenca	16027	Barajas de Melo	1
 ES	España	08	Castilla - La Mancha	16	Cuenca	16032	Belinchón	0
 ES	España	08	Castilla - La Mancha	16	Cuenca	16033	Belmonte	1
 ES	España	08	Castilla - La Mancha	16	Cuenca	16035	Beteta	0
+ES	España	08	Castilla - La Mancha	16	Cuenca	16044	Campillos-Sierra	0
 ES	España	08	Castilla - La Mancha	16	Cuenca	16901	Campos del Paraíso	1
 ES	España	08	Castilla - La Mancha	16	Cuenca	16048	Cañamares	0
 ES	España	08	Castilla - La Mancha	16	Cuenca	16050	Cañaveras	1
@@ -1542,6 +1546,7 @@ ES	España	07	Castilla y León	34	Palencia	34018	Autilla del Pino	0
 ES	España	07	Castilla y León	34	Palencia	34022	Baltanás	0
 ES	España	07	Castilla y León	34	Palencia	34027	Barruelo de Santullán	0
 ES	España	07	Castilla y León	34	Palencia	34029	Becerril de Campos	0
+ES	España	07	Castilla y León	34	Palencia	34033	Boada de Campos	0
 ES	España	07	Castilla y León	34	Palencia	34034	Boadilla del Camino	0
 ES	España	07	Castilla y León	34	Palencia	34035	Boadilla de Rioseco	0
 ES	España	07	Castilla y León	34	Palencia	34037	Buenavista de Valdavia	0
@@ -1630,6 +1635,7 @@ ES	España	07	Castilla y León	37	Salamanca	37198	Monleras	0
 ES	España	07	Castilla y León	37	Salamanca	37200	Montejo	0
 ES	España	07	Castilla y León	37	Salamanca	37205	Morille	0
 ES	España	07	Castilla y León	37	Salamanca	37224	Orbada, La	0
+ES	España	07	Castilla y León	37	Salamanca	37225	Pajares de la Laguna	0
 ES	España	07	Castilla y León	37	Salamanca	37240	Pelabravo	0
 ES	España	07	Castilla y León	37	Salamanca	37246	Peñaranda de Bracamonte	0
 ES	España	07	Castilla y León	37	Salamanca	37250	Pereña de la Ribera	0
@@ -1656,6 +1662,7 @@ ES	España	07	Castilla y León	37	Salamanca	37362	Villares de la Reina	0
 ES	España	07	Castilla y León	37	Salamanca	37363	Villares de Yeltes	0
 ES	España	07	Castilla y León	37	Salamanca	37369	Villaseco de los Gamitos	0
 ES	España	07	Castilla y León	37	Salamanca	37373	Villavieja de Yeltes	0
+ES	España	07	Castilla y León	37	Salamanca	37375	Villoruela	0
 ES	España	07	Castilla y León	37	Salamanca	37377	Yecla de Yeltes	0
 ES	España	07	Castilla y León	40	Segovia	40001	Abades	0
 ES	España	07	Castilla y León	40	Segovia	40009	Aldeanueva de la Serrezuela	0
@@ -1846,6 +1853,7 @@ ES	España	07	Castilla y León	47	Valladolid	47179	Valbuena de Duero	1
 ES	España	07	Castilla y León	47	Valladolid	47181	Valdenebro de los Valles	0
 ES	España	07	Castilla y León	47	Valladolid	47182	Valdestillas	0
 ES	España	07	Castilla y León	47	Valladolid	47186	Valladolid	55
+ES	España	07	Castilla y León	47	Valladolid	47184	Valoria la Buena	0
 ES	España	07	Castilla y León	47	Valladolid	47191	Velliza	0
 ES	España	07	Castilla y León	47	Valladolid	47193	Viana de Cega	0
 ES	España	07	Castilla y León	47	Valladolid	47195	Villabáñez	0
@@ -3478,6 +3486,7 @@ ES	España	12	Galicia	36	Pontevedra	36017	Estrada, A	1
 ES	España	12	Galicia	36	Pontevedra	36021	Gondomar	0
 ES	España	12	Galicia	36	Pontevedra	36022	Grove, O	0
 ES	España	12	Galicia	36	Pontevedra	36023	Guarda, A	0
+ES	España	12	Galicia	36	Pontevedra	36901	Illa de Arousa, A	0
 ES	España	12	Galicia	36	Pontevedra	36024	Lalín	3
 ES	España	12	Galicia	36	Pontevedra	36026	Marín	0
 ES	España	12	Galicia	36	Pontevedra	36029	Moaña	1

@@ -526,7 +526,7 @@ ES	España	04	Baleares, Islas	07	Balears, Illes	07028	Lloret de Vistalegre	2	2	2
 ES	España	04	Baleares, Islas	07	Balears, Illes	07029	Lloseta	3	3	3	3
 ES	España	04	Baleares, Islas	07	Balears, Illes	07030	Llubí	3	3	3	3
 ES	España	04	Baleares, Islas	07	Balears, Illes	07031	Llucmajor	19	20	20	20
-ES	España	04	Baleares, Islas	07	Balears, Illes	07033	Manacor	39	39	39	39
+ES	España	04	Baleares, Islas	07	Balears, Illes	07033	Manacor	38	38	38	38
 ES	España	04	Baleares, Islas	07	Balears, Illes	07034	Mancor de la Vall	7	7	7	7
 ES	España	04	Baleares, Islas	07	Balears, Illes	07032	Maó	46	47	48	50
 ES	España	04	Baleares, Islas	07	Balears, Illes	07035	Maria de la Salut	3	3	2	2
@@ -1029,7 +1029,7 @@ ES	España	09	Cataluña	08	Barcelona	08020	Begues	19	20	20	20
 ES	España	09	Cataluña	08	Barcelona	08021	Bellprat	0	0	0	0
 ES	España	09	Cataluña	08	Barcelona	08022	Berga	32	32	32	32
 ES	España	09	Cataluña	08	Barcelona	06019	Berlanga	0	0	0	0
-ES	España	09	Cataluña	08	Barcelona	08023	Bigues i Riells	11	11	11	11
+ES	España	09	Cataluña	08	Barcelona	08023	Bigues i Riells	10	10	10	10
 ES	España	09	Cataluña	08	Barcelona	08024	Borredà	2	2	2	2
 ES	España	09	Cataluña	08	Barcelona	08025	Bruc, El	4	4	4	4
 ES	España	09	Cataluña	08	Barcelona	08026	Brull, El	1	1	1	1
@@ -1061,7 +1061,7 @@ ES	España	09	Cataluña	08	Barcelona	08051	Castellar del Vallès	38	38	39	40
 ES	España	09	Cataluña	08	Barcelona	08052	Castellar de n'Hug	0	0	0	0
 ES	España	09	Cataluña	08	Barcelona	08053	Castellbell i el Vilar	2	2	2	2
 ES	España	09	Cataluña	08	Barcelona	08054	Castellbisbal	14	15	15	15
-ES	España	09	Cataluña	08	Barcelona	08055	Castellcir	1	1	1	1
+ES	España	09	Cataluña	08	Barcelona	08055	Castellcir	2	2	2	2
 ES	España	09	Cataluña	08	Barcelona	08056	Castelldefels	62	64	65	67
 ES	España	09	Cataluña	08	Barcelona	08057	Castell de l'Areny	0	0	0	0
 ES	España	09	Cataluña	08	Barcelona	08058	Castellet i la Gornal	5	5	5	5
@@ -1080,7 +1080,7 @@ ES	España	09	Cataluña	08	Barcelona	08068	Cervelló	4	4	4	4
 ES	España	09	Cataluña	08	Barcelona	08069	Collbató	13	13	13	13
 ES	España	09	Cataluña	08	Barcelona	08070	Collsuspina	3	3	3	3
 ES	España	09	Cataluña	08	Barcelona	08071	Copons	2	2	2	2
-ES	España	09	Cataluña	08	Barcelona	08072	Corbera de Llobregat	13	13	13	14
+ES	España	09	Cataluña	08	Barcelona	08072	Corbera de Llobregat	13	13	14	15
 ES	España	09	Cataluña	08	Barcelona	08073	Cornellà de Llobregat	61	64	65	66
 ES	España	09	Cataluña	08	Barcelona	08074	Cubelles	15	16	16	17
 ES	España	09	Cataluña	08	Barcelona	00000	DESCON.	1	1	1	1
@@ -1108,7 +1108,7 @@ ES	España	09	Cataluña	08	Barcelona	08096	Granollers	61	63	63	64
 ES	España	09	Cataluña	08	Barcelona	08097	Gualba	7	7	8	10
 ES	España	09	Cataluña	08	Barcelona	08099	Guardiola de Berguedà	2	2	2	2
 ES	España	09	Cataluña	08	Barcelona	08100	Gurb	6	6	6	7
-ES	España	09	Cataluña	08	Barcelona	08101	Hospitalet de Llobregat, L'	119	122	130	135
+ES	España	09	Cataluña	08	Barcelona	08101	Hospitalet de Llobregat, L'	119	122	129	134
 ES	España	09	Cataluña	08	Barcelona	08162	Hostalets de Pierola, Els	5	5	5	5
 ES	España	09	Cataluña	08	Barcelona	08102	Igualada	45	48	49	49
 ES	España	09	Cataluña	08	Barcelona	08103	Jorba	1	1	2	2
@@ -1382,7 +1382,7 @@ ES	España	09	Cataluña	17	Girona	17075	Garrigàs	1	1	1	1
 ES	España	09	Cataluña	17	Girona	17076	Garrigoles	3	3	3	3
 ES	España	09	Cataluña	17	Girona	17077	Garriguella	5	5	5	5
 ES	España	09	Cataluña	17	Girona	17078	Ger	1	1	1	1
-ES	España	09	Cataluña	17	Girona	17079	Girona	356	361	368	374
+ES	España	09	Cataluña	17	Girona	17079	Girona	355	360	367	373
 ES	España	09	Cataluña	17	Girona	17080	Gombrèn	0	0	0	0
 ES	España	09	Cataluña	17	Girona	17081	Gualta	1	2	2	2
 ES	España	09	Cataluña	17	Girona	17082	Guils de Cerdanya	0	0	0	0
@@ -1521,7 +1521,7 @@ ES	España	09	Cataluña	17	Girona	17226	Vilamalla	1	1	1	1
 ES	España	09	Cataluña	17	Girona	17228	Vilanant	0	0	0	0
 ES	España	09	Cataluña	17	Girona	17230	Vila-sacra	0	0	0	0
 ES	España	09	Cataluña	17	Girona	17222	Vilaür	2	2	2	2
-ES	España	09	Cataluña	17	Girona	17233	Vilobí d'Onyar	8	9	9	11
+ES	España	09	Cataluña	17	Girona	17233	Vilobí d'Onyar	9	10	10	12
 ES	España	09	Cataluña	17	Girona	17232	Vilopriu	2	2	2	2
 ES	España	09	Cataluña	17	Girona	None	None	2	2	2	2
 ES	España	09	Cataluña	25	Lleida	25001	Abella de la Conca	3	3	3	3
@@ -1880,7 +1880,7 @@ ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03010	Alfafara	0	0	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03011	Alfàs del Pi, l'	1	1	2	2
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03012	Algorfa	0	0	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03013	Algueña	1	1	1	1
-ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03014	Alicante/Alacant	66	66	67	70
+ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03014	Alicante/Alacant	67	67	68	71
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03015	Almoradí	1	1	1	1
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03018	Altea	4	5	5	5
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03019	Aspe	3	3	3	3
@@ -1946,7 +1946,7 @@ ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03114	Romana, la	0	0	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03116	Salinas	2	2	2	2
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03118	San Fulgencio	1	1	1	1
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03121	Santa Pola	5	5	5	5
-ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03119	Sant Joan d'Alacant	5	5	5	5
+ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03119	Sant Joan d'Alacant	4	4	4	4
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03122	San Vicente del Raspeig/Sant Vicent del Raspeig	17	17	17	17
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03123	Sax	0	0	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03124	Sella	0	0	0	0
@@ -2024,7 +2024,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46042	Aielo de Malferit
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46005	Alaquàs	6	6	7	7
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46006	Albaida	1	1	1	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46007	Albal	5	5	5	5
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46008	Albalat de la Ribera	0	1	1	1
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46008	Albalat de la Ribera	1	2	2	2
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46009	Albalat dels Sorells	5	7	8	8
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46010	Albalat dels Tarongers	1	1	1	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46011	Alberic	4	4	4	4
@@ -2145,7 +2145,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46202	Pobla de Vallbona
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46203	Pobla Llarga, la	2	2	2	2
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46197	Polinyà de Xúquer	1	1	1	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46198	Potríes	0	0	0	0
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46205	Puçol	8	8	8	8
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46205	Puçol	9	9	9	9
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46204	Puig	6	7	7	7
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46101	Quart de les Valls	1	1	1	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46102	Quart de Poblet	12	12	12	14
@@ -2177,7 +2177,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46244	Torrent	24	24	25	
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46245	Torres Torres	0	0	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46246	Tous	0	0	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46249	Utiel	0	0	0	0
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46250	Valencia/València	457	473	485	499
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46250	Valencia/València	456	472	484	498
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46251	Vallada	3	3	3	3
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46252	Vallanca	1	1	1	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46254	Venta del Moro	1	1	1	1
@@ -2759,7 +2759,7 @@ ES	España	16	País Vasco	20	Gipuzkoa	20013	Aretxabaleta	2	2	3	3
 ES	España	16	País Vasco	20	Gipuzkoa	20055	Arrasate/Mondragón	3	3	3	3
 ES	España	16	País Vasco	20	Gipuzkoa	20903	Astigarraga	1	1	1	1
 ES	España	16	País Vasco	20	Gipuzkoa	20017	Azkoitia	2	2	2	2
-ES	España	16	País Vasco	20	Gipuzkoa	20019	Beasain	1	2	2	2
+ES	España	16	País Vasco	20	Gipuzkoa	20019	Beasain	2	3	3	3
 ES	España	16	País Vasco	20	Gipuzkoa	20022	Berastegi	0	0	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20074	Bergara	7	7	7	7
 ES	España	16	País Vasco	20	Gipuzkoa	20023	Berrobi	1	1	1	1
@@ -2773,7 +2773,6 @@ ES	España	16	País Vasco	20	Gipuzkoa	20036	Hondarribia	2	2	2	2
 ES	España	16	País Vasco	20	Gipuzkoa	20043	Idiazabal	1	1	1	1
 ES	España	16	País Vasco	20	Gipuzkoa	20045	Irun	4	4	4	4
 ES	España	16	País Vasco	20	Gipuzkoa	20902	Lasarte-Oria	3	3	3	3
-ES	España	16	País Vasco	20	Gipuzkoa	20049	Lazkao	1	1	1	1
 ES	España	16	País Vasco	20	Gipuzkoa	20051	Legazpi	1	1	1	1
 ES	España	16	País Vasco	20	Gipuzkoa	20053	Lezo	2	2	2	2
 ES	España	16	País Vasco	20	Gipuzkoa	20901	Mendaro	1	1	1	1

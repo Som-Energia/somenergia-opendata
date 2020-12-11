@@ -453,6 +453,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	22	Huesca	22074	Campo	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22075	Camporrélls	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22078	Canfranc	0	None
+2015-01-01	ES	España	02	Aragón	22	Huesca	22080	Capella	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22081	Casbas de Huesca	1	12656
 2015-01-01	ES	España	02	Aragón	22	Huesca	22083	Castejón de Monegros	0	None
 2015-01-01	ES	España	02	Aragón	22	Huesca	22084	Castejón de Sos	3	13229,13231,13234
@@ -632,6 +633,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50025	Almunia de Doña Godina, La	6	2665,2666,15576,30426,30449,30545
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50030	Añón de Moncayo	1	2488
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50031	Aranda de Moncayo	0	None
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50034	Ariza	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50035	Artieda	1	40557
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50038	Ateca	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50039	Azuara	1	10924
@@ -705,6 +707,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50237	Santa Cruz de Moncayo	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50240	Sástago	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50242	Sediles	1	35407
+2015-01-01	ES	España	02	Aragón	50	Zaragoza	50245	Sigüés	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50250	Talamantes	0	None
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50251	Tarazona	6	3523,5407,15629,15929,30996,36638
 2015-01-01	ES	España	02	Aragón	50	Zaragoza	50252	Tauste	0	None
@@ -1071,6 +1074,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16032	Belinchón	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16033	Belmonte	1	27708
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16035	Beteta	0	None
+2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16044	Campillos-Sierra	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16901	Campos del Paraíso	1	30376
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16048	Cañamares	0	None
 2015-01-01	ES	España	08	Castilla - La Mancha	16	Cuenca	16050	Cañaveras	1	16156
@@ -1542,6 +1546,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34022	Baltanás	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34027	Barruelo de Santullán	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34029	Becerril de Campos	0	None
+2015-01-01	ES	España	07	Castilla y León	34	Palencia	34033	Boada de Campos	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34034	Boadilla del Camino	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34035	Boadilla de Rioseco	0	None
 2015-01-01	ES	España	07	Castilla y León	34	Palencia	34037	Buenavista de Valdavia	0	None
@@ -1630,6 +1635,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37200	Montejo	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37205	Morille	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37224	Orbada, La	0	None
+2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37225	Pajares de la Laguna	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37240	Pelabravo	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37246	Peñaranda de Bracamonte	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37250	Pereña de la Ribera	0	None
@@ -1656,6 +1662,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37363	Villares de Yeltes	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37369	Villaseco de los Gamitos	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37373	Villavieja de Yeltes	0	None
+2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37375	Villoruela	0	None
 2015-01-01	ES	España	07	Castilla y León	37	Salamanca	37377	Yecla de Yeltes	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40001	Abades	0	None
 2015-01-01	ES	España	07	Castilla y León	40	Segovia	40009	Aldeanueva de la Serrezuela	0	None
@@ -1846,6 +1853,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47181	Valdenebro de los Valles	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47182	Valdestillas	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47186	Valladolid	55	3847,9852,12109,12591,13785,15854,15878,17011,17157,18082,18084,18086,18100,18244,18918,20688,21965,22431,22870,24010,24012,26984,26992,27768,28696,29259,29311,30282,30777,30943,30948,31254,31357,31753,31997,32857,33002,34969,34973,35327,36221,36227,36518,36579,37938,38651,38816,39241,39843,40271,40275,40302,40662,42040,43610
+2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47184	Valoria la Buena	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47191	Velliza	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47193	Viana de Cega	0	None
 2015-01-01	ES	España	07	Castilla y León	47	Valladolid	47195	Villabáñez	0	None
@@ -3478,6 +3486,7 @@ thedate	codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	cod
 2015-01-01	ES	España	12	Galicia	36	Pontevedra	36021	Gondomar	0	None
 2015-01-01	ES	España	12	Galicia	36	Pontevedra	36022	Grove, O	0	None
 2015-01-01	ES	España	12	Galicia	36	Pontevedra	36023	Guarda, A	0	None
+2015-01-01	ES	España	12	Galicia	36	Pontevedra	36901	Illa de Arousa, A	0	None
 2015-01-01	ES	España	12	Galicia	36	Pontevedra	36024	Lalín	3	2689,4128,27818
 2015-01-01	ES	España	12	Galicia	36	Pontevedra	36026	Marín	0	None
 2015-01-01	ES	España	12	Galicia	36	Pontevedra	36029	Moaña	1	3587
