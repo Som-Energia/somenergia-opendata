@@ -197,17 +197,8 @@ def discoverGeoLevelOptions(geolevel):
           SelvaMaritima: Selva Marítima
           Terrassa: Terrassa
     """
-<<<<<<< HEAD
     filters = locationFiltersFromQuery()
     return ns(options=api.source.geolevelOptions(geolevel, **filters))
-=======
-    location_filter = extractFilters()
-    if geolevel == 'localgroup':
-        return ns(
-            options=ns(api.localGroups.getLocalGroups())
-        )
-    return ns(options=api.source.geolevelOptions(geolevel, **location_filter))
->>>>>>> add activeMembersMonthly and canceledMembersMonthly
 
 def locationFiltersFromQuery():
     """Extracts any relevant query parameter to build a filter.

@@ -71,6 +71,33 @@ def activeMembersCounter(adate):
             END) AS count_{adate:%Y_%m_%d}
         """.format(adate=adate)
 
+def activeMembersCounterMonthly(adate):
+    # TODO: Unsafe substitution
+    return """
+    count(CASE
+        WHEN create_date IS NULL THEN NULL
+        WHEN create_date > '{adate}'::date THEN NULL
+        WHEN data_baixa_soci < '{adate}'::date THEN NULL
+        WHEN create_date <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        WHEN create_date <= '{adate}'::date THEN TRUE
+        WHEN active THEN TRUE
+        ELSE NULL
+            END) AS count_{adate:%Y_%m_%d}
+        """.format(adate=adate)
+
+
+def canceledMembersCounterMonthly(adate):
+    # TODO: Unsafe substitution
+    return """
+    count(CASE
+        WHEN create_date IS NULL THEN NULL
+        WHEN data_baixa_soci IS NULL THEN NULL
+        WHEN create_date > '{adate}'::date THEN NULL
+        WHEN data_baixa_soci <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        WHEN data_baixa_soci <= '{adate}'::date THEN TRUE
+        ELSE NULL
+            END) AS count_{adate:%Y_%m_%d}
+        """.format(adate=adate)
 
 
 def membersSparse(dates, dbhandler=csvTable, debug=False):
@@ -83,6 +110,30 @@ def membersSparse(dates, dbhandler=csvTable, debug=False):
     with db.cursor() as cursor :
         cursor.execute(query)
         return dbhandler(cursor)
+
+def activeMembersMonthly(dates, dbhandler=csvTable, debug=False):
+    db = psycopg2.connect(**config.psycopg)
+    query = readQuery('members_distribution')
+    query = query.format(','.join(
+        activeMembersCounterMonthly(Date(adate))
+        for adate in dates
+        ))
+    with db.cursor() as cursor :
+        cursor.execute(query)
+        return dbhandler(cursor)
+
+
+def canceledMembersMonthly(dates, dbhandler=csvTable, debug=False):
+    db = psycopg2.connect(**config.psycopg)
+    query = readQuery('members_distribution')
+    query = query.format(','.join(
+        canceledMembersCounterMonthly(Date(adate))
+        for adate in dates
+        ))
+    with db.cursor() as cursor :
+        cursor.execute(query)
+        return dbhandler(cursor)
+
 
 
 # vim: et sw=4 ts=4
