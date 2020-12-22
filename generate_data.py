@@ -3,6 +3,8 @@ import sys
 from som_opendata.oldapi import (
     membersSparse,
     contractsSeries,
+    activeContractsMonthly,
+    canceledContractsMonthly,
     activeMembersMonthly,
     canceledMembersMonthly
 )
@@ -26,6 +28,8 @@ dates=dateSequenceMonths(fromdate, todate)
 metricGenerators = dict(
     members=membersSparse,
     contracts=contractsSeries,
+    activecontracts=activeContractsMonthly,
+    canceledcontracts=canceledContractsMonthly,
     activemembers=activeMembersMonthly,
     canceledmembers=canceledMembersMonthly,
 )
