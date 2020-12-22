@@ -369,7 +369,7 @@ class Common_Test(unittest.TestCase):
         self.assertEqual(ctx.exception.value, 'badvalue')
         self.assertEqual(ctx.exception.code, 400)
         self.assertEqual(ctx.exception.description, 
-            'Incorrect metric \'badvalue\' try with [\'members\', \'contracts\']')
+            'Incorrect metric \'badvalue\' try with [\'members\', \'contracts\', \'activecontracts\', \'canceledcontracts\', \'activemembers\', \'canceledmembers\']')
 
 
 # vim: et ts=4 sw=4

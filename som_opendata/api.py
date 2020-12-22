@@ -740,7 +740,7 @@ api.localGroups = None
 """
 @apiDefine PathMetric
 
-@apiParam {String="contracts","members"} metric Quantity to aggregate
+@apiParam {String="contracts","members", "activecontracts", "canceledcontracts", "activemembers", "canceledmember"} metric Quantity to aggregate
 
 """
 

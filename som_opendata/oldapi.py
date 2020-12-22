@@ -17,7 +17,11 @@ from .common import (
 )
 from .queries import (
     contractsSeries,
+    activeContractsMonthly,
+    canceledContractsMonthly,
     membersSparse,
+    activeMembersMonthly,
+    canceledMembersMonthly,
 )
 
 blueprint = Blueprint(name=__name__, import_name=__name__)

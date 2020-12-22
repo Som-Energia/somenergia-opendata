@@ -6,7 +6,14 @@ from consolemsg import u
 from yamlns import namespace as ns
 
 implemented = ns(
-    metric=['members', 'contracts'],
+    metric=[
+        'members',
+        'contracts',
+        'activecontracts',
+        'canceledcontracts',
+        'activemembers',
+        'canceledmembers',
+    ],
     geolevel=['ccaa','state'],
     relativemetric=['population', None],
     )

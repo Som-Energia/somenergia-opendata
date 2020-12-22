@@ -15,7 +15,14 @@ class MissingDateError(HTTPException):
 class ValidateError(HTTPException):
 
     valors = ns(
-        metric=['members', 'contracts'],
+        metric=[
+            'members',
+            'contracts',
+            'activecontracts',
+            'canceledcontracts',
+            'activemembers',
+            'canceledmembers',
+            ],
         frequency=['monthly', 'yearly'],
         geolevel=['country', 'ccaa', 'state', 'city']
         )

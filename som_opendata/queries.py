@@ -24,6 +24,32 @@ def activeContractCounter(adate):
         END) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
 
+def activeContractCounterMonthly(adate):
+    # TODO: Unsafe substitution, use mogrify
+    return """
+    count(CASE
+        WHEN polissa.data_alta IS NULL THEN NULL
+        WHEN polissa.data_alta > '{adate}'::date THEN NULL
+        WHEN polissa.data_alta <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        WHEN polissa.data_baixa is NULL then TRUE
+        WHEN polissa.data_baixa > '{adate}'::date - INTERVAL '1 month' THEN TRUE
+        ELSE NULL
+        END) AS count_{adate:%Y_%m_%d}
+""".format(adate=adate)
+
+def canceledContractCounterMonthly(adate):
+    # TODO: Unsafe substitution, use mogrify
+    return """
+    count(CASE
+        WHEN polissa.data_alta IS NULL THEN NULL
+        WHEN polissa.data_alta > '{adate}'::date THEN NULL
+        WHEN polissa.data_baixa is NULL then NULL
+        WHEN polissa.data_baixa > '{adate}'::date THEN NULL
+        WHEN polissa.data_baixa > '{adate}'::date - INTERVAL '1 month' THEN TRUE
+        ELSE NULL
+        END) AS count_{adate:%Y_%m_%d}
+""".format(adate=adate)
+
 def activeContractLister(adate):
     # TODO: Unsafe substitution, use mogrify
     return """
@@ -56,6 +82,29 @@ def contractsSeries(dates):
     with db.cursor() as cursor :
         cursor.execute(query)
         return csvTable(cursor)
+
+def activeContractsMonthly(dates, dbhandler=csvTable, debug=False):
+    db = psycopg2.connect(**config.psycopg)
+    query = readQuery('contract_distribution')
+    query = query.format(','.join(
+        activeContractCounterMonthly(Date(adate))
+        for adate in dates
+        ))
+    with db.cursor() as cursor :
+        cursor.execute(query)
+        return dbhandler(cursor)
+
+
+def canceledContractsMonthly(dates, dbhandler=csvTable, debug=False):
+    db = psycopg2.connect(**config.psycopg)
+    query = readQuery('contract_distribution')
+    query = query.format(','.join(
+        canceledContractCounterMonthly(Date(adate))
+        for adate in dates
+        ))
+    with db.cursor() as cursor :
+        cursor.execute(query)
+        return dbhandler(cursor)
 
 
 def activeMembersCounter(adate):
