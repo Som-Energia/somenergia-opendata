@@ -834,7 +834,7 @@ ES	España	07	Castilla y León	05	Ávila	05014	Arenas de San Pedro	2
 ES	España	07	Castilla y León	05	Ávila	05019	Ávila	8
 ES	España	07	Castilla y León	05	Ávila	05021	Barco de Ávila, El	0
 ES	España	07	Castilla y León	05	Ávila	05047	Candeleda	2
-ES	España	07	Castilla y León	05	Ávila	05054	Casavieja	4
+ES	España	07	Castilla y León	05	Ávila	05054	Casavieja	5
 ES	España	07	Castilla y León	05	Ávila	05102	Hoyo de Pinares, El	0
 ES	España	07	Castilla y León	05	Ávila	05128	Mingorría	0
 ES	España	07	Castilla y León	05	Ávila	05163	Navaluenga	1
@@ -1105,12 +1105,12 @@ ES	España	09	Cataluña	08	Barcelona	08092	Gironella	6
 ES	España	09	Cataluña	08	Barcelona	08093	Gisclareny	0
 ES	España	09	Cataluña	08	Barcelona	08094	Granada, La	2
 ES	España	09	Cataluña	08	Barcelona	08096	Granollers	61
-ES	España	09	Cataluña	08	Barcelona	08097	Gualba	7
+ES	España	09	Cataluña	08	Barcelona	08097	Gualba	6
 ES	España	09	Cataluña	08	Barcelona	08099	Guardiola de Berguedà	2
 ES	España	09	Cataluña	08	Barcelona	08100	Gurb	6
 ES	España	09	Cataluña	08	Barcelona	08101	Hospitalet de Llobregat, L'	119
 ES	España	09	Cataluña	08	Barcelona	08162	Hostalets de Pierola, Els	5
-ES	España	09	Cataluña	08	Barcelona	08102	Igualada	45
+ES	España	09	Cataluña	08	Barcelona	08102	Igualada	44
 ES	España	09	Cataluña	08	Barcelona	08103	Jorba	1
 ES	España	09	Cataluña	08	Barcelona	08104	Llacuna, La	7
 ES	España	09	Cataluña	08	Barcelona	08105	Llagosta, La	4
@@ -1206,7 +1206,7 @@ ES	España	09	Cataluña	08	Barcelona	08246	Santa Eugènia de Berga	3
 ES	España	09	Cataluña	08	Barcelona	08247	Santa Eulàlia de Riuprimer	6
 ES	España	09	Cataluña	08	Barcelona	08248	Santa Eulàlia de Ronçana	8
 ES	España	09	Cataluña	08	Barcelona	08249	Santa Fe del Penedès	3
-ES	España	09	Cataluña	08	Barcelona	08250	Santa Margarida de Montbui	4
+ES	España	09	Cataluña	08	Barcelona	08250	Santa Margarida de Montbui	5
 ES	España	09	Cataluña	08	Barcelona	08251	Santa Margarida i els Monjos	8
 ES	España	09	Cataluña	08	Barcelona	08253	Santa Maria de Besora	1
 ES	España	09	Cataluña	08	Barcelona	08256	Santa Maria de Martorelles	3
@@ -1227,7 +1227,7 @@ ES	España	09	Cataluña	08	Barcelona	08202	Sant Celoni	62
 ES	España	09	Cataluña	08	Barcelona	08204	Sant Climent de Llobregat	6
 ES	España	09	Cataluña	08	Barcelona	08205	Sant Cugat del Vallès	239
 ES	España	09	Cataluña	08	Barcelona	08206	Sant Cugat Sesgarrigues	3
-ES	España	09	Cataluña	08	Barcelona	08207	Sant Esteve de Palautordera	16
+ES	España	09	Cataluña	08	Barcelona	08207	Sant Esteve de Palautordera	17
 ES	España	09	Cataluña	08	Barcelona	08208	Sant Esteve Sesrovires	12
 ES	España	09	Cataluña	08	Barcelona	08210	Sant Feliu de Codines	12
 ES	España	09	Cataluña	08	Barcelona	08211	Sant Feliu de Llobregat	53
@@ -1676,7 +1676,7 @@ ES	España	09	Cataluña	25	Lleida	25208	Soriguera	2
 ES	España	09	Cataluña	25	Lleida	25209	Sort	8
 ES	España	09	Cataluña	25	Lleida	25210	Soses	0
 ES	España	09	Cataluña	25	Lleida	25212	Sunyer	0
-ES	España	09	Cataluña	25	Lleida	25215	Talarn	2
+ES	España	09	Cataluña	25	Lleida	25215	Talarn	3
 ES	España	09	Cataluña	25	Lleida	25217	Tàrrega	25
 ES	España	09	Cataluña	25	Lleida	25219	Tarroja de Segarra	1
 ES	España	09	Cataluña	25	Lleida	25220	Térmens	0
@@ -2100,7 +2100,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46902	Gátova	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46130	Gavarda	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46132	Genovés	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46133	Gestalgar	0
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46134	Gilet	1
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46134	Gilet	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46135	Godella	12
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46136	Godelleta	2
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46139	Guadassuar	0
@@ -2159,7 +2159,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46214	Riba-roja de Túr
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46215	Riola	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46216	Rocafort	4
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46218	Rótova	1
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46220	Sagunto/Sagunt	16
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46220	Sagunto/Sagunt	17
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46903	San Antonio de Benagéber	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46222	Sant Joanet	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46223	Sedaví	2
@@ -2218,6 +2218,7 @@ ES	España	11	Extremadura	06	Badajoz	06149	Villafranca de los Barros	0
 ES	España	11	Extremadura	06	Badajoz	06153	Villanueva de la Serena	1
 ES	España	11	Extremadura	06	Badajoz	06158	Zafra	2
 ES	España	11	Extremadura	06	Badajoz	06162	Zarza, La	1
+ES	España	11	Extremadura	10	Cáceres	10003	Acebo	0
 ES	España	11	Extremadura	10	Cáceres	10014	Aldeanueva de la Vera	0
 ES	España	11	Extremadura	10	Cáceres	10019	Almaraz	1
 ES	España	11	Extremadura	10	Cáceres	10021	Arroyo de la Luz	1
@@ -2418,7 +2419,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28074	Leganés	21
 ES	España	13	Madrid, Comunidad de	28	Madrid	28075	Loeches	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28901	Lozoyuela-Navas-Sieteiglesias	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28078	Madarcos	0
-ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	955
+ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	954
 ES	España	13	Madrid, Comunidad de	28	Madrid	28080	Majadahonda	11
 ES	España	13	Madrid, Comunidad de	28	Madrid	28082	Manzanares el Real	13
 ES	España	13	Madrid, Comunidad de	28	Madrid	28083	Meco	3
@@ -2589,7 +2590,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31089	Enériz/Eneritz	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31092	Erro	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31095	Esparza de Salazar/Espartza Zaraitzu	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31097	Estella-Lizarra	9
-ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31098	Esteribar	4
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31098	Esteribar	3
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31082	Etxalar	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31084	Etxarri-Aranatz	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31085	Etxauri	2
@@ -2612,6 +2613,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31126	Imotz	2
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31904	Irurtzun	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31131	Iza/Itza	2
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31136	Juslapeña	2
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31140	Lantz	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31141	Lapoblación	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31142	Larraga	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31144	Larraun	1
@@ -2668,7 +2670,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31254	Villafranca	4
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31257	Villatuerta	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31258	Villava/Atarrabia	21
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31262	Zabalza/Zabaltza	2
-ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31907	Zizur Mayor/Zizur Nagusia	26
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31907	Zizur Mayor/Zizur Nagusia	27
 ES	España	16	País Vasco	01	Araba/Álava	01001	Alegría-Dulantzi	0
 ES	España	16	País Vasco	01	Araba/Álava	01002	Amurrio	2
 ES	España	16	País Vasco	01	Araba/Álava	01004	Artziniega	0

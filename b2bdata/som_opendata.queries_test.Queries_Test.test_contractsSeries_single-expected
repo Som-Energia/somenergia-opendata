@@ -959,11 +959,13 @@ ES	España	06	Cantabria	39	Cantabria	39040	Marina de Cudeyo	0
 ES	España	06	Cantabria	39	Cantabria	39041	Mazcuerras	0
 ES	España	06	Cantabria	39	Cantabria	39043	Meruelo	0
 ES	España	06	Cantabria	39	Cantabria	39044	Miengo	0
+ES	España	06	Cantabria	39	Cantabria	39046	Molledo	0
 ES	España	06	Cantabria	39	Cantabria	39047	Noja	1
 ES	España	06	Cantabria	39	Cantabria	39048	Penagos	0
 ES	España	06	Cantabria	39	Cantabria	39052	Piélagos	5
 ES	España	06	Cantabria	39	Cantabria	39053	Polaciones	1
 ES	España	06	Cantabria	39	Cantabria	39054	Polanco	0
+ES	España	06	Cantabria	39	Cantabria	39056	Puente Viesgo	0
 ES	España	06	Cantabria	39	Cantabria	39057	Ramales de la Victoria	2
 ES	España	06	Cantabria	39	Cantabria	39058	Rasines	0
 ES	España	06	Cantabria	39	Cantabria	39059	Reinosa	4
@@ -1030,6 +1032,7 @@ ES	España	08	Castilla - La Mancha	02	Albacete	02080	Villapalacios	0
 ES	España	08	Castilla - La Mancha	02	Albacete	02081	Villarrobledo	3
 ES	España	08	Castilla - La Mancha	02	Albacete	02082	Villatoya	0
 ES	España	08	Castilla - La Mancha	02	Albacete	02086	Yeste	0
+ES	España	08	Castilla - La Mancha	13	Ciudad Real	13001	Abenójar	0
 ES	España	08	Castilla - La Mancha	13	Ciudad Real	13005	Alcázar de San Juan	1
 ES	España	08	Castilla - La Mancha	13	Ciudad Real	13006	Alcoba	0
 ES	España	08	Castilla - La Mancha	13	Ciudad Real	13007	Alcolea de Calatrava	0
@@ -1539,6 +1542,7 @@ ES	España	07	Castilla y León	24	León	24230	Zotes del Páramo	1
 ES	España	07	Castilla y León	34	Palencia	34001	Abarca de Campos	0
 ES	España	07	Castilla y León	34	Palencia	34003	Abia de las Torres	0
 ES	España	07	Castilla y León	34	Palencia	34004	Aguilar de Campoo	2
+ES	España	07	Castilla y León	34	Palencia	34005	Alar del Rey	0
 ES	España	07	Castilla y León	34	Palencia	34009	Amayuelas de Arriba	0
 ES	España	07	Castilla y León	34	Palencia	34010	Ampudia	0
 ES	España	07	Castilla y León	34	Palencia	34011	Amusco	0
@@ -1625,9 +1629,11 @@ ES	España	07	Castilla y León	37	Salamanca	37147	Garcibuey	1
 ES	España	07	Castilla y León	37	Salamanca	37148	Garcihernández	0
 ES	España	07	Castilla y León	37	Salamanca	37156	Guijuelo	0
 ES	España	07	Castilla y León	37	Salamanca	37160	Hinojosa de Duero	0
+ES	España	07	Castilla y León	37	Salamanca	37166	Ituero de Azaba	0
 ES	España	07	Castilla y León	37	Salamanca	37170	Ledesma	0
 ES	España	07	Castilla y León	37	Salamanca	37174	Macotera	1
 ES	España	07	Castilla y León	37	Salamanca	37192	Miranda de Azán	0
+ES	España	07	Castilla y León	37	Salamanca	37193	Miranda del Castañar	0
 ES	España	07	Castilla y León	37	Salamanca	37194	Mogarraz	0
 ES	España	07	Castilla y León	37	Salamanca	37196	Monforte de la Sierra	0
 ES	España	07	Castilla y León	37	Salamanca	37197	Monleón	0
@@ -3779,6 +3785,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31085	Etxauri	3
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31101	Ezcabarte	2
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31093	Ezcároz/Ezkaroze	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31102	Ezkurra	0
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31103	Ezprogui	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31104	Falces	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31106	Fontellas	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31107	Funes	1

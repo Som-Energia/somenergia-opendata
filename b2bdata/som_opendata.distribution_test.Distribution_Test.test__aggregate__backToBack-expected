@@ -1182,11 +1182,6 @@ countries:
                 values:
                 - 3
                 - 4
-              '21045':
-                name: Linares de la Sierra
-                values:
-                - 0
-                - 0
               '21049':
                 name: Minas de Riotinto
                 values:
@@ -2347,11 +2342,6 @@ countries:
                 values:
                 - 0
                 - 0
-              '22080':
-                name: Capella
-                values:
-                - 0
-                - 0
               '22081':
                 name: Casbas de Huesca
                 values:
@@ -3254,11 +3244,6 @@ countries:
                 values:
                 - 0
                 - 0
-              '50034':
-                name: Ariza
-                values:
-                - 0
-                - 0
               '50035':
                 name: Artieda
                 values:
@@ -3349,11 +3334,6 @@ countries:
                 values:
                 - 3
                 - 3
-              '50081':
-                name: Cetina
-                values:
-                - 0
-                - 0
               '50083':
                 name: Cinco Olivas
                 values:
@@ -3624,11 +3604,6 @@ countries:
                 values:
                 - 1
                 - 1
-              '50245':
-                name: Sigüés
-                values:
-                - 0
-                - 0
               '50250':
                 name: Talamantes
                 values:
@@ -5534,11 +5509,6 @@ countries:
                 - 1
               '16035':
                 name: Beteta
-                values:
-                - 0
-                - 0
-              '16044':
-                name: Campillos-Sierra
                 values:
                 - 0
                 - 0
@@ -7939,11 +7909,6 @@ countries:
                 values:
                 - 0
                 - 0
-              '34033':
-                name: Boada de Campos
-                values:
-                - 0
-                - 0
               '34034':
                 name: Boadilla del Camino
                 values:
@@ -8270,11 +8235,6 @@ countries:
                 values:
                 - 0
                 - 0
-              '37100':
-                name: Cerezal de Peñahorcada
-                values:
-                - 0
-                - 0
               '37102':
                 name: Cerro, El
                 values:
@@ -8387,11 +8347,6 @@ countries:
                 - 0
               '37224':
                 name: Orbada, La
-                values:
-                - 0
-                - 0
-              '37225':
-                name: Pajares de la Laguna
                 values:
                 - 0
                 - 0
@@ -8522,11 +8477,6 @@ countries:
                 - 0
               '37373':
                 name: Villavieja de Yeltes
-                values:
-                - 0
-                - 0
-              '37375':
-                name: Villoruela
                 values:
                 - 0
                 - 0
@@ -9498,11 +9448,6 @@ countries:
                 values:
                 - 55
                 - 55
-              '47184':
-                name: Valoria la Buena
-                values:
-                - 0
-                - 0
               '47191':
                 name: Velliza
                 values:
@@ -16502,11 +16447,6 @@ countries:
                 values:
                 - 0
                 - 0
-              '06024':
-                name: Cabeza la Vaca
-                values:
-                - 0
-                - 0
               06028:
                 name: Campanario
                 values:
@@ -16983,11 +16923,6 @@ countries:
                 values:
                 - 0
                 - 0
-              '10161':
-                name: Ruanes
-                values:
-                - 0
-                - 0
               '10167':
                 name: Santa Cruz de Paniagua
                 values:
@@ -17305,11 +17240,6 @@ countries:
                 values:
                 - 23
                 - 25
-              '15080':
-                name: Sobrado
-                values:
-                - 0
-                - 0
               '15082':
                 name: Teo
                 values:
@@ -17632,11 +17562,6 @@ countries:
                 values:
                 - 0
                 - 0
-              '32059':
-                name: Peroxa, A
-                values:
-                - 0
-                - 0
               '32060':
                 name: Petín
                 values:
@@ -17775,11 +17700,6 @@ countries:
                 - 0
               '36023':
                 name: Guarda, A
-                values:
-                - 0
-                - 0
-              '36901':
-                name: Illa de Arousa, A
                 values:
                 - 0
                 - 0
@@ -18555,11 +18475,6 @@ countries:
                 values:
                 - 1
                 - 1
-              '28151':
-                name: Torrelaguna
-                values:
-                - 0
-                - 0
               '28152':
                 name: Torrelodones
                 values:
@@ -19749,11 +19664,6 @@ countries:
                 values:
                 - 2
                 - 2
-              '31073':
-                name: Ziordia
-                values:
-                - 0
-                - 0
               '31907':
                 name: Zizur Mayor/Zizur Nagusia
                 values:
