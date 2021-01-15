@@ -182,6 +182,14 @@ class Api_Test(unittest.TestCase):
                 Considerations for "Contracts" metric also apply in this one.
 
                 '
+            - id: selfconsumptioncontracts
+              text: 'Selfconsumption contracts'
+              description: 'Contracts with selfconsumption during in the month before a given date.
+
+
+                Considerations for "Contracts" metric also apply in this one.
+
+                '
             """)
 
     def test__metrics_translated(self):
@@ -477,8 +485,8 @@ class Api_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             parameter: metric
             valueRequest: incorrectMetric
-            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts']
-            message: Invalid metric 'incorrectMetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts'.
+            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts']
+            message: Invalid metric 'incorrectMetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts'.
             """, 400)
 
 
@@ -510,8 +518,8 @@ class Api_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             parameter: metric
             valueRequest: badmetric
-            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts']
-            message: Invalid metric 'badmetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts'.
+            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts']
+            message: Invalid metric 'badmetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts'.
             """,400)
         self.assertEqual(r.mimetype, 'application/json')
 

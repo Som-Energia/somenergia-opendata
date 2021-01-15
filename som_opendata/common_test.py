@@ -364,8 +364,8 @@ class Common_Test(unittest.TestCase):
         self.assertEqual(ctx.exception.parameter, 'metric')
         self.assertEqual(ctx.exception.value, 'badvalue')
         self.assertEqual(ctx.exception.code, 400)
-        self.assertEqual(ctx.exception.description, 
-            "Invalid metric 'badvalue'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts'.")
+        self.assertEqual(ctx.exception.description,
+            "Invalid metric 'badvalue'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts'.")
 
     # validateMapParams
 

@@ -67,6 +67,14 @@ metrics = ns(
             "Considerations for \"Contracts\" metric also apply in this one.\n"
         ),
     ),
+    selfconsumptioncontracts=ns(
+        text=_("Selfconsumption contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Contracts with selfconsumption during in the month before a given date.\n\n"
+            "Considerations for \"Contracts\" metric also apply in this one.\n"
+        ),
+    ),
 )
 
 # TODO: This is deprecated, use geolevels

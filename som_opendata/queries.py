@@ -138,6 +138,34 @@ def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
         dbhandler=dbhandler,
     )
 
+def selfConsumptionContractsCounter(adate):
+    # TODO: Will not detect if a polissa added selfConsumption at a future time
+    # TODO: Unsafe substitution, use mogrify
+    return """
+    count(CASE
+        WHEN polissa.autoconsumo = '00' then NULL
+        WHEN polissa.data_alta is NULL then NULL
+        WHEN polissa.data_alta > '{adate}'::date THEN NULL
+        WHEN polissa.data_alta <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        ELSE TRUE
+        END) AS count_{adate:%Y_%m_%d}
+""".format(adate=adate)
+
+def selfConsumptionContractsCount(dates, dbhandler=csvTable, debug=False):
+    return timeQuery(
+        dates=dates,
+        queryfile='contract',
+        timeSlicer=selfConsumptionContractsCounter,
+        dbhandler=dbhandler,
+    )
+
+def selfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeQuery(
+        dates=dates,
+        queryfile='contract_distribution',
+        timeSlicer=selfConsumptionContractsCounter,
+        dbhandler=dbhandler,
+    )
 
 def activeMembersCounter(adate):
     # TODO: Unsafe substitution, use mogrify
@@ -196,6 +224,18 @@ def newMembersLister(adate):
             END, ',' ORDER BY soci_id) AS count_{adate:%Y_%m_%d}
         """.format(adate=adate)
 
+def plantProductionCounter(adate):
+    # TODO: Unsafe substitution
+    return """
+    count(CASE
+        WHEN time IS NULL THEN NULL
+        WHEN time > '{adate}'::date THEN NULL
+        WHEN time <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        WHEN time <= '{adate}'::date THEN TRUE
+        ELSE NULL
+            END) AS count_{adate:%Y_%m_%d}
+        """.format(adate=adate)
+
 def newMembersSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
@@ -237,6 +277,16 @@ def canceledMembersSeries(dates, dbhandler=csvTable, debug=False):
     )
 
 
-
+def plantProductionSeries(dates, dbhandler=csvTable, debug=False):
+    db = psycopg2.connect(**config.psycopg_plantmonitor)
+    print(config.psycopg_plantmonitor)
+    query = readQuery('plant_production')
+    query = query.format(','.join(
+        plantProductionCounter(Date(adate))
+        for adate in dates
+        ))
+    with db.cursor() as cursor :
+        cursor.execute(query)
+        return dbhandler(cursor)
 
 # vim: et sw=4 ts=4
