@@ -36,6 +36,7 @@ setup(
 		'tablib',
 		'somutils',
 		'colour',
+		'babel',
 		'Wand', #make gifs
 		'flask-babel',
 		'future', # Py2 backward compat
