@@ -111,7 +111,7 @@ def tsv_response(f):
 
         if type(result) is Response:
             return result
-        if type(result) in (str,str):
+        if type(result) in (type(b''), type(u'')):
             response = make_response(result)
             response.mimetype='text/tab-separated-values'
             response.headers["Content-Disposition"] = "filename={}".format(filename or 'file.tsv')
