@@ -133,14 +133,14 @@ class Api_Test(unittest.TestCase):
               text: 'Members'
             - id: contracts
               text: 'Contracts'
-            - id: activecontracts
-              text: 'Contracts Monthly Variation'
+            - id: newcontracts
+              text: 'New contracts'
             - id: canceledcontracts
-              text: 'Canceled Contracts Monthly Variation'
-            - id: activemembers
-              text: 'Members Monthly Variation'
+              text: 'Canceled contracts'
+            - id: newmembers
+              text: 'New members'
             - id: canceledmembers
-              text: 'Canceled Members Monthly Variation'
+              text: 'Canceled members'
             """)
 
     def test_geolevel(self):
@@ -394,8 +394,8 @@ class Api_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             parameter: metric
             valueRequest: incorrectMetric
-            possibleValues: ['members', 'contracts', 'activecontracts', 'canceledcontracts', 'activemembers', 'canceledmembers']
-            message: Incorrect metric 'incorrectMetric' try with ['members', 'contracts', 'activecontracts', 'canceledcontracts', 'activemembers', 'canceledmembers']
+            possibleValues: ['members', 'contracts', 'newcontracts', 'canceledcontracts', 'newmembers', 'canceledmembers']
+            message: Incorrect metric 'incorrectMetric' try with ['members', 'contracts', 'newcontracts', 'canceledcontracts', 'newmembers', 'canceledmembers']
             """, 400)
 
 
@@ -429,8 +429,8 @@ class Api_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             parameter: metric
             valueRequest: badmetric
-            possibleValues: ['members', 'contracts', 'activecontracts', 'canceledcontracts', 'activemembers', 'canceledmembers']
-            message: Incorrect metric 'badmetric' try with ['members', 'contracts', 'activecontracts', 'canceledcontracts', 'activemembers', 'canceledmembers']
+            possibleValues: ['members', 'contracts', 'newcontracts', 'canceledcontracts', 'newmembers', 'canceledmembers']
+            message: Incorrect metric 'badmetric' try with ['members', 'contracts', 'newcontracts', 'canceledcontracts', 'newmembers', 'canceledmembers']
             """,400)
         self.assertEqual(r.mimetype, 'application/json')
 

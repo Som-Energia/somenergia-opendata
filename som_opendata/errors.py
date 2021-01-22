@@ -13,14 +13,14 @@ class MissingDateError(HTTPException):
 
 
 class ValidateError(HTTPException):
-
     valors = ns(
+        # TODO: Construct this from source metadata
         metric=[
             'members',
             'contracts',
-            'activecontracts',
+            'newcontracts',
             'canceledcontracts',
-            'activemembers',
+            'newmembers',
             'canceledmembers',
             ],
         frequency=['monthly', 'yearly'],

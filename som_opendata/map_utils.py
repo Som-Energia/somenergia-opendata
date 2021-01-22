@@ -9,9 +9,9 @@ implemented = ns(
     metric=[
         'members',
         'contracts',
-        'activecontracts',
+        'newcontracts',
         'canceledcontracts',
-        'activemembers',
+        'newmembers',
         'canceledmembers',
     ],
     geolevel=['ccaa','state'],

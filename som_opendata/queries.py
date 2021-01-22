@@ -12,7 +12,7 @@ Metrics have to be computed aggregated by city and month.
 """
 
 
-def activeContractCounter(adate):
+def activeContractsCounter(adate):
     # TODO: Unsafe substitution, use mogrify
     return """
     count(CASE
@@ -24,7 +24,7 @@ def activeContractCounter(adate):
         END) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
 
-def activeContractCounterMonthly(adate):
+def newContractsCounter(adate):
     # TODO: Unsafe substitution, use mogrify
     return """
     count(CASE
@@ -37,7 +37,7 @@ def activeContractCounterMonthly(adate):
         END) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
 
-def canceledContractCounterMonthly(adate):
+def canceledContractsCounter(adate):
     # TODO: Unsafe substitution, use mogrify
     return """
     count(CASE
@@ -76,18 +76,18 @@ def contractsSeries(dates):
     db = psycopg2.connect(**config.psycopg)
     query = readQuery('contract_distribution')
     query = query.format(','.join(
-        activeContractCounter(Date(adate))
+        activeContractsCounter(Date(adate))
         for adate in dates
         ))
     with db.cursor() as cursor :
         cursor.execute(query)
         return csvTable(cursor)
 
-def activeContractsMonthly(dates, dbhandler=csvTable, debug=False):
+def newContractsSeries(dates, dbhandler=csvTable, debug=False):
     db = psycopg2.connect(**config.psycopg)
     query = readQuery('contract_distribution')
     query = query.format(','.join(
-        activeContractCounterMonthly(Date(adate))
+        newContractsCounter(Date(adate))
         for adate in dates
         ))
     with db.cursor() as cursor :
@@ -95,11 +95,11 @@ def activeContractsMonthly(dates, dbhandler=csvTable, debug=False):
         return dbhandler(cursor)
 
 
-def canceledContractsMonthly(dates, dbhandler=csvTable, debug=False):
+def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
     db = psycopg2.connect(**config.psycopg)
     query = readQuery('contract_distribution')
     query = query.format(','.join(
-        canceledContractCounterMonthly(Date(adate))
+        canceledContractsCounter(Date(adate))
         for adate in dates
         ))
     with db.cursor() as cursor :
@@ -120,7 +120,7 @@ def activeMembersCounter(adate):
             END) AS count_{adate:%Y_%m_%d}
         """.format(adate=adate)
 
-def activeMembersCounterMonthly(adate):
+def newMembersCounter(adate):
     # TODO: Unsafe substitution
     return """
     count(CASE
@@ -135,7 +135,7 @@ def activeMembersCounterMonthly(adate):
         """.format(adate=adate)
 
 
-def canceledMembersCounterMonthly(adate):
+def cancelledMembersCounter(adate):
     # TODO: Unsafe substitution
     return """
     count(CASE
@@ -160,11 +160,11 @@ def membersSparse(dates, dbhandler=csvTable, debug=False):
         cursor.execute(query)
         return dbhandler(cursor)
 
-def activeMembersMonthly(dates, dbhandler=csvTable, debug=False):
+def newMembersSeries(dates, dbhandler=csvTable, debug=False):
     db = psycopg2.connect(**config.psycopg)
     query = readQuery('members_distribution')
     query = query.format(','.join(
-        activeMembersCounterMonthly(Date(adate))
+        newMembersCounter(Date(adate))
         for adate in dates
         ))
     with db.cursor() as cursor :
@@ -172,11 +172,11 @@ def activeMembersMonthly(dates, dbhandler=csvTable, debug=False):
         return dbhandler(cursor)
 
 
-def canceledMembersMonthly(dates, dbhandler=csvTable, debug=False):
+def canceledMembersSeries(dates, dbhandler=csvTable, debug=False):
     db = psycopg2.connect(**config.psycopg)
     query = readQuery('members_distribution')
     query = query.format(','.join(
-        canceledMembersCounterMonthly(Date(adate))
+        cancelledMembersCounter(Date(adate))
         for adate in dates
         ))
     with db.cursor() as cursor :

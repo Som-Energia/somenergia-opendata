@@ -160,10 +160,10 @@ class IsoDateConverter(BaseConverter):
 metrics = ns(
     members="Members",
     contracts="Contracts",
-    activecontracts="Contracts Monthly Variation",
-    canceledcontracts="Canceled Contracts Monthly Variation",
-    activemembers="Members Monthly Variation",
-    canceledmembers="Canceled Members Monthly Variation",
+    newcontracts="New contracts",
+    canceledcontracts="Canceled contracts",
+    newmembers="New members",
+    canceledmembers="Canceled members",
 )
 
 aggregation_levels = [

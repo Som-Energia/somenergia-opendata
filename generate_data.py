@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 import sys
-from som_opendata.oldapi import (
+from som_opendata.queries import (
     membersSparse,
     contractsSeries,
-    activeContractsMonthly,
-    canceledContractsMonthly,
-    activeMembersMonthly,
-    canceledMembersMonthly
+    newContractsSeries,
+    canceledContractsSeries,
+    newMembersSeries,
+    canceledMembersSeries,
 )
 from som_opendata.common import (
     dateSequenceMonths,
@@ -28,10 +28,10 @@ dates=dateSequenceMonths(fromdate, todate)
 metricGenerators = dict(
     members=membersSparse,
     contracts=contractsSeries,
-    activecontracts=activeContractsMonthly,
-    canceledcontracts=canceledContractsMonthly,
-    activemembers=activeMembersMonthly,
-    canceledmembers=canceledMembersMonthly,
+    newcontracts=newContractsSeries,
+    canceledcontracts=canceledContractsSeries,
+    newmembers=newMembersSeries,
+    canceledmembers=canceledMembersSeries,
 )
 
 
