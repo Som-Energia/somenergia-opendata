@@ -21,7 +21,7 @@ FROM (
         com.name AS comarca,
         ccaa.name AS comunitat_autonoma,
         country.name AS pais,
-        pa.id AS soci_id,
+        p.id AS soci_id,
         m.id AS id_municipi,
         m.ine AS codi_ine,
         prov.code AS codi_provincia,
