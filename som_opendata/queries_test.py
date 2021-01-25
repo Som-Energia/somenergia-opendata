@@ -10,6 +10,10 @@ from .queries import (
     contractsSparse,
     contractsSeries,
     membersSparse,
+    newContractsSeries,
+    canceledContractsSeries,
+    newMembersSeries,
+    canceledMembersSeries,
     )
 import os
 
@@ -51,6 +55,26 @@ class Queries_Test(unittest.TestCase):
         # TODO: Not implemented (b2b expects same as single)
         dates = ['2015-01-01','2015-02-01']
         result = membersSparse(dates, csvTable)
+        self.assertB2BEqual(result)
+
+    def test_newContractsSeries_many(self):
+        dates = ['2015-01-01','2015-02-01']
+        result = newContractsSeries(dates)
+        self.assertB2BEqual(result)
+
+    def test_canceledContractsSeries_many(self):
+        dates = ['2015-01-01','2015-02-01']
+        result = canceledContractsSeries(dates)
+        self.assertB2BEqual(result)
+
+    def test_newMembersSeries_many(self):
+        dates = ['2015-01-01','2015-02-01']
+        result = newMembersSeries(dates)
+        self.assertB2BEqual(result)
+
+    def test_canceledMembersSeries_many(self):
+        dates = ['2015-01-01','2015-02-01']
+        result = canceledMembersSeries(dates)
         self.assertB2BEqual(result)
 
 
