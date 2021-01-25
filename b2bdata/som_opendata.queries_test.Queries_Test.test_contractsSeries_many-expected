@@ -10,7 +10,9 @@ ES	España	01	Andalucia	04	Almería	04036	Chercos	0	0
 ES	España	01	Andalucia	04	Almería	04037	Chirivel	1	1
 ES	España	01	Andalucia	04	Almería	04035	Cuevas del Almanzora	0	0
 ES	España	01	Andalucia	04	Almería	04902	Ejido, El	6	6
+ES	España	01	Andalucia	04	Almería	04043	Felix	0	0
 ES	España	01	Andalucia	04	Almería	04045	Fiñana	0	0
+ES	España	01	Andalucia	04	Almería	04046	Fondón	0	0
 ES	España	01	Andalucia	04	Almería	04047	Gádor	1	1
 ES	España	01	Andalucia	04	Almería	04048	Gallardos, Los	1	1
 ES	España	01	Andalucia	04	Almería	04049	Garrucha	2	2
@@ -158,6 +160,7 @@ ES	España	01	Andalucia	18	Granada	18095	Güevéjar	1	1
 ES	España	01	Andalucia	18	Granada	18098	Huéscar	0	0
 ES	España	01	Andalucia	18	Granada	18099	Huétor de Santillán	2	2
 ES	España	01	Andalucia	18	Granada	18101	Huétor Vega	4	5
+ES	España	01	Andalucia	18	Granada	18102	Illora	0	0
 ES	España	01	Andalucia	18	Granada	18103	Itrabo	0	0
 ES	España	01	Andalucia	18	Granada	18105	Iznalloz	0	0
 ES	España	01	Andalucia	18	Granada	18111	Jun	1	1
@@ -235,6 +238,7 @@ ES	España	01	Andalucia	21	Huelva	21055	Palos de la Frontera	0	0
 ES	España	01	Andalucia	21	Huelva	21057	Paymogo	0	0
 ES	España	01	Andalucia	21	Huelva	21060	Punta Umbría	1	1
 ES	España	01	Andalucia	21	Huelva	21064	San Juan del Puerto	0	0
+ES	España	01	Andalucia	21	Huelva	21065	Sanlúcar de Guadiana	0	0
 ES	España	01	Andalucia	21	Huelva	21069	Santa Olalla del Cala	0	0
 ES	España	01	Andalucia	21	Huelva	21070	Trigueros	0	0
 ES	España	01	Andalucia	21	Huelva	21071	Valdelarco	0	0
@@ -561,6 +565,7 @@ ES	España	02	Aragón	44	Teruel	44076	Cella	0	0
 ES	España	02	Aragón	44	Teruel	44082	Corbalán	1	1
 ES	España	02	Aragón	44	Teruel	44086	Cretas	3	3
 ES	España	02	Aragón	44	Teruel	44090	Cucalón	1	1
+ES	España	02	Aragón	44	Teruel	44092	Cuervo, El	0	0
 ES	España	02	Aragón	44	Teruel	44093	Cuevas de Almudén	0	0
 ES	España	02	Aragón	44	Teruel	44096	Ejulve	0	0
 ES	España	02	Aragón	44	Teruel	44105	Fórnoles	0	0
@@ -999,6 +1004,7 @@ ES	España	08	Castilla - La Mancha	02	Albacete	02002	Alatoz	2	2
 ES	España	08	Castilla - La Mancha	02	Albacete	02003	Albacete	40	40
 ES	España	08	Castilla - La Mancha	02	Albacete	02004	Albatana	0	0
 ES	España	08	Castilla - La Mancha	02	Albacete	02007	Alcalá del Júcar	1	1
+ES	España	08	Castilla - La Mancha	02	Albacete	02008	Alcaraz	0	0
 ES	España	08	Castilla - La Mancha	02	Albacete	02009	Almansa	1	1
 ES	España	08	Castilla - La Mancha	02	Albacete	02019	Bonillo, El	0	0
 ES	España	08	Castilla - La Mancha	02	Albacete	02020	Carcelén	0	0
@@ -1020,6 +1026,7 @@ ES	España	08	Castilla - La Mancha	02	Albacete	02049	Molinicos	0	0
 ES	España	08	Castilla - La Mancha	02	Albacete	02053	Munera	1	1
 ES	España	08	Castilla - La Mancha	02	Albacete	02054	Navas de Jorquera	0	0
 ES	España	08	Castilla - La Mancha	02	Albacete	02055	Nerpio	0	0
+ES	España	08	Castilla - La Mancha	02	Albacete	02056	Ontur	0	0
 ES	España	08	Castilla - La Mancha	02	Albacete	02060	Peñas de San Pedro	1	1
 ES	España	08	Castilla - La Mancha	02	Albacete	02064	Pozo-Lorente	1	1
 ES	España	08	Castilla - La Mancha	02	Albacete	02067	Riópar	0	0
@@ -1228,6 +1235,7 @@ ES	España	08	Castilla - La Mancha	45	Toledo	45087	Madridejos	1	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45096	Mazarambroz	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45098	Menasalbas	1	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45099	Méntrida	1	1
+ES	España	08	Castilla - La Mancha	45	Toledo	45102	Mocejón	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45104	Montearagón	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45106	Mora	1	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45107	Nambroca	0	1
@@ -1329,9 +1337,11 @@ ES	España	07	Castilla y León	05	Ávila	05184	Peguerinos	1	1
 ES	España	07	Castilla y León	05	Ávila	05186	Piedrahíta	0	0
 ES	España	07	Castilla y León	05	Ávila	05187	Piedralaves	1	1
 ES	España	07	Castilla y León	05	Ávila	05189	Poyales del Hoyo	1	1
+ES	España	07	Castilla y León	05	Ávila	05197	Salobral	0	0
 ES	España	07	Castilla y León	05	Ávila	05204	Sanchidrián	0	0
 ES	España	07	Castilla y León	05	Ávila	05901	San Juan de Gredos	0	0
 ES	España	07	Castilla y León	05	Ávila	05212	San Juan del Molinillo	0	0
+ES	España	07	Castilla y León	05	Ávila	05215	San Martín de la Vega del Alberche	0	0
 ES	España	07	Castilla y León	05	Ávila	05221	Santa Cruz del Valle	0	0
 ES	España	07	Castilla y León	05	Ávila	05225	Santa María del Berrocal	0	0
 ES	España	07	Castilla y León	05	Ávila	05227	Santa María del Tiétar	0	0
@@ -1436,6 +1446,7 @@ ES	España	07	Castilla y León	09	Burgos	09362	Sarracín	0	0
 ES	España	07	Castilla y León	09	Burgos	09363	Sasamón	0	0
 ES	España	07	Castilla y León	09	Burgos	09366	Solarana	1	1
 ES	España	07	Castilla y León	09	Burgos	09372	Sotragero	1	1
+ES	España	07	Castilla y León	09	Burgos	09384	Tordómar	0	0
 ES	España	07	Castilla y León	09	Burgos	09395	Tubilla del Agua	0	0
 ES	España	07	Castilla y León	09	Burgos	09396	Tubilla del Lago	1	1
 ES	España	07	Castilla y León	09	Burgos	09403	Valdeande	0	0
@@ -1625,6 +1636,7 @@ ES	España	07	Castilla y León	37	Salamanca	37129	Florida de Liébana	0	0
 ES	España	07	Castilla y León	37	Salamanca	37133	Fresnedoso	0	0
 ES	España	07	Castilla y León	37	Salamanca	37136	Fuenteguinaldo	0	0
 ES	España	07	Castilla y León	37	Salamanca	37139	Fuentes de Béjar	0	0
+ES	España	07	Castilla y León	37	Salamanca	37142	Galindo y Perahuy	0	0
 ES	España	07	Castilla y León	37	Salamanca	37147	Garcibuey	1	1
 ES	España	07	Castilla y León	37	Salamanca	37148	Garcihernández	0	0
 ES	España	07	Castilla y León	37	Salamanca	37156	Guijuelo	0	0
@@ -1662,6 +1674,7 @@ ES	España	07	Castilla y León	37	Salamanca	37312	Sorihuela	0	0
 ES	España	07	Castilla y León	37	Salamanca	37322	Terradillos	0	0
 ES	España	07	Castilla y León	37	Salamanca	37328	Trabanca	1	1
 ES	España	07	Castilla y León	37	Salamanca	37344	Vecinos	0	0
+ES	España	07	Castilla y León	37	Salamanca	37345	Vega de Tirados	0	0
 ES	España	07	Castilla y León	37	Salamanca	37354	Villamayor	1	1
 ES	España	07	Castilla y León	37	Salamanca	37355	Villanueva del Conde	0	0
 ES	España	07	Castilla y León	37	Salamanca	37362	Villares de la Reina	0	0
@@ -1674,6 +1687,7 @@ ES	España	07	Castilla y León	40	Segovia	40001	Abades	0	0
 ES	España	07	Castilla y León	40	Segovia	40009	Aldeanueva de la Serrezuela	0	0
 ES	España	07	Castilla y León	40	Segovia	40015	Aldehuela del Codonal	0	0
 ES	España	07	Castilla y León	40	Segovia	40020	Arcones	0	0
+ES	España	07	Castilla y León	40	Segovia	40024	Ayllón	0	0
 ES	España	07	Castilla y León	40	Segovia	40034	Caballar	0	0
 ES	España	07	Castilla y León	40	Segovia	40035	Cabañas de Polendos	1	1
 ES	España	07	Castilla y León	40	Segovia	40039	Campo de San Pedro	0	0
@@ -1846,6 +1860,7 @@ ES	España	07	Castilla y León	47	Valladolid	47149	San Pelayo	0	0
 ES	España	07	Castilla y León	47	Valladolid	47152	Santa Eufemia del Arroyo	0	0
 ES	España	07	Castilla y León	47	Valladolid	47153	Santervás de Campos	0	0
 ES	España	07	Castilla y León	47	Valladolid	47155	Santovenia de Pisuerga	0	0
+ES	España	07	Castilla y León	47	Valladolid	47157	Sardón de Duero	0	0
 ES	España	07	Castilla y León	47	Valladolid	47159	Serrada	0	0
 ES	España	07	Castilla y León	47	Valladolid	47161	Simancas	0	0
 ES	España	07	Castilla y León	47	Valladolid	47164	Tordehumos	0	0
@@ -1864,6 +1879,7 @@ ES	España	07	Castilla y León	47	Valladolid	47191	Velliza	0	0
 ES	España	07	Castilla y León	47	Valladolid	47193	Viana de Cega	0	0
 ES	España	07	Castilla y León	47	Valladolid	47195	Villabáñez	0	0
 ES	España	07	Castilla y León	47	Valladolid	47198	Villacarralón	0	0
+ES	España	07	Castilla y León	47	Valladolid	47199	Villacid de Campos	0	0
 ES	España	07	Castilla y León	47	Valladolid	47207	Villagarcía de Campos	0	0
 ES	España	07	Castilla y León	47	Valladolid	47214	Villalón de Campos	0	0
 ES	España	07	Castilla y León	47	Valladolid	47217	Villanubla	0	0
@@ -1888,6 +1904,7 @@ ES	España	07	Castilla y León	49	Zamora	49104	Mahide	0	0
 ES	España	07	Castilla y León	49	Zamora	49117	Micereces de Tera	0	0
 ES	España	07	Castilla y León	49	Zamora	49123	Montamarta	0	0
 ES	España	07	Castilla y León	49	Zamora	49127	Morales del Vino	2	2
+ES	España	07	Castilla y León	49	Zamora	49138	Olmillos de Castro	0	0
 ES	España	07	Castilla y León	49	Zamora	49145	Pedralba de la Pradería	0	0
 ES	España	07	Castilla y León	49	Zamora	49152	Pereruela	0	0
 ES	España	07	Castilla y León	49	Zamora	49154	Pías	0	0
@@ -2010,7 +2027,6 @@ ES	España	09	Cataluña	08	Barcelona	08101	Hospitalet de Llobregat, L'	132	139
 ES	España	09	Cataluña	08	Barcelona	08162	Hostalets de Pierola, Els	5	5
 ES	España	09	Cataluña	08	Barcelona	08102	Igualada	55	57
 ES	España	09	Cataluña	08	Barcelona	08103	Jorba	1	1
-ES	España	09	Cataluña	08	Barcelona	17258	L'Estartit	0	0
 ES	España	09	Cataluña	08	Barcelona	08104	Llacuna, La	10	10
 ES	España	09	Cataluña	08	Barcelona	08105	Llagosta, La	3	3
 ES	España	09	Cataluña	08	Barcelona	08107	Lliçà d'Amunt	12	12
@@ -2293,6 +2309,7 @@ ES	España	09	Cataluña	17	Girona	17084	Isòvol	1	1
 ES	España	09	Cataluña	17	Girona	17085	Jafre	1	1
 ES	España	09	Cataluña	17	Girona	17086	Jonquera, La	2	2
 ES	España	09	Cataluña	17	Girona	17087	Juià	0	0
+ES	España	09	Cataluña	17	Girona	17258	L'Estartit	0	0
 ES	España	09	Cataluña	17	Girona	17088	Lladó	1	1
 ES	España	09	Cataluña	17	Girona	17089	Llagostera	15	15
 ES	España	09	Cataluña	17	Girona	17090	Llambilles	1	1
@@ -2803,6 +2820,7 @@ ES	España	09	Cataluña	43	Tarragona	43150	Tivissa	1	1
 ES	España	09	Cataluña	43	Tarragona	43151	Torre de Fontaubella, La	0	0
 ES	España	09	Cataluña	43	Tarragona	43152	Torre de l'Espanyol, La	0	0
 ES	España	09	Cataluña	43	Tarragona	43153	Torredembarra	12	12
+ES	España	09	Cataluña	43	Tarragona	43154	Torroja del Priorat	0	0
 ES	España	09	Cataluña	43	Tarragona	43155	Tortosa	22	22
 ES	España	09	Cataluña	43	Tarragona	43156	Ulldecona	6	6
 ES	España	09	Cataluña	43	Tarragona	43157	Ulldemolins	0	0
@@ -2870,6 +2888,7 @@ ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03050	Campello, el	6	7
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03051	Campo de Mirra/Camp de Mirra, el	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03052	Cañada	1	1
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03053	Castalla	4	4
+ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03075	Castell de Guadalest, el	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03056	Cocentaina	7	8
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03058	Cox	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03059	Crevillent	0	0
@@ -2902,6 +2921,7 @@ ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03096	Onil	3	5
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03097	Orba	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03099	Orihuela	11	11
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03098	Orxeta	1	1
+ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03100	Parcent	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03101	Pedreguer	7	7
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03102	Pego	8	9
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03104	Petrer	7	8
@@ -2948,6 +2968,7 @@ ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12009	Almazora/Almass
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12010	Almedíjar	1	1
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12011	Almenara	2	3
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12901	Alquerías del Niño Perdido	7	7
+ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12012	Altura	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12014	Ares del Maestrat	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12015	Argelita	1	1
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12016	Artana	1	1
@@ -3007,6 +3028,7 @@ ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12096	Rossell	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12097	Sacañet	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12098	Salzadella, la	1	1
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12101	San Rafael del Río	0	0
+ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12102	Santa Magdalena de Pulpis	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12902	Sant Joan de Moró	2	2
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12099	Sant Jordi/San Jorge	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12100	Sant Mateu	2	2
@@ -3093,6 +3115,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46067	Benisanó	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46070	Bétera	7	8
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46072	Bocairent	6	6
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46074	Bonrepòs i Mirambell	2	3
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46076	Bugarra	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46077	Buñol	4	4
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46078	Burjassot	17	20
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46079	Calles	0	0
@@ -3332,6 +3355,7 @@ ES	España	11	Extremadura	10	Cáceres	10126	Montánchez	0	0
 ES	España	11	Extremadura	10	Cáceres	10128	Moraleja	0	0
 ES	España	11	Extremadura	10	Cáceres	10130	Navaconcejo	1	1
 ES	España	11	Extremadura	10	Cáceres	10131	Navalmoral de la Mata	0	0
+ES	España	11	Extremadura	10	Cáceres	10133	Navas del Madroño	0	0
 ES	España	11	Extremadura	10	Cáceres	10138	Pasarón de la Vera	0	0
 ES	España	11	Extremadura	10	Cáceres	10139	Pedroso de Acim	0	0
 ES	España	11	Extremadura	10	Cáceres	10147	Piornal	0	0
@@ -3480,6 +3504,7 @@ ES	España	12	Galicia	32	Ourense	32087	Vilamarín	0	0
 ES	España	12	Galicia	32	Ourense	32089	Vilar de Barrio	0	0
 ES	España	12	Galicia	32	Ourense	32092	Vilariño de Conso	0	0
 ES	España	12	Galicia	32	Ourense	32032	Xinzo de Limia	3	3
+ES	España	12	Galicia	32	Ourense	32036	Xunqueira de Ambía	0	0
 ES	España	12	Galicia	36	Pontevedra	36003	Baiona	0	0
 ES	España	12	Galicia	36	Pontevedra	36002	Barro	1	1
 ES	España	12	Galicia	36	Pontevedra	36004	Bueu	2	2
@@ -3514,6 +3539,7 @@ ES	España	12	Galicia	36	Pontevedra	36051	Sanxenxo	0	0
 ES	España	12	Galicia	36	Pontevedra	36052	Silleda	1	1
 ES	España	12	Galicia	36	Pontevedra	36053	Soutomaior	0	0
 ES	España	12	Galicia	36	Pontevedra	36054	Tomiño	0	0
+ES	España	12	Galicia	36	Pontevedra	36055	Tui	0	0
 ES	España	12	Galicia	36	Pontevedra	36057	Vigo	28	32
 ES	España	12	Galicia	36	Pontevedra	36058	Vilaboa	2	2
 ES	España	12	Galicia	36	Pontevedra	36060	Vilagarcía de Arousa	3	3
@@ -3787,6 +3813,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31093	Ezcároz/Ezkaroze	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31102	Ezkurra	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31103	Ezprogui	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31104	Falces	1	1
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31105	Fitero	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31106	Fontellas	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31107	Funes	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31108	Fustiñana	0	0
@@ -3794,6 +3821,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31109	Galar	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31110	Gallipienzo/Galipentzu	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31111	Gallués/Galoze	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31112	Garaioa	0	0
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31113	Garde	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31114	Garínoain	4	4
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31115	Garralda	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31116	Genevilla	0	0
@@ -3832,6 +3860,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31171	Miranda de Arga	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31172	Monreal/Elo	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31174	Morentin	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31176	Murchante	0	0
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31177	Murieta	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31179	Murillo el Fruto	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31180	Muruzábal	1	1
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31088	Noáin (Valle de Elorz)/Noain (Elortzibar)	6	6
@@ -3880,7 +3909,6 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31254	Villafranca	5	5
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31257	Villatuerta	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31258	Villava/Atarrabia	22	22
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31262	Zabalza/Zabaltza	2	2
-ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31073	Ziordia	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31907	Zizur Mayor/Zizur Nagusia	27	28
 ES	España	16	País Vasco	01	Araba/Álava	01001	Alegría-Dulantzi	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01002	Amurrio	3	3
