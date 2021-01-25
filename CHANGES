@@ -1,3 +1,11 @@
+# v0.2.11 2021-01-25
+
+- New metrics
+  - newmembers: members entering the cooperative during the period
+  - newcontracts: contracts starting during the period
+  - canceledmembers: members abandoning the cooperative during the period
+  - canceledcontracts: contracts finished during the period
+
 # v0.2.10 2020-11-23
 
 - Discovery API
