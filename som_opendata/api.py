@@ -8,13 +8,13 @@ from .common import (
         dateSequenceYears,
         requestDates,
         validateParams,
+        validateImplementation,
     )
 from . import common
 from .distribution import getAggregated
 from .errors import MissingDateError
 from . import __version__
 from .map import renderMap
-from .map_utils import validateImplementation
 from flask_babel import Babel, get_locale
 
 
@@ -524,14 +524,11 @@ The filters are additive. That means that any city matching any of the specified
 @yaml_response
 def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fromdate=None, todate=None):
 
-    relation_paramField_param = [
-            ['metric', metric],
-            ['frequency', frequency],
-            ['geolevel', geolevel]
-          ]
-
-    for paramField, param in relation_paramField_param:
-        validateParams(paramField, param)
+    validateParams(
+        frequency=frequency,
+        metric=metric,
+        geolevel=geolevel,
+    )
 
     content = api.source
 
@@ -690,16 +687,21 @@ If no language is specified, the language is chosen using the request headers.
 @api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/to/<isodate:todate>')
 def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None, todate=None, relativemetric=None):
 
-    relation_paramField_param = [
-        ['metric', metric],
-        ['geolevel', geolevel],
-        ['frequency', frequency],
-    ]
-    for paramField, param in relation_paramField_param:
-        validateParams(paramField, param)
+    # TODO: Not all geolevels are ready for maps
+    validateParams(
+        frequency=frequency,
+        geolevel=geolevel,
+        metric=metric,
+        relativemetric=relativemetric,
+    )
 
-    relation_paramField_param += [['relativemetric',relativemetric]]
-    validateImplementation(relation_paramField_param)
+    validateImplementation(
+        frequency=frequency,
+        geolevel=geolevel,
+        metric=metric,
+        relativemetric=relativemetric,
+    )
+
     request_dates = requestDates(
         first=api.firstDate,
         last=api.source.getLastDay(metric),

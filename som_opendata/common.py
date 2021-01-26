@@ -249,15 +249,42 @@ class AliasNotFoundError(HTTPException):
 
 
 # None i world son valors por defecto de los parametros
-valorsAptes = ns(
+allowedParamsValues = ns(
     metric=metrics.keys(),
     frequency=['monthly', 'yearly', None],
-    geolevel=[k for k,v in geolevels.items() if v.get('aggregation', True) ]
+    geolevel=[k for k,v in geolevels.items() if v.get('aggregation', True) ],
+    relativemetric=['population', None],
 )
 
-def validateParams(field, value):
-    if value not in valorsAptes[field]:
+def validateParams(**params):
+    for field, value in params.items():
+        if value in allowedParamsValues[field]:
+            continue
         raise ValidateError(field, value)
+
+mapAllowedValues = ns(
+    metric=metrics.keys(),
+    frequency=['monthly', 'yearly', None],
+    geolevel=[k for k,v in geolevels.items() if v.get('mapable', True) ],
+    relativemetric=['population', None],
+)
+
+
+class ValidateImplementationMap(ValidateError):
+    def __init__(self, field, value):
+        self.parameter = field
+        self.value = value
+        self.possibleValues = mapAllowedValues[field]
+        super(ValidateError, self).__init__(
+            u"Not implemented {} '{}' try with {}"
+            .format(field, value, self.possibleValues))
+
+def validateImplementation(**params):
+    for field, value in params.items():
+        if value in mapAllowedValues[field]:
+            continue
+        raise ValidateImplementationMap(field=field, value=value)
+
 
 def register_converters(app):
     app.url_map.converters['isodate'] = IsoDateConverter

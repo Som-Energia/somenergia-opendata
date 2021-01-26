@@ -359,12 +359,12 @@ class Common_Test(unittest.TestCase):
 
     # validateParams 
 
-    def test__validateParams__valid(self):
-        self.assertEqual(validateParams('metric', 'members'), None)
+    def test__validateParams(self):
+        self.assertEqual(validateParams(metric='members'), None)
 
-    def test__validateParams__invalidValue(self):
+    def test__validateParams(self):
         with self.assertRaises(ValidateError) as ctx:
-            validateParams('metric', 'badvalue')
+            validateParams(metric='badvalue')
         self.assertEqual(ctx.exception.parameter, 'metric')
         self.assertEqual(ctx.exception.value, 'badvalue')
         self.assertEqual(ctx.exception.code, 400)
