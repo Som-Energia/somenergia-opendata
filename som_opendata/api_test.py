@@ -6,13 +6,9 @@ from yamlns import namespace as ns
 import b2btest
 from flask import Flask, request
 from flask_babel import _, Babel, get_locale
-
 from .api import api, validateInputDates
-from .common import (
-    register_converters,
-    register_handlers,
-    )
 from . import __version__
+from . import common
 from .templateSource import loadMapData
 from .tsvRelativeMetricSource import loadTsvRelativeMetric
 from .local_groups import loadYamlLocalGroups
@@ -67,8 +63,8 @@ class Api_Test(unittest.TestCase):
     def setUpClass():
         Api_Test.maxDiff=100000
         Api_Test.app = app = Flask(__name__)
-        register_converters(app)
-        register_handlers(app)
+        common.register_converters(app)
+        common.register_handlers(app)
         app.register_blueprint(api, url_prefix='')
         app.config['TESTING']=True
         app.config['LANGUAGES'] = ['en', 'es', 'ca', 'eu', 'gl']
