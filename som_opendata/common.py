@@ -7,13 +7,9 @@ from functools import wraps
 from werkzeug.routing import BaseConverter, ValidationError
 from yamlns.dateutils import Date
 from yamlns import namespace as ns
-from .errors import (
-    MissingDateError,
-    ValidateError,
-    AliasNotFoundError,
-)
 from consolemsg import u
 from flask_babel import lazy_gettext as _
+from werkzeug.exceptions import HTTPException
 
 def previousFirstOfMonth(date):
     return str(Date(date).replace(day=1))
@@ -208,6 +204,48 @@ geolevels = ns([
         mapable = False,
     )),
 ])
+
+# Errors
+
+class MissingDateError(HTTPException):
+
+    missingDates = []
+    code = 500
+
+    def __init__(self, missingDates):
+        super(MissingDateError, self).__init__("Missing Dates " + u(missingDates))
+        self.missingDates = missingDates
+
+
+class ValidateError(HTTPException):
+    from . import common
+    valors = ns(
+        # TODO: Construct this from source metadata
+        metric=list(metrics),
+        frequency=['monthly', 'yearly'],
+        geolevel=['country', 'ccaa', 'state', 'city']
+        )
+
+    code = 400
+
+    parameter = ''
+    value = ''
+    possibleValues = []
+
+    def __init__(self, field, value):
+        self.parameter = field
+        self.value = value
+        self.possibleValues = self.valors[field]
+        super(ValidateError, self).__init__(
+            "Incorrect {} '{}' try with {}".format(
+                field, value, u(self.possibleValues))
+            )
+
+class AliasNotFoundError(HTTPException):
+    code = 400
+    def __init__(self, alias, value):
+        super(AliasNotFoundError, self).__init__(
+            "{} '{}' not found".format(alias, value))
 
 
 # None i world son valors por defecto de los parametros
