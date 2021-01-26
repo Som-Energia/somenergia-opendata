@@ -91,6 +91,21 @@ define({ "api": [
             "optional": true,
             "field": "localgroup",
             "description": "<p>Code of the Local Group to be included. It represents an alias of one or more filters.</p>"
+          },
+          {
+            "group": "Query Parameters",
+            "type": "String",
+            "allowedValues": [
+              "\"en\"",
+              "\"es\"",
+              "\"ca\"",
+              "\"gl\"",
+              "\"eu\""
+            ],
+            "optional": true,
+            "field": "lang",
+            "defaultValue": "browser",
+            "description": "<p>defined or en] Forced response language If no language is forced, the one in the browser (Accepted-Language header) is taken. If the languange is not one of the suppoerted, english is taken by default.</p>"
           }
         ]
       }
@@ -176,7 +191,28 @@ define({ "api": [
       }
     ],
     "filename": "som_opendata/api.py",
-    "groupTitle": "Discover"
+    "groupTitle": "Discover",
+    "parameter": {
+      "fields": {
+        "Query Parameters": [
+          {
+            "group": "Query Parameters",
+            "type": "String",
+            "allowedValues": [
+              "\"en\"",
+              "\"es\"",
+              "\"ca\"",
+              "\"gl\"",
+              "\"eu\""
+            ],
+            "optional": true,
+            "field": "lang",
+            "defaultValue": "browser",
+            "description": "<p>defined or en] Forced response language If no language is forced, the one in the browser (Accepted-Language header) is taken. If the languange is not one of the suppoerted, english is taken by default.</p>"
+          }
+        ]
+      }
+    }
   },
   {
     "type": "get",
@@ -226,7 +262,28 @@ define({ "api": [
       }
     ],
     "filename": "som_opendata/api.py",
-    "groupTitle": "Discover"
+    "groupTitle": "Discover",
+    "parameter": {
+      "fields": {
+        "Query Parameters": [
+          {
+            "group": "Query Parameters",
+            "type": "String",
+            "allowedValues": [
+              "\"en\"",
+              "\"es\"",
+              "\"ca\"",
+              "\"gl\"",
+              "\"eu\""
+            ],
+            "optional": true,
+            "field": "lang",
+            "defaultValue": "browser",
+            "description": "<p>defined or en] Forced response language If no language is forced, the one in the browser (Accepted-Language header) is taken. If the languange is not one of the suppoerted, english is taken by default.</p>"
+          }
+        ]
+      }
+    }
   },
   {
     "type": "get",
@@ -448,7 +505,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/v0.1/members/<isodate:fromdate>[/monthlyto/<isodate:todate>]",
-    "title": "",
+    "title": "Members Data",
     "version": "0.1.0",
     "name": "Distribution",
     "group": "Distribution",
@@ -484,7 +541,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/v0.1/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>",
-    "title": "",
+    "title": "Contract Data",
     "version": "0.1.0",
     "name": "Distribution",
     "group": "Distribution",
@@ -666,7 +723,11 @@ define({ "api": [
             "type": "String",
             "allowedValues": [
               "\"contracts\"",
-              "\"members\""
+              "\"members\"",
+              "\"newcontracts\"",
+              "\"canceledcontracts\"",
+              "\"newmembers\"",
+              "\"canceledmember\""
             ],
             "optional": false,
             "field": "metric",
@@ -812,7 +873,11 @@ define({ "api": [
             "type": "String",
             "allowedValues": [
               "\"contracts\"",
-              "\"members\""
+              "\"members\"",
+              "\"newcontracts\"",
+              "\"canceledcontracts\"",
+              "\"newmembers\"",
+              "\"canceledmember\""
             ],
             "optional": false,
             "field": "metric",
@@ -935,7 +1000,11 @@ define({ "api": [
             "type": "String",
             "allowedValues": [
               "\"contracts\"",
-              "\"members\""
+              "\"members\"",
+              "\"newcontracts\"",
+              "\"canceledcontracts\"",
+              "\"newmembers\"",
+              "\"canceledmember\""
             ],
             "optional": false,
             "field": "metric",
@@ -1048,7 +1117,11 @@ define({ "api": [
             "type": "String",
             "allowedValues": [
               "\"contracts\"",
-              "\"members\""
+              "\"members\"",
+              "\"newcontracts\"",
+              "\"canceledcontracts\"",
+              "\"newmembers\"",
+              "\"canceledmember\""
             ],
             "optional": false,
             "field": "metric",
@@ -1166,23 +1239,12 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "allowedValues": [
-              "\"en\"",
-              "\"es\"",
-              "\"ca\"",
-              "\"gl\"",
-              "\"eu\""
-            ],
-            "optional": true,
-            "field": "lang",
-            "defaultValue": "en",
-            "description": "<p>Response language</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "allowedValues": [
               "\"contracts\"",
-              "\"members\""
+              "\"members\"",
+              "\"newcontracts\"",
+              "\"canceledcontracts\"",
+              "\"newmembers\"",
+              "\"canceledmember\""
             ],
             "optional": false,
             "field": "metric",
@@ -1194,6 +1256,23 @@ define({ "api": [
             "optional": true,
             "field": "ondate",
             "description": "<p>Single date, in ISO format (YYYY-MM-DD). To obtain the last available data, remove the whole <code>/on/:onDate</code> portion of the path.</p>"
+          }
+        ],
+        "Query Parameters": [
+          {
+            "group": "Query Parameters",
+            "type": "String",
+            "allowedValues": [
+              "\"en\"",
+              "\"es\"",
+              "\"ca\"",
+              "\"gl\"",
+              "\"eu\""
+            ],
+            "optional": true,
+            "field": "lang",
+            "defaultValue": "browser",
+            "description": "<p>defined or en] Forced response language If no language is forced, the one in the browser (Accepted-Language header) is taken. If the languange is not one of the suppoerted, english is taken by default.</p>"
           }
         ]
       }
@@ -1270,7 +1349,7 @@ define({ "api": [
     "description": "<p>Response version API</p>",
     "sampleRequest": [
       {
-        "url": "https://opendata.somenergia.coop/{version}/version"
+        "url": "https://opendata.somenergia.coop/{version}/version Version Information"
       }
     ],
     "success": {

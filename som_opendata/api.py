@@ -55,6 +55,7 @@ def discoverMetrics():
     @apiName GetMetrics
     @apiGroup Discover
     @apiDescription Returns the metrics that can be queried.
+    @apiUse QueryLang
 
     @apiSuccessResponse 200
     @apiSuccess {Object[]} metrics List of metrics
@@ -88,6 +89,7 @@ def discoverGeoLevel():
     @apiName GetGeolevels lala
     @apiGroup Discover
     @apiDescription Returns the geolevels (geographical levels) that can be used in queries, such as countries, states, cities
+    @apiUse QueryLang
 
     @apiSuccessResponse 200
     @apiSuccess {Object[]} geolevels List of geolevels
@@ -150,6 +152,7 @@ def discoverGeoLevelOptions(geolevel):
     @apiDescription Returns the available values for a given geografical division
     @apiUse PathGeolevelAndAlias
     @apiUse QueryGeolevelAndAlias
+    @apiUse QueryLang
 
     @apiSuccessResponse 200
     @apiSuccess options {Object) Mapping of level codes to its translated display text
@@ -568,7 +571,7 @@ If no language is specified, the language is chosen using the request headers.
 @apiUse PathMetric
 @apiParam {String="ccaa","state"} geolevel Geographical detail level
 @apiUse PathOnDate
-@apiParam {String="en", "es", "ca", "gl", "eu"} [lang=en] Response language
+@apiUse QueryLang
 
 @apiSuccess {svg} Response Map that represents the geographical distribution at a given date
 
