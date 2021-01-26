@@ -4,58 +4,117 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2020-01-09 11:23+0100\n"
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-01-26 17:44+0100\n"
 "PO-Revision-Date: 2020-01-10 11:29+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: gl\n"
+"Language-Team: gl <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.0\n"
 
-msgid "January"
-msgstr "Xaneiro"
-
-msgid "February"
-msgstr "Febreiro"
-
-msgid "March"
-msgstr "Marzo"
-
-msgid "April"
-msgstr "Abril"
-
-msgid "May"
-msgstr "Maio"
-
-msgid "June"
-msgstr "Xuño"
-
-msgid "July"
-msgstr "Xullo"
-
-msgid "August"
-msgstr "Agosto"
-
-msgid "September"
-msgstr "Setembro"
-
-msgid "October"
-msgstr "Outubro"
-
-msgid "November"
-msgstr "Novembro"
-
-msgid "December"
-msgstr "Decembro"
-
+#: som_opendata/common.py:161
 msgid "Members"
 msgstr "Socias"
 
+#: som_opendata/common.py:162
 msgid "Contracts"
 msgstr "Contractos"
 
-#: som_opendata/map.py:209
+#: som_opendata/common.py:163
+msgid "New contracts"
+msgstr ""
+
+#: som_opendata/common.py:164
+msgid "Canceled contracts"
+msgstr ""
+
+#: som_opendata/common.py:165
+msgid "New members"
+msgstr ""
+
+#: som_opendata/common.py:166
+msgid "Canceled members"
+msgstr ""
+
+#: som_opendata/common.py:178
+msgid "World"
+msgstr ""
+
+#: som_opendata/common.py:182
+msgid "Country"
+msgstr ""
+
+#: som_opendata/common.py:188
+msgid "CCAA"
+msgstr ""
+
+#: som_opendata/common.py:193
+msgid "State"
+msgstr ""
+
+#: som_opendata/common.py:198
+msgid "City"
+msgstr ""
+
+#: som_opendata/common.py:204
+msgid "Local Group"
+msgstr ""
+
+#: som_opendata/map.py:16
+msgid "January"
+msgstr "Xaneiro"
+
+#: som_opendata/map.py:17
+msgid "February"
+msgstr "Febreiro"
+
+#: som_opendata/map.py:18
+msgid "March"
+msgstr "Marzo"
+
+#: som_opendata/map.py:19
+msgid "April"
+msgstr "Abril"
+
+#: som_opendata/map.py:20
+msgid "May"
+msgstr "Maio"
+
+#: som_opendata/map.py:21
+msgid "June"
+msgstr "Xuño"
+
+#: som_opendata/map.py:22
+msgid "July"
+msgstr "Xullo"
+
+#: som_opendata/map.py:23
+msgid "August"
+msgstr "Agosto"
+
+#: som_opendata/map.py:24
+msgid "September"
+msgstr "Setembro"
+
+#: som_opendata/map.py:25
+msgid "October"
+msgstr "Outubro"
+
+#: som_opendata/map.py:26
+msgid "November"
+msgstr "Novembro"
+
+#: som_opendata/map.py:27
+msgid "December"
+msgstr "Decembro"
+
+#: som_opendata/map.py:235
 #, python-format
 msgid "per %(num)s population"
 msgstr "por cada %(num)s hab"
+

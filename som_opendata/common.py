@@ -13,7 +13,7 @@ from .errors import (
     AliasNotFoundError,
 )
 from consolemsg import u
-
+from flask_babel import lazy_gettext as _
 
 def previousFirstOfMonth(date):
     return str(Date(date).replace(day=1))
@@ -158,12 +158,12 @@ class IsoDateConverter(BaseConverter):
         return str(value)
 
 metrics = ns(
-    members="Members",
-    contracts="Contracts",
-    newcontracts="New contracts",
-    canceledcontracts="Canceled contracts",
-    newmembers="New members",
-    canceledmembers="Canceled members",
+    members=_("Members"),
+    contracts=_("Contracts"),
+    newcontracts=_("New contracts"),
+    canceledcontracts=_("Canceled contracts"),
+    newmembers=_("New members"),
+    canceledmembers=_("Canceled members"),
 )
 
 aggregation_levels = [
@@ -175,33 +175,33 @@ aggregation_levels = [
 
 geolevels = ns([
     ('world', ns(
-        text = 'World',
+        text = _('World'),
         mapable = False,
     )),
     ('country', ns(
-        text = 'Country',
+        text = _('Country'),
         plural = 'countries',
         parent = 'world',
         mapable = False,
     )),
     ('ccaa', ns(
-        text = 'CCAA',
+        text = _('CCAA'),
         plural = 'ccaas',
         parent = 'country',
     )),
     ('state', ns(
-        text = 'State',
+        text = _('State'),
         plural = 'states',
         parent = 'ccaa',
     )),
     ('city', ns(
-        text = 'City',
+        text = _('City'),
         plural = 'cities',
         parent = 'state',
         mapable = False,
     )),
     ('localgroup', ns(
-        text = 'Local Group',
+        text = _('Local Group'),
         plural = 'localgroups',
         parent = 'world',
         detailed = False,
@@ -236,6 +236,7 @@ def handle_bad_request(self):
     if current_app.errors == None:
         response =  make_response('Bad Request', 400)
     else:
+        # TODO: Which use case is this addressing? Why catalan?
         response = make_response(
             '\'{}\' no existeix/en'.format(', '.join([str(x) for x in current_app.errors])), 400
         )

@@ -6,13 +6,27 @@ from .colorscale import Gradient
 from .distribution import parse_tsv, tuples2objects, getAggregated
 from pathlib2 import Path
 from math import log10, floor
-from flask_babel import _
 from wand.image import Image
 from functools import lru_cache
+from flask_babel import lazy_gettext as _
+from .common import metrics
 
-months = ["January", "February", "March", "April",
-            "May", "June", "July", "August",
-            "September", "October", "November", "December"]
+def monthName(date):
+    months = [
+        _("January"),
+        _("February"),
+        _("March"),
+        _("April"),
+        _("May"),
+        _("June"),
+        _("July"),
+        _("August"),
+        _("September"),
+        _("October"),
+        _("November"),
+        _("December"),
+    ]
+    return months[date.month-1]
 
 def percentRegion(value, total):
     if not total:
@@ -73,10 +87,10 @@ def dataToTemplateDict(data, colors, scale, title, subtitle,
         locations=[], geolevel='ccaa', frame=0, isRelative=False):
     date = data.dates[frame]
     result = ns(
-            title = _(title),
+            title = title,
             subtitle = subtitle,
             year = date.year,
-            month = _(months[date.month-1]),
+            month = format(monthName(date)),
         )
 
     totalValue = data["values"][frame]
@@ -210,7 +224,6 @@ def getNiceDivisor(population):
 
     return niceFloorValue(currentMin)
 
-
 def renderMap(source, metric, dates, geolevel, template, locationsCodes, relativeMetricValues={}, legendTemplate=''):
 
     data = getAggregated(source, metric, dates, {}, geolevel, mutable=bool(relativeMetricValues))
@@ -219,13 +232,15 @@ def renderMap(source, metric, dates, geolevel, template, locationsCodes, relativ
     if relativeMetricValues:
         perValue = getNiceDivisor(relativeMetricValues)
         toPopulationRelative(data=data, geolevel=geolevel, perValue=perValue, values=relativeMetricValues)
-        subtitle = _("per %(num)s population",num="{:,}".format(perValue).replace(',','.'))
+        subtitle = _("per %(num)s population", num="{:,}".format(perValue).replace(',','.'))
+
+    title = format(metrics[metric]).title()
 
     return fillMap(
         data=data,
         template=template,
         legendTemplate=legendTemplate,
-        title=metric.title(),
+        title=title,
         subtitle=subtitle,
         locations=locationsCodes,
         geolevel=geolevel,

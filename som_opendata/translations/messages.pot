@@ -1,18 +1,18 @@
-# Catalan translations for OPENDATA.
-# Copyright (C) 2020 SOM ENERGIA
-# This file is distributed under the same license as the OPENDATA project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# Translations template for somenergia-opendata.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the somenergia-opendata
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
+"Project-Id-Version: somenergia-opendata 0.2.10\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-01-26 17:44+0100\n"
-"PO-Revision-Date: 2021-01-26 17:40+0100\n"
-"Last-Translator: David García Garzón <david.garcia@somenergia.coop>\n"
-"Language: ca\n"
-"Language-Team: ca <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2021-01-26 17:57+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,102 +20,102 @@ msgstr ""
 
 #: som_opendata/common.py:161
 msgid "Members"
-msgstr "Sòcies"
+msgstr ""
 
 #: som_opendata/common.py:162
 msgid "Contracts"
-msgstr "Contractes"
+msgstr ""
 
 #: som_opendata/common.py:163
 msgid "New contracts"
-msgstr "Nous contractes"
+msgstr ""
 
 #: som_opendata/common.py:164
 msgid "Canceled contracts"
-msgstr "Baixes de contractes"
+msgstr ""
 
 #: som_opendata/common.py:165
 msgid "New members"
-msgstr "Noves sòcies"
+msgstr ""
 
 #: som_opendata/common.py:166
 msgid "Canceled members"
-msgstr "Baixes de sòcies"
+msgstr ""
 
 #: som_opendata/common.py:178
 msgid "World"
-msgstr "Món"
+msgstr ""
 
 #: som_opendata/common.py:182
 msgid "Country"
-msgstr "País"
+msgstr ""
 
 #: som_opendata/common.py:188
 msgid "CCAA"
-msgstr "Comunitat Autònoma"
+msgstr ""
 
 #: som_opendata/common.py:193
 msgid "State"
-msgstr "Província"
+msgstr ""
 
 #: som_opendata/common.py:198
 msgid "City"
-msgstr "Municipi"
+msgstr ""
 
 #: som_opendata/common.py:204
 msgid "Local Group"
-msgstr "Grup Local"
+msgstr ""
 
 #: som_opendata/map.py:16
 msgid "January"
-msgstr "Gener"
+msgstr ""
 
 #: som_opendata/map.py:17
 msgid "February"
-msgstr "Febrer"
+msgstr ""
 
 #: som_opendata/map.py:18
 msgid "March"
-msgstr "Març"
+msgstr ""
 
 #: som_opendata/map.py:19
 msgid "April"
-msgstr "Abril"
+msgstr ""
 
 #: som_opendata/map.py:20
 msgid "May"
-msgstr "Maig"
+msgstr ""
 
 #: som_opendata/map.py:21
 msgid "June"
-msgstr "Juny"
+msgstr ""
 
 #: som_opendata/map.py:22
 msgid "July"
-msgstr "Juliol"
+msgstr ""
 
 #: som_opendata/map.py:23
 msgid "August"
-msgstr "Agost"
+msgstr ""
 
 #: som_opendata/map.py:24
 msgid "September"
-msgstr "Setembre"
+msgstr ""
 
 #: som_opendata/map.py:25
 msgid "October"
-msgstr "Octubre"
+msgstr ""
 
 #: som_opendata/map.py:26
 msgid "November"
-msgstr "Novembre"
+msgstr ""
 
 #: som_opendata/map.py:27
 msgid "December"
-msgstr "Desembre"
+msgstr ""
 
 #: som_opendata/map.py:235
 #, python-format
 msgid "per %(num)s population"
-msgstr "per cada %(num)s hab"
+msgstr ""
 

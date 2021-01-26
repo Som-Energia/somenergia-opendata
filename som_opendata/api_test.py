@@ -143,6 +143,24 @@ class Api_Test(unittest.TestCase):
               text: 'Canceled members'
             """)
 
+    def test__metrics_translated(self):
+        r = self.get('/discover/metrics?lang=ca')
+        self.assertYamlResponse(r, """\
+            metrics:
+            - id: members
+              text: 'Sòcies'
+            - id: contracts
+              text: 'Contractes'
+            - id: newcontracts
+              text: 'Nous contractes'
+            - id: canceledcontracts
+              text: 'Baixes de contractes'
+            - id: newmembers
+              text: 'Noves sòcies'
+            - id: canceledmembers
+              text: 'Baixes de sòcies'
+            """)
+
     def test_geolevel(self):
         r = self.get('/discover/geolevel')
         self.assertYamlResponse(r, """\
@@ -170,6 +188,39 @@ class Api_Test(unittest.TestCase):
               mapable: False
             - id: localgroup
               text: 'Local Group'
+              parent: world
+              plural: localgroups
+              detailed: False
+              mapable: False
+            """)
+
+    def test_geolevel_translated(self):
+        r = self.get('/discover/geolevel?lang=ca')
+        self.assertYamlResponse(r, """\
+            geolevels:
+            - id: world
+              text: 'Món'
+              mapable: False
+            - id: country
+              text: 'País'
+              parent: world
+              plural: countries
+              mapable: False
+            - id: ccaa
+              text: 'Comunitat Autònoma'
+              parent: country
+              plural: ccaas
+            - id: state
+              text: 'Província'
+              parent: ccaa 
+              plural: states
+            - id: city
+              text: 'Municipi'
+              parent: state
+              plural: cities
+              mapable: False
+            - id: localgroup
+              text: 'Grup Local'
               parent: world
               plural: localgroups
               detailed: False

@@ -15,8 +15,7 @@ from .errors import MissingDateError
 from . import __version__
 from .map import renderMap
 from .map_utils import validateImplementation
-from flask_babel import lazy_gettext as _l
-from flask_babel import _, Babel, get_locale
+from flask_babel import Babel, get_locale
 
 
 api = Blueprint(name=__name__, import_name=__name__, template_folder='../')
@@ -74,7 +73,7 @@ def discoverMetrics():
     return ns(metrics=[
         ns(
             id = key,
-            text = value,
+            text = format(value),
         )
         for key,value in common.metrics.items()
     ])
@@ -133,7 +132,10 @@ def discoverGeoLevel():
     """
     return ns(
         geolevels = [
-        ns(**data, id=key)
+        ns(data,
+            id=key,
+            text=format(data.text), # overwrite lazy translated
+        )
         for key, data in common.geolevels.items()
     ])
 

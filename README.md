@@ -157,9 +157,23 @@ python setup.py develop
 
 ### Compile Language Translations
 
+WARNING: Some back-to-back tests will fail if language files are not generated.
+
 ```bash
-pybabel compile -f -d som_opendata/translations
+./setup.py compile_catalog
 ```
+
+Default options are specified in setup.cfg
+
+In order to incorporate new strings from code:
+
+```bash
+./setup.py extract_messages # generates a new pot file with all extracted strings
+./setup.py update_catalog # Merges all translations with new strings
+```
+
+More info about translation management on http://babel.pocoo.org/en/latest/setup.html
+
 
 ### Generate documentation
 
