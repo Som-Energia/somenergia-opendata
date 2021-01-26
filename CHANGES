@@ -1,6 +1,6 @@
-# Unreleased
+# v0.2.12 2021-01-26
 
-- Added translatable strings
+- Fix: Discovery API now translates user displayable strings
 
 # v0.2.11 2021-01-25
 
