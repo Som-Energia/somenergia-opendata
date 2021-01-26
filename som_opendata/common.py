@@ -250,7 +250,7 @@ class AliasNotFoundError(HTTPException):
 
 # None i world son valors por defecto de los parametros
 allowedParamsValues = ns(
-    metric=metrics.keys(),
+    metric=list(metrics),
     frequency=['monthly', 'yearly', None],
     geolevel=[k for k,v in geolevels.items() if v.get('aggregation', True) ],
     relativemetric=['population', None],
@@ -263,7 +263,7 @@ def validateParams(**params):
         raise ValidateError(field, value)
 
 mapAllowedValues = ns(
-    metric=metrics.keys(),
+    metric=list(metrics),
     frequency=['monthly', 'yearly', None],
     geolevel=[k for k,v in geolevels.items() if v.get('mapable', True) ],
     relativemetric=['population', None],
