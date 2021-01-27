@@ -8,8 +8,8 @@ from pathlib2 import Path
 from math import log10, floor
 from wand.image import Image
 from functools import lru_cache
+from . import common
 from flask_babel import lazy_gettext as _
-from .common import metrics
 
 def monthName(date):
     months = [
@@ -234,7 +234,7 @@ def renderMap(source, metric, dates, geolevel, template, locationsCodes, relativ
         toPopulationRelative(data=data, geolevel=geolevel, perValue=perValue, values=relativeMetricValues)
         subtitle = _("per %(num)s population", num="{:,}".format(perValue).replace(',','.'))
 
-    title = format(metrics[metric]).title()
+    title = format(common.metrics[metric]).title()
 
     return fillMap(
         data=data,
