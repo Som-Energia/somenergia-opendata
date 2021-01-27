@@ -76,7 +76,7 @@ def discoverMetrics():
             id = key,
             text = format(value),
         )
-        for key,value in common.metrics.items()
+        for key,value in common.old_metrics.items()
     ])
 
 

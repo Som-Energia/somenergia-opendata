@@ -153,7 +153,7 @@ class IsoDateConverter(BaseConverter):
     def to_url(self, value):
         return str(value)
 
-metrics = ns(
+old_metrics = ns(
     members=_("Members"),
     contracts=_("Contracts"),
     newcontracts=_("New contracts"),
@@ -221,7 +221,7 @@ class ValidateError(HTTPException):
     from . import common
     valors = ns(
         # TODO: Construct this from source metadata
-        metric=list(metrics),
+        metric=list(old_metrics),
         frequency=['monthly', 'yearly'],
         geolevel=['country', 'ccaa', 'state', 'city']
         )
@@ -250,7 +250,7 @@ class AliasNotFoundError(HTTPException):
 
 # None i world son valors por defecto de los parametros
 allowedParamsValues = ns(
-    metric=list(metrics),
+    metric=list(old_metrics),
     frequency=['monthly', 'yearly', None],
     geolevel=[k for k,v in geolevels.items() if v.get('aggregation', True) ],
     relativemetric=['population', None],
@@ -263,7 +263,7 @@ def validateParams(**params):
         raise ValidateError(field, value)
 
 mapAllowedValues = ns(
-    metric=list(metrics),
+    metric=list(old_metrics),
     frequency=['monthly', 'yearly', None],
     geolevel=[k for k,v in geolevels.items() if v.get('mapable', True) ],
     relativemetric=['population', None],
