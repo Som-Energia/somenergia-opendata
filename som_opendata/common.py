@@ -156,21 +156,56 @@ class IsoDateConverter(BaseConverter):
 metrics = ns(
     members=ns(
         text=_("Members"),
+        timeaggregation='first',
+        description=_(
+            "Current cooperative members at the start of the picked date.\n\n"
+            "Members are taken from our current ERP data, so the following considerations apply:\n"
+            "- Membership during the first months of the cooperative was stored in spreadsheets and is not included yet.\n"
+            "- There is no historical record of member addresses. "
+            "So, if a member has changed her home from Vigo to Cartagena, "
+            "it counts as she has been been living all the time in Cartagena.\n"
+            "- Only a single start date can be stored so, canceled and later renewed memberships are not properly recorded.\n"
+        ),
     ),
     contracts=ns(
         text=_("Contracts"),
-    ),
-    newcontracts=ns(
-        text=_("New contracts"),
-    ),
-    canceledcontracts=ns(
-        text=_("Canceled contracts"),
+        timeaggregation='first',
+        description=_(
+            "Current active contracts at the start of the picked date.\n\n"
+            "Contract data is taken from activation and deactivation dates from ATR system.\n"
+            "Old contracts were copied by hand from ATR files and may be less reliable.\n"
     ),
     newmembers=ns(
         text=_("New members"),
+        timeaggregation='sum',
+        description=_(
+            "New cooperative members during the month before the picked date.\n\n"
+            "Considerations for \"Members\" metric also apply in this one."
+        ),
     ),
     canceledmembers=ns(
         text=_("Canceled members"),
+        timeaggregation='sum',
+        description=_(
+            "Members leaving the cooperative during in the month before the picked date.\n\n"
+            "Considerations for \"Members\" metric also apply in this one.\n"
+        ),
+    ),
+    newcontracts=ns(
+        text=_("New contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Contracts starting during in the month before the picked date.\n\n"
+            "Considerations for \"Contracts\" metric also apply in this one.\n"
+        ),
+    ),
+    canceledcontracts=ns(
+        text=_("Canceled contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Contracts ending during in the month before the picked date.\n\n"
+            "Considerations for \"Contracts\" metric also apply in this one.\n"
+        ),
     ),
 )
 
