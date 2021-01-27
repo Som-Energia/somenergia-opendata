@@ -153,13 +153,30 @@ class IsoDateConverter(BaseConverter):
     def to_url(self, value):
         return str(value)
 
+metrics = ns(
+    members=ns(
+        text=_("Members"),
+    ),
+    contracts=ns(
+        text=_("Contracts"),
+    ),
+    newcontracts=ns(
+        text=_("New contracts"),
+    ),
+    canceledcontracts=ns(
+        text=_("Canceled contracts"),
+    ),
+    newmembers=ns(
+        text=_("New members"),
+    ),
+    canceledmembers=ns(
+        text=_("Canceled members"),
+    ),
+)
+
 old_metrics = ns(
-    members=_("Members"),
-    contracts=_("Contracts"),
-    newcontracts=_("New contracts"),
-    canceledcontracts=_("Canceled contracts"),
-    newmembers=_("New members"),
-    canceledmembers=_("Canceled members"),
+    (key, value.text)
+    for key,value in metrics.items()
 )
 
 aggregation_levels = [
