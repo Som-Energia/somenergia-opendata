@@ -234,7 +234,7 @@ def renderMap(source, metric, dates, geolevel, template, locationsCodes, relativ
         toPopulationRelative(data=data, geolevel=geolevel, perValue=perValue, values=relativeMetricValues)
         subtitle = _("per %(num)s population", num="{:,}".format(perValue).replace(',','.'))
 
-    title = format(common.old_metrics[metric]).title()
+    title = format(common.metrics[metric].text).title()
 
     return fillMap(
         data=data,

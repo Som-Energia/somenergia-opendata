@@ -174,11 +174,6 @@ metrics = ns(
     ),
 )
 
-old_metrics = ns(
-    (key, value.text)
-    for key,value in metrics.items()
-)
-
 aggregation_levels = [
     ('countries', 'country', 'codi_pais', 'pais'),
     ('ccaas', 'ccaa', 'codi_ccaa', 'comunitat_autonoma'),
@@ -238,7 +233,7 @@ class ValidateError(HTTPException):
     from . import common
     valors = ns(
         # TODO: Construct this from source metadata
-        metric=list(old_metrics),
+        metric=list(metrics),
         frequency=['monthly', 'yearly'],
         geolevel=['country', 'ccaa', 'state', 'city']
         )
@@ -267,7 +262,7 @@ class AliasNotFoundError(HTTPException):
 
 # None i world son valors por defecto de los parametros
 allowedParamsValues = ns(
-    metric=list(old_metrics),
+    metric=list(metrics),
     frequency=['monthly', 'yearly', None],
     geolevel=[k for k,v in geolevels.items() if v.get('aggregation', True) ],
     relativemetric=['population', None],
@@ -280,7 +275,7 @@ def validateParams(**params):
         raise ValidateError(field, value)
 
 mapAllowedValues = ns(
-    metric=list(old_metrics),
+    metric=list(metrics),
     frequency=['monthly', 'yearly', None],
     geolevel=[k for k,v in geolevels.items() if v.get('mapable', True) ],
     relativemetric=['population', None],

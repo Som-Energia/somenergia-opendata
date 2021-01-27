@@ -74,9 +74,9 @@ def discoverMetrics():
     return ns(metrics=[
         ns(
             id = key,
-            text = format(value),
+            text = format(value.text),
         )
-        for key,value in common.old_metrics.items()
+        for key,value in common.metrics.items()
     ])
 
 
