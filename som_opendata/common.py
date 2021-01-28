@@ -158,7 +158,7 @@ metrics = ns(
         text=_("Members"),
         timeaggregation='first',
         description=_(
-            "Current cooperative members at the start of the picked date.\n\n"
+            "Current cooperative members at the start of a given date.\n\n"
             "Members are taken from our current ERP data, so the following considerations apply:\n"
             "- Membership during the first months of the cooperative was stored in spreadsheets and is not included yet.\n"
             "- There is no historical record of member addresses. "
@@ -167,35 +167,36 @@ metrics = ns(
             "- Only a single start date can be stored so, canceled and later renewed memberships are not properly recorded.\n"
         ),
     ),
-    contracts=ns(
-        text=_("Contracts"),
-        timeaggregation='first',
-        description=_(
-            "Current active contracts at the start of the picked date.\n\n"
-            "Contract data is taken from activation and deactivation dates from ATR system.\n"
-            "Old contracts were copied by hand from ATR files and may be less reliable.\n"
-    ),
     newmembers=ns(
         text=_("New members"),
         timeaggregation='sum',
         description=_(
-            "New cooperative members during the month before the picked date.\n\n"
-            "Considerations for \"Members\" metric also apply in this one."
+            "New cooperative members during the month before a given date.\n\n"
+            "Considerations for \"Members\" metric also apply in this one.\n"
         ),
     ),
     canceledmembers=ns(
         text=_("Canceled members"),
         timeaggregation='sum',
         description=_(
-            "Members leaving the cooperative during in the month before the picked date.\n\n"
+            "Members leaving the cooperative during in the month before a given date.\n\n"
             "Considerations for \"Members\" metric also apply in this one.\n"
+        ),
+    ),
+    contracts=ns(
+        text=_("Contracts"),
+        timeaggregation='first',
+        description=_(
+            "Current active contracts at the start of a given date.\n\n"
+            "Contract data is taken from activation and deactivation dates from ATR system.\n"
+            "Old contracts were copied by hand from ATR files and may be less reliable.\n"
         ),
     ),
     newcontracts=ns(
         text=_("New contracts"),
         timeaggregation='sum',
         description=_(
-            "Contracts starting during in the month before the picked date.\n\n"
+            "Contracts starting during in the month before a given date.\n\n"
             "Considerations for \"Contracts\" metric also apply in this one.\n"
         ),
     ),
@@ -203,7 +204,7 @@ metrics = ns(
         text=_("Canceled contracts"),
         timeaggregation='sum',
         description=_(
-            "Contracts ending during in the month before the picked date.\n\n"
+            "Contracts ending during in the month before a given date.\n\n"
             "Considerations for \"Contracts\" metric also apply in this one.\n"
         ),
     ),

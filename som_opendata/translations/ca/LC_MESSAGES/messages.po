@@ -1,68 +1,153 @@
 # Catalan translations for OPENDATA.
 # Copyright (C) 2020 SOM ENERGIA
 # This file is distributed under the same license as the OPENDATA project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# David García Garzón <david.garcia@somenergia.coop>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-01-26 17:44+0100\n"
-"PO-Revision-Date: 2021-01-26 17:40+0100\n"
+"POT-Creation-Date: 2021-01-27 19:33+0100\n"
+"PO-Revision-Date: 2021-01-27 20:14+0100\n"
 "Last-Translator: David García Garzón <david.garcia@somenergia.coop>\n"
 "Language: ca\n"
-"Language-Team: ca <LL@li.org>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
+"X-Generator: Lokalize 19.12.3\n"
 
-#: som_opendata/common.py:161
+#: som_opendata/common.py:158
 msgid "Members"
 msgstr "Sòcies"
 
-#: som_opendata/common.py:162
-msgid "Contracts"
-msgstr "Contractes"
+#: som_opendata/common.py:160
+msgid ""
+"Current cooperative members at the start of a given date.\n"
+"\n"
+"Members are taken from our current ERP data, so the following "
+"considerations apply:\n"
+"- Membership during the first months of the cooperative was stored in "
+"spreadsheets and is not included yet.\n"
+"- There is no historical record of member addresses. So, if a member has "
+"changed her home from Vigo to Cartagena, it counts as she has been been "
+"living all the time in Cartagena.\n"
+"- Only a single start date can be stored so, canceled and later renewed "
+"memberships are not properly recorded.\n"
+msgstr ""
+"Persones sòcies de la cooperativa a l'inici de la data donada \n"
+"\n"
+"Les sòcies es calculen de l'estat actual del nostre ERP, per això, cal tenir"
+" en compte que:\n"
+"- Els primers mesos de la cooperativa, les altes s'anotaven en un full de"
+" càlcul, però, figura com data d'alta quan es varen passar a l'ERP.\n"
+"- No hi ha registre històric de les adreces d'una sòcia. Per això, si una"
+" sòcia canvia el seu domicili de Vigo a Cartagena, compta com que ha estat"
+" vivint sempre a Cartagena.\n"
+"- Només guardem una data de alta per sòcia. No queda ben registrat si una"
+" sòcia es dona de baixa i es torna a donar-se d'alta.\n"
 
-#: som_opendata/common.py:163
-msgid "New contracts"
-msgstr "Nous contractes"
-
-#: som_opendata/common.py:164
-msgid "Canceled contracts"
-msgstr "Baixes de contractes"
-
-#: som_opendata/common.py:165
+#: som_opendata/common.py:171
 msgid "New members"
 msgstr "Noves sòcies"
 
-#: som_opendata/common.py:166
+#: som_opendata/common.py:173
+msgid ""
+"New cooperative members during the month before a given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+msgstr ""
+"Noves sócies durant el mes que acaba a la data donada.\n"
+"\n"
+"S'apliquen les mateixes consideracions que per a la mètrica \"Sòcies\".\n"
+
+#: som_opendata/common.py:179
 msgid "Canceled members"
 msgstr "Baixes de sòcies"
 
-#: som_opendata/common.py:178
+#: som_opendata/common.py:181
+msgid ""
+"Members leaving the cooperative during in the month before a given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+msgstr ""
+"Sòcies que varen abandonar la cooperativa durant el mes abans de la data"
+" donada.\n"
+"\n"
+"S'apliquen les mateixes consideracions que per a la mètrica \"Sòcies\".\n"
+
+#: som_opendata/common.py:187
+msgid "Contracts"
+msgstr "Contractes"
+
+#: som_opendata/common.py:189
+msgid ""
+"Current active contracts at the start of a given date.\n"
+"\n"
+"Contract data is taken from activation and deactivation dates from ATR "
+"system.\n"
+"Old contracts were copied by hand from ATR files and may be less "
+"reliable.\n"
+msgstr ""
+"Els contractes actius a l'inici de la data donada.\n"
+"\n"
+"Les dades del contracte s'obtenen de les dades d'activació i desactivacíó del"
+" sistema ATR.\n"
+"Els contractes antics van ser transferits a mà dels fitxers i poden ser menys"
+" confiables.\n"
+
+#: som_opendata/common.py:196
+msgid "New contracts"
+msgstr "Nous contractes"
+
+#: som_opendata/common.py:198
+msgid ""
+"Contracts starting during in the month before a given date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
+msgstr ""
+"Contractes activats durant el mes anterior a la data donada.\n"
+"\n"
+"S'apliquen les mateixes consideracions que per a la mètrica \"Contractes\".\n"
+
+#: som_opendata/common.py:204
+msgid "Canceled contracts"
+msgstr "Baixes de contractes"
+
+#: som_opendata/common.py:206
+msgid ""
+"Contracts ending during in the month before a given date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
+msgstr ""
+"Contractes donats de baixa durant el mes anterior a la data donada.\n"
+"\n"
+"S'apliquen les mateixes consideracions que per a la mètrica \"Contractes\".\n"
+
+#: som_opendata/common.py:222
 msgid "World"
 msgstr "Món"
 
-#: som_opendata/common.py:182
+#: som_opendata/common.py:226
 msgid "Country"
 msgstr "País"
 
-#: som_opendata/common.py:188
+#: som_opendata/common.py:232
 msgid "CCAA"
 msgstr "Comunitat Autònoma"
 
-#: som_opendata/common.py:193
+#: som_opendata/common.py:237
 msgid "State"
 msgstr "Província"
 
-#: som_opendata/common.py:198
+#: som_opendata/common.py:242
 msgid "City"
 msgstr "Municipi"
 
-#: som_opendata/common.py:204
+#: som_opendata/common.py:248
 msgid "Local Group"
 msgstr "Grup Local"
 

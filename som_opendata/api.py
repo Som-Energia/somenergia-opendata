@@ -61,6 +61,7 @@ def discoverMetrics():
     @apiSuccess {Object[]} metrics List of metrics
     @apiSuccess {String} metrics.id The id to refer the metric
     @apiSuccess {String} metrics.text Translated text to show users
+    @apiSuccess {String} metrics.description Translated Markdown text explaining the metric
 
     @apiSampleRequest /v0.2/discover/metrics
     @apiSuccessExample {yaml} Success-Response:
@@ -68,13 +69,16 @@ def discoverMetrics():
         metrics:
         - id: members
           text: 'Members'
+          description: "Members of the cooperative at the end of the day."
         - id: contracts
           text: 'Contracts'
+          description: "Active contracts at the end of the day."
     """
     return ns(metrics=[
         ns(
             id = key,
-            text = format(value.text),
+            text = format(value.text), # Translates
+            description = format(value.description), # Translates
         )
         for key,value in common.metrics.items()
     ])

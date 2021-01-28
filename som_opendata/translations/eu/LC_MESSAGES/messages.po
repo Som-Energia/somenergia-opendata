@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-01-26 17:44+0100\n"
+"POT-Creation-Date: 2021-01-27 19:33+0100\n"
 "PO-Revision-Date: 2020-01-10 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: eu\n"
@@ -17,51 +17,104 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: som_opendata/common.py:161
+#: som_opendata/common.py:158
 msgid "Members"
 msgstr "Bazkideak"
 
-#: som_opendata/common.py:162
-msgid "Contracts"
-msgstr "Kontratuak"
-
-#: som_opendata/common.py:163
-msgid "New contracts"
+#: som_opendata/common.py:160
+msgid ""
+"Current cooperative members at the start of a given date.\n"
+"\n"
+"Members are taken from our current ERP data, so the following "
+"considerations apply:\n"
+"- Membership during the first months of the cooperative was stored in "
+"spreadsheets and is not included yet.\n"
+"- There is no historical record of member addresses. So, if a member has "
+"changed her home from Vigo to Cartagena, it counts as she has been been "
+"living all the time in Cartagena.\n"
+"- Only a single start date can be stored so, canceled and later renewed "
+"memberships are not properly recorded.\n"
 msgstr ""
 
-#: som_opendata/common.py:164
-msgid "Canceled contracts"
-msgstr ""
-
-#: som_opendata/common.py:165
+#: som_opendata/common.py:171
 msgid "New members"
 msgstr ""
 
-#: som_opendata/common.py:166
+#: som_opendata/common.py:173
+msgid ""
+"New cooperative members during the month before a given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:179
 msgid "Canceled members"
 msgstr ""
 
-#: som_opendata/common.py:178
-msgid "World"
+#: som_opendata/common.py:181
+msgid ""
+"Members leaving the cooperative during in the month before a given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:182
-msgid "Country"
+#: som_opendata/common.py:187
+msgid "Contracts"
+msgstr "Kontratuak"
+
+#: som_opendata/common.py:189
+msgid ""
+"Current active contracts at the start of a given date.\n"
+"\n"
+"Contract data is taken from activation and deactivation dates from ATR "
+"system.\n"
+"Old contracts were copied by hand from ATR files and may be less "
+"reliable.\n"
 msgstr ""
 
-#: som_opendata/common.py:188
-msgid "CCAA"
-msgstr ""
-
-#: som_opendata/common.py:193
-msgid "State"
+#: som_opendata/common.py:196
+msgid "New contracts"
 msgstr ""
 
 #: som_opendata/common.py:198
-msgid "City"
+msgid ""
+"Contracts starting during in the month before a given date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
 msgstr ""
 
 #: som_opendata/common.py:204
+msgid "Canceled contracts"
+msgstr ""
+
+#: som_opendata/common.py:206
+msgid ""
+"Contracts ending during in the month before a given date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:222
+msgid "World"
+msgstr ""
+
+#: som_opendata/common.py:226
+msgid "Country"
+msgstr ""
+
+#: som_opendata/common.py:232
+msgid "CCAA"
+msgstr ""
+
+#: som_opendata/common.py:237
+msgid "State"
+msgstr ""
+
+#: som_opendata/common.py:242
+msgid "City"
+msgstr ""
+
+#: som_opendata/common.py:248
 msgid "Local Group"
 msgstr ""
 
