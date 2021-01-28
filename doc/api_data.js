@@ -245,13 +245,20 @@ define({ "api": [
             "optional": false,
             "field": "metrics.text",
             "description": "<p>Translated text to show users</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "metrics.description",
+            "description": "<p>Translated Markdown text explaining the metric</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200OK\nmetrics:\n- id: members\n  text: 'Members'\n- id: contracts\n  text: 'Contracts'",
+          "content": "HTTP/1.1 200OK\nmetrics:\n- id: members\n  text: 'Members'\n  description: \"Members of the cooperative at the end of the day.\"\n- id: contracts\n  text: 'Contracts'\n  description: \"Active contracts at the end of the day.\"",
           "type": "yaml"
         }
       ]
