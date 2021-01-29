@@ -8,7 +8,6 @@ from yamlns import namespace as ns
 import b2btest
 from .common import (
     previousFirstOfMonth,
-    caseFrequency,
     dateSequenceYears,
     dateSequenceMonths,
     dateSequenceWeeks,
@@ -202,20 +201,6 @@ class DateSequence_Test(unittest.TestCase):
             ])
 
 class Common_Test(unittest.TestCase):
-
-    # caseFrequency
-
-    def test__caseFrequency__weekly(self):
-        r = caseFrequency('weekly')
-        self.assertEqual(r, dateSequenceWeeks)
-
-    def test__caseFrequency__monthly(self):
-        r = caseFrequency('monthly')
-        self.assertEqual(r, dateSequenceMonths)
-
-    def test__caseFrequency__yearly(self):
-        r = caseFrequency('yearly')
-        self.assertEqual(r, dateSequenceYears)
 
     # requestDates
 

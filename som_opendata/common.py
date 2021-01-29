@@ -157,15 +157,6 @@ def dateSequenceYears(first, last):
         for n in range(0, years)
     ]
 
-def caseFrequency(frequency):
-    if frequency == 'weekly':
-        return dateSequenceWeeks
-    elif frequency == 'monthly':
-        return dateSequenceMonths
-    else:
-        return dateSequenceYears
-
-
 def requestDates(first=None, last=None, on=None, since=None, to=None, periodicity=None):
     """
     Returns a list of dates to be requested given the query parameters.
@@ -176,10 +167,16 @@ def requestDates(first=None, last=None, on=None, since=None, to=None, periodicit
     @param since: Earlier date to be retrieved or none if first
     @param to: Later date to be retrieved or none if last
     """
-    if periodicity:
+    frequencyGenerator = dict(
+        weekly = dateSequenceWeeks,
+        monthly = dateSequenceMonths,
+        yearly = dateSequenceYears,
+    ).get(periodicity)
+
+    if frequencyGenerator:
         since = since or first
         to = to or last or str(Date.today())
-        all_dates = caseFrequency(periodicity)(since, to)
+        all_dates = frequencyGenerator(since, to)
         return [str(date) for date in all_dates]
 
     if on:
