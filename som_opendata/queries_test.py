@@ -24,20 +24,9 @@ class Queries_Test(unittest.TestCase):
     def setUp(self):
         self.b2bdatapath = 'b2bdata'
 
-    def test_contractsSeries_single(self):
-        dates = ['2015-01-01']
-        result = contractsSeries(dates)
-        self.assertB2BEqual(result)
-
     def test_contractsSeries_many(self):
         dates = ['2015-01-01','2015-02-01']
         result = contractsSeries(dates)
-        self.assertB2BEqual(result)
-
-
-    def test_membersSeries_single(self):
-        dates = ['2015-01-01']
-        result = membersSeries(dates, csvTable)
         self.assertB2BEqual(result)
 
     def test_membersSeries_many(self):
