@@ -10,6 +10,8 @@ from consolemsg import u
 from flask_babel import lazy_gettext as _
 from werkzeug.exceptions import HTTPException
 
+# Domains
+
 metrics = ns(
     members=ns(
         text=_("Members"),
@@ -67,6 +69,7 @@ metrics = ns(
     ),
 )
 
+# TODO: This is deprecated, use geolevels
 aggregation_levels = [
     ('countries', 'country', 'codi_pais', 'pais'),
     ('ccaas', 'ccaa', 'codi_ccaa', 'comunitat_autonoma'),
@@ -109,6 +112,8 @@ geolevels = ns([
         mapable = False,
     )),
 ])
+
+# Date management
 
 def previousFirstOfMonth(date):
     return str(Date(date).replace(day=1))
@@ -183,6 +188,7 @@ def requestDates(first=None, last=None, on=None, since=None, to=None, periodicit
 
     return [last or str(Date.today())]
 
+# Response formatting
 
 def tsv_response(f):
     @wraps(f)
@@ -225,6 +231,7 @@ def yaml_response(f):
         return response
     return wrapper
 
+# Parameter types
 
 class IsoDateConverter(BaseConverter):
 
@@ -363,6 +370,8 @@ def register_handlers(app):
     app.register_error_handler(MissingDateError, handle_missingDatesError)
     app.register_error_handler(ValidateError, handle_customErrorValidation)
     app.register_error_handler(AliasNotFoundError, handle_aliasNotFoundError)
+
+# Cors
 
 def enable_cors(app):
     # In production and testing servers, CORS is managed by the server,
