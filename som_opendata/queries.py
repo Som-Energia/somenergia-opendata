@@ -11,6 +11,17 @@ This module contains functions to compute metrics.
 Metrics have to be computed aggregated by city and month.
 """
 
+def timeQuery(dates, queryfile, timeSlicer, dbhandler=csvTable):
+    db = psycopg2.connect(**config.psycopg)
+    query = readQuery(queryfile)
+    query = query.format(','.join(
+        timeSlicer(Date(adate))
+        for adate in dates
+        ))
+    with db.cursor() as cursor :
+        cursor.execute(query)
+        return dbhandler(cursor)
+
 
 def activeContractsCounter(adate):
     # TODO: Unsafe substitution, use mogrify
@@ -39,6 +50,15 @@ def activeContractsLister(adate):
         END, ',' ORDER BY polissa.id) AS ids_{adate:%Y_%m_%d}
 """.format(adate=adate)
 
+def contractsSeries(dates, dbhandler=csvTable):
+    return timeQuery(
+        dates=dates,
+        queryfile='contract_distribution',
+        timeSlicer=activeContractsCounter,
+        #timeSlicer=activeContractsLister, # debug
+        dbhandler=dbhandler,
+    )
+
 def newContractsCounter(adate):
     # TODO: Unsafe substitution, use mogrify
     return """
@@ -60,6 +80,16 @@ def newContractsLister(adate):
         ELSE polissa.id::text
         END, ',' ORDER BY polissa.id) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
+
+def newContractsSeries(dates, dbhandler=csvTable):
+    return timeQuery(
+        dates=dates,
+        queryfile='contract_distribution',
+        timeSlicer=newContractsCounter,
+        #timeSlicer=newContractsLister, # debug
+        dbhandler=dbhandler,
+    )
+
 
 def canceledContractsCounter(adate):
     # TODO: Unsafe substitution, use mogrify
@@ -83,6 +113,14 @@ def canceledContractsLister(adate):
         END, ',' ORDER BY polissa.id) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
 
+def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeQuery(
+        dates=dates,
+        queryfile='contract_distribution',
+        timeSlicer=canceledContractsCounter,
+        #timeSlicer=canceledContractsLister, # debug
+        dbhandler=dbhandler,
+    )
 
 def contractsSparse(dates):
     db = psycopg2.connect(**config.psycopg)
@@ -93,39 +131,6 @@ def contractsSparse(dates):
         ]))
         return csvTable(cursor)
 
-def contractsSeries(dates):
-    db = psycopg2.connect(**config.psycopg)
-    query = readQuery('contract_distribution')
-    query = query.format(','.join(
-        activeContractsCounter(Date(adate))
-        for adate in dates
-        ))
-    with db.cursor() as cursor :
-        cursor.execute(query)
-        return csvTable(cursor)
-
-def newContractsSeries(dates, dbhandler=csvTable, debug=False):
-    db = psycopg2.connect(**config.psycopg)
-    query = readQuery('contract_distribution')
-    query = query.format(','.join(
-        newContractsCounter(Date(adate))
-        for adate in dates
-        ))
-    with db.cursor() as cursor :
-        cursor.execute(query)
-        return dbhandler(cursor)
-
-
-def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
-    db = psycopg2.connect(**config.psycopg)
-    query = readQuery('contract_distribution')
-    query = query.format(','.join(
-        canceledContractsCounter(Date(adate))
-        for adate in dates
-        ))
-    with db.cursor() as cursor :
-        cursor.execute(query)
-        return dbhandler(cursor)
 
 
 def activeMembersCounter(adate):
@@ -154,6 +159,15 @@ def activeMembersLister(adate):
         END, ',' ORDER BY soci_id) AS count_{adate:%Y_%m_%d}
         """.format(adate=adate)
 
+def membersSparse(dates, dbhandler=csvTable, debug=False):
+    return timeQuery(
+        dates=dates,
+        queryfile='members_distribution',
+        timeSlicer=activeMembersCounter,
+        #timeSlicer=activeMembersLister, # debug
+        dbhandler=dbhandler,
+    )
+
 def newMembersCounter(adate):
     # TODO: Unsafe substitution
     return """
@@ -176,8 +190,16 @@ def newMembersLister(adate):
             END, ',' ORDER BY soci_id) AS count_{adate:%Y_%m_%d}
         """.format(adate=adate)
 
+def newMembersSeries(dates, dbhandler=csvTable, debug=False):
+    return timeQuery(
+        dates=dates,
+        queryfile='members_distribution',
+        timeSlicer=newMembersCounter,
+        #timeSlicer=newMembersLister, # debug
+        dbhandler=dbhandler,
+    )
 
-def cancelledMembersCounter(adate):
+def canceledMembersCounter(adate):
     # TODO: Unsafe substitution
     return """
     count(CASE
@@ -199,40 +221,15 @@ def cancelledMembersLister(adate):
             END, ',' ORDER BY soci_id) AS count_{adate:%Y_%m_%d}
         """.format(adate=adate)
 
-
-def membersSparse(dates, dbhandler=csvTable, debug=False):
-    db = psycopg2.connect(**config.psycopg)
-    query = readQuery('members_distribution')
-    query = query.format(','.join(
-        activeMembersCounter(Date(adate))
-        for adate in dates
-        ))
-    with db.cursor() as cursor :
-        cursor.execute(query)
-        return dbhandler(cursor)
-
-def newMembersSeries(dates, dbhandler=csvTable, debug=False):
-    db = psycopg2.connect(**config.psycopg)
-    query = readQuery('members_distribution')
-    query = query.format(','.join(
-        newMembersCounter(Date(adate))
-        for adate in dates
-        ))
-    with db.cursor() as cursor :
-        cursor.execute(query)
-        return dbhandler(cursor)
-
-
 def canceledMembersSeries(dates, dbhandler=csvTable, debug=False):
-    db = psycopg2.connect(**config.psycopg)
-    query = readQuery('members_distribution')
-    query = query.format(','.join(
-        cancelledMembersCounter(Date(adate))
-        for adate in dates
-        ))
-    with db.cursor() as cursor :
-        cursor.execute(query)
-        return dbhandler(cursor)
+    return timeQuery(
+        dates=dates,
+        queryfile='members_distribution',
+        timeSlicer=canceledMembersCounter,
+        #timeSlicer=canceledMembersLister, # debug
+        dbhandler=dbhandler,
+    )
+
 
 
 
