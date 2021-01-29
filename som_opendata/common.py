@@ -11,6 +11,106 @@ from consolemsg import u
 from flask_babel import lazy_gettext as _
 from werkzeug.exceptions import HTTPException
 
+metrics = ns(
+    members=ns(
+        text=_("Members"),
+        timeaggregation='first',
+        description=_(
+            "Current cooperative members at the start of a given date.\n\n"
+            "Members are taken from our current ERP data, so the following considerations apply:\n"
+            "- Membership during the first months of the cooperative was stored in spreadsheets and is not included yet.\n"
+            "- There is no historical record of member addresses. "
+            "So, if a member has changed her home from Vigo to Cartagena, "
+            "it counts as she has been been living all the time in Cartagena.\n"
+            "- Only a single start date can be stored so, canceled and later renewed memberships are not properly recorded.\n"
+        ),
+    ),
+    newmembers=ns(
+        text=_("New members"),
+        timeaggregation='sum',
+        description=_(
+            "New cooperative members during the month before a given date.\n\n"
+            "Considerations for \"Members\" metric also apply in this one.\n"
+        ),
+    ),
+    canceledmembers=ns(
+        text=_("Canceled members"),
+        timeaggregation='sum',
+        description=_(
+            "Members leaving the cooperative during in the month before a given date.\n\n"
+            "Considerations for \"Members\" metric also apply in this one.\n"
+        ),
+    ),
+    contracts=ns(
+        text=_("Contracts"),
+        timeaggregation='first',
+        description=_(
+            "Current active contracts at the start of a given date.\n\n"
+            "Contract data is taken from activation and deactivation dates from ATR system.\n"
+            "Old contracts were copied by hand from ATR files and may be less reliable.\n"
+        ),
+    ),
+    newcontracts=ns(
+        text=_("New contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Contracts starting during in the month before a given date.\n\n"
+            "Considerations for \"Contracts\" metric also apply in this one.\n"
+        ),
+    ),
+    canceledcontracts=ns(
+        text=_("Canceled contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Contracts ending during in the month before a given date.\n\n"
+            "Considerations for \"Contracts\" metric also apply in this one.\n"
+        ),
+    ),
+)
+
+aggregation_levels = [
+    ('countries', 'country', 'codi_pais', 'pais'),
+    ('ccaas', 'ccaa', 'codi_ccaa', 'comunitat_autonoma'),
+    ('states', 'state', 'codi_provincia', 'provincia'),
+    ('cities', 'city', 'codi_ine', 'municipi'),
+    ]
+
+geolevels = ns([
+    ('world', ns(
+        text = _('World'),
+        mapable = False,
+    )),
+    ('country', ns(
+        text = _('Country'),
+        plural = 'countries',
+        parent = 'world',
+        mapable = False,
+    )),
+    ('ccaa', ns(
+        text = _('CCAA'),
+        plural = 'ccaas',
+        parent = 'country',
+    )),
+    ('state', ns(
+        text = _('State'),
+        plural = 'states',
+        parent = 'ccaa',
+    )),
+    ('city', ns(
+        text = _('City'),
+        plural = 'cities',
+        parent = 'state',
+        mapable = False,
+    )),
+    ('localgroup', ns(
+        text = _('Local Group'),
+        plural = 'localgroups',
+        parent = 'world',
+        detailed = False,
+        mapable = False,
+    )),
+])
+
 def previousFirstOfMonth(date):
     return str(Date(date).replace(day=1))
 
@@ -149,106 +249,6 @@ class IsoDateConverter(BaseConverter):
 
     def to_url(self, value):
         return str(value)
-
-metrics = ns(
-    members=ns(
-        text=_("Members"),
-        timeaggregation='first',
-        description=_(
-            "Current cooperative members at the start of a given date.\n\n"
-            "Members are taken from our current ERP data, so the following considerations apply:\n"
-            "- Membership during the first months of the cooperative was stored in spreadsheets and is not included yet.\n"
-            "- There is no historical record of member addresses. "
-            "So, if a member has changed her home from Vigo to Cartagena, "
-            "it counts as she has been been living all the time in Cartagena.\n"
-            "- Only a single start date can be stored so, canceled and later renewed memberships are not properly recorded.\n"
-        ),
-    ),
-    newmembers=ns(
-        text=_("New members"),
-        timeaggregation='sum',
-        description=_(
-            "New cooperative members during the month before a given date.\n\n"
-            "Considerations for \"Members\" metric also apply in this one.\n"
-        ),
-    ),
-    canceledmembers=ns(
-        text=_("Canceled members"),
-        timeaggregation='sum',
-        description=_(
-            "Members leaving the cooperative during in the month before a given date.\n\n"
-            "Considerations for \"Members\" metric also apply in this one.\n"
-        ),
-    ),
-    contracts=ns(
-        text=_("Contracts"),
-        timeaggregation='first',
-        description=_(
-            "Current active contracts at the start of a given date.\n\n"
-            "Contract data is taken from activation and deactivation dates from ATR system.\n"
-            "Old contracts were copied by hand from ATR files and may be less reliable.\n"
-        ),
-    ),
-    newcontracts=ns(
-        text=_("New contracts"),
-        timeaggregation='sum',
-        description=_(
-            "Contracts starting during in the month before a given date.\n\n"
-            "Considerations for \"Contracts\" metric also apply in this one.\n"
-        ),
-    ),
-    canceledcontracts=ns(
-        text=_("Canceled contracts"),
-        timeaggregation='sum',
-        description=_(
-            "Contracts ending during in the month before a given date.\n\n"
-            "Considerations for \"Contracts\" metric also apply in this one.\n"
-        ),
-    ),
-)
-
-aggregation_levels = [
-    ('countries', 'country', 'codi_pais', 'pais'),
-    ('ccaas', 'ccaa', 'codi_ccaa', 'comunitat_autonoma'),
-    ('states', 'state', 'codi_provincia', 'provincia'),
-    ('cities', 'city', 'codi_ine', 'municipi'),
-    ]
-
-geolevels = ns([
-    ('world', ns(
-        text = _('World'),
-        mapable = False,
-    )),
-    ('country', ns(
-        text = _('Country'),
-        plural = 'countries',
-        parent = 'world',
-        mapable = False,
-    )),
-    ('ccaa', ns(
-        text = _('CCAA'),
-        plural = 'ccaas',
-        parent = 'country',
-    )),
-    ('state', ns(
-        text = _('State'),
-        plural = 'states',
-        parent = 'ccaa',
-    )),
-    ('city', ns(
-        text = _('City'),
-        plural = 'cities',
-        parent = 'state',
-        mapable = False,
-    )),
-    ('localgroup', ns(
-        text = _('Local Group'),
-        plural = 'localgroups',
-        parent = 'world',
-        detailed = False,
-        mapable = False,
-    )),
-])
 
 # Errors
 
