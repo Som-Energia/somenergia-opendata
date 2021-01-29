@@ -12,6 +12,13 @@ Metrics have to be computed aggregated by city and month.
 """
 
 def timeQuery(dates, queryfile, timeSlicer, dbhandler=csvTable):
+    """
+    Executes a query stored in queryfile
+    extending it with a column for each passed date
+    which aggregates rows by that date.
+    The timeSlicer parameter tells whether to filter or not
+    each row for a given date.
+    """
     db = psycopg2.connect(**config.psycopg)
     query = readQuery(queryfile)
     query = query.format(','.join(
