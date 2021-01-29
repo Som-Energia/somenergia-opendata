@@ -8,16 +8,12 @@ from som_opendata.queries import (
     newMembersSeries,
     canceledMembersSeries,
 )
-from som_opendata.common import (
-    dateSequenceMonths,
-    utf8,
-    )
-
+from som_opendata.common import dateSequenceMonths
 from yamlns.dateutils import Date
 from dbutils import csvTable
 import io
 import os
-from consolemsg import step
+from consolemsg import step, u
 
 
 fromdate = Date('2010-01-01')
@@ -46,12 +42,12 @@ for metric, generator in metricGenerators.items():
     )
     result = generator(dates)
     with io.open(filename,'w') as f:
-        f.write(utf8(result))
+        f.write(u(result))
 
     linkname = 'data/metrics/{}.tsv'.format(metric)
 
     with io.open(linkname,'w') as f:
-        f.write(utf8(result))
+        f.write(u(result))
 
 
 

@@ -97,9 +97,6 @@ def readQuery(query):
     with open(relative(query + '.sql'), 'r') as queryfile:
         return queryfile.read().rstrip()
 
-def utf8(thing):
-    return u(thing)
-
 def tsv_response(f):
     @wraps(f)
     def wrapper(*args, **kwd):
@@ -115,7 +112,7 @@ def tsv_response(f):
 
         response = make_response('\n'.join(
             '\t'.join(
-                utf8(x)
+                u(x)
                     .replace('\t',' ')
                     .replace('\n',' ')
                 for x in line)
