@@ -691,14 +691,6 @@ If no language is specified, the language is chosen using the request headers.
 @api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/to/<isodate:todate>')
 def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None, todate=None, relativemetric=None):
 
-    # TODO: Not all geolevels are ready for maps
-    validateParams(
-        frequency=frequency,
-        geolevel=geolevel,
-        metric=metric,
-        relativemetric=relativemetric,
-    )
-
     validateMapParams(
         frequency=frequency,
         geolevel=geolevel,
