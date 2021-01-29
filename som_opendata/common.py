@@ -273,7 +273,7 @@ allowedParamsValues = ns(
 class ValidateError(Exception):
 
     code = 400
-    message_template = "Incorrect {parameter} '{value}' try with [{acceptedValues}]"
+    message_template = "Invalid {parameter} '{value}'. Accepted ones are {acceptedValues}."
 
     def __init__(self, field, value, allowed):
         self.parameter = field

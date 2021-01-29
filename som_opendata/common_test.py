@@ -366,7 +366,7 @@ class Common_Test(unittest.TestCase):
         self.assertEqual(ctx.exception.value, 'badvalue')
         self.assertEqual(ctx.exception.code, 400)
         self.assertEqual(ctx.exception.description, 
-            'Incorrect metric \'badvalue\' try with [\'members\', \'newmembers\', \'canceledmembers\', \'contracts\', \'newcontracts\', \'canceledcontracts\']')
+            "Invalid metric 'badvalue'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts'.")
 
     # validateImplementation
 

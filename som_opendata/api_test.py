@@ -416,7 +416,7 @@ class Api_Test(unittest.TestCase):
             parameter: geolevel
             valueRequest: badgeolevel
             possibleValues: ['world', 'country', 'ccaa', 'state', 'city']
-            message: Incorrect geolevel 'badgeolevel' try with ['world', 'country', 'ccaa', 'state', 'city']
+            message: Invalid geolevel 'badgeolevel'. Accepted ones are 'world', 'country', 'ccaa', 'state', 'city'.
             """, 400)
 
     def test__metric_frequency__doesNotExist(self):
@@ -425,7 +425,7 @@ class Api_Test(unittest.TestCase):
             parameter: frequency
             valueRequest: badly
             possibleValues: ['monthly', 'yearly', null]
-            message: Incorrect frequency 'badly' try with ['monthly', 'yearly', None]
+            message: Invalid frequency 'badly'. Accepted ones are 'monthly', 'yearly', None.
             """, 400)
 
     # TODO: turn 404 in yaml messages
@@ -475,7 +475,7 @@ class Api_Test(unittest.TestCase):
             parameter: metric
             valueRequest: incorrectMetric
             possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts']
-            message: Incorrect metric 'incorrectMetric' try with ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts']
+            message: Invalid metric 'incorrectMetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts'.
             """, 400)
 
 
@@ -510,7 +510,7 @@ class Api_Test(unittest.TestCase):
             parameter: metric
             valueRequest: badmetric
             possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts']
-            message: Incorrect metric 'badmetric' try with ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts']
+            message: Invalid metric 'badmetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts'.
             """,400)
         self.assertEqual(r.mimetype, 'application/json')
 
