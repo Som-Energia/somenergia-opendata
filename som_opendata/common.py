@@ -247,7 +247,10 @@ class IsoDateConverter(BaseConverter):
     def to_url(self, value):
         return str(value)
 
-# Errors
+def register_converters(app):
+    app.url_map.converters['isodate'] = IsoDateConverter
+
+# Error handling
 
 class MissingDateError(HTTPException):
 
@@ -327,9 +330,6 @@ def validateImplementation(**params):
             continue
         raise ValidateImplementationMap(field=field, value=value)
 
-
-def register_converters(app):
-    app.url_map.converters['isodate'] = IsoDateConverter
 
 @yaml_response
 def handle_request_not_found(e):
