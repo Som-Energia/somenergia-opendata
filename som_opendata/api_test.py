@@ -520,7 +520,7 @@ class Api_Test(unittest.TestCase):
             parameter: geolevel
             valueRequest: city
             possibleValues: ['ccaa', 'state']
-            message: Not implemented geolevel 'city', implemented values are ['ccaa', 'state']
+            message: Invalid geolevel 'city'. Accepted ones are 'ccaa', 'state'.
             """, 400)
         self.assertEqual(r.mimetype, 'application/json')
 

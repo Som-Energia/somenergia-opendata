@@ -15,7 +15,6 @@ from .common import (
     validateParams,
     ValidateError,
     validateImplementation,
-    ValidateImplementationMap,
     )
 
 class DateSequence_Test(unittest.TestCase):
@@ -378,22 +377,22 @@ class Common_Test(unittest.TestCase):
         )
 
     def test__validateImplementation__wrongRelativeMetricValue(self):
-        with self.assertRaises(ValidateImplementationMap) as ctx:
+        with self.assertRaises(ValidateError) as ctx:
             validateImplementation(relativemetric='dogs')
 
         self.assertEqual(ctx.exception.parameter, 'relativemetric')
         self.assertEqual(ctx.exception.value, 'dogs')
         self.assertEqual(ctx.exception.code, 400)
         self.assertEqual(ctx.exception.description,
-            'Not implemented relativemetric \'dogs\', implemented values are [\'population\', None]')
+            "Invalid relativemetric 'dogs'. Accepted ones are 'population', None.")
 
     def test__validateImplementation__notImplementedValue(self):
-        with self.assertRaises(ValidateImplementationMap) as ctx:
+        with self.assertRaises(ValidateError) as ctx:
             validateImplementation(geolevel='city') # not implemented
         self.assertEqual(ctx.exception.parameter, 'geolevel')
         self.assertEqual(ctx.exception.value, 'city')
         self.assertEqual(ctx.exception.code, 400)
         self.assertEqual(ctx.exception.description,
-            'Not implemented geolevel \'city\', implemented values are [\'ccaa\', \'state\']')
+            "Invalid geolevel 'city'. Accepted ones are 'ccaa', 'state'.")
 
 # vim: et ts=4 sw=4

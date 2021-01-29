@@ -259,7 +259,22 @@ class MissingDateError(HTTPException):
         self.missingDates = missingDates
 
 
-allowedParamsValues = ns(
+class ValidateError(Exception):
+
+    code = 400
+    message_template = "Invalid {parameter} '{value}'. Accepted ones are {acceptedValues}."
+
+    def __init__(self, field, value, allowed):
+        self.parameter = field
+        self.value = value
+        self.possibleValues = allowed
+        self.description = self.message_template.format(
+            parameter=field,
+            value=value,
+            acceptedValues=u(allowed)[1:-1],
+        )
+
+distributionParams = ns(
     metric=list(metrics),
     frequency=['monthly', 'yearly', None],
     geolevel=[
@@ -270,35 +285,18 @@ allowedParamsValues = ns(
     relativemetric=['population', None],
 )
 
-class ValidateError(Exception):
-
-    code = 400
-    message_template = "Invalid {parameter} '{value}'. Accepted ones are {acceptedValues}."
-
-    def __init__(self, field, value, allowed):
-        self.parameter = field
-        self.value = value
-        self.possibleValues = allowed
-        print(allowed)
-        self.description = self.message_template.format(
-            parameter=field,
-            value=value,
-            acceptedValues=u(allowed)[1:-1],
-        )
-
-
 def validateParams(**params):
     for field, value in params.items():
-        if value in allowedParamsValues[field]:
+        if value in distributionParams[field]:
             continue
         raise ValidateError(
             field=field,
             value=value,
-            allowed=allowedParamsValues[field],
+            allowed=distributionParams[field],
         )
 
-mapAllowedValues = ns(
-    allowedParamsValues,
+mapParams = ns(
+    distributionParams,
     geolevel=[
         k if k != "world" else None
         for k,v in geolevels.items()
@@ -306,18 +304,14 @@ mapAllowedValues = ns(
     ],
 )
 
-
-class ValidateImplementationMap(ValidateError):
-    message_template = u"Not implemented {parameter} '{value}', implemented values are [{acceptedValues}]"
-
 def validateImplementation(**params):
     for field, value in params.items():
-        if value in mapAllowedValues[field]:
+        if value in mapParams[field]:
             continue
-        raise ValidateImplementationMap(
+        raise ValidateError(
             field=field,
             value=value,
-            allowed=mapAllowedValues[field],
+            allowed=mapParams[field],
         )
 
 class AliasNotFoundError(HTTPException):
