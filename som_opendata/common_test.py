@@ -1,6 +1,5 @@
 # -*- encoding: utf-8 -*-
 import unittest
-from dateutil.relativedelta import relativedelta as delta
 from datetime import timedelta
 from werkzeug.routing import ValidationError
 from yamlns.dateutils import Date
@@ -346,12 +345,23 @@ class Common_Test(unittest.TestCase):
 
     # validateParams 
 
-    def test__validateParams(self):
-        self.assertEqual(validateParams(metric='members'), None)
+    def test__validateParams_valid(self):
+        # not raises
+        validateParams(
+            metric='members',
+            geolevel='ccaa',
+            relativemetric=None,
+            frequency=None,
+        )
 
-    def test__validateParams(self):
+    def test__validateParams_badMetric(self):
         with self.assertRaises(ValidateError) as ctx:
-            validateParams(metric='badvalue')
+            validateParams(
+                metric='badvalue', # fail
+                geolevel='ccaa',
+                relativemetric=None,
+                frequency=None,
+            )
         self.assertEqual(ctx.exception.parameter, 'metric')
         self.assertEqual(ctx.exception.value, 'badvalue')
         self.assertEqual(ctx.exception.code, 400)
@@ -360,16 +370,6 @@ class Common_Test(unittest.TestCase):
 
     # validateImplementation
 
-    def test__validateImplementation__notImplementedValue(self):
-        params = [['geolevel','bad']]
-        with self.assertRaises(ValidateImplementationMap) as ctx:
-            validateImplementation(geolevel='bad')
-        self.assertEqual(ctx.exception.parameter, 'geolevel')
-        self.assertEqual(ctx.exception.value, 'bad')
-        self.assertEqual(ctx.exception.code, 400)
-        self.assertEqual(ctx.exception.description,
-            'Not implemented geolevel \'bad\' try with [\'ccaa\', \'state\']')
-
     def test__validateImplementation__valid(self):
         validateImplementation(
             metric='members',
@@ -377,8 +377,7 @@ class Common_Test(unittest.TestCase):
             relativemetric = 'population',
         )
 
-    def test__validateImplementation__notImplementedIndicator(self):
-        params = [['relativemetric', 'dogs']]
+    def test__validateImplementation__wrongRelativeMetricValue(self):
         with self.assertRaises(ValidateImplementationMap) as ctx:
             validateImplementation(relativemetric='dogs')
 
@@ -386,5 +385,15 @@ class Common_Test(unittest.TestCase):
         self.assertEqual(ctx.exception.value, 'dogs')
         self.assertEqual(ctx.exception.code, 400)
         self.assertEqual(ctx.exception.description,
-            'Not implemented relativemetric \'dogs\' try with [\'population\', None]')
+            'Not implemented relativemetric \'dogs\', implemented values are [\'population\', None]')
+
+    def test__validateImplementation__notImplementedValue(self):
+        with self.assertRaises(ValidateImplementationMap) as ctx:
+            validateImplementation(geolevel='city') # not implemented
+        self.assertEqual(ctx.exception.parameter, 'geolevel')
+        self.assertEqual(ctx.exception.value, 'city')
+        self.assertEqual(ctx.exception.code, 400)
+        self.assertEqual(ctx.exception.description,
+            'Not implemented geolevel \'city\', implemented values are [\'ccaa\', \'state\']')
+
 # vim: et ts=4 sw=4

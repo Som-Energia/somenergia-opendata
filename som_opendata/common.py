@@ -262,44 +262,29 @@ class MissingDateError(HTTPException):
         self.missingDates = missingDates
 
 
-class ValidateError(HTTPException):
-    from . import common
-    valors = ns(
-        # TODO: Construct this from source metadata
-        metric=list(metrics),
-        frequency=['monthly', 'yearly'],
-        geolevel=['country', 'ccaa', 'state', 'city']
-        )
+allowedParamsValues = ns(
+    metric=list(metrics),
+    frequency=['monthly', 'yearly', None],
+    geolevel=[
+        k
+        for k,v in geolevels.items()
+        if v.get('detailed', True)
+    ],
+    relativemetric=['population', None],
+)
+
+class ValidateError(Exception):
 
     code = 400
-
-    parameter = ''
-    value = ''
-    possibleValues = []
 
     def __init__(self, field, value):
         self.parameter = field
         self.value = value
-        self.possibleValues = self.valors[field]
-        super(ValidateError, self).__init__(
-            "Incorrect {} '{}' try with {}".format(
-                field, value, u(self.possibleValues))
-            )
+        self.possibleValues = allowedParamsValues[field]
+        self.description = "Incorrect {} '{}' try with {}".format(
+            field, value, u(self.possibleValues)
+        )
 
-class AliasNotFoundError(HTTPException):
-    code = 400
-    def __init__(self, alias, value):
-        super(AliasNotFoundError, self).__init__(
-            "{} '{}' not found".format(alias, value))
-
-
-# None i world son valors por defecto de los parametros
-allowedParamsValues = ns(
-    metric=list(metrics),
-    frequency=['monthly', 'yearly', None],
-    geolevel=[k for k,v in geolevels.items() if v.get('aggregation', True) ],
-    relativemetric=['population', None],
-)
 
 def validateParams(**params):
     for field, value in params.items():
@@ -308,10 +293,12 @@ def validateParams(**params):
         raise ValidateError(field, value)
 
 mapAllowedValues = ns(
-    metric=list(metrics),
-    frequency=['monthly', 'yearly', None],
-    geolevel=[k for k,v in geolevels.items() if v.get('mapable', True) ],
-    relativemetric=['population', None],
+    allowedParamsValues,
+    geolevel=[
+        k if k != "world" else None
+        for k,v in geolevels.items()
+        if v.get('mapable', True)
+    ],
 )
 
 
@@ -320,15 +307,22 @@ class ValidateImplementationMap(ValidateError):
         self.parameter = field
         self.value = value
         self.possibleValues = mapAllowedValues[field]
-        super(ValidateError, self).__init__(
-            u"Not implemented {} '{}' try with {}"
-            .format(field, value, self.possibleValues))
+        self.description = (
+            u"Not implemented {} '{}', implemented values are {}"
+            .format(field, value, self.possibleValues)
+        )
 
 def validateImplementation(**params):
     for field, value in params.items():
         if value in mapAllowedValues[field]:
             continue
         raise ValidateImplementationMap(field=field, value=value)
+
+class AliasNotFoundError(HTTPException):
+    code = 400
+    def __init__(self, alias, value):
+        super(AliasNotFoundError, self).__init__(
+            "{} '{}' not found".format(alias, value))
 
 
 @yaml_response

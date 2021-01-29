@@ -415,8 +415,8 @@ class Api_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             parameter: geolevel
             valueRequest: badgeolevel
-            possibleValues: ['country', 'ccaa', 'state', 'city']
-            message: Incorrect geolevel 'badgeolevel' try with ['country', 'ccaa', 'state', 'city']
+            possibleValues: ['world', 'country', 'ccaa', 'state', 'city']
+            message: Incorrect geolevel 'badgeolevel' try with ['world', 'country', 'ccaa', 'state', 'city']
             """, 400)
 
     def test__metric_frequency__doesNotExist(self):
@@ -424,8 +424,8 @@ class Api_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             parameter: frequency
             valueRequest: badly
-            possibleValues: ['monthly', 'yearly']
-            message: Incorrect frequency 'badly' try with ['monthly', 'yearly']
+            possibleValues: ['monthly', 'yearly', null]
+            message: Incorrect frequency 'badly' try with ['monthly', 'yearly', None]
             """, 400)
 
     # TODO: turn 404 in yaml messages
@@ -520,7 +520,7 @@ class Api_Test(unittest.TestCase):
             parameter: geolevel
             valueRequest: city
             possibleValues: ['ccaa', 'state']
-            message: Not implemented geolevel 'city' try with ['ccaa', 'state']
+            message: Not implemented geolevel 'city', implemented values are ['ccaa', 'state']
             """, 400)
         self.assertEqual(r.mimetype, 'application/json')
 
