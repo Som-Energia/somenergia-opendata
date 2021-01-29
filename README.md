@@ -1,6 +1,7 @@
 # somenergia-opendata
 
 [![Build Status](https://travis-ci.org/Som-Energia/somenergia-opendata.svg?branch=master)](https://travis-ci.org/Som-Energia/somenergia-opendata)
+[![Coverage Status](https://coveralls.io/repos/github/Som-Energia/somenergia-opendata/badge.svg)](https://coveralls.io/github/Som-Energia/somenergia-opendata?branch=master)
 
 Public API to access open data information about the cooperative
 
@@ -12,6 +13,7 @@ Public API to access open data information about the cooperative
 
 ### Geographical distributions
 
+Follow the following structure `/<metric>[/by/<geolevel>][/on/<date>|[/monthly|/yearly][/from/<date>][/to/<date>]]
 
 - `/contracts`
     All current contracts
@@ -19,17 +21,20 @@ Public API to access open data information about the cooperative
 - `/members`
     All current members (instead of contracts)
 
-- `/contracts/on/2018-02-03`
-    Contracts on a given date
+- `/newcontracts`
+    New contracts last month (same for members)
+
+- `/canceledcontracts`
+    Leaving contracts last month (same will do for members)
+
+- `/contracts/on/2018-02-01`
+    Contracts on a given date (just firsts of month allowed)
 
 - `/contracts/by/city`
     Current contracts aggregated by city
 
-- `/contracts/by/city/on/2018-02-03`
+- `/contracts/by/city/on/2018-02-01`
     Contracts aggregated by city at a given date
-
-- `/contracts/by/city/weekly`
-    Contracts aggregated by city every available week
 
 - `/contracts/by/state/monthly`
     Contracts aggregated by state every available month
@@ -37,18 +42,18 @@ Public API to access open data information about the cooperative
 - `/contracts/by/ccaa/yearly`
     Contracts aggregated by CCAA every available year
 
-- `/contracts/by/city/weekly/from/2018-02-03`
+- `/contracts/by/city/monthly/from/2018-02-01`
     Contracts aggregated by state every week from a date
 
-- `/contracts/by/city/weekly/from/2018-02-03/to/2018-05-05`
+- `/contracts/by/city/yearly/from/2018-02-01/to/2018-05-01`
     Contracts aggregated by city every week from a date until a date
 
-- `/contracts/by/city/weekly/to/2018-05-05`
+- `/contracts/by/city/weekly/to/2018-05-01`
     Contracts aggregated by city every week until a date
 
+### Using filters
 
-#### Using filters
-
+You can append repeatedly query params to filter data just including some geografical regions:
 
 - `/contracts/by/city?city=23423&city=89545`
     Include just cities with INE code 23423 and 89545
@@ -61,9 +66,79 @@ Public API to access open data information about the cooperative
 
 #### Response format
 
-TODO
+Data is returned in YAML.
+It has a hierarchical structure from the world geographical level to the requested geographical level of detail (country in this example)
+Each region has as many numbers in list as the top level `dates`.
+
+```yaml
+dates:
+- 2014-01-01
+- 2015-01-01
+- 2016-01-01
+values:
+- 11905
+- 17896
+- 23749
+countries:
+  CL:
+    name: Chile
+    values:
+    - 1
+    - 1
+    - 1
+  ES:
+    name: España
+    values:
+    - 11896
+    - 17885
+    - 23738
+  FR:
+    name: France
+    values:
+    - 1
+    - 1
+    - 1
+  DE:
+    name: Germany
+    values:
+    - 1
+    - 2
+    - 2
+  GR:
+    name: Greece
+    values:
+    - 0
+    - 0
+    - 0
+  NL:
+    name: Netherlands
+    values:
+    - 3
+    - 3
+    - 3
+  PT:
+    name: Portugal
+    values:
+    - 1
+    - 1
+    - 1
+  UK:
+    name: United Kingdom
+    values:
+    - 2
+    - 2
+    - 2
+  None:
+    name: None
+    values:
+    - 0
+    - 1
+    - 1
+```
 
 ### Maps
+
+Unless specified all maps are returned as SVG files.
 
 - `/map/contracts`
     All current contracts by ccaa
