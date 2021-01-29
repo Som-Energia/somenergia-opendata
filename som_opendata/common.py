@@ -273,13 +273,17 @@ allowedParamsValues = ns(
 class ValidateError(Exception):
 
     code = 400
+    message_template = "Incorrect {parameter} '{value}' try with [{acceptedValues}]"
 
-    def __init__(self, field, value):
+    def __init__(self, field, value, allowed):
         self.parameter = field
         self.value = value
-        self.possibleValues = allowedParamsValues[field]
-        self.description = "Incorrect {} '{}' try with {}".format(
-            field, value, u(self.possibleValues)
+        self.possibleValues = allowed
+        print(allowed)
+        self.description = self.message_template.format(
+            parameter=field,
+            value=value,
+            acceptedValues=u(allowed)[1:-1],
         )
 
 
@@ -287,7 +291,11 @@ def validateParams(**params):
     for field, value in params.items():
         if value in allowedParamsValues[field]:
             continue
-        raise ValidateError(field, value)
+        raise ValidateError(
+            field=field,
+            value=value,
+            allowed=allowedParamsValues[field],
+        )
 
 mapAllowedValues = ns(
     allowedParamsValues,
@@ -300,20 +308,17 @@ mapAllowedValues = ns(
 
 
 class ValidateImplementationMap(ValidateError):
-    def __init__(self, field, value):
-        self.parameter = field
-        self.value = value
-        self.possibleValues = mapAllowedValues[field]
-        self.description = (
-            u"Not implemented {} '{}', implemented values are {}"
-            .format(field, value, self.possibleValues)
-        )
+    message_template = u"Not implemented {parameter} '{value}', implemented values are [{acceptedValues}]"
 
 def validateImplementation(**params):
     for field, value in params.items():
         if value in mapAllowedValues[field]:
             continue
-        raise ValidateImplementationMap(field=field, value=value)
+        raise ValidateImplementationMap(
+            field=field,
+            value=value,
+            allowed=mapAllowedValues[field],
+        )
 
 class AliasNotFoundError(HTTPException):
     code = 400
