@@ -1,5 +1,4 @@
 # -*- encoding: utf-8 -*-
-import os
 from dateutil.relativedelta import relativedelta as delta
 from datetime import date, timedelta
 from flask import Response, make_response, current_app, jsonify
@@ -184,15 +183,6 @@ def requestDates(first=None, last=None, on=None, since=None, to=None, periodicit
 
     return [last or str(Date.today())]
 
-
-
-def relative(path):
-    return os.path.abspath(os.path.join(os.path.dirname(__file__), path))
-
-
-def readQuery(query):
-    with open(relative(query + '.sql'), 'r') as queryfile:
-        return queryfile.read().rstrip()
 
 def tsv_response(f):
     @wraps(f)
