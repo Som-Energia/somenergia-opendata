@@ -14,7 +14,7 @@ from .common import (
     requestDates,
     validateParams,
     ValidateError,
-    validateImplementation,
+    validateMapParams,
     )
 
 class DateSequence_Test(unittest.TestCase):
@@ -367,18 +367,18 @@ class Common_Test(unittest.TestCase):
         self.assertEqual(ctx.exception.description, 
             "Invalid metric 'badvalue'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts'.")
 
-    # validateImplementation
+    # validateMapParams
 
-    def test__validateImplementation__valid(self):
-        validateImplementation(
+    def test__validateMapParams__valid(self):
+        validateMapParams(
             metric='members',
             geolevel='ccaa',
             relativemetric = 'population',
         )
 
-    def test__validateImplementation__wrongRelativeMetricValue(self):
+    def test__validateMapParams__wrongRelativeMetricValue(self):
         with self.assertRaises(ValidateError) as ctx:
-            validateImplementation(relativemetric='dogs')
+            validateMapParams(relativemetric='dogs')
 
         self.assertEqual(ctx.exception.parameter, 'relativemetric')
         self.assertEqual(ctx.exception.value, 'dogs')
@@ -386,9 +386,9 @@ class Common_Test(unittest.TestCase):
         self.assertEqual(ctx.exception.description,
             "Invalid relativemetric 'dogs'. Accepted ones are 'population', None.")
 
-    def test__validateImplementation__notImplementedValue(self):
+    def test__validateMapParams__notImplementedValue(self):
         with self.assertRaises(ValidateError) as ctx:
-            validateImplementation(geolevel='city') # not implemented
+            validateMapParams(geolevel='city') # not implemented
         self.assertEqual(ctx.exception.parameter, 'geolevel')
         self.assertEqual(ctx.exception.value, 'city')
         self.assertEqual(ctx.exception.code, 400)

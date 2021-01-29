@@ -304,7 +304,7 @@ mapParams = ns(
     ],
 )
 
-def validateImplementation(**params):
+def validateMapParams(**params):
     for field, value in params.items():
         if value in mapParams[field]:
             continue

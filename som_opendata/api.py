@@ -8,7 +8,7 @@ from .common import (
         dateSequenceYears,
         requestDates,
         validateParams,
-        validateImplementation,
+        validateMapParams,
     )
 from . import common
 from .distribution import getAggregated
@@ -699,7 +699,7 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
         relativemetric=relativemetric,
     )
 
-    validateImplementation(
+    validateMapParams(
         frequency=frequency,
         geolevel=geolevel,
         metric=metric,
