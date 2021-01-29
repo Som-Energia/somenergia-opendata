@@ -122,16 +122,6 @@ def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
         dbhandler=dbhandler,
     )
 
-def contractsSparse(dates):
-    db = psycopg2.connect(**config.psycopg)
-    query = readQuery('contract_distribution_sparse')
-    with db.cursor() as cursor :
-        cursor.execute(query, dict(dates=[
-            [Date(adate) for adate in dates]
-        ]))
-        return csvTable(cursor)
-
-
 
 def activeMembersCounter(adate):
     # TODO: Unsafe substitution, use mogrify

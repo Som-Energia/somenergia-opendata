@@ -7,7 +7,6 @@ from yamlns.dateutils import Date
 from yamlns import namespace as ns
 import b2btest
 from .queries import (
-    contractsSparse,
     contractsSeries,
     membersSeries,
     newContractsSeries,
@@ -24,16 +23,6 @@ class Queries_Test(unittest.TestCase):
 
     def setUp(self):
         self.b2bdatapath = 'b2bdata'
-
-    def test_contractsSparse_single(self):
-        dates = ['2015-01-01']
-        result = contractsSparse(dates)
-        self.assertB2BEqual(result)
-
-    def test_contractsSparse_many(self):
-        dates = ['2015-01-01','2015-02-01']
-        result = contractsSparse(dates)
-        self.assertB2BEqual(result)
 
     def test_contractsSeries_single(self):
         dates = ['2015-01-01']
