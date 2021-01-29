@@ -17,7 +17,7 @@ from .common import (
 )
 from .queries import (
     contractsSeries,
-    membersSparse,
+    membersSeries,
 )
 
 blueprint = Blueprint(name=__name__, import_name=__name__)
@@ -97,7 +97,7 @@ def members(fromdate=None, todate=None):
         frm = '-'+u(fromdate) if fromdate else '',
         to  = '-'+u(todate) if todate else '',
     )
-    return filename, membersSparse(dates, csvTable)
+    return filename, membersSeries(dates, csvTable)
 
 
 
@@ -114,7 +114,7 @@ def contractsAux(fromdate=None, todate=None):
 def membersAux(fromdate=None, todate=None):
 
     dates=dateSequenceWeeksMonths(fromdate, todate)
-    return membersSparse(dates, csvTable)
+    return membersSeries(dates, csvTable)
 
 
 

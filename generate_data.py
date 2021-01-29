@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 from som_opendata.queries import (
-    membersSparse,
+    membersSeries,
     contractsSeries,
     newContractsSeries,
     canceledContractsSeries,
@@ -26,7 +26,7 @@ todate = Date.today()
 dates=dateSequenceMonths(fromdate, todate)
 
 metricGenerators = dict(
-    members=membersSparse,
+    members=membersSeries,
     contracts=contractsSeries,
     newcontracts=newContractsSeries,
     canceledcontracts=canceledContractsSeries,

@@ -159,7 +159,7 @@ def activeMembersLister(adate):
         END, ',' ORDER BY soci_id) AS count_{adate:%Y_%m_%d}
         """.format(adate=adate)
 
-def membersSparse(dates, dbhandler=csvTable, debug=False):
+def membersSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
         queryfile='members_distribution',
