@@ -9,12 +9,10 @@ from .distribution import (
     locationFilter,
     includedDates,
     missingDates,
-    removeDates,
     includedDatesObject,
     date2field,
     addObjects,
     field2date,
-    getDates,
     isField,
     cachedGetAggregated,
     )

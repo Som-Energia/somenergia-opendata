@@ -16,12 +16,9 @@ from .distribution import (
     date2field,
     isField,
     missingDates,
-    removeCounts,
-    removeDates,
     includedDatesObject,
     findObject,
     addObjects,
-    getDates,
     getAggregated,
     cachedGetAggregated,
     )
@@ -739,114 +736,6 @@ class Distribution_Test(unittest.TestCase):
         result = missingDates(['2018-01-01','2018-02-01'], ['2018-01-01'])
         self.assertEqual(result, [])
 
-
-    # removeCounts
-
-    def test__removeCounts__notFound(self):
-        _object = ns(
-            codi_pais='ES',
-            pais='España',
-            codi_ccaa='09',
-            comunitat_autonoma='Catalunya',
-            codi_provincia='08',
-            provincia='Barcelona',
-            codi_ine='08217',
-            municipi='Sant Joan Despí',
-            count_2018_01_01='1000',
-            count_2018_02_01='201',
-            )
-        result = removeCounts(_object, ['count_2018_03_01'])
-        self.assertEqual(result, _object)
-
-    def test__removeCounts__oneCount(self):
-        _object = ns(
-            codi_pais='ES',
-            pais='España',
-            codi_ccaa='09',
-            comunitat_autonoma='Catalunya',
-            codi_provincia='08',
-            provincia='Barcelona',
-            codi_ine='08217',
-            municipi='Sant Joan Despí',
-            count_2018_01_01='1000',
-            count_2018_02_01='201',
-            )
-        expected = ns(_object)
-        del expected['count_2018_01_01']
-
-        result = removeCounts(_object, ['count_2018_01_01'])
-        self.assertEqual(result, expected)
-
-
-    # removeDates
-
-    def test__removeDates__notFound(self):
-        _object = ns(
-            codi_pais='ES',
-            pais='España',
-            codi_ccaa='09',
-            comunitat_autonoma='Catalunya',
-            codi_provincia='08',
-            provincia='Barcelona',
-            codi_ine='08217',
-            municipi='Sant Joan Despí',
-            count_2018_01_01='1000',
-            count_2018_02_01='201',
-            )
-        result = removeDates([_object], ['2018-03-01'])
-        self.assertEqual(result, [_object])
-
-    def test__removeDates__oneDate(self):
-        _object = ns(
-            codi_pais='ES',
-            pais='España',
-            codi_ccaa='09',
-            comunitat_autonoma='Catalunya',
-            codi_provincia='08',
-            provincia='Barcelona',
-            codi_ine='08217',
-            municipi='Sant Joan Despí',
-            count_2018_01_01='1000',
-            count_2018_02_01='201',
-            )
-        result = removeDates([_object], ['2018-01-01'])
-        del _object['count_2018_01_01']
-        self.assertEqual(result, [_object])
-
-    # getDates
-
-    def test__getDates__notFound(self):
-        _object = ns(
-            codi_pais='ES',
-            pais='España',
-            codi_ccaa='09',
-            comunitat_autonoma='Catalunya',
-            codi_provincia='08',
-            provincia='Barcelona',
-            codi_ine='08217',
-            municipi='Sant Joan Despí',
-            count_2018_01_01='1000',
-            count_2018_02_01='201',
-            )
-        result = getDates([_object], ['2018-01-01', '2018-02-01'])
-        self.assertEqual(result, [_object])
-
-    def test__getDates__oneDate(self):
-        _object = ns(
-            codi_pais='ES',
-            pais='España',
-            codi_ccaa='09',
-            comunitat_autonoma='Catalunya',
-            codi_provincia='08',
-            provincia='Barcelona',
-            codi_ine='08217',
-            municipi='Sant Joan Despí',
-            count_2018_01_01='1000',
-            count_2018_02_01='201',
-            )
-        result = getDates([_object], ['2018-02-01'])
-        del _object['count_2018_01_01']
-        self.assertEqual(result, [_object])
 
     # findObject
 

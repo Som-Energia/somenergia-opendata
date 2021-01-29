@@ -146,34 +146,6 @@ def isField(field):
 def missingDates(datesExist, datesRequest):
     return list(set(datesRequest) - set(datesExist))
 
-def getDates(objects, dates):
-    return [
-        getCounts(o, [date2field(d) for d in dates])
-        for o in objects
-    ]
-
-def getCounts(_object, counts):
-    ret = ns()
-    for key, value in _object.items():
-        if not isField(key):
-            ret[key] = value
-        elif key in counts:
-            ret[key] = value
-    return ret
-
-def removeDates(objects, dates):
-    return [
-        removeCounts(o, [date2field(d) for d in dates])
-        for o in objects
-    ]
-
-def removeCounts(_object, counts):
-    ret = ns()
-    for key, value in _object.items():
-        if key not in counts:
-            ret[key] = value
-    return ret
-
 def findObject(objectList, key, value):
      for o in objectList:
          if o[key] == value:
