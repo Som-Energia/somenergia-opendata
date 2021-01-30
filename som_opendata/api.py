@@ -3,9 +3,6 @@ from flask import Blueprint, request, current_app, make_response, send_file, ren
 from yamlns import namespace as ns
 from .common import (
         yaml_response,
-        dateSequenceMonths,
-        dateSequenceWeeks,
-        dateSequenceYears,
         requestDates,
         validateParams,
         validateMapParams,

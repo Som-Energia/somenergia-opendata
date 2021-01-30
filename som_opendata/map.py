@@ -1,11 +1,9 @@
 from __future__ import division
-from future.utils import iteritems
 from yamlns import namespace as ns
 from .scale import LinearScale, LogScale
 from .colorscale import Gradient
-from .distribution import parse_tsv, tuples2objects, getAggregated
+from .distribution import getAggregated
 from pathlib2 import Path
-from math import log10, floor
 from wand.image import Image
 from functools import lru_cache
 from . import common
@@ -218,7 +216,7 @@ def createGif(frameQuantity, data, template, legend, geolevel, title, colors, sc
 def getNiceDivisor(population):
     from .scale import niceFloorValue
     currentMin = None
-    for code, value in iteritems(population):
+    for code, value in population.items():
         if not currentMin or value < currentMin:
             currentMin = value
 
