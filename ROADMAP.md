@@ -1,5 +1,12 @@
 # ROADMAP 
 
+## Agregacio temporal de dades
+
+- Detectar si la métrica necessita aggregació
+- Esbrinar les dades desagregades necessaries
+- Obtindre els indexos de les llargues dintre de les curtes
+- Aplicar l'operacio als grups que es defineixen
+
 ## API 1.0
 
 We want to be able to express:
@@ -10,6 +17,7 @@ Introspeccio:
 - [x] Quins codis i noms hi ha a un determinat geolevel amb possible filtre
 - [ ] Quins formats disponibles per un tipus de query (mapa, distribution)
 - [ ] Quins filtres s'apliquen als tags
+- [ ] Quines mètriques relatives hi ha
 
 [x] /discover/metric
 /discover/relativemetric  {population, area, marketcontracts...)
@@ -42,7 +50,7 @@ Maps:
 - Integral
 - Filtres per tag associats a la metrica
 
-Esdeveniments
+Events
 - ???
 
 Widgets
@@ -55,35 +63,6 @@ Webapps
 /map/members/per/population/by/state/monthly/from/2019-10-01/to/2019-11-01?format=png&diff=1
 
 /production/by/state/monthly/from/2019-10-01/to/2019-11-01?tag=biogas
-
-
-## El de hoy hoy
-
-
-- field -> metric
-- metric de tipus string, i afegir el check que retorni error informatiu
-- geolevel de tipus string, i afegir el check que retorni error informatiu
-- frequency de tipus string, i afegir el check que retorni error informatiu
-- dateSequences: takes first day of week, month, year...
-- Fragilitat dels testos B2B de csv's amb l'ordre segons l'idioma del sistema
-- Actualitzar les dades del csv
-- Revisar SQL members
-
-
-## El de hoy
-
-
-- TDD de requestedDates(firstDate, onDate, fromDate, toDate, periodicity): dates
-- TDD de pickDates(tuples, dates): tuples
-- TDD de la api contra cvs' sinteticos que no fallen
-- Considerar los casos que falln
-- Decidir un punto de la cascada de lo que sera un Source. Eso definira,
-	- que parametros necesita
-	- cual es el formato de salida
-- TDD Unittest CsvSource
-- Refactoring substitucion de la cadena `members_modul.source` de texto tsv
-
-
 
 
 
@@ -155,7 +134,6 @@ Recopilar usos que ens podem imaginar que ens facin de l'api
 
 - Produccio d'energia
 - Demanda d'energia dels nostres contractes
-
 
 
 
