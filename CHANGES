@@ -1,3 +1,12 @@
+# v0.2.13 2021-01-28
+
+- Discovery provides metric `description` field with information
+  about the meaning, source and validity of every metric.
+- Metrics define a `timeaggregation` attribute to indicate
+  how to aggregate values in time (sum, last, first, average...).
+- Known Bug: `new` and `canceled` metrics which which have `timeaggregation` `sum`
+  are not properly aggregated yearly by summation yet.
+
 # v0.2.12 2021-01-26
 
 - Fix: Discovery API now translates user displayable strings
