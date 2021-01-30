@@ -724,12 +724,10 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
         relativeMetricValues=relativeMValues,
     )
     response = make_response(result)
-
-    if len(request_dates) > 1:
-        response.mimetype = 'image/gif'
-        return response
-
-    response.mimetype = 'image/svg+xml'
+    response.mimetype = (
+        'image/gif' if len(request_dates)>1 else
+        'image/svg+xml'
+    )
     return response
 
 api.source = None
