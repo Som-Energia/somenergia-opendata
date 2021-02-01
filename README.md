@@ -7,6 +7,7 @@ Public API to access open data information about the cooperative
 
 - API UI: https://opendata.somenergia.coop/ui/
 - API Documentation: https://opendata.somenergia.coop/docs/
+- API Base: https://opendata.somenergia.coop/v0.2/
 
 ## Example queries
 
@@ -183,6 +184,7 @@ Unless specified all maps are returned as SVG files.
     Shows all suported metrics as a list named `metrics` with
     - `id` the id used to refer the metric
     - `text` the translated text to display users
+    - `description` translated text with detailed explanation of the meaning, source and errors of the metric
 
 - `/discover/geolevel`
     Returns a list `geolevels` with the supported geolevels and related info
@@ -190,8 +192,8 @@ Unless specified all maps are returned as SVG files.
     - `text` is the translated text to display users
     - `plural` is the pluralization of id used in yaml's as key when many are given
     - `parent` tells which other geolevel fully contains its subdivisions.
-    - `detailable: false` tells that a geolevel is not supported as statistics detail level
-    - `mapable: false` tells that a geolevel is not supported as map detail level
+    - `detailable: false` tells that a geolevel is not supported as statistics detail level (optional, default `true`)
+    - `mapable: false` tells that a geolevel is not supported as map detail level (optional, default `true`)
 
 - `/discover/geolevel/ccaa`
     Returns a list of divisions at the `ccaa` level as a map `options` with id -> text
@@ -256,6 +258,8 @@ More info about translation management on http://babel.pocoo.org/en/latest/setup
 npm install
 npm run docs
 ```
+
+
 
 ## External data sources
 
