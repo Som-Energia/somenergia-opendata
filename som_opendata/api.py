@@ -695,14 +695,14 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
         relativemetric=relativemetric,
     )
 
-    request_dates = TimeAggregator(
+    timeDomain = TimeAggregator(
         first=api.firstDate,
         last=api.source.getLastDay(metric),
         on=ondate,
         since=fromdate,
         to=todate,
         periodicity=frequency,
-    ).requestDates
+    )
 
     locationCodes = api.relativeMetricSource.getCodesByGeolevel(geolevel=geolevel)
     relativeMValues = api.relativeMetricSource.getValuesByCode(
@@ -713,7 +713,7 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
     result = renderMap(
         source=api.source,
         metric=metric,
-        dates=request_dates,
+        timeDomain=timeDomain,
         geolevel=geolevel,
         template=api.mapTemplateSource.getTemplate(
             geolevel=geolevel,
@@ -725,7 +725,7 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
     )
     response = make_response(result)
     response.mimetype = (
-        'image/gif' if len(request_dates)>1 else
+        'image/gif' if len(timeDomain.requestDates)>1 else
         'image/svg+xml'
     )
     return response

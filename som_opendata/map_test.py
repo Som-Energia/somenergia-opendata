@@ -24,6 +24,7 @@ from future.utils import iteritems
 from pathlib2 import Path
 from .distribution import parse_tsv, tuples2objects
 from .templateSource import loadMapData
+from .timeaggregator import TimeAggregator
 from .tsvRelativeMetricSource import loadTsvRelativeMetric
 
 
@@ -520,7 +521,7 @@ class Map_Test(unittest.TestCase):
         result = renderMap(
             source,
             'members',
-            dates=['2018-01-01'],
+            timeDomain=TimeAggregator(on='2018-01-01'),
             template=dummyTemplate,
             geolevel='dummy',
             locationsCodes=['01','09']
@@ -552,7 +553,7 @@ class Map_Test(unittest.TestCase):
         result = renderMap(
             source,
             'members',
-            dates=['2018-01-01'],
+            timeDomain=TimeAggregator(on='2018-01-01'),
             template=dummyTemplate,
             geolevel='dummy',
             locationsCodes=['01','09']
@@ -579,7 +580,7 @@ class Map_Test(unittest.TestCase):
         result = renderMap(
             source,
             'members', 
-            dates=['2019-01-01'],
+            timeDomain=TimeAggregator(on='2019-01-01'),
             template=template,
             geolevel='ccaa',
             locationsCodes=locations,
@@ -593,7 +594,7 @@ class Map_Test(unittest.TestCase):
         result = renderMap(
             source,
             'contracts',
-            dates=['2019-01-01'],
+            timeDomain=TimeAggregator(on='2019-01-01'),
             geolevel='ccaa',
             template=template,
             locationsCodes=locations,
@@ -685,7 +686,7 @@ class Map_Test(unittest.TestCase):
         result = renderMap(
             source,
             'members',
-            dates=['2019-11-01'],
+            timeDomain=TimeAggregator(on='2019-11-01'),
             geolevel='state',
             template=template,
             locationsCodes=locations,
@@ -991,7 +992,7 @@ class Map_Test(unittest.TestCase):
         result = renderMap(
             source,
             'members',
-            dates=['2018-01-01'],
+            timeDomain=TimeAggregator(on='2018-01-01'),
             template=dummyTemplate,
             geolevel='dummy',
             locationsCodes=['01','09'],
@@ -1053,7 +1054,7 @@ class Map_Test(unittest.TestCase):
         result = renderMap(
             source,
             'members',
-            dates=['2019-11-01'],
+            timeDomain=TimeAggregator(on='2019-11-01'),
             geolevel='state',
             template=template,
             locationsCodes=['01','09']
@@ -1107,7 +1108,7 @@ class Map_Test(unittest.TestCase):
         img = renderMap(
             source,
             'members',
-            dates=['2019-01-01','2019-02-01'],
+            timeDomain=TimeAggregator(periodicity='monthly', since='2019-01-01', to='2019-02-01'),
             geolevel='ccaa',
             template=template,
             locationsCodes=locations
@@ -1197,7 +1198,7 @@ class Map_Test(unittest.TestCase):
         resultBefore = renderMap(
             source,
             'members',
-            dates=['2019-01-01'],
+            timeDomain=TimeAggregator(on='2019-01-01'),
             template=template,
             geolevel='ccaa',
             locationsCodes=locations,
@@ -1207,7 +1208,7 @@ class Map_Test(unittest.TestCase):
         renderMap(
             source,
             'members',
-            dates=['2019-01-01'],
+            timeDomain=TimeAggregator(on='2019-01-01'),
             template=template,
             geolevel='ccaa',
             relativeMetricValues=populationValues,
@@ -1217,7 +1218,7 @@ class Map_Test(unittest.TestCase):
         resultAfter = renderMap(
             source,
             'members',
-            dates=['2019-01-01'],
+            timeDomain=TimeAggregator(on='2019-01-01'),
             template=template,
             geolevel='ccaa',
             locationsCodes=locations,
