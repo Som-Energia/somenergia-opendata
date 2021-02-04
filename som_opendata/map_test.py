@@ -517,7 +517,14 @@ class Map_Test(unittest.TestCase):
                 data_Adra,
                 ])
             )
-        result = renderMap(source, 'members', ['2018-01-01'], template=dummyTemplate, geolevel='dummy', locationsCodes=['01','09'])
+        result = renderMap(
+            source,
+            'members',
+            dates=['2018-01-01'],
+            template=dummyTemplate,
+            geolevel='dummy',
+            locationsCodes=['01','09']
+        )
 
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -542,7 +549,14 @@ class Map_Test(unittest.TestCase):
                 data_Adra,
                 ])
             )
-        result = renderMap(source, 'members', ['2018-01-01'], template=dummyTemplate, geolevel='dummy', locationsCodes=['01','09'])
+        result = renderMap(
+            source,
+            'members',
+            dates=['2018-01-01'],
+            template=dummyTemplate,
+            geolevel='dummy',
+            locationsCodes=['01','09']
+        )
 
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -562,13 +576,29 @@ class Map_Test(unittest.TestCase):
     def test_renderMap_members(self):
         locations = relativeData.getCodesByGeolevel('ccaa')
         template = mapTemplateSource.getTemplate(geolevel='ccaa', lang='en')
-        result = renderMap(source, 'members', ['2019-01-01'], template=template, geolevel='ccaa', locationsCodes=locations, legendTemplate=legendTemplate)
+        result = renderMap(
+            source,
+            'members', 
+            dates=['2019-01-01'],
+            template=template,
+            geolevel='ccaa',
+            locationsCodes=locations,
+            legendTemplate=legendTemplate,
+        )
         self.assertB2BEqual(result)
 
     def test_renderMap_contracts(self):
         locations = relativeData.getCodesByGeolevel('ccaa')
         template = mapTemplateSource.getTemplate(geolevel='ccaa', lang='en')
-        result = renderMap(source, 'contracts', ['2019-01-01'], geolevel='ccaa', template=template, locationsCodes=locations, legendTemplate=legendTemplate)
+        result = renderMap(
+            source,
+            'contracts',
+            dates=['2019-01-01'],
+            geolevel='ccaa',
+            template=template,
+            locationsCodes=locations,
+            legendTemplate=legendTemplate,
+        )
         self.assertB2BEqual(result)
 
     def test_dataToTemplateDict_singleState(self):
@@ -652,7 +682,15 @@ class Map_Test(unittest.TestCase):
     def test_renderMap_members_byState(self):
         locations = relativeData.getCodesByGeolevel('state')
         template = mapTemplateSource.getTemplate(geolevel='state', lang='en')
-        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', template=template, locationsCodes=locations, legendTemplate=legendTemplate)
+        result = renderMap(
+            source,
+            'members',
+            dates=['2019-11-01'],
+            geolevel='state',
+            template=template,
+            locationsCodes=locations,
+            legendTemplate=legendTemplate,
+        )
         self.assertB2BEqual(result)
 
     def test_maxValue_oneCCAA(self):
@@ -950,9 +988,15 @@ class Map_Test(unittest.TestCase):
                 ])
             )
         populationValues = {'01': 8388875, '09': 7416237}
-        result = renderMap(source, 'members', ['2018-01-01'],
-                template=dummyTemplate, geolevel='dummy',
-                locationsCodes=['01','09'], relativeMetricValues=populationValues)
+        result = renderMap(
+            source,
+            'members',
+            dates=['2018-01-01'],
+            template=dummyTemplate,
+            geolevel='dummy',
+            locationsCodes=['01','09'],
+            relativeMetricValues=populationValues,
+        )
 
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
@@ -1006,7 +1050,14 @@ class Map_Test(unittest.TestCase):
 
     def test_renderMap_members_givenTemplate(self):
         template = Path('data/maps/mapTemplates/mapTemplate_dummy.svg').read_text(encoding='utf8')
-        result = renderMap(source, 'members', ['2019-11-01'], geolevel='state', template=template, locationsCodes=['01','09'])
+        result = renderMap(
+            source,
+            'members',
+            dates=['2019-11-01'],
+            geolevel='state',
+            template=template,
+            locationsCodes=['01','09']
+        )
         self.assertB2BEqual(result)
 
     def test_createGif_manyFrames(self):
@@ -1053,7 +1104,14 @@ class Map_Test(unittest.TestCase):
     def test_renderMap_membersRangeDates(self):
         template = mapTemplateSource.getTemplate(geolevel='ccaa', lang='en')
         locations = relativeData.getCodesByGeolevel('ccaa')
-        img = renderMap(source, 'members', ['2019-01-01','2019-02-01'], geolevel='ccaa', template=template, locationsCodes=locations)
+        img = renderMap(
+            source,
+            'members',
+            dates=['2019-01-01','2019-02-01'],
+            geolevel='ccaa',
+            template=template,
+            locationsCodes=locations
+        )
         result = getBlobInfo(img)
         self.assertNsEqual(result, """\
             format: GIF
@@ -1136,10 +1194,35 @@ class Map_Test(unittest.TestCase):
     def test_renderMap_members_cachedAfterChangedValues(self):
         locations = relativeData.getCodesByGeolevel('ccaa')
         template = mapTemplateSource.getTemplate(geolevel='ccaa', lang='en')
-        resultBefore = renderMap(source, 'members', ['2019-01-01'], template=template, geolevel='ccaa', locationsCodes=locations, legendTemplate="")
+        resultBefore = renderMap(
+            source,
+            'members',
+            dates=['2019-01-01'],
+            template=template,
+            geolevel='ccaa',
+            locationsCodes=locations,
+            legendTemplate=""
+          )
         populationValues = relativeData.getValuesByCode(metric='population', geolevel='ccaa')
-        renderMap(source, 'members', ['2019-01-01'], template=template, geolevel='ccaa', relativeMetricValues=populationValues, locationsCodes=locations, legendTemplate="")
-        resultAfter = renderMap(source, 'members', ['2019-01-01'], template=template, geolevel='ccaa', locationsCodes=locations, legendTemplate="")
+        renderMap(
+            source,
+            'members',
+            dates=['2019-01-01'],
+            template=template,
+            geolevel='ccaa',
+            relativeMetricValues=populationValues,
+            locationsCodes=locations,
+            legendTemplate="",
+        )
+        resultAfter = renderMap(
+            source,
+            'members',
+            dates=['2019-01-01'],
+            template=template,
+            geolevel='ccaa',
+            locationsCodes=locations,
+            legendTemplate=""
+          )
         self.assertEqual(resultBefore, resultAfter)
 
 # vim: et sw=4 ts=4
