@@ -17,6 +17,7 @@ class TimeAggregator:
     """
     def __init__(self, **kwds):
         self.requestDates = requestDates(**kwds)
+        self.sourceDates = self.requestDates[:]
 
 
 # vim: et sw=4 ts=4

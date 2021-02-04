@@ -11,6 +11,13 @@ class TimeAggregator_Test(unittest.TestCase):
             expected,
         )
 
+    def assertSourceDatesEqual(self, expected, **kwds):
+        aggregator=TimeAggregator(**kwds)
+        self.assertEqual(
+            aggregator.sourceDates,
+            expected,
+        )
+
     def test__outputDates__last(self):
         self.assertRequestDatesEqual(
             first='2000-01-01',
@@ -119,6 +126,18 @@ class TimeAggregator_Test(unittest.TestCase):
             expected = [
                 '2018-01-01',
             ])
+
+    def test__sourceDates__yearlyDifferentDate(self):
+        self.assertSourceDatesEqual(
+            first='2000-01-01',
+            since='2017-07-20',
+            to=   '2018-07-20',
+            periodicity='yearly',
+            expected = [
+                '2017-01-01',
+                '2018-01-01',
+            ])
+
 
 
 # vim: et sw=4 ts=4
