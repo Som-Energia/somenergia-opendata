@@ -18,6 +18,13 @@ class TimeAggregator_Test(unittest.TestCase):
             expected,
         )
 
+    def assertAggregated(self, expected, input, **kwds):
+        aggregator=TimeAggregator(**kwds)
+        self.assertEqual(
+            aggregator.aggregate(input),
+            expected,
+        )
+
     def test__outputDates__last(self):
         self.assertRequestDatesEqual(
             first='2000-01-01',
@@ -136,6 +143,21 @@ class TimeAggregator_Test(unittest.TestCase):
             expected = [
                 '2017-01-01',
                 '2018-01-01',
+            ])
+
+    def test__aggregated__identity(self):
+        self.assertAggregated(
+            first='2000-01-01',
+            since='2017-07-20',
+            to=   '2018-07-20',
+            periodicity='yearly',
+            input = [
+                1,
+                2,
+            ],
+            expected = [
+                1,
+                2,
             ])
 
 
