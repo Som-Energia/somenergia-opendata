@@ -4,15 +4,15 @@ from .timeaggregator import TimeAggregator
 
 class TimeAggregator_Test(unittest.TestCase):
 
-    def assertOutputDatesEqual(self, expected, **kwds):
+    def assertRequestDatesEqual(self, expected, **kwds):
         aggregator=TimeAggregator(**kwds)
         self.assertEqual(
-            aggregator.outputDates,
+            aggregator.requestDates,
             expected,
         )
 
     def test__outputDates__last(self):
-        self.assertOutputDatesEqual(
+        self.assertRequestDatesEqual(
             first='2000-01-01',
             last= '2010-01-01',
             expected = [
@@ -20,7 +20,7 @@ class TimeAggregator_Test(unittest.TestCase):
             ])
 
     def test__outputDates__onDate(self):
-        self.assertOutputDatesEqual(
+        self.assertRequestDatesEqual(
             first='2000-01-01',
             on='2018-07-20',
             expected = [
@@ -28,7 +28,7 @@ class TimeAggregator_Test(unittest.TestCase):
             ])
 
     def test__outputDates__weeklySameDate(self):
-        self.assertOutputDatesEqual(
+        self.assertRequestDatesEqual(
             periodicity='weekly',
             first='2000-01-01',
             since='2018-07-20',
@@ -38,7 +38,7 @@ class TimeAggregator_Test(unittest.TestCase):
             ])
 
     def test__outputDates__weeklyDifferentDate(self):
-        self.assertOutputDatesEqual(
+        self.assertRequestDatesEqual(
             periodicity='weekly',
             first='2000-01-01',
             since='2018-07-10',
@@ -49,7 +49,7 @@ class TimeAggregator_Test(unittest.TestCase):
             ])
 
     def test__outputDates__monthlySameDate(self):
-        self.assertOutputDatesEqual(
+        self.assertRequestDatesEqual(
             periodicity='monthly',
             first='2000-01-01',
             since='2018-07-20',
@@ -59,7 +59,7 @@ class TimeAggregator_Test(unittest.TestCase):
             ])
 
     def test__outputDates__monthlyDifferentDate(self):
-        self.assertOutputDatesEqual(
+        self.assertRequestDatesEqual(
             first='2000-01-01',
             since='2018-06-20',
             to='2018-07-20',
@@ -70,7 +70,7 @@ class TimeAggregator_Test(unittest.TestCase):
             ])
 
     def test__outputDates__yearlySameDate(self):
-        self.assertOutputDatesEqual(
+        self.assertRequestDatesEqual(
             first='2000-01-01',
             since='2018-07-20',
             to='2018-07-20',
@@ -80,7 +80,7 @@ class TimeAggregator_Test(unittest.TestCase):
             ])
 
     def test__outputDates__yearlyDifferentDate(self):
-        self.assertOutputDatesEqual(
+        self.assertRequestDatesEqual(
             first='2000-01-01',
             since='2017-07-20',
             to=   '2018-07-20',
@@ -91,7 +91,7 @@ class TimeAggregator_Test(unittest.TestCase):
             ])
 
     def test__outputDates__toWithoutSince(self):
-        self.assertOutputDatesEqual(
+        self.assertRequestDatesEqual(
             periodicity='weekly',
             first='2011-01-01',
             to=   '2011-01-20',
@@ -103,7 +103,7 @@ class TimeAggregator_Test(unittest.TestCase):
             ])
 
     def test__outputDates__turnedDates(self):
-        self.assertOutputDatesEqual(
+        self.assertRequestDatesEqual(
             periodicity='monthly',
             first='2000-01-01',
             since='2018-02-01',
@@ -113,7 +113,7 @@ class TimeAggregator_Test(unittest.TestCase):
             ])
 
     def test__outputDates__onMidMonth(self):
-        self.assertOutputDatesEqual(
+        self.assertRequestDatesEqual(
             first='2000-01-01',
             on='2018-01-12',
             expected = [

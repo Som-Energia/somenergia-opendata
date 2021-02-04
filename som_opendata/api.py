@@ -3,10 +3,10 @@ from flask import Blueprint, request, current_app, make_response, send_file, ren
 from yamlns import namespace as ns
 from .common import (
         yaml_response,
-        requestDates,
         validateParams,
         validateMapParams,
     )
+from .timeaggregator import TimeAggregator
 from . import common
 from .distribution import getAggregated
 from .errors import MissingDateError
@@ -533,14 +533,14 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
 
     content = api.source
 
-    request_dates = requestDates(
+    request_dates = TimeAggregator(
         first=api.firstDate,
         last=api.source.getLastDay(metric),
         on=ondate,
         since=fromdate,
         to=todate,
         periodicity=frequency,
-    )
+    ).requestDates
     filters = locationFiltersFromQuery()
     return getAggregated(content, metric, request_dates, filters, geolevel, mutable=False)
 
@@ -695,14 +695,14 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
         relativemetric=relativemetric,
     )
 
-    request_dates = requestDates(
+    request_dates = TimeAggregator(
         first=api.firstDate,
         last=api.source.getLastDay(metric),
         on=ondate,
         since=fromdate,
         to=todate,
         periodicity=frequency,
-    )
+    ).requestDates
 
     locationCodes = api.relativeMetricSource.getCodesByGeolevel(geolevel=geolevel)
     relativeMValues = api.relativeMetricSource.getValuesByCode(
