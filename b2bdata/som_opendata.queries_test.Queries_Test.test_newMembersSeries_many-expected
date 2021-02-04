@@ -364,6 +364,7 @@ ES	España	02	Aragón	44	Teruel	44013	Alcañiz	0	0
 ES	España	02	Aragón	44	Teruel	44014	Alcorisa	0	0
 ES	España	02	Aragón	44	Teruel	44025	Andorra	0	0
 ES	España	02	Aragón	44	Teruel	44027	Arens de Lledó	0	0
+ES	España	02	Aragón	44	Teruel	44029	Ariño	0	0
 ES	España	02	Aragón	44	Teruel	44040	Berge	0	0
 ES	España	02	Aragón	44	Teruel	44049	Calaceite	0	0
 ES	España	02	Aragón	44	Teruel	44050	Calamocha	0	0
@@ -947,6 +948,7 @@ ES	España	07	Castilla y León	37	Salamanca	37092	Castellanos de Moriscos	0	0
 ES	España	07	Castilla y León	37	Salamanca	37136	Fuenteguinaldo	0	0
 ES	España	07	Castilla y León	37	Salamanca	37156	Guijuelo	0	0
 ES	España	07	Castilla y León	37	Salamanca	37170	Ledesma	0	0
+ES	España	07	Castilla y León	37	Salamanca	37193	Miranda del Castañar	0	0
 ES	España	07	Castilla y León	37	Salamanca	37194	Mogarraz	0	0
 ES	España	07	Castilla y León	37	Salamanca	37238	Pedrosillo el Ralo	0	0
 ES	España	07	Castilla y León	37	Salamanca	37251	Peromingo	0	0
@@ -1404,7 +1406,7 @@ ES	España	09	Cataluña	17	Girona	17085	Jafre	0	0
 ES	España	09	Cataluña	17	Girona	17086	Jonquera, La	0	0
 ES	España	09	Cataluña	17	Girona	17087	Juià	0	0
 ES	España	09	Cataluña	17	Girona	17088	Lladó	0	0
-ES	España	09	Cataluña	17	Girona	17089	Llagostera	2	2
+ES	España	09	Cataluña	17	Girona	17089	Llagostera	1	2
 ES	España	09	Cataluña	17	Girona	17090	Llambilles	0	0
 ES	España	09	Cataluña	17	Girona	17091	Llanars	0	0
 ES	España	09	Cataluña	17	Girona	17092	Llançà	0	0
@@ -1470,7 +1472,7 @@ ES	España	09	Cataluña	17	Girona	17157	Sant Andreu Salou	0	0
 ES	España	09	Cataluña	17	Girona	17183	Sant Aniol de Finestres	0	0
 ES	España	09	Cataluña	17	Girona	17184	Santa Pau	0	0
 ES	España	09	Cataluña	17	Girona	17158	Sant Climent Sescebes	0	0
-ES	España	09	Cataluña	17	Girona	17159	Sant Feliu de Buixalleu	0	0
+ES	España	09	Cataluña	17	Girona	17159	Sant Feliu de Buixalleu	1	0
 ES	España	09	Cataluña	17	Girona	17160	Sant Feliu de Guíxols	0	0
 ES	España	09	Cataluña	17	Girona	17161	Sant Feliu de Pallerols	0	1
 ES	España	09	Cataluña	17	Girona	17162	Sant Ferriol	0	0

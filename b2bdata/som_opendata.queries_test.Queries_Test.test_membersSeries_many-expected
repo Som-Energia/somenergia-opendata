@@ -364,6 +364,7 @@ ES	España	02	Aragón	44	Teruel	44013	Alcañiz	6	6
 ES	España	02	Aragón	44	Teruel	44014	Alcorisa	0	0
 ES	España	02	Aragón	44	Teruel	44025	Andorra	1	1
 ES	España	02	Aragón	44	Teruel	44027	Arens de Lledó	0	0
+ES	España	02	Aragón	44	Teruel	44029	Ariño	0	0
 ES	España	02	Aragón	44	Teruel	44040	Berge	0	0
 ES	España	02	Aragón	44	Teruel	44049	Calaceite	0	0
 ES	España	02	Aragón	44	Teruel	44050	Calamocha	1	1
@@ -947,6 +948,7 @@ ES	España	07	Castilla y León	37	Salamanca	37092	Castellanos de Moriscos	0	0
 ES	España	07	Castilla y León	37	Salamanca	37136	Fuenteguinaldo	0	0
 ES	España	07	Castilla y León	37	Salamanca	37156	Guijuelo	0	0
 ES	España	07	Castilla y León	37	Salamanca	37170	Ledesma	0	0
+ES	España	07	Castilla y León	37	Salamanca	37193	Miranda del Castañar	0	0
 ES	España	07	Castilla y León	37	Salamanca	37194	Mogarraz	0	0
 ES	España	07	Castilla y León	37	Salamanca	37238	Pedrosillo el Ralo	1	1
 ES	España	07	Castilla y León	37	Salamanca	37251	Peromingo	1	1
@@ -1395,7 +1397,7 @@ ES	España	09	Cataluña	17	Girona	17075	Garrigàs	1	1
 ES	España	09	Cataluña	17	Girona	17076	Garrigoles	3	3
 ES	España	09	Cataluña	17	Girona	17077	Garriguella	5	5
 ES	España	09	Cataluña	17	Girona	17078	Ger	1	1
-ES	España	09	Cataluña	17	Girona	17079	Girona	355	360
+ES	España	09	Cataluña	17	Girona	17079	Girona	354	359
 ES	España	09	Cataluña	17	Girona	17080	Gombrèn	0	0
 ES	España	09	Cataluña	17	Girona	17081	Gualta	1	2
 ES	España	09	Cataluña	17	Girona	17082	Guils de Cerdanya	0	0
@@ -1404,7 +1406,7 @@ ES	España	09	Cataluña	17	Girona	17085	Jafre	1	1
 ES	España	09	Cataluña	17	Girona	17086	Jonquera, La	2	2
 ES	España	09	Cataluña	17	Girona	17087	Juià	1	1
 ES	España	09	Cataluña	17	Girona	17088	Lladó	1	1
-ES	España	09	Cataluña	17	Girona	17089	Llagostera	23	25
+ES	España	09	Cataluña	17	Girona	17089	Llagostera	22	24
 ES	España	09	Cataluña	17	Girona	17090	Llambilles	2	2
 ES	España	09	Cataluña	17	Girona	17091	Llanars	1	1
 ES	España	09	Cataluña	17	Girona	17092	Llançà	3	3
@@ -1470,7 +1472,7 @@ ES	España	09	Cataluña	17	Girona	17157	Sant Andreu Salou	0	0
 ES	España	09	Cataluña	17	Girona	17183	Sant Aniol de Finestres	3	3
 ES	España	09	Cataluña	17	Girona	17184	Santa Pau	2	2
 ES	España	09	Cataluña	17	Girona	17158	Sant Climent Sescebes	1	1
-ES	España	09	Cataluña	17	Girona	17159	Sant Feliu de Buixalleu	4	4
+ES	España	09	Cataluña	17	Girona	17159	Sant Feliu de Buixalleu	5	5
 ES	España	09	Cataluña	17	Girona	17160	Sant Feliu de Guíxols	27	27
 ES	España	09	Cataluña	17	Girona	17161	Sant Feliu de Pallerols	3	4
 ES	España	09	Cataluña	17	Girona	17162	Sant Ferriol	0	0
@@ -1494,7 +1496,7 @@ ES	España	09	Cataluña	17	Girona	17178	Sant Pere Pescador	1	1
 ES	España	09	Cataluña	17	Girona	17186	Sarrià de Ter	10	10
 ES	España	09	Cataluña	17	Girona	17187	Saus,  Camallera i Llampaies	4	4
 ES	España	09	Cataluña	17	Girona	17188	Selva de Mar, La	1	1
-ES	España	09	Cataluña	17	Girona	17190	Serinyà	3	3
+ES	España	09	Cataluña	17	Girona	17190	Serinyà	4	4
 ES	España	09	Cataluña	17	Girona	17191	Serra de Daró	0	0
 ES	España	09	Cataluña	17	Girona	17192	Setcases	1	1
 ES	España	09	Cataluña	17	Girona	17193	Sils	4	4
@@ -1768,7 +1770,7 @@ ES	España	09	Cataluña	43	Tarragona	43042	Castellvell del Camp	6	7
 ES	España	09	Cataluña	43	Tarragona	43043	Catllar, El	2	2
 ES	España	09	Cataluña	43	Tarragona	43045	Colldejou	0	0
 ES	España	09	Cataluña	43	Tarragona	43046	Conesa	1	1
-ES	España	09	Cataluña	43	Tarragona	43047	Constantí	6	6
+ES	España	09	Cataluña	43	Tarragona	43047	Constantí	7	7
 ES	España	09	Cataluña	43	Tarragona	43048	Corbera d'Ebre	0	0
 ES	España	09	Cataluña	43	Tarragona	43049	Cornudella de Montsant	0	0
 ES	España	09	Cataluña	43	Tarragona	43050	Creixell	0	0
@@ -1834,7 +1836,7 @@ ES	España	09	Cataluña	43	Tarragona	43119	Puigpelat	2	2
 ES	España	09	Cataluña	43	Tarragona	43120	Querol	0	0
 ES	España	09	Cataluña	43	Tarragona	43121	Rasquera	0	0
 ES	España	09	Cataluña	43	Tarragona	43122	Renau	0	0
-ES	España	09	Cataluña	43	Tarragona	43123	Reus	80	81
+ES	España	09	Cataluña	43	Tarragona	43123	Reus	79	80
 ES	España	09	Cataluña	43	Tarragona	43124	Riba, La	0	0
 ES	España	09	Cataluña	43	Tarragona	43125	Riba-roja d'Ebre	0	0
 ES	España	09	Cataluña	43	Tarragona	43126	Riera de Gaià, La	3	3
