@@ -222,9 +222,8 @@ def getNiceDivisor(population):
 
     return niceFloorValue(currentMin)
 
-def renderMap(source, metric, geolevel, template, locationsCodes, dates=None, timeDomain=None, relativeMetricValues={}, legendTemplate=''):
-    if timeDomain:
-        dates = timeDomain.requestDates # TODO: not always
+def renderMap(source, metric, geolevel, template, locationsCodes, timeDomain=None, relativeMetricValues={}, legendTemplate=''):
+    dates = timeDomain.requestDates # TODO: not always
 
     data = getAggregated(source, metric, dates, {}, geolevel, mutable=bool(relativeMetricValues))
     subtitle = ''
