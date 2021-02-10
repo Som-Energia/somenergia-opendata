@@ -7,23 +7,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-01-27 19:33+0100\n"
+"POT-Creation-Date: 2021-02-10 12:08+0100\n"
 "PO-Revision-Date: 2021-01-27 20:19+0100\n"
 "Last-Translator: David García Garzón <david.garcia@somenergia.coop>\n"
 "Language: es\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
-"X-Generator: Lokalize 19.12.3\n"
+"Generated-By: Babel 2.8.0\n"
 
-#: som_opendata/common.py:158
+#: som_opendata/common.py:17
 msgid "Members"
 msgstr "Socias"
 
-#: som_opendata/common.py:160
+#: som_opendata/common.py:19
 msgid ""
 "Current cooperative members at the start of a given date.\n"
 "\n"
@@ -39,51 +38,51 @@ msgid ""
 msgstr ""
 "Personas socias  de la cooperativa al inicio de la fecha dada\n"
 "\n"
-"Los datos se obtienen del estado actual del ERP, por eso, hay que tener en"
-" cuenta que:\n"
+"Los datos se obtienen del estado actual del ERP, por eso, hay que tener "
+"en cuenta que:\n"
 "- Los primeros meses, las altas se apuntaban en una hoja de cálculo, pero"
 " figura com fecha de alta cuando se pasaron al ERP.\n"
-"- No hay registro histórico de las direcciones de una socia. Por eso, si una"
-" socia cambia su domicilio de Vigo a Cartagena, cuenta como que ha vivido"
-" siempre en Cartagena.\n"
-"- Solo guardamos una fecha de alta i baja por socia. No queda bien registrado"
-" si una socia se da de baja y vuelve a darse de alta.\n"
+"- No hay registro histórico de las direcciones de una socia. Por eso, si "
+"una socia cambia su domicilio de Vigo a Cartagena, cuenta como que ha "
+"vivido siempre en Cartagena.\n"
+"- Solo guardamos una fecha de alta i baja por socia. No queda bien "
+"registrado si una socia se da de baja y vuelve a darse de alta.\n"
 
-#: som_opendata/common.py:171
+#: som_opendata/common.py:30
 msgid "New members"
 msgstr "Nuevas socias"
 
-#: som_opendata/common.py:173
+#: som_opendata/common.py:32
 msgid ""
 "New cooperative members during the month before a given date.\n"
 "\n"
 "Considerations for \"Members\" metric also apply in this one.\n"
 msgstr ""
-"Socias que entraron en la cooperativa durante el mes anterior a la fecha"
-" dada.\n"
+"Socias que entraron en la cooperativa durante el mes anterior a la fecha "
+"dada.\n"
 "\n"
 "Se aplican las mismas consideraciones que para la métrica \"Socias\".\n"
 
-#: som_opendata/common.py:179
+#: som_opendata/common.py:38
 msgid "Canceled members"
 msgstr "Bajas de socias"
 
-#: som_opendata/common.py:181
+#: som_opendata/common.py:40
 msgid ""
 "Members leaving the cooperative during in the month before a given date.\n"
 "\n"
 "Considerations for \"Members\" metric also apply in this one.\n"
 msgstr ""
-"Socias que abandonaron la cooperativa durante el mes anterior a la fecha"
-" dada.\n"
+"Socias que abandonaron la cooperativa durante el mes anterior a la fecha "
+"dada.\n"
 "\n"
 "Se aplican las mismas consideraciones que para la métrica \"Socias\".\n"
 
-#: som_opendata/common.py:187
+#: som_opendata/common.py:46
 msgid "Contracts"
 msgstr "Contratos"
 
-#: som_opendata/common.py:189
+#: som_opendata/common.py:48
 msgid ""
 "Current active contracts at the start of a given date.\n"
 "\n"
@@ -94,16 +93,16 @@ msgid ""
 msgstr ""
 "Total de contratos activos al inicio de la fecha dada.\n"
 "\n"
-"Los datos se obtienen de la activación y desactivación de los contratos por"
-" el sistema ATR.\n"
-"Los contratos antiguos se traspasaban a mano desde los ficheros ATR y puede"
-" que sean menos fiables.\n"
+"Los datos se obtienen de la activación y desactivación de los contratos "
+"por el sistema ATR.\n"
+"Los contratos antiguos se traspasaban a mano desde los ficheros ATR y "
+"puede que sean menos fiables.\n"
 
-#: som_opendata/common.py:196
+#: som_opendata/common.py:55
 msgid "New contracts"
 msgstr "Nuevos contratos"
 
-#: som_opendata/common.py:198
+#: som_opendata/common.py:57
 msgid ""
 "Contracts starting during in the month before a given date.\n"
 "\n"
@@ -113,11 +112,11 @@ msgstr ""
 "\n"
 "Se aplican las mismas consideraciones que para la métrica \"Contratos\".\n"
 
-#: som_opendata/common.py:204
+#: som_opendata/common.py:63
 msgid "Canceled contracts"
 msgstr "Bajas de contratos"
 
-#: som_opendata/common.py:206
+#: som_opendata/common.py:65
 msgid ""
 "Contracts ending during in the month before a given date.\n"
 "\n"
@@ -127,79 +126,79 @@ msgstr ""
 "\n"
 "Se aplican las mismas consideraciones que para la métrica \"Contratos\".\n"
 
-#: som_opendata/common.py:222
+#: som_opendata/common.py:82
 msgid "World"
 msgstr "Mundo"
 
-#: som_opendata/common.py:226
+#: som_opendata/common.py:86
 msgid "Country"
 msgstr "País"
 
-#: som_opendata/common.py:232
+#: som_opendata/common.py:92
 msgid "CCAA"
 msgstr "CCAA"
 
-#: som_opendata/common.py:237
+#: som_opendata/common.py:97
 msgid "State"
 msgstr "Província"
 
-#: som_opendata/common.py:242
+#: som_opendata/common.py:102
 msgid "City"
 msgstr "Ciudad"
 
-#: som_opendata/common.py:248
+#: som_opendata/common.py:108
 msgid "Local Group"
 msgstr "Grupo Local"
 
-#: som_opendata/map.py:16
+#: som_opendata/map.py:14
 msgid "January"
 msgstr "Enero"
 
-#: som_opendata/map.py:17
+#: som_opendata/map.py:15
 msgid "February"
 msgstr "Febrero"
 
-#: som_opendata/map.py:18
+#: som_opendata/map.py:16
 msgid "March"
 msgstr "Marzo"
 
-#: som_opendata/map.py:19
+#: som_opendata/map.py:17
 msgid "April"
 msgstr "Abril"
 
-#: som_opendata/map.py:20
+#: som_opendata/map.py:18
 msgid "May"
 msgstr "Mayo"
 
-#: som_opendata/map.py:21
+#: som_opendata/map.py:19
 msgid "June"
 msgstr "Junio"
 
-#: som_opendata/map.py:22
+#: som_opendata/map.py:20
 msgid "July"
 msgstr "Julio"
 
-#: som_opendata/map.py:23
+#: som_opendata/map.py:21
 msgid "August"
 msgstr "Agosto"
 
-#: som_opendata/map.py:24
+#: som_opendata/map.py:22
 msgid "September"
 msgstr "Septiembre"
 
-#: som_opendata/map.py:25
+#: som_opendata/map.py:23
 msgid "October"
 msgstr "Octubre"
 
-#: som_opendata/map.py:26
+#: som_opendata/map.py:24
 msgid "November"
 msgstr "Noviembre"
 
-#: som_opendata/map.py:27
+#: som_opendata/map.py:25
 msgid "December"
 msgstr "Diciembre"
 
-#: som_opendata/map.py:235
+#: som_opendata/map.py:233
 #, python-format
 msgid "per %(num)s population"
 msgstr "por cada %(num)s hab"

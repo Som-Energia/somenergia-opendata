@@ -7,22 +7,22 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: somenergia-opendata 0.2.12\n"
+"Project-Id-Version: somenergia-opendata 0.2.13\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-01-28 10:23+0100\n"
+"POT-Creation-Date: 2021-02-10 12:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.8.0\n"
 
-#: som_opendata/common.py:158
+#: som_opendata/common.py:17
 msgid "Members"
 msgstr ""
 
-#: som_opendata/common.py:160
+#: som_opendata/common.py:19
 msgid ""
 "Current cooperative members at the start of a given date.\n"
 "\n"
@@ -37,33 +37,33 @@ msgid ""
 "memberships are not properly recorded.\n"
 msgstr ""
 
-#: som_opendata/common.py:171
+#: som_opendata/common.py:30
 msgid "New members"
 msgstr ""
 
-#: som_opendata/common.py:173
+#: som_opendata/common.py:32
 msgid ""
 "New cooperative members during the month before a given date.\n"
 "\n"
 "Considerations for \"Members\" metric also apply in this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:179
+#: som_opendata/common.py:38
 msgid "Canceled members"
 msgstr ""
 
-#: som_opendata/common.py:181
+#: som_opendata/common.py:40
 msgid ""
 "Members leaving the cooperative during in the month before a given date.\n"
 "\n"
 "Considerations for \"Members\" metric also apply in this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:187
+#: som_opendata/common.py:46
 msgid "Contracts"
 msgstr ""
 
-#: som_opendata/common.py:189
+#: som_opendata/common.py:48
 msgid ""
 "Current active contracts at the start of a given date.\n"
 "\n"
@@ -73,101 +73,101 @@ msgid ""
 "reliable.\n"
 msgstr ""
 
-#: som_opendata/common.py:196
+#: som_opendata/common.py:55
 msgid "New contracts"
 msgstr ""
 
-#: som_opendata/common.py:198
+#: som_opendata/common.py:57
 msgid ""
 "Contracts starting during in the month before a given date.\n"
 "\n"
 "Considerations for \"Contracts\" metric also apply in this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:204
+#: som_opendata/common.py:63
 msgid "Canceled contracts"
 msgstr ""
 
-#: som_opendata/common.py:206
+#: som_opendata/common.py:65
 msgid ""
 "Contracts ending during in the month before a given date.\n"
 "\n"
 "Considerations for \"Contracts\" metric also apply in this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:222
+#: som_opendata/common.py:82
 msgid "World"
 msgstr ""
 
-#: som_opendata/common.py:226
+#: som_opendata/common.py:86
 msgid "Country"
 msgstr ""
 
-#: som_opendata/common.py:232
+#: som_opendata/common.py:92
 msgid "CCAA"
 msgstr ""
 
-#: som_opendata/common.py:237
+#: som_opendata/common.py:97
 msgid "State"
 msgstr ""
 
-#: som_opendata/common.py:242
+#: som_opendata/common.py:102
 msgid "City"
 msgstr ""
 
-#: som_opendata/common.py:248
+#: som_opendata/common.py:108
 msgid "Local Group"
 msgstr ""
 
-#: som_opendata/map.py:16
+#: som_opendata/map.py:14
 msgid "January"
 msgstr ""
 
-#: som_opendata/map.py:17
+#: som_opendata/map.py:15
 msgid "February"
 msgstr ""
 
-#: som_opendata/map.py:18
+#: som_opendata/map.py:16
 msgid "March"
 msgstr ""
 
-#: som_opendata/map.py:19
+#: som_opendata/map.py:17
 msgid "April"
 msgstr ""
 
-#: som_opendata/map.py:20
+#: som_opendata/map.py:18
 msgid "May"
 msgstr ""
 
-#: som_opendata/map.py:21
+#: som_opendata/map.py:19
 msgid "June"
 msgstr ""
 
-#: som_opendata/map.py:22
+#: som_opendata/map.py:20
 msgid "July"
 msgstr ""
 
-#: som_opendata/map.py:23
+#: som_opendata/map.py:21
 msgid "August"
 msgstr ""
 
-#: som_opendata/map.py:24
+#: som_opendata/map.py:22
 msgid "September"
 msgstr ""
 
-#: som_opendata/map.py:25
+#: som_opendata/map.py:23
 msgid "October"
 msgstr ""
 
-#: som_opendata/map.py:26
+#: som_opendata/map.py:24
 msgid "November"
 msgstr ""
 
-#: som_opendata/map.py:27
+#: som_opendata/map.py:25
 msgid "December"
 msgstr ""
 
-#: som_opendata/map.py:235
+#: som_opendata/map.py:233
 #, python-format
 msgid "per %(num)s population"
 msgstr ""
