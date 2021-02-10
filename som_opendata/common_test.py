@@ -342,7 +342,7 @@ class Common_Test(unittest.TestCase):
         self.assertEqual(format(ctx.exception), 'Thisisnotadate')
 
 
-    # validateParams 
+    # validateParams
 
     def test__validateParams_valid(self):
         # not raises

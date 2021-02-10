@@ -167,7 +167,7 @@ def requestDates(first=None, last=None, on=None, since=None, to=None, periodicit
     @param periodicity: 'weekly', 'monthly', 'yearly' or None if single date
     @param first: First date in available history
     @param last: Last date in available history
-    @param on: Single date to be retrieved or none if 
+    @param on: Single date to be retrieved or none if
     @param since: Earlier date to be retrieved or none if first
     @param to: Later date to be retrieved or none if last
     """

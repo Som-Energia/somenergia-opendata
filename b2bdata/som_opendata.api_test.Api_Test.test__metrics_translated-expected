@@ -54,3 +54,12 @@ metrics:
     S''apliquen les mateixes consideracions que per a la mètrica "Contractes".
 
     '
+- id: selfconsumptioncontracts
+  text: Selfconsumption contracts
+  description: 'Contracts with selfconsumption during in the month before a given
+    date.
+
+
+    Considerations for "Contracts" metric also apply in this one.
+
+    '

@@ -207,7 +207,7 @@ class Api_Test(unittest.TestCase):
               plural: ccaas
             - id: state
               text: 'State'
-              parent: ccaa 
+              parent: ccaa
               plural: states
             - id: city
               text: 'City'
@@ -240,7 +240,7 @@ class Api_Test(unittest.TestCase):
               plural: ccaas
             - id: state
               text: 'Província'
-              parent: ccaa 
+              parent: ccaa
               plural: states
             - id: city
               text: 'Municipi'
