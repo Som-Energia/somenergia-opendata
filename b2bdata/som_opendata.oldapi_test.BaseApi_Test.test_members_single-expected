@@ -282,7 +282,7 @@ ES	España	01	Andalucia	41	Sevilla	41086	San Juan de Aznalfarache	0
 ES	España	01	Andalucia	41	Sevilla	41087	Sanlúcar la Mayor	0
 ES	España	01	Andalucia	41	Sevilla	41089	Santiponce	0
 ES	España	01	Andalucia	41	Sevilla	41090	Saucejo, El	0
-ES	España	01	Andalucia	41	Sevilla	41091	Sevilla	74
+ES	España	01	Andalucia	41	Sevilla	41091	Sevilla	75
 ES	España	01	Andalucia	41	Sevilla	41093	Tomares	2
 ES	España	01	Andalucia	41	Sevilla	41094	Umbrete	2
 ES	España	01	Andalucia	41	Sevilla	41095	Utrera	1
@@ -830,6 +830,7 @@ ES	España	08	Castilla - La Mancha	45	Toledo	45163	Sonseca	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45165	Talavera de la Reina	8
 ES	España	08	Castilla - La Mancha	45	Toledo	45167	Toboso, El	2
 ES	España	08	Castilla - La Mancha	45	Toledo	45168	Toledo	24
+ES	España	08	Castilla - La Mancha	45	Toledo	45171	Torre de Esteban Hambrán, La	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45176	Ugena	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45180	Valmojado	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45185	Villacañas	0
@@ -860,6 +861,7 @@ ES	España	07	Castilla y León	09	Burgos	09020	Arauzo de Miel	0
 ES	España	07	Castilla y León	09	Burgos	09023	Arcos	2
 ES	España	07	Castilla y León	09	Burgos	09039	Barbadillo del Pez	0
 ES	España	07	Castilla y León	09	Burgos	09048	Belorado	0
+ES	España	07	Castilla y León	09	Burgos	09050	Berberana	0
 ES	España	07	Castilla y León	09	Burgos	09056	Briviesca	0
 ES	España	07	Castilla y León	09	Burgos	09058	Buniel	0
 ES	España	07	Castilla y León	09	Burgos	09059	Burgos	34
@@ -1158,7 +1160,7 @@ ES	España	09	Cataluña	08	Barcelona	08131	Montesquiu	1
 ES	España	09	Cataluña	08	Barcelona	08126	Montgat	12
 ES	España	09	Cataluña	08	Barcelona	08132	Montmajor	0
 ES	España	09	Cataluña	08	Barcelona	08135	Montmeló	12
-ES	España	09	Cataluña	08	Barcelona	08136	Montornès del Vallès	10
+ES	España	09	Cataluña	08	Barcelona	08136	Montornès del Vallès	9
 ES	España	09	Cataluña	08	Barcelona	08137	Montseny	4
 ES	España	09	Cataluña	08	Barcelona	08129	Muntanyola	1
 ES	España	09	Cataluña	08	Barcelona	08139	Mura	4
@@ -1321,7 +1323,7 @@ ES	España	09	Cataluña	08	Barcelona	08902	Vilanova del Vallès	4
 ES	España	09	Cataluña	08	Barcelona	08303	Vilanova de Sau	1
 ES	España	09	Cataluña	08	Barcelona	08307	Vilanova i la Geltrú	186
 ES	España	09	Cataluña	08	Barcelona	08214	Vilassar de Dalt	15
-ES	España	09	Cataluña	08	Barcelona	08219	Vilassar de Mar	32
+ES	España	09	Cataluña	08	Barcelona	08219	Vilassar de Mar	33
 ES	España	09	Cataluña	08	Barcelona	08304	Vilobí del Penedès	4
 ES	España	09	Cataluña	08	Barcelona	08308	Viver i Serrateix	0
 ES	España	09	Cataluña	17	Girona	17001	Agullana	5
@@ -1890,6 +1892,7 @@ ES	España	09	Cataluña	43	Tarragona	43176	Vimbodí i Poblet	0
 ES	España	09	Cataluña	43	Tarragona	43178	Vinyols i els Arcs	1
 ES	España	09	Cataluña	43	Tarragona	43052	Xerta	2
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03002	Agost	2
+ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03003	Agres	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03006	Alcalalí	1
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03009	Alcoy/Alcoi	18
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03010	Alfafara	0
