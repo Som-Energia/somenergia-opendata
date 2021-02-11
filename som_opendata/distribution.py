@@ -176,18 +176,16 @@ def cachedGetAggregated(source, metric, request_dates, location_filter, geolevel
     return aggregate(filtered_objects, geolevel, request_dates)
 
 
-def getAggregated(source, metric, timeDomain, location_filter, geolevel, mutable, request_dates=None):
+def getAggregated(source, metric, timeDomain, location_filter, geolevel, mutable):
 
-    if request_dates is None:
-        request_dates = timeDomain.requestDates
     if (mutable):
-        filtered_objects = source.get(metric, request_dates, location_filter)
-        return aggregate(filtered_objects, geolevel, request_dates)
+        filtered_objects = source.get(metric, timeDomain.requestDates, location_filter)
+        return aggregate(filtered_objects, geolevel, timeDomain.requestDates)
 
     location_filter = frozendict(sorted(
         (k,tuple(sorted(v)))
         for k,v in location_filter.items()
     ))
-    return cachedGetAggregated(source, metric, tuple(request_dates), location_filter, geolevel)
+    return cachedGetAggregated(source, metric, tuple(timeDomain.requestDates), location_filter, geolevel)
 
 # vim: et sw=4 ts=4
