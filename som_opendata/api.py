@@ -531,8 +531,6 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
         geolevel=geolevel,
     )
 
-    content = api.source
-
     request_dates = TimeAggregator(
         first=api.firstDate,
         last=api.source.getLastDay(metric),
@@ -541,8 +539,17 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
         to=todate,
         periodicity=frequency,
     ).requestDates
+
     filters = locationFiltersFromQuery()
-    return getAggregated(content, metric, request_dates, filters, geolevel, mutable=False)
+
+    return getAggregated(
+        source=api.source,
+        metric=metric,
+        request_dates=request_dates,
+        location_filter=filters,
+        geolevel=geolevel,
+        mutable=False,
+    )
 
 
 
