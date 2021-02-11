@@ -223,12 +223,10 @@ def getNiceDivisor(population):
     return niceFloorValue(currentMin)
 
 def renderMap(source, metric, geolevel, template, locationsCodes, timeDomain=None, relativeMetricValues={}, legendTemplate=''):
-    dates = timeDomain.requestDates # TODO: not always
-
     data = getAggregated(
         source=source,
         metric=metric,
-        request_dates=dates,
+        timeDomain=timeDomain,
         location_filter={},
         geolevel=geolevel,
         mutable=bool(relativeMetricValues),
@@ -251,7 +249,7 @@ def renderMap(source, metric, geolevel, template, locationsCodes, timeDomain=Non
         locations=locationsCodes,
         geolevel=geolevel,
         isRelative=bool(relativeMetricValues),
-        frameQuantity=len(dates),
+        frameQuantity=len(timeDomain.requestDates),
     )
 
 # map{Country}{ES}by{States}.svg

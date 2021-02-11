@@ -24,6 +24,7 @@ from .distribution import (
     )
 from .csvSource import loadCsvSource
 from functools import lru_cache
+from .timeaggregator import TimeAggregator
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
@@ -41,10 +42,8 @@ class Distribution_Test(unittest.TestCase):
     def setUp(self):
         self.maxDiff=None
         self.b2bdatapath = 'b2bdata'
-        self.singleDate = ['2019-01-01']
-        # TimeAggregator(on='2019-01-01')
-        self.manyDates = ['2019-01-01', '2019-02-01']
-        # TimeAggregator(periodicity='monthly', since='2019-01-01', to='2019-02-01')
+        self.singleDate = TimeAggregator(on='2019-01-01')
+        self.manyDates = TimeAggregator(periodicity='monthly', since='2019-01-01', to='2019-02-01')
 
     def test__parse_tsv__1col_1row(self):
         fixture = 'item'

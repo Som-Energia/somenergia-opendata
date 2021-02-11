@@ -176,8 +176,10 @@ def cachedGetAggregated(source, metric, request_dates, location_filter, geolevel
     return aggregate(filtered_objects, geolevel, request_dates)
 
 
-def getAggregated(source, metric, request_dates, location_filter, geolevel, mutable):
+def getAggregated(source, metric, timeDomain, location_filter, geolevel, mutable, request_dates=None):
 
+    if request_dates is None:
+        request_dates = timeDomain.requestDates
     if (mutable):
         filtered_objects = source.get(metric, request_dates, location_filter)
         return aggregate(filtered_objects, geolevel, request_dates)

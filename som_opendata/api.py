@@ -531,21 +531,21 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
         geolevel=geolevel,
     )
 
-    request_dates = TimeAggregator(
+    timeDomain = TimeAggregator(
         first=api.firstDate,
         last=api.source.getLastDay(metric),
         on=ondate,
         since=fromdate,
         to=todate,
         periodicity=frequency,
-    ).requestDates
+    )
 
     filters = locationFiltersFromQuery()
 
     return getAggregated(
         source=api.source,
         metric=metric,
-        request_dates=request_dates,
+        timeDomain=timeDomain,
         location_filter=filters,
         geolevel=geolevel,
         mutable=False,
