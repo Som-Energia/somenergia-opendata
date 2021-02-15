@@ -16,14 +16,20 @@ class TimeAggregator:
     depending on the metric and the query time params.
     """
     def __init__(self, **kwds):
-        self.requestDates = requestDates(**kwds)
+        self._requestDates = requestDates(**kwds)
+
+    @property
+    def requestDates(self):
+        "Dates returned after aggregation"
+        return self._requestDates
 
     @property
     def sourceDates(self):
         "Dates required to compute the aggregated metric"
-        return self.requestDates
+        return self._requestDates
 
     def aggregate(self, input):
+        "Aggregates dates"
         return input
 
 
