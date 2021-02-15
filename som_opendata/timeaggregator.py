@@ -17,9 +17,15 @@ class TimeAggregator:
     """
     def __init__(self, **kwds):
         self.requestDates = requestDates(**kwds)
-        self.sourceDates = self.requestDates[:]
+
+    @property
+    def sourceDates(self):
+        "Dates required to compute the aggregated metric"
+        return self.requestDates
 
     def aggregate(self, input):
         return input
+
+
 
 # vim: et sw=4 ts=4

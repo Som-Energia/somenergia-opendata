@@ -161,5 +161,4 @@ class TimeAggregator_Test(unittest.TestCase):
             ])
 
 
-
 # vim: et sw=4 ts=4
