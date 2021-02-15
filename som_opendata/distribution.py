@@ -173,7 +173,7 @@ def distributionKey(metric, timeDomain, location_filter, geolevel):
     return (
         metric,
         tuple(timeDomain.requestDates),
-        tuple((k,tuple(v)) for k,v in location_filter.items() ),
+        tuple((k,tuple(v)) for k,v in sorted(location_filter.items()) ),
         geolevel,
     )
 
@@ -184,7 +184,6 @@ def cachedGetAggregated(source, metric, request_dates, location_filter, geolevel
 
 
 def getAggregated(source, metric, timeDomain, location_filter, geolevel, mutable):
-
     if (mutable):
         filtered_objects = source.get(metric, timeDomain.requestDates, location_filter)
         return aggregate(filtered_objects, geolevel, timeDomain.requestDates)
