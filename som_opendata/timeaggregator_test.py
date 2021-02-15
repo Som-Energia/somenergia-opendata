@@ -4,22 +4,24 @@ from .timeaggregator import TimeAggregator
 
 class TimeAggregator_Test(unittest.TestCase):
 
+    Aggregator = TimeAggregator
+
     def assertRequestDatesEqual(self, expected, **kwds):
-        aggregator=TimeAggregator(**kwds)
+        aggregator=self.Aggregator(**kwds)
         self.assertEqual(
             aggregator.requestDates,
             expected,
         )
 
     def assertSourceDatesEqual(self, expected, **kwds):
-        aggregator=TimeAggregator(**kwds)
+        aggregator=self.Aggregator(**kwds)
         self.assertEqual(
             aggregator.sourceDates,
             expected,
         )
 
     def assertAggregated(self, expected, input, **kwds):
-        aggregator=TimeAggregator(**kwds)
+        aggregator=self.Aggregator(**kwds)
         self.assertEqual(
             aggregator.aggregate(input),
             expected,
