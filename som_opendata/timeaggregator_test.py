@@ -191,7 +191,7 @@ class TimeAggregatorSum_Test(TimeAggregator_Test):
             ]
         )
 
-    def _test__sourceDates__yearlyDifferentDate(self):
+    def test__sourceDates__yearlyDifferentDate(self):
         self.assertSourceDatesEqual(
             first='2000-01-01',
             since='2017-07-20',
@@ -223,6 +223,24 @@ class TimeAggregatorSum_Test(TimeAggregator_Test):
                 '2017-12-01',
                 '2018-01-01',
             ])
+
+
+    def test__aggregated__identity(self):
+        self.assertAggregated(
+            first='2000-01-01',
+            since='2017-07-20',
+            to=   '2018-07-20',
+            periodicity='yearly',
+            input = [
+                1,2,3,4,5,6,7,8,9,10,11,12,
+                10,20,30,40,50,60,70,80,90,100,110,120,
+            ],
+            expected = [
+                78,
+                780,
+            ])
+
+
 
 
 # vim: et sw=4 ts=4

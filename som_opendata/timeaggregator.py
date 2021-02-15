@@ -45,7 +45,23 @@ class TimeAggregatorSum(TimeAggregator):
         "Dates required to compute the aggregated metric"
         if self._periodicity != 'yearly':
             return self._requestDates
-        return self._requestDates
+        return sum((
+            fullYear(date)
+            for date in self._requestDates
+        ),[])
+
+
+    def aggregate(self, input):
+        if self._periodicity != 'yearly':
+            return input
+        return [
+            sum(input[start:end])
+            for start, end in zip(
+                range(0, len(input), 12),
+                range(12, len(input)+1, 12),
+            )
+        ]
+
 
 def fullYear(isodate):
     """
