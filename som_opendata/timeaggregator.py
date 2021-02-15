@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+from yamlns.dateutils import Date as isoDate
 from .common import requestDates
+import datetime
 
 """
 TODO:
@@ -17,6 +19,7 @@ class TimeAggregator:
     """
     def __init__(self, **kwds):
         self._requestDates = requestDates(**kwds)
+        self._periodicity = kwds.get('periodicity')
 
     @property
     def requestDates(self):
@@ -32,6 +35,28 @@ class TimeAggregator:
         "Aggregates dates"
         return input
 
+
+class TimeAggregatorSum(TimeAggregator):
+    """
+    Time aggregator for Sum operations.
+    """
+    @property
+    def sourceDates(self):
+        "Dates required to compute the aggregated metric"
+        if self._periodicity != 'yearly':
+            return self._requestDates
+        return self._requestDates
+
+def fullYear(isodate):
+    """
+    Given the first of january returns a list of 12
+    first of months including january itself.
+    """
+    date = isoDate(isodate)
+    return [
+        str(isoDate(date.year-1, month, 1))
+        for month in range(2,13)
+    ] + [isodate]
 
 
 # vim: et sw=4 ts=4

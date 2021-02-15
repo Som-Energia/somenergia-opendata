@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 import unittest
-from .timeaggregator import TimeAggregator
+from .timeaggregator import (
+    fullYear,
+    TimeAggregator,
+    TimeAggregatorSum,
+)
 
 class TimeAggregator_Test(unittest.TestCase):
 
@@ -160,6 +164,64 @@ class TimeAggregator_Test(unittest.TestCase):
             expected = [
                 1,
                 2,
+            ])
+
+
+class TimeAggregatorSum_Test(TimeAggregator_Test):
+
+    Aggregator = TimeAggregatorSum
+
+
+    def test_fullYear(self):
+
+        self.assertEqual(
+            fullYear('2017-01-01'), [
+                '2016-02-01',
+                '2016-03-01',
+                '2016-04-01',
+                '2016-05-01',
+                '2016-06-01',
+                '2016-07-01',
+                '2016-08-01',
+                '2016-09-01',
+                '2016-10-01',
+                '2016-11-01',
+                '2016-12-01',
+                '2017-01-01',
+            ]
+        )
+
+    def _test__sourceDates__yearlyDifferentDate(self):
+        self.assertSourceDatesEqual(
+            first='2000-01-01',
+            since='2017-07-20',
+            to=   '2018-07-20',
+            periodicity='yearly',
+            expected = [
+                '2016-02-01',
+                '2016-03-01',
+                '2016-04-01',
+                '2016-05-01',
+                '2016-06-01',
+                '2016-07-01',
+                '2016-08-01',
+                '2016-09-01',
+                '2016-10-01',
+                '2016-11-01',
+                '2016-12-01',
+                '2017-01-01',
+                '2017-02-01',
+                '2017-03-01',
+                '2017-04-01',
+                '2017-05-01',
+                '2017-06-01',
+                '2017-07-01',
+                '2017-08-01',
+                '2017-09-01',
+                '2017-10-01',
+                '2017-11-01',
+                '2017-12-01',
+                '2018-01-01',
             ])
 
 
