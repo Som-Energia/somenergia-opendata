@@ -24,7 +24,7 @@ from .distribution import (
     )
 from .csvSource import loadCsvSource
 from functools import lru_cache
-from .timeaggregator import TimeAggregator
+from .timeaggregator import TimeAggregator, TimeAggregatorSum
 
 headers = u"codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
 data_Adra = u"ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
@@ -385,6 +385,68 @@ class Distribution_Test(unittest.TestCase):
             "2018-01-01",
             "2018-02-01",
         ])
+
+    def test__aggregate__1line_timeAggregationSum(self):
+        data = u'\n'.join([
+            headers+
+                '\tcount_2018_02_01'
+                '\tcount_2018_03_01'
+                '\tcount_2018_04_01'
+                '\tcount_2018_05_01'
+                '\tcount_2018_06_01'
+                '\tcount_2018_07_01'
+                '\tcount_2018_08_01'
+                '\tcount_2018_09_01'
+                '\tcount_2018_10_01'
+                '\tcount_2018_11_01'
+                '\tcount_2018_12_01'
+                '\tcount_2019_01_01'
+                ,
+            data_Adra+
+                '\t1'
+                '\t2'
+                '\t3'
+                '\t4'
+                '\t5'
+                '\t6'
+                '\t7'
+                '\t8'
+                '\t9'
+                '\t10'
+                '\t11'
+                '\t12'
+                ,
+        ])
+        timeDomain = TimeAggregatorSum(
+            since = '2019-01-01',
+            to = '2019-03-01',
+            periodicity = 'yearly',
+        )
+        objectList = tuples2objects(parse_tsv(data))
+        r = aggregate(objectList, 'city', timeDomain=timeDomain)
+        self.assertNsEqual(r,"""\
+            dates:
+            - 2019-01-01
+            values: [78]
+            countries:
+              ES:
+                name: España
+                values: [78]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [78]
+                    states:
+                      '04':
+                        name: Almería
+                        values: [78]
+                        cities:
+                          '04003':
+                            name: Adra
+                            values: [78]
+            """)
+
+
 
     @unittest.skipIf(skipSlow, 'test lent')
     def test__aggregate__backToBack(self):
