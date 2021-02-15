@@ -42,8 +42,8 @@ class Distribution_Test(unittest.TestCase):
     def setUp(self):
         self.maxDiff=None
         self.b2bdatapath = 'b2bdata'
-        self.singleDate = TimeAggregator(on='2019-01-01')
-        self.manyDates = TimeAggregator(periodicity='monthly', since='2019-01-01', to='2019-02-01')
+        self.singleDate = TimeAggregator(on='2018-01-01')
+        self.manyDates = TimeAggregator(periodicity='monthly', since='2018-01-01', to='2018-02-01')
 
     def test__parse_tsv__1col_1row(self):
         fixture = 'item'
@@ -350,7 +350,7 @@ class Distribution_Test(unittest.TestCase):
             data_Adra+'\t3',
         ])
         objectList = tuples2objects(parse_tsv(data))
-        r = aggregate(objectList, 'city', dates=['2018-01-01'])
+        r = aggregate(objectList, 'city', timeDomain=self.singleDate)
         self.assertNsEqual(r,"""\
             dates:
             - 2018-01-01
