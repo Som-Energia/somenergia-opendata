@@ -173,7 +173,10 @@ def distributionKey(metric, timeDomain, location_filter, geolevel):
     return (
         metric,
         tuple(timeDomain.requestDates),
-        tuple((k,tuple(sorted(v))) for k,v in sorted(location_filter.items()) ),
+        tuple(
+            (k,tuple(sorted(v)))
+            for k,v in sorted(location_filter.items())
+        ),
         geolevel,
     )
 
