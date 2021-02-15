@@ -984,6 +984,7 @@ class Distribution_Test(unittest.TestCase):
                 municipi=u'Sant Joan Despí',
                 count_2018_02_01=u'201')]
         )
+        self.assertEqual([getAggregated.cache_hits, getAggregated.cache_misses], [0,0])
         getAggregated(source, 'members', self.singleDate, {}, 'ccaa', mutable=False)
         self.assertEqual([getAggregated.cache_hits, getAggregated.cache_misses], [0,1])
 
