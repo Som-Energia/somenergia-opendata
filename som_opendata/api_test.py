@@ -552,5 +552,10 @@ class Api_Test(unittest.TestCase):
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
 
+    @unittest.skip("Activated just for profiling, not regular testing")
+    def test__profiling(self):
+        for a in range(5):
+            r = self.get('/members/by/city/monthly')
+
 
 # vim: et ts=4 sw=4
