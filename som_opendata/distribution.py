@@ -169,8 +169,9 @@ def addCounts(dictionary, newElements):
     for (key, value) in newElements:
         dictionary[key] = value
 
-def distributionKey(metric, timeDomain, location_filter, geolevel):
+def distributionKey(source, metric, timeDomain, location_filter, geolevel):
     return (
+        source,
         metric,
         tuple(timeDomain.requestDates),
         tuple(
@@ -180,21 +181,29 @@ def distributionKey(metric, timeDomain, location_filter, geolevel):
         geolevel,
     )
 
-@lru_cache()
-def cachedGetAggregated(source, metric, request_dates, location_filter, geolevel):
-    filtered_objects = source.get(metric, request_dates, location_filter)
-    return aggregate(filtered_objects, geolevel, request_dates)
-
-
 def getAggregated(source, metric, timeDomain, location_filter, geolevel, mutable):
-    if (mutable):
-        filtered_objects = source.get(metric, timeDomain.requestDates, location_filter)
-        return aggregate(filtered_objects, geolevel, timeDomain.requestDates)
+    def cache_clear():
+        getAggregated.cache = {}
+        getAggregated.cache_hits = 0
+        getAggregated.cache_misses = 0
+        getAggregated.cache_clear = cache_clear
 
-    location_filter = frozendict(sorted(
-        (k,tuple(sorted(v)))
-        for k,v in location_filter.items()
-    ))
-    return cachedGetAggregated(source, metric, tuple(timeDomain.requestDates), location_filter, geolevel)
+    if not hasattr(getAggregated, 'cache'):
+        cache_clear()
+
+    if not mutable:
+        key = distributionKey(source, metric, timeDomain, location_filter, geolevel)
+        if key in getAggregated.cache:
+            getAggregated.cache_hits+=1
+            return getAggregated.cache[key]
+        getAggregated.cache_misses+=1
+
+    filtered_objects = source.get(metric, timeDomain.requestDates, location_filter)
+    result = aggregate(filtered_objects, geolevel, timeDomain.requestDates)
+
+    if not mutable:
+        getAggregated.cache[key] = result
+    return result
+
 
 # vim: et sw=4 ts=4

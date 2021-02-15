@@ -20,7 +20,6 @@ from .distribution import (
     findObject,
     addObjects,
     getAggregated,
-    cachedGetAggregated,
     distributionKey,
     )
 from .csvSource import loadCsvSource
@@ -941,39 +940,35 @@ class Distribution_Test(unittest.TestCase):
         """)
 
     def test__getAggregated_cached(self):
-        cachedGetAggregated.cache_clear()
+        getAggregated.cache_clear()
         source = loadCsvSource(relativePath='../testData/metrics')
         getAggregated(source, 'members', self.singleDate, {}, 'ccaa', mutable=False)
         getAggregated(source, 'members', self.singleDate, {}, 'ccaa', mutable=False)
-        cache_info = cachedGetAggregated.cache_info()
-        self.assertEqual([cache_info.hits, cache_info.misses], [1,1])
+        self.assertEqual([getAggregated.cache_hits, getAggregated.cache_misses], [1,1])
 
     def test__getAggregated_notCachedMetric(self):
-        cachedGetAggregated.cache_clear()
+        getAggregated.cache_clear()
         source = loadCsvSource(relativePath='../testData/metrics')
         getAggregated(source, 'members', self.singleDate, {}, 'ccaa', mutable=False)
         getAggregated(source, 'contracts', self.singleDate, {}, 'ccaa', mutable=False)
-        cache_info = cachedGetAggregated.cache_info()
-        self.assertEqual([cache_info.hits, cache_info.misses], [0,2])
+        self.assertEqual([getAggregated.cache_hits, getAggregated.cache_misses], [0,2])
 
     def test__getAggregated_notCachedGeolevel(self):
-        cachedGetAggregated.cache_clear()
+        getAggregated.cache_clear()
         source = loadCsvSource(relativePath='../testData/metrics')
         getAggregated(source, 'members', self.singleDate, {}, 'ccaa', mutable=False)
         getAggregated(source, 'members', self.singleDate, {}, 'state', mutable=False)
-        cache_info = cachedGetAggregated.cache_info()
-        self.assertEqual([cache_info.hits, cache_info.misses], [0,2])
+        self.assertEqual([getAggregated.cache_hits, getAggregated.cache_misses], [0,2])
 
     def test__getAggregated_notCachedDates(self):
-        cachedGetAggregated.cache_clear()
+        getAggregated.cache_clear()
         source = loadCsvSource(relativePath='../testData/metrics')
         getAggregated(source, 'members', self.singleDate, {}, 'ccaa', mutable=False)
         getAggregated(source, 'members', self.manyDates, {}, 'ccaa', mutable=False)
-        cache_info = cachedGetAggregated.cache_info()
-        self.assertEqual([cache_info.hits, cache_info.misses], [0,2])
+        self.assertEqual([getAggregated.cache_hits, getAggregated.cache_misses], [0,2])
 
     def test__getAggregated_updatingSource(self):
-        cachedGetAggregated.cache_clear()
+        getAggregated.cache_clear()
         source = loadCsvSource(relativePath='../testData/metrics')
         getAggregated(source, 'members', self.singleDate, {}, 'ccaa', mutable=False)
 
@@ -990,11 +985,10 @@ class Distribution_Test(unittest.TestCase):
                 count_2018_02_01=u'201')]
         )
         getAggregated(source, 'members', self.singleDate, {}, 'ccaa', mutable=False)
-        cache_info = cachedGetAggregated.cache_info()
-        self.assertEqual([cache_info.hits, cache_info.misses], [0,1])
+        self.assertEqual([getAggregated.cache_hits, getAggregated.cache_misses], [0,1])
 
     def test_getAggregated_cachedAfterChangedValues(self):
-        cachedGetAggregated.cache_clear()
+        getAggregated.cache_clear()
         source = loadCsvSource(relativePath='../testData/metrics')
         resultBefore = getAggregated(source, 'members', self.singleDate, {}, 'state', mutable=True)
         resultBefore['dates']=10
@@ -1006,13 +1000,16 @@ class Distribution_Test(unittest.TestCase):
         self.assertEqual(hash(result), hash(expected))
 
     def test_distributionKey(self):
+        source = loadCsvSource(relativePath='../testData/metrics')
         result = distributionKey(
+            source=source,
             metric='members',
             timeDomain = self.singleDate,
             location_filter={'city': ['08232']},
             geolevel='state',
         )
         self.assertKeyEqual(result, (
+            source,
             'members',
             tuple(self.singleDate.requestDates),
             (
@@ -1022,7 +1019,9 @@ class Distribution_Test(unittest.TestCase):
         ))
 
     def test_distributionKey_multipleFilterKeys_ordered(self):
+        source = loadCsvSource(relativePath='../testData/metrics')
         result = distributionKey(
+            source=source,
             metric='members',
             timeDomain = self.singleDate,
             location_filter=ns([
@@ -1032,6 +1031,7 @@ class Distribution_Test(unittest.TestCase):
             geolevel='state',
         )
         self.assertKeyEqual(result, (
+            source,
             'members',
             tuple(self.singleDate.requestDates),
             (
@@ -1042,7 +1042,9 @@ class Distribution_Test(unittest.TestCase):
         ))
 
     def test_distributionKey_multipleFilterValues_ordered(self):
+        source = loadCsvSource(relativePath='../testData/metrics')
         result = distributionKey(
+            source=source,
             metric='members',
             timeDomain = self.singleDate,
             location_filter=ns([
@@ -1051,6 +1053,7 @@ class Distribution_Test(unittest.TestCase):
             geolevel='state',
         )
         self.assertKeyEqual(result, (
+            source,
             'members',
             tuple(self.singleDate.requestDates),
             (

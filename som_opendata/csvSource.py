@@ -14,7 +14,7 @@ from .distribution import (
     addObjects,
     field2date,
     isField,
-    cachedGetAggregated,
+    getAggregated,
     )
 from .local_groups import LocalGroups
 from .errors import (
@@ -67,7 +67,7 @@ class CsvSource(object):
 
 
     def update(self, metric, content):
-        cachedGetAggregated.cache_clear()
+        getAggregated.cache_clear()
 
         _data = tablib.Dataset()
         _data.dict = self._objects[metric]
