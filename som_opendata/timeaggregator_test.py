@@ -241,6 +241,22 @@ class TimeAggregatorSum_Test(TimeAggregator_Test):
             ])
 
 
+    def test_Create_sum(self):
+        timeDomain = TimeAggregator.Create(
+            operator='sum',
+            first='2000-01-01',
+            last= '2010-01-01',
+        )
+        self.assertEqual(type(timeDomain), TimeAggregatorSum)
+
+    def test_Create_last(self):
+        timeDomain = TimeAggregator.Create(
+            operator='last',
+            first='2000-01-01',
+            last= '2010-01-01',
+        )
+        self.assertEqual(type(timeDomain), TimeAggregator)
+
 
 
 # vim: et sw=4 ts=4

@@ -479,8 +479,6 @@ class Api_Test(unittest.TestCase):
             """, 400)
 
 
-
-
     def test__map__ccaaMembers(self):
         r = self.get('/map/members')
         self.assertEqual(r.status, '200 OK')

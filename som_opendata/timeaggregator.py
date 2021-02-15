@@ -32,8 +32,13 @@ class TimeAggregator:
         return self._requestDates
 
     def aggregate(self, input):
-        "Aggregates dates"
+        "Aggregates data by dates"
         return input
+
+    @staticmethod
+    def Create(operator, **kwds):
+        cls = _timeAggregatorClasses.get(operator, TimeAggregator)
+        return cls(**kwds)
 
 
 class TimeAggregatorSum(TimeAggregator):
@@ -52,6 +57,7 @@ class TimeAggregatorSum(TimeAggregator):
 
 
     def aggregate(self, input):
+        "Aggregates data by dates"
         if self._periodicity != 'yearly':
             return input
         return [
@@ -73,6 +79,13 @@ def fullYear(isodate):
         str(isoDate(date.year-1, month, 1))
         for month in range(2,13)
     ] + [isodate]
+
+
+_timeAggregatorClasses = dict(
+    last = TimeAggregator,
+    sum = TimeAggregatorSum,
+)
+
 
 
 # vim: et sw=4 ts=4
