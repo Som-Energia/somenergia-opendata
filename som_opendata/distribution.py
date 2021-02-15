@@ -44,27 +44,30 @@ def headerDates(entry):
         if isField(k)
         ]
 
-def aggregate(entries, detail='world', timeDomain=None, dates=None):
+def aggregate(entries, detail='world', timeDomain=None):
     """
         Aggregates a list of entries by geographical scopes:
         Country, CCAA, state, city.
     """
     if not entries: return ns()
-    if timeDomain:
-        dates = timeDomain.requestDates
 
-    if not dates:
-        dates = headerDates(entries[0])
+    if not timeDomain:
+        requestDates = sourceDates = headerDates(entries[0])
+    else:
+        requestDates = timeDomain.requestDates
+        sourceDates = timeDomain.sourceDates
 
     result = ns ()
-    result.dates = [isoDate(d) for d in dates]
-    dateFields = [date2field(date) for date in dates]
-    result['values'] = [0] * len(dates)
+    result.dates = [isoDate(d) for d in requestDates]
+    dateFields = [date2field(date) for date in sourceDates]
+    result['values'] = [0] * len(requestDates)
 
     for entry in entries:
         entry.count = [
             int(entry[field])
-            for field in dateFields]
+            for field in dateFields
+        ]
+        if timeDomain: entry.count = timeDomain.aggregate(entry.count)
 
         result['values'] = [a+b for a,b in zip(result['values'], entry.count)]
         if detail == 'world': continue
@@ -200,7 +203,7 @@ def getAggregated(source, metric, timeDomain, location_filter, geolevel, mutable
             return getAggregated.cache[key]
         getAggregated.cache_misses+=1
 
-    filtered_objects = source.get(metric, timeDomain.requestDates, location_filter) # TODO: should be timeDomain.sourceDates
+    filtered_objects = source.get(metric, timeDomain.sourceDates, location_filter)
     result = aggregate(filtered_objects, geolevel, timeDomain)
 
     if not mutable:
