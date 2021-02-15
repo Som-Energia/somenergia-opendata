@@ -169,6 +169,13 @@ def addCounts(dictionary, newElements):
     for (key, value) in newElements:
         dictionary[key] = value
 
+def distributionKey(metric, timeDomain, location_filter, geolevel):
+    return (
+        metric,
+        tuple(timeDomain.requestDates),
+        tuple((k,tuple(v)) for k,v in location_filter.items() ),
+        geolevel,
+    )
 
 @lru_cache()
 def cachedGetAggregated(source, metric, request_dates, location_filter, geolevel):

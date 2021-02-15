@@ -21,6 +21,7 @@ from .distribution import (
     addObjects,
     getAggregated,
     cachedGetAggregated,
+    distributionKey,
     )
 from .csvSource import loadCsvSource
 from functools import lru_cache
@@ -999,5 +1000,26 @@ class Distribution_Test(unittest.TestCase):
         resultBefore['dates']=10
         resultAfter = getAggregated(source, 'members', self.singleDate, {}, 'state', mutable=True)
         self.assertNotEqual(resultBefore['dates'], resultAfter['dates'])
+
+    def test_distributionKey(self):
+        result = distributionKey(
+            metric='members',
+            timeDomain = self.singleDate,
+            location_filter={'city': ['08232']},
+            geolevel='state',
+        )
+        self.assertEqual(result, (
+            'members',
+            tuple(self.singleDate.requestDates),
+            (('city',('08232',)),),
+            'state',
+        ))
+
+        self.assertEqual(hash(result), hash((
+            'members',
+            tuple(self.singleDate.requestDates),
+            (('city',('08232',)),),
+            'state',
+        )))
 
 # vim: et sw=4 ts=4
