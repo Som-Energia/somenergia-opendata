@@ -1001,6 +1001,10 @@ class Distribution_Test(unittest.TestCase):
         resultAfter = getAggregated(source, 'members', self.singleDate, {}, 'state', mutable=True)
         self.assertNotEqual(resultBefore['dates'], resultAfter['dates'])
 
+    def assertKeyEqual(self, result, expected):
+        self.assertEqual(result, expected)
+        self.assertEqual(hash(result), hash(expected))
+
     def test_distributionKey(self):
         result = distributionKey(
             metric='members',
@@ -1008,18 +1012,14 @@ class Distribution_Test(unittest.TestCase):
             location_filter={'city': ['08232']},
             geolevel='state',
         )
-        self.assertEqual(result, (
+        self.assertKeyEqual(result, (
             'members',
             tuple(self.singleDate.requestDates),
-            (('city',('08232',)),),
+            (
+                ('city',tuple(['08232'])),
+            ),
             'state',
         ))
 
-        self.assertEqual(hash(result), hash((
-            'members',
-            tuple(self.singleDate.requestDates),
-            (('city',('08232',)),),
-            'state',
-        )))
 
 # vim: et sw=4 ts=4
