@@ -141,28 +141,21 @@ def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
 def selfConsumptionContractsCounter(adate):
     # TODO: Will not detect if a polissa added selfConsumption at a future time
     # TODO: Unsafe substitution, use mogrify
+
     return """
-    count(CASE
-        WHEN polissa.autoconsumo = '00' then NULL
-        WHEN polissa.data_alta is NULL then NULL
-        WHEN polissa.data_alta > '{adate}'::date THEN NULL
-        WHEN polissa.data_alta <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+    count(CASE WHEN mc_gp.autoconsumo = '00' THEN NULL
+		WHEN mc_gp.autoconsumo IS NULL THEN NULL
+		WHEN NOT mc_gp_previous.autoconsumo = '00' THEN NULL
+        WHEN mc_gp.data_inici > '{adate}'::date THEN NULL
+        WHEN mc_gp.data_inici <= '{adate}'::date - INTERVAL '1 month' THEN NULL
         ELSE TRUE
         END) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
 
-def selfConsumptionContractsCount(dates, dbhandler=csvTable, debug=False):
-    return timeQuery(
-        dates=dates,
-        queryfile='contract',
-        timeSlicer=selfConsumptionContractsCounter,
-        dbhandler=dbhandler,
-    )
-
 def selfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
-        queryfile='contract_distribution',
+        queryfile='contract_selfconsumption_distribution',
         timeSlicer=selfConsumptionContractsCounter,
         dbhandler=dbhandler,
     )
