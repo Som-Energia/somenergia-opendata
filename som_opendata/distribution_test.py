@@ -1041,5 +1041,23 @@ class Distribution_Test(unittest.TestCase):
             'state',
         ))
 
+    def test_distributionKey_multipleFilterValues_ordered(self):
+        result = distributionKey(
+            metric='members',
+            timeDomain = self.singleDate,
+            location_filter=ns([
+                ('city', ['08232','02324']),
+            ]),
+            geolevel='state',
+        )
+        self.assertKeyEqual(result, (
+            'members',
+            tuple(self.singleDate.requestDates),
+            (
+                ('city',tuple(['02324','08232'])),
+            ),
+            'state',
+        ))
+
 
 # vim: et sw=4 ts=4
