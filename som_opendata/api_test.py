@@ -370,6 +370,10 @@ class Api_Test(unittest.TestCase):
         r = self.get('/members/by/world/monthly/from/2018-01-01/to/2018-03-01')
         self.assertTsvResponse(r)
 
+    def test__metric_level_frequency_fromDate_sumAggregatedMonth(self):
+        r = self.get('/newmembers/by/world/yearly/from/2017-01-01')
+        self.assertTsvResponse(r)
+
     def test__metric_level_frequency_toDate(self):
         api.firstDate = '2018-02-01'
         r = self.get('/members/by/world/monthly/to/2018-03-01')

@@ -15,7 +15,7 @@ from werkzeug.exceptions import HTTPException
 metrics = ns(
     members=ns(
         text=_("Members"),
-        timeaggregation='first',
+        timeaggregation='last',
         description=_(
             "Current cooperative members at the start of a given date.\n\n"
             "Members are taken from our current ERP data, so the following considerations apply:\n"
@@ -44,7 +44,7 @@ metrics = ns(
     ),
     contracts=ns(
         text=_("Contracts"),
-        timeaggregation='first',
+        timeaggregation='last',
         description=_(
             "Current active contracts at the start of a given date.\n\n"
             "Contract data is taken from activation and deactivation dates from ATR system.\n"
