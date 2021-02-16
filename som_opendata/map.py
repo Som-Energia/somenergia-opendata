@@ -252,6 +252,28 @@ def renderMap(source, metric, geolevel, template, locationsCodes, timeDomain=Non
         frameQuantity=len(timeDomain.requestDates),
     )
 
+def frameCssAnimation(frames, seconds, classtemplate):
+    """Returns a css with classes to do a frame by frame animation.
+    Elements with the given class will be visible just for a frame.
+    """
+    return ''.join([
+        "@keyframes {name} {{ "
+            "0% {{ visibility: hidden; }} "
+            "{start:.02f}% {{ visibility: visible; }} "
+            "{end:.02f}% {{ visibility: hidden; }} "
+            "}} "
+        ".{name} {{ animation: {name} {seconds}s step-end infinite; }}"
+        "\n"
+        .format(
+            name = classtemplate.format(i),
+            start = i * 100. / frames,
+            end = (i+1) * 100. / frames,
+            seconds = seconds,
+            )
+        for i in range(frames)
+        ])
+
+
 # map{Country}{ES}by{States}.svg
 # map{Province}{01}by{Counties}.svg
 

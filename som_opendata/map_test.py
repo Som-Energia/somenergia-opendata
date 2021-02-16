@@ -16,6 +16,7 @@ from .map import (
     fillLegend,
     createGif,
     pngFromSvg,
+    frameCssAnimation,
     )
 from .colorscale import Gradient
 from .scale import LogScale, LinearScale
@@ -1225,5 +1226,18 @@ class Map_Test(unittest.TestCase):
             legendTemplate=""
           )
         self.assertEqual(resultBefore, resultAfter)
+
+    def test_frameCssAnimation(self):
+        result = frameCssAnimation(
+            frames=2,
+            seconds=10,
+            classtemplate='frame{:03d}',
+        )
+        self.assertEqual(result,
+            """@keyframes frame000 { 0% { visibility: hidden; } 0.00% { visibility: visible; } 50.00% { visibility: hidden; } } .frame000 { animation: frame000 10s step-end infinite; }\n"""
+            """@keyframes frame001 { 0% { visibility: hidden; } 50.00% { visibility: visible; } 100.00% { visibility: hidden; } } .frame001 { animation: frame001 10s step-end infinite; }\n"""
+        )
+
+
 
 # vim: et sw=4 ts=4
