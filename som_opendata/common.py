@@ -67,11 +67,19 @@ metrics = ns(
             "Considerations for \"Contracts\" metric also apply in this one.\n"
         ),
     ),
-    selfconsumptioncontracts=ns(
-        text=_("Selfconsumption contracts"),
+    newselfconsumptioncontracts=ns(
+        text=_("New selfconsumption contracts"),
         timeaggregation='sum',
         description=_(
-            "Contracts with selfconsumption during in the month before a given date.\n\n"
+            "New contracts with selfconsumption during in the month before a given date.\n\n"
+            "Considerations for \"Contracts\" metric also apply in this one.\n"
+        ),
+    ),
+    canceledselfconsumptioncontracts=ns(
+        text=_("Canceled selfconsumption contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Canceled contracts with selfconsumption during in the month before a given date.\n\n"
             "Considerations for \"Contracts\" metric also apply in this one.\n"
         ),
     ),

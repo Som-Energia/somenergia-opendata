@@ -5,7 +5,8 @@ from som_opendata.queries import (
     contractsSeries,
     newContractsSeries,
     canceledContractsSeries,
-    selfConsumptionContractsSeries,
+    newSelfConsumptionContractsSeries,
+    canceledSelfConsumptionContractsSeries,
     newMembersSeries,
     canceledMembersSeries,
 )
@@ -27,7 +28,8 @@ metricGenerators = dict(
     contracts=contractsSeries,
     newcontracts=newContractsSeries,
     canceledcontracts=canceledContractsSeries,
-    selfconsumptioncontracts=selfConsumptionContractsSeries,
+    newselfconsumptioncontracts=newSelfConsumptionContractsSeries,
+    canceledselfconsumptioncontracts=canceledSelfConsumptionContractsSeries,
     newmembers=newMembersSeries,
     canceledmembers=canceledMembersSeries,
 )

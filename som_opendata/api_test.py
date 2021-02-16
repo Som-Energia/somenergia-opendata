@@ -182,9 +182,17 @@ class Api_Test(unittest.TestCase):
                 Considerations for "Contracts" metric also apply in this one.
 
                 '
-            - id: selfconsumptioncontracts
-              text: 'Selfconsumption contracts'
-              description: 'Contracts with selfconsumption during in the month before a given date.
+            - id: newselfconsumptioncontracts
+              text: 'New selfconsumption contracts'
+              description: 'New contracts with selfconsumption during in the month before a given date.
+
+
+                Considerations for "Contracts" metric also apply in this one.
+
+                '
+            - id: canceledselfconsumptioncontracts
+              text: 'Canceled selfconsumption contracts'
+              description: 'Canceled contracts with selfconsumption during in the month before a given date.
 
 
                 Considerations for "Contracts" metric also apply in this one.
@@ -485,8 +493,8 @@ class Api_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             parameter: metric
             valueRequest: incorrectMetric
-            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts']
-            message: Invalid metric 'incorrectMetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts'.
+            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts']
+            message: Invalid metric 'incorrectMetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts'.
             """, 400)
 
 
@@ -518,8 +526,8 @@ class Api_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             parameter: metric
             valueRequest: badmetric
-            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts']
-            message: Invalid metric 'badmetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts'.
+            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts']
+            message: Invalid metric 'badmetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts'.
             """,400)
         self.assertEqual(r.mimetype, 'application/json')
 

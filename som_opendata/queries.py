@@ -138,7 +138,7 @@ def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
         dbhandler=dbhandler,
     )
 
-def selfConsumptionContractsCounter(adate):
+def newSelfConsumptionContractsCounter(adate):
     # TODO: Unsafe substitution, use mogrify
 
     return """
@@ -151,11 +151,32 @@ def selfConsumptionContractsCounter(adate):
         END) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
 
-def selfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
+def newSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
         queryfile='contract_selfconsumption_distribution',
-        timeSlicer=selfConsumptionContractsCounter,
+        timeSlicer=newSelfConsumptionContractsCounter,
+        dbhandler=dbhandler,
+    )
+
+def canceledSelfConsumptionContractsCounter(adate):
+    # TODO: Unsafe substitution, use mogrify
+
+    return """
+    count(CASE WHEN mc_gp.autoconsumo = '00' THEN NULL
+		WHEN mc_gp.autoconsumo IS NULL THEN NULL
+		WHEN NOT mc_gp_previous.autoconsumo = '00' THEN NULL
+        WHEN mc_gp.data_inici > '{adate}'::date THEN NULL
+        WHEN mc_gp.data_inici <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        ELSE TRUE
+        END) AS count_{adate:%Y_%m_%d}
+""".format(adate=adate)
+
+def canceledSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeQuery(
+        dates=dates,
+        queryfile='contract_selfconsumption_distribution',
+        timeSlicer=canceledSelfConsumptionContractsCounter,
         dbhandler=dbhandler,
     )
 
