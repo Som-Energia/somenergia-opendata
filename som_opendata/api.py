@@ -532,13 +532,13 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
     )
 
     timeDomain = TimeAggregator.Create(
+        operator = common.metrics[metric].timeaggregation,
         first=api.firstDate,
         last=api.source.getLastDay(metric),
         on=ondate,
         since=fromdate,
         to=todate,
         periodicity=frequency,
-        operator = common.metrics[metric].timeaggregation,
     )
 
     filters = locationFiltersFromQuery()
@@ -703,7 +703,8 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
         relativemetric=relativemetric,
     )
 
-    timeDomain = TimeAggregator(
+    timeDomain = TimeAggregator.Create(
+        operator = common.metrics[metric].timeaggregation,
         first=api.firstDate,
         last=api.source.getLastDay(metric),
         on=ondate,
