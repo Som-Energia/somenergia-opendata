@@ -139,7 +139,6 @@ def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
     )
 
 def selfConsumptionContractsCounter(adate):
-    # TODO: Will not detect if a polissa added selfConsumption at a future time
     # TODO: Unsafe substitution, use mogrify
 
     return """
