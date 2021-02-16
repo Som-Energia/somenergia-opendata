@@ -62,8 +62,8 @@ class Queries_Test(unittest.TestCase):
         result = newSelfConsumptionContractsSeries(dates)
         self.assertB2BEqual(result)
 
-    def _test_canceledSelfConsumptionContractsSeries_many(self):
-        dates = ['2016-09-01','2016-09-15']
+    def test_canceledSelfConsumptionContractsSeries_many(self):
+        dates = ['2019-06-01','2019-07-01']
         result = canceledSelfConsumptionContractsSeries(dates)
         self.assertB2BEqual(result)
 
