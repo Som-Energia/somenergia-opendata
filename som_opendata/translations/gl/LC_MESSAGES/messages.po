@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-10 12:08+0100\n"
+"POT-Creation-Date: 2021-02-16 17:46+0100\n"
 "PO-Revision-Date: 2020-01-10 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: gl\n"
@@ -94,27 +94,51 @@ msgid ""
 "Considerations for \"Contracts\" metric also apply in this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:82
+#: som_opendata/common.py:71
+msgid "New selfconsumption contracts"
+msgstr ""
+
+#: som_opendata/common.py:73
+msgid ""
+"New contracts with selfconsumption during in the month before a given "
+"date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:79
+msgid "Canceled selfconsumption contracts"
+msgstr ""
+
+#: som_opendata/common.py:81
+msgid ""
+"Canceled contracts with selfconsumption during in the month before a "
+"given date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:98
 msgid "World"
 msgstr ""
 
-#: som_opendata/common.py:86
+#: som_opendata/common.py:102
 msgid "Country"
 msgstr ""
 
-#: som_opendata/common.py:92
+#: som_opendata/common.py:108
 msgid "CCAA"
 msgstr ""
 
-#: som_opendata/common.py:97
+#: som_opendata/common.py:113
 msgid "State"
 msgstr ""
 
-#: som_opendata/common.py:102
+#: som_opendata/common.py:118
 msgid "City"
 msgstr ""
 
-#: som_opendata/common.py:108
+#: som_opendata/common.py:124
 msgid "Local Group"
 msgstr ""
 

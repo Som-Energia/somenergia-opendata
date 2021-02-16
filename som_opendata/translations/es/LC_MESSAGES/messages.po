@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-10 12:08+0100\n"
+"POT-Creation-Date: 2021-02-16 17:46+0100\n"
 "PO-Revision-Date: 2021-01-27 20:19+0100\n"
 "Last-Translator: David García Garzón <david.garcia@somenergia.coop>\n"
 "Language: es\n"
@@ -126,27 +126,60 @@ msgstr ""
 "\n"
 "Se aplican las mismas consideraciones que para la métrica \"Contratos\".\n"
 
-#: som_opendata/common.py:82
+#: som_opendata/common.py:71
+msgid "New selfconsumption contracts"
+msgstr ""
+
+#: som_opendata/common.py:73
+#, fuzzy
+msgid ""
+"New contracts with selfconsumption during in the month before a given "
+"date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
+msgstr ""
+"Contratos dados de baja durante el mes anterior a la fecha dada.\n"
+"\n"
+"Se aplican las mismas consideraciones que para la métrica \"Contratos\".\n"
+
+#: som_opendata/common.py:79
+#, fuzzy
+msgid "Canceled selfconsumption contracts"
+msgstr "Bajas de contratos"
+
+#: som_opendata/common.py:81
+#, fuzzy
+msgid ""
+"Canceled contracts with selfconsumption during in the month before a "
+"given date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
+msgstr ""
+"Contratos dados de baja durante el mes anterior a la fecha dada.\n"
+"\n"
+"Se aplican las mismas consideraciones que para la métrica \"Contratos\".\n"
+
+#: som_opendata/common.py:98
 msgid "World"
 msgstr "Mundo"
 
-#: som_opendata/common.py:86
+#: som_opendata/common.py:102
 msgid "Country"
 msgstr "País"
 
-#: som_opendata/common.py:92
+#: som_opendata/common.py:108
 msgid "CCAA"
 msgstr "CCAA"
 
-#: som_opendata/common.py:97
+#: som_opendata/common.py:113
 msgid "State"
 msgstr "Província"
 
-#: som_opendata/common.py:102
+#: som_opendata/common.py:118
 msgid "City"
 msgstr "Ciudad"
 
-#: som_opendata/common.py:108
+#: som_opendata/common.py:124
 msgid "Local Group"
 msgstr "Grupo Local"
 
