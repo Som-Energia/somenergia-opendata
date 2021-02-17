@@ -66,7 +66,7 @@ class TimeAggregatorSum(TimeAggregator):
         ]
 
 
-    @lru_cache
+    @lru_cache(None)
     def _offset(self):
         return len([
             x for x in fullYear(self._requestDates[0])
