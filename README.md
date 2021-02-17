@@ -139,7 +139,7 @@ countries:
 
 ### Maps
 
-Unless specified all maps are returned as SVG files.
+All maps are returned as SVG files.
 
 - `/map/contracts`
     All current contracts by ccaa
@@ -163,19 +163,19 @@ Unless specified all maps are returned as SVG files.
     Contracts aggregated by state at a given date
 
 - `/map/contracts/by/state/monthly`
-    Gif animation with contracts by state every available month
+    Animation with contracts by state every available month
 
 - `/map/contracts/by/ccaa/yearly`
-    Gif animation with contracts aggregated by CCAA every available year
+    Animation with contracts aggregated by CCAA every available year
 
 - `/map/contracts/by/state/monthly/from/2018-02-01`
-    Gif animation with contracts aggregated by state every month from a date
+    Animation with contracts aggregated by state every month from a date
 
 - `/map/contracts/by/state/monthly/from/2018-02-03/to/2018-05-01`
-    Gif animation with contracts aggregated by state every month from a date until a date
+    Animation with contracts aggregated by state every month from a date until a date
 
 - `/map/contracts/by/state/monthly/to/2018-05-01`
-    Gif animation with contracts aggregated by state every month until a date
+    Animation with contracts aggregated by state every month until a date
 
 
 ### Discovery
