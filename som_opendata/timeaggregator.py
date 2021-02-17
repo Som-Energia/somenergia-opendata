@@ -18,6 +18,7 @@ class TimeAggregator:
     depending on the metric and the query time params.
     """
     def __init__(self, **kwds):
+        self._first = kwds.get('first')
         self._requestDates = requestDates(**kwds)
         self._periodicity = kwds.get('periodicity')
 
@@ -50,21 +51,33 @@ class TimeAggregatorSum(TimeAggregator):
         "Dates required to compute the aggregated metric"
         if self._periodicity != 'yearly':
             return self._requestDates
-        return sum((
+        result = sum((
             fullYear(date)
             for date in self._requestDates
         ),[])
+        return [
+            x for x in result
+            if self._first is None
+            or x >= self._first 
+        ]
 
 
     def aggregate(self, input):
         "Aggregates data by dates"
         if self._periodicity != 'yearly':
             return input
+        offset = len([
+            x for x in fullYear(self._requestDates[0])
+            if x < self._first
+        ])
+
         return [
             sum(input[start:end])
+            if start>=0 else
+            sum(input[0:end])
             for start, end in zip(
-                range(0, len(input), 12),
-                range(12, len(input)+1, 12),
+                range(-offset, len(input), 12),
+                range(12-offset, len(input)+1, 12),
             )
         ]
 
