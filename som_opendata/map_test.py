@@ -14,8 +14,6 @@ from .map import (
     getNiceDivisor,
     toPopulationRelative,
     fillLegend,
-    createGif,
-    pngFromSvg,
     frameCssAnimation,
     createAnimatedSvg,
     )
@@ -1063,47 +1061,6 @@ class Map_Test(unittest.TestCase):
         )
         self.assertB2BEqual(result)
 
-    def test_createGif_manyFrames(self):
-        data = ns.loads("""\
-            dates: [2019-01-01, 2018-01-01]
-            values: [143, 500]
-            countries:
-              ES:
-                name: España
-                values: [143, 500]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    values: [123, 500]
-                  '09':
-                    name: Catalunya
-                    values: [20, 0]
-            """)
-        template = Path('data/maps/mapTemplates/mapTemplate_dummy.svg').read_text(encoding='utf8')
-        gradient = Gradient('#e0ecbb', '#384413')
-        scale = LogScale(higher=500).nice()
-        img = createGif(
-            frameQuantity=2, data=data, template=template, legend='', colors=gradient, scale=scale,
-            geolevel='ccaa',title='One')
-        self.assertNsEqual(getBlobInfo(img), """\
-            format: GIF
-            isAnimation: true
-            numFrames: 2
-        """)
-
-    def test_createGif_oneFrame(self):
-        template = Path('data/maps/mapTemplates/mapTemplate_dummy.svg').read_text(encoding='utf8')
-        gradient = Gradient('#e0ecbb', '#384413')
-        scale = LogScale(higher=143).nice()
-        img = createGif(
-            frameQuantity=1, data=manyRegions, template=template, legend='', colors=gradient, scale=scale,
-            geolevel='ccaa',title='One')
-        self.assertNsEqual(getBlobInfo(img), """\
-            format: GIF
-            isAnimation: false
-            numFrames: 1
-        """)
-
     def test_renderMap_membersRangeDates(self):
         template = mapTemplateSource.getTemplate(geolevel='ccaa', lang='en')
         locations = relativeData.getCodesByGeolevel('ccaa')
@@ -1122,72 +1079,6 @@ class Map_Test(unittest.TestCase):
         result = getNiceDivisor(relativeValues)
 
         self.assertEqual(result, 50000)
-
-    def test_createGif_cachedFrames(self):
-        pngFromSvg.cache_clear()
-        data = ns.loads("""\
-            dates: [2019-01-01, 2018-01-01]
-            values: [143, 500]
-            countries:
-              ES:
-                name: España
-                values: [143, 500]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    values: [123, 500]
-                  '09':
-                    name: Catalunya
-                    values: [20, 0]
-            """)
-        template = Path('data/maps/mapTemplates/mapTemplate_dummy.svg').read_text(encoding='utf8')
-        gradient = Gradient('#e0ecbb', '#384413')
-        scale = LogScale(higher=500).nice()
-        createGif(
-            frameQuantity=2, data=data, template=template, legend='', colors=gradient, scale=scale,
-            geolevel='ccaa',title='One')
-        createGif(
-            frameQuantity=2, data=data, template=template, legend='', colors=gradient, scale=scale,
-            geolevel='ccaa',title='One')
-        cache_info = pngFromSvg.cache_info()
-        self.assertEqual(
-                [cache_info.hits, cache_info.misses],
-                [2,2]
-            )
-
-    def test_createGif_notCachedFrames(self):
-        pngFromSvg.cache_clear()
-        data = ns.loads("""\
-            dates: [2019-01-01, 2018-01-01]
-            values: [143, 500]
-            countries:
-              ES:
-                name: España
-                values: [143, 500]
-                ccaas:
-                  '01':
-                    name: Andalucía
-                    values: [123, 500]
-                  '09':
-                    name: Catalunya
-                    values: [20, 0]
-            """)
-        template = Path('data/maps/mapTemplates/mapTemplate_dummy.svg').read_text(encoding='utf8')
-        gradient = Gradient('#e0ecbb', '#384413')
-        scale = LogScale(higher=500).nice()
-        createGif(
-            frameQuantity=2, data=data, template=template, legend='', colors=gradient, scale=scale,
-            geolevel='ccaa',title='One')
-
-        createGif(
-            frameQuantity=2, data=data, template=template, legend='', colors=gradient, scale=scale,
-            geolevel='ccaa',title='Different')
-
-        cache_info = pngFromSvg.cache_info()
-        self.assertEqual(
-                [cache_info.hits, cache_info.misses],
-                [0,4]
-            )
 
     def test_renderMap_members_cachedAfterChangedValues(self):
         locations = relativeData.getCodesByGeolevel('ccaa')
