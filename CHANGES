@@ -1,4 +1,4 @@
-# Unreleased
+# v0.2.14 2021-02-17
 
 - Animated maps are now SVG instead of GIF. Faster and better quality.
 - FIX: `new` and `canceled` metrics are now properly aggregated yearly
