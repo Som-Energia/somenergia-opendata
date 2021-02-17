@@ -13,7 +13,6 @@ from .templateSource import loadMapData
 from .tsvRelativeMetricSource import loadTsvRelativeMetric
 from .local_groups import loadYamlLocalGroups
 from .csvSource import loadCsvSource
-from .map_test import getBlobInfo
 
 
 localgroups = loadYamlLocalGroups(relativeFile='../testData/alias/gl.yaml')
@@ -532,15 +531,11 @@ class Api_Test(unittest.TestCase):
         self.assertEqual(r.mimetype, 'image/svg+xml')
         self.assertB2BEqual(r.data)
 
-    def test__map__ccaaMembersRangeDates__gif(self):
+    def test__map__ccaaMembersRangeDates__animated(self):
         r = self.get('/map/members/by/ccaa/monthly/from/2018-10-01/to/2019-01-01')
         self.assertEqual(r.status, '200 OK')
-        self.assertEqual(r.mimetype, 'image/gif')
-        self.assertNsEqual(getBlobInfo(r.data), """\
-            format: GIF
-            isAnimation: true
-            numFrames: 4
-        """)
+        self.assertEqual(r.mimetype, 'image/svg+xml')
+        self.assertB2BEqual(r.data)
 
     def test__map__ccaaMembersCaLanguage(self):
         r = self.get('/map/members/on/2015-01-01', headers=[("Accept-Language", "ca")])

@@ -579,7 +579,7 @@ If no language is specified, the language is chosen using the request headers.
 @apiUse PathOnDate
 @apiUse QueryLang
 
-@apiSuccess {svg} Response Map that represents the geographical distribution at a given date
+@apiSuccess {image/svg+xml} Response Map that represents the geographical distribution at a given date
 
 """
 
@@ -611,7 +611,7 @@ If no language is specified, the language is chosen using the request headers.
 @apiUse PathOnDate
 @apiUse QueryLang
 
-@apiSuccess {svg} Response Map that represents the relative geographical distribution at a given date
+@apiSuccess {image/svg+xml} Response Map that represents the relative geographical distribution at a given date
 
 """
 
@@ -642,7 +642,7 @@ If no language is specified, the language is chosen using the request headers.
 @apiUse PathFromToDate
 @apiUse QueryLang
 
-@apiSuccess {image/gif} Response Map animation that represents the temporal evolution of the geographical distribution
+@apiSuccess {image/svg+xml} Response Map animation that represents the temporal evolution of the geographical distribution
 
 """
 """
@@ -674,7 +674,7 @@ If no language is specified, the language is chosen using the request headers.
 @apiUse PathFromToDate
 @apiUse QueryLang
 
-@apiSuccess {image/gif} Response Map animation that represents the temporal evolution of the geographical distribution
+@apiSuccess {image/svg+xml} Response Map animation that represents the temporal evolution of the geographical distribution
 
 """
 
@@ -733,10 +733,7 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
         relativeMetricValues=relativeMValues,
     )
     response = make_response(result)
-    response.mimetype = (
-        'image/gif' if len(timeDomain.requestDates)>1 else
-        'image/svg+xml'
-    )
+    response.mimetype = 'image/svg+xml'
     return response
 
 api.source = None

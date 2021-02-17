@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
+<style>
+@keyframes frame000 { 0% { visibility: hidden; } 0.00% { visibility: visible; } 50.00% { visibility: hidden; } } .frame000 { animation: frame000 3.0s step-end infinite; }
+@keyframes frame001 { 0% { visibility: hidden; } 50.00% { visibility: visible; } 100.00% { visibility: hidden; } } .frame001 { animation: frame001 3.0s step-end infinite; }
+
+</style>
+<g class="frame000">
+  <text y="40" x="170" style="text-anchor:middle">Title: One</text>  <text y="60" x="170" style="text-anchor:middle">Subtitle: </text>  <text y="80" x="170" style="text-anchor:middle">Year: 2019</text>  <text y="100" x="170" style="text-anchor:middle">Month: January</text>  <circle cy="180" cx="100" r="60" fill="#697f24"/>  <text y="180" x="100" style="text-anchor:middle">123</text>  <text y="200" x="100" style="text-anchor:middle">86,0%</text>  <circle cy="180" cx="240" r="60" fill="#a6c93c"/>  <text y="180" x="240" style="text-anchor:middle">20</text>  <text y="200" x="240" style="text-anchor:middle">14,0%</text></g>
+<g class="frame001">
+  <text y="40" x="170" style="text-anchor:middle">Title: One</text>  <text y="60" x="170" style="text-anchor:middle">Subtitle: </text>  <text y="80" x="170" style="text-anchor:middle">Year: 2018</text>  <text y="100" x="170" style="text-anchor:middle">Month: January</text>  <circle cy="180" cx="100" r="60" fill="#384413"/>  <text y="180" x="100" style="text-anchor:middle">500</text>  <text y="200" x="100" style="text-anchor:middle">100,0%</text>  <circle cy="180" cx="240" r="60" fill="#e0ecbb"/>  <text y="180" x="240" style="text-anchor:middle">0</text>  <text y="200" x="240" style="text-anchor:middle">0,0%</text></g>
+</svg>

@@ -17,6 +17,7 @@ from .map import (
     createGif,
     pngFromSvg,
     frameCssAnimation,
+    createAnimatedSvg,
     )
 from .colorscale import Gradient
 from .scale import LogScale, LinearScale
@@ -1106,7 +1107,7 @@ class Map_Test(unittest.TestCase):
     def test_renderMap_membersRangeDates(self):
         template = mapTemplateSource.getTemplate(geolevel='ccaa', lang='en')
         locations = relativeData.getCodesByGeolevel('ccaa')
-        img = renderMap(
+        svg = renderMap(
             source,
             'members',
             timeDomain=TimeAggregator(periodicity='monthly', since='2019-01-01', to='2019-02-01'),
@@ -1114,12 +1115,7 @@ class Map_Test(unittest.TestCase):
             template=template,
             locationsCodes=locations
         )
-        result = getBlobInfo(img)
-        self.assertNsEqual(result, """\
-            format: GIF
-            isAnimation: true
-            numFrames: 2
-        """)
+        self.assertB2BEqual(svg)
 
     def test_getNiceDivisor_(self):
         relativeValues = relativeData.getValuesByCode(geolevel='ccaa')
@@ -1238,6 +1234,36 @@ class Map_Test(unittest.TestCase):
             """@keyframes frame001 { 0% { visibility: hidden; } 50.00% { visibility: visible; } 100.00% { visibility: hidden; } } .frame001 { animation: frame001 10s step-end infinite; }\n"""
         )
 
+    def test_createAnimatedSvg_manyFrames(self):
+        data = ns.loads("""\
+            dates: [2019-01-01, 2018-01-01]
+            values: [143, 500]
+            countries:
+              ES:
+                name: España
+                values: [143, 500]
+                ccaas:
+                  '01':
+                    name: Andalucía
+                    values: [123, 500]
+                  '09':
+                    name: Catalunya
+                    values: [20, 0]
+            """)
+        template = Path('data/maps/mapTemplates/mapTemplate_dummy.svg').read_text(encoding='utf8')
+        gradient = Gradient('#e0ecbb', '#384413')
+        scale = LogScale(higher=500).nice()
+        img = createAnimatedSvg(
+            frameQuantity=2,
+            data=data,
+            template=template,
+            legend='',
+            colors=gradient,
+            scale=scale,
+            geolevel='ccaa',
+            title='One',
+        )
+        self.assertB2BEqual(img)
 
 
 # vim: et sw=4 ts=4

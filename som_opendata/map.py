@@ -139,7 +139,7 @@ def fillMap(data, template, legendTemplate, geolevel, title,
     legend = fillLegend(legendTemplate, scale, gradient, isRelative)
 
     if frameQuantity > 1:
-        return createGif(frameQuantity=frameQuantity,
+        return createAnimatedSvg(frameQuantity=frameQuantity,
             data=data,
             template=template,
             geolevel=geolevel,
@@ -272,6 +272,43 @@ def frameCssAnimation(frames, seconds, classtemplate):
             )
         for i in range(frames)
         ])
+
+def createAnimatedSvg(frameQuantity, data, template, legend, geolevel, title, colors, scale, subtitle='', locations=[], isRelative=False):
+    templateLines = template.splitlines()
+    header, template, tail = templateLines[0], ''.join(templateLines[1:-1]), templateLines[-1]
+    frameSeconds = 1.5
+    durationSeconds = frameQuantity*frameSeconds
+
+    svgFrames = []
+    for frame in range(frameQuantity):
+        dataDict = dataToTemplateDict(
+            data=data,
+            colors=colors,
+            title=title,
+            subtitle=subtitle,
+            locations=locations,
+            geolevel=geolevel,
+            isRelative=isRelative,
+            frame=frame,
+            scale=scale
+        )
+        svg = template.format(**dict(dataDict, legend=legend))
+        svgFrames.append(svg)
+    return '\n'.join([
+        header,
+        '<style>',
+        frameCssAnimation(
+            frames=frameQuantity,
+            seconds=durationSeconds,
+            classtemplate="frame{:03d}",
+        ),
+        '</style>',
+    ] + [
+        '<g class="frame{:03d}">\n{}</g>'.format(i,frame)
+        for i,frame in enumerate(svgFrames)
+    ] + [
+        tail,
+    ]).encode('utf8')
 
 
 # map{Country}{ES}by{States}.svg
