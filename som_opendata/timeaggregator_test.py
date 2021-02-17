@@ -224,7 +224,7 @@ class TimeAggregatorSum_Test(TimeAggregator_Test):
                 '2018-01-01',
             ])
 
-    def test__sourceDates__sourceDatesBeforeFirst(self):
+    def test__sourceDates__beforeFirst(self):
         self.assertSourceDatesEqual(
             first='2017-01-01',
             since='2017-07-20',
@@ -244,6 +244,35 @@ class TimeAggregatorSum_Test(TimeAggregator_Test):
                 '2017-11-01',
                 '2017-12-01',
                 '2018-01-01',
+            ])
+
+    def test__sourceDates__afterLast(self):
+        self.assertSourceDatesEqual(
+            last='2017-09-01',
+            since='2017-07-20',
+            to=   '2018-07-20',
+            periodicity='yearly',
+            expected = [
+                '2016-02-01',
+                '2016-03-01',
+                '2016-04-01',
+                '2016-05-01',
+                '2016-06-01',
+                '2016-07-01',
+                '2016-08-01',
+                '2016-09-01',
+                '2016-10-01',
+                '2016-11-01',
+                '2016-12-01',
+                '2017-01-01',
+                '2017-02-01',
+                '2017-03-01',
+                '2017-04-01',
+                '2017-05-01',
+                '2017-06-01',
+                '2017-07-01',
+                '2017-08-01',
+                '2017-09-01',
             ])
 
 
@@ -275,6 +304,21 @@ class TimeAggregatorSum_Test(TimeAggregator_Test):
             expected = [
                 12,
                 780,
+            ])
+
+    def test__aggregated__sourceDatesAfterLast(self):
+        self.assertAggregated(
+            last='2017-09-01',
+            since='2017-07-20',
+            to=   '2018-07-20',
+            periodicity='yearly',
+            input = [
+                1,2,3,4,5,6,7,8,9,10,11,12,
+                10,20,30,40,50,60,70,80,90, # 100,110,120 not included
+            ],
+            expected = [
+                78,
+                780-100-110-120, # 450
             ])
 
 

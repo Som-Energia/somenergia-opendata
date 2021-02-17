@@ -2,6 +2,7 @@
 from yamlns.dateutils import Date as isoDate
 from .common import requestDates
 import datetime
+from functools import lru_cache
 
 """
 TODO:
@@ -19,6 +20,7 @@ class TimeAggregator:
     """
     def __init__(self, **kwds):
         self._first = kwds.get('first')
+        self._last = kwds.get('last')
         self._requestDates = requestDates(**kwds)
         self._periodicity = kwds.get('periodicity')
 
@@ -49,36 +51,36 @@ class TimeAggregatorSum(TimeAggregator):
     @property
     def sourceDates(self):
         "Dates required to compute the aggregated metric"
+
         if self._periodicity != 'yearly':
             return self._requestDates
+
         result = sum((
             fullYear(date)
             for date in self._requestDates
         ),[])
         return [
             x for x in result
-            if self._first is None
-            or x >= self._first 
+            if not (self._first and x < self._first)
+            if not (self._last and x > self._last)
         ]
+
+
+    @lru_cache
+    def _offset(self):
+        return len([
+            x for x in fullYear(self._requestDates[0])
+            if self._first and x < self._first
+        ])
 
 
     def aggregate(self, input):
         "Aggregates data by dates"
         if self._periodicity != 'yearly':
             return input
-        offset = len([
-            x for x in fullYear(self._requestDates[0])
-            if x < self._first
-        ])
-
         return [
-            sum(input[start:end])
-            if start>=0 else
-            sum(input[0:end])
-            for start, end in zip(
-                range(-offset, len(input), 12),
-                range(12-offset, len(input)+1, 12),
-            )
+            sum(input[max(start,0):start+12])
+            for start in range(-self._offset(), len(input), 12)
         ]
 
 
