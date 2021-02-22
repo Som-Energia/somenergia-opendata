@@ -1,3 +1,7 @@
+# v0.2.15 2021-02-17
+
+- FIX: parameterless lru_cache incompatible with python < 3.6
+
 # v0.2.14 2021-02-17
 
 - Animated maps are now SVG instead of GIF. Faster and better quality.
