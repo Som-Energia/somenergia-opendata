@@ -243,7 +243,7 @@ def frameCssAnimation(frames, seconds, classtemplate):
 def createAnimatedSvg(frameQuantity, data, template, legend, geolevel, title, colors, scale, subtitle='', locations=[], isRelative=False):
     templateLines = template.splitlines()
     header, template, tail = templateLines[0], ''.join(templateLines[1:-1]), templateLines[-1]
-    frameSeconds = 0.5
+    frameSeconds = 1.2
     durationSeconds = frameQuantity*frameSeconds
 
     svgFrames = []
