@@ -140,14 +140,11 @@ def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
 
 def newSelfConsumptionContractsCounter(adate):
     # TODO: Unsafe substitution, use mogrify
-
     return """
     count(CASE
-        WHEN mc_gp.autoconsumo = '00' THEN NULL
-        WHEN mc_gp.autoconsumo IS NULL THEN NULL
-        WHEN NOT mc_gp_previous.autoconsumo = '00' THEN NULL
-        WHEN mc_gp.data_inici > '{adate}'::date THEN NULL
-        WHEN mc_gp.data_inici <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        WHEN item.first_date IS NULL THEN NULL
+        WHEN item.first_date > '{adate}'::date THEN NULL
+        WHEN item.first_date <= '{adate}'::date - INTERVAL '1 month' THEN NULL
         ELSE TRUE
         END) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
