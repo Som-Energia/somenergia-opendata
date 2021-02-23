@@ -142,9 +142,10 @@ def newSelfConsumptionContractsCounter(adate):
     # TODO: Unsafe substitution, use mogrify
 
     return """
-    count(CASE WHEN mc_gp.autoconsumo = '00' THEN NULL
-		WHEN mc_gp.autoconsumo IS NULL THEN NULL
-		WHEN NOT mc_gp_previous.autoconsumo = '00' THEN NULL
+    count(CASE
+        WHEN mc_gp.autoconsumo = '00' THEN NULL
+        WHEN mc_gp.autoconsumo IS NULL THEN NULL
+        WHEN NOT mc_gp_previous.autoconsumo = '00' THEN NULL
         WHEN mc_gp.data_inici > '{adate}'::date THEN NULL
         WHEN mc_gp.data_inici <= '{adate}'::date - INTERVAL '1 month' THEN NULL
         ELSE TRUE
@@ -165,8 +166,8 @@ def canceledSelfConsumptionContractsCounter(adate):
     # We didn't find any ocurrences of this ever happening.
     return """
     count(CASE
-    	WHEN polissa.autoconsumo = '00' then NULL
-	    WHEN polissa.autoconsumo is NULL then NULL
+        WHEN polissa.autoconsumo = '00' then NULL
+        WHEN polissa.autoconsumo is NULL then NULL
         WHEN polissa.data_baixa is NULL then NULL
         WHEN polissa.data_baixa > '{adate}'::date THEN NULL
         WHEN polissa.data_baixa <= '{adate}'::date - INTERVAL '1 month' THEN NULL
