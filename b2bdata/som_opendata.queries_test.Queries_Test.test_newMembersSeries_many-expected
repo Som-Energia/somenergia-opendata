@@ -288,6 +288,7 @@ ES	España	01	Andalucia	41	Sevilla	41094	Umbrete	0	0
 ES	España	01	Andalucia	41	Sevilla	41095	Utrera	0	0
 ES	España	01	Andalucia	41	Sevilla	41096	Valencina de la Concepción	0	0
 ES	España	01	Andalucia	41	Sevilla	41097	Villamanrique de la Condesa	0	0
+ES	España	01	Andalucia	41	Sevilla	41098	Villanueva del Ariscal	0	0
 ES	España	01	Andalucia	41	Sevilla	41101	Villaverde del Río	0	0
 ES	España	01	Andalucia	41	Sevilla	41102	Viso del Alcor, El	0	1
 ES	España	02	Aragón	22	Huesca	22001	Abiego	0	0
@@ -1615,6 +1616,7 @@ ES	España	09	Cataluña	25	Lleida	25099	Golmés	0	0
 ES	España	09	Cataluña	25	Lleida	25100	Gósol	0	0
 ES	España	09	Cataluña	25	Lleida	25101	Granadella, La	0	0
 ES	España	09	Cataluña	25	Lleida	25102	Granja d'Escarp, La	0	0
+ES	España	09	Cataluña	25	Lleida	25103	Granyanella	0	0
 ES	España	09	Cataluña	25	Lleida	25104	Granyena de Segarra	0	0
 ES	España	09	Cataluña	25	Lleida	25109	Guimerà	0	0
 ES	España	09	Cataluña	25	Lleida	25903	Guingueta d'Àneu, La	0	0
@@ -1737,7 +1739,7 @@ ES	España	09	Cataluña	43	Tarragona	43007	Aleixar, L'	0	0
 ES	España	09	Cataluña	43	Tarragona	43009	Alforja	0	0
 ES	España	09	Cataluña	43	Tarragona	43010	Alió	0	0
 ES	España	09	Cataluña	43	Tarragona	43011	Almoster	0	1
-ES	España	09	Cataluña	43	Tarragona	43012	Altafulla	0	2
+ES	España	09	Cataluña	43	Tarragona	43012	Altafulla	0	1
 ES	España	09	Cataluña	43	Tarragona	43013	Ametlla de Mar, L'	0	0
 ES	España	09	Cataluña	43	Tarragona	43906	Ampolla, L'	0	0
 ES	España	09	Cataluña	43	Tarragona	43014	Amposta	0	0
@@ -1871,7 +1873,7 @@ ES	España	09	Cataluña	43	Tarragona	43149	Tivenys	0	0
 ES	España	09	Cataluña	43	Tarragona	43150	Tivissa	0	0
 ES	España	09	Cataluña	43	Tarragona	43151	Torre de Fontaubella, La	0	0
 ES	España	09	Cataluña	43	Tarragona	43152	Torre de l'Espanyol, La	0	0
-ES	España	09	Cataluña	43	Tarragona	43153	Torredembarra	1	0
+ES	España	09	Cataluña	43	Tarragona	43153	Torredembarra	1	1
 ES	España	09	Cataluña	43	Tarragona	43155	Tortosa	1	1
 ES	España	09	Cataluña	43	Tarragona	43156	Ulldecona	0	0
 ES	España	09	Cataluña	43	Tarragona	43157	Ulldemolins	0	0
@@ -2268,7 +2270,6 @@ ES	España	12	Galicia	15	Coruña, A	15002	Ames	0	0
 ES	España	12	Galicia	15	Coruña, A	15005	Arteixo	0	0
 ES	España	12	Galicia	15	Coruña, A	15008	Bergondo	0	0
 ES	España	12	Galicia	15	Coruña, A	15009	Betanzos	0	0
-ES	España	12	Galicia	15	Coruña, A	15011	Boiro	0	0
 ES	España	12	Galicia	15	Coruña, A	15013	Brión	0	0
 ES	España	12	Galicia	15	Coruña, A	15015	Cabanas	0	0
 ES	España	12	Galicia	15	Coruña, A	15017	Cambre	0	0
