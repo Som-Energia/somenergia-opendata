@@ -1,6 +1,6 @@
 SELECT
 	pais.code AS codi_pais,
-  pais.name AS pais,
+	pais.name AS pais,
 	comunitat.codi AS codi_ccaa,
 	comunitat.name AS comunitat_autonoma,
 	provincia.code AS codi_provincia,
