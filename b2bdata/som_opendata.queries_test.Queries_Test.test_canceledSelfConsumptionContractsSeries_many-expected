@@ -1,4 +1,4 @@
-codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	codi_ine	municipi	count_2019_06_01	count_2019_07_01
+codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	codi_ine	municipi	count_2020_10_01	count_2019_11_01
 ES	España	01	Andalucia	04	Almería	04003	Adra	0	0
 ES	España	01	Andalucia	04	Almería	04006	Albox	0	0
 ES	España	01	Andalucia	04	Almería	04010	Alhabia	0	0
@@ -1419,7 +1419,7 @@ ES	España	07	Castilla y León	09	Burgos	09223	Monasterio de la Sierra	0	0
 ES	España	07	Castilla y León	09	Burgos	09228	Moradillo de Roa	0	0
 ES	España	07	Castilla y León	09	Burgos	09229	Nava de Roa	0	0
 ES	España	07	Castilla y León	09	Burgos	09238	Oña	0	0
-ES	España	07	Castilla y León	09	Burgos	09243	Padilla de Arriba	1	0
+ES	España	07	Castilla y León	09	Burgos	09243	Padilla de Arriba	0	0
 ES	España	07	Castilla y León	09	Burgos	09246	Palacios de la Sierra	0	0
 ES	España	07	Castilla y León	09	Burgos	09251	Pancorbo	0	0
 ES	España	07	Castilla y León	09	Burgos	09256	Pedrosa de Duero	0	0
@@ -2226,7 +2226,7 @@ ES	España	09	Cataluña	08	Barcelona	08291	Vacarisses	0	0
 ES	España	09	Cataluña	08	Barcelona	08292	Vallbona d'Anoia	0	0
 ES	España	09	Cataluña	08	Barcelona	08293	Vallcebre	0	0
 ES	España	09	Cataluña	08	Barcelona	08294	Vallgorguina	0	0
-ES	España	09	Cataluña	08	Barcelona	08295	Vallirana	0	0
+ES	España	09	Cataluña	08	Barcelona	08295	Vallirana	1	0
 ES	España	09	Cataluña	08	Barcelona	08296	Vallromanes	0	0
 ES	España	09	Cataluña	08	Barcelona	08298	Vic	0	0
 ES	España	09	Cataluña	08	Barcelona	08299	Vilada	0	0
@@ -2527,7 +2527,7 @@ ES	España	09	Cataluña	25	Lleida	25076	Cogul, El	0	0
 ES	España	09	Cataluña	25	Lleida	25077	Coll de Nargó	0	0
 ES	España	09	Cataluña	25	Lleida	25163	Coma i la Pedra, La	0	0
 ES	España	09	Cataluña	25	Lleida	25161	Conca de Dalt	0	0
-ES	España	09	Cataluña	25	Lleida	25078	Corbins	0	0
+ES	España	09	Cataluña	25	Lleida	25078	Corbins	1	0
 ES	España	09	Cataluña	25	Lleida	25079	Cubells	0	0
 ES	España	09	Cataluña	25	Lleida	25081	Espluga Calba, L'	0	0
 ES	España	09	Cataluña	25	Lleida	25082	Espot	0	0
