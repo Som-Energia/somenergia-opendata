@@ -160,6 +160,28 @@ def newItemLister(adate):
         END, ',' ORDER BY item.id) AS ids_{adate:%Y_%m_%d}
 """.format(adate=adate)
 
+def canceledItemCounter(adate):
+    # TODO: Unsafe substitution, use mogrify
+    return """
+    count(CASE
+        WHEN item.last_date is NULL then NULL
+        WHEN item.last_date > '{adate}'::date THEN NULL
+        WHEN item.last_date <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        ELSE TRUE
+        END) AS count_{adate:%Y_%m_%d}
+""".format(adate=adate)
+
+def canceledItemLister(adate):
+    # TODO: Unsafe substitution, use mogrify
+    return """
+    string_agg(CASE
+        WHEN item.last_date is NULL then NULL
+        WHEN item.last_date > '{adate}'::date THEN NULL
+        WHEN item.last_date <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        ELSE item.id::text
+        END, ',' ORDER BY item.id) AS count_{adate:%Y_%m_%d}
+""".format(adate=adate)
+
 def newSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
@@ -186,8 +208,8 @@ def canceledSelfConsumptionContractsCounter(adate):
 def canceledSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
-        queryfile='contract_distribution',
-        timeSlicer=canceledSelfConsumptionContractsCounter,
+        queryfile='contract_selfconsumption_distribution',
+        timeSlicer=canceledItemCounter,
         dbhandler=dbhandler,
     )
 
