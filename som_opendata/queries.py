@@ -138,7 +138,7 @@ def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
         dbhandler=dbhandler,
     )
 
-def newSelfConsumptionContractsCounter(adate):
+def newItemCounter(adate):
     # TODO: Unsafe substitution, use mogrify
     return """
     count(CASE
@@ -149,11 +149,22 @@ def newSelfConsumptionContractsCounter(adate):
         END) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
 
+def newItemLister(adate):
+    # TODO: Unsafe substitution, use mogrify
+    return """
+    string_agg(CASE
+        WHEN item.first_date IS NULL THEN NULL
+        WHEN item.first_date > '{adate}'::date THEN NULL
+        WHEN item.first_date <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        ELSE item.id::text
+        END, ',' ORDER BY item.id) AS ids_{adate:%Y_%m_%d}
+""".format(adate=adate)
+
 def newSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
         queryfile='contract_selfconsumption_distribution',
-        timeSlicer=newSelfConsumptionContractsCounter,
+        timeSlicer=newItemCounter,
         dbhandler=dbhandler,
     )
 
@@ -269,7 +280,7 @@ def canceledMembersCounter(adate):
             END) AS count_{adate:%Y_%m_%d}
         """.format(adate=adate)
 
-def cancelledMembersLister(adate):
+def canceledMembersLister(adate):
     # TODO: Unsafe substitution
     return """
     string_agg(CASE
