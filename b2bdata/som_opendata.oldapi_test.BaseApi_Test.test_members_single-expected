@@ -288,6 +288,7 @@ ES	España	01	Andalucia	41	Sevilla	41094	Umbrete	2
 ES	España	01	Andalucia	41	Sevilla	41095	Utrera	1
 ES	España	01	Andalucia	41	Sevilla	41096	Valencina de la Concepción	2
 ES	España	01	Andalucia	41	Sevilla	41097	Villamanrique de la Condesa	0
+ES	España	01	Andalucia	41	Sevilla	41098	Villanueva del Ariscal	0
 ES	España	01	Andalucia	41	Sevilla	41101	Villaverde del Río	0
 ES	España	01	Andalucia	41	Sevilla	41102	Viso del Alcor, El	1
 ES	España	02	Aragón	22	Huesca	22001	Abiego	0
@@ -1470,13 +1471,13 @@ ES	España	09	Cataluña	17	Girona	17153	Rupià	5
 ES	España	09	Cataluña	17	Girona	17154	Sales de Llierca	2
 ES	España	09	Cataluña	17	Girona	17155	Salt	36
 ES	España	09	Cataluña	17	Girona	17180	Santa Coloma de Farners	40
-ES	España	09	Cataluña	17	Girona	17181	Santa Cristina d'Aro	10
+ES	España	09	Cataluña	17	Girona	17181	Santa Cristina d'Aro	11
 ES	España	09	Cataluña	17	Girona	17157	Sant Andreu Salou	0
 ES	España	09	Cataluña	17	Girona	17183	Sant Aniol de Finestres	3
 ES	España	09	Cataluña	17	Girona	17184	Santa Pau	2
 ES	España	09	Cataluña	17	Girona	17158	Sant Climent Sescebes	1
 ES	España	09	Cataluña	17	Girona	17159	Sant Feliu de Buixalleu	5
-ES	España	09	Cataluña	17	Girona	17160	Sant Feliu de Guíxols	27
+ES	España	09	Cataluña	17	Girona	17160	Sant Feliu de Guíxols	26
 ES	España	09	Cataluña	17	Girona	17161	Sant Feliu de Pallerols	3
 ES	España	09	Cataluña	17	Girona	17162	Sant Ferriol	0
 ES	España	09	Cataluña	17	Girona	17163	Sant Gregori	12
@@ -1615,6 +1616,7 @@ ES	España	09	Cataluña	25	Lleida	25099	Golmés	0
 ES	España	09	Cataluña	25	Lleida	25100	Gósol	0
 ES	España	09	Cataluña	25	Lleida	25101	Granadella, La	1
 ES	España	09	Cataluña	25	Lleida	25102	Granja d'Escarp, La	1
+ES	España	09	Cataluña	25	Lleida	25103	Granyanella	0
 ES	España	09	Cataluña	25	Lleida	25104	Granyena de Segarra	0
 ES	España	09	Cataluña	25	Lleida	25109	Guimerà	1
 ES	España	09	Cataluña	25	Lleida	25903	Guingueta d'Àneu, La	1
@@ -2106,7 +2108,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46112	Chulilla	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46098	Corbera	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46105	Cullera	7
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46113	Daimús	1
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46116	Eliana, l'	4
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46116	Eliana, l'	5
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46117	Emperador	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46118	Enguera	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46122	Faura	4
@@ -2154,7 +2156,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46184	Ontinyent	24
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46186	Paiporta	14
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46187	Palma de Gandía	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46188	Palmera	1
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46190	Paterna	22
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46190	Paterna	21
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46191	Pedralba	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46192	Petrés	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46193	Picanya	15
@@ -2268,7 +2270,6 @@ ES	España	12	Galicia	15	Coruña, A	15002	Ames	5
 ES	España	12	Galicia	15	Coruña, A	15005	Arteixo	5
 ES	España	12	Galicia	15	Coruña, A	15008	Bergondo	1
 ES	España	12	Galicia	15	Coruña, A	15009	Betanzos	2
-ES	España	12	Galicia	15	Coruña, A	15011	Boiro	0
 ES	España	12	Galicia	15	Coruña, A	15013	Brión	2
 ES	España	12	Galicia	15	Coruña, A	15015	Cabanas	0
 ES	España	12	Galicia	15	Coruña, A	15017	Cambre	0

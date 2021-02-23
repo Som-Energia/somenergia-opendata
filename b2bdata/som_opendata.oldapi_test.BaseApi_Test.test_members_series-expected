@@ -288,6 +288,7 @@ ES	España	01	Andalucia	41	Sevilla	41094	Umbrete	2	2	2	2
 ES	España	01	Andalucia	41	Sevilla	41095	Utrera	1	1	1	2
 ES	España	01	Andalucia	41	Sevilla	41096	Valencina de la Concepción	2	2	2	2
 ES	España	01	Andalucia	41	Sevilla	41097	Villamanrique de la Condesa	0	0	0	0
+ES	España	01	Andalucia	41	Sevilla	41098	Villanueva del Ariscal	0	0	0	0
 ES	España	01	Andalucia	41	Sevilla	41101	Villaverde del Río	0	0	0	0
 ES	España	01	Andalucia	41	Sevilla	41102	Viso del Alcor, El	1	2	2	2
 ES	España	02	Aragón	22	Huesca	22001	Abiego	0	0	0	0
@@ -1470,13 +1471,13 @@ ES	España	09	Cataluña	17	Girona	17153	Rupià	5	5	5	5
 ES	España	09	Cataluña	17	Girona	17154	Sales de Llierca	2	2	2	2
 ES	España	09	Cataluña	17	Girona	17155	Salt	36	37	40	41
 ES	España	09	Cataluña	17	Girona	17180	Santa Coloma de Farners	40	40	40	40
-ES	España	09	Cataluña	17	Girona	17181	Santa Cristina d'Aro	10	10	10	10
+ES	España	09	Cataluña	17	Girona	17181	Santa Cristina d'Aro	11	11	11	11
 ES	España	09	Cataluña	17	Girona	17157	Sant Andreu Salou	0	0	0	0
 ES	España	09	Cataluña	17	Girona	17183	Sant Aniol de Finestres	3	3	3	3
 ES	España	09	Cataluña	17	Girona	17184	Santa Pau	2	2	2	2
 ES	España	09	Cataluña	17	Girona	17158	Sant Climent Sescebes	1	1	1	1
 ES	España	09	Cataluña	17	Girona	17159	Sant Feliu de Buixalleu	5	5	5	5
-ES	España	09	Cataluña	17	Girona	17160	Sant Feliu de Guíxols	27	27	28	28
+ES	España	09	Cataluña	17	Girona	17160	Sant Feliu de Guíxols	26	26	27	27
 ES	España	09	Cataluña	17	Girona	17161	Sant Feliu de Pallerols	3	4	4	4
 ES	España	09	Cataluña	17	Girona	17162	Sant Ferriol	0	0	0	0
 ES	España	09	Cataluña	17	Girona	17163	Sant Gregori	12	12	12	12
@@ -1615,6 +1616,7 @@ ES	España	09	Cataluña	25	Lleida	25099	Golmés	0	0	0	0
 ES	España	09	Cataluña	25	Lleida	25100	Gósol	0	0	0	0
 ES	España	09	Cataluña	25	Lleida	25101	Granadella, La	1	1	2	2
 ES	España	09	Cataluña	25	Lleida	25102	Granja d'Escarp, La	1	1	1	1
+ES	España	09	Cataluña	25	Lleida	25103	Granyanella	0	0	0	0
 ES	España	09	Cataluña	25	Lleida	25104	Granyena de Segarra	0	0	0	0
 ES	España	09	Cataluña	25	Lleida	25109	Guimerà	1	1	1	1
 ES	España	09	Cataluña	25	Lleida	25903	Guingueta d'Àneu, La	1	1	1	1
@@ -1737,7 +1739,7 @@ ES	España	09	Cataluña	43	Tarragona	43007	Aleixar, L'	2	2	2	2
 ES	España	09	Cataluña	43	Tarragona	43009	Alforja	2	2	2	2
 ES	España	09	Cataluña	43	Tarragona	43010	Alió	1	1	1	1
 ES	España	09	Cataluña	43	Tarragona	43011	Almoster	2	3	3	3
-ES	España	09	Cataluña	43	Tarragona	43012	Altafulla	10	12	12	12
+ES	España	09	Cataluña	43	Tarragona	43012	Altafulla	10	11	11	11
 ES	España	09	Cataluña	43	Tarragona	43013	Ametlla de Mar, L'	3	3	3	3
 ES	España	09	Cataluña	43	Tarragona	43906	Ampolla, L'	0	0	0	0
 ES	España	09	Cataluña	43	Tarragona	43014	Amposta	25	25	27	29
@@ -1871,7 +1873,7 @@ ES	España	09	Cataluña	43	Tarragona	43149	Tivenys	0	0	0	0
 ES	España	09	Cataluña	43	Tarragona	43150	Tivissa	1	1	1	1
 ES	España	09	Cataluña	43	Tarragona	43151	Torre de Fontaubella, La	0	0	0	0
 ES	España	09	Cataluña	43	Tarragona	43152	Torre de l'Espanyol, La	0	0	0	0
-ES	España	09	Cataluña	43	Tarragona	43153	Torredembarra	11	11	11	11
+ES	España	09	Cataluña	43	Tarragona	43153	Torredembarra	11	12	12	12
 ES	España	09	Cataluña	43	Tarragona	43155	Tortosa	21	22	24	26
 ES	España	09	Cataluña	43	Tarragona	43156	Ulldecona	7	7	7	7
 ES	España	09	Cataluña	43	Tarragona	43157	Ulldemolins	0	0	0	0
@@ -2106,7 +2108,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46112	Chulilla	0	0	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46098	Corbera	0	0	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46105	Cullera	7	7	7	7
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46113	Daimús	1	1	1	1
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46116	Eliana, l'	4	4	4	4
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46116	Eliana, l'	5	5	5	5
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46117	Emperador	1	1	1	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46118	Enguera	0	0	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46122	Faura	4	4	4	4
@@ -2154,7 +2156,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46184	Ontinyent	24	24	2
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46186	Paiporta	14	14	14	14
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46187	Palma de Gandía	0	0	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46188	Palmera	1	1	1	1
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46190	Paterna	22	24	25	27
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46190	Paterna	21	23	24	26
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46191	Pedralba	1	1	1	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46192	Petrés	0	0	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46193	Picanya	15	16	16	16
@@ -2268,7 +2270,6 @@ ES	España	12	Galicia	15	Coruña, A	15002	Ames	5	5	5	5
 ES	España	12	Galicia	15	Coruña, A	15005	Arteixo	5	5	5	5
 ES	España	12	Galicia	15	Coruña, A	15008	Bergondo	1	1	1	1
 ES	España	12	Galicia	15	Coruña, A	15009	Betanzos	2	2	2	2
-ES	España	12	Galicia	15	Coruña, A	15011	Boiro	0	0	0	0
 ES	España	12	Galicia	15	Coruña, A	15013	Brión	2	2	2	2
 ES	España	12	Galicia	15	Coruña, A	15015	Cabanas	0	0	0	0
 ES	España	12	Galicia	15	Coruña, A	15017	Cambre	0	0	0	0
