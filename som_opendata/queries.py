@@ -38,34 +38,6 @@ def timeQuery(dates, queryfile, timeSlicer, dbhandler=csvTable):
         cursor.execute(query)
         return dbhandler(cursor)
 
-def contractsSeries(dates, dbhandler=csvTable):
-    return timeQuery(
-        dates=dates,
-        queryfile='contract_distribution',
-        timeSlicer=activeItemCounter,
-        #timeSlicer=activeItemLister, # debug
-        dbhandler=dbhandler,
-    )
-
-def newContractsSeries(dates, dbhandler=csvTable):
-    return timeQuery(
-        dates=dates,
-        queryfile='contract_distribution',
-        timeSlicer=newItemCounter,
-        #timeSlicer=newItemLister, # debug
-        dbhandler=dbhandler,
-    )
-
-
-def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
-    return timeQuery(
-        dates=dates,
-        queryfile='contract_distribution',
-        timeSlicer=canceledItemCounter,
-        #timeSlicer=canceledItemLister, # debug
-        dbhandler=dbhandler,
-    )
-
 def activeItemCounter(adate):
     # TODO: Unsafe substitution, use mogrify
     return """
@@ -136,6 +108,34 @@ def canceledItemLister(adate):
         ELSE item.id::text
         END, ',' ORDER BY item.id) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
+
+def contractsSeries(dates, dbhandler=csvTable):
+    return timeQuery(
+        dates=dates,
+        queryfile='contract_distribution',
+        timeSlicer=activeItemCounter,
+        #timeSlicer=activeItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
+def newContractsSeries(dates, dbhandler=csvTable):
+    return timeQuery(
+        dates=dates,
+        queryfile='contract_distribution',
+        timeSlicer=newItemCounter,
+        #timeSlicer=newItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
+
+def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeQuery(
+        dates=dates,
+        queryfile='contract_distribution',
+        timeSlicer=canceledItemCounter,
+        #timeSlicer=canceledItemLister, # debug
+        dbhandler=dbhandler,
+    )
 
 def newSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
