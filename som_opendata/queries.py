@@ -190,21 +190,6 @@ def newSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
         dbhandler=dbhandler,
     )
 
-def canceledSelfConsumptionContractsCounter(adate):
-    # TODO: Unsafe substitution, use mogrify
-    # TODO: doesn't detect modificacio contractual to stop selfConsumption
-    # We didn't find any ocurrences of this ever happening.
-    return """
-    count(CASE
-        WHEN polissa.autoconsumo = '00' then NULL
-        WHEN polissa.autoconsumo is NULL then NULL
-        WHEN polissa.data_baixa is NULL then NULL
-        WHEN polissa.data_baixa > '{adate}'::date THEN NULL
-        WHEN polissa.data_baixa <= '{adate}'::date - INTERVAL '1 month' THEN NULL
-        ELSE TRUE
-        END) AS count_{adate:%Y_%m_%d}
-""".format(adate=adate)
-
 def canceledSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
