@@ -318,19 +318,6 @@ class Api_Test(unittest.TestCase):
         r = self.get('/members/by/world/monthly/to/2018-03-01')
         self.assertTsvResponse(r)
 
-    @unittest.skip('NOT IMPLEMENTED YET')
-    def test__metric_frequency_formDate(self):
-        self.setupSource(
-            headers+'\tcount_'+str(Date.today()-delta(weeks=1)).replace('-','_')+'\tcount_'+str(Date.today()).replace('-','_'),
-            data_Adra+'\t123\t1234567',
-            )
-        r = self.get('/members/weekly/from/'+str(Date.today()-delta(weeks=1)))
-        self.assertEqual(r.status, '200 OK')    # En cas de ser NO OK petaria en el següent assert
-        self.assertYamlResponse(r, """\
-            dates: ["""+str(Date.today()-delta(weeks=1))+""", """+str(Date.today())+"""]
-            values: [123, 1234567]
-            """)
-
     def test__metric_frequency_fromDate_toDate(self):
         r = self.get('/members/monthly/from/2018-01-01/to/2018-02-01')
         self.assertTsvResponse(r)
