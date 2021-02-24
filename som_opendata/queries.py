@@ -38,34 +38,6 @@ def timeQuery(dates, queryfile, timeSlicer, dbhandler=csvTable):
         cursor.execute(query)
         return dbhandler(cursor)
 
-
-def activeContractsCounter(adate):
-    # TODO: Unsafe substitution, use mogrify
-    return """
-    count(CASE
-        WHEN polissa.data_alta IS NULL THEN NULL
-        WHEN polissa.data_alta > '{adate}'::date THEN NULL
-        WHEN polissa.data_baixa is NULL then TRUE
-        WHEN polissa.data_baixa > '{adate}'::date THEN TRUE
-        ELSE NULL
-        END) AS count_{adate:%Y_%m_%d}
-""".format(adate=adate)
-
-def activeContractsLister(adate):
-    """Debug substitute for activeContractsCounter
-    List ids instead of count them
-    """
-    # TODO: Unsafe substitution, use mogrify
-    return """
-    string_agg(CASE
-        WHEN polissa.data_alta IS NULL THEN NULL
-        WHEN polissa.data_alta > '{adate}'::date THEN NULL
-        WHEN polissa.data_baixa is NULL then polissa.id::text
-        WHEN polissa.data_baixa > '{adate}'::date THEN polissa.id::text
-        ELSE NULL
-        END, ',' ORDER BY polissa.id) AS ids_{adate:%Y_%m_%d}
-""".format(adate=adate)
-
 def contractsSeries(dates, dbhandler=csvTable):
     return timeQuery(
         dates=dates,
@@ -74,28 +46,6 @@ def contractsSeries(dates, dbhandler=csvTable):
         #timeSlicer=activeItemLister, # debug
         dbhandler=dbhandler,
     )
-
-def newContractsCounter(adate):
-    # TODO: Unsafe substitution, use mogrify
-    return """
-    count(CASE
-        WHEN polissa.data_alta IS NULL THEN NULL
-        WHEN polissa.data_alta > '{adate}'::date THEN NULL
-        WHEN polissa.data_alta <= '{adate}'::date - INTERVAL '1 month' THEN NULL
-        ELSE TRUE
-        END) AS count_{adate:%Y_%m_%d}
-""".format(adate=adate)
-
-def newContractsLister(adate):
-    # TODO: Unsafe substitution, use mogrify
-    return """
-    string_agg(CASE
-        WHEN polissa.data_alta IS NULL THEN NULL
-        WHEN polissa.data_alta > '{adate}'::date THEN NULL
-        WHEN polissa.data_alta <= '{adate}'::date - INTERVAL '1 month' THEN NULL
-        ELSE polissa.id::text
-        END, ',' ORDER BY polissa.id) AS count_{adate:%Y_%m_%d}
-""".format(adate=adate)
 
 def newContractsSeries(dates, dbhandler=csvTable):
     return timeQuery(
@@ -106,28 +56,6 @@ def newContractsSeries(dates, dbhandler=csvTable):
         dbhandler=dbhandler,
     )
 
-
-def canceledContractsCounter(adate):
-    # TODO: Unsafe substitution, use mogrify
-    return """
-    count(CASE
-        WHEN polissa.data_baixa is NULL then NULL
-        WHEN polissa.data_baixa > '{adate}'::date THEN NULL
-        WHEN polissa.data_baixa <= '{adate}'::date - INTERVAL '1 month' THEN NULL
-        ELSE TRUE
-        END) AS count_{adate:%Y_%m_%d}
-""".format(adate=adate)
-
-def canceledContractsLister(adate):
-    # TODO: Unsafe substitution, use mogrify
-    return """
-    string_agg(CASE
-        WHEN polissa.data_baixa is NULL then NULL
-        WHEN polissa.data_baixa > '{adate}'::date THEN NULL
-        WHEN polissa.data_baixa <= '{adate}'::date - INTERVAL '1 month' THEN NULL
-        ELSE polissa.id::text
-        END, ',' ORDER BY polissa.id) AS count_{adate:%Y_%m_%d}
-""".format(adate=adate)
 
 def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
