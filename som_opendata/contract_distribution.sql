@@ -1,12 +1,12 @@
 SELECT
 	pais.code AS codi_pais,
-	pais.name AS pais, 
-	comunitat.codi AS codi_ccaa, 
-	comunitat.name AS comunitat_autonoma, 
-	provincia.code AS codi_provincia, 
-	provincia.name AS provincia, 
-	municipi.ine AS codi_ine, 
-	municipi.name AS municipi, 
+	pais.name AS pais,
+	comunitat.codi AS codi_ccaa,
+	comunitat.name AS comunitat_autonoma,
+	provincia.code AS codi_provincia,
+	provincia.name AS provincia,
+	municipi.ine AS codi_ine,
+	municipi.name AS municipi,
 	{} -- here go the count columns
 FROM (
 	SELECT

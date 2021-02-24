@@ -27,7 +27,7 @@ FROM (
 	GROUP BY
 		polissa.id,
 		cups.id
-) as item
+) AS item
 LEFT JOIN res_municipi AS municipi
 	ON item.city_id=municipi.id
 LEFT JOIN res_country_state AS provincia
