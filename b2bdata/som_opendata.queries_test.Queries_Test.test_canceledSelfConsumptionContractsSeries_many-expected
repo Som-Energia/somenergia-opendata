@@ -1,4 +1,4 @@
-codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	codi_ine	municipi	count_2020_10_01	count_2019_11_01
+codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	codi_ine	municipi	count_2020_10_01	count_2020_11_01
 ES	España	01	Andalucia	04	Almería	04013	Almería	0	0
 ES	España	01	Andalucia	11	Cádiz	11015	Chiclana de la Frontera	0	0
 ES	España	01	Andalucia	11	Cádiz	11019	Grazalema	0	0
@@ -74,7 +74,7 @@ ES	España	03	Asturias, Principado de	33	Asturias	33017	Castropol	0	0
 ES	España	03	Asturias, Principado de	33	Asturias	33066	Siero	0	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07002	Alaior	0	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07001	Alaró	0	0
-ES	España	04	Baleares, Islas	07	Balears, Illes	07003	Alcúdia	0	0
+ES	España	04	Baleares, Islas	07	Balears, Illes	07003	Alcúdia	0	1
 ES	España	04	Baleares, Islas	07	Balears, Illes	07004	Algaida	0	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07006	Artà	0	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07008	Binissalem	0	0
@@ -191,7 +191,7 @@ ES	España	09	Cataluña	08	Barcelona	08904	Badia del Vallès	0	0
 ES	España	09	Cataluña	08	Barcelona	08016	Bagà	0	0
 ES	España	09	Cataluña	08	Barcelona	08018	Balsareny	0	0
 ES	España	09	Cataluña	08	Barcelona	08252	Barberà del Vallès	0	0
-ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	0	0
+ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	0	1
 ES	España	09	Cataluña	08	Barcelona	08020	Begues	0	0
 ES	España	09	Cataluña	08	Barcelona	08022	Berga	0	0
 ES	España	09	Cataluña	08	Barcelona	08023	Bigues i Riells	0	0
@@ -210,7 +210,7 @@ ES	España	09	Cataluña	08	Barcelona	08040	Canet de Mar	0	0
 ES	España	09	Cataluña	08	Barcelona	08041	Canovelles	0	0
 ES	España	09	Cataluña	08	Barcelona	08042	Cànoves i Samalús	0	0
 ES	España	09	Cataluña	08	Barcelona	08043	Canyelles	0	0
-ES	España	09	Cataluña	08	Barcelona	08046	Cardedeu	0	0
+ES	España	09	Cataluña	08	Barcelona	08046	Cardedeu	0	1
 ES	España	09	Cataluña	08	Barcelona	08047	Cardona	0	0
 ES	España	09	Cataluña	08	Barcelona	08049	Casserres	0	0
 ES	España	09	Cataluña	08	Barcelona	08051	Castellar del Vallès	0	0
@@ -268,7 +268,7 @@ ES	España	09	Cataluña	08	Barcelona	08138	Moià	0	0
 ES	España	09	Cataluña	08	Barcelona	08123	Molins de Rei	0	0
 ES	España	09	Cataluña	08	Barcelona	08124	Mollet del Vallès	0	0
 ES	España	09	Cataluña	08	Barcelona	08125	Montcada i Reixac	0	0
-ES	España	09	Cataluña	08	Barcelona	08126	Montgat	0	0
+ES	España	09	Cataluña	08	Barcelona	08126	Montgat	0	1
 ES	España	09	Cataluña	08	Barcelona	08135	Montmeló	0	0
 ES	España	09	Cataluña	08	Barcelona	08137	Montseny	0	0
 ES	España	09	Cataluña	08	Barcelona	08129	Muntanyola	0	0
@@ -430,7 +430,7 @@ ES	España	09	Cataluña	17	Girona	17103	Maçanet de la Selva	0	0
 ES	España	09	Cataluña	17	Girona	17105	Mieres	0	0
 ES	España	09	Cataluña	17	Girona	17109	Montagut i Oix	0	0
 ES	España	09	Cataluña	17	Girona	17110	Mont-ras	0	0
-ES	España	09	Cataluña	17	Girona	17111	Navata	0	0
+ES	España	09	Cataluña	17	Girona	17111	Navata	0	1
 ES	España	09	Cataluña	17	Girona	17114	Olot	0	0
 ES	España	09	Cataluña	17	Girona	17115	Ordis	0	0
 ES	España	09	Cataluña	17	Girona	17117	Palafrugell	0	0
