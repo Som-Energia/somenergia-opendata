@@ -46,6 +46,7 @@ ES	España	01	Andalucia	41	Sevilla	41070	Palomares del Río	0	0
 ES	España	01	Andalucia	41	Sevilla	41079	Puebla del Río, La	0	0
 ES	España	01	Andalucia	41	Sevilla	41091	Sevilla	0	2
 ES	España	01	Andalucia	41	Sevilla	41093	Tomares	0	0
+ES	España	01	Andalucia	41	Sevilla	41096	Valencina de la Concepción	0	0
 ES	España	01	Andalucia	41	Sevilla	41102	Viso del Alcor, El	0	0
 ES	España	02	Aragón	22	Huesca	22059	Biescas	0	1
 ES	España	02	Aragón	22	Huesca	22061	Binéfar	0	0
@@ -59,6 +60,7 @@ ES	España	02	Aragón	44	Teruel	44013	Alcañiz	0	0
 ES	España	02	Aragón	44	Teruel	44216	Teruel	0	0
 ES	España	02	Aragón	50	Zaragoza	50008	Alagón	0	0
 ES	España	02	Aragón	50	Zaragoza	50065	Cabolafuente	0	0
+ES	España	02	Aragón	50	Zaragoza	50066	Cadrete	0	0
 ES	España	02	Aragón	50	Zaragoza	50089	Cuarte de Huerva	0	0
 ES	España	02	Aragón	50	Zaragoza	50102	Fabara	0	0
 ES	España	02	Aragón	50	Zaragoza	50115	Fuentes de Ebro	0	0
@@ -290,7 +292,6 @@ ES	España	09	Cataluña	08	Barcelona	08171	Prats de Lluçanès	0	0
 ES	España	09	Cataluña	08	Barcelona	08230	Premià de Dalt	0	1
 ES	España	09	Cataluña	08	Barcelona	08172	Premià de Mar	3	3
 ES	España	09	Cataluña	08	Barcelona	08175	Puig-reig	0	0
-ES	España	09	Cataluña	08	Barcelona	08177	Quar, La	0	0
 ES	España	09	Cataluña	08	Barcelona	08178	Rajadell	0	0
 ES	España	09	Cataluña	08	Barcelona	08181	Roca del Vallès, La	1	0
 ES	España	09	Cataluña	08	Barcelona	08183	Roda de Ter	1	1
@@ -531,6 +532,7 @@ ES	España	09	Cataluña	25	Lleida	25206	Soleràs, El	0	0
 ES	España	09	Cataluña	25	Lleida	25217	Tàrrega	1	0
 ES	España	09	Cataluña	25	Lleida	25220	Térmens	0	0
 ES	España	09	Cataluña	25	Lleida	25228	Torrefarrera	2	0
+ES	España	09	Cataluña	25	Lleida	25907	Torrefeta i Florejacs	0	0
 ES	España	09	Cataluña	25	Lleida	25230	Torregrossa	0	0
 ES	España	09	Cataluña	25	Lleida	25238	Vallbona de les Monges	0	0
 ES	España	09	Cataluña	25	Lleida	25240	Vallfogona de Balaguer	0	0
