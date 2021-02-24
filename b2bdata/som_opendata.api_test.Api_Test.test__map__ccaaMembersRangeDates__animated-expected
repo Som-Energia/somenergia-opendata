@@ -1,9 +1,9 @@
 <svg height="458" version="1.0" viewBox="-0.003 0 644 458" width="643" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <style>
-@keyframes frame000 { 0% { visibility: hidden; } 0.00% { visibility: visible; } 25.00% { visibility: hidden; } } .frame000 { animation: frame000 6.0s step-end infinite; }
-@keyframes frame001 { 0% { visibility: hidden; } 25.00% { visibility: visible; } 50.00% { visibility: hidden; } } .frame001 { animation: frame001 6.0s step-end infinite; }
-@keyframes frame002 { 0% { visibility: hidden; } 50.00% { visibility: visible; } 75.00% { visibility: hidden; } } .frame002 { animation: frame002 6.0s step-end infinite; }
-@keyframes frame003 { 0% { visibility: hidden; } 75.00% { visibility: visible; } 100.00% { visibility: hidden; } } .frame003 { animation: frame003 6.0s step-end infinite; }
+@keyframes frame000 { 0% { visibility: hidden; } 0.00% { visibility: visible; } 25.00% { visibility: hidden; } } .frame000 { animation: frame000 4.8s step-end infinite; }
+@keyframes frame001 { 0% { visibility: hidden; } 25.00% { visibility: visible; } 50.00% { visibility: hidden; } } .frame001 { animation: frame001 4.8s step-end infinite; }
+@keyframes frame002 { 0% { visibility: hidden; } 50.00% { visibility: visible; } 75.00% { visibility: hidden; } } .frame002 { animation: frame002 4.8s step-end infinite; }
+@keyframes frame003 { 0% { visibility: hidden; } 75.00% { visibility: visible; } 100.00% { visibility: hidden; } } .frame003 { animation: frame003 4.8s step-end infinite; }
 
 </style>
 <g class="frame000">

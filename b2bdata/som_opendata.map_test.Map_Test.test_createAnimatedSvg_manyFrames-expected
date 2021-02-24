@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
 <style>
-@keyframes frame000 { 0% { visibility: hidden; } 0.00% { visibility: visible; } 50.00% { visibility: hidden; } } .frame000 { animation: frame000 3.0s step-end infinite; }
-@keyframes frame001 { 0% { visibility: hidden; } 50.00% { visibility: visible; } 100.00% { visibility: hidden; } } .frame001 { animation: frame001 3.0s step-end infinite; }
+@keyframes frame000 { 0% { visibility: hidden; } 0.00% { visibility: visible; } 50.00% { visibility: hidden; } } .frame000 { animation: frame000 2.4s step-end infinite; }
+@keyframes frame001 { 0% { visibility: hidden; } 50.00% { visibility: visible; } 100.00% { visibility: hidden; } } .frame001 { animation: frame001 2.4s step-end infinite; }
 
 </style>
 <g class="frame000">
