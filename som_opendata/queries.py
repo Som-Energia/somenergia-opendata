@@ -70,8 +70,8 @@ def contractsSeries(dates, dbhandler=csvTable):
     return timeQuery(
         dates=dates,
         queryfile='contract_distribution',
-        timeSlicer=activeContractsCounter,
-        #timeSlicer=activeContractsLister, # debug
+        timeSlicer=activeItemCounter,
+        #timeSlicer=activeItemLister, # debug
         dbhandler=dbhandler,
     )
 
@@ -101,8 +101,8 @@ def newContractsSeries(dates, dbhandler=csvTable):
     return timeQuery(
         dates=dates,
         queryfile='contract_distribution',
-        timeSlicer=newContractsCounter,
-        #timeSlicer=newContractsLister, # debug
+        timeSlicer=newItemCounter,
+        #timeSlicer=newItemLister, # debug
         dbhandler=dbhandler,
     )
 
@@ -133,8 +133,8 @@ def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
         queryfile='contract_distribution',
-        timeSlicer=canceledContractsCounter,
-        #timeSlicer=canceledContractsLister, # debug
+        timeSlicer=canceledItemCounter,
+        #timeSlicer=canceledItemLister, # debug
         dbhandler=dbhandler,
     )
 

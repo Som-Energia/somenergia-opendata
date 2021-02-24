@@ -16,7 +16,7 @@ FROM (
 		cups.id_municipi as city_id,
 		TRUE
 	FROM giscedata_polissa AS polissa
-	LEFT JOIN giscedata_polissa_modcontractual modi
+	LEFT JOIN giscedata_polissa_modcontractual AS modi
 		ON polissa.id = modi.polissa_id
 	INNER JOIN giscedata_cups_ps AS cups
 		ON polissa.cups = cups.id

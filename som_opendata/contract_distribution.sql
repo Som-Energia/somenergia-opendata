@@ -8,13 +8,19 @@ SELECT
 	municipi.ine AS codi_ine, 
 	municipi.name AS municipi, 
 	{} -- here go the count columns
-FROM giscedata_polissa polissa
-LEFT JOIN res_partner rp
-	ON rp.id = polissa.soci
-INNER JOIN giscedata_cups_ps AS cups
-	ON polissa.cups = cups.id
+FROM (
+	SELECT
+		polissa.id as id,
+		polissa.data_alta as first_date,
+		polissa.data_baixa as last_date,
+		cups.id_municipi as city_id,
+		TRUE
+	FROM giscedata_polissa AS polissa
+	INNER JOIN giscedata_cups_ps AS cups
+		ON polissa.cups = cups.id
+) AS item
 LEFT JOIN res_municipi AS municipi
-	ON cups.id_municipi=municipi.id
+	ON item.city_id=municipi.id
 LEFT JOIN res_country_state AS provincia
 	ON provincia.id = municipi.state
 LEFT JOIN res_comunitat_autonoma AS comunitat
