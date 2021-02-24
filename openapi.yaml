@@ -1,0 +1,730 @@
+# TODO:
+# - Response data format for numbers
+# - Relative metrics paths in maps
+# - Examples for introspection and numbers
+# - Error responses
+
+openapi: 3.0.0
+info:
+  title: Som Energia Open Data API
+  description: API to get temporally and geographically aggregated metrics about Som Energia
+  version: 0.2.15
+servers:
+  - url: https://opendata.somenergia.coop/v0.2
+    description: Production server
+  - url: http://localhost:5001/v0.2
+    description: Development server
+paths:
+
+  /version:
+    get:
+      summary: API Version
+      description: Returns API version information
+      tags: [ About ]
+      responses:
+        '200':
+          description: Version information
+          content:
+            application/yaml:
+              schema:
+                $ref: '#/components/schemas/VersionInfo'
+
+  /discover/metrics:
+    get:
+      summary: Available metrics
+      tags: [ Discovery ]
+      parameters:
+      - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: A list of the available metrics
+          content:
+            application/yaml:
+              schema:
+                $ref: '#/components/schemas/MetricsInfo'
+            example:
+              metrics:
+              - id: members
+                text: 'Members'
+                description: "Members of the cooperative at the end of the day."
+              - id: contracts
+                text: 'Contracts'
+                description: "Active contracts at the end of the day."
+
+  /discover/geolevel:
+    get:
+      summary: Available geolevels
+      description: Returns the geolevels (short for geographical levels) that can be used in queries. For example, countries, cities...
+      tags: [ Discovery ]
+      parameters:
+      - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: A list of available geolevels
+          content:
+            application/yaml:
+              schema:
+                $ref: '#/components/schemas/GeolevelsInfo'
+              example:
+                geolevels:
+                - id: world
+                  text: 'World'
+                  mapable: False
+                - id: country
+                  text: 'Country'
+                  parent: world
+                  plural: countries
+                  mapable: False
+                - id: ccaa
+                  text: 'CCAA'
+                  parent: country
+                  plural: ccaas
+                - id: state
+                  text: 'State'
+                  parent: ccaa 
+                  plural: states
+                - id: city
+                  text: 'City'
+                  parent: state
+                  plural: cities
+                  mapable: False
+                - id: localgroup
+                  text: 'Local Group'
+                  parent: world
+                  plural: localgroups
+                  detailed: False
+                  mapable: False
+
+  /discover/geolevel/{geolevel}:
+    get:
+      summary: Available geolevels values
+      description: >
+        Returns the available values for a given geographical division.
+      tags: [ Discovery ]
+      parameters:
+      - $ref: '#/components/parameters/lang'
+      - $ref: '#/components/parameters/path_geolevelOrAlias'
+      - $ref: '#/components/parameters/geofilter_city'
+      - $ref: '#/components/parameters/geofilter_state'
+      - $ref: '#/components/parameters/geofilter_ccaa'
+      - $ref: '#/components/parameters/geofilter_country'
+      - $ref: '#/components/parameters/geofilter_gl'
+      responses:
+        '200':
+          description: A list of available geolevels
+          content:
+            application/yaml:
+              schema:
+                $ref: '#/components/schemas/GeolevelValues'
+              examples:
+                ccaas:
+                  summary: /discover/geolevel/ccaa
+                  value:
+                    options:
+                      '01': Andalucia
+                      '02': Aragón
+                      '03': Asturias, Principado de
+                      '04': Baleares, Islas
+                      '05': Canarias
+                      '06': Cantabria
+                      '07': Castilla y León
+                      '08': Castilla - La Mancha
+                      '09': Cataluña
+                      '10': Comunidad Valenciana
+                      '11': Extremadura
+                      '12': Galicia
+                      '13': Madrid, Comunidad de
+                      '14': Murcia, Región de
+                      '15': Navarra, Comunidad Foral de
+                      '16': País Vasco
+                      '17': Rioja, La
+                localgroupsccaa:
+                  summary: "/discover/geolevel/localgroup?ccaa=09"
+                  value:
+                    options:
+                      AltPenedes: Alt Penedès
+                      Anoia: Anoia
+                      Badalona: Badalona
+                      Bages: Bages
+                      BaixLlobregat: Baix Llobregat
+                      BaixMontseny: Baix Montseny
+                      BaixValles: Baix Vallès
+                      Barcelona: Barcelona
+                      CastellarValles: Castellar del Vallès
+                      CerdanyolaValles: Cerdanyola del Vallès
+                      Maresme: Maresme
+                      Osona: Osona
+                      Rubi: Rubí
+                      Sabadell: Sabadell
+                      SantCugatValles: Sant Cugat del Vallès
+                      SelvaMaritima: Selva Marítima
+                      Terrassa: Terrassa
+
+
+  /{metric}/by/{geolevel}/on/{ondate}:
+    get:
+      summary: Metric Data on a Given Date
+      description: >
+        Returns the geographical distribution of a metric at a given date.
+
+
+        Use the geolevel to get more geographical detail (country, ccaa, state, city).
+
+
+        Use the filters in the query string to restrict to a group of geographical entities.
+        The filters are additive. That means that any city matching any of the specified values will be counted.
+
+        - Current number of contracts: `/contracts`
+        
+        - Current members at every state: `/members/by/state`
+        
+        - Members at every CCAA on 2018-02-01: `/members/by/ccaa/on/2018-02-01`
+        
+        - Members by city on Araba and Gipuzcoa provinces: `/members/by/city?state=01&state=20`
+
+      tags: [ "Numeric data" ]
+      parameters:
+    
+      - $ref: '#/components/parameters/metric'
+      - $ref: '#/components/parameters/path_geolevel'
+      - $ref: '#/components/parameters/path_onDate'
+      - $ref: '#/components/parameters/lang'
+      - $ref: '#/components/parameters/geofilter_city'
+      - $ref: '#/components/parameters/geofilter_state'
+      - $ref: '#/components/parameters/geofilter_ccaa'
+      - $ref: '#/components/parameters/geofilter_country'
+      - $ref: '#/components/parameters/geofilter_gl'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/yaml:
+              schema:
+                $ref: '#/components/schemas/MultiLevelNumbers'
+              example: 
+                dates:
+                - 2013-01-01
+                values:
+                - 3197
+                countries:
+                  ES:
+                    name: España
+                    values:
+                    - 3197
+                    ccaas:
+                      '01':
+                        name: Andalucia
+                        values:
+                        - 48
+                      '02':
+                        name: Aragón
+                        values:
+                        - 124
+                      '03':
+                        name: Asturias, Principado de
+                        values:
+                        - 13
+                      '04':
+                        name: Baleares, Islas
+                        values:
+                        - 235
+                      '05':
+                        name: Canarias
+                        values:
+                        - 0
+                      '06':
+                        name: Cantabria
+                        values:
+                        - 12
+                      08:
+                        name: Castilla - La Mancha
+                        values:
+                        - 28
+                      '07':
+                        name: Castilla y León
+                        values:
+                        - 24
+                      09:
+                        name: Cataluña
+                        values:
+                        - 2054
+                      '10':
+                        name: Comunidad Valenciana
+                        values:
+                        - 224
+                      '11':
+                        name: Extremadura
+                        values:
+                        - 14
+                      '12':
+                        name: Galicia
+                        values:
+                        - 24
+                      '13':
+                        name: Madrid, Comunidad de
+                        values:
+                        - 145
+                      '14':
+                        name: Murcia, Región de
+                        values:
+                        - 11
+                      '15':
+                        name: Navarra, Comunidad Foral de
+                        values:
+                        - 151
+                      '16':
+                        name: País Vasco
+                        values:
+                        - 53
+                      '17':
+                        name: Rioja, La
+                        values:
+                        - 37
+          
+  /{metric}/by/{geolevel}/{frequency}/from/{fromdate}/to/{todate}:
+    get:
+      summary: Metric Data on in a series of dates
+      description: >
+        Returns the geographical distribution of a metric at a given date.
+
+
+        Use the geolevel to get more geographical detail (country, ccaa, state, city).
+
+
+        Use the filters in the query string to restrict to a group of geographical entities.
+        The filters are additive. That means that any city matching any of the specified values will be counted.
+
+
+        - Evolution of all contracts every year: `/contracts/yearly`
+        
+        - Monthly evolution of members on 2018: `/members/monthly/from/2018-01-01/to/2019-01-01`
+        
+        - 2018 monthly evolution of members: `/members/monthly/from/2018-01-01/to/2019-01-01`
+        
+        - Members by city on Araba and Gipuzcoa provinces every year: `/members/by/city/yearly?state=01&state=20`
+
+
+      tags: [ "Numeric data" ]
+      parameters:
+    
+      - $ref: '#/components/parameters/metric'
+      - $ref: '#/components/parameters/path_geolevel'
+      - $ref: '#/components/parameters/path_periodicity'
+      - $ref: '#/components/parameters/path_fromDate'
+      - $ref: '#/components/parameters/path_toDate'
+      - $ref: '#/components/parameters/lang'
+      - $ref: '#/components/parameters/geofilter_city'
+      - $ref: '#/components/parameters/geofilter_state'
+      - $ref: '#/components/parameters/geofilter_ccaa'
+      - $ref: '#/components/parameters/geofilter_country'
+      - $ref: '#/components/parameters/geofilter_gl'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/yaml:
+              example: value
+          
+  /map/{metric}/by/{geolevel}/on/{ondate}:
+    get:
+      summary: Absolute Metric Map
+      description: >
+        Returns a map representing the geographical distribution at a given date.
+
+        Use the geolevel choose the map detail (ccaa, state).
+
+        If no language is specified, the language is chosen using the request headers.
+
+
+      tags: [ "Maps" ]
+      parameters:
+    
+      - $ref: '#/components/parameters/metric'
+      - $ref: '#/components/parameters/path_mapgeolevel'
+      - $ref: '#/components/parameters/path_onDate'
+      - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: SVG map
+          content:
+            image/svg+xml:
+              schema:
+                type: string
+          
+  /map/{metric}/by/{geolevel}/{frequency}/from/{fromdate}/to/{todate}:
+    get:
+      summary: Absolute Metric Map
+      description: >
+        Returns a map that represents the geographical distribution at a given date.
+
+        Use the geolevel choose the map detail (ccaa, state).
+        
+        
+        Use the filters in the query string to choose the language.
+        
+        
+        If no language is specified, the language is chosen using the request headers.
+
+
+        - Current number of contracts: `/contracts`
+        
+        - Current members at every state: `/members/by/state`
+        
+        - Members at every CCAA on 2018-02-01: `/members/by/ccaa/on/2018-02-01`
+        
+        - Members by city on Araba and Gipuzcoa provinces: `/members/by/city?state=01&state=20`
+
+      tags: [ "Maps" ]
+      parameters:
+      - $ref: '#/components/parameters/metric'
+      - $ref: '#/components/parameters/path_mapgeolevel'
+      - $ref: '#/components/parameters/path_periodicity'
+      - $ref: '#/components/parameters/path_fromDate'
+      - $ref: '#/components/parameters/path_toDate'
+      - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: Animated SVG map
+          content:
+            image/svg+xml:
+              schema:
+                type: string
+          
+
+components:
+  parameters:
+    lang:
+      name: lang
+      in: query
+      required: false
+      description: >
+        Language to force for translated texts.
+        If no language is forced, the one in the browser (Accepted-Language header) is taken.
+        If the languange is not one of the supported ones, english is taken by default.
+      schema:
+        type: string
+        nullable: true
+        enum:
+        - ca
+        - gl
+        - eu
+        - es
+        - en
+        - null
+
+    metric:
+      name: metric
+      in: path
+      required: true
+      description: >
+        One of the suported metrics (see /discover/metrics)
+      schema:
+        type: string
+        pattern: '[a-z][a-z0-9]+'
+        enum:
+        - contracts
+        - members
+        - selfconsumptioncontracts
+        - newcontracts
+        - newmembers
+        - newselfconsumptioncontracts
+        - canceledcontracts
+        - canceledmembers
+        - canceledselfconsumptioncontracts
+
+    path_geolevel:
+      name: geolevel
+      in: path
+      description: >
+        Geographical level of detail.
+        Use the golevel to get mor geographical detail (country, ccaa, state, city).
+        For just the global numbers, remove the whole `/by/{geolevel}` portion of the path.
+      required: true
+      schema:
+        type: string
+        pattern: '[a-z][a-z0-9]+'
+        default: null
+        nullable: true
+        enum:
+        - country
+        - ccaa
+        - state
+        - city
+        - null
+
+    path_mapgeolevel:
+      name: geolevel
+      in: path
+      description: >
+        Geographical level of detail.
+        Use the golevel to get mor geographical detail (ccaa, state).
+      required: true
+      schema:
+        type: string
+        pattern: '[a-z][a-z0-9]+'
+        enum:
+        - ccaa
+        - state
+
+    path_geolevelOrAlias:
+      name: geolevel
+      in: path
+      description: >
+        Geographical detail level, including aliased geolevel alias, like localgroup.
+      required: true
+      schema:
+        type: string
+        pattern: '[a-z][a-z0-9]+'
+        enum:
+        - country
+        - ccaa
+        - state
+        - city
+        - localgroup
+
+    path_periodicity:
+      name: frequency
+      required: true
+      description: > 
+        Indicate a date series (only first day of the month, year...)
+      in: path
+      schema:
+        type: string
+        enum:
+        - monthly
+        - yearly
+
+    path_onDate:
+      name: ondate
+      required: true
+      description: > 
+        Single date, in ISO format (YYYY-MM-DD).
+        To obtain the last available data, remove the whole `/on/:onDate` portion of the path.
+      in: path
+      schema:
+        type: string
+        format: date
+
+    path_fromDate:
+      name: fromdate
+      required: true
+      description: > 
+        Earlier date to show, in iso format (YYYY-MM-DD).
+        To set it to the first date available data, remove the whole `/from/{fromdate}` portion of the path.
+      in: path
+      schema:
+        type: string
+        format: date
+  
+    path_toDate:
+      name: todate
+      required: true
+      description: > 
+        Later date to show, in iso format (YYYY-MM-DD).
+        To set it to the last date available data, remove the whole `/to/{todate}` portion of the path.
+      in: path
+      schema:
+        type: string
+        format: date
+
+    geofilter_city:
+      description: INE codes of cities to be included
+      name: city
+      in: query
+      explode: true
+      schema:
+        $ref: '#/components/schemas/CodeArray'
+      
+    geofilter_state:
+      description: INE codes of states to be included
+      name: state
+      in: query
+      explode: true
+      schema:
+        $ref: '#/components/schemas/CodeArray'
+      
+    geofilter_ccaa:
+      description: INE codes of CCAAs to be included
+      name: ccaa
+      in: query
+      explode: true
+      schema:
+        $ref: '#/components/schemas/CodeArray'
+
+    geofilter_country:
+      description: ISO codes of countries to be included
+      name: country
+      in: query
+      explode: true
+      schema:
+        $ref: '#/components/schemas/CodeArray'
+
+    geofilter_gl:
+      description: Codes of the local groups to be included
+      name: localgroup
+      in: query
+      explode: true
+      schema:
+        $ref: '#/components/schemas/CodeArray'
+
+
+  schemas:
+
+    VersionInfo:
+      type: object
+      properties:
+        version:
+          type: string
+          example: 0.2.14
+          description: Current API version
+        compat:
+          type: string
+          example: 0.2.1
+          description: Oldest backward compatible version
+
+    MetricsInfo:
+      type: object
+      properties:
+        metrics:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                pattern: '[a-z][a-z0-9]+'
+                description: Identifier name used to refer the metric
+              text:
+                type: string
+                description: Translated text name to be shown to the user to refer the metric
+              description:
+                type: string
+                format: CommonMark
+                description: Translated Markdown text describing the metric
+
+
+    GeolevelsInfo:
+      type: object
+      properties:
+        geolevels:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                pattern: '[a-z][a-z0-9]+'
+                description: Identifier name used to refer the geolevel
+              text:
+                type: string
+                description: Translated text name to be shown to the user to refer the geolevel
+              description:
+                type: string
+                format: CommonMark
+                description: Translated Markdown text describing the metric
+              plural:
+                type: string
+                pattern: '[a-z][a-z0-9]+'
+                default: id + 's'
+                description: Plural tag to use in structures
+              parent:
+                type: string
+                pattern: '[a-z][a-z0-9]+'
+                description: The parent geolevel id
+                default: null
+              detailed:
+                type: boolean
+                default: True
+                description: Set to false if it is not supported as level of detail for distributions
+              mapable:
+                type: boolean
+                default: True
+                description: Set to false if it is not supported as level of detail for map
+
+    GeolevelValues:
+      description: A map of region codes to their translated region name
+      type: object
+      properties:
+        options:
+          type: object
+          additionalProperties: true
+
+    CodeArray:
+      type: array
+      items:
+        type: string
+        pattern: '[a-zA-Z0-9]+'
+
+    NumbersSublevel:
+      type: object
+      properties:
+        name:
+          description: Translated name for the region
+          type: string
+        values:
+          description: Metric value for each date, aggregated for the region
+          type: array
+          items: number
+
+    Countries:
+      description: A map of country codes to the details of each country
+      object:
+        additionalProperties:
+          allOff:
+          - $ref: '#/components/schemas/NumbersSublevel'
+          - type: object
+            properties:
+              ccaas:
+                $ref: '#/components/schemas/CCAAs'
+
+    CCAAs:
+      description: A map of CCAA INE codes to the CCAA detailed values
+      object:
+        additionalProperties:
+          allOff:
+          - $ref: '#/components/schemas/NumbersSublevel'
+          - type: object
+            properties:
+              ccaas:
+                $ref: '#/components/schemas/CCAAs'
+
+    States:
+      description: A map of State INE codes to the state detailed values
+      object:
+        additionalProperties:
+          allOff:
+          - $ref: '#/components/schemas/NumbersSublevel'
+          - type: object
+            properties:
+              ccaas:
+                $ref: '#/components/schemas/CCAAs'
+
+    Cities:
+      description: A map of city INE codes to the city detailed values
+      object:
+        additionalProperties:
+          $ref: '#/components/schemas/NumbersSublevel'
+          type: object
+
+    MultiLevelNumbers:
+      description: Structured numeric information
+      type: object
+      properties:
+        dates:
+          description: sorted list of dates at which metric is computed
+          type: array
+          items:
+            type: string
+            format: Dates
+        values:
+          description: A list of metric values globally aggregated for each date
+          type: array
+          items:
+            type: number
+        countries:
+          $ref: '#/components/schemas/Countries'
+      required:
+      - dates
+      - values
+
+# vim: et ts=2 sw=2
