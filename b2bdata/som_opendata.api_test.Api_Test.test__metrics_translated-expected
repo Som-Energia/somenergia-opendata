@@ -54,21 +54,37 @@ metrics:
     S''apliquen les mateixes consideracions que per a la mètrica "Contractes".
 
     '
+- id: selfconsumptioncontracts
+  text: Contractes amb autoconsum
+  description: 'Contractes actius amb autoconsum just abans de la data
+
+
+    Consideracions:
+
+
+    - Aquesta mètrica s''obté de les dades del sistema ATR.
+
+    - Un cop un contracte activa l''autoconsum, el considerem autoconsum fins que
+    es dona de baixa.
+
+    Podria se que es desactivés l''autoconsum abans i no ho estem considerant.
+
+    '
 - id: newselfconsumptioncontracts
-  text: New selfconsumption contracts
-  description: 'New contracts with selfconsumption during in the month before a given
-    date.
+  text: Nous contractes d'autoconsum
+  description: 'Contractes que han activat l''autoconsum durant el mes anterior a
+    la data donada.
 
 
-    Considerations for "Contracts" metric also apply in this one.
+    S''apliquen les mateixes consideracions que per a la mètrica "Contractes d''autoconsum".
 
     '
 - id: canceledselfconsumptioncontracts
-  text: Canceled selfconsumption contracts
-  description: 'Canceled contracts with selfconsumption during in the month before
-    a given date.
+  text: Baixes de contractes d'autoconsum
+  description: 'Contractes d''autoconsum donats de baixa durant el mes anterior a
+    la data donada.
 
 
-    Considerations for "Contracts" metric also apply in this one.
+    S''apliquen les mateixes consideracions que per a la mètrica "Contractes d''autoconsum".
 
     '

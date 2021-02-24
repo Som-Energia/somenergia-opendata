@@ -5,6 +5,7 @@ from som_opendata.queries import (
     contractsSeries,
     newContractsSeries,
     canceledContractsSeries,
+    selfConsumptionContractsSeries,
     newSelfConsumptionContractsSeries,
     canceledSelfConsumptionContractsSeries,
     newMembersSeries,
@@ -26,6 +27,7 @@ dates=dateSequenceMonths(fromdate, todate)
 metricGenerators = dict(
     members=membersSeries,
     contracts=contractsSeries,
+    selfconsumptioncontracts=selfConsumptionContractsSeries,
     newcontracts=newContractsSeries,
     canceledcontracts=canceledContractsSeries,
     newselfconsumptioncontracts=newSelfConsumptionContractsSeries,

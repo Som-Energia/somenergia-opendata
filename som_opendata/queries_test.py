@@ -11,6 +11,7 @@ from .queries import (
     membersSeries,
     newContractsSeries,
     canceledContractsSeries,
+    selfConsumptionContractsSeries,
     newSelfConsumptionContractsSeries,
     canceledSelfConsumptionContractsSeries,
     newMembersSeries,
@@ -55,6 +56,11 @@ class Queries_Test(unittest.TestCase):
     def test_canceledMembersSeries_many(self):
         dates = ['2015-01-01','2015-02-01']
         result = canceledMembersSeries(dates)
+        self.assertB2BEqual(result)
+
+    def test_selfConsumptionContractsSeries_many(self):
+        dates = ['2020-10-01','2020-11-01']
+        result = selfConsumptionContractsSeries(dates)
         self.assertB2BEqual(result)
 
     def test_newSelfConsumptionContractsSeries_many(self):

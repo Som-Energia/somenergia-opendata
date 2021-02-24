@@ -67,12 +67,23 @@ metrics = ns(
             "Considerations for \"Contracts\" metric also apply in this one.\n"
         ),
     ),
+    selfconsumptioncontracts=ns(
+        text=_("Self-consumption contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Active contracts with selfconsumption just before the date.\n\n"
+            "Considerations:\n\n"
+            "- This metric is obtained from data in the ATR system.\n"
+            "- Once self-consumption is activated for a contract, we are not accounting later modifications disabling it.\n"
+            "It will be considered self-consumption until the end of the contract.\n"
+        ),
+    ),
     newselfconsumptioncontracts=ns(
         text=_("New selfconsumption contracts"),
         timeaggregation='sum',
         description=_(
-            "New contracts with selfconsumption during in the month before a given date.\n\n"
-            "Considerations for \"Contracts\" metric also apply in this one.\n"
+            "Contracts activating selfconsumption during in the month before a given date.\n\n"
+            "Considerations for \"Self consumption contracts\" metric also apply in this one.\n"
         ),
     ),
     canceledselfconsumptioncontracts=ns(
@@ -80,7 +91,7 @@ metrics = ns(
         timeaggregation='sum',
         description=_(
             "Canceled contracts with selfconsumption during in the month before a given date.\n\n"
-            "Considerations for \"Contracts\" metric also apply in this one.\n"
+            "Considerations for \"Self consumption contracts\" metric also apply in this one.\n"
         ),
     ),
 )

@@ -122,83 +122,7 @@ class Api_Test(unittest.TestCase):
 
     def test__metrics(self):
         r = self.get('/discover/metrics')
-        self.assertYamlResponse(r, """\
-            metrics:
-            - id: members
-              text: 'Members'
-              description: 'Current cooperative members at the start of a given date.
-
-
-                Members are taken from our current ERP data, so the following considerations apply:
-
-                - Membership during the first months of the cooperative was stored in spreadsheets and is not included yet.
-
-                - There is no historical record of member addresses.
-                So, if a member has changed her home from Vigo to Cartagena,
-                it counts as she has been been living all the time in Cartagena.
-
-                - Only a single start date can be stored so, canceled and later renewed memberships are not properly recorded.
-
-                '
-            - id: newmembers
-              text: 'New members'
-              description: 'New cooperative members during the month before a given date.
-
-
-                Considerations for "Members" metric also apply in this one.
-
-                '
-            - id: canceledmembers
-              text: 'Canceled members'
-              description: 'Members leaving the cooperative during in the month before a given date.
-
-
-                Considerations for "Members" metric also apply in this one.
-
-                '
-            - id: contracts
-              text: 'Contracts'
-              description: 'Current active contracts at the start of a given date.
-
-
-                Contract data is taken from activation and deactivation dates from ATR system.
-
-                Old contracts were copied by hand from ATR files and may be less reliable.
-
-                '
-            - id: newcontracts
-              text: 'New contracts'
-              description: 'Contracts starting during in the month before a given date.
-
-
-                Considerations for "Contracts" metric also apply in this one.
-
-                '
-            - id: canceledcontracts
-              text: 'Canceled contracts'
-              description: 'Contracts ending during in the month before a given date.
-
-
-                Considerations for "Contracts" metric also apply in this one.
-
-                '
-            - id: newselfconsumptioncontracts
-              text: 'New selfconsumption contracts'
-              description: 'New contracts with selfconsumption during in the month before a given date.
-
-
-                Considerations for "Contracts" metric also apply in this one.
-
-                '
-            - id: canceledselfconsumptioncontracts
-              text: 'Canceled selfconsumption contracts'
-              description: 'Canceled contracts with selfconsumption during in the month before a given date.
-
-
-                Considerations for "Contracts" metric also apply in this one.
-
-                '
-            """)
+        self.assertB2BEqual(r.data)
 
     def test__metrics_translated(self):
         r = self.get('/discover/metrics?lang=ca')
@@ -493,8 +417,8 @@ class Api_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             parameter: metric
             valueRequest: incorrectMetric
-            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts']
-            message: Invalid metric 'incorrectMetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts'.
+            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts']
+            message: Invalid metric 'incorrectMetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts'.
             """, 400)
 
 
@@ -526,8 +450,8 @@ class Api_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             parameter: metric
             valueRequest: badmetric
-            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts']
-            message: Invalid metric 'badmetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts'.
+            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts']
+            message: Invalid metric 'badmetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts'.
             """,400)
         self.assertEqual(r.mimetype, 'application/json')
 

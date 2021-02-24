@@ -8,16 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-16 17:46+0100\n"
+"POT-Creation-Date: 2021-02-24 11:10+0100\n"
 "PO-Revision-Date: 2021-01-27 20:14+0100\n"
 "Last-Translator: David García Garzón <david.garcia@somenergia.coop>\n"
 "Language: ca\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.0\n"
+"X-Language: ca_ES\n"
+"X-Source-Language: en_US\n"
 
 #: som_opendata/common.py:17
 msgid "Members"
@@ -27,8 +29,8 @@ msgstr "Sòcies"
 msgid ""
 "Current cooperative members at the start of a given date.\n"
 "\n"
-"Members are taken from our current ERP data, so the following "
-"considerations apply:\n"
+"Members are taken from our current ERP data, so the following considerations "
+"apply:\n"
 "- Membership during the first months of the cooperative was stored in "
 "spreadsheets and is not included yet.\n"
 "- There is no historical record of member addresses. So, if a member has "
@@ -39,15 +41,15 @@ msgid ""
 msgstr ""
 "Persones sòcies de la cooperativa a l'inici de la data donada \n"
 "\n"
-"Les sòcies es calculen de l'estat actual del nostre ERP, per això, cal "
-"tenir en compte que:\n"
-"- Els primers mesos de la cooperativa, les altes s'anotaven en un full de"
-" càlcul, però, figura com data d'alta quan es varen passar a l'ERP.\n"
-"- No hi ha registre històric de les adreces d'una sòcia. Per això, si una"
-" sòcia canvia el seu domicili de Vigo a Cartagena, compta com que ha "
-"estat vivint sempre a Cartagena.\n"
-"- Només guardem una data de alta per sòcia. No queda ben registrat si una"
-" sòcia es dona de baixa i es torna a donar-se d'alta.\n"
+"Les sòcies es calculen de l'estat actual del nostre ERP, per això, cal tenir "
+"en compte que:\n"
+"- Els primers mesos de la cooperativa, les altes s'anotaven en un full de "
+"càlcul, però, figura com data d'alta quan es varen passar a l'ERP.\n"
+"- No hi ha registre històric de les adreces d'una sòcia. Per això, si una "
+"sòcia canvia el seu domicili de Vigo a Cartagena, compta com que ha estat "
+"vivint sempre a Cartagena.\n"
+"- Només guardem una data de alta per sòcia. No queda ben registrat si una "
+"sòcia es dona de baixa i es torna a donar-se d'alta.\n"
 
 #: som_opendata/common.py:30
 msgid "New members"
@@ -88,13 +90,12 @@ msgid ""
 "\n"
 "Contract data is taken from activation and deactivation dates from ATR "
 "system.\n"
-"Old contracts were copied by hand from ATR files and may be less "
-"reliable.\n"
+"Old contracts were copied by hand from ATR files and may be less reliable.\n"
 msgstr ""
 "Els contractes actius a l'inici de la data donada.\n"
 "\n"
-"Les dades del contracte s'obtenen de les dades d'activació i desactivacíó"
-" del sistema ATR.\n"
+"Les dades del contracte s'obtenen de les dades d'activació i desactivacíó "
+"del sistema ATR.\n"
 "Els contractes antics van ser transferits a mà dels fitxers i poden ser "
 "menys confiables.\n"
 
@@ -110,8 +111,7 @@ msgid ""
 msgstr ""
 "Contractes activats durant el mes anterior a la data donada.\n"
 "\n"
-"S'apliquen les mateixes consideracions que per a la mètrica "
-"\"Contractes\".\n"
+"S'apliquen les mateixes consideracions que per a la mètrica \"Contractes\".\n"
 
 #: som_opendata/common.py:63
 msgid "Canceled contracts"
@@ -125,65 +125,89 @@ msgid ""
 msgstr ""
 "Contractes donats de baixa durant el mes anterior a la data donada.\n"
 "\n"
-"S'apliquen les mateixes consideracions que per a la mètrica "
-"\"Contractes\".\n"
+"S'apliquen les mateixes consideracions que per a la mètrica \"Contractes\".\n"
 
 #: som_opendata/common.py:71
-msgid "New selfconsumption contracts"
-msgstr ""
+msgid "Self-consumption contracts"
+msgstr "Contractes amb autoconsum"
 
 #: som_opendata/common.py:73
-#, fuzzy
 msgid ""
-"New contracts with selfconsumption during in the month before a given "
+"Active contracts with selfconsumption just before the date.\n"
+"\n"
+"Considerations:\n"
+"\n"
+"- This metric is obtained from data in the ATR system.\n"
+"- Once self-consumption is activated for a contract, we are not accounting "
+"later modifications disabling it.\n"
+"It will be considered self-consumption until the end of the contract.\n"
+msgstr ""
+"Contractes actius amb autoconsum just abans de la data\n"
+"\n"
+"Consideracions:\n"
+"\n"
+"- Aquesta mètrica s'obté de les dades del sistema ATR.\n"
+"- Un cop un contracte activa l'autoconsum, el considerem autoconsum fins que "
+"es dona de baixa.\n"
+"Podria se que es desactivés l'autoconsum abans i no ho estem considerant.\n"
+
+#: som_opendata/common.py:82
+msgid "New selfconsumption contracts"
+msgstr "Nous contractes d'autoconsum"
+
+#: som_opendata/common.py:84
+msgid ""
+"Contracts activating selfconsumption during in the month before a given "
 "date.\n"
 "\n"
-"Considerations for \"Contracts\" metric also apply in this one.\n"
+"Considerations for \"Self consumption contracts\" metric also apply in this "
+"one.\n"
 msgstr ""
-"Contractes donats de baixa durant el mes anterior a la data donada.\n"
+"Contractes que han activat l'autoconsum durant el mes anterior a la data "
+"donada.\n"
 "\n"
-"S'apliquen les mateixes consideracions que per a la mètrica "
-"\"Contractes\".\n"
+"S'apliquen les mateixes consideracions que per a la mètrica \"Contractes "
+"d'autoconsum\".\n"
 
-#: som_opendata/common.py:79
-#, fuzzy
+#: som_opendata/common.py:90
 msgid "Canceled selfconsumption contracts"
-msgstr "Baixes de contractes"
+msgstr "Baixes de contractes d'autoconsum"
 
-#: som_opendata/common.py:81
-#, fuzzy
+#: som_opendata/common.py:92
 msgid ""
-"Canceled contracts with selfconsumption during in the month before a "
-"given date.\n"
+"Canceled contracts with selfconsumption during in the month before a given "
+"date.\n"
 "\n"
-"Considerations for \"Contracts\" metric also apply in this one.\n"
+"Considerations for \"Self consumption contracts\" metric also apply in this "
+"one.\n"
 msgstr ""
-"Contractes donats de baixa durant el mes anterior a la data donada.\n"
+"Contractes d'autoconsum donats de baixa durant el mes anterior a la data "
+"donada.\n"
 "\n"
-"S'apliquen les mateixes consideracions que per a la mètrica "
-"\"Contractes\".\n"
+"S'apliquen les mateixes consideracions que per a la mètrica \"Contractes "
+"d'autoconsum\".\n"
 
-#: som_opendata/common.py:98
+#: som_opendata/common.py:109
 msgid "World"
 msgstr "Món"
 
-#: som_opendata/common.py:102
+#: som_opendata/common.py:113
 msgid "Country"
 msgstr "País"
 
-#: som_opendata/common.py:108
+#: som_opendata/common.py:119
 msgid "CCAA"
 msgstr "Comunitat Autònoma"
 
-#: som_opendata/common.py:113
+#: som_opendata/common.py:124
 msgid "State"
 msgstr "Província"
 
-#: som_opendata/common.py:118
+#: som_opendata/common.py:129
 msgid "City"
 msgstr "Municipi"
 
-#: som_opendata/common.py:124
+#: som_opendata/common.py:135
 msgid "Local Group"
 msgstr "Grup Local"
 
@@ -239,4 +263,3 @@ msgstr "Desembre"
 #, python-format
 msgid "per %(num)s population"
 msgstr "per cada %(num)s hab"
-

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-16 17:46+0100\n"
+"POT-Creation-Date: 2021-02-24 11:10+0100\n"
 "PO-Revision-Date: 2020-01-10 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: eu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.0\n"
 
 #: som_opendata/common.py:17
 msgid "Members"
@@ -95,50 +95,68 @@ msgid ""
 msgstr ""
 
 #: som_opendata/common.py:71
-msgid "New selfconsumption contracts"
+msgid "Self-consumption contracts"
 msgstr ""
 
 #: som_opendata/common.py:73
 msgid ""
-"New contracts with selfconsumption during in the month before a given "
-"date.\n"
+"Active contracts with selfconsumption just before the date.\n"
 "\n"
-"Considerations for \"Contracts\" metric also apply in this one.\n"
+"Considerations:\n"
+"\n"
+"- This metric is obtained from data in the ATR system.\n"
+"- Once self-consumption is activated for a contract, we are not "
+"accounting later modifications disabling it.\n"
+"It will be considered self-consumption until the end of the contract.\n"
 msgstr ""
 
-#: som_opendata/common.py:79
+#: som_opendata/common.py:82
+msgid "New selfconsumption contracts"
+msgstr ""
+
+#: som_opendata/common.py:84
+msgid ""
+"Contracts activating selfconsumption during in the month before a given "
+"date.\n"
+"\n"
+"Considerations for \"Self consumption contracts\" metric also apply in "
+"this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:90
 msgid "Canceled selfconsumption contracts"
 msgstr ""
 
-#: som_opendata/common.py:81
+#: som_opendata/common.py:92
 msgid ""
 "Canceled contracts with selfconsumption during in the month before a "
 "given date.\n"
 "\n"
-"Considerations for \"Contracts\" metric also apply in this one.\n"
+"Considerations for \"Self consumption contracts\" metric also apply in "
+"this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:98
+#: som_opendata/common.py:109
 msgid "World"
 msgstr ""
 
-#: som_opendata/common.py:102
+#: som_opendata/common.py:113
 msgid "Country"
 msgstr ""
 
-#: som_opendata/common.py:108
+#: som_opendata/common.py:119
 msgid "CCAA"
 msgstr ""
 
-#: som_opendata/common.py:113
+#: som_opendata/common.py:124
 msgid "State"
 msgstr ""
 
-#: som_opendata/common.py:118
+#: som_opendata/common.py:129
 msgid "City"
 msgstr ""
 
-#: som_opendata/common.py:124
+#: som_opendata/common.py:135
 msgid "Local Group"
 msgstr ""
 
@@ -194,4 +212,20 @@ msgstr "Abendu"
 #, python-format
 msgid "per %(num)s population"
 msgstr "%(num)s biztanleko"
+
+#~ msgid ""
+#~ "New contracts with selfconsumption during "
+#~ "in the month before a given date."
+#~ "\n"
+#~ "\n"
+#~ "Considerations for \"Contracts\" metric also apply in this one.\n"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Canceled contracts with selfconsumption during"
+#~ " in the month before a given "
+#~ "date.\n"
+#~ "\n"
+#~ "Considerations for \"Contracts\" metric also apply in this one.\n"
+#~ msgstr ""
 
