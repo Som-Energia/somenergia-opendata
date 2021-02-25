@@ -1,3 +1,9 @@
+# v0.2.16 2021-02-25
+
+- New metrics: `selfconsumptioncontracts` with `new` and `canceled` variations
+- Provided an openapi spec
+- Inner refactorings to reduce code duplication in metrics queries
+
 # v0.2.15 2021-02-17
 
 - FIX: parameterless lru_cache incompatible with python < 3.6
