@@ -137,6 +137,14 @@ def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
         dbhandler=dbhandler,
     )
 
+def selfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeQuery(
+        dates=dates,
+        queryfile='contract_selfconsumption_distribution',
+        timeSlicer=activeItemCounter,
+        dbhandler=dbhandler,
+    )
+
 def newSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
@@ -150,14 +158,6 @@ def canceledSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=Fals
         dates=dates,
         queryfile='contract_selfconsumption_distribution',
         timeSlicer=canceledItemCounter,
-        dbhandler=dbhandler,
-    )
-
-def selfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
-    return timeQuery(
-        dates=dates,
-        queryfile='contract_selfconsumption_distribution',
-        timeSlicer=activeItemCounter,
         dbhandler=dbhandler,
     )
 
