@@ -6,7 +6,8 @@
 openapi: 3.0.0
 info:
   title: Som Energia Open Data API
-  description: API to get temporally and geographically aggregated metrics about Som Energia
+  description: |
+    API to get temporally and geographically aggregated metrics about Som Energia
   version: 0.2.15
 servers:
   - url: https://opendata.somenergia.coop/v0.2
@@ -80,7 +81,7 @@ paths:
                   plural: ccaas
                 - id: state
                   text: 'State'
-                  parent: ccaa 
+                  parent: ccaa
                   plural: states
                 - id: city
                   text: 'City'
@@ -163,27 +164,25 @@ paths:
   /{metric}/by/{geolevel}/on/{ondate}:
     get:
       summary: Metric Data on a Given Date
-      description: >
+      description: |
         Returns the geographical distribution of a metric at a given date.
 
-
         Use the geolevel to get more geographical detail (country, ccaa, state, city).
-
 
         Use the filters in the query string to restrict to a group of geographical entities.
         The filters are additive. That means that any city matching any of the specified values will be counted.
 
         - Current number of contracts: `/contracts`
-        
+
         - Current members at every state: `/members/by/state`
-        
+
         - Members at every CCAA on 2018-02-01: `/members/by/ccaa/on/2018-02-01`
-        
+
         - Members by city on Araba and Gipuzcoa provinces: `/members/by/city?state=01&state=20`
 
       tags: [ "Numeric data" ]
       parameters:
-    
+
       - $ref: '#/components/parameters/metric'
       - $ref: '#/components/parameters/path_geolevel'
       - $ref: '#/components/parameters/path_onDate'
@@ -200,7 +199,7 @@ paths:
             application/yaml:
               schema:
                 $ref: '#/components/schemas/MultiLevelNumbers'
-              example: 
+              example:
                 dates:
                 - 2013-01-01
                 values:
@@ -279,33 +278,29 @@ paths:
                         name: Rioja, La
                         values:
                         - 37
-          
+
   /{metric}/by/{geolevel}/{frequency}/from/{fromdate}/to/{todate}:
     get:
       summary: Metric Data on in a series of dates
-      description: >
+      description: |
         Returns the geographical distribution of a metric at a given date.
 
-
         Use the geolevel to get more geographical detail (country, ccaa, state, city).
-
 
         Use the filters in the query string to restrict to a group of geographical entities.
         The filters are additive. That means that any city matching any of the specified values will be counted.
 
-
         - Evolution of all contracts every year: `/contracts/yearly`
-        
-        - Monthly evolution of members on 2018: `/members/monthly/from/2018-01-01/to/2019-01-01`
-        
-        - 2018 monthly evolution of members: `/members/monthly/from/2018-01-01/to/2019-01-01`
-        
-        - Members by city on Araba and Gipuzcoa provinces every year: `/members/by/city/yearly?state=01&state=20`
 
+        - Monthly evolution of members on 2018: `/members/monthly/from/2018-01-01/to/2019-01-01`
+
+        - 2018 monthly evolution of members: `/members/monthly/from/2018-01-01/to/2019-01-01`
+
+        - Members by city on Araba and Gipuzcoa provinces every year: `/members/by/city/yearly?state=01&state=20`
 
       tags: [ "Numeric data" ]
       parameters:
-    
+
       - $ref: '#/components/parameters/metric'
       - $ref: '#/components/parameters/path_geolevel'
       - $ref: '#/components/parameters/path_periodicity'
@@ -467,7 +462,7 @@ paths:
   /map/{metric}/by/{geolevel}/on/{ondate}:
     get:
       summary: Absolute Metric Map
-      description: >
+      description: |
         Returns a map representing the geographical distribution at a given date.
 
         Use the geolevel choose the map detail (ccaa, state).
@@ -477,7 +472,7 @@ paths:
 
       tags: [ "Maps" ]
       parameters:
-    
+
       - $ref: '#/components/parameters/metric'
       - $ref: '#/components/parameters/path_mapgeolevel'
       - $ref: '#/components/parameters/path_onDate'
@@ -489,28 +484,23 @@ paths:
             image/svg+xml:
               schema:
                 type: string
-          
+
   /map/{metric}/by/{geolevel}/{frequency}/from/{fromdate}/to/{todate}:
     get:
       summary: Absolute Metric Map
-      description: >
+      description: |
         Returns a map that represents the geographical distribution at a given date.
-
         Use the geolevel choose the map detail (ccaa, state).
-        
-        
         Use the filters in the query string to choose the language.
-        
-        
+
         If no language is specified, the language is chosen using the request headers.
 
-
         - Current number of contracts: `/contracts`
-        
+
         - Current members at every state: `/members/by/state`
-        
+
         - Members at every CCAA on 2018-02-01: `/members/by/ccaa/on/2018-02-01`
-        
+
         - Members by city on Araba and Gipuzcoa provinces: `/members/by/city?state=01&state=20`
 
       tags: [ "Maps" ]
@@ -528,7 +518,7 @@ paths:
             image/svg+xml:
               schema:
                 type: string
-          
+
 
 components:
   parameters:
@@ -536,7 +526,7 @@ components:
       name: lang
       in: query
       required: false
-      description: >
+      description: |
         Language to force for translated texts.
         If no language is forced, the one in the browser (Accepted-Language header) is taken.
         If the languange is not one of the supported ones, english is taken by default.
@@ -555,7 +545,7 @@ components:
       name: metric
       in: path
       required: true
-      description: >
+      description: |
         One of the suported metrics (see /discover/metrics)
       schema:
         type: string
@@ -574,7 +564,7 @@ components:
     path_geolevel:
       name: geolevel
       in: path
-      description: >
+      description: |
         Geographical level of detail.
         Use the golevel to get mor geographical detail (country, ccaa, state, city).
         For just the global numbers, remove the whole `/by/{geolevel}` portion of the path.
@@ -594,7 +584,7 @@ components:
     path_mapgeolevel:
       name: geolevel
       in: path
-      description: >
+      description: |
         Geographical level of detail.
         Use the golevel to get mor geographical detail (ccaa, state).
       required: true
@@ -608,7 +598,7 @@ components:
     path_geolevelOrAlias:
       name: geolevel
       in: path
-      description: >
+      description: |
         Geographical detail level, including aliased geolevel alias, like localgroup.
       required: true
       schema:
@@ -624,7 +614,7 @@ components:
     path_periodicity:
       name: frequency
       required: true
-      description: > 
+      description: |
         Indicate a date series (only first day of the month, year...)
       in: path
       schema:
@@ -636,7 +626,7 @@ components:
     path_onDate:
       name: ondate
       required: true
-      description: > 
+      description: |
         Single date, in ISO format (YYYY-MM-DD).
         To obtain the last available data, remove the whole `/on/:onDate` portion of the path.
       in: path
@@ -647,18 +637,18 @@ components:
     path_fromDate:
       name: fromdate
       required: true
-      description: > 
+      description: |
         Earlier date to show, in iso format (YYYY-MM-DD).
         To set it to the first date available data, remove the whole `/from/{fromdate}` portion of the path.
       in: path
       schema:
         type: string
         format: date
-  
+
     path_toDate:
       name: todate
       required: true
-      description: > 
+      description: |
         Later date to show, in iso format (YYYY-MM-DD).
         To set it to the last date available data, remove the whole `/to/{todate}` portion of the path.
       in: path
@@ -673,7 +663,7 @@ components:
       explode: true
       schema:
         $ref: '#/components/schemas/CodeArray'
-      
+
     geofilter_state:
       description: INE codes of states to be included
       name: state
@@ -681,7 +671,7 @@ components:
       explode: true
       schema:
         $ref: '#/components/schemas/CodeArray'
-      
+
     geofilter_ccaa:
       description: INE codes of CCAAs to be included
       name: ccaa
@@ -782,7 +772,7 @@ components:
                 description: Set to false if it is not supported as level of detail for map
 
     GeolevelValues:
-      description: A map of region codes to their translated region name
+      description: A list of regions at the specified geolevel
       type: object
       properties:
         options:
@@ -800,7 +790,7 @@ components:
     GeoCode:
       type: string
       pattern: '[a-zA-Z0-9]+'
-        
+
     NumbersSublevel:
       type: object
       properties:
