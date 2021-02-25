@@ -1,7 +1,6 @@
-# Edits should be validated in https://editor.swagger.io/
+# Edits of this spec should be validated using https://editor.swagger.io/
 # TODO:
 # - Relative metrics paths in maps
-# - Examples for introspection and numbers
 # - Error responses
 
 openapi: 3.0.0

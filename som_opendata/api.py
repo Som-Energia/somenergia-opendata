@@ -579,7 +579,7 @@ If no language is specified, the language is chosen using the request headers.
 @apiUse PathOnDate
 @apiUse QueryLang
 
-@apiSuccess {image/svg+xml} Response Map that represents the geographical distribution at a given date
+@apiSuccess {svg} Response Map that represents the geographical distribution at a given date
 
 """
 
@@ -611,7 +611,7 @@ If no language is specified, the language is chosen using the request headers.
 @apiUse PathOnDate
 @apiUse QueryLang
 
-@apiSuccess {image/svg+xml} Response Map that represents the relative geographical distribution at a given date
+@apiSuccess {svg} Response Map that represents the relative geographical distribution at a given date
 
 """
 
@@ -642,8 +642,8 @@ If no language is specified, the language is chosen using the request headers.
 @apiUse PathFromToDate
 @apiUse QueryLang
 
-@apiSuccess {image/svg+xml} Response Map animation that represents the temporal evolution of the geographical distribution
-
+@apiSuccess {svg} Response Map animation that represents the temporal evolution of the geographical distribution
+    HTTP/1.1 200 OK
 """
 """
 @api {get} /v0.2/map/:metric/per/:relativemetric/by/:geolevel/:frequency/from/:fromdate/to/:todate Relative Metrics Map Animation
@@ -674,7 +674,8 @@ If no language is specified, the language is chosen using the request headers.
 @apiUse PathFromToDate
 @apiUse QueryLang
 
-@apiSuccess {image/svg+xml} Response Map animation that represents the temporal evolution of the geographical distribution
+@apiSuccess {svg} Response Map animation that represents the temporal evolution of the geographical distribution
+    HTTP/1.1 200 OK
 
 """
 
@@ -682,17 +683,17 @@ If no language is specified, the language is chosen using the request headers.
 @api.route('/map/<string:metric>/on/<isodate:ondate>')
 @api.route('/map/<string:metric>/by/<string:geolevel>')
 @api.route('/map/<string:metric>/by/<string:geolevel>/on/<isodate:ondate>')
-@api.route('/map/<string:metric>/per/<string:relativemetric>')
-@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>')
-@api.route('/map/<string:metric>/per/<string:relativemetric>/on/<isodate:ondate>')
-@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/on/<isodate:ondate>')
 @api.route('/map/<string:metric>/by/<string:geolevel>/<string:frequency>')
-@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>')
 @api.route('/map/<string:metric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
-@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
 @api.route('/map/<string:metric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>')
-@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>')
 @api.route('/map/<string:metric>/by/<string:geolevel>/<string:frequency>/to/<isodate:todate>')
+@api.route('/map/<string:metric>/per/<string:relativemetric>')
+@api.route('/map/<string:metric>/per/<string:relativemetric>/on/<isodate:ondate>')
+@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>')
+@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/on/<isodate:ondate>')
+@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>')
+@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
+@api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>')
 @api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/to/<isodate:todate>')
 def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None, todate=None, relativemetric=None):
 
