@@ -1,5 +1,5 @@
+# Edits should be validated in https://editor.swagger.io/
 # TODO:
-# - Response data format for numbers
 # - Relative metrics paths in maps
 # - Examples for introspection and numbers
 # - Error responses
@@ -42,14 +42,14 @@ paths:
             application/yaml:
               schema:
                 $ref: '#/components/schemas/MetricsInfo'
-            example:
-              metrics:
-              - id: members
-                text: 'Members'
-                description: "Members of the cooperative at the end of the day."
-              - id: contracts
-                text: 'Contracts'
-                description: "Active contracts at the end of the day."
+              example:
+                metrics:
+                - id: members
+                  text: 'Members'
+                  description: "Members of the cooperative at the end of the day."
+                - id: contracts
+                  text: 'Contracts'
+                  description: "Active contracts at the end of the day."
 
   /discover/geolevel:
     get:
@@ -323,8 +323,148 @@ paths:
           description: Successful response
           content:
             application/yaml:
-              example: value
-          
+              schema:
+                $ref: '#/components/schemas/MultiLevelNumbers'
+              example:
+                dates:
+                - 2010-01-01
+                - 2011-01-01
+                - 2012-01-01
+                - 2013-01-01
+                values:
+                - 0
+                - 0
+                - 277
+                - 3197
+                countries:
+                ES:
+                    name: España
+                    values:
+                    - 0
+                    - 0
+                    - 277
+                    - 3197
+                    ccaas:
+                    '01':
+                        name: Andalucia
+                        values:
+                        - 0
+                        - 0
+                        - 0
+                        - 48
+                    '02':
+                        name: Aragón
+                        values:
+                        - 0
+                        - 0
+                        - 0
+                        - 124
+                    '03':
+                        name: Asturias, Principado de
+                        values:
+                        - 0
+                        - 0
+                        - 0
+                        - 13
+                    '04':
+                        name: Baleares, Islas
+                        values:
+                        - 0
+                        - 0
+                        - 1
+                        - 235
+                    '05':
+                        name: Canarias
+                        values:
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                    '06':
+                        name: Cantabria
+                        values:
+                        - 0
+                        - 0
+                        - 0
+                        - 12
+                    08:
+                        name: Castilla - La Mancha
+                        values:
+                        - 0
+                        - 0
+                        - 0
+                        - 28
+                    '07':
+                        name: Castilla y León
+                        values:
+                        - 0
+                        - 0
+                        - 0
+                        - 24
+                    09:
+                        name: Cataluña
+                        values:
+                        - 0
+                        - 0
+                        - 256
+                        - 2054
+                    '10':
+                        name: Comunidad Valenciana
+                        values:
+                        - 0
+                        - 0
+                        - 11
+                        - 224
+                    '11':
+                        name: Extremadura
+                        values:
+                        - 0
+                        - 0
+                        - 0
+                        - 14
+                    '12':
+                        name: Galicia
+                        values:
+                        - 0
+                        - 0
+                        - 0
+                        - 24
+                    '13':
+                        name: Madrid, Comunidad de
+                        values:
+                        - 0
+                        - 0
+                        - 3
+                        - 145
+                    '14':
+                        name: Murcia, Región de
+                        values:
+                        - 0
+                        - 0
+                        - 0
+                        - 11
+                    '15':
+                        name: Navarra, Comunidad Foral de
+                        values:
+                        - 0
+                        - 0
+                        - 6
+                        - 151
+                    '16':
+                        name: País Vasco
+                        values:
+                        - 0
+                        - 0
+                        - 0
+                        - 53
+                    '17':
+                        name: Rioja, La
+                        values:
+                        - 0
+                        - 0
+                        - 0
+                        - 37
+
   /map/{metric}/by/{geolevel}/on/{ondate}:
     get:
       summary: Absolute Metric Map
@@ -584,6 +724,7 @@ components:
 
     MetricsInfo:
       type: object
+      required: [metrics]
       properties:
         metrics:
           type: array
@@ -652,9 +793,12 @@ components:
     CodeArray:
       type: array
       items:
-        type: string
-        pattern: '[a-zA-Z0-9]+'
+        $ref: '#/components/schemas/GeoCode'
 
+    GeoCode:
+      type: string
+      pattern: '[a-zA-Z0-9]+'
+        
     NumbersSublevel:
       type: object
       properties:
@@ -664,47 +808,47 @@ components:
         values:
           description: Metric value for each date, aggregated for the region
           type: array
-          items: number
+          items:
+            type: number
 
     Countries:
       description: A map of country codes to the details of each country
-      object:
-        additionalProperties:
-          allOff:
-          - $ref: '#/components/schemas/NumbersSublevel'
-          - type: object
-            properties:
-              ccaas:
-                $ref: '#/components/schemas/CCAAs'
+      type: object
+      additionalProperties:
+        allOf:
+        - $ref: '#/components/schemas/NumbersSublevel'
+        - type: object
+          properties:
+            ccaas:
+              $ref: '#/components/schemas/CCAAs'
 
     CCAAs:
       description: A map of CCAA INE codes to the CCAA detailed values
-      object:
-        additionalProperties:
-          allOff:
-          - $ref: '#/components/schemas/NumbersSublevel'
-          - type: object
-            properties:
-              ccaas:
-                $ref: '#/components/schemas/CCAAs'
+      type: object
+      additionalProperties:
+        allOf:
+        - $ref: '#/components/schemas/NumbersSublevel'
+        - type: object
+          properties:
+            states:
+              $ref: '#/components/schemas/States'
 
     States:
       description: A map of State INE codes to the state detailed values
-      object:
-        additionalProperties:
-          allOff:
-          - $ref: '#/components/schemas/NumbersSublevel'
-          - type: object
-            properties:
-              ccaas:
-                $ref: '#/components/schemas/CCAAs'
+      type: object
+      additionalProperties:
+        allOf:
+        - $ref: '#/components/schemas/NumbersSublevel'
+        - type: object
+          properties:
+            cities:
+              $ref: '#/components/schemas/Cities'
 
     Cities:
       description: A map of city INE codes to the city detailed values
-      object:
-        additionalProperties:
-          $ref: '#/components/schemas/NumbersSublevel'
-          type: object
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/NumbersSublevel'
 
     MultiLevelNumbers:
       description: Structured numeric information
