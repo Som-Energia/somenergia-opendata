@@ -788,10 +788,9 @@ components:
         options:
           type: object
           additionalProperties:
-            object:
-              name:
-                type: string
-            description: Map from code to translated name of the geolevel region
+            type: string
+            description: Translated name of the geolevel region
+          description: Map from geolevel region code to its translated name
 
     CodeArray:
       type: array
