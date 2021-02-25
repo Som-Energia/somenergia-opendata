@@ -21,16 +21,16 @@ FROM (
         com.name AS comarca,
         ccaa.name AS comunitat_autonoma,
         country.name AS pais,
-        p.id AS soci_id,
+        p.id AS id,
         m.id AS id_municipi,
         m.ine AS codi_ine,
         prov.code AS codi_provincia,
         ccaa.codi AS codi_ccaa,
         country.code AS codi_pais,
         dades_inicials.partner_id AS partner_id,
-        pa.create_date as create_date,
+        pa.create_date as first_date,
         pa.active as active,
-        ss.data_baixa_soci as data_baixa_soci
+        ss.data_baixa_soci as last_date
     FROM res_partner_address AS pa
     JOIN (
         SELECT
@@ -50,7 +50,7 @@ FROM (
     LEFT JOIN res_country AS country ON (country.id=pa.country_id)
     JOIN somenergia_soci as ss on (ss.partner_id=p.id)
     ORDER BY p.ref
-) AS detall    
+) AS item
 GROUP BY
     codi_pais,
     codi_ccaa,

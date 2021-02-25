@@ -161,100 +161,30 @@ def selfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
         dbhandler=dbhandler,
     )
 
-def activeMembersCounter(adate):
-    # TODO: Unsafe substitution, use mogrify
-    return """
-    count(CASE
-        WHEN create_date IS NULL THEN NULL
-        WHEN create_date > '{adate}'::date THEN NULL
-        WHEN data_baixa_soci < '{adate}'::date THEN NULL
-        WHEN create_date <= '{adate}'::date THEN TRUE
-        WHEN active THEN TRUE
-        ELSE NULL
-            END) AS count_{adate:%Y_%m_%d}
-        """.format(adate=adate)
-
-def activeMembersLister(adate):
-    # TODO: Unsafe substitution, use mogrify
-    return """
-    string_agg(CASE
-        WHEN create_date IS NULL THEN NULL
-        WHEN create_date > '{adate}'::date THEN NULL
-        WHEN data_baixa_soci < '{adate}'::date THEN NULL
-        WHEN create_date <= '{adate}'::date THEN soci_id::text
-        WHEN active THEN soci_id::text
-        ELSE NULL
-        END, ',' ORDER BY soci_id) AS count_{adate:%Y_%m_%d}
-        """.format(adate=adate)
-
 def membersSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
         queryfile='members_distribution',
-        timeSlicer=activeMembersCounter,
-        #timeSlicer=activeMembersLister, # debug
+        timeSlicer=activeItemCounter,
+        #timeSlicer=activeItemLister, # debug
         dbhandler=dbhandler,
     )
-
-def newMembersCounter(adate):
-    # TODO: Unsafe substitution
-    return """
-    count(CASE
-        WHEN create_date IS NULL THEN NULL
-        WHEN create_date > '{adate}'::date THEN NULL
-        WHEN create_date <= '{adate}'::date - INTERVAL '1 month' THEN NULL
-        ELSE TRUE
-            END) AS count_{adate:%Y_%m_%d}
-        """.format(adate=adate)
-
-def newMembersLister(adate):
-    # TODO: Unsafe substitution
-    return """
-    string_agg(CASE
-        WHEN create_date IS NULL THEN NULL
-        WHEN create_date > '{adate}'::date THEN NULL
-        WHEN create_date <= '{adate}'::date - INTERVAL '1 month' THEN NULL
-        ELSE soci_id::text
-            END, ',' ORDER BY soci_id) AS count_{adate:%Y_%m_%d}
-        """.format(adate=adate)
 
 def newMembersSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
         queryfile='members_distribution',
-        timeSlicer=newMembersCounter,
-        #timeSlicer=newMembersLister, # debug
+        timeSlicer=newItemCounter,
+        #timeSlicer=newItemLister, # debug
         dbhandler=dbhandler,
     )
-
-def canceledMembersCounter(adate):
-    # TODO: Unsafe substitution
-    return """
-    count(CASE
-        WHEN data_baixa_soci IS NULL THEN NULL
-        WHEN data_baixa_soci > '{adate}'::date THEN NULL
-        WHEN data_baixa_soci <= '{adate}'::date - INTERVAL '1 month' THEN NULL
-        ELSE TRUE
-            END) AS count_{adate:%Y_%m_%d}
-        """.format(adate=adate)
-
-def canceledMembersLister(adate):
-    # TODO: Unsafe substitution
-    return """
-    string_agg(CASE
-        WHEN data_baixa_soci IS NULL THEN NULL
-        WHEN data_baixa_soci > '{adate}'::date THEN NULL
-        WHEN data_baixa_soci <= '{adate}'::date - INTERVAL '1 month' THEN NULL
-        ELSE soci_id::text
-            END, ',' ORDER BY soci_id) AS count_{adate:%Y_%m_%d}
-        """.format(adate=adate)
 
 def canceledMembersSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
         queryfile='members_distribution',
-        timeSlicer=canceledMembersCounter,
-        #timeSlicer=canceledMembersLister, # debug
+        timeSlicer=canceledItemCounter,
+        #timeSlicer=canceledItemLister, # debug
         dbhandler=dbhandler,
     )
 
