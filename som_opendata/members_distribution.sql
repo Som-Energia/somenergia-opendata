@@ -27,21 +27,21 @@ FROM (
         prov.code AS codi_provincia,
         ccaa.codi AS codi_ccaa,
         country.code AS codi_pais,
-        dades_inicials.partner_id AS partner_id,
+        address.partner_id AS partner_id,
         pa.create_date as first_date,
         pa.active as active,
         ss.data_baixa_soci as last_date
     FROM res_partner_address AS pa
     JOIN (
         SELECT
-            dades_inicials.partner_id,
-            MIN(dades_inicials.id) AS id_unic
+            address.partner_id,
+            MIN(address.id) AS id_unic
         FROM
-            res_partner_address as dades_inicials
+            res_partner_address as address
         WHERE
-            dades_inicials.active
-        GROUP BY dades_inicials.partner_id
-        ) AS dades_inicials ON dades_inicials.id_unic = pa.id
+            address.active
+        GROUP BY address.partner_id
+        ) AS address ON address.id_unic = pa.id
     LEFT JOIN res_partner AS p ON (p.id=pa.partner_id)
     LEFT JOIN res_municipi AS m ON (m.id=pa.id_municipi)
     LEFT JOIN res_country_state AS prov ON (prov.id=pa.state_id)
