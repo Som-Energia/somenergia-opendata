@@ -218,18 +218,6 @@ def newMembersLister(adate):
             END, ',' ORDER BY soci_id) AS count_{adate:%Y_%m_%d}
         """.format(adate=adate)
 
-def plantProductionCounter(adate):
-    # TODO: Unsafe substitution
-    return """
-    count(CASE
-        WHEN time IS NULL THEN NULL
-        WHEN time > '{adate}'::date THEN NULL
-        WHEN time <= '{adate}'::date - INTERVAL '1 month' THEN NULL
-        WHEN time <= '{adate}'::date THEN TRUE
-        ELSE NULL
-            END) AS count_{adate:%Y_%m_%d}
-        """.format(adate=adate)
-
 def newMembersSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
@@ -270,6 +258,18 @@ def canceledMembersSeries(dates, dbhandler=csvTable, debug=False):
         dbhandler=dbhandler,
     )
 
+
+def plantProductionCounter(adate):
+    # TODO: Unsafe substitution
+    return """
+    count(CASE
+        WHEN time IS NULL THEN NULL
+        WHEN time > '{adate}'::date THEN NULL
+        WHEN time <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        WHEN time <= '{adate}'::date THEN TRUE
+        ELSE NULL
+            END) AS count_{adate:%Y_%m_%d}
+        """.format(adate=adate)
 
 def plantProductionSeries(dates, dbhandler=csvTable, debug=False):
     db = psycopg2.connect(**config.psycopg_plantmonitor)
