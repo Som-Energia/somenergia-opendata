@@ -142,6 +142,7 @@ def selfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
         dates=dates,
         queryfile='contract_selfconsumption_distribution',
         timeSlicer=activeItemCounter,
+        #timeSlicer=activeItemLister, # debug
         dbhandler=dbhandler,
     )
 
@@ -150,6 +151,7 @@ def newSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
         dates=dates,
         queryfile='contract_selfconsumption_distribution',
         timeSlicer=newItemCounter,
+        #timeSlicer=newItemLister, # debug
         dbhandler=dbhandler,
     )
 
@@ -158,6 +160,7 @@ def canceledSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=Fals
         dates=dates,
         queryfile='contract_selfconsumption_distribution',
         timeSlicer=canceledItemCounter,
+        #timeSlicer=canceledItemLister, # debug
         dbhandler=dbhandler,
     )
 
