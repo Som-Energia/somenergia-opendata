@@ -49,19 +49,15 @@ def spec():
     """
     @api {get} /v0.2/spec API specification
     @apiVersion 0.2.16
-    @apiName Spec
+    @apiName API specification
     @apiGroup About
-    @apiDescription Response version API
+    @apiDescription OpenData API specification as OpenAPI 3.0 YAML
 
     @apiSuccessResponse 200
-    @apiSuccess version Current api version
-    @apiSuccess compat Oldest backward compatible version
 
-    @apiSampleRequest /v0.2/version
+    @apiSampleRequest /v0.2/spec
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
-        version: 0.2.16
-        compat: 0.2.1
     """
     return ns(
         version = __version__,

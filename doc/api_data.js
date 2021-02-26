@@ -1,6 +1,72 @@
 define({ "api": [
   {
     "type": "get",
+    "url": "/v0.2/spec",
+    "title": "API specification",
+    "version": "0.2.16",
+    "name": "API_specification",
+    "group": "About",
+    "description": "<p>OpenData API specification as OpenAPI 3.0 YAML</p>",
+    "sampleRequest": [
+      {
+        "url": "https://opendata.somenergia.coop/v0.2/spec"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200OK",
+          "type": "yaml"
+        }
+      ]
+    },
+    "filename": "som_opendata/api.py",
+    "groupTitle": "About"
+  },
+  {
+    "type": "get",
+    "url": "/v0.2/version",
+    "title": "Version information",
+    "version": "0.2.16",
+    "name": "Version",
+    "group": "About",
+    "description": "<p>Returns current and oldest backward compatible versions</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "version",
+            "description": "<p>Current api version</p>"
+          },
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "compat",
+            "description": "<p>Oldest backward compatible version</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200OK\nversion: 0.2.16\ncompat: 0.2.1",
+          "type": "yaml"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "https://opendata.somenergia.coop/v0.2/version"
+      }
+    ],
+    "filename": "som_opendata/api.py",
+    "groupTitle": "About"
+  },
+  {
+    "type": "get",
     "url": "/v0.2/discover/geolevel/:geolevel",
     "title": "Available Geolevel values",
     "version": "0.2.16",
@@ -511,42 +577,6 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/v0.1/members/<isodate:fromdate>[/monthlyto/<isodate:todate>]",
-    "title": "Members Data",
-    "version": "0.1.0",
-    "name": "Distribution",
-    "group": "Distribution",
-    "description": "<p>Returns a TSV file with the number of members for each city and for each date in the interval.</p>",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "isodate",
-            "optional": false,
-            "field": "fromdate",
-            "description": "<p>First date in the output</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "isodate",
-            "optional": false,
-            "field": "todate",
-            "description": "<p>Last included date in the output, if not specified just fromdate is considered</p>"
-          }
-        ]
-      }
-    },
-    "sampleRequest": [
-      {
-        "url": "https://opendata.somenergia.coop/v0.1/members/2015-01-01/monthlyto/2015-12-01"
-      }
-    ],
-    "filename": "som_opendata/oldapi.py",
-    "groupTitle": "Distribution"
-  },
-  {
-    "type": "get",
     "url": "/v0.1/contracts/<isodate:fromdate>/monthlyto/<isodate:todate>",
     "title": "Contract Data",
     "version": "0.1.0",
@@ -576,6 +606,42 @@ define({ "api": [
     "sampleRequest": [
       {
         "url": "https://opendata.somenergia.coop/v0.1/contracts/2015-01-01/monthlyto/2015-12-01"
+      }
+    ],
+    "filename": "som_opendata/oldapi.py",
+    "groupTitle": "Distribution"
+  },
+  {
+    "type": "get",
+    "url": "/v0.1/members/<isodate:fromdate>[/monthlyto/<isodate:todate>]",
+    "title": "Members Data",
+    "version": "0.1.0",
+    "name": "Distribution",
+    "group": "Distribution",
+    "description": "<p>Returns a TSV file with the number of members for each city and for each date in the interval.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "isodate",
+            "optional": false,
+            "field": "fromdate",
+            "description": "<p>First date in the output</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "isodate",
+            "optional": false,
+            "field": "todate",
+            "description": "<p>Last included date in the output, if not specified just fromdate is considered</p>"
+          }
+        ]
+      }
+    },
+    "sampleRequest": [
+      {
+        "url": "https://opendata.somenergia.coop/v0.1/members/2015-01-01/monthlyto/2015-12-01"
       }
     ],
     "filename": "som_opendata/oldapi.py",
@@ -1304,47 +1370,6 @@ define({ "api": [
         "url": "https://opendata.somenergia.coop/v0.2/map/:metric/by/:geolevel/on/:ondate"
       }
     ]
-  },
-  {
-    "type": "get",
-    "url": "/v0.2/version",
-    "title": "Version information",
-    "version": "0.2.16",
-    "name": "Version",
-    "group": "Version",
-    "description": "<p>Response version API</p>",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "version",
-            "description": "<p>Current api version</p>"
-          },
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "compat",
-            "description": "<p>Oldest backward compatible version</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200OK\nversion: 0.2.16\ncompat: 0.2.1",
-          "type": "yaml"
-        }
-      ]
-    },
-    "sampleRequest": [
-      {
-        "url": "https://opendata.somenergia.coop/v0.2/version"
-      }
-    ],
-    "filename": "som_opendata/api.py",
-    "groupTitle": "Version"
   },
   {
     "type": "get",
