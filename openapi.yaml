@@ -1,26 +1,63 @@
 # Edits of this spec should be validated using https://editor.swagger.io/
 # TODO:
-# - Relative metrics paths in maps
 # - Error responses
 
 openapi: 3.0.0
 info:
   title: Som Energia Open Data API
+  version: 0.2.16
   description: |
-    API to get temporally and geographically aggregated metrics about Som Energia
-  version: 0.2.15
+    This API can be used to obtain metrics
+    about [Som Energia](https://somenergia.coop)
+    and several related visualizations and widgets.
+
+    Source metric measurements are obtained
+    at **the start** of every **first of month**
+    with **city granularity**.
+    That is the smaller resolution this API provides: month and city.
+    Coarser resolutions in time and space
+    are obtained **by aggregation** of those source measurements.
+
+    Because the measurement for a day is obtained at the begining of that day,
+    a value for 2020-01-01 will include events up to the end of 2019 but none from 2020.
+    Likewise,
+    a value for 2020-02-01 will include events up to the end of January but none about February.
+
+    Be aware that each metric has particular considerations about its meaning and reliability.
+    They are included in the metric description,
+    retrievable by means of the discovery API.
+
+    Glossary:
+
+    - **Metric:** Something to be measured
+    - **Relative metric:** Something available to relativize metrics
+      (population, surface, existing supply points, overall energy consumption...)
+    - **Geolevel:** A geographical partition: country, state, city...
+    - **Region:** Each of the elements of the geolevel.
+      For instance, at country geolevel we have as regions Spain, France...
+
 servers:
   - url: https://opendata.somenergia.coop/v0.2
     description: Production server
   - url: http://localhost:5001/v0.2
     description: Development server
 
+tags:
+- name: About
+  description: Information about the running API
+- name: Discovery
+  description: "Discovering the evolving elements of the API: metrics, geolevels..."
+- name: Numeric data
+  description: Obtaining processable numeric data
+- name: Maps
+  description: Generate geographical distribution maps for the metrics
+
 paths:
 
   /version:
     get:
-      summary: API Version
-      description: Returns API version information
+      summary: API version
+      description: Returns current and oldest backward compatible versions
       tags: [ About ]
       responses:
         '200':
@@ -30,6 +67,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/VersionInfo'
 
+  /spec:
+    get:
+      summary: API specification
+      description: API specification using OpenAPI 3.0 in YAML format.
+      tags: [ About ]
+      response:
+        '200':
+          description: YAML file containing the API spec
+          application/yaml:
+            $ref: schema.yaml
+            #$ref: https://github.com/OAI/OpenAPI-Specification/raw/master/schemas/v3.0/schema.yaml
+
   /discover/metrics:
     get:
       summary: Available metrics
@@ -38,7 +87,7 @@ paths:
       - $ref: '#/components/parameters/query_lang'
       responses:
         '200':
-          description: A list of the available metrics
+          description: Returns the list of available metrics
           content:
             application/yaml:
               schema:
@@ -119,7 +168,8 @@ paths:
                 $ref: '#/components/schemas/GeolevelValues'
               examples:
                 ccaas:
-                  summary: /discover/geolevel/ccaa
+                  summary: /discover/geolevel/ccaa?lang=es
+                  description: All the CCAA's. Force name translation to Spanish instead of using the browser language.
                   value:
                     options:
                       '01': Andalucia
@@ -141,6 +191,7 @@ paths:
                       '17': Rioja, La
                 localgroupsccaa:
                   summary: "/discover/geolevel/localgroup?ccaa=09"
+                  description: All local groups in Catalonia Autonomous Community (INE code 09)
                   value:
                     options:
                       AltPenedes: Alt Penedès
@@ -164,22 +215,32 @@ paths:
 
   /{metric}/by/{geolevel}/on/{ondate}:
     get:
-      summary: Metric Data on a Given Date
+      summary: Metric data on a given date
       description: |
-        Returns the geographical distribution of a metric at a given date.
+        Returns the metric
+        computed with the given geographical level of detail
+        on a given date.
 
-        Use the geolevel to get more geographical detail (country, ccaa, state, city).
+        Geographical fliters in the query string
+        restrict the regions to be considered.
+        Filters are additive, a city, the lowest level of detail,
+        is incorporated if it matches any provided filter.
 
-        Use the filters in the query string to restrict to a group of geographical entities.
-        The filters are additive. That means that any city matching any of the specified values will be counted.
+        Elidible parts:
 
-        - Current number of contracts: `/contracts`
+        - `/by/{geolevel}`: when omited means `world`
+        - `/on/{date}`: when omitted means the latest available date
 
-        - Current members at every state: `/members/by/state`
+        Some examples:
 
-        - Members at every CCAA on 2018-02-01: `/members/by/ccaa/on/2018-02-01`
-
-        - Members by city on Araba and Gipuzcoa provinces: `/members/by/city?state=01&state=20`
+        - `/contracts`
+          - Current number of contracts:
+        - `/members/by/state`
+          - Current members at every state:
+        - `/members/by/ccaa/on/2018-02-01`
+          - Members at every CCAA on 2018-02-01:
+        - `/members/by/city?state=01&state=20`
+          - Members by city on Araba and Gipuzcoa provinces:
 
       tags: [ "Numeric data" ]
       parameters:
@@ -200,104 +261,122 @@ paths:
             application/yaml:
               schema:
                 $ref: '#/components/schemas/MultiLevelNumbers'
-              example:
-                dates:
-                - 2013-01-01
-                values:
-                - 3197
-                countries:
-                  ES:
-                    name: España
+              examples:
+                membersByCCAA:
+                  summary: /members/by/ccaa/on/2013-01-01
+                  description: |
+                    Members detailed by CCAA on 2013-01-01
+                  value:
+                    dates:
+                    - 2013-01-01
                     values:
                     - 3197
-                    ccaas:
-                      '01':
-                        name: Andalucia
+                    countries:
+                      ES:
+                        name: España
                         values:
-                        - 48
-                      '02':
-                        name: Aragón
-                        values:
-                        - 124
-                      '03':
-                        name: Asturias, Principado de
-                        values:
-                        - 13
-                      '04':
-                        name: Baleares, Islas
-                        values:
-                        - 235
-                      '05':
-                        name: Canarias
-                        values:
-                        - 0
-                      '06':
-                        name: Cantabria
-                        values:
-                        - 12
-                      08:
-                        name: Castilla - La Mancha
-                        values:
-                        - 28
-                      '07':
-                        name: Castilla y León
-                        values:
-                        - 24
-                      09:
-                        name: Cataluña
-                        values:
-                        - 2054
-                      '10':
-                        name: Comunidad Valenciana
-                        values:
-                        - 224
-                      '11':
-                        name: Extremadura
-                        values:
-                        - 14
-                      '12':
-                        name: Galicia
-                        values:
-                        - 24
-                      '13':
-                        name: Madrid, Comunidad de
-                        values:
-                        - 145
-                      '14':
-                        name: Murcia, Región de
-                        values:
-                        - 11
-                      '15':
-                        name: Navarra, Comunidad Foral de
-                        values:
-                        - 151
-                      '16':
-                        name: País Vasco
-                        values:
-                        - 53
-                      '17':
-                        name: Rioja, La
-                        values:
-                        - 37
+                        - 3197
+                        ccaas:
+                          '01':
+                            name: Andalucia
+                            values:
+                            - 48
+                          '02':
+                            name: Aragón
+                            values:
+                            - 124
+                          '03':
+                            name: Asturias, Principado de
+                            values:
+                            - 13
+                          '04':
+                            name: Baleares, Islas
+                            values:
+                            - 235
+                          '05':
+                            name: Canarias
+                            values:
+                            - 0
+                          '06':
+                            name: Cantabria
+                            values:
+                            - 12
+                          08:
+                            name: Castilla - La Mancha
+                            values:
+                            - 28
+                          '07':
+                            name: Castilla y León
+                            values:
+                            - 24
+                          09:
+                            name: Cataluña
+                            values:
+                            - 2054
+                          '10':
+                            name: Comunidad Valenciana
+                            values:
+                            - 224
+                          '11':
+                            name: Extremadura
+                            values:
+                            - 14
+                          '12':
+                            name: Galicia
+                            values:
+                            - 24
+                          '13':
+                            name: Madrid, Comunidad de
+                            values:
+                            - 145
+                          '14':
+                            name: Murcia, Región de
+                            values:
+                            - 11
+                          '15':
+                            name: Navarra, Comunidad Foral de
+                            values:
+                            - 151
+                          '16':
+                            name: País Vasco
+                            values:
+                            - 53
+                          '17':
+                            name: Rioja, La
+                            values:
+                            - 37
 
   /{metric}/by/{geolevel}/{frequency}/from/{fromdate}/to/{todate}:
     get:
-      summary: Metric Data on in a series of dates
+      summary: Metric data on in a series of dates
       description: |
-        Returns the geographical distribution of a metric at a given date.
+        Returns the metric
+        computed with the given geographical level of detail
+        for a series of dates.
 
-        Use the geolevel to get more geographical detail (country, ccaa, state, city).
+        Geographical fliters in the query string
+        restrict the regions to be considered.
+        Filters are additive, a city, the lowest level of detail,
+        is incorporated if it matches any provided filter.
 
         Use the filters in the query string to restrict to a group of geographical entities.
         The filters are additive. That means that any city matching any of the specified values will be counted.
 
-        - Evolution of all contracts every year: `/contracts/yearly`
+        Elidible parts:
 
-        - Monthly evolution of members on 2018: `/members/monthly/from/2018-01-01/to/2019-01-01`
+        - `/by/{geolevel}`: when omited means `world`
+        - `/from/{date}`: when omitted means the first available date
+        - `/to/{date}`: when omitted means the latest available date
 
-        - 2018 monthly evolution of members: `/members/monthly/from/2018-01-01/to/2019-01-01`
+        Some examples:
 
-        - Members by city on Araba and Gipuzcoa provinces every year: `/members/by/city/yearly?state=01&state=20`
+        - `/contracts/yearly`
+          - Evolution of all contracts every year
+        - `/members/monthly/from/2018-01-01/to/2019-01-01`
+          - Monthly evolution of members during 2018
+        - `/members/by/city/yearly/from/2018-01-01?state=01&state=20`
+          - Members by city on Araba (01) and Gipuzcoa (20) provinces every year since 2018
+
 
       tags: [ "Numeric data" ]
       parameters:
@@ -320,156 +399,173 @@ paths:
             application/yaml:
               schema:
                 $ref: '#/components/schemas/MultiLevelNumbers'
-              example:
-                dates:
-                - 2010-01-01
-                - 2011-01-01
-                - 2012-01-01
-                - 2013-01-01
-                values:
-                - 0
-                - 0
-                - 277
-                - 3197
-                countries:
-                ES:
-                    name: España
+              examples:
+                membersByCCAA:
+                  summary: /members/by/ccaa/yearly/from/2010-01-01/to/2013-01-01
+                  description: |
+                    Members detailed by CCAA, evolution from 2010-01-01 2010-01-01 yearly
+                  value:
+                    dates:
+                    - 2010-01-01
+                    - 2011-01-01
+                    - 2012-01-01
+                    - 2013-01-01
                     values:
                     - 0
                     - 0
                     - 277
                     - 3197
-                    ccaas:
-                    '01':
-                        name: Andalucia
+                    countries:
+                    ES:
+                        name: España
                         values:
                         - 0
                         - 0
-                        - 0
-                        - 48
-                    '02':
-                        name: Aragón
-                        values:
-                        - 0
-                        - 0
-                        - 0
-                        - 124
-                    '03':
-                        name: Asturias, Principado de
-                        values:
-                        - 0
-                        - 0
-                        - 0
-                        - 13
-                    '04':
-                        name: Baleares, Islas
-                        values:
-                        - 0
-                        - 0
-                        - 1
-                        - 235
-                    '05':
-                        name: Canarias
-                        values:
-                        - 0
-                        - 0
-                        - 0
-                        - 0
-                    '06':
-                        name: Cantabria
-                        values:
-                        - 0
-                        - 0
-                        - 0
-                        - 12
-                    08:
-                        name: Castilla - La Mancha
-                        values:
-                        - 0
-                        - 0
-                        - 0
-                        - 28
-                    '07':
-                        name: Castilla y León
-                        values:
-                        - 0
-                        - 0
-                        - 0
-                        - 24
-                    09:
-                        name: Cataluña
-                        values:
-                        - 0
-                        - 0
-                        - 256
-                        - 2054
-                    '10':
-                        name: Comunidad Valenciana
-                        values:
-                        - 0
-                        - 0
-                        - 11
-                        - 224
-                    '11':
-                        name: Extremadura
-                        values:
-                        - 0
-                        - 0
-                        - 0
-                        - 14
-                    '12':
-                        name: Galicia
-                        values:
-                        - 0
-                        - 0
-                        - 0
-                        - 24
-                    '13':
-                        name: Madrid, Comunidad de
-                        values:
-                        - 0
-                        - 0
-                        - 3
-                        - 145
-                    '14':
-                        name: Murcia, Región de
-                        values:
-                        - 0
-                        - 0
-                        - 0
-                        - 11
-                    '15':
-                        name: Navarra, Comunidad Foral de
-                        values:
-                        - 0
-                        - 0
-                        - 6
-                        - 151
-                    '16':
-                        name: País Vasco
-                        values:
-                        - 0
-                        - 0
-                        - 0
-                        - 53
-                    '17':
-                        name: Rioja, La
-                        values:
-                        - 0
-                        - 0
-                        - 0
-                        - 37
+                        - 277
+                        - 3197
+                        ccaas:
+                        '01':
+                            name: Andalucia
+                            values:
+                            - 0
+                            - 0
+                            - 0
+                            - 48
+                        '02':
+                            name: Aragón
+                            values:
+                            - 0
+                            - 0
+                            - 0
+                            - 124
+                        '03':
+                            name: Asturias, Principado de
+                            values:
+                            - 0
+                            - 0
+                            - 0
+                            - 13
+                        '04':
+                            name: Baleares, Islas
+                            values:
+                            - 0
+                            - 0
+                            - 1
+                            - 235
+                        '05':
+                            name: Canarias
+                            values:
+                            - 0
+                            - 0
+                            - 0
+                            - 0
+                        '06':
+                            name: Cantabria
+                            values:
+                            - 0
+                            - 0
+                            - 0
+                            - 12
+                        08:
+                            name: Castilla - La Mancha
+                            values:
+                            - 0
+                            - 0
+                            - 0
+                            - 28
+                        '07':
+                            name: Castilla y León
+                            values:
+                            - 0
+                            - 0
+                            - 0
+                            - 24
+                        09:
+                            name: Cataluña
+                            values:
+                            - 0
+                            - 0
+                            - 256
+                            - 2054
+                        '10':
+                            name: Comunidad Valenciana
+                            values:
+                            - 0
+                            - 0
+                            - 11
+                            - 224
+                        '11':
+                            name: Extremadura
+                            values:
+                            - 0
+                            - 0
+                            - 0
+                            - 14
+                        '12':
+                            name: Galicia
+                            values:
+                            - 0
+                            - 0
+                            - 0
+                            - 24
+                        '13':
+                            name: Madrid, Comunidad de
+                            values:
+                            - 0
+                            - 0
+                            - 3
+                            - 145
+                        '14':
+                            name: Murcia, Región de
+                            values:
+                            - 0
+                            - 0
+                            - 0
+                            - 11
+                        '15':
+                            name: Navarra, Comunidad Foral de
+                            values:
+                            - 0
+                            - 0
+                            - 6
+                            - 151
+                        '16':
+                            name: País Vasco
+                            values:
+                            - 0
+                            - 0
+                            - 0
+                            - 53
+                        '17':
+                            name: Rioja, La
+                            values:
+                            - 0
+                            - 0
+                            - 0
+                            - 37
 
   /map/{metric}/by/{geolevel}/on/{ondate}:
     get:
-      summary: Absolute Metric Map
+      summary: Absolute metric map
       description: |
-        Returns a map representing the geographical distribution at a given date.
+        Returns a map representing the geographical distribution
+        of the metric on a given date.
 
         Use the geolevel choose the map detail (ccaa, state).
 
-        If no language is specified, the language is chosen using the request headers.
+        Elidible parts:
 
+        - `/by/{geolevel}`: when omited means `ccaa` (Not world!)
+        - `/on/{date}`: when omitted means the latest available date
+
+        Examples:
+
+        - `map/contracts`
+          - Current number of contracts by ccaa
+        - `/map/members/by/state`
+          - Current members at every state
+        - `/map/members/by/ccaa/on/2018-02-01`
+          - Members at every CCAA on 2018-02-01
 
       tags: [ "Maps" ]
       parameters:
@@ -486,27 +582,86 @@ paths:
               schema:
                 type: string
 
+  /map/{metric}/per/{relativemetric}/by/{geolevel}/on/{ondate}:
+    get:
+      summary: Relative metric map
+      description: |
+        Returns a map representing the geographical distribution at a given date
+        of the metric relative to a reference metric (population).
+
+        Elidible parts:
+
+        - `/by/{geolevel}`: when omited means `ccaa` (Not world!)
+        - `/from/{date}`: when omitted means the first available date
+        - `/to/{date}`: when omitted means the latest available date
+
+
+      tags: [ "Maps" ]
+      parameters:
+
+      - $ref: '#/components/parameters/path_metric'
+      - $ref: '#/components/parameters/path_relativemetric'
+      - $ref: '#/components/parameters/path_mapgeolevel'
+      - $ref: '#/components/parameters/path_onDate'
+      - $ref: '#/components/parameters/query_lang'
+      responses:
+        '200':
+          description: SVG map
+          content:
+            image/svg+xml:
+              schema:
+                type: string
+
   /map/{metric}/by/{geolevel}/{frequency}/from/{fromdate}/to/{todate}:
     get:
-      summary: Absolute Metric Map
+      summary: Absolute metric map animation
       description: |
-        Returns a map that represents the geographical distribution at a given date.
+        Returns an animated map of the evolving geographical distribution
+        for a serie of dates of the metric.
+
         Use the geolevel choose the map detail (ccaa, state).
-        Use the filters in the query string to choose the language.
 
-        If no language is specified, the language is chosen using the request headers.
+        Elidible parts:
 
-        - Current number of contracts: `/contracts`
-
-        - Current members at every state: `/members/by/state`
-
-        - Members at every CCAA on 2018-02-01: `/members/by/ccaa/on/2018-02-01`
-
-        - Members by city on Araba and Gipuzcoa provinces: `/members/by/city?state=01&state=20`
+        - `/by/{geolevel}`: when omited means `ccaa` (Not world!)
+        - `/from/{date}`: when omitted means the first available date
+        - `/to/{date}`: when omitted means the latest available date
 
       tags: [ "Maps" ]
       parameters:
       - $ref: '#/components/parameters/path_metric'
+      - $ref: '#/components/parameters/path_mapgeolevel'
+      - $ref: '#/components/parameters/path_periodicity'
+      - $ref: '#/components/parameters/path_fromDate'
+      - $ref: '#/components/parameters/path_toDate'
+      - $ref: '#/components/parameters/query_lang'
+      responses:
+        '200':
+          description: Animated SVG map
+          content:
+            image/svg+xml:
+              schema:
+                type: string
+
+  /map/{metric}/per/{relativemetric}/by/{geolevel}/{frequency}/from/{fromdate}/to/{todate}:
+    get:
+      summary: Relative metric map animation
+      description: |
+        Returns an animated map of the evolving geographical distribution
+        for a serie of dates of the metric relative to the reference metric.
+
+        Use the geolevel choose the map detail (ccaa, state).
+
+        Elidible parts:
+
+        - `/by/{geolevel}`: when omited means `ccaa` (Not world!)
+        - `/from/{date}`: when omitted means the first available date
+        - `/to/{date}`: when omitted means the latest available date
+
+      tags: [ "Maps" ]
+      parameters:
+      - $ref: '#/components/parameters/path_metric'
+      - $ref: '#/components/parameters/path_relativemetric'
       - $ref: '#/components/parameters/path_mapgeolevel'
       - $ref: '#/components/parameters/path_periodicity'
       - $ref: '#/components/parameters/path_fromDate'
@@ -562,6 +717,18 @@ components:
         - canceledmembers
         - canceledselfconsumptioncontracts
 
+    path_relativemetric:
+      name: relativemetric
+      in: path
+      required: true
+      description: |
+        One of the supported metrics to relativize main metrics. (By now just `population`)
+      schema:
+        type: string
+        pattern: '[a-z][a-z0-9]+'
+        enum:
+        - population
+
     path_geolevel:
       name: geolevel
       in: path
@@ -616,7 +783,7 @@ components:
       name: frequency
       required: true
       description: |
-        Indicate a date series (only first day of the month, year...)
+        Indicate a date sequence (only first day of the month, year...)
       in: path
       schema:
         type: string
@@ -697,7 +864,6 @@ components:
       schema:
         $ref: '#/components/schemas/CodeArray'
 
-
   schemas:
 
     VersionInfo:
@@ -705,12 +871,12 @@ components:
       properties:
         version:
           type: string
-          example: 0.2.14
           description: Current API version
+          example: 0.2.16
         compat:
           type: string
-          example: 0.2.1
           description: Oldest backward compatible version
+          example: 0.2.1
 
     MetricsInfo:
       type: object

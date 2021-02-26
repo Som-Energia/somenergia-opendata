@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, request, current_app, make_response, send_file, render_template
+from flask import Blueprint, request, current_app, make_response, send_file
 from yamlns import namespace as ns
 from .common import (
-        yaml_response,
-        validateParams,
-        validateMapParams,
-    )
+    yaml_response,
+    validateParams,
+    validateMapParams,
+)
 from .timeaggregator import TimeAggregator
 from . import common
 from .distribution import getAggregated
@@ -25,7 +25,32 @@ def version():
     @api {get} /v0.2/version Version information
     @apiVersion 0.2.16
     @apiName Version
-    @apiGroup Version
+    @apiGroup About
+    @apiDescription Returns current and oldest backward compatible versions
+
+    @apiSuccessResponse 200
+    @apiSuccess version Current api version
+    @apiSuccess compat Oldest backward compatible version
+
+    @apiSampleRequest /v0.2/version
+    @apiSuccessExample {yaml} Success-Response:
+        HTTP/1.1 200OK
+        version: 0.2.16
+        compat: 0.2.1
+    """
+    return ns(
+        version = __version__,
+        compat = '0.2.1',
+        )
+
+@api.route('/spec')
+@yaml_response
+def spec():
+    """
+    @api {get} /v0.2/spec API specification
+    @apiVersion 0.2.16
+    @apiName Spec
+    @apiGroup About
     @apiDescription Response version API
 
     @apiSuccessResponse 200
@@ -42,6 +67,12 @@ def version():
         version = __version__,
         compat = '0.2.1',
         )
+    return send_file(
+        '../openapi.yaml',
+        as_attachment = True,
+        attachment_filename = "somenergia-opendata-{}.yaml".format(__version__),
+    )
+
 
 @api.route('/discover/metrics')
 @yaml_response
