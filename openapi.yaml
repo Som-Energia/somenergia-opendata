@@ -184,7 +184,7 @@ paths:
       tags: [ "Numeric data" ]
       parameters:
 
-      - $ref: '#/components/parameters/metric'
+      - $ref: '#/components/parameters/path_metric'
       - $ref: '#/components/parameters/path_geolevel'
       - $ref: '#/components/parameters/path_onDate'
       - $ref: '#/components/parameters/query_lang'
@@ -302,7 +302,7 @@ paths:
       tags: [ "Numeric data" ]
       parameters:
 
-      - $ref: '#/components/parameters/metric'
+      - $ref: '#/components/parameters/path_metric'
       - $ref: '#/components/parameters/path_geolevel'
       - $ref: '#/components/parameters/path_periodicity'
       - $ref: '#/components/parameters/path_fromDate'
@@ -474,7 +474,7 @@ paths:
       tags: [ "Maps" ]
       parameters:
 
-      - $ref: '#/components/parameters/metric'
+      - $ref: '#/components/parameters/path_metric'
       - $ref: '#/components/parameters/path_mapgeolevel'
       - $ref: '#/components/parameters/path_onDate'
       - $ref: '#/components/parameters/query_lang'
@@ -506,7 +506,7 @@ paths:
 
       tags: [ "Maps" ]
       parameters:
-      - $ref: '#/components/parameters/metric'
+      - $ref: '#/components/parameters/path_metric'
       - $ref: '#/components/parameters/path_mapgeolevel'
       - $ref: '#/components/parameters/path_periodicity'
       - $ref: '#/components/parameters/path_fromDate'
@@ -542,12 +542,12 @@ components:
         - en
         - null
 
-    metric:
+    path_metric:
       name: metric
       in: path
       required: true
       description: |
-        One of the suported metrics (see /discover/metrics)
+        The code of a supported metric (see /discover/metrics)
       schema:
         type: string
         pattern: '[a-z][a-z0-9]+'
