@@ -14,6 +14,7 @@ servers:
     description: Production server
   - url: http://localhost:5001/v0.2
     description: Development server
+
 paths:
 
   /version:
@@ -34,7 +35,7 @@ paths:
       summary: Available metrics
       tags: [ Discovery ]
       parameters:
-      - $ref: '#/components/parameters/lang'
+      - $ref: '#/components/parameters/query_lang'
       responses:
         '200':
           description: A list of the available metrics
@@ -57,7 +58,7 @@ paths:
       description: Returns the geolevels (short for geographical levels) that can be used in queries. For example, countries, cities...
       tags: [ Discovery ]
       parameters:
-      - $ref: '#/components/parameters/lang'
+      - $ref: '#/components/parameters/query_lang'
       responses:
         '200':
           description: A list of available geolevels
@@ -102,13 +103,13 @@ paths:
         Returns the available values for a given geographical division.
       tags: [ Discovery ]
       parameters:
-      - $ref: '#/components/parameters/lang'
       - $ref: '#/components/parameters/path_geolevelOrAlias'
       - $ref: '#/components/parameters/geofilter_city'
       - $ref: '#/components/parameters/geofilter_state'
       - $ref: '#/components/parameters/geofilter_ccaa'
       - $ref: '#/components/parameters/geofilter_country'
       - $ref: '#/components/parameters/geofilter_gl'
+      - $ref: '#/components/parameters/query_lang'
       responses:
         '200':
           description: A list of available geolevels
@@ -186,7 +187,7 @@ paths:
       - $ref: '#/components/parameters/metric'
       - $ref: '#/components/parameters/path_geolevel'
       - $ref: '#/components/parameters/path_onDate'
-      - $ref: '#/components/parameters/lang'
+      - $ref: '#/components/parameters/query_lang'
       - $ref: '#/components/parameters/geofilter_city'
       - $ref: '#/components/parameters/geofilter_state'
       - $ref: '#/components/parameters/geofilter_ccaa'
@@ -306,7 +307,7 @@ paths:
       - $ref: '#/components/parameters/path_periodicity'
       - $ref: '#/components/parameters/path_fromDate'
       - $ref: '#/components/parameters/path_toDate'
-      - $ref: '#/components/parameters/lang'
+      - $ref: '#/components/parameters/query_lang'
       - $ref: '#/components/parameters/geofilter_city'
       - $ref: '#/components/parameters/geofilter_state'
       - $ref: '#/components/parameters/geofilter_ccaa'
@@ -476,7 +477,7 @@ paths:
       - $ref: '#/components/parameters/metric'
       - $ref: '#/components/parameters/path_mapgeolevel'
       - $ref: '#/components/parameters/path_onDate'
-      - $ref: '#/components/parameters/lang'
+      - $ref: '#/components/parameters/query_lang'
       responses:
         '200':
           description: SVG map
@@ -510,7 +511,7 @@ paths:
       - $ref: '#/components/parameters/path_periodicity'
       - $ref: '#/components/parameters/path_fromDate'
       - $ref: '#/components/parameters/path_toDate'
-      - $ref: '#/components/parameters/lang'
+      - $ref: '#/components/parameters/query_lang'
       responses:
         '200':
           description: Animated SVG map
@@ -522,7 +523,7 @@ paths:
 
 components:
   parameters:
-    lang:
+    query_lang:
       name: lang
       in: query
       required: false
