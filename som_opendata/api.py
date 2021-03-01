@@ -59,10 +59,6 @@ def spec():
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
     """
-    return ns(
-        version = __version__,
-        compat = '0.2.1',
-        )
     return send_file(
         '../openapi.yaml',
         as_attachment = True,
