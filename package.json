@@ -7,7 +7,8 @@
     "doc": "doc"
   },
   "scripts": {
-    "docs": "apidoc -i som_opendata -o doc"
+    "docs": "apidoc -i som_opendata -o doc",
+    "redocs": "redoc-cli bundle openapi.yaml -o doc/index.html"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,8 @@
   "homepage": "https://github.com/Som-Energia/somenergia-api#readme",
   "dependencies": {
     "apidoc": "^0.17.7"
+  },
+  "devDependencies": {
+    "redoc-cli": "^0.10.2"
   }
 }
