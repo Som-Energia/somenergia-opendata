@@ -1,20 +1,34 @@
 <svg height="458" version="1.0" viewBox="0 0 644 458" width="644" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <style>
   @media screen and (min-device-width : 1025px) {{
-      [id^='number'] {{
-        opacity:0;
-        font-weight:600;
-      }}
-      [id^='provincia'] text {{
-        fill:#242423;
-      }}
+    [id^='number'] {{
+      opacity:0;
+      font-weight:600;
     }}
-    [id^='provincia']:hover [id^='number']{{
-      opacity:1;
+    [id^='provincia'] text {{
+      fill:#242423;
     }}
-    [id^='provincia']:hover text{{
-      fill:black;
-    }}
+  }}
+  [id^='provincia']:hover [id^='number']{{
+    opacity:1;
+  }}
+  [id^='provincia']:hover text{{
+    fill:black;
+  }}
+  [id^='provincia'] tspan {{
+    fill: blue;
+    font-family: Sans;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.25;
+    word-spacing: 0;
+    text-anchor: left;
+  }}
+  tspan[id^='number'] {{
+    font-weight: 400;
+    text-anchor: middle;
+  }}
   </style>
   <path d="M1 1h641v456H1V1z" fill="#cacaca" opacity=".97"/>
   <path d="M324.587 115.069l.241.481v.48l-.241.24.241-.48v-.24h-.241v-.24z" fill="#ccc"/>
