@@ -642,6 +642,7 @@ ES	España	05	Canarias	38	Santa Cruz de Tenerife	38040	Santiago del Teide	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38041	Sauzal, El	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38042	Silos, Los	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38043	Tacoronte	1	0
+ES	España	05	Canarias	38	Santa Cruz de Tenerife	38045	Tazacorte	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38046	Tegueste	0	1
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38047	Tijarafe	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38049	Valle Gran Rey	0	0
@@ -963,6 +964,7 @@ ES	España	07	Castilla y León	37	Salamanca	37294	Santa Marta de Tormes	0	0
 ES	España	07	Castilla y León	37	Salamanca	37328	Trabanca	0	0
 ES	España	07	Castilla y León	37	Salamanca	37354	Villamayor	0	0
 ES	España	07	Castilla y León	37	Salamanca	37362	Villares de la Reina	0	0
+ES	España	07	Castilla y León	40	Segovia	40007	Aldealengua de Pedraza	0	0
 ES	España	07	Castilla y León	40	Segovia	40035	Cabañas de Polendos	0	0
 ES	España	07	Castilla y León	40	Segovia	40045	Casla	0	0
 ES	España	07	Castilla y León	40	Segovia	40063	Cuéllar	0	0
@@ -1878,6 +1880,7 @@ ES	España	09	Cataluña	43	Tarragona	43153	Torredembarra	1	1
 ES	España	09	Cataluña	43	Tarragona	43155	Tortosa	1	0
 ES	España	09	Cataluña	43	Tarragona	43156	Ulldecona	0	0
 ES	España	09	Cataluña	43	Tarragona	43157	Ulldemolins	0	0
+ES	España	09	Cataluña	43	Tarragona	43160	Vallmoll	0	0
 ES	España	09	Cataluña	43	Tarragona	43161	Valls	0	0
 ES	España	09	Cataluña	43	Tarragona	43162	Vandellòs i l'Hospitalet de l'Infant	0	0
 ES	España	09	Cataluña	43	Tarragona	43163	Vendrell, El	0	0
@@ -1989,6 +1992,7 @@ ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12004	Alcalà de Xive
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12005	Alcora, l'	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12007	Alfondeguilla	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12009	Almazora/Almassora	0	0
+ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12010	Almedíjar	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12011	Almenara	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12901	Alquerías del Niño Perdido	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12015	Argelita	0	0
@@ -2302,6 +2306,7 @@ ES	España	12	Galicia	15	Coruña, A	15072	Rianxo	0	0
 ES	España	12	Galicia	15	Coruña, A	15073	Ribeira	0	0
 ES	España	12	Galicia	15	Coruña, A	15074	Rois	0	0
 ES	España	12	Galicia	15	Coruña, A	15075	Sada	0	0
+ES	España	12	Galicia	15	Coruña, A	15076	San Sadurniño	0	0
 ES	España	12	Galicia	15	Coruña, A	15078	Santiago de Compostela	0	1
 ES	España	12	Galicia	15	Coruña, A	15082	Teo	0	0
 ES	España	12	Galicia	15	Coruña, A	15087	Valdoviño	0	0
@@ -2492,6 +2497,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28133	San Martín de Valdeiglesias	
 ES	España	13	Madrid, Comunidad de	28	Madrid	28134	San Sebastián de los Reyes	0	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28135	Santa María de la Alameda	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28137	Santos de la Humosa, Los	0	0
+ES	España	13	Madrid, Comunidad de	28	Madrid	28140	Serranillos del Valle	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28141	Sevilla la Nueva	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28144	Soto del Real	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28145	Talamanca de Jarama	0	0
@@ -2525,8 +2531,8 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28183	Zarzalejo	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	None	None	0	0
 ES	España	19	Melilla	52	Melilla	52001	Melilla	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30001	Abanilla	0	0
-ES	España	14	Murcia, Región de	30	Murcia	30002	Abarán	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30003	Águilas	0	0
+ES	España	14	Murcia, Región de	30	Murcia	30002	Albarán	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30005	Alcantarilla	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30902	Alcázares, Los	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30008	Alhama de Murcia	0	0

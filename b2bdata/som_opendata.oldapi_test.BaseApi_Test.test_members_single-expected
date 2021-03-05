@@ -642,6 +642,7 @@ ES	España	05	Canarias	38	Santa Cruz de Tenerife	38040	Santiago del Teide	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38041	Sauzal, El	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38042	Silos, Los	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38043	Tacoronte	1
+ES	España	05	Canarias	38	Santa Cruz de Tenerife	38045	Tazacorte	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38046	Tegueste	1
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38047	Tijarafe	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38049	Valle Gran Rey	0
@@ -963,6 +964,7 @@ ES	España	07	Castilla y León	37	Salamanca	37294	Santa Marta de Tormes	1
 ES	España	07	Castilla y León	37	Salamanca	37328	Trabanca	1
 ES	España	07	Castilla y León	37	Salamanca	37354	Villamayor	0
 ES	España	07	Castilla y León	37	Salamanca	37362	Villares de la Reina	1
+ES	España	07	Castilla y León	40	Segovia	40007	Aldealengua de Pedraza	0
 ES	España	07	Castilla y León	40	Segovia	40035	Cabañas de Polendos	1
 ES	España	07	Castilla y León	40	Segovia	40045	Casla	0
 ES	España	07	Castilla y León	40	Segovia	40063	Cuéllar	1
@@ -1044,7 +1046,7 @@ ES	España	09	Cataluña	08	Barcelona	08016	Bagà	6
 ES	España	09	Cataluña	08	Barcelona	08017	Balenyà	0
 ES	España	09	Cataluña	08	Barcelona	08018	Balsareny	5
 ES	España	09	Cataluña	08	Barcelona	08252	Barberà del Vallès	29
-ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3128
+ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3127
 ES	España	09	Cataluña	08	Barcelona	08020	Begues	19
 ES	España	09	Cataluña	08	Barcelona	08021	Bellprat	0
 ES	España	09	Cataluña	08	Barcelona	08022	Berga	31
@@ -1351,14 +1353,14 @@ ES	España	09	Cataluña	17	Girona	17021	Beuda	1
 ES	España	09	Cataluña	17	Girona	17022	Bisbal d'Empordà, La	17
 ES	España	09	Cataluña	17	Girona	17234	Biure	1
 ES	España	09	Cataluña	17	Girona	17023	Blanes	27
-ES	España	09	Cataluña	17	Girona	17029	Boadella i les Escaules	1
+ES	España	09	Cataluña	17	Girona	17029	Boadella i les Escaules	0
 ES	España	09	Cataluña	17	Girona	17024	Bolvir	0
 ES	España	09	Cataluña	17	Girona	17025	Bordils	7
 ES	España	09	Cataluña	17	Girona	17026	Borrassà	0
 ES	España	09	Cataluña	17	Girona	17027	Breda	17
 ES	España	09	Cataluña	17	Girona	17028	Brunyola	2
 ES	España	09	Cataluña	17	Girona	17031	Cabanelles	2
-ES	España	09	Cataluña	17	Girona	17030	Cabanes	2
+ES	España	09	Cataluña	17	Girona	17030	Cabanes	1
 ES	España	09	Cataluña	17	Girona	17032	Cadaqués	2
 ES	España	09	Cataluña	17	Girona	17033	Caldes de Malavella	12
 ES	España	09	Cataluña	17	Girona	17034	Calonge	5
@@ -1453,7 +1455,7 @@ ES	España	09	Cataluña	17	Girona	17135	Pont de Molins	2
 ES	España	09	Cataluña	17	Girona	17136	Pontós	2
 ES	España	09	Cataluña	17	Girona	17137	Porqueres	12
 ES	España	09	Cataluña	17	Girona	17138	Portbou	0
-ES	España	09	Cataluña	17	Girona	17140	Port de la Selva, El	2
+ES	España	09	Cataluña	17	Girona	17140	Port de la Selva, El	3
 ES	España	09	Cataluña	17	Girona	17139	Preses, Les	2
 ES	España	09	Cataluña	17	Girona	17141	Puigcerdà	6
 ES	España	09	Cataluña	17	Girona	17142	Quart	5
@@ -1740,7 +1742,7 @@ ES	España	09	Cataluña	43	Tarragona	43007	Aleixar, L'	2
 ES	España	09	Cataluña	43	Tarragona	43009	Alforja	2
 ES	España	09	Cataluña	43	Tarragona	43010	Alió	1
 ES	España	09	Cataluña	43	Tarragona	43011	Almoster	1
-ES	España	09	Cataluña	43	Tarragona	43012	Altafulla	10
+ES	España	09	Cataluña	43	Tarragona	43012	Altafulla	11
 ES	España	09	Cataluña	43	Tarragona	43013	Ametlla de Mar, L'	3
 ES	España	09	Cataluña	43	Tarragona	43906	Ampolla, L'	0
 ES	España	09	Cataluña	43	Tarragona	43014	Amposta	25
@@ -1878,6 +1880,7 @@ ES	España	09	Cataluña	43	Tarragona	43153	Torredembarra	11
 ES	España	09	Cataluña	43	Tarragona	43155	Tortosa	21
 ES	España	09	Cataluña	43	Tarragona	43156	Ulldecona	7
 ES	España	09	Cataluña	43	Tarragona	43157	Ulldemolins	0
+ES	España	09	Cataluña	43	Tarragona	43160	Vallmoll	0
 ES	España	09	Cataluña	43	Tarragona	43161	Valls	19
 ES	España	09	Cataluña	43	Tarragona	43162	Vandellòs i l'Hospitalet de l'Infant	2
 ES	España	09	Cataluña	43	Tarragona	43163	Vendrell, El	13
@@ -1989,6 +1992,7 @@ ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12004	Alcalà de Xive
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12005	Alcora, l'	3
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12007	Alfondeguilla	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12009	Almazora/Almassora	6
+ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12010	Almedíjar	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12011	Almenara	1
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12901	Alquerías del Niño Perdido	4
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12015	Argelita	0
@@ -2302,6 +2306,7 @@ ES	España	12	Galicia	15	Coruña, A	15072	Rianxo	2
 ES	España	12	Galicia	15	Coruña, A	15073	Ribeira	4
 ES	España	12	Galicia	15	Coruña, A	15074	Rois	1
 ES	España	12	Galicia	15	Coruña, A	15075	Sada	0
+ES	España	12	Galicia	15	Coruña, A	15076	San Sadurniño	0
 ES	España	12	Galicia	15	Coruña, A	15078	Santiago de Compostela	27
 ES	España	12	Galicia	15	Coruña, A	15082	Teo	0
 ES	España	12	Galicia	15	Coruña, A	15087	Valdoviño	0
@@ -2492,6 +2497,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28133	San Martín de Valdeiglesias	
 ES	España	13	Madrid, Comunidad de	28	Madrid	28134	San Sebastián de los Reyes	22
 ES	España	13	Madrid, Comunidad de	28	Madrid	28135	Santa María de la Alameda	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28137	Santos de la Humosa, Los	0
+ES	España	13	Madrid, Comunidad de	28	Madrid	28140	Serranillos del Valle	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28141	Sevilla la Nueva	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28144	Soto del Real	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28145	Talamanca de Jarama	0
@@ -2525,8 +2531,8 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28183	Zarzalejo	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	None	None	0
 ES	España	19	Melilla	52	Melilla	52001	Melilla	1
 ES	España	14	Murcia, Región de	30	Murcia	30001	Abanilla	2
-ES	España	14	Murcia, Región de	30	Murcia	30002	Abarán	0
 ES	España	14	Murcia, Región de	30	Murcia	30003	Águilas	1
+ES	España	14	Murcia, Región de	30	Murcia	30002	Albarán	0
 ES	España	14	Murcia, Región de	30	Murcia	30005	Alcantarilla	0
 ES	España	14	Murcia, Región de	30	Murcia	30902	Alcázares, Los	0
 ES	España	14	Murcia, Región de	30	Murcia	30008	Alhama de Murcia	2

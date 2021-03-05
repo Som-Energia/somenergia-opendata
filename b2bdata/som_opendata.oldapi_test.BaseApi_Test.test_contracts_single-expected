@@ -896,6 +896,7 @@ ES	España	05	Canarias	38	Santa Cruz de Tenerife	38003	Alajeró	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38004	Arafo	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38005	Arico	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38006	Arona	0
+ES	España	05	Canarias	38	Santa Cruz de Tenerife	38007	Barlovento	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38008	Breña Alta	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38009	Breña Baja	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38010	Buenavista del Norte	0
@@ -1114,6 +1115,7 @@ ES	España	08	Castilla - La Mancha	16	Cuenca	16112	Huete	0
 ES	España	08	Castilla - La Mancha	16	Cuenca	16113	Iniesta	0
 ES	España	08	Castilla - La Mancha	16	Cuenca	16117	Landete	0
 ES	España	08	Castilla - La Mancha	16	Cuenca	16125	Minglanilla	1
+ES	España	08	Castilla - La Mancha	16	Cuenca	16126	Mira	0
 ES	España	08	Castilla - La Mancha	16	Cuenca	16133	Mota del Cuervo	8
 ES	España	08	Castilla - La Mancha	16	Cuenca	16134	Motilla del Palancar	3
 ES	España	08	Castilla - La Mancha	16	Cuenca	16148	Palomares del Campo	0
@@ -1308,6 +1310,7 @@ ES	España	07	Castilla y León	05	Ávila	05021	Barco de Ávila, El	0
 ES	España	07	Castilla y León	05	Ávila	05022	Barraco, El	0
 ES	España	07	Castilla y León	05	Ávila	05024	Becedas	0
 ES	España	07	Castilla y León	05	Ávila	05038	Bonilla de la Sierra	0
+ES	España	07	Castilla y León	05	Ávila	05041	Burgohondo	0
 ES	España	07	Castilla y León	05	Ávila	05044	Cabezas del Villar	0
 ES	España	07	Castilla y León	05	Ávila	05047	Candeleda	4
 ES	España	07	Castilla y León	05	Ávila	05054	Casavieja	3
@@ -1365,6 +1368,7 @@ ES	España	07	Castilla y León	09	Burgos	09026	Arlanzón	0
 ES	España	07	Castilla y León	09	Burgos	09027	Arraya de Oca	0
 ES	España	07	Castilla y León	09	Burgos	09038	Barbadillo del Mercado	1
 ES	España	07	Castilla y León	09	Burgos	09043	Barrios de Bureba, Los	0
+ES	España	07	Castilla y León	09	Burgos	09045	Basconcillos del Tozo	0
 ES	España	07	Castilla y León	09	Burgos	09047	Belbimbre	1
 ES	España	07	Castilla y León	09	Burgos	09048	Belorado	0
 ES	España	07	Castilla y León	09	Burgos	09050	Berberana	0
@@ -1748,6 +1752,7 @@ ES	España	07	Castilla y León	40	Segovia	40150	Orejana	0
 ES	España	07	Castilla y León	40	Segovia	40901	Ortigosa del Monte	1
 ES	España	07	Castilla y León	40	Segovia	40152	Otero de Herreros	1
 ES	España	07	Castilla y León	40	Segovia	40155	Palazuelos de Eresma	0
+ES	España	07	Castilla y León	40	Segovia	40160	Pinarnegrillo	0
 ES	España	07	Castilla y León	40	Segovia	40163	Puebla de Pedraza	0
 ES	España	07	Castilla y León	40	Segovia	40181	Real Sitio de San Ildefonso	4
 ES	España	07	Castilla y León	40	Segovia	40168	Riaguas de San Bartolomé	0
@@ -3721,8 +3726,8 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28179	Villar del Olmo	3
 ES	España	13	Madrid, Comunidad de	28	Madrid	28181	Villaviciosa de Odón	5
 ES	España	13	Madrid, Comunidad de	28	Madrid	28183	Zarzalejo	1
 ES	España	14	Murcia, Región de	30	Murcia	30001	Abanilla	0
-ES	España	14	Murcia, Región de	30	Murcia	30002	Abarán	0
 ES	España	14	Murcia, Región de	30	Murcia	30003	Águilas	5
+ES	España	14	Murcia, Región de	30	Murcia	30002	Albarán	0
 ES	España	14	Murcia, Región de	30	Murcia	30005	Alcantarilla	0
 ES	España	14	Murcia, Región de	30	Murcia	30902	Alcázares, Los	0
 ES	España	14	Murcia, Región de	30	Murcia	30007	Alguazas	0
