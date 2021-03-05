@@ -1,3 +1,10 @@
+# Unreleased
+
+- State Map reviewed:
+  - Assign polygons to the correct state. (Fixes #5)
+  - Remove redundant polygons
+  - Extracted common styles from items and use id/classes
+
 # v0.2.17 2021-03-01
 
 - /spec returns the yaml openapi 3.0 spec
