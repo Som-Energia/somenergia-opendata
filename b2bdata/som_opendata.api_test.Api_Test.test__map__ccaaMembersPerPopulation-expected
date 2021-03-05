@@ -146,19 +146,19 @@
   <defs>
     <linearGradient gradientTransform="matrix(1.00156 0 0 1.00156 6.893 6.086)" gradientUnits="userSpaceOnUse" id="b" x1="607.126" x2="607.656" xlink:href="#a" y1="362.738" y2="435.04"/>
     <linearGradient id="a">
-      <stop offset="0" stop-color="#e0ecbb"/>
-      <stop offset=".25" stop-color="#c2da79"/>
+      <stop offset="0" stop-color="#384413"/>
+      <stop offset=".25" stop-color="#6e8625"/>
       <stop offset=".5" stop-color="#a4c738"/>
-      <stop offset=".75" stop-color="#6e8625"/>
-      <stop offset="1" stop-color="#384413"/>
+      <stop offset=".75" stop-color="#c2da79"/>
+      <stop offset="1" stop-color="#e0ecbb"/>
     </linearGradient>
   </defs>
     <path d="M605.395 369.123h20.199v72.82h-20.199z" fill="url(#b)" opacity=".97"/>
   <text font-family="sans-serif" font-size="8.012" font-weight="400" letter-spacing="0" stroke-width="1.002" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="643.231" y="376.057">
-    <tspan style="text-align:end" x="604.806" y="376.057">1</tspan>
+    <tspan style="text-align:end" x="604.806" y="376.057">200</tspan>
   </text>
   <text font-family="sans-serif" font-size="8.012" font-weight="400" letter-spacing="0" stroke-width="1.002" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="603.906" y="441.429">
-    <tspan x="603.906" y="441.429">200</tspan>
+    <tspan x="603.906" y="441.429">1</tspan>
   </text>
   <text font-family="sans-serif" font-size="8.012" font-weight="400" letter-spacing="0" stroke-width="1.002" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="604.334" y="425.9">
     <tspan x="604.334" y="425.9"></tspan>
@@ -169,4 +169,5 @@
   <text font-family="sans-serif" font-size="8.012" font-weight="400" letter-spacing="0" stroke-width="1.002" style="line-height:1.25;text-align:end" text-anchor="end" word-spacing="0" x="604.334" y="389.844">
     <tspan x="604.334" y="390.846"></tspan>
   </text>
+
 </svg>
