@@ -1,9 +1,11 @@
 # Unreleased
 
-- State Map reviewed:
-  - Assign polygons to the correct state. (Fixes #5)
-  - Remove redundant polygons
-  - Extracted common styles from items and use id/classes
+- Map legend puts higher values on top
+- State map poligons reviewed to match the state (Fixes #5)
+- State map clean up:
+  - Redundant polygons removed
+  - Repeated attributes moved to css
+  - text/tspan simplified into text
 
 # v0.2.17 2021-03-01
 
