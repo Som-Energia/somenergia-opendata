@@ -2,7 +2,7 @@
 
 - Map legend puts higher values on top
 - State map poligons reviewed to match the state (Fixes #5)
-- State map clean up:
+- State map clean up (one third lighter):
   - Redundant polygons removed
   - Repeated attributes moved to css
   - text/tspan simplified into text
