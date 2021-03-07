@@ -1,4 +1,4 @@
-# Unreleased
+# v0.2.18 2021-03-07
 
 - Map legend puts higher values on top
 - State map poligons reviewed to match the state (Fixes #5)
