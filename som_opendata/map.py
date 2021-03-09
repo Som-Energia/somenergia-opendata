@@ -52,7 +52,7 @@ def iterateLevel(data, geolevel):
 
 def maxValue(data, geolevel, frame):
 
-      # TODO: just for tests
+    # TODO: just for tests
     if geolevel == 'dummy':
         geolevel = 'ccaa'
 
