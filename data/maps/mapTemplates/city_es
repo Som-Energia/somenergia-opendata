@@ -260,38 +260,38 @@
 </g>
 </g>
 <style>
-.title {
+.title {{
 	font-family: Sans;
 	font-size: 10px;
 	font-weight: 600;
 	text-anchor: end;
-}
-.subtitle {
+}}
+.subtitle {{
 	font-family: Sans;
 	font-size: 8px;
 	font-weight: 400;
 	text-anchor: end;
-}
-.date {
+}}
+.date {{
 	font-family: Sans;
 	font-size: 8px;
 	font-weight: 600;
 	text-anchor: start;
-}
-.sea {
+}}
+.sea {{
 	fill: #cacaca;
 	stroke: #eee;
 	stroke-miterlimit: 3.864;
 	stroke-width: 2px;
-}
-.city path {
+}}
+.city path {{
 	stroke-width: 0.1;
 	stroke-linecap: round;
 	stroke-linejoin: round;
 	stroke: #444;
 	nofill: #777;
-}
-.city text {
+}}
+.city text {{
 	nofill: purple;
 	font-family: Sans;
 	font-size: 4px;
@@ -300,40 +300,40 @@
 	text-anchor: middle;
 	line-height: 1.25;
 	word-spacing: 0;
-}
-.city text[id^='number'] {
+}}
+.city text[id^='number'] {{
 	nofill: red;
 	font-weight: 400;
-}
-#disabledcity_08069 path { fill: {color_08069}; }
-#disabledcity_08076 path { fill: {color_08076}; }
-#disabledcity_08147 path { fill: {color_08147}; }
-#disabledcity_08001 path { fill: {color_08001}; }
-#disabledcity_08208 path { fill: {color_08208}; }
-#disabledcity_08114 path { fill: {color_08114}; }
-#disabledcity_08066 path { fill: {color_08066}; }
-#disabledcity_08196 path { fill: {color_08196}; }
-#disabledcity_08158 path { fill: {color_08158}; }
-#disabledcity_08072 path { fill: {color_08072}; }
-#disabledcity_08123 path { fill: {color_08123}; }
-#disabledcity_08157 path { fill: {color_08157}; }
-#disabledcity_08905 path { fill: {color_08905}; }
-#disabledcity_08211 path { fill: {color_08211}; }
-#disabledcity_08068 path { fill: {color_08068}; }
-#disabledcity_08263 path { fill: {color_08263}; }
-#disabledcity_08221 path { fill: {color_08221}; }
-#disabledcity_08295 path { fill: {color_08295}; }
-#disabledcity_08077 path { fill: {color_08077}; }
-#disabledcity_08244 path { fill: {color_08244}; }
-#disabledcity_08217 path { fill: {color_08217}; }
-#disabledcity_08289 path { fill: {color_08289}; }
-#disabledcity_08073 path { fill: {color_08073}; }
-#disabledcity_08200 path { fill: {color_08200}; }
-#disabledcity_08204 path { fill: {color_08204}; }
-#disabledcity_08020 path { fill: {color_08020}; }
-#disabledcity_08301 path { fill: {color_08301}; }
-#disabledcity_08089 path { fill: {color_08089}; }
-#disabledcity_08056 path { fill: {color_08056}; }
-#disabledcity_08169 path { fill: {color_08169}; }
+}}
+#disabledcity_08069 path {{ fill: {color_08069}; }}
+#disabledcity_08076 path {{ fill: {color_08076}; }}
+#disabledcity_08147 path {{ fill: {color_08147}; }}
+#disabledcity_08001 path {{ fill: {color_08001}; }}
+#disabledcity_08208 path {{ fill: {color_08208}; }}
+#disabledcity_08114 path {{ fill: {color_08114}; }}
+#disabledcity_08066 path {{ fill: {color_08066}; }}
+#disabledcity_08196 path {{ fill: {color_08196}; }}
+#disabledcity_08158 path {{ fill: {color_08158}; }}
+#disabledcity_08072 path {{ fill: {color_08072}; }}
+#disabledcity_08123 path {{ fill: {color_08123}; }}
+#disabledcity_08157 path {{ fill: {color_08157}; }}
+#disabledcity_08905 path {{ fill: {color_08905}; }}
+#disabledcity_08211 path {{ fill: {color_08211}; }}
+#disabledcity_08068 path {{ fill: {color_08068}; }}
+#disabledcity_08263 path {{ fill: {color_08263}; }}
+#disabledcity_08221 path {{ fill: {color_08221}; }}
+#disabledcity_08295 path {{ fill: {color_08295}; }}
+#disabledcity_08077 path {{ fill: {color_08077}; }}
+#disabledcity_08244 path {{ fill: {color_08244}; }}
+#disabledcity_08217 path {{ fill: {color_08217}; }}
+#disabledcity_08289 path {{ fill: {color_08289}; }}
+#disabledcity_08073 path {{ fill: {color_08073}; }}
+#disabledcity_08200 path {{ fill: {color_08200}; }}
+#disabledcity_08204 path {{ fill: {color_08204}; }}
+#disabledcity_08020 path {{ fill: {color_08020}; }}
+#disabledcity_08301 path {{ fill: {color_08301}; }}
+#disabledcity_08089 path {{ fill: {color_08089}; }}
+#disabledcity_08056 path {{ fill: {color_08056}; }}
+#disabledcity_08169 path {{ fill: {color_08169}; }}
 </style>
 </svg>
