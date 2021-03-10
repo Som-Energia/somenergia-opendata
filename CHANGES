@@ -1,11 +1,11 @@
-# v0.2.18 2021-03-07
+# v0.2.18 2021-03-10
 
 - Map legend puts higher values on top
 - Maps expand by default
 - State map poligons reviewed to match the state (Fixes #5)
-- State map clean up (one third lighter):
+- State map clean up (one third lighter!):
   - Redundant polygons removed
-  - Repeated attributes moved to css
+  - Repeated attributes moved to common css
   - text/tspan simplified into text
 
 # v0.2.17 2021-03-01
