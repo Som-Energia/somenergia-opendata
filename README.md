@@ -253,15 +253,25 @@ In order to incorporate new strings from code:
 
 More info about translation management on http://babel.pocoo.org/en/latest/setup.html
 
-
 ### Generate documentation
 
 ```bash
 npm install
-npm run docs
+npm run redocs
 ```
 
+### Testing
 
+Tests are unittest based, using either nosetests or pytest as runner is recommended.
+
+```bash
+TRAVIS=1 pytest som_opendata
+```
+
+`TRAVIS=1` will disable tests for code directly using SomEnergia databases.
+Mainly queries to extract annonymized by aggregation from non-annonymized original data.
+
+Notice: Some tests require translation catalog to be generated. See above.
 
 ## External data sources
 
