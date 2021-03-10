@@ -13,9 +13,9 @@ Public API to access open data information about the cooperative
 ## Example queries
 
 
-### Geographical distributions
+### Numerical data
 
-Follow the following structure `/<metric>[/by/<geolevel>][/on/<date>|[/monthly|/yearly][/from/<date>][/to/<date>]]
+Follow the following structure `/<metric>[/by/<geolevel>][/on/<date>|[/monthly|/yearly][/from/<date>][/to/<date>]]`
 
 - `/contracts`
     All current contracts
@@ -141,6 +141,7 @@ countries:
 ### Maps
 
 All maps are returned as SVG files.
+Follow the following structure `/map/<metric>[/per/<relative>][/by/<geolevel>][/on/<date>|[/monthly|/yearly][/from/<date>][/to/<date>]]`
 
 - `/map/contracts`
     All current contracts by ccaa
