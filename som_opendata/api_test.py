@@ -105,10 +105,12 @@ class Api_Test(unittest.TestCase):
 
     def assertYamlResponse(self, response, expected, status=200):
         self.assertNsEqual(response.data, expected)
+        self.assertEqual(response.mimetype, 'application/yaml')
         self.assertEqual(response.status_code, status)
 
-    def assertTsvResponse(self, response, status=200):
+    def assertB2BResponse(self, response, status=200, mimetype=None):
         self.assertB2BEqual(response.data)
+        self.assertEqual(response.mimetype, mimetype or 'application/yaml')
         self.assertEqual(response.status_code, status)
 
 
@@ -251,18 +253,14 @@ class Api_Test(unittest.TestCase):
 
     def test__metric_onDate(self):
         r = self.get('/members/on/2018-01-01')
-        self.assertTsvResponse(r)
+        self.assertB2BResponse(r)
 
     def test__metric_level_onDate(self):
         r = self.get('/members/by/world/on/2018-01-01')
-        self.assertTsvResponse(r)
+        self.assertB2BResponse(r)
 
     @unittest.skip('NOT IMPLEMENTED YET')
-    def test__metric_today(self):
-        self.setupSource(
-            headers+'\tcount_'+str(Date.today()).replace('-','_'),
-            data_Adra+'\t123',
-            )
+    def test__metric_lastDate(self):
         r = self.get('/members')
         self.assertYamlResponse(r, """\
             dates: ["""+str(Date.today())+"""]
@@ -270,14 +268,10 @@ class Api_Test(unittest.TestCase):
             """)
 
     @unittest.skip('NOT IMPLEMENTED YET')
-    def test__metric_level__today(self):
-        self.setupSource(
-            headers+'\tcount_'+str(Date.today()).replace('-','_'),
-            data_Adra+'\t123',
-            )
+    def test__metric_level__lastDate(self):
         r = self.get('/members/by/city')
         self.assertYamlResponse(r, """\
-            dates: ["""+str(Date.today())+"""]
+            dates: 2020-01-02
             values: [123]
             countries:
               ES:
@@ -299,46 +293,46 @@ class Api_Test(unittest.TestCase):
 
     def test__metric_level_frequency(self):
         r = self.get('/members/by/country/yearly')
-        self.assertTsvResponse(r)
+        self.assertB2BResponse(r)
 
     def test__metric_level_frequency_fromDate(self):
         r = self.get('/members/by/world/yearly/from/2017-01-01')
-        self.assertTsvResponse(r)
+        self.assertB2BResponse(r)
 
     def test__metric_level_frequency_fromDate_toDate(self):
         r = self.get('/members/by/world/monthly/from/2018-01-01/to/2018-03-01')
-        self.assertTsvResponse(r)
+        self.assertB2BResponse(r)
 
     def test__metric_level_frequency_fromDate_sumAggregatedMonth(self):
         r = self.get('/newmembers/by/world/yearly/from/2017-01-01')
-        self.assertTsvResponse(r)
+        self.assertB2BResponse(r)
 
     def test__metric_level_frequency_toDate(self):
         api.firstDate = '2018-02-01'
         r = self.get('/members/by/world/monthly/to/2018-03-01')
-        self.assertTsvResponse(r)
+        self.assertB2BResponse(r)
 
     def test__metric_frequency_fromDate_toDate(self):
         r = self.get('/members/monthly/from/2018-01-01/to/2018-02-01')
-        self.assertTsvResponse(r)
+        self.assertB2BResponse(r)
 
     def test__metric_frequency(self):
         r = self.get('/members/yearly')
-        self.assertTsvResponse(r)
+        self.assertB2BResponse(r)
 
     def test__metric_level_onDate_filter(self):
         r = self.get('/members/by/city/on/2018-01-01?city=17007')
-        self.assertTsvResponse(r)
+        self.assertB2BResponse(r)
 
     def test__metric(self):
         r = self.get('/members')
-        self.assertTsvResponse(r)
+        self.assertB2BResponse(r)
 
     def test__metric_onDate__oldDate(self):
         r = self.get('/members/on/1994-09-01')
         self.assertYamlResponse(r, """\
             message: Missing Dates ['1994-09-01']
-            """, 500)
+            """, 404)
 
     def test__metric_level__badGeolevel(self):
         r = self.get('/members/by/badgeolevel')
@@ -358,11 +352,11 @@ class Api_Test(unittest.TestCase):
             message: Invalid frequency 'badly'. Accepted ones are 'monthly', 'yearly', None.
             """, 400)
 
-    # TODO: turn 404 in yaml messages
     def test__metric_onDate__badDate(self):
         r = self.get('/members/on/baddate')
-        self.assertEqual(r.data, b"Request not found!")
-        self.assertEqual(r.status_code, 404)
+        self.assertYamlResponse(r, """\
+            message: Request not found!
+        """, 404)
 
     # TODO: Should it be an error
     def test__metric_level_onDate_filter__filterValueNotFound(self):
@@ -371,13 +365,11 @@ class Api_Test(unittest.TestCase):
             {}
         """, 200)
 
-
-    # TODO: turn 404 in yaml messages
     def test__metric_level_onDate_fromDate__onAndFromIncompatible(self):
         r = self.get('/members/by/city/on/2018-01-01/from/2018-02-02')
-        self.assertEqual(r.data, b"Request not found!")
-        self.assertEqual(r.status_code, 404)
-
+        self.assertYamlResponse(r, """\
+            message: Request not found!
+        """, 404)
 
     def test__metric_level_onDate_filter__badLocalGroup(self):
         r = self.get('/members/by/city/on/2018-01-01?localgroup=Unknown')
@@ -397,7 +389,7 @@ class Api_Test(unittest.TestCase):
 
     def test__metric_frequency_fromDate_toDate__noExactFirstDate(self):
         r = self.get('/members/monthly/from/2018-03-15/to/2018-04-15')
-        self.assertTsvResponse(r, 200)
+        self.assertB2BResponse(r)
 
     def test__metric__badMetric(self):
         r = self.get('/incorrectMetric')
@@ -411,70 +403,57 @@ class Api_Test(unittest.TestCase):
 
     def test__map__ccaaMembers(self):
         r = self.get('/map/members')
-        self.assertEqual(r.status, '200 OK')
-        self.assertEqual(r.mimetype, 'image/svg+xml')
-        self.assertB2BEqual(r.data)
+        self.assertB2BResponse(r, status=200, mimetype='image/svg+xml')
 
     def test__map__ccaaMembersDateSet(self):
         r = self.get('/map/members/on/2018-01-01')
-        self.assertEqual(r.status, '200 OK')
-        self.assertEqual(r.mimetype, 'image/svg+xml')
-        self.assertB2BEqual(r.data)
+        self.assertB2BResponse(r, status=200, mimetype='image/svg+xml')
 
     def test__map__statesMembers(self):
         r = self.get('/map/members/by/state/on/2018-01-01')
-        self.assertEqual(r.status, '200 OK')
-        self.assertEqual(r.mimetype, 'image/svg+xml')
-        self.assertB2BEqual(r.data)
+        self.assertB2BResponse(r, status=200, mimetype='image/svg+xml')
 
     def test__map__onDateMissing(self):
         r = self.get('/map/members/on/2038-01-01')
-        self.assertEqual(r.status_code, 500)
-        self.assertEqual(r.mimetype, 'application/json')
+        self.assertB2BResponse(r, status=404, mimetype='image/svg+xml')
 
     def test__map__wrongMetric(self):
         r = self.get('/map/badmetric')
+        self.assertB2BResponse(r, status=400, mimetype='image/svg+xml')
+        return
         self.assertYamlResponse(r, """\
             parameter: metric
             valueRequest: badmetric
             possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts']
             message: Invalid metric 'badmetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts'.
-            """,400)
-        self.assertEqual(r.mimetype, 'application/json')
+            """, 400)
 
     def test__map__cityLevelNotYetImplemented(self):
-        r = self.get('/map/members/by/city')
+        r = self.get('/map/members/by/country')
+        self.assertB2BResponse(r, status=400, mimetype='image/svg+xml')
+        return
         self.assertYamlResponse(r, """\
             parameter: geolevel
-            valueRequest: city
-            possibleValues: ['ccaa', 'state']
-            message: Invalid geolevel 'city'. Accepted ones are 'ccaa', 'state'.
+            valueRequest: country
+            possibleValues: ['ccaa', 'state', 'city']
+            message: Invalid geolevel 'city'. Accepted ones are 'ccaa', 'state', 'city'.
             """, 400)
-        self.assertEqual(r.mimetype, 'application/json')
 
     def test__map__ccaaMembersPerPopulation(self):
         r = self.get('/map/members/per/population/on/2018-01-01')
-        self.assertEqual(r.status, '200 OK')
-        self.assertEqual(r.mimetype, 'image/svg+xml')
-        self.assertB2BEqual(r.data)
+        self.assertB2BResponse(r, status=200, mimetype='image/svg+xml')
 
     def test__map__ccaaMembersRangeDates__animated(self):
         r = self.get('/map/members/by/ccaa/monthly/from/2018-10-01/to/2019-01-01')
-        self.assertEqual(r.status, '200 OK')
-        self.assertEqual(r.mimetype, 'image/svg+xml')
-        self.assertB2BEqual(r.data)
+        self.assertB2BResponse(r, status=200, mimetype='image/svg+xml')
 
     def test__map__ccaaMembersCaLanguage(self):
         r = self.get('/map/members/on/2015-01-01', headers=[("Accept-Language", "ca")])
-        self.assertEqual(r.status, '200 OK')
-        self.assertEqual(r.mimetype, 'image/svg+xml')
-        self.assertB2BEqual(r.data)
+        self.assertB2BResponse(r, status=200, mimetype='image/svg+xml')
 
     def test__map__ccaaState_CaLanguageByParam(self):
         r = self.get('/map/members/by/state/on/2015-01-01?lang=ca')
-        self.assertEqual(r.status, '200 OK')
-        self.assertEqual(r.mimetype, 'image/svg+xml')
-        self.assertB2BEqual(r.data)
+        self.assertB2BResponse(r, status=200, mimetype='image/svg+xml')
 
     @unittest.skip("Activated just for profiling, not regular testing")
     def test__profiling(self):

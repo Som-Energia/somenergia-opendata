@@ -39,6 +39,7 @@ setup(
 		'babel',
 		'Wand', #make gifs
 		'flask-babel',
+		'decorator',
 		'future', # Py2 backward compat
 		'pathlib2', # Py2 backward compat
 		'frozendict', #use cache

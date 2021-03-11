@@ -3,6 +3,7 @@ from flask import Blueprint, request, current_app, make_response, send_file
 from yamlns import namespace as ns
 from .common import (
     yaml_response,
+    svg_response,
     validateParams,
     validateMapParams,
 )
@@ -718,6 +719,7 @@ If no language is specified, the language is chosen using the request headers.
 @api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
 @api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>')
 @api.route('/map/<string:metric>/per/<string:relativemetric>/by/<string:geolevel>/<string:frequency>/to/<isodate:todate>')
+@svg_response
 def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None, todate=None, relativemetric=None):
 
     validateMapParams(

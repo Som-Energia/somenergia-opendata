@@ -9,6 +9,7 @@ from yamlns import namespace as ns
 from consolemsg import u
 from flask_babel import lazy_gettext as _
 from werkzeug.exceptions import HTTPException
+from decorator import decorator
 
 # Domains
 
@@ -217,6 +218,30 @@ def requestDates(first=None, last=None, on=None, since=None, to=None, periodicit
 
 # Response formatting
 
+_svgError = """\
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+<rect stroke="red" fill="#cc7" x="2%" y="2%" width="96%" height="96%" stroke-width="1%" />
+<text id="message" font-family="Sans" font-weight="600" fill="red" x="50%" y="50%" text-anchor="middle">{0}</text>
+</svg>
+"""
+
+@decorator
+def svg_response(f, *args, **kwds):
+    def make_svg(content, code=200):
+        response = make_response(content, code)
+        response.mimetype = 'image/svg+xml'
+        return response
+
+    try:
+        return make_svg(f(*args, **kwds))
+    except HTTPException as e:
+        return make_svg(_svgError.format(e), e.code)
+    except Exception as e:
+        import traceback, sys
+        traceback.print_exception(*sys.exc_info())
+        return make_svg(_svgError.format(
+            "Unexpected error: {}".format(e)), 500)
+
 def tsv_response(f):
     @wraps(f)
     def wrapper(*args, **kwd):
@@ -248,7 +273,20 @@ def tsv_response(f):
 def yaml_response(f):
     @wraps(f)
     def wrapper(*args, **kwd):
-        result = f(*args, **kwd)
+        try:
+            result = f(*args, **kwd)
+        except OpenDataException as e:
+            response = make_response(e.data().dump(), e.code)
+            response.mimetype = 'application/yaml'
+            return response
+        except Exception as e:
+            import traceback, sys
+            traceback.print_exception(*sys.exc_info())
+            response = make_response(ns(
+                message="Unexpected error: {}".format(e),
+            ).dump(),  500)
+            response.mimetype = 'application/yaml'
+            return response
 
         if type(result) is Response:
             return result
@@ -276,17 +314,20 @@ def register_converters(app):
 
 # Error handling
 
-class MissingDateError(HTTPException):
+class OpenDataException(HTTPException):
+    """Base for all custom exceptions"""
+    def data(self):
+        return ns(
+            message=self.description,
+        )
 
-    missingDates = []
-    code = 500
-
+class MissingDateError(OpenDataException):
+    code = 404
     def __init__(self, missingDates):
         super(MissingDateError, self).__init__("Missing Dates " + u(missingDates))
         self.missingDates = missingDates
 
-
-class ValidateError(Exception):
+class ValidateError(OpenDataException):
 
     code = 400
     message_template = "Invalid {parameter} '{value}'. Accepted ones are {acceptedValues}."
@@ -299,6 +340,15 @@ class ValidateError(Exception):
             parameter=field,
             value=value,
             acceptedValues=u(allowed)[1:-1],
+        )
+        super(ValidateError, self).__init__(self.description)
+
+    def data(self):
+        return ns(
+            parameter=self.parameter,
+            valueRequest = self.value,
+            possibleValues = self.possibleValues,
+            message = self.description,
         )
 
 distributionParams = ns(
@@ -341,21 +391,18 @@ def validateMapParams(**params):
             allowed=mapParams[field],
         )
 
-class AliasNotFoundError(HTTPException):
+class AliasNotFoundError(OpenDataException):
     code = 400
     def __init__(self, alias, value):
         super(AliasNotFoundError, self).__init__(
             "{} '{}' not found".format(alias, value))
 
 
-@yaml_response
 def handle_request_not_found(e):
-    response = make_response('Request not found!', 404)
+    response = make_response('message: Request not found!', 404)
     response.mimetype = 'application/yaml'
     return response
 
-
-@yaml_response
 def handle_bad_request(self):
     if current_app.errors == None:
         response =  make_response('Bad Request', 400)
@@ -368,34 +415,9 @@ def handle_bad_request(self):
     response.mimetype = 'application/yaml'
     return response
 
-@yaml_response
-def handle_customErrorValidation(error):
-    return make_response(
-        jsonify(ns(message=error.description,
-            parameter=error.parameter,
-            valueRequest=error.value,
-            possibleValues=error.possibleValues
-            )), error.code
-    )
-
-@yaml_response
-def handle_missingDatesError(error):
-    return make_response(
-        jsonify(ns(message=error.description)), error.code
-    )
-
-@yaml_response
-def handle_aliasNotFoundError(error):
-    return make_response(
-        jsonify(ns(message=error.description)), error.code
-    )
-
 def register_handlers(app):
     app.register_error_handler(404, handle_request_not_found)
     app.register_error_handler(400, handle_bad_request)
-    app.register_error_handler(MissingDateError, handle_missingDatesError)
-    app.register_error_handler(ValidateError, handle_customErrorValidation)
-    app.register_error_handler(AliasNotFoundError, handle_aliasNotFoundError)
 
 # Cors
 

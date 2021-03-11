@@ -392,11 +392,11 @@ class Common_Test(unittest.TestCase):
 
     def test__validateMapParams__notImplementedValue(self):
         with self.assertRaises(ValidateError) as ctx:
-            validateMapParams(geolevel='city') # not implemented
+            validateMapParams(geolevel='country') # not implemented
         self.assertEqual(ctx.exception.parameter, 'geolevel')
-        self.assertEqual(ctx.exception.value, 'city')
+        self.assertEqual(ctx.exception.value, 'country')
         self.assertEqual(ctx.exception.code, 400)
         self.assertEqual(ctx.exception.description,
-            "Invalid geolevel 'city'. Accepted ones are 'ccaa', 'state'.")
+            "Invalid geolevel 'country'. Accepted ones are 'ccaa', 'state'.")
 
 # vim: et ts=4 sw=4
