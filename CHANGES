@@ -1,3 +1,8 @@
+# Unreleased
+
+- map api errors as svg images
+- numeric api errors as yaml
+
 # v0.2.18 2021-03-10
 
 - Map legend puts higher values on top
