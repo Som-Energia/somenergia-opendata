@@ -21,6 +21,7 @@ from .distribution import (
     addObjects,
     getAggregated,
     distributionKey,
+    aggregated2table,
     )
 from .csvSource import loadCsvSource
 from functools import lru_cache
@@ -123,6 +124,21 @@ class Distribution_Test(unittest.TestCase):
               name2: value2
             """
             )
+
+    def test__aggregated2table_global_singleDate(self):
+        data=ns.loads("""\
+            dates: 
+            - 2018-01-01
+            values: [2]
+        """)
+
+        self.assertEqual(
+            list(aggregated2table(data)),
+            [
+                ['2018-01-01'],
+                [2],
+            ])
+
 
     def test__aggregate__1line(self):
         data = u'\n'.join([

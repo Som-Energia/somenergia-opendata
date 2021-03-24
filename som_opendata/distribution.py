@@ -96,6 +96,9 @@ def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
     return result
 
 
+def aggregated2table(data):
+    return ['2018-01-01'],[2]
+
 def locationFilter(entries, filters):
     if not filters: return entries
 
