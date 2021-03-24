@@ -97,7 +97,16 @@ def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
 
 
 def aggregated2table(data):
+    if 'countries' in data: return aggregateCountries2Table(data.dates, data.countries)
     return data.dates,data['values']
+
+def aggregateCountries2Table(dates, countries):
+    return [
+        ['country_code', 'country', *dates],
+        [
+            'ES', 'España', *countries['ES']['values']
+        ],
+    ]
 
 def locationFilter(entries, filters):
     if not filters: return entries

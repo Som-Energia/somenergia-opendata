@@ -139,6 +139,24 @@ class Distribution_Test(unittest.TestCase):
                 [2],
             ])
 
+    def test__aggregated2table_country_singleItem(self):
+        data=ns.loads("""\
+            dates: 
+            - 2018-01-01
+            values: [2]
+            countries:
+              ES: 
+                 name: España
+                 values: [2]
+        """)
+
+        self.assertEqual(
+            list(aggregated2table(data)),
+            [
+                ['country_code', 'country', isoDate('2018-01-01')],
+                ['ES', 'España', 2],
+            ])
+
 
     def test__aggregate__1line(self):
         data = u'\n'.join([
