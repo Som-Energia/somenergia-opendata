@@ -38,7 +38,7 @@ data_Amer = u"ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
 skipSlow = False
 
 class Distribution_Test(unittest.TestCase):
-    
+
 
     def setUp(self):
         self.maxDiff=None
@@ -127,7 +127,7 @@ class Distribution_Test(unittest.TestCase):
 
     def test__aggregated2table_global_singleDate(self):
         data=ns.loads("""\
-            dates: 
+            dates:
             - 2018-01-01
             values: [2]
         """)
@@ -141,11 +141,11 @@ class Distribution_Test(unittest.TestCase):
 
     def test__aggregated2table_countries_oneCountry(self):
         data=ns.loads("""\
-            dates: 
+            dates:
             - 2018-01-01
             values: [2]
             countries:
-              ES: 
+              ES:
                  name: España
                  values: [2]
         """)
@@ -159,14 +159,14 @@ class Distribution_Test(unittest.TestCase):
 
     def test__aggregated2table_countries_manyCountries(self):
         data=ns.loads("""\
-            dates: 
+            dates:
             - 2018-01-01
             values: [7]
             countries:
-              ES: 
+              ES:
                  name: España
                  values: [2]
-              FR: 
+              FR:
                  name: Francia
                  values: [5]
         """)
@@ -188,7 +188,7 @@ class Distribution_Test(unittest.TestCase):
         objectList = tuples2objects(parse_tsv(data))
         r = aggregate(objectList, 'city')
         self.assertNsEqual(r,"""\
-            dates: 
+            dates:
             - 2018-01-01
             values: [2]
             countries:
@@ -218,7 +218,7 @@ class Distribution_Test(unittest.TestCase):
         objectList = tuples2objects(parse_tsv(data))
         r = aggregate(objectList, 'city')
         self.assertNsEqual(r,"""\
-            dates: 
+            dates:
             - 2018-01-01
             - 2018-02-01
             values: [2, 3]
@@ -250,7 +250,7 @@ class Distribution_Test(unittest.TestCase):
         objectList = tuples2objects(parse_tsv(data))
         r = aggregate(objectList, 'city')
         self.assertNsEqual(r,"""\
-            dates: 
+            dates:
             - 2018-01-01
             values: [12]
             countries:
@@ -296,7 +296,7 @@ class Distribution_Test(unittest.TestCase):
         objectList = tuples2objects(parse_tsv(data))
         r = aggregate(objectList, 'city')
         self.assertNsEqual(r,"""\
-            dates: 
+            dates:
             - 2018-01-01
             values: [22]
             countries:
@@ -338,7 +338,7 @@ class Distribution_Test(unittest.TestCase):
         objectList = tuples2objects(parse_tsv(data))
         r = aggregate(objectList, 'city')
         self.assertNsEqual(r,"""\
-            dates: 
+            dates:
             - 2018-01-01
             values: [1020]
             countries:
@@ -375,7 +375,7 @@ class Distribution_Test(unittest.TestCase):
         objectList = tuples2objects(parse_tsv(data))
         r = aggregate(objectList, 'city')
         self.assertNsEqual(r,"""\
-            dates: 
+            dates:
             - 2018-01-01
             values: [2020]
             countries:
@@ -710,7 +710,7 @@ class Distribution_Test(unittest.TestCase):
         objectList = tuples2objects(parse_tsv(data))
         r = aggregate(objectList,'country')
         self.assertNsEqual(r,"""\
-            dates: 
+            dates:
             - 2018-01-01
             values: [2020]
             countries:
@@ -728,7 +728,7 @@ class Distribution_Test(unittest.TestCase):
         objectList = tuples2objects(parse_tsv(data))
         r = aggregate(objectList,'state')
         self.assertNsEqual(r,"""\
-            dates: 
+            dates:
             - 2018-01-01
             values: [2020]
             countries:
@@ -754,7 +754,7 @@ class Distribution_Test(unittest.TestCase):
         objectList = tuples2objects(parse_tsv(data))
         r = aggregate(objectList,'world')
         self.assertNsEqual(r,"""\
-            dates: 
+            dates:
             - 2018-01-01
             values: [2020]
             """)
@@ -767,7 +767,7 @@ class Distribution_Test(unittest.TestCase):
         objectList = tuples2objects(parse_tsv(data))
         r = aggregate(objectList,'ccaa')
         self.assertB2BEqual(r.dump())
-        
+
 
     # validateStringDate
 
