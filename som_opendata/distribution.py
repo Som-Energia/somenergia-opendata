@@ -103,9 +103,9 @@ def aggregated2table(data):
 def aggregateCountries2Table(dates, countries):
     return [
         ['country_code', 'country', *dates],
-        [
-            'ES', 'España', *countries['ES']['values']
-        ],
+    ] + [
+        [ key, data.name, *data['values'] ]
+        for key, data in countries.items()
     ]
 
 def locationFilter(entries, filters):
