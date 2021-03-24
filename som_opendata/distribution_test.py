@@ -135,7 +135,7 @@ class Distribution_Test(unittest.TestCase):
         self.assertEqual(
             list(aggregated2table(data)),
             [
-                ['2018-01-01'],
+                [isoDate('2018-01-01')],
                 [2],
             ])
 
