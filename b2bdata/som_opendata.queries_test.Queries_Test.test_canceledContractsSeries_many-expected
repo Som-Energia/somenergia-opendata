@@ -253,6 +253,7 @@ ES	España	01	Andalucia	23	Jaén	23005	Andújar	0	0
 ES	España	01	Andalucia	23	Jaén	23007	Arjonilla	0	0
 ES	España	01	Andalucia	23	Jaén	23009	Baeza	0	0
 ES	España	01	Andalucia	23	Jaén	23010	Bailén	0	0
+ES	España	01	Andalucia	23	Jaén	23011	Baños de la Encina	0	0
 ES	España	01	Andalucia	23	Jaén	23902	Bedmar y Garcíez	0	0
 ES	España	01	Andalucia	23	Jaén	23014	Begíjar	0	0
 ES	España	01	Andalucia	23	Jaén	23017	Cabra del Santo Cristo	0	0
@@ -1275,6 +1276,7 @@ ES	España	08	Castilla - La Mancha	45	Toledo	45156	Santa Cruz de la Zarza	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45157	Santa Cruz del Retamar	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45158	Santa Olalla	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45161	Seseña	0	0
+ES	España	08	Castilla - La Mancha	45	Toledo	45162	Sevilleja de la Jara	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45163	Sonseca	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45165	Talavera de la Reina	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45167	Toboso, El	0	0
@@ -1684,6 +1686,7 @@ ES	España	07	Castilla y León	37	Salamanca	37272	Saelices el Chico	0	0
 ES	España	07	Castilla y León	37	Salamanca	37274	Salamanca	0	1
 ES	España	07	Castilla y León	37	Salamanca	37277	Salvatierra de Tormes	0	0
 ES	España	07	Castilla y León	37	Salamanca	37278	San Cristóbal de la Cuesta	0	0
+ES	España	07	Castilla y León	37	Salamanca	37279	Sancti-Spíritus	0	0
 ES	España	07	Castilla y León	37	Salamanca	37284	San Esteban de la Sierra	0	0
 ES	España	07	Castilla y León	37	Salamanca	37287	San Miguel de Valero	0	0
 ES	España	07	Castilla y León	37	Salamanca	37294	Santa Marta de Tormes	0	0
@@ -1963,6 +1966,7 @@ ES	España	09	Cataluña	08	Barcelona	08017	Balenyà	0	0
 ES	España	09	Cataluña	08	Barcelona	08018	Balsareny	0	0
 ES	España	09	Cataluña	08	Barcelona	08252	Barberà del Vallès	0	0
 ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	21	29
+ES	España	09	Cataluña	08	Barcelona	08260	Barcelona	0	1
 ES	España	09	Cataluña	08	Barcelona	08020	Begues	0	0
 ES	España	09	Cataluña	08	Barcelona	08021	Bellprat	0	0
 ES	España	09	Cataluña	08	Barcelona	08022	Berga	0	0
@@ -2154,7 +2158,6 @@ ES	España	09	Cataluña	08	Barcelona	08258	Santa Maria d'Oló	0	0
 ES	España	09	Cataluña	08	Barcelona	08196	Sant Andreu de la Barca	0	0
 ES	España	09	Cataluña	08	Barcelona	08197	Sant Andreu de Llavaneres	0	0
 ES	España	09	Cataluña	08	Barcelona	08198	Sant Antoni de Vilamajor	0	0
-ES	España	09	Cataluña	08	Barcelona	08260	Santa Perpètua de Mogoda	0	1
 ES	España	09	Cataluña	08	Barcelona	08261	Santa Susanna	0	0
 ES	España	09	Cataluña	08	Barcelona	08199	Sant Bartomeu del Grau	0	0
 ES	España	09	Cataluña	08	Barcelona	08200	Sant Boi de Llobregat	0	0
@@ -3304,11 +3307,13 @@ ES	España	11	Extremadura	06	Badajoz	06060	Guareña	0	0
 ES	España	11	Extremadura	06	Badajoz	06063	Herrera del Duque	0	0
 ES	España	11	Extremadura	06	Badajoz	06070	Jerez de los Caballeros	0	0
 ES	España	11	Extremadura	06	Badajoz	06074	Llerena	0	0
+ES	España	11	Extremadura	06	Badajoz	06072	Lobón	0	0
 ES	España	11	Extremadura	06	Badajoz	06075	Magacela	0	0
 ES	España	11	Extremadura	06	Badajoz	06083	Mérida	0	0
 ES	España	11	Extremadura	06	Badajoz	06085	Monesterio	0	0
 ES	España	11	Extremadura	06	Badajoz	06087	Monterrubio de la Serena	0	0
 ES	España	11	Extremadura	06	Badajoz	06088	Montijo	0	0
+ES	España	11	Extremadura	06	Badajoz	06091	Navalvillar de Pela	0	0
 ES	España	11	Extremadura	06	Badajoz	06093	Oliva de la Frontera	0	0
 ES	España	11	Extremadura	06	Badajoz	06095	Olivenza	0	0
 ES	España	11	Extremadura	06	Badajoz	06097	Orellana la Vieja	0	0
@@ -3726,8 +3731,8 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28179	Villar del Olmo	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28181	Villaviciosa de Odón	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28183	Zarzalejo	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30001	Abanilla	0	0
+ES	España	14	Murcia, Región de	30	Murcia	30002	Abarán	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30003	Águilas	0	0
-ES	España	14	Murcia, Región de	30	Murcia	30002	Albarán	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30005	Alcantarilla	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30902	Alcázares, Los	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30007	Alguazas	0	0
@@ -3997,6 +4002,7 @@ ES	España	16	País Vasco	48	Bizkaia	48036	Galdakao	0	0
 ES	España	16	País Vasco	48	Bizkaia	48038	Gamiz-Fika	0	0
 ES	España	16	País Vasco	48	Bizkaia	48046	Gernika-Lumo	0	0
 ES	España	16	País Vasco	48	Bizkaia	48044	Getxo	1	0
+ES	España	16	País Vasco	48	Bizkaia	48042	Gordexola	0	0
 ES	España	16	País Vasco	48	Bizkaia	48043	Gorliz	0	0
 ES	España	16	País Vasco	48	Bizkaia	48045	Güeñes	0	0
 ES	España	16	País Vasco	48	Bizkaia	48094	Igorre	0	0
@@ -4041,6 +4047,7 @@ ES	España	16	País Vasco	20	Gipuzkoa	20013	Aretxabaleta	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20055	Arrasate/Mondragón	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20903	Astigarraga	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20017	Azkoitia	0	0
+ES	España	16	País Vasco	20	Gipuzkoa	20018	Azpeitia	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20019	Beasain	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20022	Berastegi	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20074	Bergara	0	0

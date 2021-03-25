@@ -967,6 +967,7 @@ ES	España	07	Castilla y León	37	Salamanca	37362	Villares de la Reina	0	0
 ES	España	07	Castilla y León	40	Segovia	40007	Aldealengua de Pedraza	0	0
 ES	España	07	Castilla y León	40	Segovia	40035	Cabañas de Polendos	0	0
 ES	España	07	Castilla y León	40	Segovia	40045	Casla	0	0
+ES	España	07	Castilla y León	40	Segovia	40060	Condado de Castilnovo	0	0
 ES	España	07	Castilla y León	40	Segovia	40063	Cuéllar	0	0
 ES	España	07	Castilla y León	40	Segovia	40072	Encinillas	0	0
 ES	España	07	Castilla y León	40	Segovia	40076	Espinar, El	0	0
@@ -1025,6 +1026,7 @@ ES	España	07	Castilla y León	47	Valladolid	47231	Zaratán	0	0
 ES	España	07	Castilla y León	49	Zamora	49104	Mahide	0	0
 ES	España	07	Castilla y León	49	Zamora	49127	Morales del Vino	0	0
 ES	España	07	Castilla y León	49	Zamora	49219	Toro	0	0
+ES	España	07	Castilla y León	49	Zamora	49235	Vezdemarbán	0	0
 ES	España	07	Castilla y León	49	Zamora	49275	Zamora	0	0
 ES	España	09	Cataluña	08	Barcelona	08001	Abrera	0	0
 ES	España	09	Cataluña	08	Barcelona	08002	Aguilar de Segarra	0	0
@@ -1047,6 +1049,7 @@ ES	España	09	Cataluña	08	Barcelona	08017	Balenyà	0	0
 ES	España	09	Cataluña	08	Barcelona	08018	Balsareny	0	0
 ES	España	09	Cataluña	08	Barcelona	08252	Barberà del Vallès	0	0
 ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3	4
+ES	España	09	Cataluña	08	Barcelona	08260	Barcelona	0	0
 ES	España	09	Cataluña	08	Barcelona	08020	Begues	0	0
 ES	España	09	Cataluña	08	Barcelona	08021	Bellprat	0	0
 ES	España	09	Cataluña	08	Barcelona	08022	Berga	0	0
@@ -1239,7 +1242,6 @@ ES	España	09	Cataluña	08	Barcelona	08258	Santa Maria d'Oló	0	0
 ES	España	09	Cataluña	08	Barcelona	08196	Sant Andreu de la Barca	0	0
 ES	España	09	Cataluña	08	Barcelona	08197	Sant Andreu de Llavaneres	0	0
 ES	España	09	Cataluña	08	Barcelona	08198	Sant Antoni de Vilamajor	0	0
-ES	España	09	Cataluña	08	Barcelona	08260	Santa Perpètua de Mogoda	0	0
 ES	España	09	Cataluña	08	Barcelona	08261	Santa Susanna	0	0
 ES	España	09	Cataluña	08	Barcelona	08199	Sant Bartomeu del Grau	0	0
 ES	España	09	Cataluña	08	Barcelona	08200	Sant Boi de Llobregat	0	0
@@ -2041,6 +2043,7 @@ ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12128	Vilafamés	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12135	Vila-real	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12136	Vilavella, la	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12129	Villafranca del Cid/Vilafranca	0	0
+ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12130	Villahermosa del Río	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12137	Villores	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12138	Vinaròs	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12140	Viver	0	0
@@ -2106,6 +2109,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46090	Castelló de Ruga
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46091	Castellonet de la Conquesta	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46093	Catadau	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46094	Catarroja	0	0
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46107	Chella	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46106	Chelva	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46109	Cheste	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46111	Chiva	0	0
@@ -2531,8 +2535,8 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28183	Zarzalejo	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	None	None	0	0
 ES	España	19	Melilla	52	Melilla	52001	Melilla	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30001	Abanilla	0	0
+ES	España	14	Murcia, Región de	30	Murcia	30002	Abarán	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30003	Águilas	0	0
-ES	España	14	Murcia, Región de	30	Murcia	30002	Albarán	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30005	Alcantarilla	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30902	Alcázares, Los	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30008	Alhama de Murcia	0	0
