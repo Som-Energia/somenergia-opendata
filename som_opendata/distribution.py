@@ -98,8 +98,7 @@ def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
 
 def aggregated2table(data):
     yield aggregated2tableHeader(data.dates, data)
-    for row in aggregated2tableContent(data):
-        yield row
+    yield from aggregated2tableContent(data)
 
 def findSublevel(region):
     for key, level in common.geolevels.items():
@@ -107,32 +106,30 @@ def findSublevel(region):
             return key
 
 def aggregated2tableHeader(dates, region, geoheaders=[]):
-    level = findSublevel(region)
-    if level is None:
+    sublevel = findSublevel(region)
+    if sublevel is None:
         return [*geoheaders, *dates]
-    plural = common.geolevels[level].plural
+    plural = common.geolevels[sublevel].plural
     subregions = region[plural]
     for key, subregion in subregions.items():
         return aggregated2tableHeader(
             dates=dates,
             region=subregion,
-            geoheaders=[*geoheaders, level+'_code', level],
+            geoheaders=[*geoheaders, sublevel+'_code', sublevel],
         )
 
 def aggregated2tableContent(region, parentcodenames=[]):
-    level = findSublevel(region)
-    if level is None:
-        return [[*parentcodenames, *region['values']]]
-    plural = common.geolevels[level].plural
+    sublevel = findSublevel(region)
+    if sublevel is None: # leaf
+        yield [*parentcodenames, *region['values']]
+        return
+    plural = common.geolevels[sublevel].plural
     subregions = region[plural]
-    return sum((
-        aggregated2tableContent(
+    for key, subregion in subregions.items():
+        yield from aggregated2tableContent(
             region=subregion,
             parentcodenames=[*parentcodenames, key, subregion.name]
         )
-        for key, subregion in subregions.items()),
-    [])
-
 
 def locationFilter(entries, filters):
     if not filters: return entries
