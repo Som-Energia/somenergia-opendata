@@ -253,6 +253,7 @@ paths:
       - $ref: '#/components/parameters/path_geolevel'
       - $ref: '#/components/parameters/path_onDate'
       - $ref: '#/components/parameters/query_lang'
+      - $ref: '#/components/parameters/query_format_tsv'
       - $ref: '#/components/parameters/geofilter_city'
       - $ref: '#/components/parameters/geofilter_state'
       - $ref: '#/components/parameters/geofilter_ccaa'
@@ -349,6 +350,30 @@ paths:
                             name: Rioja, La
                             values:
                             - 37
+            text/tab-separated-values:
+              schema:
+                type: text
+              examples:
+                tsvcitydetail:
+                  summary: /members/by/city/on/2012-01-01/?city=08089&format=tsv
+                  description: |
+                    Members in Gavà at the begining of 2012 using tsv format
+                  value:
+                    "country_code\tcountry\tccaa_code\tccaa\tstate_code\tstate\tcity_code\tcity\t2012-01-01\n\
+                     ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08089\tGavà\t32\n\
+                     "
+                tsvccaadetail:
+                  summary: /members/by/state/on/2012-01-01/?ccaa=09&format=tsv
+                  description: |
+                    Members in Catalonia by state at the begining of 2012 using tsv format
+                  value:
+                    "country_code\tcountry\tccaa_code\tccaa\tstate_code\tstate\t2012-01-01\n\
+                     ES\tEspaña\t09\tCataluña\t08\tBarcelona\t80\n\
+                     ES\tEspaña\t09\tCataluña\t17\tGirona\t15\n\
+                     ES\tEspaña\t09\tCataluña\t25\tLleida\t5\n\
+                     ES\tEspaña\t09\tCataluña\t43\tTarragona\t2\n\
+                     "
+
 
   /{metric}/by/{geolevel}/{frequency}/from/{fromdate}/to/{todate}:
     get:
@@ -547,6 +572,30 @@ paths:
                             - 0
                             - 0
                             - 37
+            text/tab-separated-values:
+              schema:
+                type: text
+              examples:
+                tsvseriescitydetail:
+                  summary: /members/by/city/yearly/from/2012-01-01/to/2013-01-01/?city=08089&format=tsv
+                  description: |
+                    Members in Gavà from 2012 to 2013 in tsv format
+
+                    Succesive dates are added as columns
+                  value:
+                    "country_code\tcountry\tccaa_code\tccaa\tstate_code\tstate\tcity_code\tcity\t2012-01-01\t2013-01-01\n\
+                     ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08089\tGavà\t232\t478\n"
+                tsvseriesccaadetail:
+                  summary: /members/by/state/yearly/from/2012-01-01/to/2013-01-01?ccaa=09&format=tsv
+                  description: |
+                    Members in Catalonia by state from 2012 to 2013 using tsv format
+                  value:
+                    "country_code\tcountry\tccaa_code\tccaa\tstate_code\tstate\t2012-01-01\n\
+                     ES\tEspaña\t09\tCataluña\t08\tBarcelona\t80\t120\n\
+                     ES\tEspaña\t09\tCataluña\t17\tGirona\t15\t21\n\
+                     ES\tEspaña\t09\tCataluña\t25\tLleida\t5\t12\n\
+                     ES\tEspaña\t09\tCataluña\t43\tTarragona\t2\t11\n\
+                     "
 
   /map/{metric}/by/{geolevel}/on/{ondate}:
     get:
@@ -699,6 +748,20 @@ components:
         - eu
         - es
         - en
+        - null
+
+    query_format_tsv:
+      name: format
+      in: query
+      required: false
+      description:
+        Format for the result
+      schema:
+        type: string
+        nullable: true
+        enum:
+        - tsv
+        - yaml
         - null
 
     path_metric:
