@@ -266,7 +266,7 @@ class CsvSource_Test(unittest.TestCase):
 
     def test__get__readCsvFile(self):
         rows = []
-        with open('./b2bdata/som_opendata.oldapi_test.BaseApi_Test.test_contracts_series-expected') as f:
+        with open('./b2bdata/input-contracts-series.tsv') as f:
             for line in f:
                 rows.append(line.strip('\n'))
         f.close()

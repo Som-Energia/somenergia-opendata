@@ -243,34 +243,6 @@ def svg_response(f, *args, **kwds):
         return make_svg(_svgError.format(
             "Unexpected error: {}".format(e)), 500)
 
-def tsv_response(f):
-    @wraps(f)
-    def wrapper(*args, **kwd):
-        filename, result = f(*args, **kwd)
-
-        if type(result) is Response:
-            return result
-        if type(result) in (type(b''), type(u'')):
-            response = make_response(result)
-            response.mimetype='text/tab-separated-values'
-            response.headers["Content-Disposition"] = "filename={}".format(filename or 'file.tsv')
-            return response
-
-        response = make_response('\n'.join(
-            '\t'.join(
-                u(x)
-                    .replace('\t',' ')
-                    .replace('\n',' ')
-                for x in line)
-            for line in result
-        ))
-        response.mimetype='text/tab-separated-values'
-        response.charset='utf-8'
-        response.headers["Content-Disposition"] = "attachment; filename=myplot.tsv"
-        return response
-    return wrapper
-
-
 def yaml_response(f):
     @wraps(f)
     def wrapper(*args, **kwd):

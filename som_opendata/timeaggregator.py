@@ -10,7 +10,6 @@ TODO:
 - Usar TimeAggregator en
     - api map
     - api data
-    - oldapi
 """
 
 class TimeAggregator:

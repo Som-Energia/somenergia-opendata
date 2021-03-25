@@ -1,8 +1,15 @@
 # v0.2.19 2021-03-26
 
-- numeric data in tsv format with query param format=tsv
-- map api errors as svg images
-- numeric api errors as yaml
+- Legacy API v0.1 has been dropped
+- Date semantic change: measures are taken at the begining of
+  the date, not at the end, so that events during the date
+  are not included.
+  This makes year and month aggregation more consistent.
+  Yearly aggregated 2021-01-01 will contain all events in 2020
+  but none in 2021.
+- Numeric data in TSV format with query param `format=tsv`
+- Map API errors are issued as SVG images
+- Numeric API errors as YAML, not JSON to match success format
 
 # v0.2.18 2021-03-10
 
