@@ -17,7 +17,7 @@ ES	España	01	Andalucia	18	Granada	18089	Guadix	0	1
 ES	España	01	Andalucia	18	Granada	18101	Huétor Vega	0	0
 ES	España	01	Andalucia	18	Granada	18111	Jun	2	2
 ES	España	01	Andalucia	18	Granada	18134	Monachil	0	0
-ES	España	01	Andalucia	18	Granada	18149	Otura	1	1
+ES	España	01	Andalucia	18	Granada	18149	Otura	0	1
 ES	España	01	Andalucia	18	Granada	18165	Pulianas	0	0
 ES	España	01	Andalucia	18	Granada	18175	Santa Fe	1	1
 ES	España	01	Andalucia	21	Huelva	21002	Aljaraque	0	0
@@ -75,7 +75,7 @@ ES	España	02	Aragón	50	Zaragoza	50272	Utebo	0	0
 ES	España	02	Aragón	50	Zaragoza	50288	Villanueva de Gállego	0	0
 ES	España	02	Aragón	50	Zaragoza	50297	Zaragoza	5	7
 ES	España	03	Asturias, Principado de	33	Asturias	33017	Castropol	1	1
-ES	España	03	Asturias, Principado de	33	Asturias	33066	Siero	0	1
+ES	España	03	Asturias, Principado de	33	Asturias	33066	Siero	0	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07002	Alaior	0	4
 ES	España	04	Baleares, Islas	07	Balears, Illes	07001	Alaró	1	1
 ES	España	04	Baleares, Islas	07	Balears, Illes	07003	Alcúdia	2	1
@@ -100,7 +100,7 @@ ES	España	04	Baleares, Islas	07	Balears, Illes	07033	Manacor	1	1
 ES	España	04	Baleares, Islas	07	Balears, Illes	07032	Maó	6	6
 ES	España	04	Baleares, Islas	07	Balears, Illes	07035	Maria de la Salut	0	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07036	Marratxí	6	6
-ES	España	04	Baleares, Islas	07	Balears, Illes	07037	Mercadal, Es	1	1
+ES	España	04	Baleares, Islas	07	Balears, Illes	07037	Mercadal, Es	0	1
 ES	España	04	Baleares, Islas	07	Balears, Illes	07902	Migjorn Gran, Es	0	1
 ES	España	04	Baleares, Islas	07	Balears, Illes	07038	Montuïri	0	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07040	Palma	2	3
@@ -114,7 +114,7 @@ ES	España	04	Baleares, Islas	07	Balears, Illes	07056	Santa María del Camí	0	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07057	Santanyí	0	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07049	Sant Joan	1	1
 ES	España	04	Baleares, Islas	07	Balears, Illes	07050	Sant Joan de Labritja	2	2
-ES	España	04	Baleares, Islas	07	Balears, Illes	07048	Sant Josep de sa Talaia	4	4
+ES	España	04	Baleares, Islas	07	Balears, Illes	07048	Sant Josep de sa Talaia	3	4
 ES	España	04	Baleares, Islas	07	Balears, Illes	07051	Sant Llorenç des Cardassar	0	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07052	Sant Lluís	4	4
 ES	España	04	Baleares, Islas	07	Balears, Illes	07047	Sencelles	0	0
@@ -158,7 +158,7 @@ ES	España	08	Castilla - La Mancha	19	Guadalajara	19037	Arbancón	1	1
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19046	Azuqueca de Henares	1	1
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19105	Chiloeches	1	1
 ES	España	08	Castilla - La Mancha	19	Guadalajara	19300	Valdeaveruelo	0	0
-ES	España	08	Castilla - La Mancha	19	Guadalajara	19326	Yebes	1	1
+ES	España	08	Castilla - La Mancha	19	Guadalajara	19326	Yebes	0	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45064	Esquivias	1	1
 ES	España	08	Castilla - La Mancha	45	Toledo	45165	Talavera de la Reina	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45168	Toledo	1	1
@@ -321,7 +321,7 @@ ES	España	09	Cataluña	08	Barcelona	08259	Santa Maria de Palautordera	11	13
 ES	España	09	Cataluña	08	Barcelona	08258	Santa Maria d'Oló	0	1
 ES	España	09	Cataluña	08	Barcelona	08196	Sant Andreu de la Barca	1	1
 ES	España	09	Cataluña	08	Barcelona	08197	Sant Andreu de Llavaneres	2	2
-ES	España	09	Cataluña	08	Barcelona	08198	Sant Antoni de Vilamajor	4	4
+ES	España	09	Cataluña	08	Barcelona	08198	Sant Antoni de Vilamajor	3	4
 ES	España	09	Cataluña	08	Barcelona	08261	Santa Susanna	1	1
 ES	España	09	Cataluña	08	Barcelona	08199	Sant Bartomeu del Grau	0	1
 ES	España	09	Cataluña	08	Barcelona	08200	Sant Boi de Llobregat	2	2
@@ -375,15 +375,15 @@ ES	España	09	Cataluña	08	Barcelona	08286	Torre de Claramunt, La	0	0
 ES	España	09	Cataluña	08	Barcelona	08287	Torrelavit	2	2
 ES	España	09	Cataluña	08	Barcelona	08289	Torrelles de Llobregat	5	5
 ES	España	09	Cataluña	08	Barcelona	08290	Ullastrell	3	4
-ES	España	09	Cataluña	08	Barcelona	08291	Vacarisses	5	6
+ES	España	09	Cataluña	08	Barcelona	08291	Vacarisses	4	6
 ES	España	09	Cataluña	08	Barcelona	08294	Vallgorguina	0	0
 ES	España	09	Cataluña	08	Barcelona	08295	Vallirana	4	5
 ES	España	09	Cataluña	08	Barcelona	08296	Vallromanes	1	1
 ES	España	09	Cataluña	08	Barcelona	08298	Vic	15	17
 ES	España	09	Cataluña	08	Barcelona	08301	Viladecans	1	1
 ES	España	09	Cataluña	08	Barcelona	08300	Viladecavalls	2	3
-ES	España	09	Cataluña	08	Barcelona	08305	Vilafranca del Penedès	9	10
-ES	España	09	Cataluña	08	Barcelona	08303	Vilanova de Sau	1	1
+ES	España	09	Cataluña	08	Barcelona	08305	Vilafranca del Penedès	8	10
+ES	España	09	Cataluña	08	Barcelona	08303	Vilanova de Sau	0	1
 ES	España	09	Cataluña	08	Barcelona	08307	Vilanova i la Geltrú	9	12
 ES	España	09	Cataluña	08	Barcelona	08214	Vilassar de Dalt	5	6
 ES	España	09	Cataluña	08	Barcelona	08219	Vilassar de Mar	5	9
@@ -396,7 +396,7 @@ ES	España	09	Cataluña	17	Girona	17008	Anglès	0	1
 ES	España	09	Cataluña	17	Girona	17009	Arbúcies	4	7
 ES	España	09	Cataluña	17	Girona	17011	Armentera, L'	3	4
 ES	España	09	Cataluña	17	Girona	17015	Banyoles	8	8
-ES	España	09	Cataluña	17	Girona	17013	Begur	2	2
+ES	España	09	Cataluña	17	Girona	17013	Begur	1	2
 ES	España	09	Cataluña	17	Girona	17018	Bellcaire d'Empordà	1	1
 ES	España	09	Cataluña	17	Girona	17019	Besalú	0	0
 ES	España	09	Cataluña	17	Girona	17020	Bescanó	5	6
@@ -411,12 +411,12 @@ ES	España	09	Cataluña	17	Girona	17030	Cabanes	1	1
 ES	España	09	Cataluña	17	Girona	17033	Caldes de Malavella	6	7
 ES	España	09	Cataluña	17	Girona	17034	Calonge	5	5
 ES	España	09	Cataluña	17	Girona	17035	Camós	1	1
-ES	España	09	Cataluña	17	Girona	17036	Campdevànol	0	1
+ES	España	09	Cataluña	17	Girona	17036	Campdevànol	0	0
 ES	España	09	Cataluña	17	Girona	17040	Canet d'Adri	1	1
 ES	España	09	Cataluña	17	Girona	17044	Cassà de la Selva	2	3
 ES	España	09	Cataluña	17	Girona	17047	Castelló d'Empúries	5	5
 ES	España	09	Cataluña	17	Girona	17048	Castell-Platja d'Aro	1	1
-ES	España	09	Cataluña	17	Girona	17049	Celrà	9	10
+ES	España	09	Cataluña	17	Girona	17049	Celrà	8	9
 ES	España	09	Cataluña	17	Girona	17050	Cervià de Ter	4	4
 ES	España	09	Cataluña	17	Girona	17051	Cistella	0	0
 ES	España	09	Cataluña	17	Girona	17056	Cornellà del Terri	1	1
@@ -443,7 +443,7 @@ ES	España	09	Cataluña	17	Girona	17103	Maçanet de la Selva	1	1
 ES	España	09	Cataluña	17	Girona	17105	Mieres	1	2
 ES	España	09	Cataluña	17	Girona	17109	Montagut i Oix	2	2
 ES	España	09	Cataluña	17	Girona	17110	Mont-ras	1	1
-ES	España	09	Cataluña	17	Girona	17111	Navata	2	2
+ES	España	09	Cataluña	17	Girona	17111	Navata	2	1
 ES	España	09	Cataluña	17	Girona	17114	Olot	8	9
 ES	España	09	Cataluña	17	Girona	17115	Ordis	1	1
 ES	España	09	Cataluña	17	Girona	17117	Palafrugell	2	2
@@ -496,7 +496,7 @@ ES	España	09	Cataluña	17	Girona	17207	Vall d'en Bas, La	7	8
 ES	España	09	Cataluña	17	Girona	17213	Vidreres	2	2
 ES	España	09	Cataluña	17	Girona	17214	Vilabertran	1	1
 ES	España	09	Cataluña	17	Girona	17217	Viladamat	3	4
-ES	España	09	Cataluña	17	Girona	17216	Viladasens	3	3
+ES	España	09	Cataluña	17	Girona	17216	Viladasens	2	3
 ES	España	09	Cataluña	17	Girona	17221	Vilafant	2	2
 ES	España	09	Cataluña	17	Girona	17223	Vilajuïga	1	1
 ES	España	09	Cataluña	17	Girona	17226	Vilamalla	1	1
@@ -513,11 +513,11 @@ ES	España	09	Cataluña	25	Lleida	25022	Alòs de Balaguer	1	1
 ES	España	09	Cataluña	25	Lleida	25023	Alpicat	2	2
 ES	España	09	Cataluña	25	Lleida	25029	Arbeca	1	1
 ES	España	09	Cataluña	25	Lleida	25033	Artesa de Lleida	0	0
-ES	España	09	Cataluña	25	Lleida	25040	Balaguer	2	2
+ES	España	09	Cataluña	25	Lleida	25040	Balaguer	1	2
 ES	España	09	Cataluña	25	Lleida	25041	Barbens	1	1
 ES	España	09	Cataluña	25	Lleida	25046	Belianes	1	1
 ES	España	09	Cataluña	25	Lleida	25047	Bellcaire d'Urgell	4	4
-ES	España	09	Cataluña	25	Lleida	25050	Bellpuig	2	3
+ES	España	09	Cataluña	25	Lleida	25050	Bellpuig	1	3
 ES	España	09	Cataluña	25	Lleida	25051	Bellver de Cerdanya	0	2
 ES	España	09	Cataluña	25	Lleida	25052	Bellvís	2	2
 ES	España	09	Cataluña	25	Lleida	25058	Borges Blanques, Les	2	4
@@ -603,7 +603,7 @@ ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03019	Aspe	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03023	Beneixama	1	1
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03041	Benissa	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03053	Castalla	2	3
-ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03065	Elche/Elx	2	2
+ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03065	Elche/Elx	1	2
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03072	Gaianes	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03079	Ibi	1	1
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03095	Ondara	1	1
@@ -621,7 +621,7 @@ ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12021	Betxí	0	1
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12032	Borriana/Burriana	1	1
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12031	Borriol	2	2
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12034	Càlig	0	0
-ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12040	Castellón de la Plana/Castelló de la Plana	4	4
+ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12040	Castellón de la Plana/Castelló de la Plana	3	4
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12043	Caudiel	0	0
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12056	Chóvar	0	1
 ES	España	10	Comunidad Valenciana	12	Castellón/Castelló	12084	Onda	1	1
@@ -663,10 +663,10 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46131	Gandia	1	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46134	Gilet	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46135	Godella	2	2
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46147	Llíria	0	0
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46158	Macastre	1	1
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46158	Macastre	0	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46159	Manises	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46163	Massalfassar	0	0
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46164	Massamagrell	2	2
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46164	Massamagrell	1	2
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46166	Meliana	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46171	Moncada	1	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46178	Náquera	0	1

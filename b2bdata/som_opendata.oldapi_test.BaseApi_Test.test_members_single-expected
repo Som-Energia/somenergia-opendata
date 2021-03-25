@@ -56,7 +56,7 @@ ES	España	01	Andalucia	14	Córdoba	14013	Cabra	2
 ES	España	01	Andalucia	14	Córdoba	14015	Carcabuey	0
 ES	España	01	Andalucia	14	Córdoba	14017	Carlota, La	1
 ES	España	01	Andalucia	14	Córdoba	14019	Castro del Río	0
-ES	España	01	Andalucia	14	Córdoba	14021	Córdoba	77
+ES	España	01	Andalucia	14	Córdoba	14021	Córdoba	76
 ES	España	01	Andalucia	14	Córdoba	14027	Fernán-Núñez	0
 ES	España	01	Andalucia	14	Córdoba	14029	Fuente Obejuna	0
 ES	España	01	Andalucia	14	Córdoba	14030	Fuente Palmera	0
@@ -641,7 +641,7 @@ ES	España	05	Canarias	38	Santa Cruz de Tenerife	38039	Santa Úrsula	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38040	Santiago del Teide	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38041	Sauzal, El	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38042	Silos, Los	0
-ES	España	05	Canarias	38	Santa Cruz de Tenerife	38043	Tacoronte	1
+ES	España	05	Canarias	38	Santa Cruz de Tenerife	38043	Tacoronte	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38045	Tazacorte	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38046	Tegueste	1
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38047	Tijarafe	0
@@ -1048,7 +1048,7 @@ ES	España	09	Cataluña	08	Barcelona	08016	Bagà	6
 ES	España	09	Cataluña	08	Barcelona	08017	Balenyà	0
 ES	España	09	Cataluña	08	Barcelona	08018	Balsareny	5
 ES	España	09	Cataluña	08	Barcelona	08252	Barberà del Vallès	29
-ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3126
+ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3123
 ES	España	09	Cataluña	08	Barcelona	08260	Barcelona	16
 ES	España	09	Cataluña	08	Barcelona	08020	Begues	19
 ES	España	09	Cataluña	08	Barcelona	08021	Bellprat	0
@@ -1087,7 +1087,7 @@ ES	España	09	Cataluña	08	Barcelona	08052	Castellar de n'Hug	0
 ES	España	09	Cataluña	08	Barcelona	08053	Castellbell i el Vilar	2
 ES	España	09	Cataluña	08	Barcelona	08054	Castellbisbal	14
 ES	España	09	Cataluña	08	Barcelona	08055	Castellcir	2
-ES	España	09	Cataluña	08	Barcelona	08056	Castelldefels	63
+ES	España	09	Cataluña	08	Barcelona	08056	Castelldefels	62
 ES	España	09	Cataluña	08	Barcelona	08057	Castell de l'Areny	0
 ES	España	09	Cataluña	08	Barcelona	08058	Castellet i la Gornal	4
 ES	España	09	Cataluña	08	Barcelona	08059	Castellfollit del Boix	0
@@ -1243,7 +1243,7 @@ ES	España	09	Cataluña	08	Barcelona	08196	Sant Andreu de la Barca	7
 ES	España	09	Cataluña	08	Barcelona	08197	Sant Andreu de Llavaneres	10
 ES	España	09	Cataluña	08	Barcelona	08198	Sant Antoni de Vilamajor	19
 ES	España	09	Cataluña	08	Barcelona	08261	Santa Susanna	6
-ES	España	09	Cataluña	08	Barcelona	08199	Sant Bartomeu del Grau	6
+ES	España	09	Cataluña	08	Barcelona	08199	Sant Bartomeu del Grau	5
 ES	España	09	Cataluña	08	Barcelona	08200	Sant Boi de Llobregat	49
 ES	España	09	Cataluña	08	Barcelona	08201	Sant Boi de Lluçanès	2
 ES	España	09	Cataluña	08	Barcelona	08203	Sant Cebrià de Vallalta	3
@@ -1326,7 +1326,7 @@ ES	España	09	Cataluña	08	Barcelona	08300	Viladecavalls	6
 ES	España	09	Cataluña	08	Barcelona	08305	Vilafranca del Penedès	92
 ES	España	09	Cataluña	08	Barcelona	08306	Vilalba Sasserra	1
 ES	España	09	Cataluña	08	Barcelona	08302	Vilanova del Camí	5
-ES	España	09	Cataluña	08	Barcelona	08902	Vilanova del Vallès	5
+ES	España	09	Cataluña	08	Barcelona	08902	Vilanova del Vallès	4
 ES	España	09	Cataluña	08	Barcelona	08303	Vilanova de Sau	1
 ES	España	09	Cataluña	08	Barcelona	08307	Vilanova i la Geltrú	178
 ES	España	09	Cataluña	08	Barcelona	08214	Vilassar de Dalt	13
@@ -1527,7 +1527,7 @@ ES	España	09	Cataluña	17	Girona	17208	Vall de Bianya, La	5
 ES	España	09	Cataluña	17	Girona	17207	Vall d'en Bas, La	7
 ES	España	09	Cataluña	17	Girona	17170	Vallfogona de Ripollès	2
 ES	España	09	Cataluña	17	Girona	17209	Vall-llobrega	1
-ES	España	09	Cataluña	17	Girona	17210	Ventalló	3
+ES	España	09	Cataluña	17	Girona	17210	Ventalló	2
 ES	España	09	Cataluña	17	Girona	17211	Verges	1
 ES	España	09	Cataluña	17	Girona	17212	Vidrà	0
 ES	España	09	Cataluña	17	Girona	17213	Vidreres	6
@@ -2454,7 +2454,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28074	Leganés	21
 ES	España	13	Madrid, Comunidad de	28	Madrid	28075	Loeches	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28901	Lozoyuela-Navas-Sieteiglesias	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28078	Madarcos	0
-ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	928
+ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	927
 ES	España	13	Madrid, Comunidad de	28	Madrid	28080	Majadahonda	11
 ES	España	13	Madrid, Comunidad de	28	Madrid	28082	Manzanares el Real	13
 ES	España	13	Madrid, Comunidad de	28	Madrid	28083	Meco	3

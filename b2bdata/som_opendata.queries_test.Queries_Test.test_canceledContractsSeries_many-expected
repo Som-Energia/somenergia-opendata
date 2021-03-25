@@ -734,7 +734,7 @@ ES	España	02	Aragón	50	Zaragoza	50278	Velilla de Ebro	0	0
 ES	España	02	Aragón	50	Zaragoza	50280	Vera de Moncayo	0	0
 ES	España	02	Aragón	50	Zaragoza	50903	Villamayor de Gállego	0	0
 ES	España	02	Aragón	50	Zaragoza	50288	Villanueva de Gállego	0	0
-ES	España	02	Aragón	50	Zaragoza	50297	Zaragoza	3	3
+ES	España	02	Aragón	50	Zaragoza	50297	Zaragoza	2	4
 ES	España	02	Aragón	50	Zaragoza	50298	Zuera	0	0
 ES	España	03	Asturias, Principado de	33	Asturias	33002	Aller	0	0
 ES	España	03	Asturias, Principado de	33	Asturias	33004	Avilés	0	0
@@ -1959,13 +1959,13 @@ ES	España	09	Cataluña	08	Barcelona	08010	Artés	0	0
 ES	España	09	Cataluña	08	Barcelona	08011	Avià	0	0
 ES	España	09	Cataluña	08	Barcelona	08012	Avinyó	0	0
 ES	España	09	Cataluña	08	Barcelona	08013	Avinyonet del Penedès	0	0
-ES	España	09	Cataluña	08	Barcelona	08015	Badalona	0	3
+ES	España	09	Cataluña	08	Barcelona	08015	Badalona	0	2
 ES	España	09	Cataluña	08	Barcelona	08904	Badia del Vallès	0	0
 ES	España	09	Cataluña	08	Barcelona	08016	Bagà	0	0
 ES	España	09	Cataluña	08	Barcelona	08017	Balenyà	0	0
 ES	España	09	Cataluña	08	Barcelona	08018	Balsareny	0	0
 ES	España	09	Cataluña	08	Barcelona	08252	Barberà del Vallès	0	0
-ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	21	29
+ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	20	28
 ES	España	09	Cataluña	08	Barcelona	08260	Barcelona	0	1
 ES	España	09	Cataluña	08	Barcelona	08020	Begues	0	0
 ES	España	09	Cataluña	08	Barcelona	08021	Bellprat	0	0
@@ -2135,7 +2135,7 @@ ES	España	09	Cataluña	08	Barcelona	08183	Roda de Ter	0	0
 ES	España	09	Cataluña	08	Barcelona	08184	Rubí	1	0
 ES	España	09	Cataluña	08	Barcelona	08185	Rubió	0	0
 ES	España	09	Cataluña	08	Barcelona	08901	Rupit i Pruit	0	0
-ES	España	09	Cataluña	08	Barcelona	08187	Sabadell	3	1
+ES	España	09	Cataluña	08	Barcelona	08187	Sabadell	2	2
 ES	España	09	Cataluña	08	Barcelona	08188	Sagàs	0	0
 ES	España	09	Cataluña	08	Barcelona	08190	Saldes	0	0
 ES	España	09	Cataluña	08	Barcelona	08191	Sallent	0	0
@@ -2258,7 +2258,7 @@ ES	España	09	Cataluña	17	Girona	17004	Albons	0	0
 ES	España	09	Cataluña	17	Girona	17006	Alp	0	0
 ES	España	09	Cataluña	17	Girona	17007	Amer	0	0
 ES	España	09	Cataluña	17	Girona	17008	Anglès	0	0
-ES	España	09	Cataluña	17	Girona	17009	Arbúcies	1	1
+ES	España	09	Cataluña	17	Girona	17009	Arbúcies	1	0
 ES	España	09	Cataluña	17	Girona	17010	Argelaguer	0	0
 ES	España	09	Cataluña	17	Girona	17011	Armentera, L'	0	0
 ES	España	09	Cataluña	17	Girona	17012	Avinyonet de Puigventós	0	0
@@ -2291,7 +2291,7 @@ ES	España	09	Cataluña	17	Girona	17039	Camprodon	0	0
 ES	España	09	Cataluña	17	Girona	17040	Canet d'Adri	0	0
 ES	España	09	Cataluña	17	Girona	17041	Cantallops	0	0
 ES	España	09	Cataluña	17	Girona	17042	Capmany	0	0
-ES	España	09	Cataluña	17	Girona	17044	Cassà de la Selva	1	0
+ES	España	09	Cataluña	17	Girona	17044	Cassà de la Selva	2	0
 ES	España	09	Cataluña	17	Girona	17046	Castellfollit de la Roca	0	0
 ES	España	09	Cataluña	17	Girona	17047	Castelló d'Empúries	0	0
 ES	España	09	Cataluña	17	Girona	17048	Castell-Platja d'Aro	0	0
@@ -2325,7 +2325,7 @@ ES	España	09	Cataluña	17	Girona	17075	Garrigàs	0	0
 ES	España	09	Cataluña	17	Girona	17076	Garrigoles	0	0
 ES	España	09	Cataluña	17	Girona	17077	Garriguella	0	0
 ES	España	09	Cataluña	17	Girona	17078	Ger	0	0
-ES	España	09	Cataluña	17	Girona	17079	Girona	5	1
+ES	España	09	Cataluña	17	Girona	17079	Girona	6	1
 ES	España	09	Cataluña	17	Girona	17080	Gombrèn	0	0
 ES	España	09	Cataluña	17	Girona	17081	Gualta	0	0
 ES	España	09	Cataluña	17	Girona	17082	Guils de Cerdanya	0	0
@@ -2362,7 +2362,7 @@ ES	España	09	Cataluña	17	Girona	17112	Ogassa	0	0
 ES	España	09	Cataluña	17	Girona	17114	Olot	0	0
 ES	España	09	Cataluña	17	Girona	17115	Ordis	0	0
 ES	España	09	Cataluña	17	Girona	17116	Osor	0	0
-ES	España	09	Cataluña	17	Girona	17117	Palafrugell	0	2
+ES	España	09	Cataluña	17	Girona	17117	Palafrugell	0	1
 ES	España	09	Cataluña	17	Girona	17118	Palamós	0	0
 ES	España	09	Cataluña	17	Girona	17119	Palau de Santa Eulàlia	0	0
 ES	España	09	Cataluña	17	Girona	17121	Palau-sator	0	0
@@ -3644,7 +3644,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28074	Leganés	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28075	Loeches	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28901	Lozoyuela-Navas-Sieteiglesias	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28078	Madarcos	0	0
-ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	7	5
+ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	9	4
 ES	España	13	Madrid, Comunidad de	28	Madrid	28080	Majadahonda	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28082	Manzanares el Real	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28083	Meco	0	0
@@ -3756,7 +3756,7 @@ ES	España	14	Murcia, Región de	30	Murcia	30026	Mazarrón	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30027	Molina de Segura	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30028	Moratalla	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30029	Mula	0	0
-ES	España	14	Murcia, Región de	30	Murcia	30030	Murcia	1	0
+ES	España	14	Murcia, Región de	30	Murcia	30030	Murcia	0	1
 ES	España	14	Murcia, Región de	30	Murcia	30031	Ojós	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30033	Puerto Lumbreras	0	0
 ES	España	14	Murcia, Región de	30	Murcia	30035	San Javier	0	0
@@ -3819,7 +3819,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31062	Cabanillas	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31065	Caparroso	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31067	Carcastillo	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31068	Cascante	0	0
-ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31069	Cáseda	0	1
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31069	Cáseda	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31070	Castejón	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31193	Cendea de Olza/Oltza Zendea	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31072	Cintruénigo	0	0
@@ -3968,7 +3968,7 @@ ES	España	16	País Vasco	01	Araba/Álava	01051	Salvatierra/Agurain	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01052	Samaniego	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01053	San Millán/Donemiliaga	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01054	Urkabustaiz	0	0
-ES	España	16	País Vasco	01	Araba/Álava	01059	Vitoria-Gasteiz	0	0
+ES	España	16	País Vasco	01	Araba/Álava	01059	Vitoria-Gasteiz	1	0
 ES	España	16	País Vasco	01	Araba/Álava	01060	Yécora/Iekora	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01061	Zalduondo	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01018	Zigoitia	0	0
@@ -3992,7 +3992,7 @@ ES	España	16	País Vasco	48	Bizkaia	48019	Berriz	0	0
 ES	España	16	País Vasco	48	Bizkaia	48020	Bilbao	2	2
 ES	España	16	País Vasco	48	Bizkaia	48021	Busturia	0	0
 ES	España	16	País Vasco	48	Bizkaia	48901	Derio	0	0
-ES	España	16	País Vasco	48	Bizkaia	48027	Durango	1	0
+ES	España	16	País Vasco	48	Bizkaia	48027	Durango	0	1
 ES	España	16	País Vasco	48	Bizkaia	48032	Elorrio	0	0
 ES	España	16	País Vasco	48	Bizkaia	48902	Erandio	0	0
 ES	España	16	País Vasco	48	Bizkaia	48034	Ermua	0	0

@@ -43,9 +43,9 @@ def activeItemCounter(adate):
     return """
     count(CASE
         WHEN item.first_date IS NULL THEN NULL
-        WHEN item.first_date > '{adate}'::date THEN NULL
+        WHEN item.first_date >= '{adate}'::date THEN NULL
         WHEN item.last_date is NULL then TRUE
-        WHEN item.last_date > '{adate}'::date THEN TRUE
+        WHEN item.last_date >= '{adate}'::date THEN TRUE
         ELSE NULL
         END) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
@@ -58,9 +58,9 @@ def activeItemLister(adate):
     return """
     string_agg(CASE
         WHEN item.first_date IS NULL THEN NULL
-        WHEN item.first_date > '{adate}'::date THEN NULL
+        WHEN item.first_date >= '{adate}'::date THEN NULL
         WHEN item.last_date is NULL then item.id::text
-        WHEN item.last_date > '{adate}'::date THEN item.id::text
+        WHEN item.last_date >= '{adate}'::date THEN item.id::text
         ELSE NULL
         END, ',' ORDER BY item.id) AS ids_{adate:%Y_%m_%d}
 """.format(adate=adate)
@@ -70,8 +70,8 @@ def newItemCounter(adate):
     return """
     count(CASE
         WHEN item.first_date IS NULL THEN NULL
-        WHEN item.first_date > '{adate}'::date THEN NULL
-        WHEN item.first_date <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        WHEN item.first_date >= '{adate}'::date THEN NULL
+        WHEN item.first_date <  '{adate}'::date - INTERVAL '1 month' THEN NULL
         ELSE TRUE
         END) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
@@ -81,8 +81,8 @@ def newItemLister(adate):
     return """
     string_agg(CASE
         WHEN item.first_date IS NULL THEN NULL
-        WHEN item.first_date > '{adate}'::date THEN NULL
-        WHEN item.first_date <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        WHEN item.first_date >= '{adate}'::date THEN NULL
+        WHEN item.first_date <  '{adate}'::date - INTERVAL '1 month' THEN NULL
         ELSE item.id::text
         END, ',' ORDER BY item.id) AS ids_{adate:%Y_%m_%d}
 """.format(adate=adate)
@@ -92,8 +92,8 @@ def canceledItemCounter(adate):
     return """
     count(CASE
         WHEN item.last_date is NULL then NULL
-        WHEN item.last_date > '{adate}'::date THEN NULL
-        WHEN item.last_date <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        WHEN item.last_date >= '{adate}'::date THEN NULL
+        WHEN item.last_date <  '{adate}'::date - INTERVAL '1 month' THEN NULL
         ELSE TRUE
         END) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
@@ -103,8 +103,8 @@ def canceledItemLister(adate):
     return """
     string_agg(CASE
         WHEN item.last_date is NULL then NULL
-        WHEN item.last_date > '{adate}'::date THEN NULL
-        WHEN item.last_date <= '{adate}'::date - INTERVAL '1 month' THEN NULL
+        WHEN item.last_date >= '{adate}'::date THEN NULL
+        WHEN item.last_date <  '{adate}'::date - INTERVAL '1 month' THEN NULL
         ELSE item.id::text
         END, ',' ORDER BY item.id) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
