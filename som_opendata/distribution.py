@@ -101,21 +101,37 @@ def aggregated2table(data):
     rows = aggregated2tableContent(data)
     return [header, *rows]
 
+def findSublevel(region):
+    for key, level in common.geolevels.items():
+        if level.get('plural', key+'s') in region:
+            return key
+
 def aggregated2tableHeader(dates, region, geoheaders=[]):
-    if 'countries' not in region:
+    level = findSublevel(region)
+    if level is None:
         return [*geoheaders, *dates]
-    level = 'country'
-    for key, subregion in region['countries'].items():
-        return [*geoheaders, level+'_code', level, *dates]
-    
+    plural = common.geolevels[level].plural
+    subregions = region[plural]
+    for key, subregion in subregions.items():
+        return aggregated2tableHeader(
+            dates=dates,
+            region=subregion,
+            geoheaders=[*geoheaders, level+'_code', level],
+        )
+
 def aggregated2tableContent(region, parentcodenames=[]):
-    if 'countries' not in region:
+    level = findSublevel(region)
+    if level is None:
         return [[*parentcodenames, *region['values']]]
-    level = 'country'
-    return [
-        [*parentcodenames, key, subregion.name, *subregion['values']]
-        for key, subregion in region['countries'].items()
-    ]
+    plural = common.geolevels[level].plural
+    subregions = region[plural]
+    return sum((
+        aggregated2tableContent(
+            region=subregion,
+            parentcodenames=[*parentcodenames, key, subregion.name]
+        )
+        for key, subregion in subregions.items()),
+    [])
 
 
 def locationFilter(entries, filters):

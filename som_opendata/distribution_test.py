@@ -179,6 +179,28 @@ class Distribution_Test(unittest.TestCase):
                 ['FR', 'Francia', 5],
             ])
 
+    def test__aggregated2table_ccaas(self):
+        data=ns.loads("""\
+            dates:
+            - 2018-01-01
+            values: [2]
+            countries:
+              ES:
+                 name: España
+                 values: [2]
+                 ccaas:
+                   09:
+                     name: Catalunya
+                     values: [2]
+        """)
+
+        self.assertEqual(
+            list(aggregated2table(data)),
+            [
+                ['country_code', 'country', 'ccaa_code', 'ccaa', isoDate('2018-01-01')],
+                ['ES', 'España', '09', 'Catalunya', 2],
+            ])
+
 
     def test__aggregate__1line(self):
         data = u'\n'.join([
