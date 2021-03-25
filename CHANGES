@@ -1,5 +1,6 @@
-# Unreleased
+# v0.2.19 2021-03-26
 
+- numeric data in tsv format with query param format=tsv
 - map api errors as svg images
 - numeric api errors as yaml
 
