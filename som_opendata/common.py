@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 from dateutil.relativedelta import relativedelta as delta
 from datetime import date, timedelta
-from flask import Response, make_response, current_app, jsonify
+from flask import Response, make_response, current_app, jsonify, request
 from functools import wraps
 from werkzeug.routing import BaseConverter, ValidationError
 from yamlns.dateutils import Date
@@ -10,6 +10,7 @@ from consolemsg import u
 from flask_babel import lazy_gettext as _
 from werkzeug.exceptions import HTTPException
 from decorator import decorator
+from slugify import slugify
 
 # Domains
 
@@ -296,6 +297,30 @@ def yaml_response(f):
         return response
     return wrapper
 
+@decorator
+def optional_tsv(f, tabulator=None, *args, **kwds):
+    """
+    Decorates a flask path so that if the query
+    parameter format=tsv is given, and the response
+    is not yet a response it applies tabulator
+    to the result in order to generate tsv content.
+    """
+    result = f(*args, **kwds)
+    if type(result) is Response:
+        return result
+    if 'tsv' not in request.args.getlist('format'):
+        return result
+    def streamTsv():
+        for row in  tabulator(result):
+            yield "\t".join([str(x) for x in row]) + "\n"
+    response = Response(streamTsv())
+    response.mimetype='text/tab-separated-values'
+    response.charset='utf-8'
+    response.headers["Content-Disposition"] = "attachment; filename={}.tsv".format(
+        slugify(request.full_path)[len('vX.X-'):].replace('-format-tsv','')
+    )
+    return response
+ 
 # Parameter types
 
 class IsoDateConverter(BaseConverter):

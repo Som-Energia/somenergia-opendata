@@ -40,6 +40,7 @@ setup(
 		'Wand', #make gifs
 		'flask-babel',
 		'decorator',
+		'python-slugify',
 		'future', # Py2 backward compat
 		'pathlib2', # Py2 backward compat
 		'frozendict', #use cache

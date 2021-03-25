@@ -4,12 +4,13 @@ from yamlns import namespace as ns
 from .common import (
     yaml_response,
     svg_response,
+    optional_tsv,
     validateParams,
     validateMapParams,
 )
 from .timeaggregator import TimeAggregator
 from . import common
-from .distribution import getAggregated
+from .distribution import getAggregated, aggregated2table
 from .errors import MissingDateError
 from . import __version__
 from .map import renderMap
@@ -18,6 +19,7 @@ from flask_babel import Babel, get_locale
 
 api = Blueprint(name=__name__, import_name=__name__, template_folder='../')
 api.firstDate = '2010-01-01'
+
 
 @api.route('/version')
 @yaml_response
@@ -547,6 +549,7 @@ The filters are additive. That means that any city matching any of the specified
 @api.route('/<string:metric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
 @api.route('/<string:metric>/by/<string:geolevel>/<string:frequency>/to/<isodate:todate>')
 @yaml_response
+@optional_tsv(tabulator=aggregated2table)
 def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fromdate=None, todate=None):
 
     validateParams(
