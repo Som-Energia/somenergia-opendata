@@ -97,9 +97,9 @@ def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
 
 
 def aggregated2table(data):
-    header = aggregated2tableHeader(data.dates, data)
-    rows = aggregated2tableContent(data)
-    return [header, *rows]
+    yield aggregated2tableHeader(data.dates, data)
+    for row in aggregated2tableContent(data):
+        yield row
 
 def findSublevel(region):
     for key, level in common.geolevels.items():
