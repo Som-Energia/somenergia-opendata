@@ -97,20 +97,30 @@ def aggregate_level(entry, parent, sibbling_attr, code_attr, name_attr):
 
 
 def aggregated2table(data):
+    header = aggregated2tableHeader(data.dates, data)
     if 'countries' not in data:
-        return data.dates,data['values']
+        return [header,data['values']]
 
     level = 'country'
     dates = data.dates
     regions = data['countries']
     geoheaders = []
     parentcodenames = []
-    header = [*geoheaders, level+'_code', level, *dates]
     rows = [
         [*parentcodenames, key, data.name, *data['values'] ]
         for key, data in regions.items()
     ]
-    return [header]+rows
+    return [header, *rows]
+
+def aggregated2tableHeader(dates, region, geoheaders=[]):
+    if 'countries' not in region:
+        return [*geoheaders, *dates]
+    level = 'country'
+    for key, subregion in region['countries'].items():
+        return [*geoheaders, level+'_code', level, *dates]
+    
+
+
 
 def locationFilter(entries, filters):
     if not filters: return entries
