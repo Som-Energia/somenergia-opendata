@@ -7,29 +7,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-24 11:10+0100\n"
+"POT-Creation-Date: 2021-03-30 19:31+0200\n"
 "PO-Revision-Date: 2021-01-27 20:19+0100\n"
 "Last-Translator: David García Garzón <david.garcia@somenergia.coop>\n"
 "Language: es\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
-"X-Language: ca_ES\n"
-"X-Source-Language: en_US\n"
 
-#: som_opendata/common.py:17
+#: som_opendata/common.py:19
 msgid "Members"
 msgstr "Socias"
 
-#: som_opendata/common.py:19
+#: som_opendata/common.py:21
 msgid ""
 "Current cooperative members at the start of a given date.\n"
 "\n"
-"Members are taken from our current ERP data, so the following considerations "
-"apply:\n"
+"Members are taken from our current ERP data, so the following "
+"considerations apply:\n"
 "- Membership during the first months of the cooperative was stored in "
 "spreadsheets and is not included yet.\n"
 "- There is no historical record of member addresses. So, if a member has "
@@ -40,21 +38,21 @@ msgid ""
 msgstr ""
 "Personas socias  de la cooperativa al inicio de la fecha dada\n"
 "\n"
-"Los datos se obtienen del estado actual del ERP, por eso, hay que tener en "
-"cuenta que:\n"
-"- Los primeros meses, las altas se apuntaban en una hoja de cálculo, pero "
-"figura com fecha de alta cuando se pasaron al ERP.\n"
-"- No hay registro histórico de las direcciones de una socia. Por eso, si una "
-"socia cambia su domicilio de Vigo a Cartagena, cuenta como que ha vivido "
-"siempre en Cartagena.\n"
+"Los datos se obtienen del estado actual del ERP, por eso, hay que tener "
+"en cuenta que:\n"
+"- Los primeros meses, las altas se apuntaban en una hoja de cálculo, pero"
+" figura com fecha de alta cuando se pasaron al ERP.\n"
+"- No hay registro histórico de las direcciones de una socia. Por eso, si "
+"una socia cambia su domicilio de Vigo a Cartagena, cuenta como que ha "
+"vivido siempre en Cartagena.\n"
 "- Solo guardamos una fecha de alta i baja por socia. No queda bien "
 "registrado si una socia se da de baja y vuelve a darse de alta.\n"
 
-#: som_opendata/common.py:30
+#: som_opendata/common.py:32
 msgid "New members"
 msgstr "Nuevas socias"
 
-#: som_opendata/common.py:32
+#: som_opendata/common.py:34
 msgid ""
 "New cooperative members during the month before a given date.\n"
 "\n"
@@ -65,11 +63,11 @@ msgstr ""
 "\n"
 "Se aplican las mismas consideraciones que para la métrica \"Socias\".\n"
 
-#: som_opendata/common.py:38
+#: som_opendata/common.py:40
 msgid "Canceled members"
 msgstr "Bajas de socias"
 
-#: som_opendata/common.py:40
+#: som_opendata/common.py:42
 msgid ""
 "Members leaving the cooperative during in the month before a given date.\n"
 "\n"
@@ -80,30 +78,31 @@ msgstr ""
 "\n"
 "Se aplican las mismas consideraciones que para la métrica \"Socias\".\n"
 
-#: som_opendata/common.py:46
+#: som_opendata/common.py:48
 msgid "Contracts"
 msgstr "Contratos"
 
-#: som_opendata/common.py:48
+#: som_opendata/common.py:50
 msgid ""
 "Current active contracts at the start of a given date.\n"
 "\n"
 "Contract data is taken from activation and deactivation dates from ATR "
 "system.\n"
-"Old contracts were copied by hand from ATR files and may be less reliable.\n"
+"Old contracts were copied by hand from ATR files and may be less "
+"reliable.\n"
 msgstr ""
 "Total de contratos activos al inicio de la fecha dada.\n"
 "\n"
-"Los datos se obtienen de la activación y desactivación de los contratos por "
-"el sistema ATR.\n"
-"Los contratos antiguos se traspasaban a mano desde los ficheros ATR y puede "
-"que sean menos fiables.\n"
+"Los datos se obtienen de la activación y desactivación de los contratos "
+"por el sistema ATR.\n"
+"Los contratos antiguos se traspasaban a mano desde los ficheros ATR y "
+"puede que sean menos fiables.\n"
 
-#: som_opendata/common.py:55
+#: som_opendata/common.py:57
 msgid "New contracts"
 msgstr "Nuevos contratos"
 
-#: som_opendata/common.py:57
+#: som_opendata/common.py:59
 msgid ""
 "Contracts starting during in the month before a given date.\n"
 "\n"
@@ -113,11 +112,11 @@ msgstr ""
 "\n"
 "Se aplican las mismas consideraciones que para la métrica \"Contratos\".\n"
 
-#: som_opendata/common.py:63
+#: som_opendata/common.py:65
 msgid "Canceled contracts"
 msgstr "Bajas de contratos"
 
-#: som_opendata/common.py:65
+#: som_opendata/common.py:67
 msgid ""
 "Contracts ending during in the month before a given date.\n"
 "\n"
@@ -127,19 +126,19 @@ msgstr ""
 "\n"
 "Se aplican las mismas consideraciones que para la métrica \"Contratos\".\n"
 
-#: som_opendata/common.py:71
+#: som_opendata/common.py:73
 msgid "Self-consumption contracts"
 msgstr "Contratos con autoconsumo"
 
-#: som_opendata/common.py:73
+#: som_opendata/common.py:75
 msgid ""
 "Active contracts with selfconsumption just before the date.\n"
 "\n"
 "Considerations:\n"
 "\n"
 "- This metric is obtained from data in the ATR system.\n"
-"- Once self-consumption is activated for a contract, we are not accounting "
-"later modifications disabling it.\n"
+"- Once self-consumption is activated for a contract, we are not "
+"accounting later modifications disabling it.\n"
 "It will be considered self-consumption until the end of the contract.\n"
 msgstr ""
 "Contratos activos con autoconsumo justo antes de la fecha\n"
@@ -147,68 +146,68 @@ msgstr ""
 "Consideraciones:\n"
 "\n"
 "- Esta métria se obtiene de datos del sistema ATR.\n"
-"- Una vez un contrato activa el autoconsumo, se considera autoconsumo hasta "
-"que se da de baja.\n"
-"Podría ser que se desactive el autoconsumo antes y no se está teniendo en "
-"cuenta.\n"
+"- Una vez un contrato activa el autoconsumo, se considera autoconsumo "
+"hasta que se da de baja.\n"
+"Podría ser que se desactive el autoconsumo antes y no se está teniendo en"
+" cuenta.\n"
 
-#: som_opendata/common.py:82
+#: som_opendata/common.py:84
 msgid "New selfconsumption contracts"
 msgstr "Nuevos contratos de autoconsumo"
 
-#: som_opendata/common.py:84
+#: som_opendata/common.py:86
 msgid ""
 "Contracts activating selfconsumption during in the month before a given "
 "date.\n"
 "\n"
-"Considerations for \"Self consumption contracts\" metric also apply in this "
-"one.\n"
+"Considerations for \"Self consumption contracts\" metric also apply in "
+"this one.\n"
 msgstr ""
-"Contratos que han activado el autoconsumo con durante el mes anterior a la "
-"fecha dada.\n"
+"Contratos que han activado el autoconsumo con durante el mes anterior a "
+"la fecha dada.\n"
 "\n"
 "Se aplican las mismas consideraciones que para la métrica \"Contratos de "
 "autoconsumo\".\n"
 
-#: som_opendata/common.py:90
+#: som_opendata/common.py:92
 msgid "Canceled selfconsumption contracts"
 msgstr "Bajas de contratos de autoconsumo"
 
-#: som_opendata/common.py:92
+#: som_opendata/common.py:94
 msgid ""
-"Canceled contracts with selfconsumption during in the month before a given "
-"date.\n"
+"Canceled contracts with selfconsumption during in the month before a "
+"given date.\n"
 "\n"
-"Considerations for \"Self consumption contracts\" metric also apply in this "
-"one.\n"
+"Considerations for \"Self consumption contracts\" metric also apply in "
+"this one.\n"
 msgstr ""
-"Contratos de autoconsumo dados de baja durante el mes anterior a la fecha "
-"dada.\n"
+"Contratos de autoconsumo dados de baja durante el mes anterior a la fecha"
+" dada.\n"
 "\n"
 "Se aplican las mismas consideraciones que para la métrica \"Contratos de "
 "autoconsumo\".\n"
 
-#: som_opendata/common.py:109
+#: som_opendata/common.py:111
 msgid "World"
 msgstr "Mundo"
 
-#: som_opendata/common.py:113
+#: som_opendata/common.py:115
 msgid "Country"
 msgstr "País"
 
-#: som_opendata/common.py:119
+#: som_opendata/common.py:121
 msgid "CCAA"
 msgstr "CCAA"
 
-#: som_opendata/common.py:124
+#: som_opendata/common.py:126
 msgid "State"
 msgstr "Provincia"
 
-#: som_opendata/common.py:129
+#: som_opendata/common.py:131
 msgid "City"
 msgstr "Ciudad"
 
-#: som_opendata/common.py:135
+#: som_opendata/common.py:137
 msgid "Local Group"
 msgstr "Grupo Local"
 
@@ -260,7 +259,8 @@ msgstr "Noviembre"
 msgid "December"
 msgstr "Diciembre"
 
-#: som_opendata/map.py:233
+#: som_opendata/map.py:206
 #, python-format
 msgid "per %(num)s population"
 msgstr "por cada %(num)s hab"
+

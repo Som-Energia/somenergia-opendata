@@ -7,9 +7,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: somenergia-opendata 0.2.13\n"
+"Project-Id-Version: somenergia-opendata 0.2.19\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-24 11:10+0100\n"
+"POT-Creation-Date: 2021-03-30 19:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: som_opendata/common.py:17
+#: som_opendata/common.py:19
 msgid "Members"
 msgstr ""
 
-#: som_opendata/common.py:19
+#: som_opendata/common.py:21
 msgid ""
 "Current cooperative members at the start of a given date.\n"
 "\n"
@@ -37,33 +37,33 @@ msgid ""
 "memberships are not properly recorded.\n"
 msgstr ""
 
-#: som_opendata/common.py:30
+#: som_opendata/common.py:32
 msgid "New members"
 msgstr ""
 
-#: som_opendata/common.py:32
+#: som_opendata/common.py:34
 msgid ""
 "New cooperative members during the month before a given date.\n"
 "\n"
 "Considerations for \"Members\" metric also apply in this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:38
+#: som_opendata/common.py:40
 msgid "Canceled members"
 msgstr ""
 
-#: som_opendata/common.py:40
+#: som_opendata/common.py:42
 msgid ""
 "Members leaving the cooperative during in the month before a given date.\n"
 "\n"
 "Considerations for \"Members\" metric also apply in this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:46
+#: som_opendata/common.py:48
 msgid "Contracts"
 msgstr ""
 
-#: som_opendata/common.py:48
+#: som_opendata/common.py:50
 msgid ""
 "Current active contracts at the start of a given date.\n"
 "\n"
@@ -73,33 +73,33 @@ msgid ""
 "reliable.\n"
 msgstr ""
 
-#: som_opendata/common.py:55
+#: som_opendata/common.py:57
 msgid "New contracts"
 msgstr ""
 
-#: som_opendata/common.py:57
+#: som_opendata/common.py:59
 msgid ""
 "Contracts starting during in the month before a given date.\n"
 "\n"
 "Considerations for \"Contracts\" metric also apply in this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:63
+#: som_opendata/common.py:65
 msgid "Canceled contracts"
 msgstr ""
 
-#: som_opendata/common.py:65
+#: som_opendata/common.py:67
 msgid ""
 "Contracts ending during in the month before a given date.\n"
 "\n"
 "Considerations for \"Contracts\" metric also apply in this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:71
+#: som_opendata/common.py:73
 msgid "Self-consumption contracts"
 msgstr ""
 
-#: som_opendata/common.py:73
+#: som_opendata/common.py:75
 msgid ""
 "Active contracts with selfconsumption just before the date.\n"
 "\n"
@@ -111,11 +111,11 @@ msgid ""
 "It will be considered self-consumption until the end of the contract.\n"
 msgstr ""
 
-#: som_opendata/common.py:82
+#: som_opendata/common.py:84
 msgid "New selfconsumption contracts"
 msgstr ""
 
-#: som_opendata/common.py:84
+#: som_opendata/common.py:86
 msgid ""
 "Contracts activating selfconsumption during in the month before a given "
 "date.\n"
@@ -124,11 +124,11 @@ msgid ""
 "this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:90
+#: som_opendata/common.py:92
 msgid "Canceled selfconsumption contracts"
 msgstr ""
 
-#: som_opendata/common.py:92
+#: som_opendata/common.py:94
 msgid ""
 "Canceled contracts with selfconsumption during in the month before a "
 "given date.\n"
@@ -137,27 +137,27 @@ msgid ""
 "this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:109
+#: som_opendata/common.py:111
 msgid "World"
 msgstr ""
 
-#: som_opendata/common.py:113
+#: som_opendata/common.py:115
 msgid "Country"
 msgstr ""
 
-#: som_opendata/common.py:119
+#: som_opendata/common.py:121
 msgid "CCAA"
 msgstr ""
 
-#: som_opendata/common.py:124
+#: som_opendata/common.py:126
 msgid "State"
 msgstr ""
 
-#: som_opendata/common.py:129
+#: som_opendata/common.py:131
 msgid "City"
 msgstr ""
 
-#: som_opendata/common.py:135
+#: som_opendata/common.py:137
 msgid "Local Group"
 msgstr ""
 
@@ -209,7 +209,7 @@ msgstr ""
 msgid "December"
 msgstr ""
 
-#: som_opendata/map.py:233
+#: som_opendata/map.py:206
 #, python-format
 msgid "per %(num)s population"
 msgstr ""
