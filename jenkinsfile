@@ -20,7 +20,7 @@ pipeline {
       steps {
         sh '''
             . .venv/bin/activate
-            TRAVIS=1 nosetests
+            TRAVIS=1 nosetests --force-color
         '''
       }   
     }
