@@ -9,6 +9,8 @@ pipeline:
       - sh 'pwd'
       - sh 'ls'
       - sh 'which python'
+      - sh 'ifconfig'
+      - sh 'cat /etc/hostname' 
   - stage: 'setup'
     steps:
       - sh 'pip install Flask'
