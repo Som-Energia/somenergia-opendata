@@ -5,10 +5,10 @@ pipeline {
       steps {
         sh 'pip install Flask'
         sh 'python setup.py develop'
-        sh 'touch dbconfig.py,
-        sh 'python ./setup.py develop,
-        sh 'pip install coveralls,
-        sh 'python ./setup.py compile_catalog,
+        sh 'touch dbconfig.py'
+        sh 'python ./setup.py develop'
+        sh 'pip install coveralls'
+        sh 'python ./setup.py compile_catalog'
       }
     }
     stage('test') {
