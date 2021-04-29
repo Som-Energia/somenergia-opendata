@@ -6,15 +6,15 @@ pipeline:
   - stage: 'python version'
     steps:
       - sh 'python --version'
-      - pwd
-      - ls
-      - which python
+      - sh 'pwd'
+      - sh 'ls'
+      - sh 'which python'
   - stage: 'setup'
     steps:
-      - pip install Flask
-      - touch dbconfig.py
-      - ./setup.py develop
-      - pip install coveralls
-      - ./setup.py compile_catalog
+      - sh 'pip install Flask'
+      - sh 'touch dbconfig.py'
+      - sh './setup.py develop'
+      - sh 'pip install coveralls'
+      - sh './setup.py compile_catalog'
 
 # vim: et ts=2 sw=2
