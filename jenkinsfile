@@ -1,0 +1,23 @@
+pipeline {
+  agent { docker { image 'python:3.7.2' } }
+  stages {
+    stage('build') {
+      steps {
+        sh 'pip install Flask'
+        sh 'python setup.py develop'
+        sh 'touch dbconfig.py,
+        sh 'python ./setup.py develop,
+        sh 'pip install coveralls,
+        sh 'python ./setup.py compile_catalog,
+      }
+    }
+    stage('test') {
+      steps {
+        sh 'python test.py'
+      }   
+    }
+  }
+}
+
+
+# vim: et ts=2 sw=2
