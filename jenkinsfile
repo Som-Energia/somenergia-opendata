@@ -18,7 +18,10 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh 'python test.py'
+        sh '''
+            . .venv/bin/activate
+            TRAVIS=1 nosetests
+        '''
       }   
     }
   }
