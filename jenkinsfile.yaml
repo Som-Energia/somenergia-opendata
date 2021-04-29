@@ -9,14 +9,18 @@ pipeline:
       - sh 'pwd'
       - sh 'ls'
       - sh 'which python'
-      - sh 'ifconfig'
       - sh 'cat /etc/hostname' 
   - stage: 'setup'
     steps:
-      - sh 'pip install Flask'
-      - sh 'touch dbconfig.py'
-      - sh './setup.py develop'
-      - sh 'pip install coveralls'
-      - sh './setup.py compile_catalog'
+      script: |
+        sudo pip install -U pip
+        pip install virtualenv
+        virtualenv .venv
+        source .venv/bin/activate
+        pip install Flask
+        touch dbconfig.py
+        ./setup.py develop
+        pip install coveralls
+        ./setup.py compile_catalog
 
 # vim: et ts=2 sw=2
