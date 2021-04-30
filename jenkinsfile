@@ -1,10 +1,11 @@
 pipeline {
   agent { docker { image 'python:3.9.2' } }
+  agent { docker { image 'python:3.8.4' } }
   stages {
     stage('build') {
       steps {
         sh '''
-            touch hola
+            python --version
             python -m venv .venv
             . .venv/bin/activate
             pip install Flask
