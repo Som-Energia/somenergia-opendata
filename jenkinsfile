@@ -22,6 +22,7 @@ def get_stages(docker_image) {
             stage("Prepare") {
                 sh "rm -rf ${PYTHON_VENV}"
                 sh "python -m venv ${PYTHON_VENV}"
+                sh "python -m pip install -U pip"
             }
             stage('Setup') {
                 sh """
