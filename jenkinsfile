@@ -1,32 +1,77 @@
-pipeline {
-  agent { docker { image 'python:3.9.2' } }
-  agent { docker { image 'python:3.8.4' } }
-  stages {
-    stage('build') {
-      steps {
-        sh '''
-            python --version
-            python -m venv .venv
-            . .venv/bin/activate
-            pip install Flask
-            python setup.py develop
-            touch dbconfig.py
-            python ./setup.py develop
-            pip install coveralls
-            python ./setup.py compile_catalog
-        '''
-      }
+#!groovy
+def docker_images = ["python:3.5.5", "python:3.6.4", "python:3.6.5"]
+
+def get_stages(docker_image) {
+    stages = {
+        docker.image(docker_image).inside {
+            // If I use this variable as the Virtual Env Folder,
+            // I get "permission denied" messages from pip, since it tries
+            // to install into /usr/local/... instead of the pyenv folder!
+            // def PYTHON_VENV = docker_image.replaceAll('[:.]', '') + 'venv'
+          
+            // This is the name of the folder where the Virtual Env is created
+            // However, this is shared between docker images and is not isolated!
+            def PYTHON_VENV = '.venv'
+
+            stage("${docker_image}") {
+                echo "Running in ${docker_image}"
+            }
+            stage("Prepare") {
+                sh "rm -rf ${PYTHON_VENV}"
+                sh "python -m venv ${PYTHON_VENV}"
+            }
+            stage('Setup') {
+              steps {
+                sh '''
+                    . ${PYTHON_VENV}/bin/activate
+                    pip install Flask
+                    python setup.py develop
+                    touch dbconfig.py
+                    python ./setup.py develop
+                    pip install coveralls
+                    python ./setup.py compile_catalog
+                '''
+              }
+            }
+            stage('Test') {
+              steps {
+                sh '''
+                    . ${PYTHON_VENV}/bin/activate
+                    TRAVIS=1 nosetests --force-color
+                '''
+              }   
+            }
+            stage("Install") {
+                sh """
+                    . ${PYTHON_VENV}/bin/activate
+                    make install
+                """
+            }
+            stage('Docs') {
+                sh """
+                    . ${PYTHON_VENV}/bin/activate
+                    make doc-dependencies
+                    cd docs
+                    export MPLBACKEND="agg"
+                    make html
+                """
+            }
+
+        }
     }
-    stage('test') {
-      steps {
-        sh '''
-            . .venv/bin/activate
-            TRAVIS=1 nosetests --force-color
-        '''
-      }   
-    }
-  }
+    return stages
 }
 
+node('master') {
+    checkout scm
 
+    def stages = [:]
+    for (int i = 0; i < docker_images.size(); i++) {
+        def docker_image = docker_images[i]
+        stages[docker_image] = get_stages(docker_image)
+    }
+
+    parallel stages
+
+}
 // vim: et ts=2 sw=2
