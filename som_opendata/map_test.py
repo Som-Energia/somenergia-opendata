@@ -281,19 +281,6 @@ manyStatesDifferentCCAA = ns.loads("""\
 
 legendTemplate = Path('data/maps/legend.svg').read_text(encoding='utf8')
 
-def getBlobInfo(binaryBlob):
-    from wand.image import Image
-
-    result = ns()
-    with Image(blob=binaryBlob) as img:
-        result.update({
-            'format': img.format,
-            'isAnimation': img.animation,
-            'numFrames': len(img.sequence),
-            })
-
-    return result
-
 class Map_Test(unittest.TestCase):
 
     def setUp(self):

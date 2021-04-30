@@ -33,7 +33,6 @@ setup(
 		'lxml',
 		'python-dateutil',
 		'records',
-		'tablib',
 		'somutils',
 		'colour',
 		'babel',

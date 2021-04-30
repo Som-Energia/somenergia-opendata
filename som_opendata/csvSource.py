@@ -69,10 +69,6 @@ class CsvSource(object):
     def update(self, metric, content):
         getAggregated.cache_clear()
 
-        _data = tablib.Dataset()
-        _data.dict = self._objects[metric]
-        _content = tablib.Dataset()
-        _content.dict = content
         addedDates = sorted(includedDates(content), reverse=True)
         if addedDates and addedDates[0] > self.lastDay[metric]:
             self.lastDay[metric] = addedDates[0]
