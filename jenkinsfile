@@ -22,11 +22,11 @@ def get_stages(docker_image) {
             stage("Prepare") {
                 sh "rm -rf ${PYTHON_VENV}"
                 sh "python -m venv ${PYTHON_VENV}"
-                sh "python -m pip install -U pip"
             }
             stage('Setup') {
                 sh """
                     . ${PYTHON_VENV}/bin/activate
+                    python -m pip install -U pip
                     pip install Flask
                     python setup.py develop
                     touch dbconfig.py
