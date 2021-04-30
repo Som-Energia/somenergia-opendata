@@ -41,6 +41,12 @@ def get_stages(docker_image) {
                     TRAVIS=1 nosetests --force-color
                 """
             }
+
+            post {
+                always {
+                    archiveArtifacts artifacts: 'b2bdata/*result', fingerprint: false
+                }
+            }
         }
     }
     return stages
@@ -56,10 +62,5 @@ node('master') {
     }
 
     parallel stages
-    post {
-        always {
-            archiveArtifacts artifacts: 'b2bdata/*result', fingerprint: false
-        }
-    }
 }
 // vim: et ts=2 sw=2
