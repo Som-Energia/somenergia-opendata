@@ -41,9 +41,9 @@ def get_stages(docker_image) {
                     TRAVIS=1 nosetests --force-color
                 """
             }
-
             post {
                 always {
+                    echo "Generating results"
                     archiveArtifacts artifacts: 'b2bdata/*result', fingerprint: false
                 }
             }
