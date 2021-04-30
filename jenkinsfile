@@ -22,7 +22,7 @@ def get_stages(docker_image) {
             }
             stage('Setup') {
               steps {
-                sh '''
+                sh """
                     . ${PYTHON_VENV}/bin/activate
                     pip install Flask
                     python setup.py develop
@@ -30,33 +30,17 @@ def get_stages(docker_image) {
                     python ./setup.py develop
                     pip install coveralls
                     python ./setup.py compile_catalog
-                '''
+                """
               }
             }
             stage('Test') {
               steps {
-                sh '''
+                sh """
                     . ${PYTHON_VENV}/bin/activate
                     TRAVIS=1 nosetests --force-color
-                '''
+                """
               }   
             }
-            stage("Install") {
-                sh """
-                    . ${PYTHON_VENV}/bin/activate
-                    make install
-                """
-            }
-            stage('Docs') {
-                sh """
-                    . ${PYTHON_VENV}/bin/activate
-                    make doc-dependencies
-                    cd docs
-                    export MPLBACKEND="agg"
-                    make html
-                """
-            }
-
         }
     }
     return stages
