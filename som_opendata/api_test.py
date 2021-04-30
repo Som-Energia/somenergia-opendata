@@ -112,12 +112,11 @@ class Api_Test(unittest.TestCase):
             compat: '0.2.1'
             """.format(__version__))
 
-    @unittest.skip("Skipped for testing Jenkins")
+
     def test__metrics(self):
         r = self.get('/discover/metrics')
         self.assertB2BEqual(r.data)
 
-    @unittest.skip("Skipped for testing Jenkins")
     def test__metrics_translated(self):
         r = self.get('/discover/metrics?lang=ca')
         # text and description should be in catalan
