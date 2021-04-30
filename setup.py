@@ -36,7 +36,6 @@ setup(
 		'somutils',
 		'colour',
 		'babel',
-		'Wand', #make gifs
 		'flask-babel',
 		'decorator',
 		'python-slugify',
