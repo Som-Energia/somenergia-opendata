@@ -56,6 +56,10 @@ node('master') {
     }
 
     parallel stages
-
+    post {
+        always {
+            archiveArtifacts artifacts: 'b2bdata/*result', fingerprint: false
+        }
+    }
 }
 // vim: et ts=2 sw=2
