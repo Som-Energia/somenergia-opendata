@@ -2,7 +2,6 @@
 from yamlns.dateutils import Date as isoDate
 from yamlns import namespace as ns
 from functools import lru_cache
-from frozendict import frozendict
 from . import common
 
 def parse_tsv(tsv_data):

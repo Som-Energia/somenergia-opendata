@@ -43,7 +43,6 @@ setup(
 		'python-slugify',
 		'future', # Py2 backward compat
 		'pathlib2', # Py2 backward compat
-		'frozendict', # use cache
 		'numpy<1.20', # 1.20 does not support Py 3.6.x
 	],
 	include_package_data = True,
