@@ -42,7 +42,7 @@ def get_stages(docker_image) {
                 """
             }
             post {
-                always {
+                failed {
                     echo "Generating results"
                     archiveArtifacts artifacts: 'b2bdata/*result', fingerprint: false
                 }
