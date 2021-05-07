@@ -79,14 +79,14 @@ u"""<svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="30
 
     def test_getTemplate_missingGeolevel(self):
         with self.assertRaises(ValueError) as context:
-            data.getTemplate('jupiter')
-        self.assertEqual("Template for geolevel jupiter not found",
+            data.getTemplate('satrapy')
+        self.assertEqual("No map template found for country=es detailed by satrapy in language 'en'",
             str(context.exception)
         )
 
     def test_getTemplate_missingLanguage(self):
         with self.assertRaises(ValueError) as context:
             data.getTemplate('ccaa', 'fr')
-        self.assertEqual("Template in fr not found",
+        self.assertEqual("No map template found for country=es detailed by ccaa in language 'fr'",
             str(context.exception)
         )

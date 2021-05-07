@@ -10,16 +10,18 @@ class TemplateSource(object):
     def getLegend(self):
         return self.legend
 
-    def getTemplate(self, geolevel, lang='en', fake=False):
+    def getTemplate(self, geolevel, lang='en', filters=dict(country=['ES']), fake=False):
         if fake:
             geolevel = 'dummy'
-        if geolevel not in self.templates.keys():
-            raise ValueError("Template for geolevel {} not found".format(geolevel))
 
-        if lang not in self.templates[geolevel].keys():
-            raise ValueError("Template in {} not found".format(lang))
+        filtergeolevel = 'country'
+        filterregion = 'es'
+        if (geolevel, filtergeolevel, filterregion, lang) not in self.templates:
+            raise ValueError(
+                f"No map template found for {filtergeolevel}={filterregion}"
+                f" detailed by {geolevel} in language '{lang}'")
 
-        return self.templates[geolevel][lang]
+        return self.templates[geolevel, filtergeolevel, filterregion, lang]
 
 
 
@@ -33,10 +35,8 @@ def loadMapData(relativePath='../data/maps'):
     dataPath = (codePath / relativePath).resolve()
     templates = ns()
     for datafile in dataPath.glob('mapTemplates/*'):
-        geolevel, lang = datafile.name.split('_')
-        if not templates.get(geolevel):
-            templates[geolevel]= ns()
-        templates[geolevel][lang] = datafile.read_text(encoding='utf8')
+        geolevel, filtergeolevel, filterregion, lang = datafile.stem.split('_')
+        templates[geolevel, filtergeolevel, filterregion, lang] = datafile.read_text(encoding='utf8')
 
     legend = (dataPath / 'legend.svg').read_text(encoding='utf8')
 
