@@ -90,3 +90,17 @@ u"""<svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="30
         self.assertEqual("No map template found for country=es detailed by ccaa in language 'fr'",
             str(context.exception)
         )
+
+    def test_getTemplate_missingRegion(self):
+        with self.assertRaises(ValueError) as context:
+            data.getTemplate('ccaa', 'es', dict(country=['FR']))
+        self.assertEqual("No map template found for country=fr detailed by ccaa in language 'es'",
+            str(context.exception)
+        )
+
+    def test_getTemplate_missingFilterLevel(self):
+        with self.assertRaises(ValueError) as context:
+            data.getTemplate('ccaa', 'es', dict(satrapy=['syria']))
+        self.assertEqual("No map template found for satrapy=syria detailed by ccaa in language 'es'",
+            str(context.exception)
+        )

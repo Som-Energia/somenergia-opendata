@@ -14,14 +14,20 @@ class TemplateSource(object):
         if fake:
             geolevel = 'dummy'
 
-        filtergeolevel = 'country'
-        filterregion = 'es'
-        if (geolevel, filtergeolevel, filterregion, lang) not in self.templates:
+        def getSingleFilter(filters):
+            for level, regions in filters.items():
+                for region in regions:
+                    return level, region.lower()
+            return 'country', 'ES'.lower()
+
+        filterlevel, region = getSingleFilter(filters)
+
+        if (geolevel, filterlevel, region, lang) not in self.templates:
             raise ValueError(
-                f"No map template found for {filtergeolevel}={filterregion}"
+                f"No map template found for {filterlevel}={region}"
                 f" detailed by {geolevel} in language '{lang}'")
 
-        return self.templates[geolevel, filtergeolevel, filterregion, lang]
+        return self.templates[geolevel, filterlevel, region, lang]
 
 
 
