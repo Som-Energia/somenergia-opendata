@@ -146,7 +146,6 @@ class Api_Test(unittest.TestCase):
               text: 'City'
               parent: state
               plural: cities
-              mapable: False
             - id: localgroup
               text: 'Local Group'
               parent: world
@@ -179,7 +178,6 @@ class Api_Test(unittest.TestCase):
               text: 'Municipi'
               parent: state
               plural: cities
-              mapable: False
             - id: localgroup
               text: 'Grup Local'
               parent: world

@@ -397,6 +397,6 @@ class Common_Test(unittest.TestCase):
         self.assertEqual(ctx.exception.value, 'country')
         self.assertEqual(ctx.exception.code, 400)
         self.assertEqual(ctx.exception.description,
-            "Invalid geolevel 'country'. Accepted ones are 'ccaa', 'state'.")
+            "Invalid geolevel 'country'. Accepted ones are 'ccaa', 'state', 'city'.")
 
 # vim: et ts=4 sw=4
