@@ -29,15 +29,15 @@ from pathlib2 import Path
 
 
 def loadMapData(relativePath='../data/maps'):
-    myPath = os.path.abspath(os.path.dirname(__file__))
-    dataPath = os.path.join(myPath, relativePath)
+    codePath = Path(__file__).parent.absolute()
+    dataPath = (codePath / relativePath).resolve()
     templates = ns()
-    for datafile in glob.glob(os.path.join(dataPath, 'mapTemplates/*')):
-        geolevel, lang = os.path.basename(datafile).split('_')
+    for datafile in dataPath.glob('mapTemplates/*'):
+        geolevel, lang = datafile.name.split('_')
         if not templates.get(geolevel):
             templates[geolevel]= ns()
-        templates[geolevel][lang] = Path(datafile).read_text(encoding='utf8')
+        templates[geolevel][lang] = datafile.read_text(encoding='utf8')
 
-    legend = Path(dataPath + '/legend.svg').read_text(encoding='utf8')
+    legend = (dataPath / 'legend.svg').read_text(encoding='utf8')
 
     return TemplateSource(templates=templates, legend=legend)
