@@ -742,7 +742,9 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
         periodicity=frequency,
     )
 
+    filters = locationFiltersFromQuery()
     locationCodes = api.relativeMetricSource.getCodesByGeolevel(geolevel=geolevel)
+    #locationCodes = api.source.geolevelOptions(geolevel, **filters).keys()
     relativeMValues = api.relativeMetricSource.getValuesByCode(
         metric=relativemetric,
         geolevel=geolevel,
@@ -760,6 +762,7 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
         legendTemplate=api.mapTemplateSource.getLegend(),
         locationsCodes=locationCodes,
         relativeMetricValues=relativeMValues,
+        filters=filters,
     )
     response = make_response(result)
     response.mimetype = 'image/svg+xml'
