@@ -42,6 +42,7 @@ ES	España	01	Andalucia	11	Cádiz	11025	Paterna de Rivera	0	0
 ES	España	01	Andalucia	11	Cádiz	11026	Prado del Rey	0	0
 ES	España	01	Andalucia	11	Cádiz	11027	Puerto de Santa María, El	0	0
 ES	España	01	Andalucia	11	Cádiz	11028	Puerto Real	0	0
+ES	España	01	Andalucia	11	Cádiz	11030	Rota	0	0
 ES	España	01	Andalucia	11	Cádiz	11031	San Fernando	0	0
 ES	España	01	Andalucia	11	Cádiz	11032	Sanlúcar de Barrameda	0	0
 ES	España	01	Andalucia	11	Cádiz	11033	San Roque	0	0
@@ -228,7 +229,6 @@ ES	España	01	Andalucia	29	Málaga	29097	Villanueva del Trabuco	0	0
 ES	España	01	Andalucia	41	Sevilla	41001	Aguadulce	0	0
 ES	España	01	Andalucia	41	Sevilla	41004	Alcalá de Guadaíra	0	0
 ES	España	01	Andalucia	41	Sevilla	41005	Alcalá del Río	0	0
-ES	España	01	Andalucia	41	Sevilla	41006	Alcolea del Río	0	0
 ES	España	01	Andalucia	41	Sevilla	41007	Algaba, La	0	0
 ES	España	01	Andalucia	41	Sevilla	41009	Almadén de la Plata	0	0
 ES	España	01	Andalucia	41	Sevilla	41011	Arahal	0	0
@@ -282,6 +282,7 @@ ES	España	01	Andalucia	41	Sevilla	41086	San Juan de Aznalfarache	0	0
 ES	España	01	Andalucia	41	Sevilla	41087	Sanlúcar la Mayor	0	0
 ES	España	01	Andalucia	41	Sevilla	41089	Santiponce	0	0
 ES	España	01	Andalucia	41	Sevilla	41090	Saucejo, El	0	0
+ES	España	01	Andalucia	41	Sevilla	41006	Sevilla	0	0
 ES	España	01	Andalucia	41	Sevilla	41091	Sevilla	0	0
 ES	España	01	Andalucia	41	Sevilla	41093	Tomares	0	0
 ES	España	01	Andalucia	41	Sevilla	41094	Umbrete	0	0
@@ -390,6 +391,7 @@ ES	España	02	Aragón	44	Teruel	44194	Ráfales	0	0
 ES	España	02	Aragón	44	Teruel	44201	Rubielos de Mora	0	0
 ES	España	02	Aragón	44	Teruel	44210	Sarrión	0	0
 ES	España	02	Aragón	44	Teruel	44216	Teruel	0	0
+ES	España	02	Aragón	44	Teruel	44221	Torrecilla de Alcañiz	0	0
 ES	España	02	Aragón	44	Teruel	44223	Torre de Arcas	0	0
 ES	España	02	Aragón	44	Teruel	44239	Valacloche	0	0
 ES	España	02	Aragón	44	Teruel	44241	Valdealgorfa	0	0
@@ -420,6 +422,7 @@ ES	España	02	Aragón	50	Zaragoza	50079	Cervera de la Cañada	0	0
 ES	España	02	Aragón	50	Zaragoza	50080	Cerveruela	0	0
 ES	España	02	Aragón	50	Zaragoza	50081	Cetina	0	0
 ES	España	02	Aragón	50	Zaragoza	50092	Chiprana	0	0
+ES	España	02	Aragón	50	Zaragoza	50086	Codos	0	0
 ES	España	02	Aragón	50	Zaragoza	50089	Cuarte de Huerva	0	0
 ES	España	02	Aragón	50	Zaragoza	50095	Ejea de los Caballeros	0	0
 ES	España	02	Aragón	50	Zaragoza	50099	Épila	0	0
@@ -837,6 +840,7 @@ ES	España	08	Castilla - La Mancha	45	Toledo	45168	Toledo	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45171	Torre de Esteban Hambrán, La	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45176	Ugena	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45180	Valmojado	0	0
+ES	España	08	Castilla - La Mancha	45	Toledo	45183	Ventas de Retamosa, Las	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45185	Villacañas	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45187	Villafranca de los Caballeros	0	0
 ES	España	08	Castilla - La Mancha	45	Toledo	45188	Villaluenga de la Sagra	0	0
@@ -973,6 +977,7 @@ ES	España	07	Castilla y León	40	Segovia	40072	Encinillas	0	0
 ES	España	07	Castilla y León	40	Segovia	40076	Espinar, El	0	0
 ES	España	07	Castilla y León	40	Segovia	40100	Hontalbilla	0	0
 ES	España	07	Castilla y León	40	Segovia	40113	Losa, La	0	0
+ES	España	07	Castilla y León	40	Segovia	40123	Matabuena	0	0
 ES	España	07	Castilla y León	40	Segovia	40148	Nieva	0	0
 ES	España	07	Castilla y León	40	Segovia	40901	Ortigosa del Monte	0	0
 ES	España	07	Castilla y León	40	Segovia	40152	Otero de Herreros	0	0
@@ -1049,7 +1054,6 @@ ES	España	09	Cataluña	08	Barcelona	08017	Balenyà	0	0
 ES	España	09	Cataluña	08	Barcelona	08018	Balsareny	0	0
 ES	España	09	Cataluña	08	Barcelona	08252	Barberà del Vallès	0	0
 ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3	4
-ES	España	09	Cataluña	08	Barcelona	08260	Barcelona	0	0
 ES	España	09	Cataluña	08	Barcelona	08020	Begues	0	0
 ES	España	09	Cataluña	08	Barcelona	08021	Bellprat	0	0
 ES	España	09	Cataluña	08	Barcelona	08022	Berga	0	0
@@ -1242,6 +1246,7 @@ ES	España	09	Cataluña	08	Barcelona	08258	Santa Maria d'Oló	0	0
 ES	España	09	Cataluña	08	Barcelona	08196	Sant Andreu de la Barca	0	0
 ES	España	09	Cataluña	08	Barcelona	08197	Sant Andreu de Llavaneres	0	0
 ES	España	09	Cataluña	08	Barcelona	08198	Sant Antoni de Vilamajor	0	0
+ES	España	09	Cataluña	08	Barcelona	08260	Santa Perpètua de Mogoda	0	0
 ES	España	09	Cataluña	08	Barcelona	08261	Santa Susanna	0	0
 ES	España	09	Cataluña	08	Barcelona	08199	Sant Bartomeu del Grau	0	0
 ES	España	09	Cataluña	08	Barcelona	08200	Sant Boi de Llobregat	0	0
@@ -1902,6 +1907,7 @@ ES	España	09	Cataluña	43	Tarragona	43178	Vinyols i els Arcs	0	0
 ES	España	09	Cataluña	43	Tarragona	43052	Xerta	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03002	Agost	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03003	Agres	0	0
+ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03004	Aigües	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03006	Alcalalí	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03009	Alcoy/Alcoi	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03010	Alfafara	0	0
@@ -2208,7 +2214,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46244	Torrent	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46245	Torres Torres	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46246	Tous	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46249	Utiel	0	0
-ES	España	10	Comunidad Valenciana	46	Valencia/València	46250	Valencia/València	2	1
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46250	Valencia	2	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46251	Vallada	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46252	Vallanca	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46254	Venta del Moro	0	0
@@ -2237,6 +2243,7 @@ ES	España	11	Extremadura	06	Badajoz	06049	Feria	0	0
 ES	España	11	Extremadura	06	Badajoz	06050	Fregenal de la Sierra	0	0
 ES	España	11	Extremadura	06	Badajoz	06060	Guareña	0	0
 ES	España	11	Extremadura	06	Badajoz	06063	Herrera del Duque	0	0
+ES	España	11	Extremadura	06	Badajoz	06074	Llerena	0	0
 ES	España	11	Extremadura	06	Badajoz	06072	Lobón	0	0
 ES	España	11	Extremadura	06	Badajoz	06083	Mérida	0	0
 ES	España	11	Extremadura	06	Badajoz	06085	Monesterio	0	0
@@ -2259,6 +2266,7 @@ ES	España	11	Extremadura	10	Cáceres	10067	Coria	0	0
 ES	España	11	Extremadura	10	Cáceres	10078	Garganta, La	0	0
 ES	España	11	Extremadura	10	Cáceres	10079	Garganta la Olla	0	0
 ES	España	11	Extremadura	10	Cáceres	10096	Hervás	0	0
+ES	España	11	Extremadura	10	Cáceres	10100	Hoyos	0	0
 ES	España	11	Extremadura	10	Cáceres	10104	Jaraíz de la Vera	0	0
 ES	España	11	Extremadura	10	Cáceres	10113	Madroñera	0	0
 ES	España	11	Extremadura	10	Cáceres	10115	Malpartida de Cáceres	0	0
@@ -2371,6 +2379,7 @@ ES	España	12	Galicia	36	Pontevedra	36004	Bueu	0	0
 ES	España	12	Galicia	36	Pontevedra	36005	Caldas de Reis	0	0
 ES	España	12	Galicia	36	Pontevedra	36006	Cambados	0	0
 ES	España	12	Galicia	36	Pontevedra	36008	Cangas	0	0
+ES	España	12	Galicia	36	Pontevedra	36009	Cañiza, A	0	0
 ES	España	12	Galicia	36	Pontevedra	36017	Estrada, A	0	0
 ES	España	12	Galicia	36	Pontevedra	36022	Grove, O	0	0
 ES	España	12	Galicia	36	Pontevedra	36024	Lalín	0	0
@@ -2582,6 +2591,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31016	Ansoáin/Antsoain	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31017	Anue	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31019	Aoiz/Agoitz	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31020	Araitz	0	0
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31025	Arakil	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31023	Aranguren	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31027	Arbizu	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31028	Arce/Artzi	0	0
@@ -2605,6 +2615,7 @@ ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31250	Bera	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31905	Beriáin	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31902	Berrioplano/Berriobeiti	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31903	Berriozar	0	0
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31253	Bidaurreta	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31056	Biurrun-Olcoz	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31059	Burgui/Burgi	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31060	Burlada/Burlata	0	0
@@ -2828,6 +2839,7 @@ ES	España	16	País Vasco	20	Gipuzkoa	20073	Usurbil	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20079	Zarautz	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20027	Zestoa	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20081	Zumaia	0	0
+ES	España	16	País Vasco	20	Gipuzkoa	20080	Zumarraga	0	0
 ES	España	17	Rioja, La	26	Rioja, La	26002	Agoncillo	0	0
 ES	España	17	Rioja, La	26	Rioja, La	26005	Albelda de Iregua	0	0
 ES	España	17	Rioja, La	26	Rioja, La	26006	Alberite	0	0
