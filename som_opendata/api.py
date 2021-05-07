@@ -750,15 +750,16 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
         geolevel=geolevel,
     ) if relativemetric else dict()
 
+    template=api.mapTemplateSource.getTemplate(
+        geolevel=geolevel,
+        lang=str(get_locale()),
+    )
     result = renderMap(
         source=api.source,
         metric=metric,
         timeDomain=timeDomain,
         geolevel=geolevel,
-        template=api.mapTemplateSource.getTemplate(
-            geolevel=geolevel,
-            lang=str(get_locale()),
-        ),
+        template=template,
         legendTemplate=api.mapTemplateSource.getLegend(),
         locationsCodes=locationCodes,
         relativeMetricValues=relativeMValues,
