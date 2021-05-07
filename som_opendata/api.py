@@ -753,6 +753,7 @@ def map(metric=None, ondate=None, geolevel='ccaa', frequency=None, fromdate=None
     template=api.mapTemplateSource.getTemplate(
         geolevel=geolevel,
         lang=str(get_locale()),
+        filters=filters,
     )
     result = renderMap(
         source=api.source,
