@@ -131,7 +131,7 @@ geolevels = ns([
         text = _('City'),
         plural = 'cities',
         parent = 'state',
-        mapable = False,
+        #mapable = False,
     )),
     ('localgroup', ns(
         text = _('Local Group'),
