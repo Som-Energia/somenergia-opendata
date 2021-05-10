@@ -32,11 +32,10 @@
   </metadata>
   <style>
     .city.foreign {
-       opacity:.5;
        fill:#ddd;
        fill-opacity:1;
        fill-rule:evenodd;
-       stroke:#000000;
+       stroke:none;
        stroke-width:0.1;
        stroke-linecap:round;
        stroke-linejoin:round;
@@ -45,8 +44,7 @@
        stroke-opacity:1;
     }
     .city.selected {
-       opacity:.5;
-       fill:#ff6600;
+       fill:#ffaa66;
        fill-opacity:1;
        fill-rule:evenodd;
        stroke:#000000;
