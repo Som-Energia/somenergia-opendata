@@ -31,10 +31,30 @@
   </metadata>
   <style>
     .city.foreign {
-       opacity:1;fill:#e6e600;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.10000000000000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1
+       opacity:.5;
+       fill:#e6e600;
+       fill-opacity:1;
+       fill-rule:evenodd;
+       stroke:#000000;
+       stroke-width:0.1;
+       stroke-linecap:round;
+       stroke-linejoin:round;
+       stroke-miterlimit:4;
+       stroke-dasharray:none;
+       stroke-opacity:1
     }
     .city.selected {
-       opacity:1;fill:#ff6600;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.10000000000000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1
+       opacity:.5;
+       fill:#ff6600;
+       fill-opacity:1;
+       fill-rule:evenodd;
+       stroke:#000000;
+       stroke-width:0.1;
+       stroke-linecap:round;
+       stroke-linejoin:round;
+       stroke-miterlimit:4;
+       stroke-dasharray:none;
+       stroke-opacity:1
     }
   </style>
   <g
