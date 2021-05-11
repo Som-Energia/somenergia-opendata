@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" original_viewBox="0 0 420 420" viewBox="275 170 60 60" version="1.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" original_viewBox="0 0 420 420" viewBox="275 168 60 56" version="1.0">
   <style>
 .city.foreign {{
     fill:#eee;
@@ -40,24 +40,24 @@ text.title {{
     font-family: Sans;
     font-size: 3px;
     font-weight: 600;
-    text-anchor: start;
+    text-anchor: end;
 }}
 text.subtitle {{
     font-family: Sans;
     font-size: 2px;
     font-weight: 500;
-    text-anchor: start;
+    text-anchor: end;
 }}
 text.date {{
     font-family: Sans;
-    font-size: 3px;
+    font-size: 2.5px;
     font-weight: 600;
     text-anchor: start;
 }}
 text.city.number {{
     font-family: Sans;
     font-size: 1px;
-    font-weight: 600;
+    font-weight: 500;
     text-anchor: middle;
 }}
 text.city.name {{
@@ -66,12 +66,21 @@ text.city.name {{
     font-weight: 600;
     text-anchor: middle;
 }}
+path.border {{
+    stroke:#f5f5f5;
+    fill:none;
+    stroke-width:.7px;
+}}
+path.sea {{
+    stroke:#ddd;
+    fill:#ccc;
+}}
   </style>
-  <apath style="stroke:#000; fill:none" d="M275 170 h 60 v 70 h -60 z" />
-  <path style="stroke:#ddd; fill:#ccc" d="M0 0h 420 v 420 h -420 z" />
   <g
      id="layer1"
+     clip-path="path('M275 168 h 60 v 60 h -60 z')"
     >
+    <path class="sea" d="M0 0h 420 v 420 h -420 z" />
     <path
        id="path4402"
        class="city foreign"
@@ -5032,11 +5041,11 @@ text.city.name {{
          id="path1852" />
     </g>
 <g id="texts">
-     <text class="title" x="282" y="173">{title}</text>
-     <text class="subtitle" x="282" y="175">{subtitle}</text>
+     <text class="title" x="332" y="173">{title}</text>
+     <text class="subtitle" x="332" y="175">{subtitle}</text>
 </g>
 <g class="frameable">
-     <text class="date" x="282" y="226">{year} {month}</text>
+     <text class="date" x="278" y="222">{year} {month}</text>
      <text id="name_17146" class="city name" x="306" y="190">Riells i Viabrea</text>
      <text id="number_17146" class="city number" x="306" y="191">{number_17146}</text>
      <text id="name_08081" class="city name" x="297" y="193">Fogars de Montclús</text>
@@ -5049,15 +5058,15 @@ text.city.name {{
      <text id="name_08207" class="city name" x="296" y="200">Sant Esteve de</text>
      <text id="name_08207" class="city name" x="296" y="201">Palautordera</text>
      <text id="number_08207" class="city number" x="296" y="202">{number_08207}</text>
-     <text id="name_08234" class="city name" x="290" y="197">Sant Pere</text>
-     <text id="name_08234" class="city name" x="290" y="198">de Vilamajor</text>
-     <text id="number_08234" class="city number" x="290" y="199">{number_08234}</text>
-     <text id="name_17083" class="city name" x="321" y="196">Hostalric</text>
-     <text id="number_17083" class="city number" x="321" y="197">{number_17083}</text>
+     <text id="name_08234" class="city name" x="291" y="197">Sant Pere</text>
+     <text id="name_08234" class="city name" x="291" y="198">de Vilamajor</text>
+     <text id="number_08234" class="city number" x="291" y="199">{number_08234}</text>
+     <text id="name_17083" class="city name" x="321" y="195">Hostalric</text>
+     <text id="number_17083" class="city number" x="321" y="196">{number_17083}</text>
      <text id="name_08039" class="city name" x="301" y="198">Campins</text>
      <text id="number_08039" class="city number" x="301" y="199">{number_08039}</text>
-     <text id="name_08202" class="city name" x="312" y="205">Sant Celoni</text>
-     <text id="number_08202" class="city number" x="312" y="206">{number_08202}</text>
+     <text id="name_08202" class="city name" x="310" y="204">Sant Celoni</text>
+     <text id="number_08202" class="city number" x="310" y="205">{number_08202}</text>
      <text id="name_08198" class="city name" x="292" y="207">Sant Antoni</text>
      <text id="name_08198" class="city name" x="292" y="208">de Vilamajor</text>
      <text id="number_08198" class="city number" x="292" y="209">{number_08198}</text>
@@ -5082,5 +5091,6 @@ text.city.name {{
      <text id="name_17027" class="city name" x="312" y="194">Breda</text>
      <text id="number_17027" class="city number" x="312" y="195">{number_17027}</text>
 </g>
+    <path class="border" d="M275 168 h 60 v 60 h -60 z" />
   </g>
 </svg>
