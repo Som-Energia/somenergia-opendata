@@ -1,41 +1,71 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" original_viewBox="0 0 420 420" viewBox="275 170 60 60" version="1.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 420 420" noviewBox="275 170 60 60" version="1.0">
   <style>
-    .city.foreign {{
-       fill:#ddd;
-       fill-opacity:1;
-       fill-rule:evenodd;
-       stroke:none;
-       stroke-width:0.1;
-       stroke-linecap:round;
-       stroke-linejoin:round;
-       stroke-miterlimit:4;
-       stroke-dasharray:none;
-       stroke-opacity:1;
-    }}
-    .city.selected {{
-       fill:#ffaa66;
-       fill-opacity:1;
-       fill-rule:evenodd;
-       stroke:#aaa;
-       stroke-width:0.1;
-       stroke-linecap:round;
-       stroke-linejoin:round;
-       stroke-miterlimit:4;
-       stroke-dasharray:none;
-       stroke-opacity:1;
-    }}
-    .county {{
-      fill:none;
-      fill-opacity:1;
-      fill-rule:evenodd;
-      stroke:#707070;
-      stroke-width:0.3;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-      stroke-miterlimit:4;
-      stroke-dasharray:none;
-      stroke-opacity:1;
-    }}
+.city.foreign {{
+    fill:#eee;
+    fill-opacity:1;
+    fill-rule:evenodd;
+    stroke:none;
+    stroke-width:0.1;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-opacity:1;
+}}
+.city.selected {{
+    fill:#ffaa66;
+    fill-opacity:1;
+    fill-rule:evenodd;
+    stroke:#aaa;
+    stroke-width:0.1;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-opacity:1;
+}}
+.county {{
+    fill:none;
+    fill-opacity:1;
+    fill-rule:evenodd;
+    stroke:#707070;
+    stroke-width:0.1;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-opacity:1;
+}}
+text.title {{
+    font-family: Sans;
+    font-size: 3px;
+    font-weight: 300;
+    text-anchor: start;
+}}
+text.subtitle {{
+    font-family: Sans;
+    font-size: 2px;
+    font-weight: 200;
+    text-anchor: start;
+}}
+text.date {{
+    font-family: Sans;
+    font-size: 2px;
+    font-weight: 600;
+    text-anchor: start;
+}}
+text.city.number {{
+    font-family: Sans;
+    font-size: 1px;
+    font-weight: 600;
+    text-anchor: middle;
+}}
+text.city.name {{
+    font-family: Sans;
+    font-size: 1px;
+    font-weight: 600;
+    text-anchor: middle;
+}}
   </style>
   <apath style="stroke:#000; fill:none" d="M275 170 h 60 v 70 h -60 z" />
   <path style="stroke:#ddd; fill:#ccc" d="M0 0h 420 v 420 h -420 z" />
@@ -2631,7 +2661,6 @@
        class="city foreign"
        d="M 76.46123,197.17109 L 77.168493,197.40683 L 78.347249,197.40683 L 79.997517,197.40683 L 80.704771,197.87831 L 81.412024,199.05703 L 81.176273,199.76426 L 81.176273,200.94297 L 80.46902,201.41446 L 78.583,201.88595 L 77.404244,201.88595 L 76.932742,201.17872 L 75.989728,200.23575 L 75.989728,199.05703 L 76.46123,197.17109 z"
        />
-    <!-- Sant Celoni -->
     <path
        id="city_08202"
        class="city selected"
@@ -5002,5 +5031,56 @@
          d="M 34.03125,342.625 L 31.65625,342.875 L 31.65625,343.34375 L 31.1875,344.75 L 30.71875,344.96875 L 30.25,344.96875 L 28.84375,344.75 L 27.4375,346.40625 L 27.1875,346.15625 L 26.96875,346.15625 L 26.71875,346.625 L 26.25,347.34375 L 26,347.34375 L 25.78125,347.09375 L 25.53125,346.625 L 25.3125,346.875 L 24.59375,346.625 L 24.375,347.8125 L 24.375,348.28125 L 24.375,348.75 L 23.875,348.53125 L 23.40625,347.8125 L 22.9375,347.34375 L 22.71875,347.34375 L 22.71875,347.5625 L 23.1875,348.28125 L 23.1875,348.75 L 23.65625,350.15625 L 25.53125,351.125 L 26.25,350.40625 L 26.71875,351.59375 L 27.90625,351.34375 L 28.125,350.875 L 28.84375,350.625 L 29.3125,350.40625 L 30.5,350.40625 L 30.25,351.8125 L 31.4375,355.34375 L 32.125,355.59375 L 33.09375,355.125 L 34.03125,354.65625 L 34.5,354.65625 L 35.21875,355.125 L 35.6875,355.34375 L 36.375,356.78125 L 37.8125,357.46875 L 38.03125,358.1875 L 37.09375,359.59375 L 36.84375,360.0625 L 36.15625,360.3125 L 35.90625,360.3125 L 35.21875,362.1875 L 35.21875,363.59375 L 35.21875,363.84375 L 34.96875,364.0625 L 35.21875,365.03125 L 35.21875,365.25 L 35.6875,365.71875 L 35.90625,365.71875 L 36.15625,366.4375 L 36.375,367.15625 L 37.5625,367.84375 L 37.8125,367.84375 L 38.28125,367.625 L 38.5,367.625 L 38.75,368.09375 L 40.15625,369.03125 L 42.28125,369.96875 L 44.15625,370.6875 L 47.9375,370.90625 L 49.125,370.90625 L 49.59375,371.15625 L 50.75,371.625 L 51.25,372.3125 L 51.46875,373.03125 L 53.125,374.21875 L 54.3125,375.40625 L 55.71875,375.40625 L 55.71875,375.625 L 55.46875,375.875 L 55.25,376.09375 L 55,376.5625 L 54.78125,377.5 L 55,378.6875 L 55,380.34375 L 56.1875,381.28125 L 57.59375,381.75 L 59.71875,382.9375 L 61.375,383.65625 L 62.5625,384.125 L 63.71875,384.34375 L 64.1875,384.59375 L 64.4375,383.65625 L 65.15625,382 L 65.15625,381.75 L 65.15625,381.53125 L 66.3125,379.875 L 66.5625,379.40625 L 67.28125,377.5 L 68.21875,376.8125 L 68.4375,376.8125 L 68.90625,377.28125 L 68.4375,376.5625 L 70.09375,374.90625 L 72.6875,371.84375 L 73.625,370.6875 L 74.34375,370.4375 L 74.5625,370.21875 L 74.34375,370.21875 L 74.09375,370.21875 L 74.09375,369.96875 L 74.5625,369.75 L 74.8125,369.75 L 74.5625,369.96875 L 74.8125,369.96875 L 75.03125,370.21875 L 75.75,370.21875 L 75.75,369.96875 L 75.53125,369.96875 L 75.28125,369.75 L 75.28125,369.96875 L 74.5625,369.5 L 74.8125,369.25 L 75.03125,369.5 L 75.03125,369.25 L 75.28125,369.25 L 75.53125,369.03125 L 75.75,369.03125 L 77.15625,369.25 L 80.9375,369.03125 L 81.65625,368.78125 L 82.34375,368.5625 L 83.53125,368.3125 L 84.46875,367.625 L 85.90625,367.15625 L 88.96875,366.90625 L 90.84375,366.90625 L 91.0625,366.90625 L 92.25,367.15625 L 92.25,367.84375 L 92.03125,368.3125 L 90.59375,370.6875 L 88.25,373.96875 L 88,374.21875 L 87.3125,374.6875 L 86.84375,374.6875 L 86.59375,374.6875 L 86.125,374.6875 L 85.90625,374.6875 L 85.65625,374.6875 L 85.1875,374.4375 L 84.9375,374.6875 L 83.53125,373.96875 L 82.59375,374.21875 L 82.125,374.21875 L 81.875,374.21875 L 81.40625,374.90625 L 80.71875,375.15625 L 78.8125,375.625 L 78.34375,375.625 L 77.40625,375.40625 L 76.6875,374.6875 L 76.6875,375.625 L 76.6875,376.09375 L 76.6875,376.34375 L 76.6875,376.5625 L 76.46875,376.5625 L 76,376.5625 L 75.75,376.34375 L 75.53125,376.09375 L 75.28125,376.09375 L 75.28125,376.34375 L 75.03125,376.5625 L 74.34375,376.34375 L 74.09375,376.09375 L 74.34375,377.5 L 74.8125,378.21875 L 75.28125,379.15625 L 76.21875,379.875 L 77.15625,380.09375 L 78.34375,380.34375 L 79.28125,380.09375 L 80.46875,379.875 L 82.59375,379.40625 L 83.53125,378.9375 L 85.40625,378 L 86.375,377.28125 L 87.0625,376.34375 L 88.25,374.6875 L 92.96875,367.625 L 93.65625,366.90625 L 94.625,365.96875 L 96.75,364.78125 L 98.375,364.0625 L 103.09375,361.96875 L 104.75,361 L 105.9375,360.0625 L 107.09375,359.125 L 108.0625,357.46875 L 108.53125,356.0625 L 109,355.125 L 109.21875,354.65625 L 106.625,354.65625 L 103.8125,355.34375 L 101.6875,356.53125 L 98.84375,358.1875 L 96.96875,358.1875 L 94.15625,356.3125 L 93.1875,355.8125 L 86.59375,354.875 L 85.90625,354.875 L 84.9375,354.40625 L 84.25,353.71875 L 82.34375,354.1875 L 80.21875,354.65625 L 76.6875,356.0625 L 75.03125,355.59375 L 72.6875,354.1875 L 72.21875,351.59375 L 71.28125,348.75 L 70.8125,348.53125 L 69.625,349.6875 L 68.4375,349.46875 L 67.75,349 L 67.28125,349.46875 L 66.3125,349.21875 L 65.84375,349.6875 L 63.96875,350.40625 L 63.25,350.40625 L 62.09375,350.40625 L 60.4375,350.625 L 59.5,350.40625 L 56.4375,350.40625 L 55.25,350.15625 L 52.875,349.6875 L 49.34375,346.625 L 49.34375,346.40625 L 44.625,346.875 L 43.21875,346.15625 L 42.75,347.8125 L 42.03125,347.8125 L 41.09375,348.75 L 39.4375,347.8125 L 38.5,347.8125 L 38.28125,347.09375 L 38.03125,346.625 L 38.03125,344.96875 L 37.09375,345.21875 L 36.84375,345.6875 L 36.625,345.46875 L 36.375,344.96875 L 36.15625,344.5 L 36.84375,344.28125 L 36.375,343.09375 L 35.6875,342.875 L 34.03125,342.625 z M 75.75,369.03125 L 75.75,369.75 L 76,369.75 L 75.75,369.03125 z M 75.03125,370.21875 L 74.8125,370.21875 L 74.8125,370.4375 L 75.03125,370.21875 z"
          id="path1852" />
     </g>
+<g id="texts">
+     <text class="title" x="282" y="173">{title}</text>
+     <text class="subtitle" x="282" y="175">{subtitle}</text>
+</g>
+<g class="frameable">
+     <text class="date" x="282" y="226">{year} {month}</text>
+     <text id="name_17146" class="city name" x="306" y="190">Riells i Viabrea</text>
+     <text id="number_17146" class="city number" x="306" y="191">{number_17146}</text>
+     <text id="name_08081" class="city name" x="297" y="193">Fogars de Montclús</text>
+     <text id="number_08081" class="city number" x="297" y="194">{number_08081}</text>
+     <text id="name_08042" class="city name" x="285" y="203">Cànoves i Samalús</text>
+     <text id="number_08042" class="city number" x="285" y="204">{number_08042}</text>
+     <text id="name_08259" class="city name" x="300" y="204">Santa Maria de</text>
+     <text id="name_08259" class="city name" x="300" y="205">Palautordera</text>
+     <text id="number_08259" class="city number" x="300" y="206">{number_08259}</text>
+     <text id="name_08207" class="city name" x="296" y="200">Sant Esteve de</text>
+     <text id="name_08207" class="city name" x="296" y="201">Palautordera</text>
+     <text id="number_08207" class="city number" x="296" y="202">{number_08207}</text>
+     <text id="name_08234" class="city name" x="290" y="197">Sant Pere</text>
+     <text id="name_08234" class="city name" x="290" y="198">de Vilamajor</text>
+     <text id="number_08234" class="city number" x="290" y="199">{number_08234}</text>
+     <text id="name_17083" class="city name" x="321" y="196">Hostalric</text>
+     <text id="number_17083" class="city number" x="321" y="197">{number_17083}</text>
+     <text id="name_08039" class="city name" x="301" y="198">Campins</text>
+     <text id="number_08039" class="city number" x="301" y="199">{number_08039}</text>
+     <text id="name_08202" class="city name" x="312" y="205">Sant Celoni</text>
+     <text id="number_08202" class="city number" x="312" y="206">{number_08202}</text>
+     <text id="name_08198" class="city name" x="292" y="207">Sant Antoni</text>
+     <text id="name_08198" class="city name" x="292" y="208">de Vilamajor</text>
+     <text id="number_08198" class="city number" x="292" y="209">{number_08198}</text>
+     <text id="name_08106" class="city name" x="293" y="213">Llinars del Vallès</text>
+     <text id="number_08106" class="city number" x="293" y="214">{number_08106}</text>
+     <text id="name_08046" class="city name" x="287" y="211">Cardedeu</text>
+     <text id="number_08046" class="city number" x="287" y="212">{number_08046}</text>
+     <text id="name_08294" class="city name" x="305" y="209.5">Vallgorguina</text>
+     <text id="number_08294" class="city number" x="305" y="210.5">{number_08294}</text>
+     <text id="name_08306" class="city name" x="301" y="212">Vilalba Sasserra</text>
+     <text id="number_08306" class="city number" x="301" y="213">{number_08306}</text>
+     <text id="name_17009" class="city name" x="303" y="183">Arbúcies</text>
+     <text id="number_17009" class="city number" x="303" y="184">{number_17009}</text>
+     <text id="name_17159" class="city name" x="315" y="188">Sant Feliu de Buixalleu</text>
+     <text id="number_17159" class="city number" x="315" y="189">{number_17159}</text>
+     <text id="name_08137" class="city name" x="292" y="188">Montseny</text>
+     <text id="number_08137" class="city number" x="292" y="189">{number_08137}</text>
+     <text id="name_17101" class="city name" x="323" y="190">Massanes</text>
+     <text id="number_17101" class="city number" x="323" y="191">{number_17101}</text>
+     <text id="name_08097" class="city name" x="305" y="196">Gualba</text>
+     <text id="number_08097" class="city number" x="305" y="197">{number_08097}</text>
+     <text id="name_17027" class="city name" x="312" y="194">Breda</text>
+     <text id="number_17027" class="city number" x="312" y="195">{number_17027}</text>
+</g>
   </g>
 </svg>
