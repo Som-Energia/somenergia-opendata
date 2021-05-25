@@ -611,14 +611,20 @@ paths:
         - `/by/{geolevel}`: when omited means `ccaa` (Not world!)
         - `/on/{date}`: when omitted means the latest available date
 
+        [Experimental] You can specify the extent of the map,
+        by default `country=ES`. It will work if a map template
+        for the combination of extent and geolevel exists.
+
         Examples:
 
-        - `map/contracts`
+        - `/map/contracts`
           - Current number of contracts by ccaa
         - `/map/members/by/state`
           - Current members at every state
         - `/map/members/by/ccaa/on/2018-02-01`
           - Members at every CCAA on 2018-02-01
+        - `/map/members/by/city?localgroup=BaixMontseny`
+          - Current members at every city of Baix Montseny localgroup
 
       tags: [ "Maps" ]
       parameters:
@@ -626,6 +632,8 @@ paths:
       - $ref: '#/components/parameters/path_metric'
       - $ref: '#/components/parameters/path_mapgeolevel'
       - $ref: '#/components/parameters/path_onDate'
+      - $ref: '#/components/parameters/mapextent_country'
+      - $ref: '#/components/parameters/mapextent_gl'
       - $ref: '#/components/parameters/query_lang'
       responses:
         '200':
@@ -648,6 +656,9 @@ paths:
         - `/from/{date}`: when omitted means the first available date
         - `/to/{date}`: when omitted means the latest available date
 
+        [Experimental] You can specify the extent of the map,
+        by default `country=ES`. It will work if a map template
+        for the combination of extent and geolevel exists.
 
       tags: [ "Maps" ]
       parameters:
@@ -656,6 +667,8 @@ paths:
       - $ref: '#/components/parameters/path_relativemetric'
       - $ref: '#/components/parameters/path_mapgeolevel'
       - $ref: '#/components/parameters/path_onDate'
+      - $ref: '#/components/parameters/mapextent_country'
+      - $ref: '#/components/parameters/mapextent_gl'
       - $ref: '#/components/parameters/query_lang'
       responses:
         '200':
@@ -680,6 +693,10 @@ paths:
         - `/from/{date}`: when omitted means the first available date
         - `/to/{date}`: when omitted means the latest available date
 
+        [Experimental] You can specify the extent of the map,
+        by default `country=ES`. It will work if a map template
+        for the combination of extent and geolevel exists.
+
       tags: [ "Maps" ]
       parameters:
       - $ref: '#/components/parameters/path_metric'
@@ -687,6 +704,8 @@ paths:
       - $ref: '#/components/parameters/path_periodicity'
       - $ref: '#/components/parameters/path_fromDate'
       - $ref: '#/components/parameters/path_toDate'
+      - $ref: '#/components/parameters/mapextent_country'
+      - $ref: '#/components/parameters/mapextent_gl'
       - $ref: '#/components/parameters/query_lang'
       responses:
         '200':
@@ -711,6 +730,10 @@ paths:
         - `/from/{date}`: when omitted means the first available date
         - `/to/{date}`: when omitted means the latest available date
 
+        [Experimental] You can specify the extent of the map,
+        by default `country=ES`. It will work if a map template
+        for the combination of extent and geolevel exists.
+
       tags: [ "Maps" ]
       parameters:
       - $ref: '#/components/parameters/path_metric'
@@ -719,6 +742,8 @@ paths:
       - $ref: '#/components/parameters/path_periodicity'
       - $ref: '#/components/parameters/path_fromDate'
       - $ref: '#/components/parameters/path_toDate'
+      - $ref: '#/components/parameters/mapextent_country'
+      - $ref: '#/components/parameters/mapextent_gl'
       - $ref: '#/components/parameters/query_lang'
       responses:
         '200':
@@ -829,6 +854,7 @@ components:
         enum:
         - ccaa
         - state
+        - city
 
     path_geolevelOrAlias:
       name: geolevel
@@ -930,6 +956,32 @@ components:
       explode: true
       schema:
         $ref: '#/components/schemas/CodeArray'
+
+    mapextent_country:
+      description: |
+        (Experimental) Set the extent of the map to the country
+
+        This parameter is incompatible with other extent parameters.
+
+        Available value `ES` (the default if no other extent is specified)
+        with `state` or `ccaa` geolevels.
+      name: country
+      in: query
+      schema:
+        $ref: '#/components/schemas/GeoCode'
+
+    mapextent_gl:
+      description: |
+        (Experimental) Set the extent of the map to the local group.
+
+        This parameter is incompatible with other extent parameters.
+
+        Available values `BaixMontseny` and `BaixLlobregat`
+        with `city` geolevel.
+      name: localgroup
+      in: query
+      schema:
+        $ref: '#/components/schemas/GeoCode'
 
   schemas:
 

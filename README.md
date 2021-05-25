@@ -179,6 +179,9 @@ Follow the following structure `/map/<metric>[/per/<relative>][/by/<geolevel>][/
 - `/map/contracts/by/state/monthly/to/2018-05-01`
     Animation with contracts aggregated by state every month until a date
 
+- `/map/contracts/by/city/monthly/to/2018-05-01?localgroup=BaixMontseny`
+    Animation with contracts aggregated by city within localgroup BaixMontseny every month until a date
+
 
 ### Discovery
 
