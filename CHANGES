@@ -1,3 +1,9 @@
+# v0.2.20 2021-05-25
+
+- City level maps for local groups (filter by local group)
+  - Just Baix Montseny and Baix Llobregat available.
+- Jenkins integration
+
 # v0.2.19 2021-03-26
 
 - Numeric data in TSV format with query param `format=tsv`
