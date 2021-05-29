@@ -5,20 +5,16 @@ import dbconfig as config
 from dbutils import csvTable
 from yamlns import namespace as ns
 from yamlns.dateutils import Date
+from pathlib import Path
 
 """
 This module contains functions to compute metrics.
 Metrics have to be computed aggregated by city and month.
 """
 
-def relative(path):
-    return os.path.abspath(os.path.join(os.path.dirname(__file__), path))
-
-
 def readQuery(query):
-    with open(relative(query + '.sql'), 'r') as queryfile:
-        return queryfile.read().rstrip()
-
+    queryfile = Path(__file__).absolute().parent / 'queries' / (query + '.sql')
+    return queryfile.read_text(encoding='utf8').rstrip()
 
 def timeQuery(dates, queryfile, timeSlicer, dbhandler=csvTable):
     """
