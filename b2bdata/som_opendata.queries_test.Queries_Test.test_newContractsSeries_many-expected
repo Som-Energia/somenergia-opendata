@@ -250,6 +250,7 @@ ES	España	01	Andalucia	21	Huelva	21072	Valverde del Camino	0	0
 ES	España	01	Andalucia	21	Huelva	21074	Villalba del Alcor	0	0
 ES	España	01	Andalucia	21	Huelva	21076	Villanueva de los Castillejos	0	0
 ES	España	01	Andalucia	21	Huelva	21078	Zalamea la Real	0	0
+ES	España	01	Andalucia	23	Jaén	23001	Albanchez de Mágina	0	0
 ES	España	01	Andalucia	23	Jaén	23002	Alcalá la Real	0	0
 ES	España	01	Andalucia	23	Jaén	23003	Alcaudete	0	0
 ES	España	01	Andalucia	23	Jaén	23005	Andújar	0	0
@@ -313,6 +314,7 @@ ES	España	01	Andalucia	29	Málaga	29043	Colmenar	0	0
 ES	España	01	Andalucia	29	Málaga	29045	Cómpeta	0	0
 ES	España	01	Andalucia	29	Málaga	29046	Cortes de la Frontera	0	0
 ES	España	01	Andalucia	29	Málaga	29048	Cuevas del Becerro	0	0
+ES	España	01	Andalucia	29	Málaga	29049	Cuevas de San Marcos	0	0
 ES	España	01	Andalucia	29	Málaga	29051	Estepona	0	0
 ES	España	01	Andalucia	29	Málaga	29053	Frigiliana	0	0
 ES	España	01	Andalucia	29	Málaga	29054	Fuengirola	0	0
@@ -477,6 +479,7 @@ ES	España	02	Aragón	22	Huesca	22096	Chimillas	0	0
 ES	España	02	Aragón	22	Huesca	22099	Esplús	0	0
 ES	España	02	Aragón	22	Huesca	22102	Estada	0	0
 ES	España	02	Aragón	22	Huesca	22103	Estadilla	0	0
+ES	España	02	Aragón	22	Huesca	22105	Estopiñán del Castillo	0	0
 ES	España	02	Aragón	22	Huesca	22109	Fiscal	0	0
 ES	España	02	Aragón	22	Huesca	22110	Fonz	0	0
 ES	España	02	Aragón	22	Huesca	22111	Foradada del Toscar	0	0
@@ -605,6 +608,7 @@ ES	España	02	Aragón	44	Teruel	44163	Noguera de Albarracín	0	0
 ES	España	02	Aragón	44	Teruel	44165	Nogueruelas	0	0
 ES	España	02	Aragón	44	Teruel	44171	Olba	0	0
 ES	España	02	Aragón	44	Teruel	44172	Oliete	0	0
+ES	España	02	Aragón	44	Teruel	44173	Olmos, Los	0	0
 ES	España	02	Aragón	44	Teruel	44179	Peñarroya de Tastavins	1	0
 ES	España	02	Aragón	44	Teruel	44183	Pitarque	0	0
 ES	España	02	Aragón	44	Teruel	44187	Portellada, La	0	0
@@ -877,6 +881,7 @@ ES	España	05	Canarias	35	Palmas, Las	35002	Agüimes	0	0
 ES	España	05	Canarias	35	Palmas, Las	35020	Aldea de San Nicolás, La	0	0
 ES	España	05	Canarias	35	Palmas, Las	35003	Antigua	0	0
 ES	España	05	Canarias	35	Palmas, Las	35004	Arrecife	0	0
+ES	España	05	Canarias	35	Palmas, Las	35005	Artenara	0	0
 ES	España	05	Canarias	35	Palmas, Las	35006	Arucas	0	0
 ES	España	05	Canarias	35	Palmas, Las	35007	Betancuria	0	0
 ES	España	05	Canarias	35	Palmas, Las	35008	Firgas	0	0
@@ -1386,6 +1391,7 @@ ES	España	07	Castilla y León	05	Ávila	05227	Santa María del Tiétar	0	0
 ES	España	07	Castilla y León	05	Ávila	05233	Serranillos	0	0
 ES	España	07	Castilla y León	05	Ávila	05236	Solana de Ávila	0	0
 ES	España	07	Castilla y León	05	Ávila	05240	Sotillo de la Adrada	0	0
+ES	España	07	Castilla y León	05	Ávila	05257	Villafranca de la Sierra	0	0
 ES	España	07	Castilla y León	05	Ávila	05263	Villatoro	0	0
 ES	España	07	Castilla y León	09	Burgos	09003	Adrada de Haza	0	0
 ES	España	07	Castilla y León	09	Burgos	09907	Alfoz de Quintanadueñas	0	0
@@ -1408,6 +1414,7 @@ ES	España	07	Castilla y León	09	Burgos	09064	Caleruega	0	0
 ES	España	07	Castilla y León	09	Burgos	09065	Campillo de Aranda	0	0
 ES	España	07	Castilla y León	09	Burgos	09066	Campolara	0	0
 ES	España	07	Castilla y León	09	Burgos	09067	Canicosa de la Sierra	0	0
+ES	España	07	Castilla y León	09	Burgos	09072	Carcedo de Burgos	0	0
 ES	España	07	Castilla y León	09	Burgos	09073	Cardeñadijo	0	0
 ES	España	07	Castilla y León	09	Burgos	09074	Cardeñajimeno	0	0
 ES	España	07	Castilla y León	09	Burgos	09084	Castrillo de la Reina	0	0
@@ -1690,6 +1697,7 @@ ES	España	07	Castilla y León	37	Salamanca	37139	Fuentes de Béjar	0	0
 ES	España	07	Castilla y León	37	Salamanca	37142	Galindo y Perahuy	0	0
 ES	España	07	Castilla y León	37	Salamanca	37147	Garcibuey	0	0
 ES	España	07	Castilla y León	37	Salamanca	37148	Garcihernández	0	0
+ES	España	07	Castilla y León	37	Salamanca	37151	Golpejas	0	0
 ES	España	07	Castilla y León	37	Salamanca	37156	Guijuelo	0	0
 ES	España	07	Castilla y León	37	Salamanca	37160	Hinojosa de Duero	0	0
 ES	España	07	Castilla y León	37	Salamanca	37170	Ledesma	0	0
@@ -1915,6 +1923,7 @@ ES	España	07	Castilla y León	47	Valladolid	47145	San Miguel del Arroyo	1	0
 ES	España	07	Castilla y León	47	Valladolid	47149	San Pelayo	0	0
 ES	España	07	Castilla y León	47	Valladolid	47152	Santa Eufemia del Arroyo	0	0
 ES	España	07	Castilla y León	47	Valladolid	47153	Santervás de Campos	0	0
+ES	España	07	Castilla y León	47	Valladolid	47154	Santibáñez de Valcorba	0	0
 ES	España	07	Castilla y León	47	Valladolid	47155	Santovenia de Pisuerga	0	0
 ES	España	07	Castilla y León	47	Valladolid	47157	Sardón de Duero	0	0
 ES	España	07	Castilla y León	47	Valladolid	47159	Serrada	0	0
@@ -1971,7 +1980,9 @@ ES	España	07	Castilla y León	49	Zamora	49193	San Pedro de Ceque	0	0
 ES	España	07	Castilla y León	49	Zamora	49200	Santa Cristina de la Polvorosa	0	0
 ES	España	07	Castilla y León	49	Zamora	49201	Santa Croya de Tera	0	0
 ES	España	07	Castilla y León	49	Zamora	49219	Toro	0	0
+ES	España	07	Castilla y León	49	Zamora	49227	Valcabado	0	0
 ES	España	07	Castilla y León	49	Zamora	49238	Villabrázaro	0	0
+ES	España	07	Castilla y León	49	Zamora	49261	Villaralbo	0	0
 ES	España	07	Castilla y León	49	Zamora	49264	Villar del Buey	0	0
 ES	España	07	Castilla y León	49	Zamora	49265	Villardiegua de la Ribera	0	0
 ES	España	07	Castilla y León	49	Zamora	49275	Zamora	0	1
@@ -2991,6 +3002,7 @@ ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03060	Quatretondeta	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03109	Rafal	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03111	Redován	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03112	Relleu	0	0
+ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03113	Rojales	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03114	Romana, la	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03116	Salinas	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03117	Sanet y Negrals	0	0
@@ -4184,3 +4196,4 @@ ES	España	17	Rioja, La	26	Rioja, La	26168	Villamediana de Iregua	0	0
 ES	España	17	Rioja, La	26	Rioja, La	26177	Villoslada de Cameros	0	0
 ES	España	17	Rioja, La	26	Rioja, La	26178	Viniegra de Abajo	0	0
 ES	España	17	Rioja, La	26	Rioja, La	26180	Zarratón	0	0
+ES	España	None	None	00	DESCON.	00000	DESCON.	0	0
