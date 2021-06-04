@@ -10,6 +10,7 @@ from som_opendata.queries import (
     canceledSelfConsumptionContractsSeries,
     newMembersSeries,
     canceledMembersSeries,
+    plantPowerSeries,
 )
 from som_opendata.common import dateSequenceMonths
 from yamlns.dateutils import Date
@@ -25,6 +26,7 @@ todate = Date.today()
 dates=dateSequenceMonths(fromdate, todate)
 
 metricGenerators = dict(
+    plantpower=plantPowerSeries,
     members=membersSeries,
     contracts=contractsSeries,
     selfconsumptioncontracts=selfConsumptionContractsSeries,

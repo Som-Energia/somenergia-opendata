@@ -96,6 +96,13 @@ metrics = ns(
             "Considerations for \"Self consumption contracts\" metric also apply in this one.\n"
         ),
     ),
+    plantpower=ns(
+        text=_("Deployed plant power (MW)"),
+        timeaggregation='sum',
+        description=_(
+            "Deployed power in renewable plants before the date.\n\n"
+        ),
+    ),
 )
 
 # TODO: This is deprecated, use geolevels

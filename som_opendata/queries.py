@@ -34,6 +34,18 @@ def timeQuery(dates, queryfile, timeSlicer, dbhandler=csvTable):
         cursor.execute(query)
         return dbhandler(cursor)
 
+def activeItemAdder(adate):
+    # TODO: Unsafe substitution, use mogrify
+    return """
+    sum(CASE
+        WHEN item.first_date IS NULL THEN 0
+        WHEN item.first_date >= '{adate}'::date THEN 0
+        WHEN item.last_date is NULL then value
+        WHEN item.last_date >= '{adate}'::date THEN value
+        ELSE 0
+        END) AS count_{adate:%Y_%m_%d}
+""".format(adate=adate)
+
 def activeItemCounter(adate):
     # TODO: Unsafe substitution, use mogrify
     return """
@@ -199,6 +211,15 @@ def plantProductionCounter(adate):
         ELSE NULL
             END) AS count_{adate:%Y_%m_%d}
         """.format(adate=adate)
+
+def plantPowerSeries(dates, dbhandler=csvTable):
+    return timeQuery(
+        dates=dates,
+        queryfile='plantpower',
+        timeSlicer=activeItemAdder,
+        #timeSlicer=activeItemLister, # debug
+        dbhandler=dbhandler,
+    )
 
 def plantProductionSeries(dates, dbhandler=csvTable, debug=False):
     db = psycopg2.connect(**config.psycopg_plantmonitor)
