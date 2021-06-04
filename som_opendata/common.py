@@ -98,7 +98,7 @@ metrics = ns(
     ),
     plantpower=ns(
         text=_("Deployed plant power (MW)"),
-        timeaggregation='sum',
+        timeaggregation='last',
         description=_(
             "Deployed power in renewable plants before the date.\n\n"
         ),
