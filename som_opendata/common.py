@@ -100,7 +100,9 @@ metrics = ns(
         text=_("Deployed plant power (MW)"),
         timeaggregation='last',
         description=_(
-            "Deployed power in renewable plants before the date.\n\n"
+            "Aggregated peak power of the deployed plants in the region just before the date.\n\n"
+            "This metric is experimental. Data should not be relied on yet."
+            # TODO: Date precision limits (now year)
         ),
     ),
 )
