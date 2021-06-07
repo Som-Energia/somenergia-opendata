@@ -1,3 +1,9 @@
+# v0.2.21 2021-06-08
+
+- New metrics:
+  - plantpower: deployed power in renewable energy plants
+  - plantproduction: generated energy in plants
+
 # v0.2.20 2021-05-25
 
 - City level maps for local groups (filter by local group)
