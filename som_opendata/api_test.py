@@ -389,8 +389,8 @@ class Api_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             parameter: metric
             valueRequest: incorrectMetric
-            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts']
-            message: Invalid metric 'incorrectMetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts'.
+            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts', 'plantpower', 'plantproduction']
+            message: Invalid metric 'incorrectMetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts', 'plantpower', 'plantproduction'.
             """, 400)
 
 

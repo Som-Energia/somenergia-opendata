@@ -368,7 +368,8 @@ class Common_Test(unittest.TestCase):
             "Invalid metric 'badvalue'. Accepted ones are "
             "'members', 'newmembers', 'canceledmembers', "
             "'contracts', 'newcontracts', 'canceledcontracts', "
-            "'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts'."
+            "'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts', "
+            "'plantpower', 'plantproduction'."
         )
 
     # validateMapParams

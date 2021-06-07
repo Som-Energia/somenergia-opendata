@@ -3,9 +3,14 @@
 # Ongoing experiment: taking historical plant production from GDrive
 # document from Projects Team.
 
+import datetime
+from pathlib import Path
 from sheetfetcher import SheetFetcher
 from consolemsg import step, warn
-from pathlib import Path
+import dbconfig as config
+from dbutils import csvTable
+import psycopg2
+
 
 months = (
     "Gener Febrer Març Abril "
@@ -32,8 +37,14 @@ inecodes = {
     ]
 }
 
+def firstOfNextMonth():
+    d = datetime.date.today()
+    if d.month==12:
+        return str(datetime.date(d.year+1, 1, 1))
+    return str(datetime.date(d.year, d.month+1, 1))
+
 def sheetFromDrive(certificate, document, sheet):
-    step('Baixant produccio...')
+    #step('Baixant produccio...')
     fetcher = SheetFetcher(
         documentName=document,
         credentialFilename=certificate,
@@ -65,9 +76,8 @@ def toIso(year, month):
         return f"{int(year)+1}-01-01"
     return f"{int(year)}-{months.index(month)+2:02d}-01"
 
-result = {}
-def processPlant(plant, city):
-    step(f"Plant {plant} - {city}")
+def processPlant(result, plant, city):
+    #step(f"Plant {plant} - {city}")
     result[plant] = dict(
         name = plant,
         city = city,
@@ -75,47 +85,45 @@ def processPlant(plant, city):
         vals = {}
     )
 
-def processDataItem(plant, year, month, value):
+def processDataItem(result, plant, year, month, value):
     value = value.replace('.','')
     value = value or '0'
     value = int(value)
-    step(f"Data {plant} {toIso(year,month)} {year} {month} {value}")
-    result[plant][toIso(year, month)] = value
+    date = toIso(year,month)
+    #step(f"Data {plant} {date} {year} {month} {value}")
+    result[plant][date] = value
 
 
-def parseblock(info):
+def parseblock(info, result):
     plants = [
         (i, plant, city)
         for i, (plant, city) in enumerate(zip(info[0],info[1]))
         if plant.strip()
     ]
-    print(plants)
     for column, plant, city in plants:
         if plant == 'MWh': break # HACK for the additional info at the end
-        processPlant(plant, city)
-        step(f"plant {plant}")
+        processPlant(result, plant, city)
         year = None
         for irow, row in enumerate(info[2:],2):
             key, val = row[column:column+2]
             if not key and not val: continue
             if year is None and key.isnumeric() :
                 year = key
-                step(f"year {year}")
                 continue
             if key in months:
                 month = key
                 production_kwh = val
-                processDataItem(plant, year, month, production_kwh)
+                processDataItem(result, plant, year, month, production_kwh)
                 if month == months[-1]:
                     year = None
                 continue
             if key:
-                warn(f"repeat at row {irow}")
+                warn(f"repeat at row {irow} {key}")
                 break
 
-            warn("Ignored '{}' -> '{}'",
-                row[column], row[column+1]
-            )
+            #warn("Ignored '{}' -> '{}'",
+            #    row[column], row[column+1]
+            #)
 
 def headerBlocks(rows):
     """
@@ -123,7 +131,7 @@ def headerBlocks(rows):
     this function detects the rows for the plant headers, and splits
     a block for each set.
     """
-    step("Detecting plant headers")
+    #step("Detecting plant headers")
     headerRows=[]
     for irow, row in enumerate(rows):
         if not row[0]: continue # empty row
@@ -140,11 +148,11 @@ def headerBlocks(rows):
         )
     ]
 
-def dump(result, csvfile):
+def resultAsTable(result, dates=[]):
     """
-    Dumps final data.
+    Turns objects to a table
     """
-    alldates = set()
+    alldates = set(dates)
     for plant in result.values():
         alldates.update(plant.keys())
 
@@ -152,31 +160,147 @@ def dump(result, csvfile):
         for date in alldates:
             plant.setdefault(date,0)
 
-    headers = ['name', 'city_code', 'city'] + list(sorted(alldates))
+    headers = ['name', 'city_code', 'city'] + [
+        date
+        for date in sorted(alldates)
+        if date[0].isnumeric()
+        and date in dates
+    ]
     output = [ headers ]
     for plant in result.values():
         output.append(
             [plant[header] for header in headers]
         )
-    toCsv(csvfile, output)
+    return output
 
-keep=False
-originalDataFile = Path("historical-production-sheet.csv")
-if keep:
-    # Avoid download to develop parsing faster
-    info = fromCsv(originalDataFile)
-else:
-    info = sheetFromDrive(
-        certificate = 'drive-certificate.json',
-        document = 'Control de instalaciones_Gestió d\'Actius',
-        sheet = 'Històric producció',
+def plantProductionFromDrive(
+    driveCertificate,
+    driveDocument,
+    driveSheet,
+    cacheFile=None,
+    outputFile=None,
+    dates=[]
+):
+
+    if cacheFile and Path(cacheFile).exists():
+        # Avoid download to develop parsing faster
+        #step("Taking cached version")
+        info = fromCsv(cacheFile)
+    else:
+        #step("Downloading new version from drive")
+        info = sheetFromDrive(
+            certificate = driveCertificate,
+            document = driveDocument,
+            sheet = driveSheet,
+        )
+        if cacheFile:
+            toCsv(cacheFile, info)
+
+    blocks = headerBlocks(info)
+    result = {}
+    for block in blocks:
+        parseblock(block, result)
+
+    table = resultAsTable(result, dates)
+    if outputFile:
+        toCsv(outputFile, table)
+    return table
+
+def plantProductionSeries(dates):
+    data = plantProductionFromDrive(
+        driveCertificate='drive-certificate.json',
+        driveDocument='Control de instalaciones_Gestió d\'Actius',
+        driveSheet='Històric producció',
+        cacheFile='historical-production-sheet.csv',
+        #outputFile='plantproduction-historical.csv',
+        dates=[str(d) for d in dates],
     )
-    toCsv(originalDataFile, info)
 
-blocks = headerBlocks(info)
-for block in blocks:
-    parseblock(block)
+    columntypes = dict(
+        name = 'VARCHAR',
+        city_code = 'VARCHAR',
+        city = 'VARCHAR',
+    )
 
-dump(result, "plantproduction-historical.csv")
+    def fieldname(field):
+        if field in columntypes:
+            return field
+        return "count_{}".format(field.replace('-','_'))
+
+    def valueformat(field, value):
+        if field in columntypes:
+            return "'{}'".format(value)
+        return str(value)
+
+    fields = ',\n'.join(fieldname(field) for field in data[0])
+
+    sumcolumns = ',\n'.join(
+        'sum({0}) as {0}'.format(fieldname(field))
+        for field in data[0]
+        if field not in columntypes
+    )
+
+    values = ',\n'.join(
+        "({})".format(
+            ",".join([
+                valueformat(field,value)
+                for field,value in zip(data[0],row)
+            ])
+        )
+        for row in data[1:]
+    )
+
+    query = f"""
+    SELECT
+            pais.code AS codi_pais,
+            pais.name AS pais,
+            comunitat.codi AS codi_ccaa,
+            comunitat.name AS comunitat_autonoma,
+            provincia.code AS codi_provincia,
+            provincia.name AS provincia,
+            municipi.ine AS codi_ine,
+            municipi.name AS municipi,
+            {sumcolumns} -- here go the date count columns
+    FROM (VALUES
+        {values}
+    ) item ({fields})
+    LEFT JOIN res_municipi AS municipi
+            ON item.city_code=municipi.ine
+    LEFT JOIN res_country_state AS provincia
+            ON provincia.id = municipi.state
+    LEFT JOIN res_comunitat_autonoma AS comunitat
+            ON comunitat.id = provincia.comunitat_autonoma
+    LEFT JOIN res_country AS pais
+            ON pais.id = provincia.country_id
+    GROUP BY
+            codi_pais,
+            codi_ccaa,
+            codi_provincia,
+            codi_ine,
+            pais,
+            provincia,
+            municipi,
+            comunitat.name
+    ORDER BY
+            pais ASC,
+            comunitat_autonoma ASC,
+            provincia ASC,
+            municipi ASC,
+            TRUE ASC
+    ;
+    """
+    db = psycopg2.connect(**config.psycopg)
+    with db.cursor() as cursor :
+        cursor.execute(query)
+        result = csvTable(cursor)
+    #print(result)
+    return result
+
+
+
+if __name__ == '__main__':
+    plantProductionSeries(['2010-01-01'])
+
+
 
 

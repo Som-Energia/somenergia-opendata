@@ -105,6 +105,15 @@ metrics = ns(
             # TODO: Date precision limits (now year)
         ),
     ),
+    plantproduction=ns(
+        text=_("Energy produced on plants (kWh)"),
+        timeaggregation='sum',
+        description=_(
+            "Energy injected by the plant into the network in the region during the period just before the date.\n\n"
+            "This metric is experimental. Data should not be relied on yet."
+            # TODO: historical data vs meter data
+        ),
+    ),
 )
 
 # TODO: This is deprecated, use geolevels

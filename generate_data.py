@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys
 from som_opendata.queries import (
     membersSeries,
@@ -12,6 +12,9 @@ from som_opendata.queries import (
     canceledMembersSeries,
     plantPowerSeries,
 )
+from generate_plantproduction_historical import (
+    plantProductionSeries
+    )
 from som_opendata.common import dateSequenceMonths
 from yamlns.dateutils import Date
 from dbutils import csvTable
@@ -27,6 +30,7 @@ dates=dateSequenceMonths(fromdate, todate)
 
 metricGenerators = dict(
     plantpower=plantPowerSeries,
+    plantproduction=plantProductionSeries,
     members=membersSeries,
     contracts=contractsSeries,
     selfconsumptioncontracts=selfConsumptionContractsSeries,

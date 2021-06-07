@@ -94,3 +94,17 @@ metrics:
     Considerations for "Self consumption contracts" metric also apply in this one.
 
     '
+- id: plantpower
+  text: Deployed plant power (MW)
+  description: 'Aggregated peak power of the deployed plants in the region just before
+    the date.
+
+
+    This metric is experimental. Data should not be relied on yet.'
+- id: plantproduction
+  text: Energy produced on plants (kWh)
+  description: 'Energy injected by the plant into the network in the region during
+    the period just before the date.
+
+
+    This metric is experimental. Data should not be relied on yet.'
