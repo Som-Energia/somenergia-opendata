@@ -11,10 +11,8 @@ from som_opendata.queries import (
     newMembersSeries,
     canceledMembersSeries,
     plantPowerSeries,
+    plantProductionSeries,
 )
-from generate_plantproduction_historical import (
-    plantProductionSeries
-    )
 from som_opendata.common import dateSequenceMonths
 from yamlns.dateutils import Date
 from dbutils import csvTable

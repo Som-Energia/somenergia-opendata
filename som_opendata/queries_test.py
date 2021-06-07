@@ -17,6 +17,7 @@ from .queries import (
     newMembersSeries,
     canceledMembersSeries,
     plantPowerSeries,
+    plantProductionSeries,
     )
 import os
 
@@ -73,9 +74,14 @@ class Queries_Test(unittest.TestCase):
         result = canceledSelfConsumptionContractsSeries(dates)
         self.assertB2BEqual(result)
 
-    def test_plantPowerSeries_single(self):
+    def test_plantPowerSeries_many(self):
         dates = ['2015-01-01', '2020-10-01']
         result = plantPowerSeries(dates)
+        self.assertB2BEqual(result)
+
+    def test_plantProductionSeries_many(self):
+        dates = ['2015-01-01', '2020-10-01']
+        result = plantProductionSeries(dates)
         self.assertB2BEqual(result)
 
 # vim: et ts=4 sw=4

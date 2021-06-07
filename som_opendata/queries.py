@@ -209,5 +209,6 @@ def plantPowerSeries(dates, dbhandler=csvTable):
         dbhandler=dbhandler,
     )
 
+from .queries_plantproduction import plantProductionSeries
 
 # vim: et sw=4 ts=4

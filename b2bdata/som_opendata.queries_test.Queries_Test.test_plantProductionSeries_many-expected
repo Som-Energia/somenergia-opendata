@@ -1,0 +1,13 @@
+codi_pais	pais	codi_ccaa	comunitat_autonoma	codi_provincia	provincia	codi_ine	municipi	count_2015_01_01	count_2020_10_01
+ES	España	01	Andalucia	04	Almería	04090	Tahal	0	0
+ES	España	01	Andalucia	18	Granada	18152	Pedro Martínez	0	0
+ES	España	01	Andalucia	41	Sevilla	41006	Alcolea del Río	0	283440
+ES	España	01	Andalucia	41	Sevilla	41055	Lora del Río	0	574468
+ES	España	07	Castilla y León	05	Ávila	05074	Fontiveros	0	94100
+ES	España	07	Castilla y León	47	Valladolid	47114	Peñafiel	0	61630
+ES	España	09	Cataluña	08	Barcelona	08112	Manlleu	9884	17589
+ES	España	09	Cataluña	17	Girona	17148	Riudarenes	3845	5723
+ES	España	09	Cataluña	25	Lleida	25120	Lleida	4944	12615
+ES	España	09	Cataluña	25	Lleida	25228	Torrefarrera	6546	13778
+ES	España	09	Cataluña	25	Lleida	25230	Torregrossa	147000	191000
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46193	Picanya	18067	35274
