@@ -12,16 +12,15 @@ FROM (
 	select
 		first_date,
 		null::date as last_date,
-		plant.city_code as plant_ine,
-		city.ine as contract_ine,
 		city.id as city_id,
+		--plant.city_code as plant_ine,
+		--city.ine as city_code,
 		--city.name,
 		--registry.description,
 		--registry.name,
 		--registry.*,
 		nominal_power_kw as value
 	from (
-		-- 
 	values
 		('25120','2012-01-01'::date,'Lleida','388828084', 140),
 		('17148','2012-01-01'::date,'Riudarenes_SM','501215455', 20),
@@ -38,7 +37,6 @@ FROM (
 		('05074','2019-01-01'::date,'Fontivsolar','501815908', 990),
 		('41055','2019-01-01'::date,'Florida','44711885', 1500),
 		('04090','2020-01-01'::date,'Tahal','88300909', 841)
-		--(null,null,'Terborg','161008',0)
 	) as plant(city_code, first_date, plant_name, meter_name, nominal_power_kw)
 	left join giscedata_registrador as registry
 	on registry.name = plant.meter_name
