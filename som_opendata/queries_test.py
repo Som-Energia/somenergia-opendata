@@ -16,7 +16,7 @@ from .queries import (
     canceledSelfConsumptionContractsSeries,
     newMembersSeries,
     canceledMembersSeries,
-    plantProductionSeries,
+    plantPowerSeries,
     )
 import os
 
@@ -73,10 +73,9 @@ class Queries_Test(unittest.TestCase):
         result = canceledSelfConsumptionContractsSeries(dates)
         self.assertB2BEqual(result)
 
-    def _test_plantProductionSeries_single(self):
-        # TODO: Not implemented (b2b expects same as single)
-        dates = ['2015-01-01']
-        result = plantProductionSeries(dates, csvTable)
+    def test_plantPowerSeries_single(self):
+        dates = ['2015-01-01', '2020-10-01']
+        result = plantPowerSeries(dates)
         self.assertB2BEqual(result)
 
 # vim: et ts=4 sw=4

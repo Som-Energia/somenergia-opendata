@@ -200,18 +200,6 @@ def canceledMembersSeries(dates, dbhandler=csvTable, debug=False):
     )
 
 
-def plantProductionCounter(adate):
-    # TODO: Unsafe substitution
-    return """
-    count(CASE
-        WHEN time IS NULL THEN NULL
-        WHEN time > '{adate}'::date THEN NULL
-        WHEN time <= '{adate}'::date - INTERVAL '1 month' THEN NULL
-        WHEN time <= '{adate}'::date THEN TRUE
-        ELSE NULL
-            END) AS count_{adate:%Y_%m_%d}
-        """.format(adate=adate)
-
 def plantPowerSeries(dates, dbhandler=csvTable):
     return timeQuery(
         dates=dates,
@@ -221,16 +209,5 @@ def plantPowerSeries(dates, dbhandler=csvTable):
         dbhandler=dbhandler,
     )
 
-def plantProductionSeries(dates, dbhandler=csvTable, debug=False):
-    db = psycopg2.connect(**config.psycopg_plantmonitor)
-    print(config.psycopg_plantmonitor)
-    query = readQuery('plant_production')
-    query = query.format(','.join(
-        plantProductionCounter(Date(adate))
-        for adate in dates
-        ))
-    with db.cursor() as cursor :
-        cursor.execute(query)
-        return dbhandler(cursor)
 
 # vim: et sw=4 ts=4
