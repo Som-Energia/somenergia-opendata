@@ -150,8 +150,10 @@ ES	España	05	Canarias	35	Palmas, Las	35023	Santa María de Guía de Gran Canari
 ES	España	05	Canarias	35	Palmas, Las	35026	Telde	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38005	Arico	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38009	Breña Baja	0	0
+ES	España	05	Canarias	38	Santa Cruz de Tenerife	38024	Llanos de Aridane, Los	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38027	Paso, El	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38901	Pinar de El Hierro, El	0	0
+ES	España	05	Canarias	38	Santa Cruz de Tenerife	38030	Puntallana	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38032	Rosario, El	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38033	San Andrés y Sauces	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38023	San Cristóbal de La Laguna	1	0
@@ -359,6 +361,7 @@ ES	España	09	Cataluña	08	Barcelona	08199	Sant Bartomeu del Grau	0	1
 ES	España	09	Cataluña	08	Barcelona	08200	Sant Boi de Llobregat	0	0
 ES	España	09	Cataluña	08	Barcelona	08203	Sant Cebrià de Vallalta	0	0
 ES	España	09	Cataluña	08	Barcelona	08202	Sant Celoni	0	0
+ES	España	09	Cataluña	08	Barcelona	08204	Sant Climent de Llobregat	0	0
 ES	España	09	Cataluña	08	Barcelona	08205	Sant Cugat del Vallès	4	6
 ES	España	09	Cataluña	08	Barcelona	08206	Sant Cugat Sesgarrigues	1	0
 ES	España	09	Cataluña	08	Barcelona	08207	Sant Esteve de Palautordera	1	1
@@ -464,6 +467,7 @@ ES	España	09	Cataluña	17	Girona	17064	Espolla	0	0
 ES	España	09	Cataluña	17	Girona	17065	Esponellà	0	0
 ES	España	09	Cataluña	17	Girona	17066	Figueres	0	0
 ES	España	09	Cataluña	17	Girona	17067	Flaçà	0	0
+ES	España	09	Cataluña	17	Girona	17068	Foixà	0	0
 ES	España	09	Cataluña	17	Girona	17902	Forallac	0	0
 ES	España	09	Cataluña	17	Girona	17073	Fornells de la Selva	1	0
 ES	España	09	Cataluña	17	Girona	17075	Garrigàs	1	0
@@ -475,6 +479,7 @@ ES	España	09	Cataluña	17	Girona	17083	Hostalric	0	0
 ES	España	09	Cataluña	17	Girona	17085	Jafre	1	0
 ES	España	09	Cataluña	17	Girona	17089	Llagostera	2	0
 ES	España	09	Cataluña	17	Girona	17092	Llançà	0	0
+ES	España	09	Cataluña	17	Girona	17093	Llers	0	0
 ES	España	09	Cataluña	17	Girona	17095	Lloret de Mar	0	0
 ES	España	09	Cataluña	17	Girona	17103	Maçanet de la Selva	0	0
 ES	España	09	Cataluña	17	Girona	17105	Mieres	0	1
@@ -515,6 +520,7 @@ ES	España	09	Cataluña	17	Girona	17164	Sant Hilari Sacalm	0	1
 ES	España	09	Cataluña	17	Girona	17168	Sant Joan de Mollet	0	0
 ES	España	09	Cataluña	17	Girona	17185	Sant Joan les Fonts	0	0
 ES	España	09	Cataluña	17	Girona	17166	Sant Jordi Desvalls	0	0
+ES	España	09	Cataluña	17	Girona	17903	Sant Julià del Llor i Bonmatí	0	0
 ES	España	09	Cataluña	17	Girona	17169	Sant Julià de Ramis	0	0
 ES	España	09	Cataluña	17	Girona	17171	Sant Llorenç de la Muga	0	0
 ES	España	09	Cataluña	17	Girona	17175	Sant Miquel de Fluvià	0	0
@@ -837,6 +843,7 @@ ES	España	14	Murcia, Región de	30	Murcia	30029	Mula	0	1
 ES	España	14	Murcia, Región de	30	Murcia	30030	Murcia	0	1
 ES	España	14	Murcia, Región de	30	Murcia	30901	Santomera	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31003	Abaurregaina/Abaurrea Alta	0	0
+ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31009	Aibar/Oibar	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31011	Allín/Allin	1	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31017	Anue	0	0
 ES	España	15	Navarra, Comunidad Foral de	31	Navarra	31020	Araitz	0	0

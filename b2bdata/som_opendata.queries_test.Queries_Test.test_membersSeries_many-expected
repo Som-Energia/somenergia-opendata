@@ -285,7 +285,7 @@ ES	España	01	Andalucia	41	Sevilla	41089	Santiponce	0	0
 ES	España	01	Andalucia	41	Sevilla	41090	Saucejo, El	0	0
 ES	España	01	Andalucia	41	Sevilla	41091	Sevilla	73	77
 ES	España	01	Andalucia	41	Sevilla	41093	Tomares	2	2
-ES	España	01	Andalucia	41	Sevilla	41094	Umbrete	2	2
+ES	España	01	Andalucia	41	Sevilla	41094	Umbrete	1	1
 ES	España	01	Andalucia	41	Sevilla	41095	Utrera	1	1
 ES	España	01	Andalucia	41	Sevilla	41096	Valencina de la Concepción	2	2
 ES	España	01	Andalucia	41	Sevilla	41097	Villamanrique de la Condesa	0	0
@@ -351,6 +351,7 @@ ES	España	02	Aragón	22	Huesca	22187	Puebla de Castro, La	1	1
 ES	España	02	Aragón	22	Huesca	22199	Sabiñánigo	4	4
 ES	España	02	Aragón	22	Huesca	22200	Sahún	1	1
 ES	España	02	Aragón	22	Huesca	22207	San Juan de Plan	0	0
+ES	España	02	Aragón	22	Huesca	22208	Santa Cilia	0	0
 ES	España	02	Aragón	22	Huesca	22209	Santa Cruz de la Serós	0	0
 ES	España	02	Aragón	22	Huesca	22213	Sariñena	0	0
 ES	España	02	Aragón	22	Huesca	22214	Secastilla	0	0
@@ -539,7 +540,7 @@ ES	España	04	Baleares, Islas	07	Balears, Illes	07027	Inca	30	30
 ES	España	04	Baleares, Islas	07	Balears, Illes	07028	Lloret de Vistalegre	2	2
 ES	España	04	Baleares, Islas	07	Balears, Illes	07029	Lloseta	3	3
 ES	España	04	Baleares, Islas	07	Balears, Illes	07030	Llubí	3	3
-ES	España	04	Baleares, Islas	07	Balears, Illes	07031	Llucmajor	18	19
+ES	España	04	Baleares, Islas	07	Balears, Illes	07031	Llucmajor	17	18
 ES	España	04	Baleares, Islas	07	Balears, Illes	07033	Manacor	37	37
 ES	España	04	Baleares, Islas	07	Balears, Illes	07034	Mancor de la Vall	7	7
 ES	España	04	Baleares, Islas	07	Balears, Illes	07032	Maó	42	44
@@ -937,6 +938,7 @@ ES	España	07	Castilla y León	24	León	24167	Soto y Amío	0	0
 ES	España	07	Castilla y León	24	León	24173	Turcia	1	1
 ES	España	07	Castilla y León	24	León	24175	Valdefresno	1	1
 ES	España	07	Castilla y León	24	León	24189	Valverde de la Virgen	1	1
+ES	España	07	Castilla y León	24	León	24193	Vecilla, La	1	1
 ES	España	07	Castilla y León	24	León	24202	Villablino	1	1
 ES	España	07	Castilla y León	24	León	24222	Villaquilambre	1	1
 ES	España	07	Castilla y León	24	León	24227	Villaturiel	1	1
@@ -1053,7 +1055,7 @@ ES	España	09	Cataluña	08	Barcelona	08016	Bagà	6	6
 ES	España	09	Cataluña	08	Barcelona	08017	Balenyà	0	0
 ES	España	09	Cataluña	08	Barcelona	08018	Balsareny	5	6
 ES	España	09	Cataluña	08	Barcelona	08252	Barberà del Vallès	29	29
-ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3118	3219
+ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3116	3217
 ES	España	09	Cataluña	08	Barcelona	08020	Begues	19	20
 ES	España	09	Cataluña	08	Barcelona	08021	Bellprat	0	0
 ES	España	09	Cataluña	08	Barcelona	08022	Berga	31	31
@@ -1091,7 +1093,7 @@ ES	España	09	Cataluña	08	Barcelona	08052	Castellar de n'Hug	0	0
 ES	España	09	Cataluña	08	Barcelona	08053	Castellbell i el Vilar	2	2
 ES	España	09	Cataluña	08	Barcelona	08054	Castellbisbal	14	15
 ES	España	09	Cataluña	08	Barcelona	08055	Castellcir	2	2
-ES	España	09	Cataluña	08	Barcelona	08056	Castelldefels	61	63
+ES	España	09	Cataluña	08	Barcelona	08056	Castelldefels	62	64
 ES	España	09	Cataluña	08	Barcelona	08057	Castell de l'Areny	0	0
 ES	España	09	Cataluña	08	Barcelona	08058	Castellet i la Gornal	4	4
 ES	España	09	Cataluña	08	Barcelona	08059	Castellfollit del Boix	0	0
@@ -1254,7 +1256,7 @@ ES	España	09	Cataluña	08	Barcelona	08201	Sant Boi de Lluçanès	2	2
 ES	España	09	Cataluña	08	Barcelona	08203	Sant Cebrià de Vallalta	3	3
 ES	España	09	Cataluña	08	Barcelona	08202	Sant Celoni	58	59
 ES	España	09	Cataluña	08	Barcelona	08204	Sant Climent de Llobregat	7	7
-ES	España	09	Cataluña	08	Barcelona	08205	Sant Cugat del Vallès	233	241
+ES	España	09	Cataluña	08	Barcelona	08205	Sant Cugat del Vallès	234	242
 ES	España	09	Cataluña	08	Barcelona	08206	Sant Cugat Sesgarrigues	3	3
 ES	España	09	Cataluña	08	Barcelona	08207	Sant Esteve de Palautordera	15	15
 ES	España	09	Cataluña	08	Barcelona	08208	Sant Esteve Sesrovires	11	12
@@ -1291,7 +1293,7 @@ ES	España	09	Cataluña	08	Barcelona	08238	Sant Quirze del Vallès	29	29
 ES	España	09	Cataluña	08	Barcelona	08239	Sant Quirze Safaja	1	1
 ES	España	09	Cataluña	08	Barcelona	08240	Sant Sadurní d'Anoia	13	14
 ES	España	09	Cataluña	08	Barcelona	08098	Sant Salvador de Guardiola	6	6
-ES	España	09	Cataluña	08	Barcelona	08262	Sant Vicenç de Castellet	17	17
+ES	España	09	Cataluña	08	Barcelona	08262	Sant Vicenç de Castellet	16	16
 ES	España	09	Cataluña	08	Barcelona	08263	Sant Vicenç dels Horts	16	16
 ES	España	09	Cataluña	08	Barcelona	08264	Sant Vicenç de Montalt	6	6
 ES	España	09	Cataluña	08	Barcelona	08265	Sant Vicenç de Torelló	0	2
@@ -1355,7 +1357,7 @@ ES	España	09	Cataluña	17	Girona	17016	Bàscara	1	1
 ES	España	09	Cataluña	17	Girona	17013	Begur	5	5
 ES	España	09	Cataluña	17	Girona	17018	Bellcaire d'Empordà	0	0
 ES	España	09	Cataluña	17	Girona	17019	Besalú	4	4
-ES	España	09	Cataluña	17	Girona	17020	Bescanó	11	12
+ES	España	09	Cataluña	17	Girona	17020	Bescanó	10	11
 ES	España	09	Cataluña	17	Girona	17021	Beuda	1	1
 ES	España	09	Cataluña	17	Girona	17022	Bisbal d'Empordà, La	17	19
 ES	España	09	Cataluña	17	Girona	17234	Biure	1	1
@@ -1383,7 +1385,7 @@ ES	España	09	Cataluña	17	Girona	17044	Cassà de la Selva	16	16
 ES	España	09	Cataluña	17	Girona	17046	Castellfollit de la Roca	0	0
 ES	España	09	Cataluña	17	Girona	17047	Castelló d'Empúries	11	11
 ES	España	09	Cataluña	17	Girona	17048	Castell-Platja d'Aro	4	4
-ES	España	09	Cataluña	17	Girona	17189	Cellera de Ter, La	2	2
+ES	España	09	Cataluña	17	Girona	17189	Cellera de Ter, La	3	3
 ES	España	09	Cataluña	17	Girona	17049	Celrà	21	21
 ES	España	09	Cataluña	17	Girona	17050	Cervià de Ter	0	0
 ES	España	09	Cataluña	17	Girona	17051	Cistella	3	3
@@ -1642,7 +1644,7 @@ ES	España	09	Cataluña	25	Lleida	25119	Juneda	8	9
 ES	España	09	Cataluña	25	Lleida	25121	Les	3	3
 ES	España	09	Cataluña	25	Lleida	25122	Linyola	3	3
 ES	España	09	Cataluña	25	Lleida	25124	Lladurs	0	0
-ES	España	09	Cataluña	25	Lleida	25120	Lleida	150	153
+ES	España	09	Cataluña	25	Lleida	25120	Lleida	151	154
 ES	España	09	Cataluña	25	Lleida	25127	Lles de Cerdanya	1	2
 ES	España	09	Cataluña	25	Lleida	25128	Llimiana	1	1
 ES	España	09	Cataluña	25	Lleida	25133	Maials	0	0
@@ -1703,8 +1705,8 @@ ES	España	09	Cataluña	25	Lleida	25203	Seu d'Urgell, La	7	8
 ES	España	09	Cataluña	25	Lleida	25205	Sidamon	2	2
 ES	España	09	Cataluña	25	Lleida	25206	Soleràs, El	0	0
 ES	España	09	Cataluña	25	Lleida	25207	Solsona	14	14
-ES	España	09	Cataluña	25	Lleida	25208	Soriguera	1	1
-ES	España	09	Cataluña	25	Lleida	25209	Sort	7	8
+ES	España	09	Cataluña	25	Lleida	25208	Soriguera	2	2
+ES	España	09	Cataluña	25	Lleida	25209	Sort	6	7
 ES	España	09	Cataluña	25	Lleida	25210	Soses	0	0
 ES	España	09	Cataluña	25	Lleida	25212	Sunyer	0	0
 ES	España	09	Cataluña	25	Lleida	25215	Talarn	2	2
@@ -1915,7 +1917,7 @@ ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03010	Alfafara	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03011	Alfàs del Pi, l'	1	1
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03012	Algorfa	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03013	Algueña	1	1
-ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03014	Alicante/Alacant	66	66
+ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03014	Alicante/Alacant	67	67
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03015	Almoradí	1	1
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03018	Altea	4	5
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03019	Aspe	3	3
@@ -2465,7 +2467,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28074	Leganés	21	24
 ES	España	13	Madrid, Comunidad de	28	Madrid	28075	Loeches	1	1
 ES	España	13	Madrid, Comunidad de	28	Madrid	28901	Lozoyuela-Navas-Sieteiglesias	2	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28078	Madarcos	0	0
-ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	924	955
+ES	España	13	Madrid, Comunidad de	28	Madrid	28079	Madrid	923	954
 ES	España	13	Madrid, Comunidad de	28	Madrid	28080	Majadahonda	11	11
 ES	España	13	Madrid, Comunidad de	28	Madrid	28082	Manzanares el Real	13	14
 ES	España	13	Madrid, Comunidad de	28	Madrid	28083	Meco	3	3
