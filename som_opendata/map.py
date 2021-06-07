@@ -132,7 +132,7 @@ def fillMap(data, template, legendTemplate, geolevel, title,
         Linear=LinearScale,
         Log=LogScale,
     )
-    scaleHigher = maxVal or maxValue(data, geolevel, frame=frameQuantity - 1)
+    scaleHigher = maxVal or max(maxValue(data, geolevel, frame=i) for i in range(frameQuantity))
     scale = scales[scale](higher=max(scaleHigher, 100)).nice()
     gradient = Gradient('#e0ecbb', '#384413')
     legend = fillLegend(legendTemplate, scale, gradient, isRelative)
