@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-30 19:31+0200\n"
+"POT-Creation-Date: 2021-06-07 20:11+0200\n"
 "PO-Revision-Date: 2020-01-10 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: eu\n"
@@ -136,79 +136,103 @@ msgid ""
 "this one.\n"
 msgstr ""
 
+#: som_opendata/common.py:100
+msgid "Deployed plant power (MW)"
+msgstr ""
+
+#: som_opendata/common.py:102
+msgid ""
+"Aggregated peak power of the deployed plants in the region just before "
+"the date.\n"
+"\n"
+"This metric is experimental. Data should not be relied on yet."
+msgstr ""
+
+#: som_opendata/common.py:109
+msgid "Energy produced on plants (kWh)"
+msgstr ""
+
 #: som_opendata/common.py:111
+msgid ""
+"Energy injected by the plant into the network in the region during the "
+"period just before the date.\n"
+"\n"
+"This metric is experimental. Data should not be relied on yet."
+msgstr ""
+
+#: som_opendata/common.py:129
 msgid "World"
 msgstr ""
 
-#: som_opendata/common.py:115
+#: som_opendata/common.py:133
 msgid "Country"
 msgstr ""
 
-#: som_opendata/common.py:121
+#: som_opendata/common.py:139
 msgid "CCAA"
 msgstr ""
 
-#: som_opendata/common.py:126
+#: som_opendata/common.py:144
 msgid "State"
 msgstr ""
 
-#: som_opendata/common.py:131
+#: som_opendata/common.py:149
 msgid "City"
 msgstr ""
 
-#: som_opendata/common.py:137
+#: som_opendata/common.py:155
 msgid "Local Group"
 msgstr ""
 
-#: som_opendata/map.py:14
+#: som_opendata/map.py:13
 msgid "January"
 msgstr "Urtarril"
 
-#: som_opendata/map.py:15
+#: som_opendata/map.py:14
 msgid "February"
 msgstr "Otsail"
 
-#: som_opendata/map.py:16
+#: som_opendata/map.py:15
 msgid "March"
 msgstr "Martxo"
 
-#: som_opendata/map.py:17
+#: som_opendata/map.py:16
 msgid "April"
 msgstr "Apiril"
 
-#: som_opendata/map.py:18
+#: som_opendata/map.py:17
 msgid "May"
 msgstr "Maiatz"
 
-#: som_opendata/map.py:19
+#: som_opendata/map.py:18
 msgid "June"
 msgstr "Ekain"
 
-#: som_opendata/map.py:20
+#: som_opendata/map.py:19
 msgid "July"
 msgstr "Uztail"
 
-#: som_opendata/map.py:21
+#: som_opendata/map.py:20
 msgid "August"
 msgstr "Abuztu"
 
-#: som_opendata/map.py:22
+#: som_opendata/map.py:21
 msgid "September"
 msgstr "Irail"
 
-#: som_opendata/map.py:23
+#: som_opendata/map.py:22
 msgid "October"
 msgstr "Urri"
 
-#: som_opendata/map.py:24
+#: som_opendata/map.py:23
 msgid "November"
 msgstr "Azaro"
 
-#: som_opendata/map.py:25
+#: som_opendata/map.py:24
 msgid "December"
 msgstr "Abendu"
 
-#: som_opendata/map.py:206
+#: som_opendata/map.py:205
 #, python-format
 msgid "per %(num)s population"
 msgstr "%(num)s biztanleko"
