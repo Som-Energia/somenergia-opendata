@@ -31,7 +31,6 @@ inecodes = {
         ('41006','Alcolea del Rio'), # tilde mising in drive
         ('41055','Lora del Rio'), # tilde mising in drive
         ('05074','Fontiveros'),
-        ('05074','Fontivsolar'), # wrong city name
         ('04090','Tahal'),
         ('18152','Pedro Martínez'),
     ]
