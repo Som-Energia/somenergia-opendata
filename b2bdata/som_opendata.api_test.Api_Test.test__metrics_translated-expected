@@ -11,7 +11,7 @@ metrics:
     \ si una sòcia es dona de baixa i es torna a donar-se d'alta.\n"
 - id: newmembers
   text: Noves sòcies
-  description: 'Noves sócies durant el mes que acaba a la data donada.
+  description: 'Noves sòcies durant el mes que acaba a la data donada.
 
 
     S''apliquen les mateixes consideracions que per a la mètrica "Sòcies".
@@ -89,16 +89,17 @@ metrics:
 
     '
 - id: plantpower
-  text: Deployed plant power (MW)
-  description: 'Aggregated peak power of the deployed plants in the region just before
-    the date.
+  text: Potencia instal·lada en plantes (MW)
+  description: 'Suma de la potència de pic de les plantes instalades en la regió just
+    abans de la data.
 
 
-    This metric is experimental. Data should not be relied on yet.'
+    Aquesta mètrica és experimental. Les dades encara no son fiables.'
 - id: plantproduction
-  text: Energy produced on plants (kWh)
-  description: 'Energy injected by the plant into the network in the region during
-    the period just before the date.
+  text: Energia produïda en plantes (kWh)
+  description: 'Energia que les plantes de la regió varen injectar a la xarxa durant
+    el període just abans a la data.
 
 
-    This metric is experimental. Data should not be relied on yet.'
+    Les dades fins a 2020 es prenen dels nostres registres històrics. Les dades a
+    partir de 2021 es calculen directament de les lectures del comptador.'

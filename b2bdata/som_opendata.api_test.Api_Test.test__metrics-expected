@@ -103,8 +103,9 @@ metrics:
     This metric is experimental. Data should not be relied on yet.'
 - id: plantproduction
   text: Energy produced on plants (kWh)
-  description: 'Energy injected by the plant into the network in the region during
+  description: 'Energy that plants from the region inject into the network during
     the period just before the date.
 
 
-    This metric is experimental. Data should not be relied on yet.'
+    Data up to 2020 are taken from our historical records. Data from 2021 onwards
+    is taken computed from meter measurements.'

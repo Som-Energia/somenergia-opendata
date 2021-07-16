@@ -109,9 +109,9 @@ metrics = ns(
         text=_("Energy produced on plants (kWh)"),
         timeaggregation='sum',
         description=_(
-            "Energy injected by the plant into the network in the region during the period just before the date.\n\n"
-            "This metric is experimental. Data should not be relied on yet."
-            # TODO: historical data vs meter data
+            "Energy that plants from the region inject into the network during the period just before the date.\n\n"
+            "Data up to 2020 are taken from our historical records. "
+            "Data from 2021 onwards is taken computed from meter measurements."
         ),
     ),
 )
