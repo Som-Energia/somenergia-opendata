@@ -47,7 +47,7 @@ def sheetFromDrive(certificate, document, sheet):
     fetcher = SheetFetcher(
         documentName=document,
         credentialFilename=certificate,
-        )
+    )
     info = fetcher.get_fullsheet(sheet)
     info = [[x.strip() for x in row] for row in info]
     return info
@@ -117,7 +117,7 @@ def parseblock(info, result):
                     year = None
                 continue
             if key:
-                warn(f"repeat at row {irow} {key}")
+                warn(f"repeat at row {plant} {year} {irow} {key}")
                 break
 
             #warn("Ignored '{}' -> '{}'",
