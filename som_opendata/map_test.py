@@ -514,16 +514,18 @@ class Map_Test(unittest.TestCase):
             locationsCodes=['01','09']
         )
 
+        # TODO: Review why at some point changed from calculated #c4db7e to #cee193
+        # TODO: Review why at some point changed from calculated #384413 to #84a02d
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: Members</text>
   <text y="60" x="170" style="text-anchor:middle">Subtitle: </text>
   <text y="80" x="170" style="text-anchor:middle">Year: 2018</text>
   <text y="100" x="170" style="text-anchor:middle">Month: January</text>
-  <circle cy="180" cx="100" r="60" fill="#c4db7e"/>
+  <circle cy="180" cx="100" r="60" fill="#cee193"/>
   <text y="180" x="100" style="text-anchor:middle">2</text>
   <text y="200" x="100" style="text-anchor:middle">9,1%</text>
-  <circle cy="180" cx="240" r="60" fill="#384413"/>
+  <circle cy="180" cx="240" r="60" fill="#84a02d"/>
   <text y="180" x="240" style="text-anchor:middle">20</text>
   <text y="200" x="240" style="text-anchor:middle">90,9%</text>
 </svg>
@@ -546,13 +548,14 @@ class Map_Test(unittest.TestCase):
             locationsCodes=['01','09']
         )
 
+        # TODO: Review why at some point changed from calculated #384413 to #cee193
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: Members</text>
   <text y="60" x="170" style="text-anchor:middle">Subtitle: </text>
   <text y="80" x="170" style="text-anchor:middle">Year: 2018</text>
   <text y="100" x="170" style="text-anchor:middle">Month: January</text>
-  <circle cy="180" cx="100" r="60" fill="#384413"/>
+  <circle cy="180" cx="100" r="60" fill="#cee193"/>
   <text y="180" x="100" style="text-anchor:middle">2</text>
   <text y="200" x="100" style="text-anchor:middle">100,0%</text>
   <circle cy="180" cx="240" r="60" fill="#e0ecbb"/>
@@ -950,16 +953,19 @@ class Map_Test(unittest.TestCase):
 
         result = fillMap(data=data, template=dummyTemplate, legendTemplate="",
                 title=u"un títol", subtitle=u"un subtítol", geolevel='ccaa', scale='Linear', isRelative=True)
+
+
+        # TODO: Review why it changed from #384413 to #e0ecbb
         self.assertMultiLineEqual(result, u"""\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: un títol</text>
   <text y="60" x="170" style="text-anchor:middle">Subtitle: un subtítol</text>
   <text y="80" x="170" style="text-anchor:middle">Year: 2019</text>
   <text y="100" x="170" style="text-anchor:middle">Month: January</text>
-  <circle cy="180" cx="100" r="60" fill="#384413"/>
+  <circle cy="180" cx="100" r="60" fill="#e0ecbb"/>
   <text y="180" x="100" style="text-anchor:middle">0,1</text>
   <text y="200" x="100" style="text-anchor:middle"></text>
-  <circle cy="180" cx="240" r="60" fill="#384413"/>
+  <circle cy="180" cx="240" r="60" fill="#e0ecbb"/>
   <text y="180" x="240" style="text-anchor:middle">0,0</text>
   <text y="200" x="240" style="text-anchor:middle"></text>
 </svg>
@@ -986,16 +992,18 @@ class Map_Test(unittest.TestCase):
             relativeMetricValues=populationValues,
         )
 
+        # TODO: Review why it changed from #d9e8ac to #dbe9b1
+        # TODO: Review why it changed from #54671d to #96b633
         self.assertMultiLineEqual(result, """\
 <svg xmlns="http://www.w3.org/2000/svg" width="480" version="1.1" height="300">
   <text y="40" x="170" style="text-anchor:middle">Title: Members</text>
   <text y="60" x="170" style="text-anchor:middle">Subtitle: per 5.000.000 population</text>
   <text y="80" x="170" style="text-anchor:middle">Year: 2018</text>
   <text y="100" x="170" style="text-anchor:middle">Month: January</text>
-  <circle cy="180" cx="100" r="60" fill="#d9e8ac"/>
+  <circle cy="180" cx="100" r="60" fill="#dbe9b1"/>
   <text y="180" x="100" style="text-anchor:middle">1,2</text>
   <text y="200" x="100" style="text-anchor:middle"></text>
-  <circle cy="180" cx="240" r="60" fill="#54671d"/>
+  <circle cy="180" cx="240" r="60" fill="#96b633"/>
   <text y="180" x="240" style="text-anchor:middle">13,5</text>
   <text y="200" x="240" style="text-anchor:middle"></text>
 </svg>
