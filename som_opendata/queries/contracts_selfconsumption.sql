@@ -3,6 +3,7 @@ SELECT
 	MIN(modi.data_inici) as first_date,
 	polissa.data_baixa as last_date,
 	cups.id_municipi as city_id,
+	NULL as country_id,
 	TRUE
 FROM giscedata_polissa AS polissa
 LEFT JOIN giscedata_polissa_modcontractual AS modi

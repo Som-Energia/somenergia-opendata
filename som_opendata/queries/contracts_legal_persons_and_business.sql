@@ -5,6 +5,7 @@ SELECT
 	polissa.data_alta as first_date,
 	polissa.data_baixa as last_date,
 	cups.id_municipi as city_id,
+	NULL as country_id,
 	owner.vat as vat,
 	cnae.name as cnae,
 	TRUE
