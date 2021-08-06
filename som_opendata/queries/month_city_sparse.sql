@@ -1,4 +1,5 @@
 SELECT
+	thedate AS thedate,
 	pais.code AS codi_pais,
 	pais.name AS pais,
 	comunitat.codi AS codi_ccaa,
@@ -7,27 +8,25 @@ SELECT
 	provincia.name AS provincia,
 	municipi.ine AS codi_ine,
 	municipi.name AS municipi,
-	{} -- here go the count columns
+	count(CASE
+		WHEN item_first_date IS NULL THEN NULL
+		WHEN item.first_date > thedate THEN NULL
+		WHEN item.last_date is NULL then item.id::text
+		WHEN item.last_date > thedate THEN item.id::text
+		ELSE NULL
+		END) AS quants,
+	string_agg(CASE
+		WHEN item.first_date IS NULL THEN NULL
+		WHEN item.first_date > thedate THEN NULL
+		WHEN item.last_date is NULL then item.id::text
+		WHEN item.last_date > thedate THEN item.id::text
+		ELSE NULL
+		END, ',' ORDER BY item.id) AS ids
 FROM (
-	SELECT
-		polissa.id as id,
-		MIN(modi.data_inici) as first_date,
-		polissa.data_baixa as last_date,
-		cups.id_municipi as city_id,
-		TRUE
-	FROM giscedata_polissa AS polissa
-	LEFT JOIN giscedata_polissa_modcontractual AS modi
-		ON polissa.id = modi.polissa_id
-	INNER JOIN giscedata_cups_ps AS cups
-		ON polissa.cups = cups.id
-	WHERE
-		modi.autoconsumo IS NOT NULL AND
-		modi.autoconsumo != '00' AND
-		TRUE
-	GROUP BY
-		polissa.id,
-		cups.id
+{}
 ) AS item
+LEFT JOIN unnest({}) AS thedate
+	ON TRUE
 LEFT JOIN res_municipi AS municipi
 	ON item.city_id=municipi.id
 LEFT JOIN res_country_state AS provincia
@@ -37,6 +36,7 @@ LEFT JOIN res_comunitat_autonoma AS comunitat
 LEFT JOIN res_country AS pais
 	ON pais.id = provincia.country_id
 GROUP BY
+	thedate,
 	codi_pais,
 	codi_ccaa,
 	codi_provincia,
@@ -50,5 +50,6 @@ ORDER BY
 	comunitat_autonoma ASC,
 	provincia ASC,
 	municipi ASC,
+	thedate ASC,
 	TRUE ASC
 ;

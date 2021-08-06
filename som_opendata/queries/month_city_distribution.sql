@@ -1,3 +1,4 @@
+-- Template queries to count data discriminating by city.
 SELECT
 	pais.code AS codi_pais,
 	pais.name AS pais,
@@ -7,17 +8,9 @@ SELECT
 	provincia.name AS provincia,
 	municipi.ine AS codi_ine,
 	municipi.name AS municipi,
-	{} -- here go the count columns
+	{} -- here goes the count columns
 FROM (
-	SELECT
-		polissa.id as id,
-		polissa.data_alta as first_date,
-		polissa.data_baixa as last_date,
-		cups.id_municipi as city_id,
-		TRUE
-	FROM giscedata_polissa AS polissa
-	INNER JOIN giscedata_cups_ps AS cups
-		ON polissa.cups = cups.id
+{} -- here goes the inner query of elements to be counted
 ) AS item
 LEFT JOIN res_municipi AS municipi
 	ON item.city_id=municipi.id

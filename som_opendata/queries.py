@@ -34,6 +34,26 @@ def timeQuery(dates, queryfile, timeSlicer, dbhandler=csvTable):
         cursor.execute(query)
         return dbhandler(cursor)
 
+def timeCityQuery(dates, queryfile, timeSlicer, dbhandler=csvTable):
+    """
+    Executes the query stored in `queryfile` as inner query of an enclosing
+    query which aggregates inner results by field `city_id` and adds columns
+    aggregating data for each date in `dates` as specified by `timeSlicer`.
+    In order to work, the inner query is expected to generate fields
+    `first_date`, `last_date` and `city_id`.
+    """
+    db = psycopg2.connect(**config.psycopg)
+    innerQuery = readQuery(queryfile)
+    counterFields = ','.join(
+        timeSlicer(Date(adate))
+        for adate in dates
+    )
+    query = readQuery('month_city_distribution')
+    query = query.format(counterFields, innerQuery)
+    with db.cursor() as cursor :
+        cursor.execute(query)
+        return dbhandler(cursor)
+
 def activeItemAdder(adate):
     # TODO: Unsafe substitution, use mogrify
     return """
@@ -118,18 +138,18 @@ def canceledItemLister(adate):
 """.format(adate=adate)
 
 def contractsSeries(dates, dbhandler=csvTable):
-    return timeQuery(
+    return timeCityQuery(
         dates=dates,
-        queryfile='contract_distribution',
+        queryfile='contracts',
         timeSlicer=activeItemCounter,
         #timeSlicer=activeItemLister, # debug
         dbhandler=dbhandler,
     )
 
 def newContractsSeries(dates, dbhandler=csvTable):
-    return timeQuery(
+    return timeCityQuery(
         dates=dates,
-        queryfile='contract_distribution',
+        queryfile='contracts',
         timeSlicer=newItemCounter,
         #timeSlicer=newItemLister, # debug
         dbhandler=dbhandler,
@@ -137,36 +157,36 @@ def newContractsSeries(dates, dbhandler=csvTable):
 
 
 def canceledContractsSeries(dates, dbhandler=csvTable, debug=False):
-    return timeQuery(
+    return timeCityQuery(
         dates=dates,
-        queryfile='contract_distribution',
+        queryfile='contracts',
         timeSlicer=canceledItemCounter,
         #timeSlicer=canceledItemLister, # debug
         dbhandler=dbhandler,
     )
 
 def selfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
-    return timeQuery(
+    return timeCityQuery(
         dates=dates,
-        queryfile='contract_selfconsumption_distribution',
+        queryfile='contracts_selfconsumption',
         timeSlicer=activeItemCounter,
         #timeSlicer=activeItemLister, # debug
         dbhandler=dbhandler,
     )
 
 def newSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
-    return timeQuery(
+    return timeCityQuery(
         dates=dates,
-        queryfile='contract_selfconsumption_distribution',
+        queryfile='contracts_selfconsumption',
         timeSlicer=newItemCounter,
         #timeSlicer=newItemLister, # debug
         dbhandler=dbhandler,
     )
 
 def canceledSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=False):
-    return timeQuery(
+    return timeCityQuery(
         dates=dates,
-        queryfile='contract_selfconsumption_distribution',
+        queryfile='contracts_selfconsumption',
         timeSlicer=canceledItemCounter,
         #timeSlicer=canceledItemLister, # debug
         dbhandler=dbhandler,
