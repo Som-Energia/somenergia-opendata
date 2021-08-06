@@ -1,17 +1,32 @@
 #!/usr/bin/env python3
 import sys
 from som_opendata.queries import (
+    plantPowerSeries,
+    plantProductionSeries,
+
     membersSeries,
+    newMembersSeries,
+    canceledMembersSeries,
+
     contractsSeries,
     newContractsSeries,
     canceledContractsSeries,
+
     selfConsumptionContractsSeries,
     newSelfConsumptionContractsSeries,
     canceledSelfConsumptionContractsSeries,
-    newMembersSeries,
-    canceledMembersSeries,
-    plantPowerSeries,
-    plantProductionSeries,
+
+    publicContractsSeries,
+    newPublicContractsSeries,
+    canceledPublicContractsSeries,
+
+    entityContractsSeries,
+    newEntityContractsSeries,
+    canceledEntityContractsSeries,
+
+    homeownerCommunityContractsSeries,
+    newHomeownerCommunityContractsSeries,
+    canceledHomeownerCommunityContractsSeries,
 )
 from som_opendata.common import dateSequenceMonths
 from yamlns.dateutils import Date
@@ -29,15 +44,26 @@ dates=dateSequenceMonths(fromdate, todate)
 metricGenerators = dict(
     plantpower=plantPowerSeries,
     plantproduction=plantProductionSeries,
+
     members=membersSeries,
     contracts=contractsSeries,
     selfconsumptioncontracts=selfConsumptionContractsSeries,
-    newcontracts=newContractsSeries,
-    canceledcontracts=canceledContractsSeries,
-    newselfconsumptioncontracts=newSelfConsumptionContractsSeries,
-    canceledselfconsumptioncontracts=canceledSelfConsumptionContractsSeries,
+    publiccontracts=publicContractsSeries,
+    entitycontracts=entityContractsSeries,
+    homeownercommunitycontracts=homeownerCommunityContractsSeries,
+
     newmembers=newMembersSeries,
+    newpubliccontracts=newPublicContractsSeries,
+    newentitycontracts=newEntityContractsSeries,
+    newselfconsumptioncontracts=newSelfConsumptionContractsSeries,
+    newhomeownercommunitycontracts=newHomeownerCommunityContractsSeries,
+
     canceledmembers=canceledMembersSeries,
+    canceledpubliccontracts=canceledPublicContractsSeries,
+    canceledentitycontracts=canceledEntityContractsSeries,
+    canceledcontracts=canceledContractsSeries,
+    canceledselfconsumptioncontracts=canceledSelfConsumptionContractsSeries,
+    canceledhomeownercommunitycontracts=canceledHomeownerCommunityContractsSeries,
 )
 
 

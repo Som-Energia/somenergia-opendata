@@ -96,6 +96,94 @@ metrics = ns(
             "Considerations for \"Self consumption contracts\" metric also apply in this one.\n"
         ),
     ),
+    homeownercommunitycontracts=ns(
+        text=_("Homeowner comunity contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Active contracts whose owner is a homeowner community.\n\n"
+            "Considerations:\n\n"
+            "- The owner of the contract is considered a homeowner community if its VAT starts with ESH\n"
+            "- This metric is obtained from data in the ATR system.\n"
+        ),
+    ),
+    newhomeownercommunitycontracts=ns(
+        text=_("New homeowner comunity contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Contracts of homeowner communities starting during in the month before a given date.\n\n"
+            "Considerations for \"Contracts\" metric also apply in this one.\n"
+            "Considerations for \"Homeowner community contracts\" metric also apply in this one.\n"
+        ),
+    ),
+    canceledhomeownercommunitycontracts=ns(
+        text=_("Canceled homeowner comunity contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Contracts of homeowner communities ending during in the month before a given date.\n\n"
+            "Considerations for \"Contracts\" metric also apply in this one.\n"
+            "Considerations for \"Homeowner community contracts\" metric also apply in this one.\n"
+        ),
+    ),
+    entitycontracts=ns(
+        text=_("Entity and bussiness contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Active contracts with legal persons as owner or bound to a non residential use.\n\n"
+            "Considerations:\n\n"
+            "- Legal persons are detected by the spanish VAT number of the contract owner.\n"
+            "- Non residential activities are detected by the CNAE code declared by the owner for the contract.\n"
+            "- This metric is obtained from data in the ATR system.\n"
+        ),
+    ),
+    newentitycontracts=ns(
+        text=_("New entity and business contracts"),
+        timeaggregation='sum',
+        description=_(
+            "New contracts with legal person as owner or bound to a non residential use created within the month before the given date.\n\n"
+            "Contracts of homeowner communities starting during in the month before a given date.\n\n"
+            "Considerations for \"Contracts\" metric also apply in this one.\n"
+            "Considerations for \"Entity and business contracts\" metric also apply in this one.\n"
+        ),
+    ),
+    canceledentitycontracts=ns(
+        text=_("Canceled entity and business contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Contracts with a legal person as owner or bound to a non residential use cancelled within the month before the given date.\n\n"
+            "Considerations for \"Contracts\" metric also apply in this one.\n"
+            "Considerations for \"Entity and business contracts\" metric also apply in this one.\n"
+        ),
+    ),
+    publiccontracts=ns(
+        text=_("Public contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Active contracts with a public administrations as owners.\n\n"
+            "Considerations:\n\n"
+            "- Public administrations are detected by the spanish VAT number of the contract owner.\n"
+            "- Non residential activities are detected by the CNAE code declared by the owner for the contract.\n"
+            "- This metric is obtained from data in the ATR system.\n"
+        ),
+    ),
+    newpubliccontracts=ns(
+        text=_("New public contracts"),
+        timeaggregation='sum',
+        description=_(
+            "New contracts with a public administration as owner created within the month before the given date.\n\n"
+            "Contracts of homeowner communities starting during in the month before a given date.\n\n"
+            "Considerations for \"Contracts\" metric also apply in this one.\n"
+            "Considerations for \"Entity and business contracts\" metric also apply in this one.\n"
+        ),
+    ),
+    canceledpubliccontracts=ns(
+        text=_("Canceled public contracts"),
+        timeaggregation='sum',
+        description=_(
+            "Contracts with a public administration as owner cancelled within the month before the given date.\n\n"
+            "Considerations for \"Contracts\" metric also apply in this one.\n"
+            "Considerations for \"Entity and business contracts\" metric also apply in this one.\n"
+        ),
+    ),
     plantpower=ns(
         text=_("Deployed plant power (MW)"),
         timeaggregation='last',

@@ -192,6 +192,87 @@ def canceledSelfConsumptionContractsSeries(dates, dbhandler=csvTable, debug=Fals
         dbhandler=dbhandler,
     )
 
+def homeownerCommunityContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeCityQuery(
+        dates=dates,
+        queryfile='contracts_homeowner_association',
+        timeSlicer=activeItemCounter,
+        #timeSlicer=activeItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
+def newHomeownerCommunityContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeCityQuery(
+        dates=dates,
+        queryfile='contracts_homeowner_association',
+        timeSlicer=newItemCounter,
+        #timeSlicer=newItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
+def canceledHomeownerCommunityContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeCityQuery(
+        dates=dates,
+        queryfile='contracts_homeowner_association',
+        timeSlicer=canceledItemCounter,
+        #timeSlicer=canceledItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
+def publicContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeCityQuery(
+        dates=dates,
+        queryfile='contracts_public_administration',
+        timeSlicer=activeItemCounter,
+        #timeSlicer=activeItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
+def newPublicContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeCityQuery(
+        dates=dates,
+        queryfile='contracts_public_administration',
+        timeSlicer=newItemCounter,
+        #timeSlicer=newItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
+def canceledPublicContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeCityQuery(
+        dates=dates,
+        queryfile='contracts_public_administration',
+        timeSlicer=canceledItemCounter,
+        #timeSlicer=canceledItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
+def entityContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeCityQuery(
+        dates=dates,
+        queryfile='contracts_public_administration',
+        timeSlicer=activeItemCounter,
+        #timeSlicer=activeItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
+def newEntityContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeCityQuery(
+        dates=dates,
+        queryfile='contracts_public_administration',
+        timeSlicer=newItemCounter,
+        #timeSlicer=newItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
+def canceledEntityContractsSeries(dates, dbhandler=csvTable, debug=False):
+    return timeCityQuery(
+        dates=dates,
+        queryfile='contracts_legal_persons_and_business',
+        timeSlicer=canceledItemCounter,
+        #timeSlicer=canceledItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
 def membersSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,

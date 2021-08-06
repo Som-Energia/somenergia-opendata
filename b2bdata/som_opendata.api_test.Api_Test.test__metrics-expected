@@ -94,6 +94,128 @@ metrics:
     Considerations for "Self consumption contracts" metric also apply in this one.
 
     '
+- id: homeownercommunitycontracts
+  text: Homeowner comunity contracts
+  description: 'Active contracts whose owner is a homeowner community.
+
+
+    Considerations:
+
+
+    - The owner of the contract is considered a homeowner community if its VAT starts
+    with ESH
+
+    - This metric is obtained from data in the ATR system.
+
+    '
+- id: newhomeownercommunitycontracts
+  text: New homeowner comunity contracts
+  description: 'Contracts of homeowner communities starting during in the month before
+    a given date.
+
+
+    Considerations for "Contracts" metric also apply in this one.
+
+    Considerations for "Homeowner community contracts" metric also apply in this one.
+
+    '
+- id: canceledhomeownercommunitycontracts
+  text: Canceled homeowner comunity contracts
+  description: 'Contracts of homeowner communities ending during in the month before
+    a given date.
+
+
+    Considerations for "Contracts" metric also apply in this one.
+
+    Considerations for "Homeowner community contracts" metric also apply in this one.
+
+    '
+- id: entitycontracts
+  text: Entity and bussiness contracts
+  description: 'Active contracts with legal persons as owner or bound to a non residential
+    use.
+
+
+    Considerations:
+
+
+    - Legal persons are detected by the spanish VAT number of the contract owner.
+
+    - Non residential activities are detected by the CNAE code declared by the owner
+    for the contract.
+
+    - This metric is obtained from data in the ATR system.
+
+    '
+- id: newentitycontracts
+  text: New entity and business contracts
+  description: 'New contracts with legal person as owner or bound to a non residential
+    use created within the month before the given date.
+
+
+    Contracts of homeowner communities starting during in the month before a given
+    date.
+
+
+    Considerations for "Contracts" metric also apply in this one.
+
+    Considerations for "Entity and business contracts" metric also apply in this one.
+
+    '
+- id: canceledentitycontracts
+  text: Canceled entity and business contracts
+  description: 'Contracts with a legal person as owner or bound to a non residential
+    use cancelled within the month before the given date.
+
+
+    Considerations for "Contracts" metric also apply in this one.
+
+    Considerations for "Entity and business contracts" metric also apply in this one.
+
+    '
+- id: publiccontracts
+  text: Public contracts
+  description: 'Active contracts with a public administrations as owners.
+
+
+    Considerations:
+
+
+    - Public administrations are detected by the spanish VAT number of the contract
+    owner.
+
+    - Non residential activities are detected by the CNAE code declared by the owner
+    for the contract.
+
+    - This metric is obtained from data in the ATR system.
+
+    '
+- id: newpubliccontracts
+  text: New public contracts
+  description: 'New contracts with a public administration as owner created within
+    the month before the given date.
+
+
+    Contracts of homeowner communities starting during in the month before a given
+    date.
+
+
+    Considerations for "Contracts" metric also apply in this one.
+
+    Considerations for "Entity and business contracts" metric also apply in this one.
+
+    '
+- id: canceledpubliccontracts
+  text: Canceled public contracts
+  description: 'Contracts with a public administration as owner cancelled within the
+    month before the given date.
+
+
+    Considerations for "Contracts" metric also apply in this one.
+
+    Considerations for "Entity and business contracts" metric also apply in this one.
+
+    '
 - id: plantpower
   text: Deployed plant power (MW)
   description: 'Aggregated peak power of the deployed plants in the region just before
