@@ -10,7 +10,10 @@ SELECT
 	municipi.name AS municipi,
 	{} -- here goes the count columns
 FROM (
-{} -- here goes the inner query of elements to be counted
+--- here goes the inner query for the elements to be counted
+--- elements should have id, first_date, last_date, city_id, country_id
+--- and whatever other field used to count
+{}
 ) AS item
 LEFT JOIN res_municipi AS municipi
 	ON item.city_id=municipi.id
@@ -19,7 +22,7 @@ LEFT JOIN res_country_state AS provincia
 LEFT JOIN res_comunitat_autonoma AS comunitat
 	ON comunitat.id = provincia.comunitat_autonoma
 LEFT JOIN res_country AS pais
-	ON pais.id = provincia.country_id
+	ON pais.id = COALESCE(provincia.country_id, item.country_id)
 GROUP BY
 	codi_pais,
 	codi_ccaa,
