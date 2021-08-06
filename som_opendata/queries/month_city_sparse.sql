@@ -1,3 +1,7 @@
+--- This query scheleton is not currently used but
+--- is keept as reference just in case we need the
+--- unrolled data instead the one we are taking now
+--- in month_city_distribution
 SELECT
 	thedate AS thedate,
 	pais.code AS codi_pais,
