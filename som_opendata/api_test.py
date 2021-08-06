@@ -389,8 +389,8 @@ class Api_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             parameter: metric
             valueRequest: incorrectMetric
-            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts', 'plantpower', 'plantproduction']
-            message: Invalid metric 'incorrectMetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts', 'plantpower', 'plantproduction'.
+            possibleValues: ['members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts', 'homeownercommunitycontracts', 'newhomeownercommunitycontracts', 'canceledhomeownercommunitycontracts', 'entitycontracts', 'newentitycontracts', 'canceledentitycontracts', 'publiccontracts', 'newpubliccontracts', 'canceledpubliccontracts', 'plantpower', 'plantproduction']
+            message: Invalid metric 'incorrectMetric'. Accepted ones are 'members', 'newmembers', 'canceledmembers', 'contracts', 'newcontracts', 'canceledcontracts', 'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts', 'homeownercommunitycontracts', 'newhomeownercommunitycontracts', 'canceledhomeownercommunitycontracts', 'entitycontracts', 'newentitycontracts', 'canceledentitycontracts', 'publiccontracts', 'newpubliccontracts', 'canceledpubliccontracts', 'plantpower', 'plantproduction'.
             """, 400)
 
 

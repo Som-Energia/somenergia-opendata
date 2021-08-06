@@ -200,6 +200,9 @@ class DateSequence_Test(unittest.TestCase):
 
 class Common_Test(unittest.TestCase):
 
+    def setUp(self):
+        self.maxDiff=None
+
     # requestDates
 
     def assertRequestDatesEqual(self, expected, **kwds):
@@ -369,6 +372,9 @@ class Common_Test(unittest.TestCase):
             "'members', 'newmembers', 'canceledmembers', "
             "'contracts', 'newcontracts', 'canceledcontracts', "
             "'selfconsumptioncontracts', 'newselfconsumptioncontracts', 'canceledselfconsumptioncontracts', "
+            "'homeownercommunitycontracts', 'newhomeownercommunitycontracts', 'canceledhomeownercommunitycontracts', "
+            "'entitycontracts', 'newentitycontracts', 'canceledentitycontracts', "
+            "'publiccontracts', 'newpubliccontracts', 'canceledpubliccontracts', "
             "'plantpower', 'plantproduction'."
         )
 
