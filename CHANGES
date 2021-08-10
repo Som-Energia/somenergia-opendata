@@ -1,8 +1,23 @@
+# v0.2.23 unreleased
+
+- New metrics:
+  - (new/canceled)entitycontracts: Contracts with legal
+    persons or having non-residentials activities
+  - (new/canceled)publiccontracts: Contracts with the public
+    administration (special case for entities)
+  - (new/canceled)homeownercomunitycontracts: Contracts
+    with homeowner communities (special case for entities)
+- Infrastructure:
+  - Metric erp queries can be built just on a simpler inner query.
+    Time/city aggregation is provided on top in a generic way.
+    Having the inner query separated simplifies debugging.
+
 # v0.2.22 2021-07-16
 
-- Plant production metric taken from plantmonitor which
-  mixes historical monthly records up to 2020 with data
-  directly taken measures since 2021.
+- Plant production metric taken from Som Energia's plant
+  monitoring system (plantmonitor) which is separated
+  from the ERP and mixes historical monthly records up
+  to 2020 with data directly taken measures since 2021.
 
 # v0.2.21 2021-06-08
 
