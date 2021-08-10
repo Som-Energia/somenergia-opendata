@@ -249,7 +249,7 @@ def canceledPublicContractsSeries(dates, dbhandler=csvTable, debug=False):
 def entityContractsSeries(dates, dbhandler=csvTable, debug=False):
     return timeCityQuery(
         dates=dates,
-        queryfile='contracts_public_administration',
+        queryfile='contracts_legal_persons_and_business',
         timeSlicer=activeItemCounter,
         #timeSlicer=activeItemLister, # debug
         dbhandler=dbhandler,
@@ -258,7 +258,7 @@ def entityContractsSeries(dates, dbhandler=csvTable, debug=False):
 def newEntityContractsSeries(dates, dbhandler=csvTable, debug=False):
     return timeCityQuery(
         dates=dates,
-        queryfile='contracts_public_administration',
+        queryfile='contracts_legal_persons_and_business',
         timeSlicer=newItemCounter,
         #timeSlicer=newItemLister, # debug
         dbhandler=dbhandler,
