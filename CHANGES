@@ -1,4 +1,4 @@
-# v0.2.23 unreleased
+# v0.2.23 2021-09-10
 
 - New metrics:
   - (new/canceled)entitycontracts: Contracts with legal
