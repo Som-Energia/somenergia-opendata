@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-16 14:57+0200\n"
+"POT-Creation-Date: 2021-09-09 21:41+0200\n"
 "PO-Revision-Date: 2020-01-10 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: eu\n"
@@ -137,10 +137,151 @@ msgid ""
 msgstr ""
 
 #: som_opendata/common.py:100
-msgid "Deployed plant power (MW)"
+msgid "Homeowner comunity contracts"
 msgstr ""
 
 #: som_opendata/common.py:102
+msgid ""
+"Active contracts whose owner is a homeowner community.\n"
+"\n"
+"Considerations:\n"
+"\n"
+"- The owner of the contract is considered a homeowner community if its "
+"VAT starts with ESH\n"
+"- This metric is obtained from data in the ATR system.\n"
+msgstr ""
+
+#: som_opendata/common.py:110
+msgid "New homeowner comunity contracts"
+msgstr ""
+
+#: som_opendata/common.py:112
+msgid ""
+"Contracts of homeowner communities starting during in the month before a "
+"given date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
+"Considerations for \"Homeowner community contracts\" metric also apply in"
+" this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:119
+msgid "Canceled homeowner comunity contracts"
+msgstr ""
+
+#: som_opendata/common.py:121
+msgid ""
+"Contracts of homeowner communities ending during in the month before a "
+"given date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
+"Considerations for \"Homeowner community contracts\" metric also apply in"
+" this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:128
+msgid "Entity and bussiness contracts"
+msgstr ""
+
+#: som_opendata/common.py:130
+msgid ""
+"Active contracts with legal persons as owner or bound to a non "
+"residential use.\n"
+"\n"
+"Considerations:\n"
+"\n"
+"- Legal persons are detected by the spanish VAT number of the contract "
+"owner.\n"
+"- Non residential activities are detected by the CNAE code declared by "
+"the owner for the contract.\n"
+"- This metric is obtained from data in the ATR system.\n"
+msgstr ""
+
+#: som_opendata/common.py:139
+msgid "New entity and business contracts"
+msgstr ""
+
+#: som_opendata/common.py:141
+msgid ""
+"New contracts with legal person as owner or bound to a non residential "
+"use created within the month before the given date.\n"
+"\n"
+"Contracts of homeowner communities starting during in the month before a "
+"given date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
+"Considerations for \"Entity and business contracts\" metric also apply in"
+" this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:149
+msgid "Canceled entity and business contracts"
+msgstr ""
+
+#: som_opendata/common.py:151
+msgid ""
+"Contracts with a legal person as owner or bound to a non residential use "
+"cancelled within the month before the given date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
+"Considerations for \"Entity and business contracts\" metric also apply in"
+" this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:158
+#, fuzzy
+msgid "Public contracts"
+msgstr "Kontratuak"
+
+#: som_opendata/common.py:160
+msgid ""
+"Active contracts with a public administrations as owners.\n"
+"\n"
+"Considerations:\n"
+"\n"
+"- Public administrations are detected by the spanish VAT number of the "
+"contract owner.\n"
+"- Non residential activities are detected by the CNAE code declared by "
+"the owner for the contract.\n"
+"- This metric is obtained from data in the ATR system.\n"
+msgstr ""
+
+#: som_opendata/common.py:169
+msgid "New public contracts"
+msgstr ""
+
+#: som_opendata/common.py:171
+msgid ""
+"New contracts with a public administration as owner created within the "
+"month before the given date.\n"
+"\n"
+"Contracts of homeowner communities starting during in the month before a "
+"given date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
+"Considerations for \"Entity and business contracts\" metric also apply in"
+" this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:179
+msgid "Canceled public contracts"
+msgstr ""
+
+#: som_opendata/common.py:181
+msgid ""
+"Contracts with a public administration as owner cancelled within the "
+"month before the given date.\n"
+"\n"
+"Considerations for \"Contracts\" metric also apply in this one.\n"
+"Considerations for \"Entity and business contracts\" metric also apply in"
+" this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:188
+msgid "Deployed plant power (MW)"
+msgstr ""
+
+#: som_opendata/common.py:190
 msgid ""
 "Aggregated peak power of the deployed plants in the region just before "
 "the date.\n"
@@ -148,11 +289,11 @@ msgid ""
 "This metric is experimental. Data should not be relied on yet."
 msgstr ""
 
-#: som_opendata/common.py:109
+#: som_opendata/common.py:197
 msgid "Energy produced on plants (kWh)"
 msgstr ""
 
-#: som_opendata/common.py:111
+#: som_opendata/common.py:199
 msgid ""
 "Energy that plants from the region inject into the network during the "
 "period just before the date.\n"
@@ -161,27 +302,27 @@ msgid ""
 "onwards is taken computed from meter measurements."
 msgstr ""
 
-#: som_opendata/common.py:129
+#: som_opendata/common.py:217
 msgid "World"
 msgstr ""
 
-#: som_opendata/common.py:133
+#: som_opendata/common.py:221
 msgid "Country"
 msgstr ""
 
-#: som_opendata/common.py:139
+#: som_opendata/common.py:227
 msgid "CCAA"
 msgstr ""
 
-#: som_opendata/common.py:144
+#: som_opendata/common.py:232
 msgid "State"
 msgstr ""
 
-#: som_opendata/common.py:149
+#: som_opendata/common.py:237
 msgid "City"
 msgstr ""
 
-#: som_opendata/common.py:155
+#: som_opendata/common.py:243
 msgid "Local Group"
 msgstr ""
 
