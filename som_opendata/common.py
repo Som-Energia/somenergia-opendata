@@ -125,7 +125,7 @@ metrics = ns(
         ),
     ),
     entitycontracts=ns(
-        text=_("Entity and bussiness contracts"),
+        text=_("Entity and business contracts"),
         timeaggregation='sum',
         description=_(
             "Active contracts with legal persons as owner or bound to a non residential use.\n\n"
@@ -161,7 +161,6 @@ metrics = ns(
             "Active contracts with a public administrations as owners.\n\n"
             "Considerations:\n\n"
             "- Public administrations are detected by the spanish VAT number of the contract owner.\n"
-            "- Non residential activities are detected by the CNAE code declared by the owner for the contract.\n"
             "- This metric is obtained from data in the ATR system.\n"
         ),
     ),
@@ -170,9 +169,8 @@ metrics = ns(
         timeaggregation='sum',
         description=_(
             "New contracts with a public administration as owner created within the month before the given date.\n\n"
-            "Contracts of homeowner communities starting during in the month before a given date.\n\n"
             "Considerations for \"Contracts\" metric also apply in this one.\n"
-            "Considerations for \"Entity and business contracts\" metric also apply in this one.\n"
+            "Considerations for \"Public contracts\" metric also apply in this one.\n"
         ),
     ),
     canceledpubliccontracts=ns(
@@ -181,7 +179,7 @@ metrics = ns(
         description=_(
             "Contracts with a public administration as owner cancelled within the month before the given date.\n\n"
             "Considerations for \"Contracts\" metric also apply in this one.\n"
-            "Considerations for \"Entity and business contracts\" metric also apply in this one.\n"
+            "Considerations for \"Public contracts\" metric also apply in this one.\n"
         ),
     ),
     plantpower=ns(
