@@ -37,7 +37,7 @@ FROM (
 		('05074','2019-01-01'::date,'Fontivsolar',    '501815908',  800,  990),
 		('41055','2019-10-01'::date,'Florida',         '44711885', 1400, 1658),
 		('04090','2020-10-01'::date,'Tahal',           '88300909',  720,  841),
-		('18152',        null::date,'Llanillos',             null, 3200, 3800)
+		('18152','2021-08-22'::date,'Llanillos',      '502016257', 3200, 3800) --- TODO: Unconfirmed date, the month is right which is enough
 	) as plant(city_code, first_date, plant_name, meter_name, nominal_power_kw, peak_power_kw)
 	left join giscedata_registrador as registry
 	on registry.name = plant.meter_name
