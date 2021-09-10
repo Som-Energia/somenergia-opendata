@@ -10,8 +10,8 @@ metrics:
     and is not included yet.
 
     - There is no historical record of member addresses. So, if a member has changed
-    her home from Vigo to Cartagena, it counts as she has been been living all the
-    time in Cartagena.
+    her home from Vigo to Cartagena, it counts as she has been living all the time
+    in Cartagena.
 
     - Only a single start date can be stored so, canceled and later renewed memberships
     are not properly recorded.
@@ -95,7 +95,7 @@ metrics:
 
     '
 - id: homeownercommunitycontracts
-  text: Homeowner comunity contracts
+  text: Homeowner community contracts
   description: 'Active contracts whose owner is a homeowner community.
 
 
@@ -109,7 +109,7 @@ metrics:
 
     '
 - id: newhomeownercommunitycontracts
-  text: New homeowner comunity contracts
+  text: New homeowner community contracts
   description: 'Contracts of homeowner communities starting during in the month before
     a given date.
 
@@ -120,7 +120,7 @@ metrics:
 
     '
 - id: canceledhomeownercommunitycontracts
-  text: Canceled homeowner comunity contracts
+  text: Canceled homeowner community contracts
   description: 'Contracts of homeowner communities ending during in the month before
     a given date.
 
@@ -131,7 +131,7 @@ metrics:
 
     '
 - id: entitycontracts
-  text: Entity and bussiness contracts
+  text: Entity and business contracts
   description: 'Active contracts with legal persons as owner or bound to a non residential
     use.
 
@@ -139,7 +139,7 @@ metrics:
     Considerations:
 
 
-    - Legal persons are detected by the spanish VAT number of the contract owner.
+    - Legal persons are detected by the Spanish VAT number of the contract owner.
 
     - Non residential activities are detected by the CNAE code declared by the owner
     for the contract.
@@ -181,11 +181,8 @@ metrics:
     Considerations:
 
 
-    - Public administrations are detected by the spanish VAT number of the contract
+    - Public administrations are detected by the Spanish VAT number of the contract
     owner.
-
-    - Non residential activities are detected by the CNAE code declared by the owner
-    for the contract.
 
     - This metric is obtained from data in the ATR system.
 
@@ -196,24 +193,20 @@ metrics:
     the month before the given date.
 
 
-    Contracts of homeowner communities starting during in the month before a given
-    date.
-
-
     Considerations for "Contracts" metric also apply in this one.
 
-    Considerations for "Entity and business contracts" metric also apply in this one.
+    Considerations for "Public contracts" metric also apply in this one.
 
     '
 - id: canceledpubliccontracts
   text: Canceled public contracts
-  description: 'Contracts with a public administration as owner cancelled within the
+  description: 'ontracts with a public administration as owner cancelled within the
     month before the given date.
 
 
     Considerations for "Contracts" metric also apply in this one.
 
-    Considerations for "Entity and business contracts" metric also apply in this one.
+    Considerations for "Public contracts" metric also apply in this one.
 
     '
 - id: plantpower

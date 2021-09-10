@@ -140,7 +140,7 @@ def discoverGeoLevel():
           plural: countries
           mapable: False
         - id: ccaa
-          text: 'CCAA'
+          text: 'Autonomous Community'
           parent: country
           plural: ccaas
         - id: state
