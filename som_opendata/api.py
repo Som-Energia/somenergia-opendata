@@ -26,7 +26,7 @@ api.firstDate = '2010-01-01'
 def version():
     """
     @api {get} /v0.2/version Version information
-    @apiVersion 0.2.23
+    @apiVersion 0.2.24
     @apiName Version
     @apiGroup About
     @apiDescription Returns current and oldest backward compatible versions
@@ -38,7 +38,7 @@ def version():
     @apiSampleRequest /v0.2/version
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
-        version: 0.2.23
+        version: 0.2.24
         compat: 0.2.1
     """
     return ns(
@@ -51,7 +51,7 @@ def version():
 def spec():
     """
     @api {get} /v0.2/spec API specification
-    @apiVersion 0.2.23
+    @apiVersion 0.2.24
     @apiName API specification
     @apiGroup About
     @apiDescription OpenData API specification as OpenAPI 3.0 YAML
@@ -74,7 +74,7 @@ def spec():
 def discoverMetrics():
     """
     @api {get} /v0.2/discover/metrics Available metrics
-    @apiVersion 0.2.23
+    @apiVersion 0.2.24
     @apiName GetMetrics
     @apiGroup Discover
     @apiDescription Returns the metrics that can be queried.
@@ -112,7 +112,7 @@ def discoverMetrics():
 def discoverGeoLevel():
     """
     @api {get} /v0.2/discover/geolevel Available Geolevels
-    @apiVersion 0.2.23
+    @apiVersion 0.2.24
     @apiName GetGeolevels lala
     @apiGroup Discover
     @apiDescription Returns the geolevels (geographical levels) that can be used in queries, such as countries, states, cities
@@ -173,7 +173,7 @@ def discoverGeoLevel():
 def discoverGeoLevelOptions(geolevel):
     """
     @api {get} /v0.2/discover/geolevel/:geolevel Available Geolevel values
-    @apiVersion 0.2.23
+    @apiVersion 0.2.24
     @apiName Geolevels values
     @apiGroup Discover
     @apiDescription Returns the available values for a given geografical division
@@ -257,7 +257,7 @@ def validateInputDates(ondate = None, since = None, todate = None):
 """
 @api {get} /v0.2/:metric/by/:geolevel/on/:ondate Metric Data on a Given Date
 
-@apiVersion 0.2.23
+@apiVersion 0.2.24
 @apiGroup Distribution
 @apiName Distribution
 @apiDescription Returns the geographical distribution of a metric at a given date.
@@ -367,7 +367,7 @@ The filters are additive. That means that any city matching any of the specified
 """
 @api {get} /v0.2/:metric/by/:geolevel/:frequency/from/:fromdate/to/:todate Metric Data on a Temporal Serie
 
-@apiVersion 0.2.23
+@apiVersion 0.2.24
 @apiGroup Distribution
 @apiName DistributionSeries
 @apiDescription Returns the geographical distribution and temporal evolution of a quantity.
@@ -585,7 +585,7 @@ def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fro
 """
 @api {get} /v0.2/map/:metric/by/:geolevel/on/:ondate Absolute Metrics Map
 
-@apiVersion 0.2.23
+@apiVersion 0.2.24
 @apiGroup Maps
 @apiName Static Map
 @apiDescription Returns a map that represents the geographical distribution at a given date.
@@ -645,7 +645,7 @@ If no language is specified, the language is chosen using the request headers.
 """
 @api {get} /v0.2/map/:metric/by/:geolevel/:frequency/from/:fromdate/to/:todate Absolute Metrics Map Animation
 
-@apiVersion 0.2.23
+@apiVersion 0.2.24
 @apiGroup Maps
 @apiName MapSeries
 @apiDescription Returns a map animation that represents the temporal evolution of the geographical distribution.
@@ -675,7 +675,7 @@ If no language is specified, the language is chosen using the request headers.
 """
 @api {get} /v0.2/map/:metric/per/:relativemetric/by/:geolevel/:frequency/from/:fromdate/to/:todate Relative Metrics Map Animation
 
-@apiVersion 0.2.23
+@apiVersion 0.2.24
 @apiGroup Maps
 @apiName RelativeMapSeries
 @apiDescription Returns a map animation that represents the temporal evolution of the relative geographical distribution.

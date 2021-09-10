@@ -1,4 +1,8 @@
-# v0.2.23 2021-09-10
+# v0.2.24 2021-09-10
+
+- Metadata for new metrics translated to spanish and catalan
+
+# v0.2.23 2021-09-09
 
 - New metrics:
   - (new/canceled)entitycontracts: Contracts with legal
