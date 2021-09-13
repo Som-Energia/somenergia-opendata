@@ -221,12 +221,6 @@ def distributionKey(source, metric, timeDomain, location_filter, geolevel):
     )
 
 def getAggregated(source, metric, timeDomain, location_filter, geolevel, mutable):
-    def cache_clear():
-        getAggregated.cache = {}
-        getAggregated.cache_hits = 0
-        getAggregated.cache_misses = 0
-        getAggregated.cache_clear = cache_clear
-
     if not hasattr(getAggregated, 'cache'):
         cache_clear()
 
@@ -243,6 +237,16 @@ def getAggregated(source, metric, timeDomain, location_filter, geolevel, mutable
     if not mutable:
         getAggregated.cache[key] = result
     return result
+
+
+def cache_clear():
+    getAggregated.cache = {}
+    getAggregated.cache_hits = 0
+    getAggregated.cache_misses = 0
+
+getAggregated.cache_clear = cache_clear
+
+
 
 
 # vim: et sw=4 ts=4
