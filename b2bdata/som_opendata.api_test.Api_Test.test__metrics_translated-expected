@@ -127,7 +127,7 @@ metrics:
 
     '
 - id: entitycontracts
-  text: Baixes de contractes d'entitats i empreses
+  text: Contractes d'entitats i empreses
   description: 'Contractes actius amb persones jurídiques com a titular o vinculats
     a un ús no residencial.
 
@@ -144,7 +144,7 @@ metrics:
 
     '
 - id: newentitycontracts
-  text: Nous contractes amb entitats i empreses
+  text: Nous contractes d'entitats i empreses
   description: 'Contractes que es varen crear durant el mes anterior a la data donada
     i que, bé tenen com a titular una persona jurídica o bé estan vinculats a un ús
     residencial.

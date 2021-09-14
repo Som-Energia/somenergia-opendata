@@ -103,7 +103,7 @@ metrics:
 
 
     - The owner of the contract is considered a homeowner community if its VAT starts
-    with ESH
+    with ESH.
 
     - This metric is obtained from data in the ATR system.
 
@@ -153,10 +153,6 @@ metrics:
     use created within the month before the given date.
 
 
-    Contracts of homeowner communities starting during in the month before a given
-    date.
-
-
     Considerations for "Contracts" metric also apply in this one.
 
     Considerations for "Entity and business contracts" metric also apply in this one.
@@ -200,7 +196,7 @@ metrics:
     '
 - id: canceledpubliccontracts
   text: Canceled public contracts
-  description: 'ontracts with a public administration as owner cancelled within the
+  description: 'Contracts with a public administration as owner cancelled within the
     month before the given date.
 
 
