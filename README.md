@@ -1,6 +1,6 @@
 # somenergia-opendata
 
-[![Build Status](https://travis-ci.com/Som-Energia/somenergia-opendata.svg?branch=master)](https://travis-ci.com/Som-Energia/somenergia-opendata)
+[![Build Status](https://app.travis-ci.com/Som-Energia/somenergia-opendata.svg?branch=master)](https://app.travis-ci.com/Som-Energia/somenergia-opendata)
 [![Coverage Status](https://coveralls.io/repos/github/Som-Energia/somenergia-opendata/badge.svg?branch=master)](https://coveralls.io/github/Som-Energia/somenergia-opendata?branch=master)
 
 
