@@ -17,7 +17,7 @@ from .map import renderMap
 from flask_babel import Babel, get_locale
 
 
-api = Blueprint(name=__name__, import_name=__name__, template_folder='../')
+api = Blueprint(name=__name__.split('.')[-1], import_name=__name__, template_folder='../')
 api.firstDate = '2010-01-01'
 
 
