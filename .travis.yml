@@ -12,6 +12,6 @@ install:
 - ./setup.py compile_catalog
 script:
 - nosetests
-- for a in b2bdata/*result; do [ -e "$a" ] && diff --color=always "$a" "${a/-result/-expected}"; done
+- for a in b2bdata/*result; do [ -e "$a" ] && diff "$a" "${a/-result/-expected}"; done
 after_success:
 - coveralls
