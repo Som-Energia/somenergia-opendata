@@ -276,6 +276,19 @@ Mainly queries to extract annonymized by aggregation from non-annonymized origin
 
 Notice: Some tests require translation catalog to be generated. See above.
 
+### Profiling and optimizing
+
+In order to optimize the api, first profile the entry point to detect
+the bottle necks, you that your efforts are better targeted
+and to have an objective measure of your progress.
+
+```bash
+sudo apt install pyprof2calltree kcachegrind
+pip install pytest-profiling
+PROFILE=1 pytest --profile -v som_opendata/api_test.py::Api_Test::test__profiling
+pyprof2calltree -i prof/combined.prof -o profiling-$(date -Iseconds).out
+```
+
 ## External data sources
 
 ### Could be used in the future
