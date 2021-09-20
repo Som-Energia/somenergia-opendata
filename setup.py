@@ -20,6 +20,7 @@ setup(
 		'run_api.py',
 	],
 	install_requires=[
+		'cython',
 		'yamlns>=0.7', # earlier are not Py2 compatible
 		'Flask',
 		'Flask-Cors',

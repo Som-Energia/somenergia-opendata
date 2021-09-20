@@ -233,7 +233,7 @@ Supported languages are:
 ### Requirements
 
 ```bash
-sudo apt install libmagickwand-dev inkscape
+sudo apt install libmagickwand-dev inkscape libyaml-dev
 python setup.py develop
 ```
 
