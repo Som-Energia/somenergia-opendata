@@ -14,6 +14,7 @@ from .tsvRelativeMetricSource import loadTsvRelativeMetric
 from .local_groups import loadYamlLocalGroups
 from .csvSource import loadCsvSource
 import json
+import os
 
 
 localgroups = loadYamlLocalGroups(relativeFile='../testData/alias/gl.yaml')
@@ -460,7 +461,7 @@ class Api_Test(unittest.TestCase):
         r = self.get('/map/members/by/state/on/2015-01-01?lang=ca')
         self.assertB2BResponse(r, status=200, mimetype='image/svg+xml')
 
-    @unittest.skip("Activated just for profiling, not regular testing")
+    @unittest.skipIf('PROFILE' not in os.environ, "Just for profiling, not regular testing")
     def test__profiling(self):
         for a in range(5):
             r = self.get('/members/by/city/monthly')
