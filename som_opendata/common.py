@@ -397,6 +397,22 @@ def optional_tsv(f, tabulator=None, *args, **kwds):
     )
     return response
  
+@decorator
+def optional_json(f, *args, **kwds):
+    """
+    Decorates a flask path so that if the query
+    parameter format=tsv is given, and the response
+    is not yet a response it applies tabulator
+    to the result in order to generate tsv content.
+    """
+    result = f(*args, **kwds)
+    if type(result) is Response:
+        return result
+    if 'json' not in request.args.getlist('format'):
+        return result
+    return jsonify(result)
+
+
 # Parameter types
 
 class IsoDateConverter(BaseConverter):

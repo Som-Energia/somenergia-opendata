@@ -3,6 +3,7 @@ from flask import Blueprint, request, current_app, make_response, send_file
 from yamlns import namespace as ns
 from .common import (
     yaml_response,
+    optional_json,
     svg_response,
     optional_tsv,
     validateParams,
@@ -23,6 +24,7 @@ api.firstDate = '2010-01-01'
 
 @api.route('/version')
 @yaml_response
+@optional_json
 def version():
     """
     @api {get} /v0.2/version Version information
@@ -71,6 +73,7 @@ def spec():
 
 @api.route('/discover/metrics')
 @yaml_response
+@optional_json
 def discoverMetrics():
     """
     @api {get} /v0.2/discover/metrics Available metrics
@@ -109,6 +112,7 @@ def discoverMetrics():
 
 @api.route('/discover/geolevel')
 @yaml_response
+@optional_json
 def discoverGeoLevel():
     """
     @api {get} /v0.2/discover/geolevel Available Geolevels
@@ -170,6 +174,7 @@ def discoverGeoLevel():
 
 @api.route('/discover/geolevel/<geolevel>')
 @yaml_response
+@optional_json
 def discoverGeoLevelOptions(geolevel):
     """
     @api {get} /v0.2/discover/geolevel/:geolevel Available Geolevel values
@@ -549,6 +554,7 @@ The filters are additive. That means that any city matching any of the specified
 @api.route('/<string:metric>/by/<string:geolevel>/<string:frequency>/from/<isodate:fromdate>/to/<isodate:todate>')
 @api.route('/<string:metric>/by/<string:geolevel>/<string:frequency>/to/<isodate:todate>')
 @yaml_response
+@optional_json
 @optional_tsv(tabulator=aggregated2table)
 def distribution(metric=None, geolevel='world', ondate=None, frequency=None, fromdate=None, todate=None):
 

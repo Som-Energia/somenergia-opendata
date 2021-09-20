@@ -13,6 +13,7 @@ from .templateSource import loadMapData
 from .tsvRelativeMetricSource import loadTsvRelativeMetric
 from .local_groups import loadYamlLocalGroups
 from .csvSource import loadCsvSource
+import json
 
 
 localgroups = loadYamlLocalGroups(relativeFile='../testData/alias/gl.yaml')
@@ -99,6 +100,11 @@ class Api_Test(unittest.TestCase):
         self.assertEqual(response.mimetype, 'application/yaml')
         self.assertEqual(response.status_code, status)
 
+    def assertJsonResponse(self, response, expected, status=200):
+        self.assertNsEqual(json.loads(response.get_data(as_text=True)), expected)
+        self.assertEqual(response.mimetype, 'application/json')
+        self.assertEqual(response.status_code, status)
+
     def assertB2BResponse(self, response, status=200, mimetype=None):
         self.assertB2BEqual(response.data)
         self.assertEqual(response.mimetype, mimetype or 'application/yaml')
@@ -112,6 +118,12 @@ class Api_Test(unittest.TestCase):
             compat: '0.2.1'
             """.format(__version__))
 
+    def test__version_json(self):
+        r = self.get('/version?format=json')
+        self.assertJsonResponse(r, """\
+            version: '{}'
+            compat: '0.2.1'
+            """.format(__version__))
 
     def test__metrics(self):
         r = self.get('/discover/metrics')

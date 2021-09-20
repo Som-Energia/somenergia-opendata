@@ -62,10 +62,18 @@ paths:
       summary: API version
       description: Returns current and oldest backward compatible versions
       tags: [ About ]
+      parameters:
+      - $ref: '#/components/parameters/query_format_yaml_json'
       responses:
         '200':
           description: Version information
           content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VersionInfo'
+              example:
+                version: '0.2.24'
+                compat: '0.2.1'
             application/yaml:
               schema:
                 $ref: '#/components/schemas/VersionInfo'
@@ -89,11 +97,23 @@ paths:
       tags: [ Discovery ]
       parameters:
       - $ref: '#/components/parameters/query_lang'
+      - $ref: '#/components/parameters/query_format_yaml_json'
       responses:
         '200':
           description: Returns the list of available metrics
           content:
             application/yaml:
+              schema:
+                $ref: '#/components/schemas/MetricsInfo'
+              example:
+                metrics:
+                - id: members
+                  text: 'Members'
+                  description: "Members of the cooperative at the end of the day."
+                - id: contracts
+                  text: 'Contracts'
+                  description: "Active contracts at the end of the day."
+            application/json:
               schema:
                 $ref: '#/components/schemas/MetricsInfo'
               example:
@@ -112,11 +132,45 @@ paths:
       tags: [ Discovery ]
       parameters:
       - $ref: '#/components/parameters/query_lang'
+      - $ref: '#/components/parameters/query_format_yaml_json'
       responses:
         '200':
           description: A list of available geolevels
           content:
             application/yaml:
+              schema:
+                $ref: '#/components/schemas/GeolevelsInfo'
+              example:
+                geolevels:
+                - id: world
+                  text: 'World'
+                  mapable: False
+                - id: country
+                  text: 'Country'
+                  parent: world
+                  plural: countries
+                  mapable: False
+                - id: ccaa
+                  text: 'Autonomous Community'
+                  parent: country
+                  plural: ccaas
+                - id: state
+                  text: 'State'
+                  parent: ccaa
+                  plural: states
+                - id: city
+                  text: 'City'
+                  parent: state
+                  plural: cities
+                  mapable: False
+                - id: localgroup
+                  text: 'Local Group'
+                  parent: world
+                  plural: localgroups
+                  detailed: False
+                  mapable: False
+
+            application/json:
               schema:
                 $ref: '#/components/schemas/GeolevelsInfo'
               example:
@@ -163,6 +217,7 @@ paths:
       - $ref: '#/components/parameters/geofilter_country'
       - $ref: '#/components/parameters/geofilter_gl'
       - $ref: '#/components/parameters/query_lang'
+      - $ref: '#/components/parameters/query_format_yaml_json'
       responses:
         '200':
           description: A list of available geolevels
@@ -253,7 +308,7 @@ paths:
       - $ref: '#/components/parameters/path_geolevel'
       - $ref: '#/components/parameters/path_onDate'
       - $ref: '#/components/parameters/query_lang'
-      - $ref: '#/components/parameters/query_format_tsv'
+      - $ref: '#/components/parameters/query_format_yaml_json_tsv'
       - $ref: '#/components/parameters/geofilter_city'
       - $ref: '#/components/parameters/geofilter_state'
       - $ref: '#/components/parameters/geofilter_ccaa'
@@ -416,6 +471,7 @@ paths:
       - $ref: '#/components/parameters/path_fromDate'
       - $ref: '#/components/parameters/path_toDate'
       - $ref: '#/components/parameters/query_lang'
+      - $ref: '#/components/parameters/query_format_yaml_json_tsv'
       - $ref: '#/components/parameters/geofilter_city'
       - $ref: '#/components/parameters/geofilter_state'
       - $ref: '#/components/parameters/geofilter_ccaa'
@@ -775,17 +831,32 @@ components:
         - en
         - null
 
-    query_format_tsv:
+    query_format_yaml_json_tsv:
       name: format
       in: query
       required: false
       description:
-        Format for the result
+        Format for the result (yaml, json, tsv). yaml if not (properly) specified.
       schema:
         type: string
         nullable: true
         enum:
         - tsv
+        - yaml
+        - json
+        - null
+
+    query_format_yaml_json:
+      name: format
+      in: query
+      required: false
+      description:
+        Format for the result (yaml, json). yaml if not (properly) specified.
+      schema:
+        type: string
+        nullable: true
+        enum:
+        - json
         - yaml
         - null
 
