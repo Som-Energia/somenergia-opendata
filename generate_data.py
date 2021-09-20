@@ -35,9 +35,15 @@ import io
 import os
 from consolemsg import step, u
 
+def nextFirstOfMonth():
+    today = Date.today()
+    if today.month == 12:
+        return Date(today.year + 1, 1, 1)
+    return Date(today.year, today.month+1, 1)
 
 fromdate = Date('2010-01-01')
-todate = Date.today()
+
+todate = nextFirstOfMonth()
 
 dates=dateSequenceMonths(fromdate, todate)
 

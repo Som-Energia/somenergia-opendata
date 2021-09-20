@@ -1,3 +1,7 @@
+# v0.2.25 unreleased
+
+- Data is computed for the running month as well
+
 # v0.2.24 2021-09-10
 
 - Metadata for new metrics translated to spanish and catalan
