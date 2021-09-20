@@ -33,7 +33,7 @@ setup(
 		'lxml',
 		'python-dateutil',
 		'records',
-		'somutils<=1.7.1',
+		'somutils>=1.7.1',
 		'colour',
 		'babel',
 		'flask-babel',
