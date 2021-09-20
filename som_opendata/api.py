@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, request, current_app, make_response, send_file
+from flask import Blueprint, request, current_app, make_response, send_file, jsonify
 from yamlns import namespace as ns
 from .common import (
     yaml_response,
@@ -64,8 +64,14 @@ def spec():
     @apiSuccessExample {yaml} Success-Response:
         HTTP/1.1 200OK
     """
+    if 'json' in request.args.getlist('format'):
+        response = jsonify(ns.load('./openapi.yaml'))
+        print(response)
+        response.headers['Content-Disposition'] ='attachment; filename=somenergia-opendata-{}.json'.format(__version__)
+        return response
     return send_file(
         '../openapi.yaml',
+        mimetype = 'application/yaml',
         as_attachment = True,
         attachment_filename = "somenergia-opendata-{}.yaml".format(__version__),
     )

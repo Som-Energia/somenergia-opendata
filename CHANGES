@@ -1,6 +1,8 @@
 # v0.2.25 unreleased
 
-- Data is computed for the running month as well
+- format=json for endpoints dumping structured data
+- fix: spec mime type is now properly set
+- Data is computed for the current (incomplete) month as well
 
 # v0.2.24 2021-09-10
 
