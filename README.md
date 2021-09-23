@@ -289,6 +289,20 @@ PROFILE=1 pytest --profile -v som_opendata/api_test.py::Api_Test::test__profilin
 pyprof2calltree -i prof/combined.prof -o profiling-$(date -Iseconds).out
 ```
 
+### Releasing
+
+- Generate language strings (see above)
+- Update version in:
+  - `som_opendata/__init__.py`
+  - `package.json`
+  - `openapi.yaml`
+  - `som_opendata/api.py`
+- Generate the documentation (see above)
+- Update the CHANGES.md (replace `unreleased` by the actual release date)
+- Commit the version bump
+- tag it opendata-M.m.r
+
+
 ## External data sources
 
 ### Could be used in the future

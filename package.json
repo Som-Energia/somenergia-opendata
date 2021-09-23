@@ -1,6 +1,6 @@
 {
   "name": "somenergia-api",
-  "version": "0.2.24",
+  "version": "0.2.25",
   "description": "Som Energia open data api",
   "main": "index.js",
   "directories": {

@@ -1,5 +1,10 @@
-# v0.2.25 unreleased
+# v0.2.25 2021-09-23
 
+- New metrics:
+  - (new/canceled)entitymembers: Members being legal
+    persons
+  - (new/canceled)publicmembers: Members being public
+    administrations (special case for entities)
 - format=json for endpoints dumping structured data
 - fix: spec mime type is now properly set
 - Data is computed for the current (incomplete) month as well
