@@ -8,17 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-09-09 22:46+0200\n"
+"POT-Creation-Date: 2021-09-23 16:56+0200\n"
 "PO-Revision-Date: 2021-09-09 22:35+0000\n"
 "Last-Translator: David García Garzón <david.garcia@somenergia.coop>\n"
-"Language-Team: Catalan <http://traduccio.somenergia.coop/projects/open-data/"
-"api/ca/>\n"
 "Language: ca\n"
+"Language-Team: Catalan <http://traduccio.somenergia.coop/projects/open-"
+"data/api/ca/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.1.1\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: som_opendata/common.py:19
@@ -41,15 +40,15 @@ msgid ""
 msgstr ""
 "Persones sòcies de la cooperativa a l'inici de la data donada \n"
 "\n"
-"Les sòcies es calculen de l'estat actual del nostre ERP, per això, cal tenir "
-"en compte que:\n"
-"- Els primers mesos de la cooperativa, les altes s'anotaven en un full de "
-"càlcul, però, figura com data d'alta quan es varen passar a l'ERP.\n"
-"- No hi ha registre històric de les adreces d'una sòcia. Per això, si una "
-"sòcia canvia el seu domicili de Vigo a Cartagena, compta com que ha estat "
-"vivint sempre a Cartagena.\n"
-"- Només guardem una data d'alta i baixa per sòcia. No queda ben registrat si "
-"una sòcia es dona de baixa i es torna a donar-se d'alta.\n"
+"Les sòcies es calculen de l'estat actual del nostre ERP, per això, cal "
+"tenir en compte que:\n"
+"- Els primers mesos de la cooperativa, les altes s'anotaven en un full de"
+" càlcul, però, figura com data d'alta quan es varen passar a l'ERP.\n"
+"- No hi ha registre històric de les adreces d'una sòcia. Per això, si una"
+" sòcia canvia el seu domicili de Vigo a Cartagena, compta com que ha "
+"estat vivint sempre a Cartagena.\n"
+"- Només guardem una data d'alta i baixa per sòcia. No queda ben registrat"
+" si una sòcia es dona de baixa i es torna a donar-se d'alta.\n"
 
 #: som_opendata/common.py:32
 msgid "New members"
@@ -150,9 +149,10 @@ msgstr ""
 "Consideracions:\n"
 "\n"
 "- Aquesta mètrica s'obté de les dades del sistema ATR.\n"
-"- Un cop un contracte activa l'autoconsum, el considerem autoconsum fins que "
-"es dona de baixa.\n"
-"Podria ser que es desactivés l'autoconsum abans i no ho estem considerant.\n"
+"- Un cop un contracte activa l'autoconsum, el considerem autoconsum fins "
+"que es dona de baixa.\n"
+"Podria ser que es desactivés l'autoconsum abans i no ho estem "
+"considerant.\n"
 
 #: som_opendata/common.py:84
 msgid "New selfconsumption contracts"
@@ -208,8 +208,8 @@ msgstr ""
 "\n"
 "Consideracions:\n"
 "\n"
-"- Es considera que la titularitat es d'una comunitat veïnal si la persona "
-"titular té un NIF que comença amb H.\n"
+"- Es considera que la titularitat es d'una comunitat veïnal si la persona"
+" titular té un NIF que comença amb H.\n"
 "- Aquesta mètrica s'obté de dades del sistema ATR.\n"
 
 #: som_opendata/common.py:110
@@ -225,12 +225,13 @@ msgid ""
 "Considerations for \"Homeowner community contracts\" metric also apply in"
 " this one.\n"
 msgstr ""
-"Contractes de comunitats veïnals que han començat durant el mes anterior a "
-"la data donada.\n"
+"Contractes de comunitats veïnals que han començat durant el mes anterior "
+"a la data donada.\n"
 "\n"
-"Les consideracions per \"Contractes\" també s'apliquen a aquesta mètrica.\n"
-"Les consideracions per \"Contractes de comunitats veïnals\" també s'apliquen "
-"a aquesta mètrica.\n"
+"Les consideracions per \"Contractes\" també s'apliquen a aquesta mètrica."
+"\n"
+"Les consideracions per \"Contractes de comunitats veïnals\" també "
+"s'apliquen a aquesta mètrica.\n"
 
 #: som_opendata/common.py:119
 msgid "Canceled homeowner comunity contracts"
@@ -248,9 +249,10 @@ msgstr ""
 "Contractes de comunitats veïnals finalitzats durant el mes anterior a la "
 "data donada.\n"
 "\n"
-"Les consideracions per \"Contractes\" també s'apliquen a aquesta mètrica.\n"
-"Les consideracions per \"Contractes de comunitats veïnals\" també s'apliquen "
-"a aquesta mètrica.\n"
+"Les consideracions per \"Contractes\" també s'apliquen a aquesta mètrica."
+"\n"
+"Les consideracions per \"Contractes de comunitats veïnals\" també "
+"s'apliquen a aquesta mètrica.\n"
 
 #: som_opendata/common.py:128
 msgid "Entity and business contracts"
@@ -269,14 +271,14 @@ msgid ""
 "the owner for the contract.\n"
 "- This metric is obtained from data in the ATR system.\n"
 msgstr ""
-"Contractes actius amb persones jurídiques com a titular o vinculats a un ús "
-"no residencial.\n"
+"Contractes actius amb persones jurídiques com a titular o vinculats a un "
+"ús no residencial.\n"
 "\n"
 "Consideracions:\n"
 "\n"
 "- Les persones jurídiques es detecten pel NIF de la persona titular.\n"
-"- Les activitats no residencials es detecten pel codi CNAE declarat per la "
-"persona titular en contractar.\n"
+"- Les activitats no residencials es detecten pel codi CNAE declarat per "
+"la persona titular en contractar.\n"
 "- Aquesta mètrica s'obté de les dades del sistema ATR.\n"
 
 #: som_opendata/common.py:139
@@ -284,30 +286,29 @@ msgid "New entity and business contracts"
 msgstr "Nous contractes d'entitats i empreses"
 
 #: som_opendata/common.py:141
+#, fuzzy
 msgid ""
 "New contracts with legal person as owner or bound to a non residential "
 "use created within the month before the given date.\n"
-"\n"
-"Contracts of homeowner communities starting during in the month before a "
-"given date.\n"
 "\n"
 "Considerations for \"Contracts\" metric also apply in this one.\n"
 "Considerations for \"Entity and business contracts\" metric also apply in"
 " this one.\n"
 msgstr ""
-"Contractes que es varen crear durant el mes anterior a la data donada i que, "
-"bé tenen com a titular una persona jurídica o bé estan vinculats a un ús "
-"residencial.\n"
+"Contractes que varen finalitzar el mes anterior a la data donada i que bé"
+" tenen com a titular una persona jurídica o bé estan vinculats a un ús no"
+" residencial.\n"
 "\n"
-"Les consideracions per a \"Contractes\" també s'apliquen a aquesta mètrica.\n"
+"Les consideracions per a \"Contractes\" també s'apliquen a aquesta "
+"mètrica.\n"
 "Les consideracions per a \"Contractes d'entitats i empreses\" també "
 "s'apliquen a aquesta mètrica.\n"
 
-#: som_opendata/common.py:149
+#: som_opendata/common.py:148
 msgid "Canceled entity and business contracts"
 msgstr "Baixes de contractes d'entitats i empreses"
 
-#: som_opendata/common.py:151
+#: som_opendata/common.py:150
 msgid ""
 "Contracts with a legal person as owner or bound to a non residential use "
 "cancelled within the month before the given date.\n"
@@ -316,19 +317,20 @@ msgid ""
 "Considerations for \"Entity and business contracts\" metric also apply in"
 " this one.\n"
 msgstr ""
-"Contractes que varen finalitzar el mes anterior a la data donada i que bé "
-"tenen com a titular una persona jurídica o bé estan vinculats a un ús no "
-"residencial.\n"
+"Contractes que varen finalitzar el mes anterior a la data donada i que bé"
+" tenen com a titular una persona jurídica o bé estan vinculats a un ús no"
+" residencial.\n"
 "\n"
-"Les consideracions per a \"Contractes\" també s'apliquen a aquesta mètrica.\n"
+"Les consideracions per a \"Contractes\" també s'apliquen a aquesta "
+"mètrica.\n"
 "Les consideracions per a \"Contractes d'entitats i empreses\" també "
 "s'apliquen a aquesta mètrica.\n"
 
-#: som_opendata/common.py:158
+#: som_opendata/common.py:157
 msgid "Public contracts"
 msgstr "Contractes públics"
 
-#: som_opendata/common.py:160
+#: som_opendata/common.py:159
 msgid ""
 "Active contracts with a public administrations as owners.\n"
 "\n"
@@ -342,14 +344,15 @@ msgstr ""
 "\n"
 "Consideracions:\n"
 "\n"
-"- Es detecten les administracions públiques pel NIF de la persona titular\n"
+"- Es detecten les administracions públiques pel NIF de la persona titular"
+"\n"
 "- Aquesta mètrica s'obté de dades del sistema ATR\n"
 
-#: som_opendata/common.py:168
+#: som_opendata/common.py:167
 msgid "New public contracts"
 msgstr "Nous contractes públics"
 
-#: som_opendata/common.py:170
+#: som_opendata/common.py:169
 msgid ""
 "New contracts with a public administration as owner created within the "
 "month before the given date.\n"
@@ -357,18 +360,19 @@ msgid ""
 "Considerations for \"Contracts\" metric also apply in this one.\n"
 "Considerations for \"Public contracts\" metric also apply in this one.\n"
 msgstr ""
-"Nous contractes amb l'administració pública creats durant el mes anterior a "
-"la data donada.\n"
+"Nous contractes amb l'administració pública creats durant el mes anterior"
+" a la data donada.\n"
 "\n"
-"Les consideracions per \"Contractes\" també s'apliquen a aquesta mètrica.\n"
+"Les consideracions per \"Contractes\" també s'apliquen a aquesta mètrica."
+"\n"
 "Les consideracions per \"Contractes públics\" també s'apliquen a aquesta "
 "mètrica.\n"
 
-#: som_opendata/common.py:177
+#: som_opendata/common.py:176
 msgid "Canceled public contracts"
 msgstr "Baixes de contractes públics"
 
-#: som_opendata/common.py:179
+#: som_opendata/common.py:178
 msgid ""
 "Contracts with a public administration as owner cancelled within the "
 "month before the given date.\n"
@@ -376,18 +380,140 @@ msgid ""
 "Considerations for \"Contracts\" metric also apply in this one.\n"
 "Considerations for \"Public contracts\" metric also apply in this one.\n"
 msgstr ""
-"Contractes amb administracions públiques finalitzats el mes anterior a la "
-"data donada.\n"
+"Contractes amb administracions públiques finalitzats el mes anterior a la"
+" data donada.\n"
 "\n"
-"Les consideracions per \"Contractes\" també s'apliquen a aquesta mètrica.\n"
+"Les consideracions per \"Contractes\" també s'apliquen a aquesta mètrica."
+"\n"
 "Les consideracions per \"Contractes públics\" també s'apliquen a aquesta "
 "mètrica.\n"
 
-#: som_opendata/common.py:186
+#: som_opendata/common.py:185
+#, fuzzy
+msgid "Entity members"
+msgstr "Noves sòcies"
+
+#: som_opendata/common.py:187
+msgid ""
+"Active members being a legal persons.\n"
+"\n"
+"Considerations:\n"
+"\n"
+"- Legal persons are detected by the spanish VAT number of the "
+"membersowner.\n"
+"- Considerations for \"Members\" metric also apply in this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:195
+#, fuzzy
+msgid "New entity members"
+msgstr "Noves sòcies"
+
+#: som_opendata/common.py:197
+#, fuzzy
+msgid ""
+"New members being legal person that joined the cooperative within the "
+"month before the given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+"Considerations for \"Entity members\" metric also apply in this one.\n"
+msgstr ""
+"Contractes que varen finalitzar el mes anterior a la data donada i que bé"
+" tenen com a titular una persona jurídica o bé estan vinculats a un ús no"
+" residencial.\n"
+"\n"
+"Les consideracions per a \"Contractes\" també s'apliquen a aquesta "
+"mètrica.\n"
+"Les consideracions per a \"Contractes d'entitats i empreses\" també "
+"s'apliquen a aquesta mètrica.\n"
+
+#: som_opendata/common.py:204
+#, fuzzy
+msgid "Canceled entity members"
+msgstr "Baixes de sòcies"
+
+#: som_opendata/common.py:206
+msgid ""
+"Members being legal person that left the cooperative within the month "
+"before the given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+"Considerations for \"Entity and business members\" metric also apply in "
+"this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:213
+#, fuzzy
+msgid "Public members"
+msgstr "Noves sòcies"
+
+#: som_opendata/common.py:215
+#, fuzzy
+msgid ""
+"Active members being a public administrations.\n"
+"\n"
+"Considerations:\n"
+"\n"
+"- Public administrations are detected by the spanish VAT number of the "
+"contract owner.\n"
+msgstr ""
+"Contractes actius amb una administració pública.\n"
+"\n"
+"Consideracions:\n"
+"\n"
+"- Es detecten les administracions públiques pel NIF de la persona titular"
+"\n"
+"- Aquesta mètrica s'obté de dades del sistema ATR\n"
+
+#: som_opendata/common.py:222
+#, fuzzy
+msgid "New public members"
+msgstr "Noves sòcies"
+
+#: som_opendata/common.py:224
+#, fuzzy
+msgid ""
+"New members being a public administration as owner that joined the "
+"cooperative within the month before the given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+"Considerations for \"Public members\" metric also apply in this one.\n"
+msgstr ""
+"Contractes amb administracions públiques finalitzats el mes anterior a la"
+" data donada.\n"
+"\n"
+"Les consideracions per \"Contractes\" també s'apliquen a aquesta mètrica."
+"\n"
+"Les consideracions per \"Contractes públics\" també s'apliquen a aquesta "
+"mètrica.\n"
+
+#: som_opendata/common.py:231
+#, fuzzy
+msgid "Canceled public members"
+msgstr "Baixes de sòcies"
+
+#: som_opendata/common.py:233
+#, fuzzy
+msgid ""
+"Members being a public administration that left the cooperative within "
+"the month before the given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+"Considerations for \"Public members\" metric also apply in this one.\n"
+msgstr ""
+"Contractes amb administracions públiques finalitzats el mes anterior a la"
+" data donada.\n"
+"\n"
+"Les consideracions per \"Contractes\" també s'apliquen a aquesta mètrica."
+"\n"
+"Les consideracions per \"Contractes públics\" també s'apliquen a aquesta "
+"mètrica.\n"
+
+#: som_opendata/common.py:240
 msgid "Deployed plant power (MW)"
 msgstr "Potencia instal·lada en plantes (MW)"
 
-#: som_opendata/common.py:188
+#: som_opendata/common.py:242
 msgid ""
 "Aggregated peak power of the deployed plants in the region just before "
 "the date.\n"
@@ -399,11 +525,11 @@ msgstr ""
 "\n"
 "Aquesta mètrica és experimental. Les dades encara no son fiables."
 
-#: som_opendata/common.py:195
+#: som_opendata/common.py:249
 msgid "Energy produced on plants (kWh)"
 msgstr "Energia produïda en plantes (kWh)"
 
-#: som_opendata/common.py:197
+#: som_opendata/common.py:251
 msgid ""
 "Energy that plants from the region inject into the network during the "
 "period just before the date.\n"
@@ -418,27 +544,27 @@ msgstr ""
 "dades a partir de 2021 es calculen directament de les lectures del "
 "comptador."
 
-#: som_opendata/common.py:215
+#: som_opendata/common.py:269
 msgid "World"
 msgstr "Món"
 
-#: som_opendata/common.py:219
+#: som_opendata/common.py:273
 msgid "Country"
 msgstr "País"
 
-#: som_opendata/common.py:225
+#: som_opendata/common.py:279
 msgid "CCAA"
 msgstr "Comunitat Autònoma"
 
-#: som_opendata/common.py:230
+#: som_opendata/common.py:284
 msgid "State"
 msgstr "Província"
 
-#: som_opendata/common.py:235
+#: som_opendata/common.py:289
 msgid "City"
 msgstr "Municipi"
 
-#: som_opendata/common.py:241
+#: som_opendata/common.py:295
 msgid "Local Group"
 msgstr "Grup Local"
 
@@ -507,4 +633,31 @@ msgstr "per cada %(num)s hab"
 #~ " període abans de la data.\n"
 #~ "\n"
 #~ "Aquesta mètrica és experimental. Les dades encara no son fiables."
+
+#~ msgid ""
+#~ "New contracts with legal person as "
+#~ "owner or bound to a non "
+#~ "residential use created within the month"
+#~ " before the given date.\n"
+#~ "\n"
+#~ "Contracts of homeowner communities starting"
+#~ " during in the month before a "
+#~ "given date.\n"
+#~ "\n"
+#~ "Considerations for \"Contracts\" metric also apply in this one.\n"
+#~ "Considerations for \"Entity and business "
+#~ "contracts\" metric also apply in this"
+#~ " one.\n"
+#~ msgstr ""
+#~ "Contractes que es varen crear durant "
+#~ "el mes anterior a la data donada"
+#~ " i que, bé tenen com a titular"
+#~ " una persona jurídica o bé estan "
+#~ "vinculats a un ús residencial.\n"
+#~ "\n"
+#~ "Les consideracions per a \"Contractes\" "
+#~ "també s'apliquen a aquesta mètrica.\n"
+#~ "Les consideracions per a \"Contractes "
+#~ "d'entitats i empreses\" també s'apliquen "
+#~ "a aquesta mètrica.\n"
 

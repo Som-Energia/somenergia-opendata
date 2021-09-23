@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-09-09 22:46+0200\n"
+"POT-Creation-Date: 2021-09-23 16:56+0200\n"
 "PO-Revision-Date: 2020-01-10 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: eu\n"
@@ -206,19 +206,16 @@ msgid ""
 "New contracts with legal person as owner or bound to a non residential "
 "use created within the month before the given date.\n"
 "\n"
-"Contracts of homeowner communities starting during in the month before a "
-"given date.\n"
-"\n"
 "Considerations for \"Contracts\" metric also apply in this one.\n"
 "Considerations for \"Entity and business contracts\" metric also apply in"
 " this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:149
+#: som_opendata/common.py:148
 msgid "Canceled entity and business contracts"
 msgstr ""
 
-#: som_opendata/common.py:151
+#: som_opendata/common.py:150
 msgid ""
 "Contracts with a legal person as owner or bound to a non residential use "
 "cancelled within the month before the given date.\n"
@@ -228,12 +225,12 @@ msgid ""
 " this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:158
+#: som_opendata/common.py:157
 #, fuzzy
 msgid "Public contracts"
 msgstr "Kontratuak"
 
-#: som_opendata/common.py:160
+#: som_opendata/common.py:159
 msgid ""
 "Active contracts with a public administrations as owners.\n"
 "\n"
@@ -244,11 +241,11 @@ msgid ""
 "- This metric is obtained from data in the ATR system.\n"
 msgstr ""
 
-#: som_opendata/common.py:168
+#: som_opendata/common.py:167
 msgid "New public contracts"
 msgstr ""
 
-#: som_opendata/common.py:170
+#: som_opendata/common.py:169
 msgid ""
 "New contracts with a public administration as owner created within the "
 "month before the given date.\n"
@@ -257,11 +254,11 @@ msgid ""
 "Considerations for \"Public contracts\" metric also apply in this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:177
+#: som_opendata/common.py:176
 msgid "Canceled public contracts"
 msgstr ""
 
-#: som_opendata/common.py:179
+#: som_opendata/common.py:178
 msgid ""
 "Contracts with a public administration as owner cancelled within the "
 "month before the given date.\n"
@@ -270,11 +267,94 @@ msgid ""
 "Considerations for \"Public contracts\" metric also apply in this one.\n"
 msgstr ""
 
-#: som_opendata/common.py:186
+#: som_opendata/common.py:185
+#, fuzzy
+msgid "Entity members"
+msgstr "Irail"
+
+#: som_opendata/common.py:187
+msgid ""
+"Active members being a legal persons.\n"
+"\n"
+"Considerations:\n"
+"\n"
+"- Legal persons are detected by the spanish VAT number of the "
+"membersowner.\n"
+"- Considerations for \"Members\" metric also apply in this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:195
+msgid "New entity members"
+msgstr ""
+
+#: som_opendata/common.py:197
+msgid ""
+"New members being legal person that joined the cooperative within the "
+"month before the given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+"Considerations for \"Entity members\" metric also apply in this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:204
+msgid "Canceled entity members"
+msgstr ""
+
+#: som_opendata/common.py:206
+msgid ""
+"Members being legal person that left the cooperative within the month "
+"before the given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+"Considerations for \"Entity and business members\" metric also apply in "
+"this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:213
+msgid "Public members"
+msgstr ""
+
+#: som_opendata/common.py:215
+msgid ""
+"Active members being a public administrations.\n"
+"\n"
+"Considerations:\n"
+"\n"
+"- Public administrations are detected by the spanish VAT number of the "
+"contract owner.\n"
+msgstr ""
+
+#: som_opendata/common.py:222
+msgid "New public members"
+msgstr ""
+
+#: som_opendata/common.py:224
+msgid ""
+"New members being a public administration as owner that joined the "
+"cooperative within the month before the given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+"Considerations for \"Public members\" metric also apply in this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:231
+msgid "Canceled public members"
+msgstr ""
+
+#: som_opendata/common.py:233
+msgid ""
+"Members being a public administration that left the cooperative within "
+"the month before the given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+"Considerations for \"Public members\" metric also apply in this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:240
 msgid "Deployed plant power (MW)"
 msgstr ""
 
-#: som_opendata/common.py:188
+#: som_opendata/common.py:242
 msgid ""
 "Aggregated peak power of the deployed plants in the region just before "
 "the date.\n"
@@ -282,11 +362,11 @@ msgid ""
 "This metric is experimental. Data should not be relied on yet."
 msgstr ""
 
-#: som_opendata/common.py:195
+#: som_opendata/common.py:249
 msgid "Energy produced on plants (kWh)"
 msgstr ""
 
-#: som_opendata/common.py:197
+#: som_opendata/common.py:251
 msgid ""
 "Energy that plants from the region inject into the network during the "
 "period just before the date.\n"
@@ -295,27 +375,27 @@ msgid ""
 "onwards is taken computed from meter measurements."
 msgstr ""
 
-#: som_opendata/common.py:215
+#: som_opendata/common.py:269
 msgid "World"
 msgstr ""
 
-#: som_opendata/common.py:219
+#: som_opendata/common.py:273
 msgid "Country"
 msgstr ""
 
-#: som_opendata/common.py:225
+#: som_opendata/common.py:279
 msgid "CCAA"
 msgstr ""
 
-#: som_opendata/common.py:230
+#: som_opendata/common.py:284
 msgid "State"
 msgstr ""
 
-#: som_opendata/common.py:235
+#: som_opendata/common.py:289
 msgid "City"
 msgstr ""
 
-#: som_opendata/common.py:241
+#: som_opendata/common.py:295
 msgid "Local Group"
 msgstr ""
 
@@ -371,4 +451,20 @@ msgstr "Abendu"
 #, python-format
 msgid "per %(num)s population"
 msgstr "%(num)s biztanleko"
+
+#~ msgid ""
+#~ "New contracts with legal person as "
+#~ "owner or bound to a non "
+#~ "residential use created within the month"
+#~ " before the given date.\n"
+#~ "\n"
+#~ "Contracts of homeowner communities starting"
+#~ " during in the month before a "
+#~ "given date.\n"
+#~ "\n"
+#~ "Considerations for \"Contracts\" metric also apply in this one.\n"
+#~ "Considerations for \"Entity and business "
+#~ "contracts\" metric also apply in this"
+#~ " one.\n"
+#~ msgstr ""
 

@@ -7,17 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-09-09 22:46+0200\n"
+"POT-Creation-Date: 2021-09-23 16:56+0200\n"
 "PO-Revision-Date: 2021-09-09 22:35+0000\n"
 "Last-Translator: David García Garzón <david.garcia@somenergia.coop>\n"
-"Language-Team: Spanish <http://traduccio.somenergia.coop/projects/open-data/"
-"api/es/>\n"
 "Language: es\n"
+"Language-Team: Spanish <http://traduccio.somenergia.coop/projects/open-"
+"data/api/es/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.1.1\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: som_opendata/common.py:19
@@ -40,13 +39,13 @@ msgid ""
 msgstr ""
 "Personas socias  de la cooperativa al inicio de la fecha dada\n"
 "\n"
-"Los datos se obtienen del estado actual del ERP, por eso, hay que tener en "
-"cuenta que:\n"
-"- Los primeros meses, las altas se apuntaban en una hoja de cálculo, pero "
-"figura como fecha de alta cuando se pasaron al ERP.\n"
-"- No hay registro histórico de las direcciones de una socia. Por eso, si una "
-"socia cambia su domicilio de Vigo a Cartagena, cuenta como que ha vivido "
-"siempre en Cartagena.\n"
+"Los datos se obtienen del estado actual del ERP, por eso, hay que tener "
+"en cuenta que:\n"
+"- Los primeros meses, las altas se apuntaban en una hoja de cálculo, pero"
+" figura como fecha de alta cuando se pasaron al ERP.\n"
+"- No hay registro histórico de las direcciones de una socia. Por eso, si "
+"una socia cambia su domicilio de Vigo a Cartagena, cuenta como que ha "
+"vivido siempre en Cartagena.\n"
 "- Solo guardamos una fecha de alta y baja por socia. No queda bien "
 "registrado si una socia se da de baja y vuelve a darse de alta.\n"
 
@@ -148,10 +147,10 @@ msgstr ""
 "Consideraciones:\n"
 "\n"
 "- Esta métrica se obtiene de datos del sistema ATR.\n"
-"- Una vez un contrato activa el autoconsumo, se considera autoconsumo hasta "
-"que se da de baja.\n"
-"Podría ser que se desactive el autoconsumo antes y no se está teniendo en "
-"cuenta.\n"
+"- Una vez un contrato activa el autoconsumo, se considera autoconsumo "
+"hasta que se da de baja.\n"
+"Podría ser que se desactive el autoconsumo antes y no se está teniendo en"
+" cuenta.\n"
 
 #: som_opendata/common.py:84
 msgid "New selfconsumption contracts"
@@ -207,8 +206,8 @@ msgstr ""
 "\n"
 "Consideraciones:\n"
 "\n"
-"- Se considera que la titularidad es de una comunidad vecinal si la persona "
-"titular tiene un NIF que empieza por H.\n"
+"- Se considera que la titularidad es de una comunidad vecinal si la "
+"persona titular tiene un NIF que empieza por H.\n"
 "- Esta métrica se obtiene de datos del sistema ATR.\n"
 
 #: som_opendata/common.py:110
@@ -270,14 +269,14 @@ msgid ""
 "the owner for the contract.\n"
 "- This metric is obtained from data in the ATR system.\n"
 msgstr ""
-"Contratos activos con personas jurídicas como titular o vinculados a un uso "
-"no residencial.\n"
+"Contratos activos con personas jurídicas como titular o vinculados a un "
+"uso no residencial.\n"
 "\n"
 "Consideraciones: \n"
 "\n"
 "- Las personas jurídicas se detectan por el NIF de la persona titular.\n"
-"- Las actividades no residenciales se detectan por el código CNAE declarado "
-"por la persona titular al contratar.\n"
+"- Las actividades no residenciales se detectan por el código CNAE "
+"declarado por la persona titular al contratar.\n"
 "- Esta métrica se obtiene de los datos en el sistema ATR.\n"
 
 #: som_opendata/common.py:139
@@ -285,30 +284,29 @@ msgid "New entity and business contracts"
 msgstr "Nuevos contratos con entidades y empresas"
 
 #: som_opendata/common.py:141
+#, fuzzy
 msgid ""
 "New contracts with legal person as owner or bound to a non residential "
 "use created within the month before the given date.\n"
-"\n"
-"Contracts of homeowner communities starting during in the month before a "
-"given date.\n"
 "\n"
 "Considerations for \"Contracts\" metric also apply in this one.\n"
 "Considerations for \"Entity and business contracts\" metric also apply in"
 " this one.\n"
 msgstr ""
-"Contratos que se crearon durante el mes anterior a la fecha dada y que bien "
-"tienen como titular una persona jurídica o bien están vinculados a un uso no "
-"residencial.\n"
+"Contratos que finalizaron el mes anterior a la fecha dada y que bien "
+"tienen como titular una persona jurídica o bien están vinculados a un uso"
+" no residencial.\n"
 "\n"
-"Las consideraciones para \"Contratos\" también se aplican a esta métrica.\n"
-"Las consideraciones para \"Contratos de entidades y empresas\" también se "
-"aplican a esta métrica..\n"
+"Las consideraciones para \"Contratos\" también se aplican a esta métrica."
+"\n"
+"Las consideraciones para \"Contratos de entidades y empresas\" también se"
+" aplican a esta métrica.\n"
 
-#: som_opendata/common.py:149
+#: som_opendata/common.py:148
 msgid "Canceled entity and business contracts"
 msgstr "Bajas de contratos de entidades y empresas"
 
-#: som_opendata/common.py:151
+#: som_opendata/common.py:150
 msgid ""
 "Contracts with a legal person as owner or bound to a non residential use "
 "cancelled within the month before the given date.\n"
@@ -317,19 +315,20 @@ msgid ""
 "Considerations for \"Entity and business contracts\" metric also apply in"
 " this one.\n"
 msgstr ""
-"Contratos que finalizaron el mes anterior a la fecha dada y que bien tienen "
-"como titular una persona jurídica o bien están vinculados a un uso no "
-"residencial.\n"
+"Contratos que finalizaron el mes anterior a la fecha dada y que bien "
+"tienen como titular una persona jurídica o bien están vinculados a un uso"
+" no residencial.\n"
 "\n"
-"Las consideraciones para \"Contratos\" también se aplican a esta métrica.\n"
-"Las consideraciones para \"Contratos de entidades y empresas\" también se "
-"aplican a esta métrica.\n"
+"Las consideraciones para \"Contratos\" también se aplican a esta métrica."
+"\n"
+"Las consideraciones para \"Contratos de entidades y empresas\" también se"
+" aplican a esta métrica.\n"
 
-#: som_opendata/common.py:158
+#: som_opendata/common.py:157
 msgid "Public contracts"
 msgstr "Contratos públicos"
 
-#: som_opendata/common.py:160
+#: som_opendata/common.py:159
 msgid ""
 "Active contracts with a public administrations as owners.\n"
 "\n"
@@ -347,11 +346,11 @@ msgstr ""
 "titular\n"
 "- Esta métrica se obtiene de datos del sistema ATR.\n"
 
-#: som_opendata/common.py:168
+#: som_opendata/common.py:167
 msgid "New public contracts"
 msgstr "Nuevos contratos públicos"
 
-#: som_opendata/common.py:170
+#: som_opendata/common.py:169
 msgid ""
 "New contracts with a public administration as owner created within the "
 "month before the given date.\n"
@@ -362,15 +361,16 @@ msgstr ""
 "Nuevos contratos con administraciones públicas creados durante el mes "
 "anterior a la fecha dada. \n"
 "\n"
-"Las consideraciones para \"Contratos\" también se aplican a esta métrica.\n"
-"Las consideraciones para \"Contratos públicos\" también se aplican a esta "
-"métrica..\n"
+"Las consideraciones para \"Contratos\" también se aplican a esta métrica."
+"\n"
+"Las consideraciones para \"Contratos públicos\" también se aplican a esta"
+" métrica..\n"
 
-#: som_opendata/common.py:177
+#: som_opendata/common.py:176
 msgid "Canceled public contracts"
 msgstr "Bajas de contratos públicos"
 
-#: som_opendata/common.py:179
+#: som_opendata/common.py:178
 msgid ""
 "Contracts with a public administration as owner cancelled within the "
 "month before the given date.\n"
@@ -378,18 +378,140 @@ msgid ""
 "Considerations for \"Contracts\" metric also apply in this one.\n"
 "Considerations for \"Public contracts\" metric also apply in this one.\n"
 msgstr ""
-"Contratos finalizados el mes anterior a la fecha dada con una administración "
-"pública. \n"
+"Contratos finalizados el mes anterior a la fecha dada con una "
+"administración pública. \n"
 "\n"
-"Las consideraciones para \"Contratos\" también se aplican a esta métrica.\n"
-"Las consideraciones para \"Contratos públicos\" también se aplican a esta "
-"métrica..\n"
+"Las consideraciones para \"Contratos\" también se aplican a esta métrica."
+"\n"
+"Las consideraciones para \"Contratos públicos\" también se aplican a esta"
+" métrica..\n"
 
-#: som_opendata/common.py:186
+#: som_opendata/common.py:185
+#, fuzzy
+msgid "Entity members"
+msgstr "Nuevas socias"
+
+#: som_opendata/common.py:187
+msgid ""
+"Active members being a legal persons.\n"
+"\n"
+"Considerations:\n"
+"\n"
+"- Legal persons are detected by the spanish VAT number of the "
+"membersowner.\n"
+"- Considerations for \"Members\" metric also apply in this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:195
+#, fuzzy
+msgid "New entity members"
+msgstr "Nuevas socias"
+
+#: som_opendata/common.py:197
+#, fuzzy
+msgid ""
+"New members being legal person that joined the cooperative within the "
+"month before the given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+"Considerations for \"Entity members\" metric also apply in this one.\n"
+msgstr ""
+"Contratos que finalizaron el mes anterior a la fecha dada y que bien "
+"tienen como titular una persona jurídica o bien están vinculados a un uso"
+" no residencial.\n"
+"\n"
+"Las consideraciones para \"Contratos\" también se aplican a esta métrica."
+"\n"
+"Las consideraciones para \"Contratos de entidades y empresas\" también se"
+" aplican a esta métrica.\n"
+
+#: som_opendata/common.py:204
+#, fuzzy
+msgid "Canceled entity members"
+msgstr "Bajas de socias"
+
+#: som_opendata/common.py:206
+msgid ""
+"Members being legal person that left the cooperative within the month "
+"before the given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+"Considerations for \"Entity and business members\" metric also apply in "
+"this one.\n"
+msgstr ""
+
+#: som_opendata/common.py:213
+#, fuzzy
+msgid "Public members"
+msgstr "Nuevas socias"
+
+#: som_opendata/common.py:215
+#, fuzzy
+msgid ""
+"Active members being a public administrations.\n"
+"\n"
+"Considerations:\n"
+"\n"
+"- Public administrations are detected by the spanish VAT number of the "
+"contract owner.\n"
+msgstr ""
+"Contratos activos con una administración pública.\n"
+"\n"
+"Consideraciones:\n"
+"\n"
+"- Se detectan las administraciones públicas por el NIF de la persona "
+"titular\n"
+"- Esta métrica se obtiene de datos del sistema ATR.\n"
+
+#: som_opendata/common.py:222
+#, fuzzy
+msgid "New public members"
+msgstr "Nuevas socias"
+
+#: som_opendata/common.py:224
+#, fuzzy
+msgid ""
+"New members being a public administration as owner that joined the "
+"cooperative within the month before the given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+"Considerations for \"Public members\" metric also apply in this one.\n"
+msgstr ""
+"Contratos finalizados el mes anterior a la fecha dada con una "
+"administración pública. \n"
+"\n"
+"Las consideraciones para \"Contratos\" también se aplican a esta métrica."
+"\n"
+"Las consideraciones para \"Contratos públicos\" también se aplican a esta"
+" métrica..\n"
+
+#: som_opendata/common.py:231
+#, fuzzy
+msgid "Canceled public members"
+msgstr "Bajas de socias"
+
+#: som_opendata/common.py:233
+#, fuzzy
+msgid ""
+"Members being a public administration that left the cooperative within "
+"the month before the given date.\n"
+"\n"
+"Considerations for \"Members\" metric also apply in this one.\n"
+"Considerations for \"Public members\" metric also apply in this one.\n"
+msgstr ""
+"Contratos finalizados el mes anterior a la fecha dada con una "
+"administración pública. \n"
+"\n"
+"Las consideraciones para \"Contratos\" también se aplican a esta métrica."
+"\n"
+"Las consideraciones para \"Contratos públicos\" también se aplican a esta"
+" métrica..\n"
+
+#: som_opendata/common.py:240
 msgid "Deployed plant power (MW)"
 msgstr "Potencia instalada en plantas (MW)"
 
-#: som_opendata/common.py:188
+#: som_opendata/common.py:242
 msgid ""
 "Aggregated peak power of the deployed plants in the region just before "
 "the date.\n"
@@ -401,11 +523,11 @@ msgstr ""
 "\n"
 "Esta métrica es experimental. Los datos no son aún fiables."
 
-#: som_opendata/common.py:195
+#: som_opendata/common.py:249
 msgid "Energy produced on plants (kWh)"
 msgstr "Energía producida en plantas (kWh)"
 
-#: som_opendata/common.py:197
+#: som_opendata/common.py:251
 msgid ""
 "Energy that plants from the region inject into the network during the "
 "period just before the date.\n"
@@ -419,27 +541,27 @@ msgstr ""
 "Los datos hasta 2020 se toman de nuestro registro histórico. Los datos a "
 "partir de 2021 se calculan directamente de las lecturas del contador."
 
-#: som_opendata/common.py:215
+#: som_opendata/common.py:269
 msgid "World"
 msgstr "Mundo"
 
-#: som_opendata/common.py:219
+#: som_opendata/common.py:273
 msgid "Country"
 msgstr "País"
 
-#: som_opendata/common.py:225
+#: som_opendata/common.py:279
 msgid "CCAA"
 msgstr "Comunidad Autónoma"
 
-#: som_opendata/common.py:230
+#: som_opendata/common.py:284
 msgid "State"
 msgstr "Provincia"
 
-#: som_opendata/common.py:235
+#: som_opendata/common.py:289
 msgid "City"
 msgstr "Municipio"
 
-#: som_opendata/common.py:241
+#: som_opendata/common.py:295
 msgid "Local Group"
 msgstr "Grupo Local"
 
@@ -495,4 +617,31 @@ msgstr "Diciembre"
 #, python-format
 msgid "per %(num)s population"
 msgstr "por cada %(num)s hab"
+
+#~ msgid ""
+#~ "New contracts with legal person as "
+#~ "owner or bound to a non "
+#~ "residential use created within the month"
+#~ " before the given date.\n"
+#~ "\n"
+#~ "Contracts of homeowner communities starting"
+#~ " during in the month before a "
+#~ "given date.\n"
+#~ "\n"
+#~ "Considerations for \"Contracts\" metric also apply in this one.\n"
+#~ "Considerations for \"Entity and business "
+#~ "contracts\" metric also apply in this"
+#~ " one.\n"
+#~ msgstr ""
+#~ "Contratos que se crearon durante el "
+#~ "mes anterior a la fecha dada y "
+#~ "que bien tienen como titular una "
+#~ "persona jurídica o bien están vinculados"
+#~ " a un uso no residencial.\n"
+#~ "\n"
+#~ "Las consideraciones para \"Contratos\" también"
+#~ " se aplican a esta métrica.\n"
+#~ "Las consideraciones para \"Contratos de "
+#~ "entidades y empresas\" también se "
+#~ "aplican a esta métrica..\n"
 
