@@ -32,6 +32,9 @@ from som_opendata.queries import (
     newPublicMembersSeries,
     canceledPublicMembersSeries,
 
+    entityMembersSeries,
+    newEntityMembersSeries,
+    canceledEntityMembersSeries,
 )
 from som_opendata.common import dateSequenceMonths
 from yamlns.dateutils import Date
@@ -58,6 +61,7 @@ metricGenerators = dict(
 
     members=membersSeries,
     publicmembers=publicMembersSeries,
+    entitymembers=entityMembersSeries,
     contracts=contractsSeries,
     selfconsumptioncontracts=selfConsumptionContractsSeries,
     publiccontracts=publicContractsSeries,
@@ -66,6 +70,7 @@ metricGenerators = dict(
 
     newmembers=newMembersSeries,
     newpublicmembers=newPublicMembersSeries,
+    newentitymembers=newEntityMembersSeries,
     newcontracts=newContractsSeries,
     newpubliccontracts=newPublicContractsSeries,
     newentitycontracts=newEntityContractsSeries,
@@ -74,6 +79,7 @@ metricGenerators = dict(
 
     canceledmembers=canceledMembersSeries,
     canceledpublicmembers=canceledPublicMembersSeries,
+    canceledentitymembers=canceledEntityMembersSeries,
     canceledcontracts=canceledContractsSeries,
     canceledpubliccontracts=canceledPublicContractsSeries,
     canceledentitycontracts=canceledEntityContractsSeries,
