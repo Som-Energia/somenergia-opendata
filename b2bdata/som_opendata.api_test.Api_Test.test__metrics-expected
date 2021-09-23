@@ -131,6 +131,51 @@ metrics:
 
     Considerations for "Contracts" metric also apply in this one.
     Considerations for "Public contracts" metric also apply in this one.
+- id: entitymembers
+  text: Entity members
+  description: |
+    Active members being a legal persons.
+
+    Considerations:
+
+    - Legal persons are detected by the spanish VAT number of the membersowner.
+    - Considerations for "Members" metric also apply in this one.
+- id: newentitymembers
+  text: New entity members
+  description: |
+    New members being legal person that joined the cooperative within the month before the given date.
+
+    Considerations for "Members" metric also apply in this one.
+    Considerations for "Entity members" metric also apply in this one.
+- id: canceledentitymembers
+  text: Canceled entity members
+  description: |
+    Members being legal person that left the cooperative within the month before the given date.
+
+    Considerations for "Members" metric also apply in this one.
+    Considerations for "Entity and business members" metric also apply in this one.
+- id: publicmembers
+  text: Public members
+  description: |
+    Active members being a public administrations.
+
+    Considerations:
+
+    - Public administrations are detected by the spanish VAT number of the contract owner.
+- id: newpublicmembers
+  text: New public members
+  description: |
+    New members being a public administration as owner that joined the cooperative within the month before the given date.
+
+    Considerations for "Members" metric also apply in this one.
+    Considerations for "Public members" metric also apply in this one.
+- id: canceledpublicmembers
+  text: Canceled public members
+  description: |
+    Members being a public administration that left the cooperative within the month before the given date.
+
+    Considerations for "Members" metric also apply in this one.
+    Considerations for "Public members" metric also apply in this one.
 - id: plantpower
   text: Deployed plant power (MW)
   description: |-
