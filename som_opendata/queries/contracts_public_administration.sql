@@ -17,7 +17,7 @@ ON owner.id = polissa.titular
 LEFT JOIN giscemisc_cnae AS cnae
 ON cnae.id = polissa.cnae
 WHERE
-	-- ABCDEFGHJPQRSUVNW
+	-- PQS
 	owner.vat like 'ESP%%' OR
 	owner.vat like 'ESQ%%' OR
 	owner.vat like 'ESS%%' OR

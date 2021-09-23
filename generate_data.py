@@ -27,6 +27,11 @@ from som_opendata.queries import (
     homeownerCommunityContractsSeries,
     newHomeownerCommunityContractsSeries,
     canceledHomeownerCommunityContractsSeries,
+
+    publicMembersSeries,
+    newPublicMembersSeries,
+    canceledPublicMembersSeries,
+
 )
 from som_opendata.common import dateSequenceMonths
 from yamlns.dateutils import Date
@@ -52,6 +57,7 @@ metricGenerators = dict(
     plantproduction=plantProductionSeries,
 
     members=membersSeries,
+    publicmembers=publicMembersSeries,
     contracts=contractsSeries,
     selfconsumptioncontracts=selfConsumptionContractsSeries,
     publiccontracts=publicContractsSeries,
@@ -59,15 +65,18 @@ metricGenerators = dict(
     homeownercommunitycontracts=homeownerCommunityContractsSeries,
 
     newmembers=newMembersSeries,
+    newpublicmembers=newPublicMembersSeries,
+    newcontracts=newContractsSeries,
     newpubliccontracts=newPublicContractsSeries,
     newentitycontracts=newEntityContractsSeries,
     newselfconsumptioncontracts=newSelfConsumptionContractsSeries,
     newhomeownercommunitycontracts=newHomeownerCommunityContractsSeries,
 
     canceledmembers=canceledMembersSeries,
+    canceledpublicmembers=canceledPublicMembersSeries,
+    canceledcontracts=canceledContractsSeries,
     canceledpubliccontracts=canceledPublicContractsSeries,
     canceledentitycontracts=canceledEntityContractsSeries,
-    canceledcontracts=canceledContractsSeries,
     canceledselfconsumptioncontracts=canceledSelfConsumptionContractsSeries,
     canceledhomeownercommunitycontracts=canceledHomeownerCommunityContractsSeries,
 )

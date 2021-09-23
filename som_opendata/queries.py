@@ -301,6 +301,33 @@ def canceledMembersSeries(dates, dbhandler=csvTable, debug=False):
     )
 
 
+def publicMembersSeries(dates, dbhandler=csvTable, debug=False):
+    return timeCityQuery(
+        dates=dates,
+        queryfile='members_public_administration',
+        timeSlicer=activeItemCounter,
+        #timeSlicer=activeItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
+def newPublicMembersSeries(dates, dbhandler=csvTable, debug=False):
+    return timeCityQuery(
+        dates=dates,
+        queryfile='members_public_administration',
+        timeSlicer=newItemCounter,
+        #timeSlicer=newItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
+def canceledPublicMembersSeries(dates, dbhandler=csvTable, debug=False):
+    return timeCityQuery(
+        dates=dates,
+        queryfile='members_public_administration',
+        timeSlicer=canceledItemCounter,
+        #timeSlicer=canceledItemLister, # debug
+        dbhandler=dbhandler,
+    )
+
 def plantPowerSeries(dates, dbhandler=csvTable):
     return timeQuery(
         dates=dates,
