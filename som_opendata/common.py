@@ -71,7 +71,7 @@ metrics = ns(
     ),
     selfconsumptioncontracts=ns(
         text=_("Self-consumption contracts"),
-        timeaggregation='sum',
+        timeaggregation='last',
         description=_(
             "Active contracts with selfconsumption just before the date.\n\n"
             "Considerations:\n\n"
@@ -98,7 +98,7 @@ metrics = ns(
     ),
     homeownercommunitycontracts=ns(
         text=_("Homeowner comunity contracts"),
-        timeaggregation='sum',
+        timeaggregation='last',
         description=_(
             "Active contracts whose owner is a homeowner community.\n\n"
             "Considerations:\n\n"
@@ -126,7 +126,7 @@ metrics = ns(
     ),
     entitycontracts=ns(
         text=_("Entity and business contracts"),
-        timeaggregation='sum',
+        timeaggregation='last',
         description=_(
             "Active contracts with legal persons as owner or bound to a non residential use.\n\n"
             "Considerations:\n\n"
@@ -156,7 +156,7 @@ metrics = ns(
     ),
     publiccontracts=ns(
         text=_("Public contracts"),
-        timeaggregation='sum',
+        timeaggregation='last',
         description=_(
             "Active contracts with a public administrations as owners.\n\n"
             "Considerations:\n\n"
