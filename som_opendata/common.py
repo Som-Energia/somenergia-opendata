@@ -140,7 +140,6 @@ metrics = ns(
         timeaggregation='sum',
         description=_(
             "New contracts with legal person as owner or bound to a non residential use created within the month before the given date.\n\n"
-            "Contracts of homeowner communities starting during in the month before a given date.\n\n"
             "Considerations for \"Contracts\" metric also apply in this one.\n"
             "Considerations for \"Entity and business contracts\" metric also apply in this one.\n"
         ),
@@ -180,6 +179,61 @@ metrics = ns(
             "Contracts with a public administration as owner cancelled within the month before the given date.\n\n"
             "Considerations for \"Contracts\" metric also apply in this one.\n"
             "Considerations for \"Public contracts\" metric also apply in this one.\n"
+        ),
+    ),
+    entitymembers=ns(
+        text=_("Entity members"),
+        timeaggregation='last',
+        description=_(
+            "Active members being a legal persons.\n\n"
+            "Considerations:\n\n"
+            "- Legal persons are detected by the spanish VAT number of the membersowner.\n"
+            "- Considerations for \"Members\" metric also apply in this one.\n"
+        ),
+    ),
+    newentitymembers=ns(
+        text=_("New entity members"),
+        timeaggregation='sum',
+        description=_(
+            "New members being legal person that joined the cooperative within the month before the given date.\n\n"
+            "Considerations for \"Members\" metric also apply in this one.\n"
+            "Considerations for \"Entity members\" metric also apply in this one.\n"
+        ),
+    ),
+    canceledentitymembers=ns(
+        text=_("Canceled entity members"),
+        timeaggregation='sum',
+        description=_(
+            "Members being legal person that left the cooperative within the month before the given date.\n\n"
+            "Considerations for \"Members\" metric also apply in this one.\n"
+            "Considerations for \"Entity and business members\" metric also apply in this one.\n"
+        ),
+    ),
+    publicmembers=ns(
+        text=_("Public members"),
+        timeaggregation='last',
+        description=_(
+            "Active members being a public administrations.\n\n"
+            "Considerations:\n\n"
+            "- Public administrations are detected by the spanish VAT number of the contract owner.\n"
+        ),
+    ),
+    newpublicmembers=ns(
+        text=_("New public members"),
+        timeaggregation='sum',
+        description=_(
+            "New members being a public administration as owner that joined the cooperative within the month before the given date.\n\n"
+            "Considerations for \"Members\" metric also apply in this one.\n"
+            "Considerations for \"Public members\" metric also apply in this one.\n"
+        ),
+    ),
+    canceledpublicmembers=ns(
+        text=_("Canceled public members"),
+        timeaggregation='sum',
+        description=_(
+            "Members being a public administration that left the cooperative within the month before the given date.\n\n"
+            "Considerations for \"Members\" metric also apply in this one.\n"
+            "Considerations for \"Public members\" metric also apply in this one.\n"
         ),
     ),
     plantpower=ns(

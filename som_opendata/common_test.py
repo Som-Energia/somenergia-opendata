@@ -375,6 +375,8 @@ class Common_Test(unittest.TestCase):
             "'homeownercommunitycontracts', 'newhomeownercommunitycontracts', 'canceledhomeownercommunitycontracts', "
             "'entitycontracts', 'newentitycontracts', 'canceledentitycontracts', "
             "'publiccontracts', 'newpubliccontracts', 'canceledpubliccontracts', "
+            "'entitymembers', 'newentitymembers', 'canceledentitymembers', "
+            "'publicmembers', 'newpublicmembers', 'canceledpublicmembers', "
             "'plantpower', 'plantproduction'."
         )
 
