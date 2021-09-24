@@ -12,13 +12,13 @@ metrics:
 - id: newmembers
   text: Noves sòcies
   description: |
-    Noves sòcies durant el mes que acaba a la data donada.
+    Noves sòcies que varen entrar a la cooperativa durant el periode just abans de la data donada.
 
     S'apliquen les mateixes consideracions que per a la mètrica "Sòcies".
 - id: canceledmembers
   text: Baixes de sòcies
   description: |
-    Sòcies que varen abandonar la cooperativa durant el mes abans de la data donada.
+    Sòcies que varen abandonar la cooperativa durant el període abans de la data donada.
 
     S'apliquen les mateixes consideracions que per a la mètrica "Sòcies".
 - id: contracts
@@ -26,18 +26,20 @@ metrics:
   description: |
     Els contractes actius a l'inici de la data donada.
 
-    Les dades del contracte s'obtenen de les dades d'activació i desactivacíó del sistema ATR.
-    Els contractes antics van ser transferits a mà dels fitxers i poden ser menys confiables.
+    Consideracions:
+
+    - Les dades del contracte s'obtenen de les dades d'activació i desactivacíó del sistema ATR.
+    - Els contractes antics van ser transferits a mà dels fitxers i poden ser menys confiables.
 - id: newcontracts
   text: Nous contractes
   description: |
-    Contractes activats durant el mes anterior a la data donada.
+    Contractes activats durant el període anterior a la data donada.
 
     S'apliquen les mateixes consideracions que per a la mètrica "Contractes".
 - id: canceledcontracts
   text: Baixes de contractes
   description: |
-    Contractes donats de baixa durant el mes anterior a la data donada.
+    Contractes donats de baixa durant el període anterior a la data donada.
 
     S'apliquen les mateixes consideracions que per a la mètrica "Contractes".
 - id: selfconsumptioncontracts
@@ -51,15 +53,15 @@ metrics:
     - Un cop un contracte activa l'autoconsum, el considerem autoconsum fins que es dona de baixa.
     Podria ser que es desactivés l'autoconsum abans i no ho estem considerant.
 - id: newselfconsumptioncontracts
-  text: Nous contractes d'autoconsum
+  text: Nous contractes amb autoconsum
   description: |
-    Contractes que han activat l'autoconsum durant el mes anterior a la data donada.
+    Contractes que han activat l'autoconsum durant el període anterior a la data donada.
 
     S'apliquen les mateixes consideracions que per a la mètrica "Contractes d'autoconsum".
 - id: canceledselfconsumptioncontracts
-  text: Baixes de contractes d'autoconsum
+  text: Baixes de contractes amb autoconsum
   description: |
-    Contractes d'autoconsum donats de baixa durant el mes anterior a la data donada.
+    Contractes amb autoconsum donats de baixa durant el període anterior a la data donada.
 
     S'apliquen les mateixes consideracions que per a la mètrica "Contractes d'autoconsum".
 - id: homeownercommunitycontracts
@@ -74,14 +76,14 @@ metrics:
 - id: newhomeownercommunitycontracts
   text: Nous contractes de comunitats veïnals
   description: |
-    Contractes de comunitats veïnals que han començat durant el mes anterior a la data donada.
+    Contractes de comunitats veïnals que han començat durant el període anterior a la data donada.
 
     Les consideracions per "Contractes" també s'apliquen a aquesta mètrica.
     Les consideracions per "Contractes de comunitats veïnals" també s'apliquen a aquesta mètrica.
 - id: canceledhomeownercommunitycontracts
   text: Baixes de contractes de comunitats veïnals
   description: |
-    Contractes de comunitats veïnals finalitzats durant el mes anterior a la data donada.
+    Contractes de comunitats veïnals finalitzats durant el període anterior a la data donada.
 
     Les consideracions per "Contractes" també s'apliquen a aquesta mètrica.
     Les consideracions per "Contractes de comunitats veïnals" també s'apliquen a aquesta mètrica.
@@ -98,14 +100,14 @@ metrics:
 - id: newentitycontracts
   text: Nous contractes d'entitats i empreses
   description: |
-    Contractes que es varen crear durant el mes anterior a la data donada i que, bé tenen com a titular una persona jurídica o bé estan vinculats a un ús residencial.
+    Nous contractes amb persones jurídica o bé estan vinculats a un ús no residencial i que es varen crear el període abans de la data donada.
 
     Les consideracions per a "Contractes" també s'apliquen a aquesta mètrica.
     Les consideracions per a "Contractes d'entitats i empreses" també s'apliquen a aquesta mètrica.
 - id: canceledentitycontracts
   text: Baixes de contractes d'entitats i empreses
   description: |
-    Contractes que varen finalitzar el mes anterior a la data donada i que bé tenen com a titular una persona jurídica o bé estan vinculats a un ús no residencial.
+    Contractes que varen finalitzar el període anterior a la data donada i que bé tenen com a titular una persona jurídica o bé estan vinculats a un ús no residencial.
 
     Les consideracions per a "Contractes" també s'apliquen a aquesta mètrica.
     Les consideracions per a "Contractes d'entitats i empreses" també s'apliquen a aquesta mètrica.
@@ -116,26 +118,71 @@ metrics:
 
     Consideracions:
 
-    - Es detecten les administracions públiques pel NIF de la persona titular
+    - Es detecten les administracions públiques pel NIF de la persona titular.
     - Aquesta mètrica s'obté de dades del sistema ATR
 - id: newpubliccontracts
   text: Nous contractes públics
   description: |
-    Nous contractes amb l'administració pública creats durant el mes anterior a la data donada.
+    Nous contractes amb l'administració pública creats durant el període anterior a la data donada.
 
     Les consideracions per "Contractes" també s'apliquen a aquesta mètrica.
     Les consideracions per "Contractes públics" també s'apliquen a aquesta mètrica.
 - id: canceledpubliccontracts
   text: Baixes de contractes públics
   description: |
-    Contractes amb administracions públiques finalitzats el mes anterior a la data donada.
+    Contractes amb administracions públiques finalitzats el període just anterior a la data donada.
 
     Les consideracions per "Contractes" també s'apliquen a aquesta mètrica.
     Les consideracions per "Contractes públics" també s'apliquen a aquesta mètrica.
+- id: entitymembers
+  text: Entitats sòcies
+  description: |-
+    Sòcies actives que són persones jurídiques
+
+    Consideracions:
+
+    - Les persones jurídiques es detecten pel seu NIF.
+    - S'apliquen les consideracions per a la mètrica "Sòcies".
+- id: newentitymembers
+  text: Noves entitats sòcies
+  description: |
+    Noves sòcies que són persones jurídiques i que es varen unir a la cooperativa el període just abans a la data donada.
+
+    Les consideracions per a "Sòcies" també s'apliquen a aquesta mètrica.
+    Les consideracions per a "Entitats Sòcies" també s'apliquen a aquesta mètrica.
+- id: canceledentitymembers
+  text: Baixes d'entitats sòcies
+  description: |-
+    Sòcies que són persones jurídiques i que van abandonar la cooperativa durant el període anterior a la data donada.
+
+    S'apliquen les consideracions per a la mètrica "Sòcies".
+    S'apliquen les consideracions per a la mètrica "Entitats sòcies".
+- id: publicmembers
+  text: Administracions públiques sòcies
+  description: |-
+    Sòcies actives que són administracions públiques.
+
+    Consideracions:
+
+    - Es detecten les administracions públiques pel NIF de la persona titular.
+- id: newpublicmembers
+  text: Noves administracions públiques sòcies
+  description: |
+    Administracions públiques que van esdevindre sòcies durant el període anterior a la data donada.
+
+    Les consideracions per "Contractes" també s'apliquen a aquesta mètrica.
+    Les consideracions per "Contractes públics" també s'apliquen a aquesta mètrica.
+- id: canceledpublicmembers
+  text: Baixes d'administracions públiques sòcies
+  description: |
+    Administracions públiques que van deixar de ser sòcies de la cooperativa durant període anterior a la data donada.
+
+    - Les consideracions per "Contractes" també s'apliquen a aquesta mètrica.
+    - Les consideracions per "Contractes públics" també s'apliquen a aquesta mètrica.
 - id: plantpower
   text: Potencia instal·lada en plantes (MW)
   description: |-
-    Suma de la potència de pic de les plantes instalades en la regió just abans de la data.
+    Suma de la potència de pic de les plantes instal·lades en la regió just abans de la data.
 
     Aquesta mètrica és experimental. Les dades encara no son fiables.
 - id: plantproduction

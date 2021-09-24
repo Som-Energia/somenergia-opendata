@@ -11,13 +11,13 @@ metrics:
 - id: newmembers
   text: New members
   description: |
-    New cooperative members during the month before a given date.
+    New cooperative members joining the cooperative during the period before the given date.
 
     Considerations for "Members" metric also apply in this one.
 - id: canceledmembers
   text: Canceled members
   description: |
-    Members leaving the cooperative during in the month before a given date.
+    Members leaving the cooperative during in the period before a given date.
 
     Considerations for "Members" metric also apply in this one.
 - id: contracts
@@ -25,18 +25,20 @@ metrics:
   description: |
     Current active contracts at the start of a given date.
 
-    Contract data is taken from activation and deactivation dates from ATR system.
-    Old contracts were copied by hand from ATR files and may be less reliable.
+    Considerations:
+
+    - Contract data is taken from activation and deactivation dates from ATR system.
+    - Old contracts were copied by hand from ATR files and may be less reliable.
 - id: newcontracts
   text: New contracts
   description: |
-    Contracts starting during in the month before a given date.
+    Contracts starting during in the period before a given date.
 
     Considerations for "Contracts" metric also apply in this one.
 - id: canceledcontracts
   text: Canceled contracts
   description: |
-    Contracts ending during in the month before a given date.
+    Contracts ending during the period before the given date.
 
     Considerations for "Contracts" metric also apply in this one.
 - id: selfconsumptioncontracts
@@ -52,13 +54,13 @@ metrics:
 - id: newselfconsumptioncontracts
   text: New selfconsumption contracts
   description: |
-    Contracts activating selfconsumption during in the month before a given date.
+    Contracts activating selfconsumption during in the period before a given date.
 
     Considerations for "Self consumption contracts" metric also apply in this one.
 - id: canceledselfconsumptioncontracts
   text: Canceled selfconsumption contracts
   description: |
-    Canceled contracts with selfconsumption during in the month before a given date.
+    Canceled contracts with selfconsumption during in the period before a given date.
 
     Considerations for "Self consumption contracts" metric also apply in this one.
 - id: homeownercommunitycontracts
@@ -73,14 +75,14 @@ metrics:
 - id: newhomeownercommunitycontracts
   text: New homeowner community contracts
   description: |
-    Contracts of homeowner communities starting during in the month before a given date.
+    Contracts of homeowner communities starting during in the period before a given date.
 
     Considerations for "Contracts" metric also apply in this one.
     Considerations for "Homeowner community contracts" metric also apply in this one.
 - id: canceledhomeownercommunitycontracts
   text: Canceled homeowner community contracts
   description: |
-    Contracts of homeowner communities ending during in the month before a given date.
+    Contracts of homeowner communities ending during in the period before a given date.
 
     Considerations for "Contracts" metric also apply in this one.
     Considerations for "Homeowner community contracts" metric also apply in this one.
@@ -97,14 +99,14 @@ metrics:
 - id: newentitycontracts
   text: New entity and business contracts
   description: |
-    New contracts with legal person as owner or bound to a non residential use created within the month before the given date.
+    New contracts with legal person as owner or bound to a non residential use created within the period before the given date.
 
     Considerations for "Contracts" metric also apply in this one.
     Considerations for "Entity and business contracts" metric also apply in this one.
 - id: canceledentitycontracts
   text: Canceled entity and business contracts
   description: |
-    Contracts with a legal person as owner or bound to a non residential use cancelled within the month before the given date.
+    Contracts with a legal person as owner or bound to a non residential use cancelled within the period before the given date.
 
     Considerations for "Contracts" metric also apply in this one.
     Considerations for "Entity and business contracts" metric also apply in this one.
@@ -120,59 +122,59 @@ metrics:
 - id: newpubliccontracts
   text: New public contracts
   description: |
-    New contracts with a public administration as owner created within the month before the given date.
+    New contracts with a public administration as owner created within the period before the given date.
 
     Considerations for "Contracts" metric also apply in this one.
     Considerations for "Public contracts" metric also apply in this one.
 - id: canceledpubliccontracts
   text: Canceled public contracts
   description: |
-    Contracts with a public administration as owner cancelled within the month before the given date.
+    Contracts with a public administration as owner cancelled within the period just before the given date.
 
     Considerations for "Contracts" metric also apply in this one.
     Considerations for "Public contracts" metric also apply in this one.
 - id: entitymembers
-  text: Entity members
-  description: |
+  text: Member entities
+  description: |-
     Active members being a legal persons.
 
     Considerations:
 
-    - Legal persons are detected by the spanish VAT number of the membersowner.
+    - Legal persons are detected by their Spanish VAT number.
     - Considerations for "Members" metric also apply in this one.
 - id: newentitymembers
-  text: New entity members
+  text: New member entities
   description: |
-    New members being legal person that joined the cooperative within the month before the given date.
+    New members being legal person that joined the cooperative within the period just before the given date.
 
     Considerations for "Members" metric also apply in this one.
     Considerations for "Entity members" metric also apply in this one.
 - id: canceledentitymembers
-  text: Canceled entity members
-  description: |
-    Members being legal person that left the cooperative within the month before the given date.
+  text: Canceled member entities
+  description: |-
+    Members being legal person that left the cooperative within the period before the given date.
 
     Considerations for "Members" metric also apply in this one.
     Considerations for "Entity and business members" metric also apply in this one.
 - id: publicmembers
   text: Public members
-  description: |
-    Active members being a public administrations.
+  description: |-
+    Active members being public administrations.
 
     Considerations:
 
-    - Public administrations are detected by the spanish VAT number of the contract owner.
+    - Public administrations are detected by the Spanish VAT number.
 - id: newpublicmembers
   text: New public members
   description: |
-    New members being a public administration as owner that joined the cooperative within the month before the given date.
+    New members being a public administration that joined the cooperative within the period before the given date.
 
     Considerations for "Members" metric also apply in this one.
     Considerations for "Public members" metric also apply in this one.
 - id: canceledpublicmembers
   text: Canceled public members
   description: |
-    Members being a public administration that left the cooperative within the month before the given date.
+    Members being a public administration that left the cooperative within the period before the given date.
 
     Considerations for "Members" metric also apply in this one.
     Considerations for "Public members" metric also apply in this one.
@@ -185,6 +187,6 @@ metrics:
 - id: plantproduction
   text: Energy produced on plants (kWh)
   description: |-
-    Energy that plants from the region inject into the network during the period just before the date.
+    Energy injected by the plants from the region during the period just before the date.
 
-    Data up to 2020 are taken from our historical records. Data from 2021 onwards is taken computed from meter measurements.
+    Data up to 2020 are taken from our historical records. Data from 2021 onward has been computed directly from meter measurements.
