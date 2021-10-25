@@ -8,6 +8,7 @@ SELECT
 	provincia.name AS provincia,
 	municipi.ine AS codi_ine,
 	municipi.name AS municipi,
+	item.postalcode AS postalcode,
 	{} -- here goes the count columns
 FROM (
 --- here goes the inner query for the elements to be counted
@@ -31,7 +32,8 @@ GROUP BY
 	pais,
 	provincia,
 	municipi,
-	comunitat.name
+	comunitat.name,
+	item.postalcode
 ORDER BY
 	pais ASC,
 	comunitat_autonoma ASC,

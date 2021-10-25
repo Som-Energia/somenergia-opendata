@@ -153,12 +153,12 @@ fullData = ns.loads("""\
             values:
             - 5
 """)
-headers = "codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tcount_2018_01_01"
-data_Adra = "ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t2"
-data_Perignan = "FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\t10"
-data_Girona = "ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t20"
-data_SantJoan = "ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t1000"
-data_Amer = "ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t2000"
+headers = "codi_pais\tpais\tcodi_ccaa\tcomunitat_autonoma\tcodi_provincia\tprovincia\tcodi_ine\tmunicipi\tpostalcode\tcount_2018_01_01"
+data_Adra = "ES\tEspaña\t01\tAndalucía\t04\tAlmería\t04003\tAdra\t04770\t2"
+data_Perignan = "FR\tFrance\t76\tOccità\t66\tPyrénées-Orientales\t66136\tPerpignan\tNone\t10"
+data_Girona = "ES\tEspaña\t09\tCatalunya\t17\tGirona\t17079\tGirona\t17001\t20"
+data_SantJoan = "ES\tEspaña\t09\tCatalunya\t08\tBarcelona\t08217\tSant Joan Despí\t08970\t1000"
+data_Amer = "ES\tEspaña\t09\tCatalunya\t17\tGirona\t17007\tAmer\t17170\t2000"
 
 noRegion = ns.loads("""\
     dates: [2019-01-01]

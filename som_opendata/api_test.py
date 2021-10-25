@@ -159,6 +159,11 @@ class Api_Test(unittest.TestCase):
               text: 'City'
               parent: state
               plural: cities
+            - id: postalcode
+              parent: city
+              plural: postalcodes
+              text: 'Postal District'
+              mapable: False
             - id: localgroup
               text: 'Local Group'
               parent: world
@@ -191,6 +196,11 @@ class Api_Test(unittest.TestCase):
               text: 'Municipi'
               parent: state
               plural: cities
+            - id: postalcode
+              parent: city
+              plural: postalcodes
+              text: 'Districte Postal'
+              mapable: False
             - id: localgroup
               text: 'Grup Local'
               parent: world
@@ -349,8 +359,8 @@ class Api_Test(unittest.TestCase):
         self.assertYamlResponse(r, """\
             parameter: geolevel
             valueRequest: badgeolevel
-            possibleValues: ['world', 'country', 'ccaa', 'state', 'city']
-            message: Invalid geolevel 'badgeolevel'. Accepted ones are 'world', 'country', 'ccaa', 'state', 'city'.
+            possibleValues: ['world', 'country', 'ccaa', 'state', 'city', 'postalcode']
+            message: Invalid geolevel 'badgeolevel'. Accepted ones are 'world', 'country', 'ccaa', 'state', 'city', 'postalcode'.
             """, 400)
 
     def test__metric_frequency__doesNotExist(self):
@@ -446,7 +456,7 @@ class Api_Test(unittest.TestCase):
             parameter: geolevel
             valueRequest: country
             possibleValues: ['ccaa', 'state', 'city']
-            message: Invalid geolevel 'city'. Accepted ones are 'ccaa', 'state', 'city'.
+            message: Invalid geolevel 'city'. Accepted ones are 'ccaa', 'state', 'city', 'postalcode'.
             """, 400)
 
     def test__map__ccaaMembersPerPopulation(self):
