@@ -7,6 +7,7 @@ SELECT
     provincia,
     codi_ine,
     municipi,
+    postalcode,
     {}
 FROM (
     SELECT
@@ -28,6 +29,7 @@ FROM (
         ccaa.codi AS codi_ccaa,
         country.code AS codi_pais,
         address.partner_id AS partner_id,
+	pa.zip as postalcode,
         p.date as first_date,
         pa.active as active,
         ss.data_baixa_soci as last_date
@@ -60,6 +62,7 @@ GROUP BY
     provincia,
     municipi,
     comunitat_autonoma,
+    postalcode,
     TRUE
 ORDER BY
     pais ASC,
