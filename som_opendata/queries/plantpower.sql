@@ -7,6 +7,7 @@ SELECT
 	city.province AS provincia,
 	city.inecode AS codi_ine,
 	city.name AS municipi,
+	null::text AS postalcode,
 	{} -- here go the count columns
 FROM (
 	SELECT

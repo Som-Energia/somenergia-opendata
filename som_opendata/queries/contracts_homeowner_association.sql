@@ -6,6 +6,7 @@ SELECT
 	polissa.data_baixa as last_date,
 	cups.id_municipi as city_id,
 	NULL::integer as country_id,
+	cups.dp as postalcode,
 	owner.vat as vat,
 	cnae.name as cnae,
 	TRUE

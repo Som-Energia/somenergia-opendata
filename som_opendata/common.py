@@ -262,7 +262,8 @@ aggregation_levels = [
     ('ccaas', 'ccaa', 'codi_ccaa', 'comunitat_autonoma'),
     ('states', 'state', 'codi_provincia', 'provincia'),
     ('cities', 'city', 'codi_ine', 'municipi'),
-    ]
+    ('postalcodes', 'postalcode', 'postalcode', 'postalcode')
+]
 
 geolevels = ns([
     ('world', ns(
@@ -290,6 +291,12 @@ geolevels = ns([
         plural = 'cities',
         parent = 'state',
         #mapable = False,
+    )),
+    ('postalcode', ns(
+        text =_('Postal District'),
+        plural = 'postalcodes',
+        parent = 'city',
+        mapable = False,
     )),
     ('localgroup', ns(
         text = _('Local Group'),

@@ -4,7 +4,8 @@ SELECT
 	member.data_baixa_soci AS last_date,
 	address.country_id AS country_id,
 	address.id_municipi AS city_id,
-	address.city AS city_name,
+	address.zip AS postalcode,
+	address.city AS city_name, -- debug only
 	partner.name AS name, -- debug only
 	TRUE
 FROM res_partner AS partner
@@ -20,7 +21,8 @@ LEFT JOIN (
 		address.country_id,
 		address.partner_id,
 		address.id_municipi,
-		address.city
+		address.city,
+		address.zip
 	FROM res_partner_address as address
 	WHERE address.active = TRUE
 	AND COALESCE(address.id_municipi, address.country_id) IS NOT NULL
