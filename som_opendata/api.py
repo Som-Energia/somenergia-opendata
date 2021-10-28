@@ -93,6 +93,7 @@ def locationFiltersFromQuery():
             'state',
             'city',
             'localgroup',
+            'postalcode',
         ]
         if key in request.args
     )
