@@ -46,6 +46,7 @@ jobs:
         run: |
           ./setup.py develop
           ./setup.py compile_catalog
+          touch dbconfig.py
       - name: Unit tests
         run: |
           coverage run --source som_opendata ./setup.py test
