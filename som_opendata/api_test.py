@@ -330,6 +330,10 @@ class Api_Test(unittest.TestCase):
         r = self.get('/members/by/city/yearly?format=tsv')
         self.assertB2BResponse(r, mimetype="text/tab-separated-values")
 
+    def test__metric_format_json(self):
+        r = self.get('/members/by/city/yearly?format=json')
+        self.assertB2BResponse(r, mimetype="application/json")
+
     def test__metric(self):
         r = self.get('/members')
         self.assertB2BResponse(r)
