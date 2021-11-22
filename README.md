@@ -1,6 +1,6 @@
 # somenergia-opendata
 
-[![Build Status](https://app.travis-ci.com/Som-Energia/somenergia-opendata.svg?branch=master)](https://app.travis-ci.com/Som-Energia/somenergia-opendata)
+[![CI Status](https://github.com/Som-Energia/somenergia-opendata/actions/workflows/main.yml/badge.svg)](https://github.com/Som-Energia/somenergia-opendata/actions/workflows/main.yml)
 [![Coverage Status](https://coveralls.io/repos/github/Som-Energia/somenergia-opendata/badge.svg?branch=master)](https://coveralls.io/github/Som-Energia/somenergia-opendata?branch=master)
 
 
@@ -21,7 +21,7 @@ Follow the following structure `/<metric>[/by/<geolevel>][/on/<date>|[/monthly|/
     All current contracts
 
 - `/members`
-    All current members (instead of contracts)
+    All current members (instead of contracts).
 
 - `/newcontracts`
     New contracts last month (same for members)
@@ -68,7 +68,7 @@ You can append repeatedly query params to filter data just including some geogra
 
 #### Response format
 
-Data is returned in YAML.
+Data is returned by default in YAML.
 It has a hierarchical structure from the world geographical level to the requested geographical level of detail (country in this example)
 Each region has as many numbers in list as the top level `dates`.
 
