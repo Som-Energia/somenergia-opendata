@@ -19,17 +19,18 @@ Introspeccio:
 - [ ] Quins filtres s'apliquen als tags
 - [ ] Quines mètriques relatives hi ha
 
-[x] /discover/metric
-/discover/relativemetric  {population, area, marketcontracts...)
-[x] /discover/geolevel  [ccaa, city, state, country, county, localgrup...]
-/discover/geolevel/country?continent=Europe    {ES:España,...}
-[x] /discover/geolevel/city?ccaa=09    {0808: barcelona, :}
-[x] /discover/geolevel/localgroup
-[x] /discover/geolevel/localgroup?state=08
-[x] /discover/geolevel/city?localgroup=BaixMontseny
-/discover/format/distribution  {csv, yaml, xml, json, html}
-/discover/format/map  {svg, png, html}
-/discover/aspect/production  {tecnology, financedby}
+
+- [x] /discover/metric
+- [ ] /discover/relativemetric  {population, area, marketcontracts...)
+- [x] /discover/geolevel  [ccaa, city, state, country, county, localgrup...]
+- [x] /discover/geolevel/country?continent=Europe    {ES:España,...}
+- [x] /discover/geolevel/city?ccaa=09    {0808: barcelona, :}
+- [x] /discover/geolevel/localgroup
+- [x] /discover/geolevel/localgroup?state=08
+- [x] /discover/geolevel/city?localgroup=BaixMontseny
+- [ ] /discover/format/distribution  {csv, yaml, xml, json, html}
+- [ ] /discover/format/map  {svg, png, html}
+- [ ] /discover/aspect/production  {tecnology, financedby}
 	tecnology=biogas
 	financedby=generationkwh
 	financedby=aportacions
