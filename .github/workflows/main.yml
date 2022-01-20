@@ -34,7 +34,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt update
-          sudo apt install libmagickwand-dev inkscape libyaml-dev
+          sudo apt install libmagickwand-dev inkscape libyaml-dev libxml2-dev libxslt-dev
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
