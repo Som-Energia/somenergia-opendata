@@ -38,7 +38,8 @@ setup(
 		'python-slugify',
 		'future', # Py2 backward compat
 		'pathlib2', # Py2 backward compat
-		'numpy<1.20', # 1.20 does not support Py 3.6.x
+		'numpy<1.20;python<3.7', # 1.20 does not support Py 3.6.x
+		'numpy;python>=3.7', # 1.20 does not support Py 3.6.x
 		'cryptography<3.4', # no wheels available for manylinux1
 		# development
 		'pytest',
