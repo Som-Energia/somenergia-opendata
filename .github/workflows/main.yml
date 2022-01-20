@@ -45,7 +45,8 @@ jobs:
             pytest
             pytest-cov
             coveralls
-            cython # some versions need to compile numpy and numpy 1.22 does not provide proper build deps
+            cython
+      # cython: some versions need to compile numpy and numpy 1.22 does not provide proper build deps
       - name: Install dependencies
         run: |
           ./setup.py develop
