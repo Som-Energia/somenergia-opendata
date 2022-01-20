@@ -244,7 +244,9 @@ Barcelona:
   name: Barcelona
   alias:
     city:
-      - '08019'
+      - '08019' # Barcelona
+      - '08101' # Hostpitalet
+
 Bilbao:
   name: Bilbao
   alias:
@@ -942,6 +944,21 @@ Menorca:
       - '07037'
       - '07902'
       - '07052'
+
+Moianes:
+  name: Moianès
+  alias:
+    city:
+      - 08034 # Calders
+      - 08055 # Castellcir
+      - 08064 # Castellterçol
+      - 08070 # Collsuspina
+      - 08095 # Granera
+      - 08079 # Estany, 'L
+      - 08138 # Moià
+      - 08128 # Monistrol de Calders
+      - 08239 # Sant Quirze Safaja
+      - 08258 # Santa Maria d’Oló
 
 Navarra:
   name: Navarra
