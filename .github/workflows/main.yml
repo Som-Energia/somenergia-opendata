@@ -4,11 +4,9 @@ name: CI
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on push or pull request events
   push:
-    branches: [ '*' ]
   pull_request:
-    branches: [ '*' ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -20,12 +18,14 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
-      TRAVIS: 1 # Skip tests requiring data
+      TRAVIS: 'true' # Skip tests requiring data
     strategy:
       matrix:
         python-version:
+          - '3.6.9' # the one in production
           - '3.8'
           - '3.9'
+          - '3' # latest
     name: Python ${{ matrix.python-version }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -41,6 +41,8 @@ jobs:
         with:
           packages: |
             Flask
+            pytest
+            pytest-cov
             coveralls
       - name: Install dependencies
         run: |
@@ -49,7 +51,7 @@ jobs:
           touch dbconfig.py
       - name: Unit tests
         run: |
-          coverage run --source som_opendata ./setup.py test
+          pytest
       - uses: actions/upload-artifact@master
         if: failure() && hashFiles('b2bdata/*result*')
         with:
