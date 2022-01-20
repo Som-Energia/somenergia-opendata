@@ -25,10 +25,6 @@ setup(
 		'Flask',
 		'Flask-Cors',
 		'psycopg2-binary',
-		'rednose',
-		'nose',
-		'b2btest',
-		'coverage',
 		'consolemsg>=0.3.3',
 		'wavefile',
 		'lxml',
@@ -44,7 +40,11 @@ setup(
 		'pathlib2', # Py2 backward compat
 		'numpy<1.20', # 1.20 does not support Py 3.6.x
 		'cryptography<3.4', # no wheels available for manylinux1
+		# development
 		'pytest',
+		'pytest-cov',
+		'b2btest',
+		'coverage',
 	],
 	include_package_data = True,
 	test_suite = 'som_opendata',
