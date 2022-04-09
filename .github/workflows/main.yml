@@ -35,6 +35,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install libmagickwand-dev inkscape libyaml-dev libxml2-dev libxslt-dev
+          sudo apt install rustc cargo # needed for pip cryptography in some python versions without egg
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
@@ -42,6 +43,7 @@ jobs:
         with:
           # cython: some versions need to compile numpy and numpy 1.22 does not provide proper build deps
           packages: |
+            setuptools_rust
             Flask
             pytest
             pytest-cov
