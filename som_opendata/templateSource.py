@@ -33,7 +33,7 @@ class TemplateSource(object):
 
 import os.path
 import glob
-from pathlib2 import Path
+from pathlib import Path
 
 
 def loadMapData(relativePath='../data/maps'):

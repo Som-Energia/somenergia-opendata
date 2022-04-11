@@ -57,7 +57,7 @@ def getFieldBy(field, by, data, numeric=True):
 
 import os.path
 import glob
-from pathlib2 import Path
+from pathlib import Path
 
 
 def loadTsvRelativeMetric(relativePath='../data/relativeMetrics'):

@@ -21,7 +21,7 @@ from .colorscale import Gradient
 from .scale import LogScale, LinearScale
 from .csvSource import loadCsvSource, CsvSource
 from future.utils import iteritems
-from pathlib2 import Path
+from pathlib import Path
 from .distribution import parse_tsv, tuples2objects
 from .templateSource import loadMapData
 from .timeaggregator import TimeAggregator

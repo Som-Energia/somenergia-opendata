@@ -3,7 +3,7 @@ from yamlns import namespace as ns
 from .scale import LinearScale, LogScale
 from .colorscale import Gradient
 from .distribution import getAggregated
-from pathlib2 import Path
+from pathlib import Path
 from functools import lru_cache
 from . import common
 from flask_babel import lazy_gettext as _
