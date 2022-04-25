@@ -15,7 +15,8 @@ Introspeccio:
 - [x] Quines metriques estan suportades
 - [x] Quins geolevels estan suportats (ccaa, state...)
 - [x] Quins codis i noms hi ha a un determinat geolevel amb possible filtre
-- [ ] Quins formats disponibles per un tipus de query (mapa, distribution)
+- [ ] Quins formats disponibles per un tipus de query (distribution)
+- [ ] Quins formats disponibles per un tipus de query (mapa)
 - [ ] Quins filtres s'apliquen als tags
 - [ ] Quines mètriques relatives hi ha
 

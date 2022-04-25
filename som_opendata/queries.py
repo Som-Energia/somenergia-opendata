@@ -8,8 +8,23 @@ from yamlns.dateutils import Date
 from pathlib import Path
 
 """
-This module contains functions to compute metrics.
+This module contains functions to precompute metrics.
 Metrics have to be computed aggregated by city and month.
+
+Precomputed metric data results in the following fields:
+
+- `codi_pais`: ISO code of the country
+- `codi_ccaa`: INE code of the CCAA
+- `codi_provincia`: INE code of the province
+- `codi_ine`: INE code of the city
+- `pais`: name of the country
+- `comunitat_autonoma`: name of the CCAA
+- `provincia`: name of the province
+- `municipi`: name of the city
+- `count_YYYY_MM_DD`: the metric value for the date YYYY-MM-DD in the given geolocation
+
+This module also contains helper functions to build such aggregation
+from simpler queries.
 """
 
 def readQuery(query):
@@ -21,8 +36,24 @@ def timeQuery(dates, queryfile, timeSlicer, dbhandler=csvTable):
     Executes a query stored in queryfile
     extending it with a column for each passed date
     which aggregates rows by that date.
+
     The timeSlicer parameter tells whether to filter or not
-    each row for a given date.
+    each row for a given date and how to aggregate it.
+
+    The expected base query returns the following fields:
+
+    - `id`: id of the item taken into account (recommended for debugging, with lister timeSlicer)
+    - `value`: value to add when aggregated (only for adder timeslicers)
+    - `first_date`: first date the item is taken into account
+    - `last_date`: last date the item is taken into account
+    - `codi_pais`: ISO code of the country
+    - `codi_ccaa`: INE code of the CCAA
+    - `codi_provincia`: INE code of the province
+    - `codi_ine`: INE code of the city
+    - `pais`: name of the country
+    - `comunitat_autonoma`: name of the CCAA
+    - `provincia`: name of the province
+    - `municipi`: name of the city
     """
     db = psycopg2.connect(**config.psycopg)
     query = readQuery(queryfile)
@@ -38,9 +69,19 @@ def timeCityQuery(dates, queryfile, timeSlicer, dbhandler=csvTable):
     """
     Executes the query stored in `queryfile` as inner query of an enclosing
     query which aggregates inner results by field `city_id` and adds columns
-    aggregating data for each date in `dates` as specified by `timeSlicer`.
-    In order to work, the inner query is expected to generate fields
-    `first_date`, `last_date` and `city_id`.
+    aggregating data for each date in `dates` as specified by `timeSlicer`
+    and also geographical columns.
+
+    To be used only for querys against the ERP database,
+    to simplify obtainig the geographical columns.
+
+    In order to work, the inner query is expected to generate those fields:
+
+    - `id`: id of the item taken into account (recommended for debugging, with lister timeSlicer)
+    - `value`: value to add when aggregated (only for adder timeslicers)
+    - `first_date`: first date the item is taken into account
+    - `last_date`: last date the item is taken into account
+    - `city_id`: ERP id of the city
     """
     db = psycopg2.connect(**config.psycopg)
     innerQuery = readQuery(queryfile)
@@ -53,6 +94,28 @@ def timeCityQuery(dates, queryfile, timeSlicer, dbhandler=csvTable):
     with db.cursor() as cursor :
         cursor.execute(query)
         return dbhandler(cursor)
+
+"""
+Time slicers: Produces date columns. 
+
+Decides whether each item is chosen or not for a given date given its
+`first_date` and `last_date` fields and how to perform the aggregation.
+
+This can be used to select items:
+
+- items actives during the period (active),
+- items activated during the period (new), or
+- items deactivated during the period (canceled).
+
+Depending on how the aggregation is done:
+
+- counter: counts items
+- adder: adds the items `value` field
+- lister: generates a comma separated list of `id` fields (for debugging)
+
+Counters and listers differ on whether we simply count the items
+or produce a comma separated list of case ids.
+"""
 
 def activeItemAdder(adate):
     # TODO: Unsafe substitution, use mogrify
@@ -136,6 +199,11 @@ def canceledItemLister(adate):
         ELSE item.id::text
         END, ',' ORDER BY item.id) AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
+
+"""
+Metric functions
+TODO: modularize them along with its metadata and sql
+"""
 
 def contractsSeries(dates, dbhandler=csvTable):
     return timeCityQuery(
