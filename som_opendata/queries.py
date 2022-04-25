@@ -1,4 +1,3 @@
-# coding=utf-8
 import os
 import psycopg2
 import dbconfig as config
@@ -31,7 +30,7 @@ def readQuery(query):
     queryfile = Path(__file__).absolute().parent / 'queries' / (query + '.sql')
     return queryfile.read_text(encoding='utf8').rstrip()
 
-def timeQuery(dates, queryfile, timeSlicer, dbhandler=csvTable):
+def timeQuery(dates, queryfile, timeSlicer, dbhandler=csvTable, dbconfig=None):
     """
     Executes a query stored in queryfile
     extending it with a column for each passed date
@@ -55,7 +54,8 @@ def timeQuery(dates, queryfile, timeSlicer, dbhandler=csvTable):
     - `provincia`: name of the province
     - `municipi`: name of the city
     """
-    db = psycopg2.connect(**config.psycopg)
+    dbconfig = dbconfig or config.psycopg
+    db = psycopg2.connect(**dbconfig)
     query = readQuery(queryfile)
     query = query.format(','.join(
         timeSlicer(Date(adate))
@@ -418,20 +418,20 @@ def canceledEntityMembersSeries(dates, dbhandler=csvTable, debug=False):
     return timeCityQuery(
         dates=dates,
         queryfile='members_legal_persons',
-        timeSlicer=canceledItemCounter,
-        #timeSlicer=canceledItemLister, # debug
+        timeSlicer=canceledItemLister if debug else canceledItemCounter,
         dbhandler=dbhandler,
     )
 
+# TODO: Rely in plantmonitor data
 def plantPowerSeries(dates, dbhandler=csvTable):
     return timeQuery(
         dates=dates,
         queryfile='plantpower',
-        timeSlicer=activeItemAdder,
-        #timeSlicer=activeItemLister, # debug
+        timeSlicer=activeItemLister if debug else activeItemAdder,
         dbhandler=dbhandler,
     )
 
+# TODO: Make the query work with standard timeSlicers
 def plantProductionAdder(adate):
     # TODO: Unsafe substitution, use mogrify
     return """
@@ -444,14 +444,12 @@ def plantProductionAdder(adate):
 def plantProductionSeries(dates, dbhandler=csvTable):
     """
     """
-    db = psycopg2.connect(**config.plantmonitor_psycopg)
-    query = readQuery('plantproduction')
-    query = query.format(','.join(
-        plantProductionAdder(Date(adate))
-        for adate in dates
-        ))
-    with db.cursor() as cursor :
-        cursor.execute(query)
-        return dbhandler(cursor)
+    return timeQuery(
+        dates=dates,
+        queryfile='plantproduction',
+        timeSlicer=plantProductionAdder,
+        dbhandler=dbhandler,
+        dbconfig=config.plantmonitor_psycopg, # This is different!
+    )
 
 # vim: et sw=4 ts=4
