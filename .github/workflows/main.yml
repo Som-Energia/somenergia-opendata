@@ -22,8 +22,8 @@ jobs:
     strategy:
       matrix:
         python-version:
-          - '3.6.9' # the one in production
-          - '3.8'
+          #- '3.6.9' # the one in production
+          #- '3.8'
           - '3.9'
           - '3' # latest
     name: Python ${{ matrix.python-version }}
