@@ -443,8 +443,6 @@ def plantProductionAdder(adate):
 """.format(adate=adate)
 
 def plantProductionSeries(dates, dbhandler=csvTable):
-    """
-    """
     return timeQuery(
         dates=dates,
         queryfile='plantproduction',
