@@ -423,22 +423,23 @@ def canceledEntityMembersSeries(dates, dbhandler=csvTable, debug=False):
     )
 
 # TODO: Rely in plantmonitor data
-def plantPowerSeries(dates, dbhandler=csvTable):
+def plantPowerSeries(dates, dbhandler=csvTable, debug=False):
     return timeQuery(
         dates=dates,
         queryfile='plantpower',
         timeSlicer=activeItemLister if debug else activeItemAdder,
         dbhandler=dbhandler,
+        dbconfig=config.plantmonitor_psycopg, # This is different!
     )
 
 # TODO: Make the query work with standard timeSlicers
 def plantProductionAdder(adate):
     # TODO: Unsafe substitution, use mogrify
     return """
-    (sum(CASE
-        WHEN (energy.time::date + '1 month'::interval)::date = '{adate}'::date  THEN energy.export_energy_wh
+    sum(CASE
+        WHEN (item.time::date + '1 month'::interval)::date = '{adate}'::date  THEN item.value
         ELSE 0
-        END)/1000)::integer AS count_{adate:%Y_%m_%d}
+        END)::integer AS count_{adate:%Y_%m_%d}
 """.format(adate=adate)
 
 def plantProductionSeries(dates, dbhandler=csvTable):
