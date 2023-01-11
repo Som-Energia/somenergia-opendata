@@ -1,14 +1,14 @@
 metrics:
 - id: members
   text: Sòcies
-  description: "Persones sòcies de la cooperativa a l'inici de la data donada \n\n\
-    Les sòcies es calculen de l'estat actual del nostre ERP, per això, cal tenir en\
-    \ compte que:\n- Els primers mesos de la cooperativa, les altes s'anotaven en\
-    \ un full de càlcul, però, figura com data d'alta quan es varen passar a l'ERP.\n\
-    - No hi ha registre històric de les adreces d'una sòcia. Per això, si una sòcia\
-    \ canvia el seu domicili de Vigo a Cartagena, compta com que ha estat vivint sempre\
-    \ a Cartagena.\n- Només guardem una data d'alta i baixa per sòcia. No queda ben\
-    \ registrat si una sòcia es dona de baixa i es torna a donar-se d'alta.\n"
+  description: "Persones sòcies de la cooperativa a l'inici de la data donada \n\nLes
+    sòcies es calculen de l'estat actual del nostre ERP, per això, cal tenir en compte
+    que:\n- Els primers mesos de la cooperativa, les altes s'anotaven en un full de
+    càlcul, però, figura com data d'alta quan es varen passar a l'ERP.\n- No hi ha
+    registre històric de les adreces d'una sòcia. Per això, si una sòcia canvia el
+    seu domicili de Vigo a Cartagena, compta com que ha estat vivint sempre a Cartagena.\n-
+    Només guardem una data d'alta i baixa per sòcia. No queda ben registrat si una
+    sòcia es dona de baixa i es torna a donar-se d'alta.\n"
 - id: newmembers
   text: Noves sòcies
   description: |
