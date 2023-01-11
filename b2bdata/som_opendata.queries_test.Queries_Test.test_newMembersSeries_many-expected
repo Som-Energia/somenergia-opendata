@@ -1968,7 +1968,7 @@ ES	España	09	Cataluña	43	Tarragona	43082	Masroig, El	0	0
 ES	España	09	Cataluña	43	Tarragona	43083	Milà, El	0	0
 ES	España	09	Cataluña	43	Tarragona	43084	Miravet	0	0
 ES	España	09	Cataluña	43	Tarragona	43085	Molar, El	0	0
-ES	España	09	Cataluña	43	Tarragona	43086	Montblanc	0	0
+ES	España	09	Cataluña	43	Tarragona	43086	Montblanc	1	0
 ES	España	09	Cataluña	43	Tarragona	43088	Montbrió del Camp	1	0
 ES	España	09	Cataluña	43	Tarragona	43089	Montferri	0	0
 ES	España	09	Cataluña	43	Tarragona	43090	Montmell, El	1	0
@@ -2029,7 +2029,7 @@ ES	España	09	Cataluña	43	Tarragona	43145	Selva del Camp, La	0	0
 ES	España	09	Cataluña	43	Tarragona	43146	Senan	0	0
 ES	España	09	Cataluña	43	Tarragona	43044	Sénia, La	0	0
 ES	España	09	Cataluña	43	Tarragona	43147	Solivella	0	0
-ES	España	09	Cataluña	43	Tarragona	43148	Tarragona	5	3
+ES	España	09	Cataluña	43	Tarragona	43148	Tarragona	4	3
 ES	España	09	Cataluña	43	Tarragona	43149	Tivenys	0	0
 ES	España	09	Cataluña	43	Tarragona	43150	Tivissa	0	0
 ES	España	09	Cataluña	43	Tarragona	43151	Torre de Fontaubella, La	0	0
@@ -2366,6 +2366,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46903	San Antonio de Be
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46222	Sant Joanet	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46223	Sedaví	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46224	Segart	0	0
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46227	Senyera	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46228	Serra	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46230	Silla	1	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46231	Simat de la Valldigna	0	0
@@ -2552,7 +2553,6 @@ ES	España	12	Galicia	32	Ourense	32055	Paderne de Allariz	0	0
 ES	España	12	Galicia	32	Ourense	32065	Punxín	0	0
 ES	España	12	Galicia	32	Ourense	32075	San Cibrao das Viñas	0	0
 ES	España	12	Galicia	32	Ourense	32070	San Xoán de Río	0	0
-ES	España	12	Galicia	32	Ourense	32080	Teixeira, A	0	0
 ES	España	12	Galicia	32	Ourense	32081	Toén	0	0
 ES	España	12	Galicia	32	Ourense	32085	Verín	0	0
 ES	España	12	Galicia	32	Ourense	32086	Viana do Bolo	0	0
@@ -2667,6 +2667,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28087	Molinos, Los	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28088	Montejo de la Sierra	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28089	Moraleja de Enmedio	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28090	Moralzarzal	0	0
+ES	España	13	Madrid, Comunidad de	28	Madrid	28091	Morata de Tajuña	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28092	Móstoles	0	3
 ES	España	13	Madrid, Comunidad de	28	Madrid	28093	Navacerrada	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28094	Navalafuente	0	0
@@ -2939,6 +2940,7 @@ ES	España	16	País Vasco	01	Araba/Álava	01028	Labastida/Bastida	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01031	Laguardia	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01032	Lanciego/Lantziego	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01036	Laudio/Llodio	0	0
+ES	España	16	País Vasco	01	Araba/Álava	01058	Legutio	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01043	Oyón-Oion	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01047	Ribera Baja/Erribera Beitia	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01053	San Millán/Donemiliaga	0	0

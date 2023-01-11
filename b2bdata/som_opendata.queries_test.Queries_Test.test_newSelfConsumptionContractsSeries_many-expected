@@ -5,6 +5,7 @@ ES	España	01	Andalucia	04	Almería	04032	Carboneras	0	0
 ES	España	01	Andalucia	04	Almería	04902	Ejido, El	0	0
 ES	España	01	Andalucia	04	Almería	04043	Felix	0	0
 ES	España	01	Andalucia	04	Almería	04052	Huércal de Almería	0	0
+ES	España	01	Andalucia	04	Almería	04055	Instinción	0	0
 ES	España	01	Andalucia	04	Almería	04057	Láujar de Andarax	0	0
 ES	España	01	Andalucia	04	Almería	04066	Níjar	0	0
 ES	España	01	Andalucia	04	Almería	04079	Roquetas de Mar	0	0
@@ -301,6 +302,7 @@ ES	España	04	Baleares, Islas	07	Balears, Illes	07052	Sant Lluís	2	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07058	Selva	0	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07047	Sencelles	0	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07061	Sóller	0	0
+ES	España	04	Baleares, Islas	07	Balears, Illes	07062	Son Servera	0	0
 ES	España	04	Baleares, Islas	07	Balears, Illes	07065	Vilafranca de Bonany	0	0
 ES	España	05	Canarias	35	Palmas, Las	35001	Agaete	0	0
 ES	España	05	Canarias	35	Palmas, Las	35002	Agüimes	0	0
@@ -323,6 +325,8 @@ ES	España	05	Canarias	35	Palmas, Las	35023	Santa María de Guía de Gran Canari
 ES	España	05	Canarias	35	Palmas, Las	35024	Teguise	0	0
 ES	España	05	Canarias	35	Palmas, Las	35026	Telde	0	0
 ES	España	05	Canarias	35	Palmas, Las	35028	Tías	0	0
+ES	España	05	Canarias	35	Palmas, Las	35033	Vega de San Mateo	0	0
+ES	España	05	Canarias	35	Palmas, Las	35034	Yaiza	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38001	Adeje	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38005	Arico	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38008	Breña Alta	0	0
@@ -472,6 +476,7 @@ ES	España	07	Castilla y León	37	Salamanca	37354	Villamayor	0	0
 ES	España	07	Castilla y León	40	Segovia	40047	Castro de Fuentidueña	0	0
 ES	España	07	Castilla y León	40	Segovia	40059	Collado Hermoso	0	0
 ES	España	07	Castilla y León	40	Segovia	40060	Condado de Castilnovo	0	0
+ES	España	07	Castilla y León	40	Segovia	40063	Cuéllar	0	0
 ES	España	07	Castilla y León	40	Segovia	40076	Espinar, El	0	0
 ES	España	07	Castilla y León	40	Segovia	40079	Fresno de Cantespino	0	0
 ES	España	07	Castilla y León	40	Segovia	40904	Navas de Riofrío	0	0
@@ -791,6 +796,7 @@ ES	España	09	Cataluña	17	Girona	17019	Besalú	0	0
 ES	España	09	Cataluña	17	Girona	17020	Bescanó	2	1
 ES	España	09	Cataluña	17	Girona	17021	Beuda	0	0
 ES	España	09	Cataluña	17	Girona	17022	Bisbal d'Empordà, La	0	1
+ES	España	09	Cataluña	17	Girona	17234	Biure	0	0
 ES	España	09	Cataluña	17	Girona	17023	Blanes	2	0
 ES	España	09	Cataluña	17	Girona	17029	Boadella i les Escaules	0	1
 ES	España	09	Cataluña	17	Girona	17025	Bordils	1	0
@@ -911,6 +917,7 @@ ES	España	09	Cataluña	17	Girona	17903	Sant Julià del Llor i Bonmatí	0	0
 ES	España	09	Cataluña	17	Girona	17169	Sant Julià de Ramis	0	0
 ES	España	09	Cataluña	17	Girona	17171	Sant Llorenç de la Muga	0	0
 ES	España	09	Cataluña	17	Girona	17172	Sant Martí de Llémena	0	0
+ES	España	09	Cataluña	17	Girona	17174	Sant Miquel de Campmajor	0	0
 ES	España	09	Cataluña	17	Girona	17175	Sant Miquel de Fluvià	0	0
 ES	España	09	Cataluña	17	Girona	17176	Sant Mori	0	0
 ES	España	09	Cataluña	17	Girona	17178	Sant Pere Pescador	0	1
@@ -993,6 +1000,7 @@ ES	España	09	Cataluña	25	Lleida	25078	Corbins	0	0
 ES	España	09	Cataluña	25	Lleida	25081	Espluga Calba, L'	0	0
 ES	España	09	Cataluña	25	Lleida	25085	Estaràs	0	0
 ES	España	09	Cataluña	25	Lleida	25093	Fondarella	0	0
+ES	España	09	Cataluña	25	Lleida	25096	Fuliola, La	0	0
 ES	España	09	Cataluña	25	Lleida	25097	Fulleda	0	0
 ES	España	09	Cataluña	25	Lleida	25912	Gimenells i el Pla de la Font	0	0
 ES	España	09	Cataluña	25	Lleida	25099	Golmés	0	0
@@ -1230,6 +1238,7 @@ ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03902	Pilar de la Horadad
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03105	Pinós, el/Pinoso	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03107	Polop	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03060	Quatretondeta	0	0
+ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03113	Rojales	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03114	Romana, la	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03118	San Fulgencio	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03120	San Miguel de Salinas	0	0
@@ -1238,6 +1247,7 @@ ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03119	Sant Joan d'Alacant
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03122	San Vicente del Raspeig/Sant Vicent del Raspeig	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03123	Sax	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03128	Teulada	0	0
+ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03132	Torremanzanas/Torre de les Maçanes, la	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03135	Vall d'Ebo, la	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03136	Vall de Gallinera	0	0
 ES	España	10	Comunidad Valenciana	03	Alicante/Alacant	03139	Villajoyosa/Vila Joiosa, la	0	0
@@ -1333,6 +1343,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46131	Gandia	1	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46130	Gavarda	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46134	Gilet	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46135	Godella	0	0
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46155	Llaurí	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46147	Llíria	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46156	Llombai	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46157	Llosa de Ranes, la	0	0
@@ -1377,8 +1388,10 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46903	San Antonio de Be
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46223	Sedaví	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46228	Serra	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46230	Silla	0	0
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46231	Simat de la Valldigna	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46233	Sollana	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46235	Sueca	0	0
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46237	Tavernes Blanques	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46238	Tavernes de la Valldigna	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46241	Titaguas	0	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46244	Torrent	0	0
@@ -1409,6 +1422,7 @@ ES	España	11	Extremadura	10	Cáceres	10004	Acehúche	1	0
 ES	España	11	Extremadura	10	Cáceres	10021	Arroyo de la Luz	0	0
 ES	España	11	Extremadura	10	Cáceres	10037	Cáceres	0	0
 ES	España	11	Extremadura	10	Cáceres	10079	Garganta la Olla	0	0
+ES	España	11	Extremadura	10	Cáceres	10113	Madroñera	0	0
 ES	España	11	Extremadura	10	Cáceres	10115	Malpartida de Cáceres	0	0
 ES	España	11	Extremadura	10	Cáceres	10116	Malpartida de Plasencia	0	0
 ES	España	11	Extremadura	10	Cáceres	10121	Miajadas	0	0
@@ -1480,10 +1494,12 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28080	Majadahonda	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28082	Manzanares el Real	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28083	Meco	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28085	Miraflores de la Sierra	1	0
+ES	España	13	Madrid, Comunidad de	28	Madrid	28086	Molar, El	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28089	Moraleja de Enmedio	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28090	Moralzarzal	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28092	Móstoles	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28093	Navacerrada	0	0
+ES	España	13	Madrid, Comunidad de	28	Madrid	28094	Navalafuente	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28096	Navalcarnero	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28100	Nuevo Baztán	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28101	Olmeda de las Fuentes	0	0
@@ -1621,6 +1637,8 @@ ES	España	16	País Vasco	48	Bizkaia	48904	Sondika	0	0
 ES	España	16	País Vasco	48	Bizkaia	48085	Sopelana	0	0
 ES	España	16	País Vasco	48	Bizkaia	48905	Zamudio	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20069	Donostia-San Sebastián	0	0
+ES	España	16	País Vasco	20	Gipuzkoa	20036	Hondarribia	0	0
+ES	España	16	País Vasco	20	Gipuzkoa	20063	Oiartzun	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20076	Ordizia	0	0
 ES	España	16	País Vasco	20	Gipuzkoa	20078	Zaldibia	0	1
 ES	España	17	Rioja, La	26	Rioja, La	26002	Agoncillo	0	0

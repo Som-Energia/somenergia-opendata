@@ -240,7 +240,7 @@ ES	España	01	Andalucia	29	Málaga	29053	Frigiliana	0	0
 ES	España	01	Andalucia	29	Málaga	29054	Fuengirola	1	1
 ES	España	01	Andalucia	29	Málaga	29056	Gaucín	0	0
 ES	España	01	Andalucia	29	Málaga	29064	Jubrique	0	0
-ES	España	01	Andalucia	29	Málaga	29067	Málaga	31	31
+ES	España	01	Andalucia	29	Málaga	29067	Málaga	30	30
 ES	España	01	Andalucia	29	Málaga	29068	Manilva	0	0
 ES	España	01	Andalucia	29	Málaga	29069	Marbella	0	0
 ES	España	01	Andalucia	29	Málaga	29070	Mijas	0	0
@@ -708,7 +708,7 @@ ES	España	05	Canarias	38	Santa Cruz de Tenerife	38034	San Juan de la Rambla	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38035	San Miguel de Abona	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38036	San Sebastián de la Gomera	1	1
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38037	Santa Cruz de la Palma	0	0
-ES	España	05	Canarias	38	Santa Cruz de Tenerife	38038	Santa Cruz de Tenerife	7	9
+ES	España	05	Canarias	38	Santa Cruz de Tenerife	38038	Santa Cruz de Tenerife	8	10
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38039	Santa Úrsula	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38040	Santiago del Teide	0	0
 ES	España	05	Canarias	38	Santa Cruz de Tenerife	38041	Sauzal, El	0	0
@@ -1168,7 +1168,7 @@ ES	España	09	Cataluña	08	Barcelona	08003	Alella	17	17
 ES	España	09	Cataluña	08	Barcelona	08004	Alpens	2	2
 ES	España	09	Cataluña	08	Barcelona	08005	Ametlla del Vallès, L'	10	11
 ES	España	09	Cataluña	08	Barcelona	08006	Arenys de Mar	28	31
-ES	España	09	Cataluña	08	Barcelona	08007	Arenys de Munt	18	18
+ES	España	09	Cataluña	08	Barcelona	08007	Arenys de Munt	17	17
 ES	España	09	Cataluña	08	Barcelona	08008	Argençola	1	1
 ES	España	09	Cataluña	08	Barcelona	08009	Argentona	33	34
 ES	España	09	Cataluña	08	Barcelona	08010	Artés	20	21
@@ -1181,7 +1181,7 @@ ES	España	09	Cataluña	08	Barcelona	08016	Bagà	6	6
 ES	España	09	Cataluña	08	Barcelona	08017	Balenyà	0	0
 ES	España	09	Cataluña	08	Barcelona	08018	Balsareny	5	6
 ES	España	09	Cataluña	08	Barcelona	08252	Barberà del Vallès	29	29
-ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3066	3167
+ES	España	09	Cataluña	08	Barcelona	08019	Barcelona	3064	3165
 ES	España	09	Cataluña	08	Barcelona	08020	Begues	18	19
 ES	España	09	Cataluña	08	Barcelona	08021	Bellprat	0	0
 ES	España	09	Cataluña	08	Barcelona	08022	Berga	31	31
@@ -1380,7 +1380,7 @@ ES	España	09	Cataluña	08	Barcelona	08261	Santa Susanna	6	6
 ES	España	09	Cataluña	08	Barcelona	08199	Sant Bartomeu del Grau	5	6
 ES	España	09	Cataluña	08	Barcelona	08200	Sant Boi de Llobregat	50	50
 ES	España	09	Cataluña	08	Barcelona	08201	Sant Boi de Lluçanès	2	2
-ES	España	09	Cataluña	08	Barcelona	08203	Sant Cebrià de Vallalta	2	2
+ES	España	09	Cataluña	08	Barcelona	08203	Sant Cebrià de Vallalta	3	3
 ES	España	09	Cataluña	08	Barcelona	08202	Sant Celoni	56	57
 ES	España	09	Cataluña	08	Barcelona	08204	Sant Climent de Llobregat	7	7
 ES	España	09	Cataluña	08	Barcelona	08205	Sant Cugat del Vallès	232	242
@@ -1413,7 +1413,7 @@ ES	España	09	Cataluña	08	Barcelona	08232	Sant Pere de Riudebitlles	5	5
 ES	España	09	Cataluña	08	Barcelona	08233	Sant Pere de Torelló	2	2
 ES	España	09	Cataluña	08	Barcelona	08234	Sant Pere de Vilamajor	10	10
 ES	España	09	Cataluña	08	Barcelona	08189	Sant Pere Sallavinera	2	2
-ES	España	09	Cataluña	08	Barcelona	08235	Sant Pol de Mar	11	11
+ES	España	09	Cataluña	08	Barcelona	08235	Sant Pol de Mar	12	12
 ES	España	09	Cataluña	08	Barcelona	08236	Sant Quintí de Mediona	2	2
 ES	España	09	Cataluña	08	Barcelona	08237	Sant Quirze de Besora	3	3
 ES	España	09	Cataluña	08	Barcelona	08238	Sant Quirze del Vallès	30	30
@@ -1525,7 +1525,7 @@ ES	España	09	Cataluña	17	Girona	17058	Crespià	3	3
 ES	España	09	Cataluña	17	Girona	17901	Cruïlles,  Monells i Sant Sadurní de l'Heura	6	6
 ES	España	09	Cataluña	17	Girona	17060	Darnius	0	0
 ES	España	09	Cataluña	17	Girona	17061	Das	0	0
-ES	España	09	Cataluña	17	Girona	17062	Escala, L'	10	10
+ES	España	09	Cataluña	17	Girona	17062	Escala, L'	11	11
 ES	España	09	Cataluña	17	Girona	17063	Espinelves	0	0
 ES	España	09	Cataluña	17	Girona	17064	Espolla	3	3
 ES	España	09	Cataluña	17	Girona	17065	Esponellà	3	3
@@ -1614,7 +1614,7 @@ ES	España	09	Cataluña	17	Girona	17151	Riumors	0	0
 ES	España	09	Cataluña	17	Girona	17152	Roses	7	8
 ES	España	09	Cataluña	17	Girona	17153	Rupià	5	5
 ES	España	09	Cataluña	17	Girona	17154	Sales de Llierca	2	2
-ES	España	09	Cataluña	17	Girona	17155	Salt	36	37
+ES	España	09	Cataluña	17	Girona	17155	Salt	35	36
 ES	España	09	Cataluña	17	Girona	17180	Santa Coloma de Farners	38	38
 ES	España	09	Cataluña	17	Girona	17181	Santa Cristina d'Aro	11	11
 ES	España	09	Cataluña	17	Girona	17157	Sant Andreu Salou	0	0
@@ -1715,7 +1715,7 @@ ES	España	09	Cataluña	25	Lleida	25024	Alt Àneu	2	2
 ES	España	09	Cataluña	25	Lleida	25027	Anglesola	0	0
 ES	España	09	Cataluña	25	Lleida	25029	Arbeca	0	0
 ES	España	09	Cataluña	25	Lleida	25033	Artesa de Lleida	0	0
-ES	España	09	Cataluña	25	Lleida	25034	Artesa de Segre	1	1
+ES	España	09	Cataluña	25	Lleida	25034	Artesa de Segre	2	2
 ES	España	09	Cataluña	25	Lleida	25036	Aspa	0	0
 ES	España	09	Cataluña	25	Lleida	25037	Avellanes i Santa Linya, Les	1	1
 ES	España	09	Cataluña	25	Lleida	25039	Baix Pallars	2	2
@@ -1968,7 +1968,7 @@ ES	España	09	Cataluña	43	Tarragona	43082	Masroig, El	0	0
 ES	España	09	Cataluña	43	Tarragona	43083	Milà, El	0	0
 ES	España	09	Cataluña	43	Tarragona	43084	Miravet	0	0
 ES	España	09	Cataluña	43	Tarragona	43085	Molar, El	0	0
-ES	España	09	Cataluña	43	Tarragona	43086	Montblanc	9	9
+ES	España	09	Cataluña	43	Tarragona	43086	Montblanc	10	10
 ES	España	09	Cataluña	43	Tarragona	43088	Montbrió del Camp	5	5
 ES	España	09	Cataluña	43	Tarragona	43089	Montferri	1	1
 ES	España	09	Cataluña	43	Tarragona	43090	Montmell, El	1	1
@@ -2029,7 +2029,7 @@ ES	España	09	Cataluña	43	Tarragona	43145	Selva del Camp, La	9	9
 ES	España	09	Cataluña	43	Tarragona	43146	Senan	0	0
 ES	España	09	Cataluña	43	Tarragona	43044	Sénia, La	2	2
 ES	España	09	Cataluña	43	Tarragona	43147	Solivella	0	0
-ES	España	09	Cataluña	43	Tarragona	43148	Tarragona	111	114
+ES	España	09	Cataluña	43	Tarragona	43148	Tarragona	110	113
 ES	España	09	Cataluña	43	Tarragona	43149	Tivenys	0	0
 ES	España	09	Cataluña	43	Tarragona	43150	Tivissa	1	1
 ES	España	09	Cataluña	43	Tarragona	43151	Torre de Fontaubella, La	0	0
@@ -2366,6 +2366,7 @@ ES	España	10	Comunidad Valenciana	46	Valencia/València	46903	San Antonio de Be
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46222	Sant Joanet	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46223	Sedaví	2	2
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46224	Segart	0	0
+ES	España	10	Comunidad Valenciana	46	Valencia/València	46227	Senyera	0	0
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46228	Serra	1	1
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46230	Silla	8	9
 ES	España	10	Comunidad Valenciana	46	Valencia/València	46231	Simat de la Valldigna	2	2
@@ -2552,7 +2553,6 @@ ES	España	12	Galicia	32	Ourense	32055	Paderne de Allariz	0	0
 ES	España	12	Galicia	32	Ourense	32065	Punxín	0	0
 ES	España	12	Galicia	32	Ourense	32075	San Cibrao das Viñas	0	0
 ES	España	12	Galicia	32	Ourense	32070	San Xoán de Río	0	0
-ES	España	12	Galicia	32	Ourense	32080	Teixeira, A	0	0
 ES	España	12	Galicia	32	Ourense	32081	Toén	1	1
 ES	España	12	Galicia	32	Ourense	32085	Verín	1	1
 ES	España	12	Galicia	32	Ourense	32086	Viana do Bolo	0	0
@@ -2667,6 +2667,7 @@ ES	España	13	Madrid, Comunidad de	28	Madrid	28087	Molinos, Los	2	2
 ES	España	13	Madrid, Comunidad de	28	Madrid	28088	Montejo de la Sierra	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28089	Moraleja de Enmedio	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28090	Moralzarzal	3	3
+ES	España	13	Madrid, Comunidad de	28	Madrid	28091	Morata de Tajuña	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28092	Móstoles	30	33
 ES	España	13	Madrid, Comunidad de	28	Madrid	28093	Navacerrada	0	0
 ES	España	13	Madrid, Comunidad de	28	Madrid	28094	Navalafuente	0	0
@@ -2939,6 +2940,7 @@ ES	España	16	País Vasco	01	Araba/Álava	01028	Labastida/Bastida	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01031	Laguardia	1	1
 ES	España	16	País Vasco	01	Araba/Álava	01032	Lanciego/Lantziego	1	1
 ES	España	16	País Vasco	01	Araba/Álava	01036	Laudio/Llodio	2	2
+ES	España	16	País Vasco	01	Araba/Álava	01058	Legutio	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01043	Oyón-Oion	2	2
 ES	España	16	País Vasco	01	Araba/Álava	01047	Ribera Baja/Erribera Beitia	0	0
 ES	España	16	País Vasco	01	Araba/Álava	01053	San Millán/Donemiliaga	0	0
