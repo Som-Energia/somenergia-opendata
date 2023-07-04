@@ -13,7 +13,7 @@ FROM (
 		plant.municipality as city_id,
 		energy.export_energy_wh/1000 as value,
 		energy.time as time
-	FROM view_plant_export_energy_monthly AS energy
+	FROM prod.view_plant_export_energy_monthly AS energy
 	LEFT JOIN plant
 	ON energy.plant_id = plant.id
 	WHERE plant.description != 'SomRenovables'
