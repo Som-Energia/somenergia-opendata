@@ -15,7 +15,7 @@ from .distribution import getAggregated, aggregated2table
 from .errors import MissingDateError
 from . import __version__
 from .map import renderMap
-from flask_babel import Babel, get_locale
+from flask_babel import get_locale
 
 
 api = Blueprint(name=__name__.split('.')[-1], import_name=__name__, template_folder='../')

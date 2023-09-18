@@ -27,18 +27,19 @@ def create_app():
     api.relativeMetricSource = loadTsvRelativeMetric()
     api.firstDate = '2010-01-01'
     app.errors = None
-    app.config['LANGUAGES'] = ['en', 'es', 'ca', 'eu', 'gl']
-    babel = Babel()
-    babel.init_app(app)
-    for rule in app.url_map.iter_rules():
-        print(rule)
 
-    @babel.localeselector
+    app.config['LANGUAGES'] = ['en', 'es', 'ca', 'eu', 'gl']
     def get_locale():
         lang = request.args.get('lang')
         if lang in app.config['LANGUAGES']:
             return lang
         return request.accept_languages.best_match(app.config['LANGUAGES'])
+
+    babel = Babel(app)
+    babel.init_app(app, locale_selector=get_locale)
+
+    for rule in app.url_map.iter_rules():
+        print(rule)
 
     return app
 

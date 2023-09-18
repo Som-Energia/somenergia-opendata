@@ -74,15 +74,14 @@ class Api_Test(unittest.TestCase):
         api.mapTemplateSource = mapTemplateSource
         api.relativeMetricSource = relativeMetricSource
         api.firstDate = '2010-01-01'
-        self.babel = Babel()
-        self.babel.init_app(self.app)
 
-        @self.babel.localeselector
         def get_locale():
             lang = request.args.get('lang')
             if lang in self.app.config['LANGUAGES']:
                 return lang
             return request.accept_languages.best_match(self.app.config['LANGUAGES'])
+
+        self.babel = Babel(app=self.app, locale_selector=get_locale)
 
     def tearDown(self):
         api.source = self.oldsource
