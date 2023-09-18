@@ -1,3 +1,9 @@
+# Unreleased
+
+- Bump Babel dependency
+- Upgrade Notes:
+    - Reinstall python dependencies
+
 # v0.2.27 2023-01-11
 
 - Taking plant power information from plant database, instead hardcoded data
