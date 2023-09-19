@@ -35,8 +35,7 @@ def create_app():
             return lang
         return request.accept_languages.best_match(app.config['LANGUAGES'])
 
-    babel = Babel(app)
-    babel.init_app(app, locale_selector=get_locale)
+    babel = Babel(app, locale_selector=get_locale)
 
     for rule in app.url_map.iter_rules():
         print(rule)
