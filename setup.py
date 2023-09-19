@@ -33,7 +33,7 @@ setup(
 		'somutils>=1.7.1',
 		'colour',
 		'babel<3',
-		'flask-babel<3',
+		'flask-babel>3',
 		'decorator',
 		'python-slugify',
 		'future', # Py2 backward compat
