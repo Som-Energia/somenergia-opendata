@@ -34,5 +34,5 @@ ORDER BY
 	comunitat_autonoma ASC,
 	provincia ASC,
 	municipi ASC,
-	TRUE ASC
+	0 ASC
 ;

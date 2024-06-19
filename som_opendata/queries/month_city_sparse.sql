@@ -55,5 +55,5 @@ ORDER BY
 	provincia ASC,
 	municipi ASC,
 	thedate ASC,
-	TRUE ASC
+	0 ASC
 ;
