@@ -54,6 +54,5 @@ ORDER BY
 	comunitat_autonoma ASC,
 	provincia ASC,
 	municipi ASC,
-	thedate ASC,
-	0 ASC
+	thedate ASC
 ;

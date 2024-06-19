@@ -66,8 +66,7 @@ ORDER BY
 	pais ASC,
 	comunitat_autonoma ASC,
 	provincia ASC,
-	municipi ASC,
-	0 ASC
+	municipi ASC
 ;
 ;
 
