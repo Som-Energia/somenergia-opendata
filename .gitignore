@@ -110,3 +110,7 @@ ENV/
 #sublime project
 opendata.sublime-project
 opendata.sublime-workspace
+
+
+# deployment configuration files
+*.ini
