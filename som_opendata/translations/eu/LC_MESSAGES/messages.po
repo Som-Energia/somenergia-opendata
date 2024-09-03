@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-09-23 16:56+0200\n"
-"PO-Revision-Date: 2020-01-10 11:29+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2024-09-03 10:25+0000\n"
+"Last-Translator: Weblate Admin <frontend@somenergia.coop>\n"
+"Language-Team: Basque <https://traduccio.somenergia.coop/projects/open-data/"
+"api/eu/>\n"
 "Language: eu\n"
-"Language-Team: eu <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.5.5\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: som_opendata/common.py:19
@@ -401,51 +403,51 @@ msgstr ""
 
 #: som_opendata/map.py:13
 msgid "January"
-msgstr "Urtarril"
+msgstr "Urtarrila"
 
 #: som_opendata/map.py:14
 msgid "February"
-msgstr "Otsail"
+msgstr "Otsaila"
 
 #: som_opendata/map.py:15
 msgid "March"
-msgstr "Martxo"
+msgstr "Martxoa"
 
 #: som_opendata/map.py:16
 msgid "April"
-msgstr "Apiril"
+msgstr "Apirila"
 
 #: som_opendata/map.py:17
 msgid "May"
-msgstr "Maiatz"
+msgstr "Maiatza"
 
 #: som_opendata/map.py:18
 msgid "June"
-msgstr "Ekain"
+msgstr "Ekaina"
 
 #: som_opendata/map.py:19
 msgid "July"
-msgstr "Uztail"
+msgstr "Uztaila"
 
 #: som_opendata/map.py:20
 msgid "August"
-msgstr "Abuztu"
+msgstr "Abuztua"
 
 #: som_opendata/map.py:21
 msgid "September"
-msgstr "Irail"
+msgstr "Iraila"
 
 #: som_opendata/map.py:22
 msgid "October"
-msgstr "Urri"
+msgstr "Urria"
 
 #: som_opendata/map.py:23
 msgid "November"
-msgstr "Azaro"
+msgstr "Azaroa"
 
 #: som_opendata/map.py:24
 msgid "December"
-msgstr "Abendu"
+msgstr "Abendua"
 
 #: som_opendata/map.py:205
 #, python-format
@@ -467,4 +469,3 @@ msgstr "%(num)s biztanleko"
 #~ "contracts\" metric also apply in this"
 #~ " one.\n"
 #~ msgstr ""
-
