@@ -26,9 +26,9 @@
   },
   "homepage": "https://github.com/Som-Energia/somenergia-api#readme",
   "dependencies": {
-    "apidoc": "^0.17.7"
+    "apidoc": "^1.2.0"
   },
   "devDependencies": {
-    "redoc-cli": "^0.10.2"
+    "redoc-cli": "^0.13.21"
   }
 }
