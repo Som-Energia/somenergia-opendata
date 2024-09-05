@@ -51,7 +51,7 @@ jobs:
             cython
       - name: Install dependencies
         run: |
-          ./setup.py develop
+          pip install -e .
           ./setup.py compile_catalog
           touch dbconfig.py
       - name: Unit tests
