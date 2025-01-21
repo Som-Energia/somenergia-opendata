@@ -23,8 +23,6 @@ FROM (
 		end_date as last_date
 	FROM dbt_prod.dm_plants__opendata
 ) AS item
-LEFT JOIN municipality AS city
-ON item.city_id = city.id
 GROUP BY
 	codi_pais,
 	codi_ccaa,
