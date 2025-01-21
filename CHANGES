@@ -1,5 +1,7 @@
 # Unreleased
 
+- Switch production data sources from plantmonitor (erp) to jardiner (dset)
+- Update expected back2back data for plantProductionSeries and plantPowerSeries
 - Bump Babel dependency
 - Upgrade Notes:
     - Reinstall python dependencies

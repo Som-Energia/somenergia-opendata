@@ -1,26 +1,28 @@
 SELECT
-	city.countrycode AS codi_pais,
-	city.country AS pais,
-	city.regioncode AS codi_ccaa,
-	city.region AS comunitat_autonoma,
-	city.provincecode AS codi_provincia,
-	city.province AS provincia,
-	city.inecode AS codi_ine,
-	city.name AS municipi,
+	codi_pais,
+	pais,
+	codi_ccaa,
+	comunitat_autonoma,
+	codi_provincia,
+	provincia,
+	codi_ine,
+	municipi,
 	{} -- here go the count columns
 FROM (
 	SELECT
-		params.nominal_power_w / 1000 as value,
-		params.connection_date as first_date,
-		null::date as last_date,
-		plant.municipality as city_id
-	FROM plant
-	LEFT JOIN plantparameters AS params
-	ON params.plant = plant.id
-	WHERE plant.description != 'SomRenovables'
+		codi_pais,
+		pais,
+		codi_ccaa,
+		comunitat_autonoma,
+		codi_provincia,
+		provincia,
+		codi_ine,
+		municipi,
+		plant_nominal_power_kw as value,
+		connection_date as first_date,
+		end_date as last_date
+	FROM dbt_prod.dm_plants__opendata
 ) AS item
-LEFT JOIN municipality AS city
-ON item.city_id = city.id
 GROUP BY
 	codi_pais,
 	codi_ccaa,
